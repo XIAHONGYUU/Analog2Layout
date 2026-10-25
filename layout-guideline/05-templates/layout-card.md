@@ -1,6 +1,6 @@
 # Layout Card — <module>
 
-**版本**：v0.1 · **owner**：analog + layout · **状态**：draft  
+**版本**：v0.1 · **owner**：analog + layout · **状态**：draft
 **产物**：floorplan 链接 · area report 链接 · delta 链接
 
 ## 1. 一句话 + 信号链

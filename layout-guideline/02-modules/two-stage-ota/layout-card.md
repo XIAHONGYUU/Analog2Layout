@@ -1,6 +1,6 @@
 # Layout Card — two-stage OTA
 
-**版本**：v0.1 · **owner**：analog + layout · **状态**：draft  
+**版本**：v0.1 · **owner**：analog + layout · **状态**：draft
 **产物**：[floorplan.svg](../../../examples/two_stage/out/floorplan.svg) · [area report](../../../examples/two_stage/out/area_report.md)
 
 ## 1. 一句话 + 信号链
