@@ -2,6 +2,8 @@
 
 > AI-native layout guideline 的工作区。持续完善中；不含真实 PDK/公司数据。
 
+![Layout Guideline 的闭环](../docs/diagrams/guideline-loop.png)
+
 ## 先看什么
 
 1. 先看一页 Layout Card：版图工程师 2 分钟能读完的内容。

@@ -15,7 +15,9 @@
 
 [Layout Guideline](layout-guideline/README.md) · [BGR Card](layout-guideline/02-modules/bgr/layout-card.md) · [VCOM Card](layout-guideline/02-modules/vcom/layout-card.md) · [布局草图 Demo](examples/two_stage/out/floorplan.png) · [Docs](docs/08-ai-layout-guideline.md)
 
-![two-stage floorplan sketch](examples/two_stage/out/floorplan.png)
+![Analog2Layout 三分钟概览](docs/diagrams/three-minute.png)
+
+> 一张图：真实网表 → 角色/面积 → 布局变体 → 一页 Card。完整四联图见 [overview.png](docs/diagrams/overview.png)。
 
 ## 三分钟看懂
 
@@ -238,6 +240,8 @@ otherwise                → UNCERTAIN（区间跨过 budget，需要 refine 或
 
 `floorplan.svg` 不是合法版图，而是**布局意图**：
 
+![two-stage floorplan sketch](examples/two_stage/out/floorplan.png)
+
 - 输入对跨对称轴摆放；
 - 电流镜在上、尾电流在下；
 - 输出级和补偿电容在右；
@@ -301,6 +305,8 @@ Case（以前哪里错过 / 怎么验证）
 
 Layout Guideline 的价值不在“写得多全”，而在**以前项目的问题不再重复犯**：
 
+![Layout Guideline 的闭环](docs/diagrams/guideline-loop.png)
+
 - 每个真实问题记录到 `07-problems/`：现象、机制、版图动作、guideline 缺口；
 - 同一机制出现 ≥2 次，必须产生一条 principle/pattern/module/card/rule 变更；
 - 新问题先查 `07-problems/` 和 `04-cases/`，避免重复条目；
@@ -309,6 +315,8 @@ Layout Guideline 的价值不在“写得多全”，而在**以前项目的问�
 ### 同一总面积，不同摆放
 
 版图布局不是“一个固定模板”。同一总面积，200×200、100×400、400×100 会得到不同摆放；器件类型/参数、匹配组、敏感区、电源/ESD 和走线预留都会约束布局。当前 demo 只生成默认 band 布局，下一步会支持目标 bbox / aspect 的候选变体。详见 [`docs/10-layout-variants.md`](docs/10-layout-variants.md)。
+
+![同一总面积，三种摆放](docs/diagrams/variants.png)
 
 ### 入口
 
@@ -400,6 +408,7 @@ layout-guideline/       AI-native Layout Guideline 工作层
   06-sources/           公开/私有边界与证据等级
   07-problems/          问题记录 → guideline patch
 docs/                   问题、标注、面积、floorplan、white line 区分、variants、guideline、roadmap
+  diagrams/             三分钟总览 / 完整四联图 / 变体 / 问题闭环
 agent/prompts/          role 解析 + Layout Card 编译 prompt
 schemas/                annotation / area_report / floorplan / delta 的 JSON Schema
 DECISIONS.md            角色归属、面积口径、形状指标等 durable decisions

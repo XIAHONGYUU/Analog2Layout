@@ -119,6 +119,8 @@ layout-guideline/
 
 ## 6. 问题驱动迭代
 
+![Layout Guideline 的闭环](diagrams/guideline-loop.png)
+
 Layout guideline 的价值不在“写得多全”，而在**以前项目的问题不再重复犯**。
 
 ```text

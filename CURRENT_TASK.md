@@ -37,6 +37,8 @@ service, or audit service.
   100×400); code generation is still pending.
 - Sensitive-core vs device-core distinction documented; code metrics for
   `sensitive_core` / `flexible_area` / `reuse_candidate` are still pending.
+- `docs/diagrams/` contains the first-read visuals: three-minute overview,
+  four-panel full overview, variants, and the guideline problem loop.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -46,6 +48,8 @@ service, or audit service.
 
 ## Next atomic action
 
+0. (done) First-page diagrams checked at 880 px width; tall/short labels were
+   adjusted to avoid clipping.
 1. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
 2. Add a target-bbox/aspect variant generator (square / wide / tall) and compare

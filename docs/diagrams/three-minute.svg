@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="680" viewBox="0 0 1280 680" role="img" aria-label="Analog2Layout in three minutes">
+<rect x="0" y="0" width="1280" height="680" rx="0" fill="#08111F" stroke="none" stroke-width="1"/>
+<text x="48" y="54" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="40" font-weight="700" fill="#E6EEF8" text-anchor="start">Analog2Layout</text>
+<text x="48" y="84" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="18" font-weight="400" fill="#A9BCD4" text-anchor="start">从真实网表到版图 Card，三分钟看懂</text>
+<rect x="770" y="34" width="64" height="26" rx="13" fill="#0E1A2B" stroke="#22D3EE" stroke-width="1"/>
+<text x="802" y="51" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#22D3EE" text-anchor="middle">名字</text>
+<line x1="836" y1="47" x2="848" y2="47" stroke="#38506D" stroke-width="1.5"/>
+<polygon points="850,47 843,44 843,50" fill="#38506D"/>
+<rect x="848" y="34" width="64" height="26" rx="13" fill="#0E1A2B" stroke="#22D3EE" stroke-width="1"/>
+<text x="880" y="51" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#22D3EE" text-anchor="middle">角色</text>
+<line x1="914" y1="47" x2="926" y2="47" stroke="#38506D" stroke-width="1.5"/>
+<polygon points="928,47 921,44 921,50" fill="#38506D"/>
+<rect x="926" y="34" width="64" height="26" rx="13" fill="#0E1A2B" stroke="#F5B74E" stroke-width="1"/>
+<text x="958" y="51" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#F5B74E" text-anchor="middle">面积</text>
+<line x1="992" y1="47" x2="1004" y2="47" stroke="#38506D" stroke-width="1.5"/>
+<polygon points="1006,47 999,44 999,50" fill="#38506D"/>
+<rect x="1004" y="34" width="64" height="26" rx="13" fill="#0E1A2B" stroke="#F5B74E" stroke-width="1"/>
+<text x="1036" y="51" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#F5B74E" text-anchor="middle">布局</text>
+<line x1="1070" y1="47" x2="1082" y2="47" stroke="#38506D" stroke-width="1.5"/>
+<polygon points="1084,47 1077,44 1077,50" fill="#38506D"/>
+<rect x="1082" y="34" width="64" height="26" rx="13" fill="#0E1A2B" stroke="#34D399" stroke-width="1"/>
+<text x="1114" y="51" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#34D399" text-anchor="middle">Card</text>
+<rect x="48" y="110" width="360" height="470" rx="18" fill="#0E1A2B" stroke="#1E3552" stroke-width="1"/>
+<circle cx="72" cy="146" r="15" fill="#22D3EE" stroke="none" stroke-width="0"/>
+<text x="72" y="151" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#08111F" text-anchor="middle">1</text>
+<text x="96" y="152" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="23" font-weight="700" fill="#E6EEF8" text-anchor="start">名字就是语义</text>
+<text x="72" y="180" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="400" fill="#8FA3BF" text-anchor="start">真实网表只有器件名</text>
+<rect x="440" y="110" width="360" height="470" rx="18" fill="#0E1A2B" stroke="#1E3552" stroke-width="1"/>
+<circle cx="464" cy="146" r="15" fill="#F5B74E" stroke="none" stroke-width="0"/>
+<text x="464" y="151" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#08111F" text-anchor="middle">2</text>
+<text x="488" y="152" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="23" font-weight="700" fill="#E6EEF8" text-anchor="start">面积 &amp; 摆放</text>
+<text x="464" y="180" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="400" fill="#8FA3BF" text-anchor="start">不是一块 OD，也不是一个数</text>
+<rect x="832" y="110" width="360" height="470" rx="18" fill="#0E1A2B" stroke="#1E3552" stroke-width="1"/>
+<circle cx="856" cy="146" r="15" fill="#34D399" stroke="none" stroke-width="0"/>
+<text x="856" y="151" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#08111F" text-anchor="middle">3</text>
+<text x="880" y="152" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="23" font-weight="700" fill="#E6EEF8" text-anchor="start">一页 Layout Card</text>
+<text x="856" y="180" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="400" fill="#8FA3BF" text-anchor="start">版图工程师 2 分钟读完</text>
+<rect x="70" y="204" width="316" height="188" rx="12" fill="#0A1524" stroke="#1C2E45" stroke-width="1"/>
+<text x="84" y="228" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11.5" font-weight="400" fill="#64748B" text-anchor="start"># name-only netlist</text>
+<text x="84" y="256" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="15" fill="#AFC3DD"><tspan fill="#22D3EE" font-weight="700">M1_DP</tspan>  n1  vinp  ntail  vss  nmos</text>
+<text x="84" y="287" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="15" fill="#AFC3DD"><tspan fill="#22D3EE" font-weight="700">M2_DP</tspan>  n2  vinn  ntail  vss  nmos</text>
+<text x="84" y="318" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="15" fill="#AFC3DD"><tspan fill="#F5B74E" font-weight="700">M3_CM</tspan>  n1  n1    vdd    vdd  pmos</text>
+<text x="84" y="349" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="15" fill="#AFC3DD"><tspan fill="#A78BFA" font-weight="700">M5_TAIL</tspan> ntail nbias vss  vss  nmos</text>
+<text x="84" y="380" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="15" fill="#AFC3DD"><tspan fill="#34D399" font-weight="700">M8_EN</tspan>  ntail en  vss  vss  nmos</text>
+<rect x="70" y="412" width="96" height="24" rx="12" fill="#0A1524" stroke="#22D3EE" stroke-width="1"/>
+<text x="118.0" y="428.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#22D3EE" text-anchor="middle">DP 输入对</text>
+<rect x="174" y="412" width="96" height="24" rx="12" fill="#0A1524" stroke="#F5B74E" stroke-width="1"/>
+<text x="222.0" y="428.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#F5B74E" text-anchor="middle">CM 电流镜</text>
+<rect x="278" y="412" width="96" height="24" rx="12" fill="#0A1524" stroke="#A78BFA" stroke-width="1"/>
+<text x="326.0" y="428.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#A78BFA" text-anchor="middle">TAIL 尾电流</text>
+<rect x="70" y="444" width="96" height="24" rx="12" fill="#0A1524" stroke="#34D399" stroke-width="1"/>
+<text x="118.0" y="460.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#34D399" text-anchor="middle">EN 使能</text>
+<rect x="174" y="444" width="96" height="24" rx="12" fill="#0A1524" stroke="#F87171" stroke-width="1"/>
+<text x="222.0" y="460.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#F87171" text-anchor="middle">ADJ trim</text>
+<rect x="70" y="492" width="316" height="58" rx="12" fill="#0B1A2A" stroke="#22D3EE" stroke-width="1"/>
+<text x="84" y="516" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#E6EEF8" text-anchor="start">名字是主参考</text>
+<text x="84" y="538" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.5" font-weight="400" fill="#8FA3BF" text-anchor="start">role= 只是可选确认</text>
+<text x="462" y="212" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="11.5" font-weight="600" fill="#8FA3BF" text-anchor="start">role / match / group</text>
+<rect x="462" y="224" width="84" height="22" rx="12" fill="#0A1524" stroke="#22D3EE" stroke-width="1"/>
+<text x="504.0" y="239.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#22D3EE" text-anchor="middle">input_pair</text>
+<rect x="554" y="224" width="84" height="22" rx="12" fill="#0A1524" stroke="#F5B74E" stroke-width="1"/>
+<text x="596.0" y="239.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#F5B74E" text-anchor="middle">mirror</text>
+<rect x="646" y="224" width="84" height="22" rx="12" fill="#0A1524" stroke="#34D399" stroke-width="1"/>
+<text x="688.0" y="239.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#34D399" text-anchor="middle">output</text>
+<text x="462" y="286" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.8" font-weight="400" fill="#C7D2E5" text-anchor="start">device core</text>
+<text x="778" y="286" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#C7D2E5" text-anchor="end">1,409</text>
+<rect x="462" y="292" width="316" height="12" rx="6" fill="#0A1524" stroke="none" stroke-width="1"/>
+<rect x="462" y="292" width="121.976" height="12" rx="6" fill="#22D3EE" stroke="none" stroke-width="1"/>
+<text x="462" y="318" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.8" font-weight="400" fill="#C7D2E5" text-anchor="start">+ ring/routing</text>
+<text x="778" y="318" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#C7D2E5" text-anchor="end">1,707</text>
+<rect x="462" y="324" width="316" height="12" rx="6" fill="#0A1524" stroke="none" stroke-width="1"/>
+<rect x="462" y="324" width="147.888" height="12" rx="6" fill="#2DD4BF" stroke="none" stroke-width="1"/>
+<text x="462" y="350" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.8" font-weight="400" fill="#C7D2E5" text-anchor="start">+ dummy/match</text>
+<text x="778" y="350" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#C7D2E5" text-anchor="end">2,247</text>
+<rect x="462" y="356" width="316" height="12" rx="6" fill="#0A1524" stroke="none" stroke-width="1"/>
+<rect x="462" y="356" width="194.656" height="12" rx="6" fill="#A78BFA" stroke="none" stroke-width="1"/>
+<text x="462" y="382" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.8" font-weight="400" fill="#C7D2E5" text-anchor="start">+ periphery</text>
+<text x="778" y="382" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#C7D2E5" text-anchor="end">3,377</text>
+<rect x="462" y="388" width="316" height="12" rx="6" fill="#0A1524" stroke="none" stroke-width="1"/>
+<rect x="462" y="388" width="292.61600000000004" height="12" rx="6" fill="#F5B74E" stroke="none" stroke-width="1"/>
+<text x="462" y="414" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.8" font-weight="400" fill="#C7D2E5" text-anchor="start">+ reserve</text>
+<text x="778" y="414" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#C7D2E5" text-anchor="end">3,647</text>
+<rect x="462" y="420" width="316" height="12" rx="6" fill="#0A1524" stroke="none" stroke-width="1"/>
+<rect x="462" y="420" width="316.0" height="12" rx="6" fill="#64748B" stroke="none" stroke-width="1"/>
+<text x="462" y="450" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#F5B74E" text-anchor="start">device core ≠ sensitive core</text>
+<rect x="466" y="470" width="78" height="78" rx="8" fill="#0A1524" stroke="#22D3EE" stroke-width="1.4"/>
+<rect x="475" y="479" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="497" y="479" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="519" y="479" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="475" y="501" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="497" y="501" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="519" y="501" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="475" y="523" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="497" y="523" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<rect x="519" y="523" width="16" height="16" rx="3" fill="#123247" stroke="#1E4E66" stroke-width="1"/>
+<text x="505.0" y="566" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="10.5" font-weight="700" fill="#22D3EE" text-anchor="middle">200×200</text>
+<rect x="570" y="455" width="38" height="95" rx="8" fill="#0A1524" stroke="#F5B74E" stroke-width="1.4"/>
+<rect x="578" y="463" width="22" height="17" rx="3" fill="#3A2A14" stroke="#7A5520" stroke-width="1"/>
+<rect x="578" y="485" width="22" height="17" rx="3" fill="#3A2A14" stroke="#7A5520" stroke-width="1"/>
+<rect x="578" y="507" width="22" height="17" rx="3" fill="#3A2A14" stroke="#7A5520" stroke-width="1"/>
+<rect x="578" y="529" width="22" height="17" rx="3" fill="#3A2A14" stroke="#7A5520" stroke-width="1"/>
+<text x="589.0" y="566" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="10.5" font-weight="700" fill="#F5B74E" text-anchor="middle">100×400</text>
+<text x="640" y="524" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#E6EEF8" text-anchor="start">同一总面积</text>
+<text x="640" y="546" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12.5" font-weight="400" fill="#8FA3BF" text-anchor="start">不同 bbox</text>
+<rect x="854" y="204" width="316" height="300" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+<text x="872" y="234" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="start">BGR / VCOM</text>
+<text x="872" y="256" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="11" font-weight="400" fill="#64748B" text-anchor="start">Layout Card</text>
+<text x="1152" y="234" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="10.5" font-weight="600" fill="#64748B" text-anchor="end">v0.1</text>
+<line x1="872" y1="266" x2="1152" y2="266" stroke="#E2E8F0" stroke-width="1"/>
+<text x="872" y="290" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="11" font-weight="700" fill="#64748B" text-anchor="start">Top 3 risks</text>
+<circle cx="878" cy="310" r="9" fill="#0F172A" stroke="none" stroke-width="0"/>
+<text x="878" y="314" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="894" y="314" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="start">core 匹配环境</text>
+<circle cx="878" cy="336" r="9" fill="#0F172A" stroke="none" stroke-width="0"/>
+<text x="878" y="340" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="894" y="340" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="start">startup / 电源顺序</text>
+<circle cx="878" cy="362" r="9" fill="#0F172A" stroke="none" stroke-width="0"/>
+<text x="878" y="366" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="894" y="366" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="start">参考回流 / 屏蔽</text>
+<line x1="872" y1="376" x2="1152" y2="376" stroke="#E2E8F0" stroke-width="1"/>
+<text x="872" y="398" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="start">Must preserve</text>
+<text x="872" y="418" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="11.8" font-weight="400" fill="#0F172A" text-anchor="start">CORE 同环境 · RES 同方向</text>
+<text x="872" y="444" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="start">Forbidden</text>
+<text x="872" y="464" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="11.8" font-weight="400" fill="#0F172A" text-anchor="start">数字线跨 CORE</text>
+<rect x="872" y="480" width="52" height="22" rx="12" fill="#0A1524" stroke="#B45309" stroke-width="1"/>
+<text x="898.0" y="495.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#B45309" text-anchor="middle">ASK</text>
+<rect x="932" y="480" width="68" height="22" rx="12" fill="#0A1524" stroke="#B91C1C" stroke-width="1"/>
+<text x="966.0" y="495.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#B91C1C" text-anchor="middle">UNKNOWN</text>
+<rect x="1008" y="480" width="58" height="22" rx="12" fill="#0A1524" stroke="#1D4ED8" stroke-width="1"/>
+<text x="1037.0" y="495.0" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="600" fill="#1D4ED8" text-anchor="middle">owner</text>
+<text x="854" y="534" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#8FA3BF" text-anchor="start">BGR / VCOM 已各有 Card</text>
+<text x="854" y="556" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="11.5" font-weight="400" fill="#6F86A6" text-anchor="start">Principle → Module → Pattern → Case</text>
+<line x1="48" y1="610" x2="1232" y2="610" stroke="#1E3552" stroke-width="1"/>
+<text x="48" y="638" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="14" font-weight="400" fill="#8FA3BF" text-anchor="start">名字 → 角色 → 面积 → 布局 → Card → 问题回流</text>
+<text x="1232" y="638" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="400" fill="#6F86A6" text-anchor="end">v0.1 · 2026-10</text>
+</svg>

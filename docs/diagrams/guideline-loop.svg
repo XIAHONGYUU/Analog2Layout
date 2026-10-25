@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="layout guideline loop">
+<rect x="0" y="0" width="1200" height="560" rx="0" fill="#08111F" stroke="none" stroke-width="1"/>
+<text x="48" y="54" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="34" font-weight="700" fill="#E6EEF8" text-anchor="start">Layout Guideline 的闭环</text>
+<text x="48" y="84" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="16" font-weight="400" fill="#A9BCD4" text-anchor="start">不是写一份文档，而是让问题不再重复</text>
+<rect x="48" y="120" width="500" height="360" rx="18" fill="#0E1A2B" stroke="#1E3552" stroke-width="1"/>
+<text x="72" y="158" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="20" font-weight="700" fill="#E6EEF8" text-anchor="start">四层结构 + 一页 Card</text>
+<rect x="72" y="188" width="452" height="48" rx="10" fill="#0A1524" stroke="#1B3048" stroke-width="1"/>
+<rect x="72" y="188" width="6" height="48" rx="3" fill="#22D3EE" stroke="none" stroke-width="1"/>
+<text x="94" y="218" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#22D3EE" text-anchor="start">Principle</text>
+<text x="238" y="218" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#C7D2E5" text-anchor="start">为什么需要这个动作</text>
+<rect x="72" y="246" width="452" height="48" rx="10" fill="#0A1524" stroke="#1B3048" stroke-width="1"/>
+<rect x="72" y="246" width="6" height="48" rx="3" fill="#F5B74E" stroke="none" stroke-width="1"/>
+<text x="94" y="276" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#F5B74E" text-anchor="start">Module</text>
+<text x="238" y="276" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#C7D2E5" text-anchor="start">这个模块最怕什么</text>
+<rect x="72" y="304" width="452" height="48" rx="10" fill="#0A1524" stroke="#1B3048" stroke-width="1"/>
+<rect x="72" y="304" width="6" height="48" rx="3" fill="#A78BFA" stroke="none" stroke-width="1"/>
+<text x="94" y="334" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#A78BFA" text-anchor="start">Pattern</text>
+<text x="238" y="334" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#C7D2E5" text-anchor="start">这类电路通常怎么画</text>
+<rect x="72" y="362" width="452" height="48" rx="10" fill="#0A1524" stroke="#1B3048" stroke-width="1"/>
+<rect x="72" y="362" width="6" height="48" rx="3" fill="#34D399" stroke="none" stroke-width="1"/>
+<text x="94" y="392" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#34D399" text-anchor="start">Case / Problem</text>
+<text x="238" y="392" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#C7D2E5" text-anchor="start">以前哪里错过 / 怎么验证</text>
+<rect x="72" y="420" width="452" height="48" rx="10" fill="#0A1524" stroke="#1B3048" stroke-width="1"/>
+<rect x="72" y="420" width="6" height="48" rx="3" fill="#F87171" stroke="none" stroke-width="1"/>
+<text x="94" y="450" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#F87171" text-anchor="start">Layout Card</text>
+<text x="238" y="450" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#C7D2E5" text-anchor="start">2 分钟先读的一页</text>
+<rect x="580" y="120" width="572" height="360" rx="18" fill="#0E1A2B" stroke="#1E3552" stroke-width="1"/>
+<text x="604" y="158" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="20" font-weight="700" fill="#E6EEF8" text-anchor="start">问题不再重复</text>
+<rect x="604" y="190" width="116" height="54" rx="10" fill="#0A1524" stroke="#22D3EE" stroke-width="1.2"/>
+<text x="662" y="222" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#22D3EE" text-anchor="middle">问题出现</text>
+<rect x="744" y="190" width="116" height="54" rx="10" fill="#0A1524" stroke="#F5B74E" stroke-width="1.2"/>
+<text x="802" y="222" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#F5B74E" text-anchor="middle">记录</text>
+<rect x="884" y="190" width="116" height="54" rx="10" fill="#0A1524" stroke="#A78BFA" stroke-width="1.2"/>
+<text x="942" y="222" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#A78BFA" text-anchor="middle">查重</text>
+<rect x="1024" y="190" width="116" height="54" rx="10" fill="#0A1524" stroke="#34D399" stroke-width="1.2"/>
+<text x="1082" y="222" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#34D399" text-anchor="middle">patch</text>
+<line x1="724" y1="217" x2="738" y2="217" stroke="#38506D" stroke-width="2"/>
+<polygon points="738,217 730.1,221.3 730.1,212.7" fill="#38506D"/>
+<line x1="864" y1="217" x2="878" y2="217" stroke="#38506D" stroke-width="2"/>
+<polygon points="878,217 870.1,221.3 870.1,212.7" fill="#38506D"/>
+<line x1="1004" y1="217" x2="1018" y2="217" stroke="#38506D" stroke-width="2"/>
+<polygon points="1018,217 1010.1,221.3 1010.1,212.7" fill="#38506D"/>
+<line x1="1082" y1="244" x2="1082" y2="286" stroke="#34D399" stroke-width="2"/>
+<polygon points="1082,286 1077.7,278.1 1086.3,278.1" fill="#34D399"/>
+<rect x="1024" y="292" width="116" height="54" rx="10" fill="#0A1524" stroke="#34D399" stroke-width="1.2"/>
+<text x="1082" y="324" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="15" font-weight="700" fill="#34D399" text-anchor="middle">验证</text>
+<line x1="1024" y1="319" x2="604" y2="319" stroke="#38506D" stroke-width="2" stroke-dasharray="7 6"/>
+<polygon points="604,319 611.9,314.7 611.9,323.3" fill="#38506D"/>
+<rect x="744" y="300" width="210" height="40" rx="10" fill="#0A1524" stroke="#1B3048" stroke-width="1"/>
+<text x="849" y="325" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="14" font-weight="600" fill="#C7D2E5" text-anchor="middle">下一项目</text>
+<line x1="604" y1="390" x2="1128" y2="390" stroke="#1E3552" stroke-width="1"/>
+<text x="604" y="418" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="600" fill="#F5B74E" text-anchor="start">同一机制 ≥2 次 → 必须产生一条 guideline 变更</text>
+<text x="604" y="442" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="400" fill="#8FA3BF" text-anchor="start">项目特定数值留在 private rule pack</text>
+<line x1="48" y1="516" x2="1152" y2="516" stroke="#1E3552" stroke-width="1"/>
+<text x="48" y="542" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="400" fill="#8FA3BF" text-anchor="start">问题驱动，不是文档驱动</text>
+<text x="1152" y="542" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="12" font-weight="400" fill="#6F86A6" text-anchor="end">Analog2Layout · Layout Guideline</text>
+</svg>
