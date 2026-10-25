@@ -1,6 +1,6 @@
 # Layout Card — BGR
 
-**版本**：v0.1 · **owner**：analog + layout · **状态**：draft  
+**版本**：v0.1 · **owner**：analog + layout · **状态**：draft
 **产物**：floorplan（待生成）· area report（待生成）· case（见文末）
 
 ## 1. 一句话 + 信号链
