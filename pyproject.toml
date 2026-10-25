@@ -20,6 +20,11 @@ classifiers = [
 ]
 dependencies = []
 
+[project.urls]
+Homepage = "https://github.com/XIAHONGYUU/analog2layout"
+Repository = "https://github.com/XIAHONGYUU/analog2layout"
+Issues = "https://github.com/XIAHONGYUU/analog2layout/issues"
+
 [project.scripts]
 a2l = "a2l.cli:main"
 

@@ -25,8 +25,9 @@ layout-induced schematic delta manifest.
 - Demo: `examples/two_stage/out/` (SVG, PNG, JSON, HANDOFF, HTML); block area
   ≈ 3377 µm², envelope ≈ 3647 µm², shape 107.0 × 51.8 µm, aspect 2.07,
   squareness 0.48, landscape, area gate PASS at 0.005 mm² (headroom 442 µm²).
-- Git repository is initialized and changes are staged; no commit (Git identity
-  not configured) and no remote.
+- Git: commit `6eec188`, pushed to
+  https://github.com/XIAHONGYUU/analog2layout (public, `main`).
+- GitHub Actions CI is green on Python 3.10 / 3.11 / 3.12.
 
 ## Next atomic action
 
