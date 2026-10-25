@@ -1,6 +1,6 @@
 # Disclaimer
 
-analog2layout (a2l) is a **research/reference prototype**, not a production EDA
+Analog2Layout (a2l) is a **research/reference prototype**, not a production EDA
 tool.
 
 - Area numbers are early planning estimates, not signoff extraction.

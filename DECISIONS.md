@@ -1,6 +1,6 @@
 # Decisions
 
-Durable decisions for analog2layout. Each entry has an owner, status, and source.
+Durable decisions for Analog2Layout. Each entry has an owner, status, and source.
 `CURRENT_TASK.md` is the live action source; this file records decisions that
 should survive individual tasks.
 

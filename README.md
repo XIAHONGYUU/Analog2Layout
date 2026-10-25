@@ -1,7 +1,7 @@
-# analog2layout (`a2l`)
+# Analog2Layout (`a2l`)
 
-[![ci](https://github.com/XIAHONGYUU/analog2layout/actions/workflows/ci.yml/badge.svg)](https://github.com/XIAHONGYUU/analog2layout/actions/workflows/ci.yml)
-[![GitHub](https://img.shields.io/badge/GitHub-XIAHONGYUU%2Fanalog2layout-181717?logo=github)](https://github.com/XIAHONGYUU/analog2layout)
+[![ci](https://github.com/XIAHONGYUU/Analog2Layout/actions/workflows/ci.yml/badge.svg)](https://github.com/XIAHONGYUU/Analog2Layout/actions/workflows/ci.yml)
+[![GitHub](https://img.shields.io/badge/GitHub-XIAHONGYUU%2FAnalog2Layout-181717?logo=github)](https://github.com/XIAHONGYUU/Analog2Layout)
 
 > 把模拟设计师脑中的“这个管子是干什么的、哪里必须匹配、面积大概多少、版图该怎么摆”变成可版本化的数据，让 AI、模拟工程师和版图工程师围着同一张白线图讨论。
 
@@ -333,7 +333,7 @@ a2l 的差异点是把**器件角色、面积、白线布局、PEX 前改动**�
 
 ## 12. 参与
 
-仓库地址：<https://github.com/XIAHONGYUU/analog2layout>
+仓库地址：<https://github.com/XIAHONGYUU/Analog2Layout>
 
 - 有真实 PDK/公司规则包？请先脱敏，再以 `rules/<name>.json` 的形式贡献 schema 和校准方法，不要提交工艺厂机密。
 - 想接 Cadence / KLayout / OpenROAD / GLayout？从 `a2l/floorplan.py` 的 `Floorplan.to_dict()` 和 `schemas/floorplan.schema.json` 开始。

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Ship **analog2layout v0.1**: a runnable, documented GitHub workspace that turns
+Ship **Analog2Layout v0.1**: a runnable, documented GitHub workspace that turns
 role-annotated analog netlists into (a) a five-level area estimate, (b) a
 white-line floorplan intent with shape/arrangement metrics, and (c) a
 layout-induced schematic delta manifest.
@@ -26,7 +26,7 @@ layout-induced schematic delta manifest.
   ≈ 3377 µm², envelope ≈ 3647 µm², shape 107.0 × 51.8 µm, aspect 2.07,
   squareness 0.48, landscape, area gate PASS at 0.005 mm² (headroom 442 µm²).
 - Git: committed and pushed to
-  https://github.com/XIAHONGYUU/analog2layout (public, `main`).
+  https://github.com/XIAHONGYUU/Analog2Layout (public, `main`).
 - GitHub Actions CI is green on Python 3.10 / 3.11 / 3.12.
 
 ## Next atomic action

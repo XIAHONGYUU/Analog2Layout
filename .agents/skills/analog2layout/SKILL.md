@@ -1,9 +1,9 @@
 ---
 name: analog2layout
-description: Use when working in the analog2layout workspace to annotate analog devices by role, estimate area from a rule pack, generate or review a white-line floorplan, or plan layout-induced schematic deltas (dummy/decap/reserve) before PEX. Do not use for signoff DRC/LVS/PEX or for inventing PDK rules.
+description: Use when working in the Analog2Layout workspace to annotate analog devices by role, estimate area from a rule pack, generate or review a white-line floorplan, or plan layout-induced schematic deltas (dummy/decap/reserve) before PEX. Do not use for signoff DRC/LVS/PEX or for inventing PDK rules.
 ---
 
-# analog2layout skill
+# Analog2Layout skill
 
 ## What this workspace does
 

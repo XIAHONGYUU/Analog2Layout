@@ -1,14 +1,14 @@
 cff-version: 1.2.0
 message: "If you use this workspace, please cite it as below."
-title: "analog2layout (a2l)"
+title: "Analog2Layout (a2l)"
 abstract: "A role-aware schematic-to-layout handoff layer for analog circuits: five-level area estimation, white-line floorplan intent, and layout-induced schematic deltas."
 type: software
 authors:
-  - name: "analog2layout contributors"
+  - name: "Analog2Layout contributors"
 version: 0.1.0
 date-released: 2026-10-25
 license: Apache-2.0
-repository-code: "https://github.com/XIAHONGYUU/analog2layout"
+repository-code: "https://github.com/XIAHONGYUU/Analog2Layout"
 keywords:
   - analog design
   - layout

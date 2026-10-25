@@ -1,4 +1,4 @@
-* Two-stage Miller OTA — analog2layout reference example
+* Two-stage Miller OTA — Analog2Layout reference example
 * Width convention: w is the per-finger width, total W = w * nf * m.
 * Annotations:
 *   role=   functional role from the taxonomy (input_pair, current_mirror, ...)

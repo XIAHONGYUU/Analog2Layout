@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/analog2layout/area_report.schema.json",
-  "title": "analog2layout area report",
+  "$id": "https://example.com/Analog2Layout/area_report.schema.json",
+  "title": "Analog2Layout area report",
   "description": "Five-level early-planning area report. Not a signoff extraction.",
   "type": "object",
   "required": [

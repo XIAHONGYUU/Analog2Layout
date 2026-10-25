@@ -3,13 +3,13 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "analog2layout"
+name = "Analog2Layout"
 version = "0.1.0"
 description = "Role-aware schematic-to-layout handoff for analog circuits"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
-authors = [{ name = "analog2layout contributors" }]
+authors = [{ name = "Analog2Layout contributors" }]
 keywords = ["analog", "layout", "EDA", "floorplan", "LLM", "agent"]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -21,9 +21,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/XIAHONGYUU/analog2layout"
-Repository = "https://github.com/XIAHONGYUU/analog2layout"
-Issues = "https://github.com/XIAHONGYUU/analog2layout/issues"
+Homepage = "https://github.com/XIAHONGYUU/Analog2Layout"
+Repository = "https://github.com/XIAHONGYUU/Analog2Layout"
+Issues = "https://github.com/XIAHONGYUU/Analog2Layout/issues"
 
 [project.scripts]
 a2l = "a2l.cli:main"

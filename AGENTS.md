@@ -1,4 +1,4 @@
-# AGENTS.md — analog2layout
+# AGENTS.md — Analog2Layout
 
 This file is the durable operating contract for AI agents working in this repository.
 `CURRENT_TASK.md` is the live action source; read it first.

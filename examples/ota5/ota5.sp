@@ -1,4 +1,4 @@
-* Five-transistor OTA — minimal analog2layout example
+* Five-transistor OTA — minimal Analog2Layout example
 * Width convention: w is per-finger, total W = w * nf * m.
 
 .subckt ota5 vinp vinn vout vdd vss nbias

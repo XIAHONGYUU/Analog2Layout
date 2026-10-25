@@ -1,4 +1,4 @@
-"""Command-line interface for analog2layout."""
+"""Command-line interface for Analog2Layout."""
 
 from __future__ import annotations
 
