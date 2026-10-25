@@ -16,5 +16,7 @@
 | [`current-mirror.md`](current-mirror.md) | 电流镜 |
 | [`resistor-array.md`](resistor-array.md) | 电阻阵列 |
 | [`capacitor-array.md`](capacitor-array.md) | 电容阵列 |
+| [`trim-network.md`](trim-network.md) | 电阻串 + trim 开关 |
+| [`output-stage.md`](output-stage.md) | 输出级 |
 
 具体 dummy 数量、ring 宽度、间距、线宽请放到 rule pack 或公司私有层。

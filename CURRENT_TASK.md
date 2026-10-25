@@ -21,9 +21,11 @@ service, or audit service.
 - `layout-guideline/` scaffold added:
   - `00-workflow/` roles, steps, deliverables;
   - `01-principles/` matching, power/ground, signal/parasitics, ESD/HV;
-  - `02-modules/two-stage-ota/` module page + one-page Layout Card + intent;
-  - `03-patterns/` diff pair, current mirror, resistor array, capacitor array;
-  - `04-cases/`, `05-templates/`, `06-sources/`.
+  - `02-modules/` three cards: two-stage OTA, BGR, VCOM; plus BGR vs VCOM comparison;
+  - `03-patterns/` diff pair, current mirror, resistor/cap array, trim network,
+    output stage;
+  - `04-cases/` two synthetic cases: BGR reference return, VCOM power return;
+  - `05-templates/`, `06-sources/`.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -33,11 +35,11 @@ service, or audit service.
 
 ## Next atomic action
 
-1. Add 2–3 more synthetic module pages/cards (BGR, LDO, VCOM, SADC, AFE_CH).
-2. Add 2–3 more pattern cards (cascode, guard ring, power grid, ESD clamp).
-3. Add a small **card completeness check** (not a review service):
-   flags missing `ASK` / `UNKNOWN` / owner / evidence / source links.
-4. Add 1–2 desensitized case cards to show `Case → Pattern` feedback.
+1. Review the BGR and VCOM cards against the “2-minute rule” and tighten wording.
+2. Add a small **card completeness check** (not a review service): flags missing
+   `ASK` / `UNKNOWN` / owner / evidence / source links.
+3. (done) BGR vs VCOM comparison page added.
+4. Optionally add LDO/SADC/AFE_CH cards only if the showcase needs more breadth.
 
 ## Constraints
 
@@ -50,8 +52,8 @@ service, or audit service.
 
 ## Done when
 
-- A layout engineer can read `layout-guideline/02-modules/two-stage-ota/layout-card.md`
-  in ~2 minutes and state the top 3 risks / must-preserve items.
+- A layout engineer can read the two-stage, BGR, or VCOM Layout Card in ~2 minutes
+  and state the top 3 risks / must-preserve items.
 - The workflow in `layout-guideline/00-workflow/` is clear enough to add a new
   module from templates.
 - README links the guideline scaffold and docs/08 correctly.

@@ -29,3 +29,6 @@
 ## 当前示例
 
 - [`two-stage-ota/`](two-stage-ota/)：合成示例，和 `examples/two_stage/` 的 demo 对应。
+- [`bgr/`](bgr/)：匹配 + 启动 + 参考回流的示例。
+- [`vcom/`](vcom/)：大功率输出 + 电阻串/trim + 稳定性的示例。
+- [`bgr-vcom-comparison.md`](bgr-vcom-comparison.md)：同一原则在两个模块里的不同优先级。

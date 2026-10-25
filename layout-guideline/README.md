@@ -4,7 +4,11 @@
 
 ## 先看什么
 
-1. 先看一页 [Layout Card](02-modules/two-stage-ota/layout-card.md)：版图工程师 2 分钟能读完的内容。
+1. 先看一页 Layout Card：版图工程师 2 分钟能读完的内容。
+   - [two-stage OTA](02-modules/two-stage-ota/layout-card.md)
+   - [BGR](02-modules/bgr/layout-card.md)
+   - [VCOM](02-modules/vcom/layout-card.md)
+   - [BGR vs VCOM 对比](02-modules/bgr-vcom-comparison.md)
 2. 再看 [工作流](00-workflow/README.md)：模拟、AI、版图各自做什么。
 3. 需要下钻时，按 `Principle → Module → Pattern → Case` 找内容。
 4. 新增模块时，从 [`05-templates/`](05-templates/) 复制模板。

@@ -246,6 +246,8 @@ Case（以前哪里错过 / 怎么验证）
 - [layout-guideline/README.md](layout-guideline/README.md)
 - [docs/08-ai-layout-guideline.md](docs/08-ai-layout-guideline.md)
 - [two-stage OTA Layout Card](layout-guideline/02-modules/two-stage-ota/layout-card.md)
+- [BGR Layout Card](layout-guideline/02-modules/bgr/layout-card.md)
+- [VCOM Layout Card](layout-guideline/02-modules/vcom/layout-card.md)
 - [Layout Card 模板](layout-guideline/05-templates/layout-card.md)
 
 > 这个工作区只体现**技术交互**：intent、card、floorplan、delta、change log。
@@ -347,12 +349,14 @@ tests/                  unittest，无第三方依赖
 - 白线图 SVG/JSON + 端口/通道/对称轴 + reserve
 - layout delta + HANDOFF + HTML 交接包
 - role/rule ownership + `--require-explicit-roles`
-- AI-native Layout Guideline 文件夹 + 工作流 + 一页 Layout Card 示例
+- AI-native Layout Guideline 文件夹 + 工作流
+- 一页 Layout Card 示例：two-stage OTA / BGR / VCOM
+- BGR vs VCOM 的模块优先级对比
 - 三个示例 + 测试 + CI
 
 **v0.2**
 - 拓扑辅助的 role 建议（diode-connected、mirror、cascode、switch、output）
-- 增加 3–5 个模块 card（BGR / LDO / VCOM / SADC / AFE_CH，均为脱敏/合成）
+- 增加 2–3 个模块 card（LDO / SADC / AFE_CH，均为脱敏/合成）
 - 增加 5–8 个 pattern card（cascode、guard ring、power grid、ESD clamp 等）
 - card 完整性检查：缺 `ASK`/`UNKNOWN`/owner/证据时给出提示（不是主审）
 - 从 case 回流：把“返工原因”整理成 pattern/principle 候选

@@ -13,7 +13,8 @@
 - [x] layout delta + HANDOFF + HTML 交接包
 - [x] role/rule ownership + `--require-explicit-roles`
 - [x] `layout-guideline/` 文件夹 + 工作流
-- [x] 一页 Layout Card 示例（two-stage OTA）
+- [x] 一页 Layout Card 示例：two-stage OTA / BGR / VCOM
+- [x] BGR vs VCOM 模块优先级对比
 - [x] Principle / Pattern / Template 骨架
 - [x] `agent/prompts/compile_layout_card.md`
 - [x] 三个示例 + unittest + GitHub Actions
@@ -22,7 +23,7 @@
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 
-- [ ] 3–5 个模块 card（BGR / LDO / VCOM / SADC / AFE_CH，均为合成/脱敏）
+- [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 5–8 个 pattern card（cascode、guard ring、power grid、ESD clamp 等）
 - [ ] 2–3 个 case card（failure / near-miss / tradeoff）
 - [ ] card 完整性检查：缺 `ASK`/`UNKNOWN`/owner/evidence 时提示

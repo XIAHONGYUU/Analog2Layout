@@ -1,0 +1,149 @@
+# 合成示例：BGR
+# 不对应真实项目/PDK；NPN 与 MOS core 只作为讨论分支。
+
+module: bgr
+version: 0.1
+owner:
+  analog: TBD
+  layout: TBD
+status: draft
+
+purpose: >
+  产生低温度漂移、低噪声、可 trim 的参考电压/电流，并保证上电/断电/异常电源下可靠启动。
+
+ports:
+  inputs: [vdd, vss]
+  outputs: [vref]
+  controls: [en, trim]
+  references: [vssa_ref]
+
+signal_chain:
+  - startup -> bias -> core -> vbg -> trim -> output_buffer -> vref
+  - current_mirror -> core
+  - resistor_array -> core / trim
+
+devices:
+  - name: M1
+    role: bias
+    match: CORE
+    group: CORE
+    layout: common_centroid
+  - name: M2
+    role: bias
+    match: CORE
+    group: CORE
+    layout: common_centroid
+  - name: M3
+    role: current_mirror
+    match: CM
+    group: MIRROR
+    layout: interdigitated
+  - name: M4
+    role: current_mirror
+    match: CM
+    group: MIRROR
+    layout: interdigitated
+  - name: R1
+    role: bias
+    match: RES
+    group: RES
+    layout: same_unit_same_environment
+  - name: R2
+    role: bias
+    match: RES
+    group: RES
+    layout: same_unit_same_environment
+  - name: M5
+    role: enable_switch
+    group: START
+  - name: M6
+    role: bias
+    group: START
+  - name: M7
+    role: adj_switch
+    match: TRIM
+    group: TRIM
+  - name: C1
+    role: decap
+    group: OUT
+
+node_attributes:
+  vref:
+    driver: output_buffer
+    level: analog_reference
+    speed: static
+    noise: very_sensitive
+    matching: high
+    current: low
+    parasitic: high
+  vbg:
+    driver: core
+    level: analog_internal
+    speed: static
+    noise: very_sensitive
+    matching: high
+    parasitic: high
+  vssa_ref:
+    driver: reference_ground
+    level: reference
+    speed: static
+    noise: very_sensitive
+    current: low
+    parasitic: high
+  vdd:
+    driver: supply
+    level: supply
+    speed: static
+    noise: supply_noise
+    current: low
+    parasitic: medium
+
+physical_intent:
+  symmetry_axis: through_core
+  matching:
+    CORE: common_centroid_with_boundary_dummies
+    CM: same_unit_same_environment
+    RES: same_unit_same_route_environment
+    TRIM: same_switch_environment
+  isolation:
+    core: independent_ring
+    resistor_array: independent_ring
+    noisy_blocks: keep_away
+  shielding:
+    vp_vn_vbg_vref: vssa_ref
+  power:
+    reference_ground: separate_from_digital_noise
+  floorplan:
+    core: center
+    res: dedicated_row_or_column
+    start: near_core
+    trim: near_res
+    output: edge
+  keepouts:
+    - clock_digital_switching_near_core
+    - noisy_supply_near_vref
+    - crossing_over_resistor_body
+
+verification:
+  pre_sim_assumptions:
+    - estimated_core_and_res_parasitics
+    - reference_ground_ideal
+  post_layout_targets:
+    - temp_drift
+    - noise_psrr
+    - offset_monte_carlo
+    - startup
+    - trim_step
+  pex_scope:
+    - core_and_mirror_parasitics
+    - resistor_array_parasitics
+    - vssa_ref_return
+    - vref_load
+
+open_questions:
+  - npn_or_mos_core
+  - chopper_or_not
+  - temp_drift_noise_psrr_targets
+  - trim_range_step_switch_ratio
+  - vref_load_and_filter_cap
+  - pdk_ring_dummy_spacing

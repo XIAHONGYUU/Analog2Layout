@@ -1,0 +1,148 @@
+# 合成示例：VCOM
+# 不对应真实项目/PDK。
+
+module: vcom
+version: 0.1
+owner:
+  analog: TBD
+  layout: TBD
+status: draft
+
+purpose: >
+  产生面板公共电极电压 VCOM，能 source/sink 较大电流、可 trim、稳定，并处理输出级 ESD/过流。
+
+ports:
+  inputs: [vref, vdd, vss]
+  outputs: [vcom]
+  controls: [trim, en]
+  references: [vssa_ref]
+
+signal_chain:
+  - vref -> error_amp -> output_stage -> vcom
+  - resistor_string -> error_amp
+  - trim_switches -> resistor_string
+  - compensation -> output_stage
+
+devices:
+  - name: M1
+    role: input_pair
+    match: AMP
+    group: AMP
+    layout: common_centroid
+  - name: M2
+    role: input_pair
+    match: AMP
+    group: AMP
+    layout: common_centroid
+  - name: M3
+    role: bias
+    group: AMP
+    layout: matching
+  - name: MP
+    role: output_stage
+    match: OUT
+    group: OUT
+    layout: interdigitated
+  - name: MN
+    role: output_stage
+    match: OUT
+    group: OUT
+    layout: interdigitated
+  - name: R1
+    role: bias
+    match: RES
+    group: RES
+    layout: same_unit_same_environment
+  - name: M7
+    role: adj_switch
+    match: TRIM
+    group: TRIM
+  - name: C1
+    role: compensation
+    group: COMP
+  - name: MESD1
+    role: esd
+    group: ESD
+
+node_attributes:
+  vcom:
+    driver: output_stage
+    level: analog_output
+    speed: load_transient
+    noise: sensitive
+    matching: medium
+    current: high
+    esd: yes
+    parasitic: high
+  vref:
+    driver: reference
+    level: analog_reference
+    speed: static
+    noise: very_sensitive
+    matching: high
+    parasitic: high
+  vdd_power:
+    driver: supply
+    level: supply
+    speed: transient
+    noise: high
+    current: high
+    parasitic: high
+  vssa_ref:
+    driver: reference_ground
+    level: reference
+    speed: static
+    noise: very_sensitive
+    current: low
+    parasitic: high
+
+physical_intent:
+  symmetry_axis: through_input_pair
+  matching:
+    AMP: common_centroid_with_boundary_dummies
+    OUT: same_unit_same_environment
+    RES: same_unit_same_route_environment
+    TRIM: same_switch_environment
+  isolation:
+    output_stage: separate_power_and_return
+    input_pair: guard_ring
+    resistor_string: keep_away_from_switching
+  power:
+    output_stage: wide_metal_short_return_separate_rail
+    op_frontend: separate_from_power_stage
+    reference: vssa_ref
+  floorplan:
+    output_stage: edge_near_pad
+    resistor_string: dedicated_row_or_column
+    compensation: near_output
+    esd: near_pad
+  keepouts:
+    - clock_digital_switching_over_resistor_string
+    - high_current_return_under_input_pair
+    - noisy_supply_near_vref
+
+verification:
+  pre_sim_assumptions:
+    - estimated_output_parasitics
+    - load_model
+  post_layout_targets:
+    - load_transient
+    - loop_stability
+    - trim_accuracy
+    - output_em_ir
+    - esd_latchup
+    - output_noise
+  pex_scope:
+    - output_stage_and_power_return
+    - resistor_string_and_trim
+    - compensation_cap
+    - input_pair_and_reference
+
+open_questions:
+  - max_source_sink_current
+  - load_cap_and_transient
+  - output_stage_and_compensation
+  - trim_range_step_switch_ratio
+  - power_domain_split
+  - esd_level_and_path
+  - pdk_width_via_esd_rules
