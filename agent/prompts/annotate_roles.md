@@ -29,20 +29,23 @@ Return JSON only, conforming to `schemas/annotation.schema.json`.
 
 ## Rules
 
-1. Prefer explicit `role=` in the netlist. If present, keep it.
-2. If absent, use topology first, names second, comments third.
-3. Do not infer a role from W/L alone.
-4. `match` means electrical matching, not just functional grouping. Do not put
-   an output NMOS and PMOS in the same `match` group.
-5. `group` may be a functional block such as `IN`, `LOAD`, `OUT`, `BIAS`.
-6. `layout` is an intent: `common_centroid`, `interdigitated`, `stacked`,
+1. **Names are the primary semantic source** in real simulation/verification
+   netlists. Parse the role token first (`M1_DP`, `M3_CM`, `M5_TAIL`, `M8_EN`).
+2. Explicit `role=` is an optional confirmed override. If present, keep it.
+3. Use topology/comments only as secondary evidence, not as a replacement for a
+   missing name token.
+4. Do not infer a role from W/L alone.
+5. `match` means electrical matching. If the name token suggests a group
+   (`DP`, `CM`, `TAIL`), propose it; a human can override.
+6. `group` may be a functional block such as `IN`, `LOAD`, `OUT`, `BIAS`.
+7. `layout` is an intent: `common_centroid`, `interdigitated`, `stacked`,
    `minimal`, or `null`.
-7. Every device gets `confidence` and `evidence`. Evidence must be checkable
-   (e.g. "M1.gate == M1.drain").
-8. If two interpretations are plausible, choose `unknown` and explain.
-9. Do not change device names, nodes, W/L, nf, m, or capacitor values.
-10. Do not invent DRC/company rules.
-11. The role taxonomy is owned by the analog design engineer. Your output is a
+8. Every device gets `confidence` and `evidence`. Evidence must be checkable
+   (e.g. "name token DP", "M1.gate == M1.drain").
+9. If the name has no semantic token and topology is ambiguous, choose `unknown`.
+10. Do not change device names, nodes, W/L, nf, m, or capacitor values.
+11. Do not invent DRC/company rules.
+12. The role taxonomy is owned by the analog design engineer. Your output is a
     proposal, not an approved annotation; the analog owner must review it before
     it is written back to the schematic.
 
@@ -62,13 +65,13 @@ The user will provide:
   "source": "examples/two_stage/two_stage.sp",
   "devices": [
     {
-      "name": "M1",
+      "name": "M1_DP",
       "role": "input_pair",
       "match": "DP",
       "group": "IN",
       "layout": "common_centroid",
-      "confidence": "topology",
-      "evidence": ["M1 and M2 share source net ntail", "gates are vinp/vinn"],
+      "confidence": "name",
+      "evidence": ["name token DP", "M1_DP and M2_DP share source net ntail"],
       "notes": ""
     }
   ]

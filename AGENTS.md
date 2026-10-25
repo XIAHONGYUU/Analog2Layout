@@ -5,17 +5,17 @@ This file is the durable operating contract for AI agents working in this reposi
 
 ## Mission
 
-Maintain an **evolving concept/prototype workspace** for technical interaction
+Maintain an **evolving workspace** for technical interaction
 between analog and layout engineers:
 
 1. turn device intent (role/match/group/layout) into structured data;
 2. estimate area with explainable, versioned rules;
-3. generate a white-line floorplan intent with device IDs;
+3. generate a floorplan sketch intent with device IDs;
 4. compile an AI-native **Layout Guideline** (Principle → Module → Pattern → Case)
    with a one-page Layout Card as the first-read artifact;
 5. plan predictable post-PEX schematic deltas (dummy/decap/reserve).
 
-The project is an **evolving concept workspace**, not a final production rule base
+The project is an **evolving workspace**, not a final production rule base
 or signoff tool.
 
 **Ownership:** the device-role taxonomy (`a2l/roles.py`, `docs/02-annotation.md`)
@@ -27,7 +27,7 @@ treat a new role or a changed rule value as approved.
 
 - Do not invent foundry/company rule values. Every number must come from a rule pack or be explicitly marked as a heuristic.
 - Do not add/remove/rename a role or change a rule value without an explicit analog-owner request. Propose it in an issue/PR instead.
-- Prefer explicit `role=` annotations. Name fallback is a suggestion; use `a2l validate --require-explicit-roles` when enforcing CI.
+- Names are the primary semantic source in real simulation/verification netlists. Explicit `role=` is an optional confirmed override; use `a2l validate --require-known-roles` to catch `unknown` roles.
 - Do not commit proprietary PDK data, company rule files, schematics, or layout data. Use the generic rule pack and synthetic examples.
 - Do not auto-edit a user's schematic. `layout_delta.json` is a proposal; humans accept/reject it.
 - Do not claim DRC/LVS/PEX accuracy. The output is an early planning estimate.
@@ -53,7 +53,7 @@ Run before claiming completion:
 python3 -m unittest discover -s tests -v
 python3 -m a2l build examples/two_stage/two_stage.sp --out examples/two_stage/out --area-budget-mm2 0.005 --fail-on-gate
 python3 -m a2l compare examples/ota5/ota5.sp examples/ota5_cascode/ota5_cascode.sp --area-budget-mm2 0.005 --fail-on-gate
-python3 -m a2l validate examples/two_stage/two_stage.sp --require-explicit-roles
+python3 -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
 ```
 
 If you change the SVG renderer, also rasterize and inspect the preview:

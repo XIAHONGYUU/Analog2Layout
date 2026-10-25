@@ -1,0 +1,42 @@
+module: <name>
+version: 0.1
+
+# 同一总面积，不同的目标 bbox。
+# 这些不是最终尺寸，而是给 floorplan 变体生成器的输入。
+target:
+  total_area_um2: <number>
+  width_um: <number>
+  height_um: <number>
+  aspect_ratio: <width / height>
+  priority: <area | width | height | square>
+
+# 敏感区优先固定/复用；非敏感区可在剩余空间内调整。
+regions:
+  sensitive:
+    - name: <core / input_pair / reference / trim / esd>
+      reuse: <true|false|unknown>
+      reuse_conditions: []
+      fixed_shape: <true|false>
+  flexible:
+    - name: <bias / digital / decap / routing>
+      note: <可以怎样调整>
+
+constraints:
+  - <matching group cannot split>
+  - <power/ground return must stay short>
+  - <output stage near pad>
+  - <keepout for clock/noise>
+
+variants:
+  - name: square
+    width_um: <number>
+    height_um: <number>
+    risk: <low|medium|high>
+  - name: wide
+    width_um: <number>
+    height_um: <number>
+    risk: <low|medium|high>
+  - name: tall
+    width_um: <number>
+    height_um: <number>
+    risk: <low|medium|high>

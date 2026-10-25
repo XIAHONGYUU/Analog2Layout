@@ -1,10 +1,12 @@
-# 白线图：布局意图，而不是合法版图
+# 布局草图：布局意图，而不是合法版图
 
-> 在 AI-native Layout Guideline 中，白线图是 [Layout Card](../layout-guideline/05-templates/layout-card.md) 的第 6 个区块，不是孤立产物。
+> 术语：Virtuoso 的 white line 是 schematic 辅助标志线；本页的 floorplan sketch 是独立的版图规划图。见 [`docs/09-white-line-and-floorplan.md`](09-white-line-and-floorplan.md)。
 
-## 1. 白线图要回答什么
+> 在 AI-native Layout Guideline 中，布局草图是 [Layout Card](../layout-guideline/05-templates/layout-card.md) 的第 6 个区块，不是孤立产物。
 
-版图工程师拿到一张白线图时，应该能快速回答：
+## 1. 布局草图要回答什么
+
+版图工程师拿到一张布局草图时，应该能快速回答：
 
 1. 这个模块有哪些功能组？
 2. 输入对在哪、对称轴在哪？
@@ -96,7 +98,7 @@ v0.1 使用可解释的 band/template，而不是黑盒优化：
 | `rows` | band 行数 | 3 |
 | `groups_by_band` | 每行几个组 | top=1, mid=3, bottom=3 |
 | `arrangement` | 行数/组数/对称轴摘要 | 3 rows; sym axis x=40.1 |
-| `core_utilization` | core / bbox | 25.4% |
+| `core_utilization` | device core / bbox | 25.4% |
 | `whitespace_fraction` | 空白率 | 71.3% |
 
 为什么要在意这些：
@@ -147,7 +149,7 @@ v0.1 使用可解释的 band/template，而不是黑盒优化：
 - 不优化线长/寄生；
 - floorplan 的 band 策略是固定的，不能自动探索所有拓扑；
 - 没有交互式编辑器（v0.1 输出 SVG/JSON，后续可接 KLayout/浏览器编辑器）；
-- shape/aspect/squareness 来自当前生成的白线图，不是最终版图；用户改布局后需要重新生成；
+- shape/aspect/squareness 来自当前生成的布局草图，不是最终版图；用户改布局后需要重新生成；
 - `core_utilization` 使用器件视觉矩形面积，不是最终 OD/金属密度。
 
 ## 8. 后续方向
@@ -156,4 +158,4 @@ v0.1 使用可解释的 band/template，而不是黑盒优化：
 2. **模板库**：为 diff pair、current mirror、cascode、output stage 建立可复用模板。
 3. **GDS/KLayout 回读**：比较“意图 vs 实际”，把偏差变成 review 项。
 4. **多目标评分**：面积、线长、对称性、寄生风险、拥塞。
-5. **交互式白线图**：在浏览器里拖动组、改 dummy 数量、导出 JSON。
+5. **交互式布局草图**：在浏览器里拖动组、改 dummy 数量、导出 JSON。

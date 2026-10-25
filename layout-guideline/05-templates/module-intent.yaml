@@ -38,6 +38,17 @@ node_attributes:
     esd: <yes|no>
     parasitic: <high|medium|low>
 
+area_target:
+  total_area_um2: <number>
+  width_um: <number>
+  height_um: <number>
+  aspect_ratio: <width / height>
+
+reuse:
+  sensitive_regions: []
+  reuse_conditions: []
+  version_debt: []
+
 physical_intent:
   symmetry_axis: <vertical/horizontal/none>
   matching:

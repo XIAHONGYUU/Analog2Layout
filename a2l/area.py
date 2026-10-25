@@ -503,7 +503,7 @@ def _summarize(
     cap_count = sum(1 for device in device_areas if device.kind == "cap")
     total_devices = len(device_areas)
 
-    source_counts: dict[str, int] = {"explicit": 0, "name": 0, "other": 0}
+    source_counts: dict[str, int] = {"name": 0, "explicit": 0, "other": 0, "unknown": 0}
     for device in device_areas:
         if device.role_source == "explicit":
             source_counts["explicit"] += 1
@@ -511,8 +511,8 @@ def _summarize(
             source_counts["name"] += 1
         else:
             source_counts["other"] += 1
-    source_counts["unknown_role"] = sum(1 for device in device_areas if device.role == "unknown")
-    all_roles_explicit = source_counts["explicit"] == total_devices
+    source_counts["unknown"] = sum(1 for device in device_areas if device.role == "unknown")
+    all_roles_known = source_counts["unknown"] == 0
 
     dominant = sorted(by_role.items(), key=lambda item: -item[1])[:4]
 
@@ -606,7 +606,7 @@ def _summarize(
         "area_gate": area_gate,
         # Ownership / annotation provenance.
         "role_sources": source_counts,
-        "all_roles_explicit": all_roles_explicit,
+        "all_roles_known": all_roles_known,
         "dominant_roles": [
             {"role": role, "area_um2": round(area, 2), "share": round(area / max(active_area, 1e-9), 4)}
             for role, area in dominant

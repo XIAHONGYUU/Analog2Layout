@@ -39,7 +39,7 @@ class CliTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
-    def test_require_explicit_roles(self):
+    def test_require_known_roles(self):
         result = subprocess.run(
             [
                 sys.executable,
@@ -47,7 +47,7 @@ class CliTests(unittest.TestCase):
                 "a2l",
                 "validate",
                 str(NETLIST),
-                "--require-explicit-roles",
+                "--require-known-roles",
                 "--quiet",
             ],
             cwd=ROOT,
@@ -59,7 +59,7 @@ class CliTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=ROOT) as directory:
             fallback = Path(directory) / "fallback.sp"
             fallback.write_text(
-                ".subckt x d g s b\nM1_DP d g s b nmos w=2u l=0.5u\n.ends x\n",
+                ".subckt x d g s b\nM1 d g s b nmos w=2u l=0.5u\n.ends x\n",
                 encoding="utf-8",
             )
             result = subprocess.run(
@@ -69,7 +69,7 @@ class CliTests(unittest.TestCase):
                     "a2l",
                     "validate",
                     str(fallback),
-                    "--require-explicit-roles",
+                    "--require-known-roles",
                     "--quiet",
                 ],
                 cwd=ROOT,
@@ -77,7 +77,7 @@ class CliTests(unittest.TestCase):
                 capture_output=True,
             )
             self.assertEqual(result.returncode, 1)
-            self.assertIn("role must be explicit", result.stderr)
+            self.assertIn("role is unknown", result.stderr)
 
     def test_fail_on_gate(self):
         passed = subprocess.run(

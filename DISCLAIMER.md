@@ -7,7 +7,7 @@ tool.
 - The bundled `rules/generic_180.json` is educational and is **not** a foundry
   PDK or a company rule deck.
 - a2l does **not** perform DRC, LVS, PEX, EM/IR, or tape-out checks.
-- The white-line floorplan is an intent drawing, not a legal layout.
+- The floorplan sketch is an intent drawing, not a legal layout.
 - `layout_delta.json` is a proposal; it does not modify a schematic.
 - Users are responsible for replacing the generic rule pack with a validated,
   desensitized company rule pack and for all signoff checks.

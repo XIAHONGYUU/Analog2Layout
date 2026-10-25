@@ -12,7 +12,7 @@
 可选：
 
 ```text
-  floorplan.svg    # 白线图
+  floorplan.svg    # 布局草图
   cases.md         # 模块相关案例
   change-log.md    # 修改记录
 ```

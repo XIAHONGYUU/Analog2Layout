@@ -47,7 +47,7 @@ class AreaTests(unittest.TestCase):
             places=1,
         )
         self.assertEqual(summary["role_sources"]["explicit"], 10)
-        self.assertTrue(summary["all_roles_explicit"])
+        self.assertTrue(summary["all_roles_known"])
         self.assertEqual(report.rules_owner, "analog design engineer")
 
     def test_name_fallback_is_only_a_suggestion(self):
@@ -56,9 +56,9 @@ class AreaTests(unittest.TestCase):
         report = estimate_area(netlist, self.rules)
         self.assertEqual(report.devices[0].role, "input_pair")
         self.assertEqual(report.devices[0].role_source, "name")
+        self.assertEqual(report.devices[0].match, "DP")
         self.assertEqual(report.summary["role_sources"]["name"], 1)
-        self.assertFalse(report.summary["all_roles_explicit"])
-        self.assertTrue(any("confirm it with the analog owner" in warning for warning in report.warnings))
+        self.assertTrue(report.summary["all_roles_known"])
 
     def test_area_gate_three_values(self):
         netlist = parse_file(ROOT / "examples" / "two_stage" / "two_stage.sp")

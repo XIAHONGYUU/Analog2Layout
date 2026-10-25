@@ -1,17 +1,18 @@
 ---
 name: analog2layout
-description: Use when working in the Analog2Layout workspace to annotate analog devices by role, estimate area from a rule pack, generate or review a white-line floorplan, or plan layout-induced schematic deltas (dummy/decap/reserve) before PEX. Do not use for signoff DRC/LVS/PEX or for inventing PDK rules.
+description: Use when working in the Analog2Layout workspace to parse device names/roles, estimate area from a rule pack, generate a floorplan sketch, compile a Layout Card, or plan layout-induced schematic deltas (dummy/decap/reserve) before PEX. Do not use for signoff DRC/LVS/PEX or for inventing PDK rules.
 ---
 
 # Analog2Layout skill
 
 ## What this workspace does
 
-It turns a role-annotated analog netlist into:
+It turns a name/role-annotated analog netlist into:
 
 1. an explainable area report (`area_report.md/json`);
-2. a white-line floorplan intent (`floorplan.svg/json`);
-3. a layout-induced schematic delta manifest (`layout_delta.json`, `HANDOFF.md`).
+2. a floorplan sketch intent (`floorplan.svg/json`);
+3. a layout-induced schematic delta manifest (`layout_delta.json`, `HANDOFF.md`);
+4. a one-page Layout Card in `layout-guideline/02-modules/`.
 
 The deterministic core lives in `a2l/`; the rule pack lives in `rules/`; the
 examples live in `examples/`.
@@ -26,8 +27,8 @@ examples live in `examples/`.
 ## Standard workflow
 
 ```bash
-# 1. Validate annotations and geometry
-python3 -m a2l validate <netlist>
+# 1. Validate known roles and geometry
+python3 -m a2l validate <netlist> --require-known-roles
 
 # 2. Build the full review bundle
 python3 -m a2l build <netlist> --out <out-dir>
@@ -44,18 +45,23 @@ python3 -m a2l compare <a.sp> <b.sp>
 
 ## Annotation contract
 
-Use explicit device parameters whenever possible:
+Real simulation/verification netlists usually carry semantics only in instance
+names. Names are the primary source; explicit parameters are an optional
+confirmed override:
 
 ```spice
+* name-only (common)
+M1_DP n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1
+
+* optional override (confirmed by analog owner)
 M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
    role=input_pair match=DP group=IN layout=common_centroid
 ```
 
-- `role` is required for reliable area/floorplan.
-- `match` means electrical matching, not just functional grouping.
-- `group` is a functional/floorplan block.
+- `role` is optional; names like `M1_DP` / `M3_CM` / `M8_EN` are primary.
+- `match`/`group` can be proposed from the name token.
 - `layout` is an intent, not a legal layout pattern.
-- Names are only a fallback; do not rely on them as a long-term contract.
+- If no token and topology is ambiguous, use `unknown`.
 
 ## Hard boundaries
 
@@ -66,9 +72,10 @@ M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
 - Keep the core dependency-free unless justified.
 - If a role is uncertain, use `unknown` and say why.
 
-## Review checklist
+## Technical checklist
 
-- Does every critical device have a role and a match group?
+- Does every device have a known role (name token or explicit override)?
+- Does every critical device have a match group?
 - Does the input pair straddle the symmetry axis?
 - Are dummy/decap proposals visible and owned?
 - Is the PEX-fix reserve present?

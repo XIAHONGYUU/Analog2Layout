@@ -144,10 +144,10 @@
         "role_sources": {
           "type": "object",
           "required": [
-            "explicit",
             "name",
+            "explicit",
             "other",
-            "unknown_role"
+            "unknown"
           ],
           "properties": {
             "explicit": {
@@ -162,7 +162,7 @@
               "type": "integer",
               "minimum": 0
             },
-            "unknown_role": {
+            "unknown": {
               "type": "integer",
               "minimum": 0
             }
@@ -227,6 +227,9 @@
         "area_nominal_mm2": {
           "type": "number",
           "minimum": 0
+        },
+        "all_roles_known": {
+          "type": "boolean"
         }
       },
       "additionalProperties": true

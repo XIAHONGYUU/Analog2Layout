@@ -1,6 +1,6 @@
 """Floorplan intent generation.
 
-The output is a *white-line* floorplan: a line drawing that communicates
+The output is a floorplan sketch: a line drawing that communicates
 relative placement, symmetry, matching groups, routing channels and proposed
 dummy/decap reservations.  It is deliberately not a legal layout and not a
 replacement for a placement engine.
@@ -248,7 +248,7 @@ def build_floorplan(
     }
 
     notes = [
-        "White-line floorplan intent; not a DRC/LVS-clean layout.",
+        "Floorplan sketch intent; not a DRC/LVS-clean layout.",
         "Proposed dummies/decaps are negotiation items, not silently inserted devices.",
         "Coordinates are in um with the origin at the top-left of the canvas.",
         "The symmetry axis is the vertical dashed line through the input pair.",

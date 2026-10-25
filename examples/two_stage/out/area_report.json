@@ -439,12 +439,12 @@
       "overlap_um2": 0.0
     },
     "role_sources": {
-      "explicit": 10,
       "name": 0,
+      "explicit": 10,
       "other": 0,
-      "unknown_role": 0
+      "unknown": 0
     },
-    "all_roles_explicit": true,
+    "all_roles_known": true,
     "dominant_roles": [
       {
         "role": "compensation",

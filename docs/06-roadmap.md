@@ -4,26 +4,34 @@
 
 ## v0.1 — 可运行 demo + guideline 骨架（当前）
 
-**目标**：证明“role → area → floorplan → Layout Card → delta”这条链能串起来。
+**目标**：证明“名字/role → area → floorplan → Layout Card → delta”这条链能串起来。
 
 - [x] SPICE-like 解析 + role/match/group/layout
 - [x] 五层面积口径 + 形状/排列指标
 - [x] 三值面积门 + `--fail-on-gate`
-- [x] 白线图 SVG/JSON + 对称轴 + 端口 + 通道 + reserve
+- [x] 布局草图 SVG/JSON + 对称轴 + 端口 + 通道 + reserve
 - [x] layout delta + HANDOFF + HTML 交接包
-- [x] role/rule ownership + `--require-explicit-roles`
+- [x] name token as primary source + optional role override + `--require-known-roles`
+- [x] name-only netlist example + match/group inference
+- [x] floorplan sketch terminology separated from Virtuoso white line
+- [x] sensitive-region/reuse principle documented
+- [x] target-bbox/aspect variant concept documented
+- [x] problem-driven guideline loop (`07-problems/`)
 - [x] `layout-guideline/` 文件夹 + 工作流
 - [x] 一页 Layout Card 示例：two-stage OTA / BGR / VCOM
 - [x] BGR vs VCOM 模块优先级对比
 - [x] Principle / Pattern / Template 骨架
 - [x] `agent/prompts/compile_layout_card.md`
-- [x] 三个示例 + unittest + GitHub Actions
+- [x] 四个示例 + unittest + GitHub Actions
 
 ## v0.2 — 把 guideline 工作层填厚
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
+- [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`
+- [ ] target bbox/aspect 的 floorplan 变体生成器（square / wide / tall）
+- [ ] 2–3 条真实问题记录 → guideline patch
 - [ ] 5–8 个 pattern card（cascode、guard ring、power grid、ESD clamp 等）
 - [ ] 2–3 个 case card（failure / near-miss / tradeoff）
 - [ ] card 完整性检查：缺 `ASK`/`UNKNOWN`/owner/evidence 时提示

@@ -39,4 +39,5 @@ VREF → error amp → output stage → VCOM
 - [Intent](intent.yaml)
 - [BGR vs VCOM](../bgr-vcom-comparison.md)
 - [Case: 大功率电源与 OP 前级共用](../../04-cases/case-vcom-power-return.md)
+- Principles：[sensitive region / reuse](../../01-principles/sensitive-region-reuse.md)、[power/ground](../../01-principles/power-and-ground.md)
 - Patterns：[resistor array](../../03-patterns/resistor-array.md)、[output stage](../../03-patterns/output-stage.md)、[trim network](../../03-patterns/trim-network.md)

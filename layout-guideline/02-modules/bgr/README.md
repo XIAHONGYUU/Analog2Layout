@@ -39,4 +39,5 @@ startup/bias → BGR core (VBE/ΔVBE 或 MOS) → VBG → trim/output buffer →
 - [Intent](intent.yaml)
 - [BGR vs VCOM](../bgr-vcom-comparison.md)
 - [Case: 参考地/回流](../../04-cases/case-bgr-reference-return.md)
+- Principles：[sensitive region / reuse](../../01-principles/sensitive-region-reuse.md)、[power/ground](../../01-principles/power-and-ground.md)
 - Patterns：[current mirror](../../03-patterns/current-mirror.md)、[resistor array](../../03-patterns/resistor-array.md)、[trim network](../../03-patterns/trim-network.md)

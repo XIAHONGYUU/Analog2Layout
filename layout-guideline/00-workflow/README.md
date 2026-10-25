@@ -20,6 +20,8 @@
 - 模块一句话、信号链、端口/电源域；
 - role / match / group / layout；
 - 节点属性：驱动、电平、速度、噪声、匹配、电流、ESD/隔离、寄生；
+- 面积目标/目标 bbox/长宽比（200×200、100×400 等）；
+- 敏感区/非敏感区，以及敏感区是否复用；
 - 物理意图：对称、dummy、guard ring、屏蔽、keepout、floorplan bands；
 - 前仿假设、后仿目标、已知风险；
 - 哪些可以改、哪些必须回来问。
@@ -35,7 +37,8 @@ AI 做：
 - 从 principle/pattern/case 找对应内容；
 - 生成 7 个区块；
 - 把缺失信息标成 `UNKNOWN` / `ASK`；
-- 链接 floorplan、area report、delta。
+- 链接 floorplan、area report、delta；
+- 如果已有多个目标 bbox，引用候选变体；当前 demo 只有一个默认变体。
 
 AI 不做：
 
@@ -53,6 +56,7 @@ AI 不做：
 - 哪些器件必须一起匹配？
 - 哪些电源/地/参考路径不能动？
 - 哪些区域是 keepout？
+- 目标长宽比是否合适？敏感区能否复用？
 - 画完后用什么证据关闭？
 
 ### Step 4 — 技术对话
@@ -66,6 +70,8 @@ AI 不做：
 - 这个屏蔽的参考是什么？回流在哪？
 - 这个修改会不会改变匹配环境/寄生？
 
+> 同一总面积的不同长宽比，会得到不同摆放；见 [`docs/10-layout-variants.md`](../../docs/10-layout-variants.md)。
+
 ### Step 5 — 更新与版本
 
 产物：card 新版本 + case candidate + change log。
@@ -74,6 +80,15 @@ AI 不做：
 - 可复用内容进入 principle/pattern；
 - 项目特定内容留在 private layer；
 - 版本号：`v0.1` → `v0.2`。
+
+### Step 6 — 问题回流
+
+产物：`07-problems/<id>.md` + guideline patch。
+
+- 每个真实问题记录现象/机制/版图动作/guideline 缺口；
+- 先查 `07-problems/` 和 `04-cases/`，避免重复条目；
+- 同一机制出现 ≥2 次，必须产生一条 principle/pattern/module/card/rule 变更；
+- 项目特定数值留在 private rule pack。
 
 ## 交付物
 

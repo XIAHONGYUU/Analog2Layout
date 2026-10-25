@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this workspace, please cite it as below."
 title: "Analog2Layout (a2l)"
-abstract: "A showcase of AI-native layout guideline and role-aware analog-to-layout handoff: five-level area estimation, white-line floorplan intent, Layout Card, and layout-induced schematic deltas."
+abstract: "A showcase of AI-native layout guideline and role-aware analog-to-layout handoff: five-level area estimation, floorplan sketch intent, Layout Card, and layout-induced schematic deltas."
 type: software
 authors:
   - name: "Analog2Layout contributors"

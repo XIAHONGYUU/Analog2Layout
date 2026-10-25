@@ -30,6 +30,7 @@ VREF → error amp → output stage → VCOM
 - 补偿电容靠近输出级，远离时钟/数字/大电流开关线。
 - 输出/电源 ESD 器件的放电路径完整，latch-up 检查覆盖。
 - 反馈/sense 线从输出端单独取，不要共享大电流路径。
+- 输出级/电阻串是**敏感区**：复用旧版图时必须核对功率、ESD、trim、电源域和工艺 shrink。
 
 ## 4. Forbidden
 

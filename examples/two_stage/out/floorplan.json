@@ -460,7 +460,7 @@
     "arrangement": "3 rows (top/mid/bottom); groups/band: top=1, mid=3, bottom=3; symmetry axis at x=40.1 um"
   },
   "notes": [
-    "White-line floorplan intent; not a DRC/LVS-clean layout.",
+    "Floorplan sketch intent; not a DRC/LVS-clean layout.",
     "Proposed dummies/decaps are negotiation items, not silently inserted devices.",
     "Coordinates are in um with the origin at the top-left of the canvas.",
     "The symmetry axis is the vertical dashed line through the input pair.",

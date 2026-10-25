@@ -1,4 +1,4 @@
-"""SVG renderer for the white-line floorplan.
+"""SVG renderer for the floorplan sketch.
 
 The drawing style is intentionally restrained: white background, thin dark
 outlines, dashed group boundaries, one red symmetry axis, and hatching only for
@@ -151,7 +151,7 @@ def render_floorplan_svg(
     _draw_legend(canvas, floorplan)
     return canvas.render(
         title=title or f"{floorplan.design} — floorplan intent",
-        aria_label=f"White-line floorplan intent for {floorplan.design}",
+        aria_label=f"Floorplan sketch intent for {floorplan.design}",
     )
 
 

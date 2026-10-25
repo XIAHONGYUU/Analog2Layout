@@ -1,10 +1,19 @@
-# 器件角色标注规范（v0.1）
+# 器件角色与命名规范（v0.1）
 
 > **Owner：模拟工程师/模拟团队。** 角色表不是 AI 自由生成的标签体系，而是模拟设计对“这个管子在电路里干什么”的正式约定。AI/agent 可以提出候选、检查覆盖、解释结果，但 role 的新增/删除/改名和 rule 数值必须由 analog owner 确认。
 
-## 1. 核心字段
+## 1. 真实网表里，名字是主参考
 
-在原理图器件属性或导出网表的参数里写：
+真实的模拟仿真/验证网表通常只有器件名，没有 `role=` 属性。因此 a2l 的默认路径是：
+
+```spice
+* 真实网表常见形态
+M1_DP n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1
+M2_DP n2 vinn ntail vss nmos w=5u l=0.5u nf=4 m=1
+M3_CM n1 n1 vdd vdd pmos w=5u l=1u nf=2 m=1
+```
+
+显式属性是**可选的人工确认/覆盖**：
 
 ```spice
 M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
@@ -13,9 +22,9 @@ M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
 
 | 字段 | 必填 | 作用 | 不影响 |
 | --- | --- | --- | --- |
-| `role` | 是 | 决定面积模型、dummy 策略、floorplan band、delta 规则 | 不改变 W/L |
-| `match` | 关键器件建议 | 电气匹配组；同组器件必须同尺寸/同环境 | 不要求同 group |
-| `group` | 可选 | 功能/布局分组；用于 floorplan 的框和报告 | 不表示电气匹配 |
+| `role` | 可选 | 人工确认/覆盖名字解析结果 | 不改变 W/L |
+| `match` | 可选 | 电气匹配组；可由名字 token 提议 | 不要求同 group |
+| `group` | 可选 | 功能/布局分组；可由名字 token 提议 | 不表示电气匹配 |
 | `layout` | 可选 | 期望版图模式：`common_centroid`、`interdigitated`、`stacked`、`minimal` | 不生成合法版图 |
 | `ratio` | 可选 | 电流镜/配对比例（与 AnalogLoop manifest 对齐） | 不改变 W/L |
 | `tunable` | 可选 | sizing agent 是否允许改这个器件 | 不影响面积 |
@@ -48,9 +57,9 @@ M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
 
 运行 `python3 -m a2l roles` 可以打印当前版本的角色表。
 
-## 3. 命名 fallback
+## 3. 命名：真实参考源
 
-没有 `role=` 时，a2l 会按名字推断（仅作为兜底）：
+a2l 从名字中提取语义 token，并把它作为 role / match / group 的主参考：
 
 | 名字包含 | 推断 |
 | --- | --- |
@@ -68,15 +77,24 @@ M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
 | `sense`, `sns` | `sense` |
 | `esd` | `esd` |
 
-**不要依赖名字做长期契约**。名字在改图、复制、层次展开、后端导出时最容易丢；a2l 只把名字推断当作 suggestion，并在 `validate` 中提示。推荐：
+名字 token 同时用于 **match / group 提议**：
 
-- 原理图里把 `role` 做成 device property / CDF parameter；
-- 网表导出时保留这些 property；
-- 名字只用于人读和 fallback。
+- `M1_DP` / `M2_DP` → match `DP`；
+- `M3_CM` / `M4_CM` → match `CM`；
+- `M6_OUT` / `M7_OUT` → group `OUT`；
+- `C1_CC` → role `compensation`，group `CC`。
+
+名字没有语义 token 时，a2l 标记 `unknown`，**不拿拓扑硬猜成确定角色**。显式 `role=` 仍然可以覆盖名字解析，用于人工确认、例外或重构后的兼容。
+
+推荐：
+
+- 仿真/验证网表里保持可读的角色 token；
+- 原理图可以额外写 `role` property，导出时保留；
+- 两者冲突时，以模拟 owner 确认的显式属性为准。
 
 ## 4. 推荐命名
 
-如果团队暂时没有 property 流程，可以用可读的名字过渡：
+推荐直接用可读的名字 token；有 property 流程时，再把它作为确认/覆盖层：
 
 ```text
 M1_DP    M2_DP     输入对
@@ -90,7 +108,7 @@ C1_CC              Miller cap
 C2_DECAP           decap
 ```
 
-但请把“名字约定”当作过渡方案，最终仍要把 `role` 落到属性里。
+这些 token 不是“临时过渡”，而是仿真/验证网表里最稳定的语义来源之一；显式属性是额外的确认层。
 
 ## 5. 标注检查
 
@@ -103,20 +121,19 @@ C2_DECAP           decap
 - 关键 role 没有 `match`；
 - `match` 组只有一个器件；
 - role 无法解析（`unknown`）；
-- 重复器件名；
-- 使用 name fallback 的器件（提示 analog owner 确认）。
+- 重复器件名。
 
 示例：
 
 ```bash
-python3 -m a2l validate examples/two_stage/two_stage.sp
-# CI 里可以强制要求显式 role=
-python3 -m a2l validate examples/two_stage/two_stage.sp --require-explicit-roles
+python3 -m a2l validate examples/name_only_ota/ota_named.sp
+# CI 里检查是否还有 unknown（不要求显式 role=）
+python3 -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
 ```
 
 ## 6. 与 AnalogLoop manifest 的对应
 
-AnalogLoop 用 `roles.yaml` 的 manifest 记录 role/group/match/ratio/tunable/constraints，a2l 的 annotation schema 保留同样的语义，但把它放在原理图属性/导出网表的参数里：
+AnalogLoop 用 `roles.yaml` 的 manifest 记录 role/group/match/ratio/tunable/constraints；a2l 同时接受**名字 token**和**可选 annotation**。annotation 是人工确认层，不是唯一入口：
 
 ```spice
 M4 n2 n1 vdd vdd pmos w=5u l=1u nf=2 m=1 \

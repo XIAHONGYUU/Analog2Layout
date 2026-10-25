@@ -127,14 +127,14 @@ should survive individual tasks.
 
 ---
 
-## D-007 — This workspace is an evolving concept workspace, not a production landing
+## D-007 — This workspace keeps evolving; it is not a production landing
 
 - **Status:** active
 - **Date:** 2026-10-25
 - **Owner:** project
 - **Source:** user direction
 - **Decision:** Analog2Layout exists to develop and communicate the workflow: some parts are
-  runnable, some are still conceptual, and the workspace will keep evolving. It
+  runnable, some are still being built, and the workspace will keep evolving. It
   is not a final production rule base, signoff tool, or company deployment.
 - **Consequences:**
   - docs/examples may be synthetic;
@@ -193,3 +193,86 @@ should survive individual tasks.
   - public examples must be synthetic or desensitized;
   - private content is not copied into public docs;
   - `source_id` / `rule_key` / `case_id` are the join points.
+
+---
+
+## D-011 — Device names are the primary semantic source
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** analog design engineer / analog design team
+- **Source:** user correction
+- **Decision:** Real simulation/verification netlists usually carry semantics only
+  in instance names. a2l treats the name token as the primary reference for
+  role/match/group. Explicit `role=` is an optional confirmed override, not a
+  precondition.
+- **Consequences:**
+  - name-only netlists are a first-class input;
+  - `--require-known-roles` replaces `--require-explicit-roles`;
+  - unknown names are marked `unknown`, not guessed into a confident role.
+
+---
+
+## D-012 — Virtuoso white line is not our floorplan sketch
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** project
+- **Source:** user correction
+- **Decision:** In Virtuoso, a white line is a schematic annotation/guide line
+  that can be shown with the circuit. Our generated `floorplan.svg/json` is a
+  separate layout-planning sketch. The two must not share a name.
+- **Consequences:**
+  - "白线图" is retired as a name for our artifact;
+  - use "布局草图 / floorplan sketch" for our output;
+  - a future schematic overlay (white-line markers) would be a separate feature.
+
+---
+
+## D-013 — Layout must be area/aspect- and device-aware
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** analog design + layout
+- **Source:** user correction
+- **Decision:** Placement is constrained by device type/parameters, matching,
+  sensitive regions, power/ESD, and the target total area/bbox. The same total
+  area can require different layouts for 200×200, 100×400, or 400×100.
+- **Consequences:**
+  - a single default floorplan is not enough;
+  - future work should generate and compare multiple target-bbox variants;
+  - a layout is chosen by constraints and evidence, not by "where it looks nice".
+
+---
+
+## D-014 — "Core" means sensitive reusable region, not pure device OD
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** analog design + layout
+- **Source:** user correction
+- **Decision:** In layout discussions, "core" means the sensitive region that
+  includes mandatory special drawing, ring, WPE/STI spacing, dummy, shielding,
+  and routing reservation; it is a candidate for reuse. The pure OD/cap metric is
+  called `device_core`, not `sensitive_core`.
+- **Consequences:**
+  - current `area_core_um2` is provisional and labelled `device_core`;
+  - next area model should add `sensitive_core`, `flexible_area`,
+    `sensitive_overhead`, and `reuse_candidate`;
+  - reuse must carry process/voltage/temperature/version conditions.
+
+---
+
+## D-015 — Layout guideline iterates from real problems
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** analog design + layout
+- **Source:** user correction
+- **Decision:** The primary purpose of the guideline is to prevent repeated
+  project problems. Every real problem must feed `07-problems/` and produce a
+  principle/pattern/module/card/rule patch when the same mechanism recurs.
+- **Consequences:**
+  - new problems are deduplicated against existing problems/cases;
+  - a recurrence (≥2) requires a guideline change before closure;
+  - project-specific numbers stay in the private rule pack.

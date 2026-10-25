@@ -5,12 +5,14 @@ mirror, cascode, ...), not how it is drawn.  The role is the bridge between a
 schematic that only knows W/L and a layout engineer who needs to know which
 devices must be matched, isolated, or duplicated.
 
-Explicit annotation is the source of truth::
+Real simulation/verification netlists usually carry semantics only in instance
+names, so the name token is the primary reference source::
+
+    M1_DP n1 vinp ntail vss nmos w=5u l=0.5u nf=4
+
+An explicit annotation is an optional confirmed override::
 
     M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 role=input_pair match=DP
-
-The name is only a fallback.  Names are convenient, but they are also easy to
-break during schematic refactoring, so tools must never rely on them alone.
 """
 
 from __future__ import annotations
@@ -310,13 +312,28 @@ _NAME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
 )
 
 
+def infer_name_token(name: str) -> tuple[str, str] | None:
+    """Return ``(role_id, token)`` inferred from a device name.
+
+    The token is the literal role tag found in the name (``DP``, ``CM``,
+    ``CAS``, ...).  In real simulation/verification netlists this is often the
+    only semantic information available; it is a *reference source*, not a
+    guarantee.
+    """
+
+    for pattern, role_id in _NAME_PATTERNS:
+        match = pattern.search(name)
+        if match:
+            token = match.group(2).upper()
+            return role_id, token
+    return None
+
+
 def infer_role_from_name(name: str) -> str | None:
     """Return a role inferred from a device name, or ``None``."""
 
-    for pattern, role_id in _NAME_PATTERNS:
-        if pattern.search(name):
-            return role_id
-    return None
+    inferred = infer_name_token(name)
+    return inferred[0] if inferred else None
 
 
 def get_role(role_id: str | None) -> RoleSpec:
@@ -348,7 +365,7 @@ def annotate_devices(netlist: Any) -> list[str]:
 
     Returns a list of human-readable warnings.  The parser has already placed
     ``role=``, ``match=``, ``group=`` and ``layout=`` into ``device.params``;
-    this function resolves the fallback and records where the role came from.
+    this function resolves the role source and records where it came from.
     """
 
     warnings: list[str] = []
@@ -357,16 +374,14 @@ def annotate_devices(netlist: Any) -> list[str]:
         device.role = role_id
         device.role_source = source
         device.match = _param(device, "match")
+        device.match_source = "explicit" if device.match else None
         device.group = _param(device, "group")
         device.layout = _param(device, "layout")
 
         if role_id == "unknown":
             warnings.append(
-                f"{device.name}: no role annotation; area and layout intent will be marked unknown"
-            )
-        elif source == "name":
-            warnings.append(
-                f"{device.name}: role inferred from the device name; confirm it with the analog owner"
+                f"{device.name}: no role annotation and no semantic name token; "
+                "area and layout intent will be marked unknown"
             )
         elif source.startswith("explicit-invalid"):
             warnings.append(
@@ -374,12 +389,28 @@ def annotate_devices(netlist: Any) -> list[str]:
             )
 
         spec = get_role(role_id)
-        if spec.needs_match and not device.match:
-            warnings.append(
-                f"{device.name}: role {role_id} usually needs a match group (add match=...)"
-            )
         if device.match and len(device.match.strip()) == 0:
             device.match = None
+
+        # In name-only netlists there is no match= parameter.  If the role
+        # needs matching and the name carries a role tag, use that tag as a
+        # *proposed* match group.  A human/validator can still override it.
+        if source == "name" and not device.group:
+            token = infer_name_token(device.name)
+            if token:
+                device.group = token[1]
+
+        if not device.match and source == "name" and spec.needs_match:
+            token = infer_name_token(device.name)
+            if token:
+                device.match = token[1]
+                device.match_source = "name"
+
+        if spec.needs_match and not device.match:
+            warnings.append(
+                f"{device.name}: role {role_id} needs a match group; "
+                "add match= or give the instance a semantic name token"
+            )
 
     return warnings
 

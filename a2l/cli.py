@@ -29,7 +29,7 @@ from .svg import render_floorplan_svg
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="a2l",
-        description="Role-aware area estimation and white-line floorplan handoff for analog circuits.",
+        description="Role-aware area estimation and floorplan sketch handoff for analog circuits.",
     )
     parser.add_argument("--version", action="version", version=f"a2l {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -58,7 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
     analyze = sub.add_parser("analyze", parents=[common], help="estimate area from role annotations")
     analyze.add_argument("--json", action="store_true", help="print the JSON report to stdout")
 
-    floorplan = sub.add_parser("floorplan", parents=[common], help="generate the white-line floorplan")
+    floorplan = sub.add_parser("floorplan", parents=[common], help="generate the floorplan sketch")
     floorplan.add_argument("--title", default=None, help="SVG title override")
 
     handoff = sub.add_parser("handoff", parents=[common], help="generate the full review bundle")
@@ -84,9 +84,9 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--rules", default=None)
     validate.add_argument("--quiet", action="store_true")
     validate.add_argument(
-        "--require-explicit-roles",
+        "--require-known-roles",
         action="store_true",
-        help="fail if any device relies on name fallback instead of an explicit role=",
+        help="fail if any device has role=unknown (name-derived roles are accepted)",
     )
 
     sub.add_parser("roles", help="print the device-role taxonomy")
@@ -169,7 +169,7 @@ def _print_summary(report: AreaReport) -> None:
         f"Devices:  {summary['device_count']} ({summary['mos_count']} MOS, "
         f"{summary['cap_count']} cap) in {summary['group_count']} groups"
     )
-    print(f"Core:     {area_str(summary['area_core_um2'])}")
+    print(f"Device:   {area_str(summary['area_core_um2'])} (device core)")
     print(f"Area:     {area_str(summary['area_block_um2'])} block (committed)")
     print(f"Envelope: {area_str(summary['area_envelope_um2'])} (block + reserve)")
     print(f"Range:    {area_str(summary['area_low_um2'])} – {area_str(summary['area_high_um2'])}")
@@ -189,11 +189,11 @@ def _print_summary(report: AreaReport) -> None:
         text = ", ".join(f"{item['role']} {item['share'] * 100:.0f}%" for item in dominant[:3])
         print(f"Dominant: {text}")
     sources = summary.get("role_sources", {})
-    if not summary.get("all_roles_explicit", True):
+    if not summary.get("all_roles_known", True) or sources.get("explicit", 0):
         print(
-            f"Roles:    explicit {sources.get('explicit', 0)}, "
-            f"name fallback {sources.get('name', 0)}, other {sources.get('other', 0)}, "
-            f"unknown {sources.get('unknown_role', 0)}"
+            f"Roles:    name {sources.get('name', 0)}, "
+            f"explicit override {sources.get('explicit', 0)}, "
+            f"other {sources.get('other', 0)}, unknown {sources.get('unknown', 0)}"
         )
     if report.warnings:
         print(f"Warnings: {len(report.warnings)}")
@@ -262,12 +262,11 @@ def _cmd_validate(args: argparse.Namespace) -> int:
     netlist = parse_file(args.netlist)
     errors, warnings = validate_netlist(netlist, min_l_um=float(rules.mos("min_l_um", 0.0)))
 
-    if args.require_explicit_roles:
+    if args.require_known_roles:
         for device in netlist.devices:
-            if device.role_source != "explicit":
+            if device.role == "unknown":
                 errors.append(
-                    f"{device.name}: role must be explicit (source={device.role_source}); "
-                    "name fallback is only a suggestion"
+                    f"{device.name}: role is unknown; give it a semantic name or an explicit role= override"
                 )
 
     if not args.quiet:

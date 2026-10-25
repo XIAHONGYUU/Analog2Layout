@@ -56,7 +56,7 @@ def area_markdown(report: AreaReport) -> str:
     lines.append("| --- | ---: |")
     lines.append(f"| Devices | {summary['device_count']} ({summary['mos_count']} MOS, {summary['cap_count']} cap) |")
     lines.append(f"| Functional groups | {summary['group_count']} |")
-    lines.append(f"| Core area (pure device OD/cap) | {area_str(summary['area_core_um2'])} |")
+    lines.append(f"| Device core (OD/cap) | {area_str(summary['area_core_um2'])} |")
     lines.append(f"| Active area (+ guard ring + device routing) | {area_str(summary['area_active_um2'])} |")
     lines.append(f"| Matched area (+ dummy + matching overhead) | {area_str(summary['area_matched_um2'])} |")
     lines.append(f"| Block area (+ periphery + block routing) | **{area_str(summary['area_block_um2'])}** |")
@@ -72,7 +72,7 @@ def area_markdown(report: AreaReport) -> str:
     lines.append(f"| Width convention | `{report.width_convention}` |")
     lines.append("")
     lines.append(
-        "**Area hierarchy:** core (OD/cap only) < active (+ring/routing) < matched "
+        "**Area hierarchy:** device core (OD/cap only) < active (+ring/routing) < matched "
         "(+dummy/matching) < block (+periphery) < envelope (+reserve). "
         "Fractions below are relative to the block area."
     )
@@ -82,7 +82,7 @@ def area_markdown(report: AreaReport) -> str:
     lines.append("| Bucket | Area | Share of block |")
     lines.append("| --- | ---: | ---: |")
     for label, area_key, fraction_key in (
-        ("Core", "area_core_um2", "area_core_fraction"),
+        ("Device core", "area_core_um2", "area_core_fraction"),
         ("Guard ring", "area_ring_um2", "area_ring_fraction"),
         ("Device routing", "area_device_routing_um2", "area_device_routing_fraction"),
         ("Dummy", "area_dummy_um2", "area_dummy_fraction"),
@@ -98,10 +98,10 @@ def area_markdown(report: AreaReport) -> str:
     lines.append("")
     lines.append("| Source | Devices |")
     lines.append("| --- | ---: |")
-    lines.append(f"| Explicit `role=` | {sources.get('explicit', 0)} |")
-    lines.append(f"| Name fallback | {sources.get('name', 0)} |")
+    lines.append(f"| Name (primary source) | {sources.get('name', 0)} |")
+    lines.append(f"| Explicit `role=` override | {sources.get('explicit', 0)} |")
     lines.append(f"| Other / invalid | {sources.get('other', 0)} |")
-    lines.append(f"| Unknown role | {sources.get('unknown_role', 0)} |")
+    lines.append(f"| Unknown role | {sources.get('unknown', 0)} |")
     lines.append("")
 
     lines.append("## Area by role")
@@ -177,7 +177,7 @@ def handoff_markdown(
     lines.append(f"# Handoff — {report.design}")
     lines.append("")
     lines.append(
-        "> White-line floorplan intent generated from a role-annotated schematic. "
+        "> Floorplan sketch intent generated from a role-annotated schematic. "
         "Use this as the agenda for the schematic/layout review, not as a signoff document."
     )
     lines.append("")
@@ -195,7 +195,7 @@ def handoff_markdown(
     )
     lines.append("| Metric | Value |")
     lines.append("| --- | ---: |")
-    lines.append(f"| Core area | {area_str(summary['area_core_um2'])} |")
+    lines.append(f"| Device core | {area_str(summary['area_core_um2'])} |")
     lines.append(f"| Active area (+ ring/routing) | {area_str(summary['area_active_um2'])} |")
     lines.append(f"| Matched area (+ dummy/matching) | {area_str(summary['area_matched_um2'])} |")
     lines.append(f"| **Block area** | **{area_str(summary['area_block_um2'])}** |")
@@ -212,8 +212,8 @@ def handoff_markdown(
     lines.append(f"| Rules | `{report.rules_name}` ({report.rules_confidence}); owner: {report.rules_owner} |")
     lines.append(f"| Width convention | `{report.width_convention}` |")
     lines.append(
-        f"| Role sources | explicit {sources.get('explicit', 0)}, name fallback {sources.get('name', 0)}, "
-        f"unknown {sources.get('unknown_role', 0)} |"
+        f"| Role sources | name {sources.get('name', 0)}, explicit override {sources.get('explicit', 0)}, "
+        f"unknown {sources.get('unknown', 0)} |"
     )
     lines.append("")
     lines.append(
@@ -369,7 +369,7 @@ def index_html(
         f"<tr><td>{label}</td><td>{desc}</td><td class='num'>{area_str(summary[area_key])}</td>"
         f"<td class='num'>{pct(summary[fraction_key])}</td></tr>"
         for label, desc, area_key, fraction_key in (
-            ("Core", "OD / capacitor only", "area_core_um2", "area_core_fraction"),
+            ("Device core", "OD / capacitor only", "area_core_um2", "area_core_fraction"),
             ("Active", "+ guard ring, device routing", "area_active_um2", "area_active_fraction"),
             ("Matched", "+ dummy, matching overhead", "area_matched_um2", "area_matched_fraction"),
             ("Block", "+ periphery, block routing", "area_block_um2", "area_block_fraction"),
@@ -472,24 +472,24 @@ def index_html(
 <header>
   <div>
     <h1>{html.escape(report.design)} — schematic → layout handoff</h1>
-    <p class="sub">Role-aware area estimate and white-line floorplan intent. Generated by Analog2Layout v{VERSION}. Role taxonomy and rule values are owned by {html.escape(report.rules_owner)}.</p>
+    <p class="sub">Role-aware area estimate and floorplan sketch intent. Generated by Analog2Layout v{VERSION}. Role taxonomy and rule values are owned by {html.escape(report.rules_owner)}.</p>
   </div>
   <div><span class="badge">{html.escape(report.rules_name)} · {html.escape(report.rules_confidence)}</span> <span class="badge">owner: analog</span></div>
 </header>
 
 <section class="cards">
-  <div class="card"><div class="k">Core area</div><div class="v">{area_str(summary['area_core_um2'])}</div><div class="s">OD / capacitor only</div></div>
+  <div class="card"><div class="k">Device core</div><div class="v">{area_str(summary['area_core_um2'])}</div><div class="s">OD / capacitor only</div></div>
   <div class="card"><div class="k">Block area</div><div class="v">{area_str(summary['area_block_um2'])}</div><div class="s">matched + periphery + routing</div></div>
   <div class="card"><div class="k">Total envelope</div><div class="v">{area_str(summary['area_envelope_um2'])}</div><div class="s">block + PEX-fix reserve</div></div>
   <div class="card"><div class="k">Shape</div><div class="v">{stats.get('block_width_um', 0):.0f} × {stats.get('block_height_um', 0):.0f} µm</div><div class="s">aspect {stats.get('aspect_ratio', 0):.2f} · squareness {stats.get('squareness', 0):.2f}</div></div>
   <div class="card"><div class="k">Proposed deltas</div><div class="v">{delta.summary['item_count']}</div><div class="s">review before layout freeze</div></div>
 </section>
-<p class="note">{summary['device_count']} devices · {summary['group_count']} groups · estimate range {area_str(summary['area_low_um2'])} – {area_str(summary['area_high_um2'])} · dummy {area_str(summary['area_dummy_um2'])} · reserve {area_str(summary['area_reserved_um2'])} · role sources: explicit {sources.get('explicit', 0)} / name {sources.get('name', 0)} / unknown {sources.get('unknown_role', 0)} · owner: {html.escape(report.rules_owner)}</p>
+<p class="note">{summary['device_count']} devices · {summary['group_count']} groups · estimate range {area_str(summary['area_low_um2'])} – {area_str(summary['area_high_um2'])} · dummy {area_str(summary['area_dummy_um2'])} · reserve {area_str(summary['area_reserved_um2'])} · role sources: name {sources.get('name', 0)} / explicit override {sources.get('explicit', 0)} / unknown {sources.get('unknown', 0)} · owner: {html.escape(report.rules_owner)}</p>
 {_area_gate_callout(summary)}
 
 <h2>Floorplan intent</h2>
 <div class="svg-wrap">{svg_markup}</div>
-<p class="note">Solid = existing device; dashed = proposed dummy/decap; hatched strip = reserved PEX-fix area. This is a white-line sketch, not a legal layout.</p>
+<p class="note">Solid = existing device; dashed = proposed dummy/decap; hatched strip = reserved PEX-fix area. This is a floorplan sketch, not a legal layout.</p>
 
 <h2>Area hierarchy</h2>
 <div class="panel"><table>

@@ -22,7 +22,7 @@
 
 问题是这个数**不可解释**：不知道哪类器件占大头，不知道 dummy/guard ring/电容占多少，也不知道误差范围。于是无法支持“用面积选架构”这种早期决策。
 
-### 2.2 布局：白线图在一个人脑子里
+### 2.2 布局：布局草图在一个人脑子里
 
 模拟工程师通常知道：
 
@@ -63,7 +63,7 @@ role / match / group / layout
         │
         ├──► area model ──────────────► area report + range
         │
-        ├──► floorplan intent ────────► white-line SVG + JSON
+        ├──► floorplan intent ────────► floorplan sketch SVG + JSON
         │
         └──► layout-delta planner ────► dummy/decap/reserve manifest
                                               │
@@ -77,7 +77,7 @@ role / match / group / layout
 
 ## 4. 设计原则
 
-1. **标注优先于命名**：名字是 fallback，属性才是 source of truth。
+1. **名字是主参考，属性是确认层**：真实仿真/验证网表通常只有器件名；显式 `role=` 用于人工确认/覆盖。
 2. **规则是数据**：每个面积数字都能追溯到 rule key；公司规则可以替换、版本化、校准。
 3. **提议而不是修改**：delta 不自动改原理图，必须由人 accept/reject。
 4. **早期估计给区间**：不假装 signoff 精度，明确 ±范围和使用边界。
@@ -91,7 +91,7 @@ role / match / group / layout
 
 | 指标 | 目标 |
 | --- | --- |
-| role 标注覆盖率 | > 95% 的器件有明确 role |
+| 角色语义覆盖率 | > 95% 的器件有名字 token 或显式 role |
 | 面积预测误差 | 早期 ±30–50%，校准后 ±20% |
 | floorplan 评审轮次 | 从 3–4 轮降到 1–2 轮 |
 | PEX 后“清单外”改动 | 逐季度下降 |

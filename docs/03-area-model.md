@@ -25,7 +25,7 @@ a2l 的面积模型回答的是：
 
 | 层级 | 英文 key | 定义 |
 | --- | --- | --- |
-| 核心区 | `area_core_um2` | MOS 的 OD footprint + 电容极板面积；不含 ring/routing/dummy/periphery |
+| 器件核心（当前实现） | `area_core_um2` | MOS 的 OD footprint + 电容极板面积；不含 ring/routing/dummy/periphery。注意：这是 **device core**，不是下面说的 sensitive core |
 | 有效区 | `area_active_um2` | core + guard ring + 器件级 routing |
 | 匹配区 | `area_matched_um2` | active + boundary dummy + matching overhead |
 | 模块区 | `area_block_um2` | matched + periphery + block routing |
@@ -49,6 +49,33 @@ core_fraction + ring_fraction + device_routing_fraction
 ```
 
 reserve 是 block 之外的单独 8%，所以 `envelope / block = 108%`。
+
+### 器件核心 vs 敏感核心
+
+上面表中的 `core` 是 **device core**（OD/极板面积），只是为了面积分解。实际版图里说的“core”更接近：
+
+```text
+sensitive_core = device core
+               + guard ring / 独立围环
+               + WPE / STI / well / 扩散强制间距
+               + boundary dummy / density dummy
+               + 屏蔽 / 参考地
+               + 关键走线预留（线宽/通道/过孔）
+```
+
+版图里通常同时存在：
+
+- **敏感区**：输入对、参考、电流镜、trim、采样、ESD/高压、关键电源路径；需要强制画法和 keepout，**可能可以复用以前项目**；
+- **非敏感区**：普通偏置、数字、非关键走线、普通 decap；可以更自由地布置。
+
+因此面积评估还要回答：
+
+1. 敏感区/非敏感区各占多少？
+2. 敏感区里 ring/WPE/dummy/屏蔽/走线预留各占多少？
+3. 敏感区能否复用？复用的工艺/电压/温度/频率/模块边界是否可比？
+4. 复用带来的版本债/验证债是什么？
+
+当前代码还没有 `sensitive_core` / `flexible_area` / `reuse_candidate` 这些 key；这是下一版面积模型要补的。原则和判断问题见 [`layout-guideline/01-principles/sensitive-region-reuse.md`](../layout-guideline/01-principles/sensitive-region-reuse.md)。
 
 ### 形状与排列
 

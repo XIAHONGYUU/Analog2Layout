@@ -1,6 +1,6 @@
 # AI-native Layout Guideline
 
-> 这是一个**构想/迭代中的工作区**，不打算做成生产规则库或落地工具。
+> 这是一个**持续完善中的工作区**，当前不是最终生产规则库或落地工具。
 > 目标是把“模拟与版图之间最难传下去的东西”做成一个可讨论、可迭代、可复用的工作流和文件夹结构。
 
 ## 1. 为什么 Layout Guideline 最难
@@ -70,25 +70,29 @@ Layout Card 是版图工程师第一眼看到的东西。它必须能在 **2 分
 
 ```text
 模拟工程师
-  ├─ 写 module-intent（模块功能、器件角色、匹配组、节点属性、物理意图）
-  ├─ 标注 role/match/group/layout
+  ├─ 写 module-intent（功能、名字/role 语义、匹配组、节点属性、物理意图）
+  ├─ 给出目标面积/bbox/长宽比，以及敏感区/复用条件
   └─ 给出前仿假设 / 后仿目标
           ↓
 AI 编译
   ├─ 从 Principle / Pattern / Case 找对应内容
   ├─ 生成一页 Layout Card
   ├─ 标出缺失信息（不是替人猜）
-  └─ 链接到 floorplan / area report / delta
+  ├─ 针对目标 bbox 生成/引用候选 floorplan 变体
+  └─ 链接到 area report / delta
           ↓
 版图工程师
   ├─ 读 Layout Card（2 分钟）
-  ├─ 在 floorplan 上标注偏差/问题
+  ├─ 选/改目标 bbox 与 floorplan 变体
   └─ 把“为什么这样画”写回 change log
           ↓
 模拟 + 版图
   ├─ 解决 open questions
   ├─ 更新 module-intent / card / case
   └─ 版本 +1
+          ↓
+问题回流
+  └─ 07-problems → principle / pattern / module / card / rule
 ```
 
 关键原则：**AI 只编译和检查缺口，不替模拟工程师发明规则，也不替版图工程师做签核。**
@@ -99,21 +103,44 @@ AI 编译
 layout-guideline/
   README.md                     # 入口 + 一眼看懂的使用顺序
   00-workflow/                  # 工作流、角色、交付物、版本
-  01-principles/                # 为什么：匹配、电源、寄生、ESD、密度
+  01-principles/                # 为什么：匹配、电源、寄生、ESD、敏感区
   02-modules/                   # 这个模块：特性、风险、card
-    two-stage-ota/              # 一个合成示例
-      README.md
-      layout-card.md
-      intent.yaml
+    two-stage-ota/              # 合成示例
+    bgr/                        # 合成/脱敏示例
+    vcom/                       # 合成/脱敏示例
   03-patterns/                  # 这类电路怎么画：diff pair、mirror、...
   04-cases/                     # 错误/验证案例（脱敏）
-  05-templates/                 # card / intent / change-log 模板
+  05-templates/                 # card / intent / area-target / change-log
   06-sources/                   # 来源、证据等级、公开/私有边界
+  07-problems/                  # 问题记录 → guideline patch
 ```
 
 每个目录都有一个 `README.md`，说明“这里放什么、不放什么、怎么新增”。
 
-## 6. AI 应该做什么 / 不应该做什么
+## 6. 问题驱动迭代
+
+Layout guideline 的价值不在“写得多全”，而在**以前项目的问题不再重复犯**。
+
+```text
+问题出现
+  → 07-problems/<id>.md
+  → 查重：已有 problem/case？
+  → 判定 guideline 缺口
+  → 更新 principle / pattern / module / card / rule
+  → 验证（后仿/测试/评审）
+  → 发布新版本
+```
+
+规则：
+
+- 同一机制出现 ≥2 次，必须产生一条 guideline 变更，否则不能关闭；
+- 新问题先查 `07-problems/` 和 `04-cases/`，避免重复条目；
+- 项目特定数值进 private rule pack，不进 public principle；
+- 每次 patch 记录 owner、版本、证据、反例。
+
+详见 [`layout-guideline/07-problems/README.md`](../layout-guideline/07-problems/README.md)。
+
+## 7. AI 应该做什么 / 不应该做什么
 
 **应该做：**
 
@@ -131,7 +158,7 @@ layout-guideline/
 - 把“评审意见”变成自动判决；
 - 生成没有来源/适用范围的“最佳实践”。
 
-## 7. 公开仓库与公司私有层
+## 8. 公开仓库与公司私有层
 
 这个 public repo 只放：
 
@@ -150,15 +177,18 @@ private-layout-guideline/
 
 公开层与私有层通过 `source_id` / `rule_key` / `case_id` 关联，不复制内容。
 
-## 8. 成功标准
+## 9. 成功标准
 
 - 版图工程师能在 **2 分钟**内说出这个模块的 Top 3 风险和 3 个 must-preserve；
 - 模拟工程师填 `module-intent` 不超过 **10 分钟**；
 - 每一条“必须这样做”的背后都有一个 Principle 或 Case，不是孤立的经验；
 - 每一条具体数值都能回到 rule pack / PDK / 项目证据；
+- 同一总面积至少能比较 square / wide / tall 的摆放与代价；
+- 敏感区/非敏感区、复用条件写清楚，不只给一个总面积；
+- 同一个问题重复出现时，能追到对应的 guideline patch；
 - 新模块可以从模板开始，而不是从零写一份 guideline。
 
-## 9. 反模式
+## 10. 反模式
 
 - 把 Layout Card 写成 20 页 PDF；
 - 把 Principle 写成口号（“注意匹配”“注意寄生”）；
@@ -167,12 +197,12 @@ private-layout-guideline/
 - 让 AI 直接生成“最终 guideline”，没有人确认；
 - 把公开仓库当公司知识库。
 
-## 10. 与当前 Analog2Layout demo 的关系
+## 11. 与当前 Analog2Layout demo 的关系
 
 当前仓库里的 `examples/two_stage/` 已经能生成：
 
 - role/area 报告；
-- 白线 floorplan；
+- floorplan 草案；
 - layout delta。
 
 `layout-guideline/` 是在这些产物之上增加一层**人可读、可下钻的 guideline**：

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/Analog2Layout/floorplan.schema.json",
   "title": "Analog2Layout floorplan intent",
-  "description": "A white-line floorplan intent in micrometres, origin top-left, y down. This is not a legal layout.",
+  "description": "A floorplan sketch intent in micrometres, origin top-left, y down. This is not a legal layout.",
   "type": "object",
   "required": [
     "design",

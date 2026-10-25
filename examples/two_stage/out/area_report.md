@@ -8,7 +8,7 @@
 | --- | ---: |
 | Devices | 10 (9 MOS, 1 cap) |
 | Functional groups | 7 |
-| Core area (pure device OD/cap) | 1409 µm² |
+| Device core (OD/cap) | 1409 µm² |
 | Active area (+ guard ring + device routing) | 1707 µm² |
 | Matched area (+ dummy + matching overhead) | 2247 µm² |
 | Block area (+ periphery + block routing) | **3377 µm²** |
@@ -19,13 +19,13 @@
 | Area gate | **PASS** (budget 5000 µm²) |
 | Width convention | `per_finger` |
 
-**Area hierarchy:** core (OD/cap only) < active (+ring/routing) < matched (+dummy/matching) < block (+periphery) < envelope (+reserve). Fractions below are relative to the block area.
+**Area hierarchy:** device core (OD/cap only) < active (+ring/routing) < matched (+dummy/matching) < block (+periphery) < envelope (+reserve). Fractions below are relative to the block area.
 
 ### Breakdown
 
 | Bucket | Area | Share of block |
 | --- | ---: | ---: |
-| Core | 1409 µm² | 41.7% |
+| Device core | 1409 µm² | 41.7% |
 | Guard ring | 105 µm² | 3.1% |
 | Device routing | 193 µm² | 5.7% |
 | Dummy | 457 µm² | 13.5% |
@@ -37,8 +37,8 @@
 
 | Source | Devices |
 | --- | ---: |
-| Explicit `role=` | 10 |
-| Name fallback | 0 |
+| Name (primary source) | 0 |
+| Explicit `role=` override | 10 |
 | Other / invalid | 0 |
 | Unknown role | 0 |
 

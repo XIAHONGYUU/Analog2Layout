@@ -42,3 +42,4 @@ VREF 在数字活动/负载跳变时出现漂移或毛刺；DC 测试正常，�
 - Principle: [power-and-ground](../01-principles/power-and-ground.md)
 - Module: [BGR](../02-modules/bgr/layout-card.md)
 - Pattern: [resistor array](../03-patterns/resistor-array.md)
+- Problem record: [P-0001](../07-problems/example-bgr-reference-return.md)

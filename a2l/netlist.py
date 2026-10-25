@@ -40,6 +40,7 @@ class Device:
     role: str | None = None
     role_source: str = "unknown"
     match: str | None = None
+    match_source: str | None = None
     group: str | None = None
     layout: str | None = None
 
@@ -101,6 +102,7 @@ class Device:
             "role": self.role,
             "role_source": self.role_source,
             "match": self.match,
+            "match_source": self.match_source,
             "group": self.group,
             "layout": self.layout,
             "mos_type": self.mos_type,

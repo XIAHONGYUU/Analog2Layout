@@ -1,6 +1,6 @@
 # Handoff — two_stage
 
-> White-line floorplan intent generated from a role-annotated schematic. Use this as the agenda for the schematic/layout review, not as a signoff document.
+> Floorplan sketch intent generated from a role-annotated schematic. Use this as the agenda for the schematic/layout review, not as a signoff document.
 
 ![floorplan](floorplan.svg)
 
@@ -8,7 +8,7 @@
 
 | Metric | Value |
 | --- | ---: |
-| Core area | 1409 µm² |
+| Device core | 1409 µm² |
 | Active area (+ ring/routing) | 1707 µm² |
 | Matched area (+ dummy/matching) | 2247 µm² |
 | **Block area** | **3377 µm²** |
@@ -22,7 +22,7 @@
 | Devices / groups | 10 / 7 |
 | Rules | `generic-180` (educational); owner: analog design engineer |
 | Width convention | `per_finger` |
-| Role sources | explicit 10, name fallback 0, unknown 0 |
+| Role sources | name 0, explicit override 10, unknown 0 |
 
 > Area hierarchy: **core** (OD/cap) < **active** (+guard ring/routing) < **matched** (+dummy/matching) < **block** (+periphery) < **envelope** (+reserve).
 

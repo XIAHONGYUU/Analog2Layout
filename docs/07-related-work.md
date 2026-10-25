@@ -10,7 +10,7 @@
 
 - AnalogLoop 的重心是 **sizing 闭环和仿真预算**；a2l 的重心是 **schematic → layout 的交接物**；
 - a2l 把面积进一步拆成 **core / active / matched / block / envelope**，并输出形状/排列指标；
-- a2l 的白线图是可直接评审的 SVG/JSON，强调版图工程师的第一版 floorplan；
+- a2l 的布局草图是可直接评审的 SVG/JSON，强调版图工程师的第一版 floorplan；
 - 两者的角色词表、面积 gate、layout delta 语义可以对齐，后续可以共享 manifest。
 
 ## GLayout
@@ -19,7 +19,7 @@
 
 **a2l 的差异**：
 
-- a2l 不试图直接生成合法版图，而是生成**人可评审的白线意图**；
+- a2l 不试图直接生成合法版图，而是生成**人可评审的布局草图意图**；
 - a2l 把“器件角色/匹配/面积/后期改动”作为一等数据，而不是只关注几何生成；
 - a2l 的目标是**沟通层**，可以接在 GLayout/OpenROAD 之前或之后。
 
@@ -39,7 +39,7 @@
 
 **a2l 的差异**：
 
-- a2l 在“可审计 agent workflow”之上，增加了 role taxonomy、面积模型、白线 floorplan 和 PEX 前 delta；
+- a2l 在“可审计 agent workflow”之上，增加了 role taxonomy、面积模型、floorplan 草案 和 PEX 前 delta；
 - a2l 更强调“模拟与版图之间的交接物”，而不是单纯的 circuit design agent。
 
 ## 传统 EDA flow
