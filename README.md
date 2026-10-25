@@ -5,13 +5,19 @@
 
 ### 把模拟设计意图编译成版图工程师能直接执行的约束与 Layout Card。
 
-从带角色语义的网表（名字 token 或 `role=`）出发，生成面积结构、floorplan 草案、Layout Card 和后期改动清单。当前工作区持续完善：已经能跑的部分保留可运行 demo，正在补的部分继续用结构化文档推进。
+从带角色语义的网表（名字 token 或 `role=`）出发，生成面积结构、floorplan 草案和后期改动清单；Layout Card 按模板由 AI/人编译并经工程师确认（当前为提示词工作流，CLI 不调用 LLM）。当前工作区持续完善：已经能跑的部分保留可运行 demo，正在补的部分继续用结构化文档推进。
 
 > **当前阶段**：v0.1 工作区
 >
-> **能跑**：名字/角色解析 → 五层面积 → 布局草图 → layout delta
+> **能跑（CLI）**：名字/角色解析 → 五层面积 → 布局草图 → layout delta
 >
-> **正在补**：AI-native Layout Guideline（Principle → Module → Pattern → Case）、BGR/VCOM Card、私有规则 overlay
+> **已有示例（非 CLI 生成）**：two-stage / BGR / VCOM 的 Layout Card，按模板整理并经工程师确认
+>
+> **正在补**：Guideline 的检查与变体、私有规则 overlay
+>
+> **AI 边界**：提示词与工作流模板，CLI 不调用 LLM
+>
+> **项目背景与我的角色**：本人负责问题定义、角色语义/面积口径/布局规则与验收；代码、示例与文档在 AI 辅助下完成。
 
 [Layout Guideline](layout-guideline/README.md) · [BGR Card](layout-guideline/02-modules/bgr/layout-card.md) · [VCOM Card](layout-guideline/02-modules/vcom/layout-card.md) · [布局草图 Demo](examples/two_stage/out/floorplan.png) · [Docs](docs/08-ai-layout-guideline.md)
 
@@ -41,13 +47,13 @@ flowchart LR
   E --> B
 ```
 
-## 当前进展
+## 当前状态
 
-| 已能跑 | 正在补全 |
+| 状态 | 内容 |
 | --- | --- |
-| 名字/角色解析 → 五层面积 → 布局草图 → layout delta | 真实 PDK / 公司规则 / 完整私有 overlay |
-| BGR / VCOM / two-stage OTA 的 Layout Card | 更多模块（LDO / SADC / AFE_CH）与 case |
-| Principle → Module → Pattern → Case 的文件夹与模板 | 敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
+| 能跑（CLI） | 名字/角色解析 → 五层面积 → 布局草图 → layout delta |
+| 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
+| 正在补全 | 真实 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
 
 ## 这个项目体现的能力
 
