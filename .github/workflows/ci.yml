@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Enforce explicit role annotations
+        run: python -m a2l validate examples/two_stage/two_stage.sp --require-explicit-roles
+      - name: Build the reference example
+        run: python -m a2l build examples/two_stage/two_stage.sp --out out/two_stage --area-budget-mm2 0.005 --fail-on-gate
+      - name: Compare two architectures
+        run: python -m a2l compare examples/ota5/ota5.sp examples/ota5_cascode/ota5_cascode.sp

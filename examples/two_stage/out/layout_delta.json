@@ -1,0 +1,193 @@
+{
+  "design": "two_stage",
+  "rules": "generic-180",
+  "summary": {
+    "item_count": 12,
+    "by_kind": {
+      "dummy": 3,
+      "dummy_logic": 4,
+      "routing_intent": 2,
+      "guard_ring": 1,
+      "decap": 1,
+      "reserve": 1
+    },
+    "area_delta_um2": 2239.3,
+    "area_delta_mm2": 0.002239,
+    "area_delta_fraction_of_block": 0.6632,
+    "proposed_count": 12,
+    "reserve_um2": 270.13,
+    "reserve_shortfall_um2": 1969.17,
+    "reserve_sufficient": false
+  },
+  "items": [
+    {
+      "id": "D001",
+      "kind": "dummy",
+      "target": "TAIL (M5)",
+      "action": "Add 2 boundary dummy device(s); see the dashed DM blocks in the floorplan",
+      "reason": "Preserve edge matching for tail_current",
+      "owner": "layout",
+      "status": "proposed",
+      "area_delta_um2": 253.58,
+      "confidence": "rule",
+      "rule": "matching.dummy_per_group",
+      "notes": "Drawn in the floorplan as proposed; confirm dummy W/L with the analog designer."
+    },
+    {
+      "id": "D002",
+      "kind": "dummy_logic",
+      "target": "TAIL (M5)",
+      "action": "Add a dummy tail device on the unused side of the tail current source",
+      "reason": "Keeps the tail current mirror symmetric and preserves the input-pair common source",
+      "owner": "analog",
+      "status": "proposed",
+      "area_delta_um2": 0.0,
+      "confidence": "heuristic",
+      "rule": "layout_delta.boundary_dummies_per_critical_group",
+      "notes": ""
+    },
+    {
+      "id": "D003",
+      "kind": "routing_intent",
+      "target": "OUT (M6, M7)",
+      "action": "Reserve wide metal / multiple vias for the output devices",
+      "reason": "Output stage carries the largest current and is EM-limited",
+      "owner": "layout",
+      "status": "proposed",
+      "area_delta_um2": 0.0,
+      "confidence": "heuristic",
+      "rule": "layout_delta.max_current_density_ma_per_um",
+      "notes": ""
+    },
+    {
+      "id": "D004",
+      "kind": "dummy",
+      "target": "DP (M1, M2)",
+      "action": "Add 2 boundary dummy device(s); see the dashed DM blocks in the floorplan",
+      "reason": "Preserve edge matching for input_pair",
+      "owner": "layout",
+      "status": "proposed",
+      "area_delta_um2": 115.28,
+      "confidence": "rule",
+      "rule": "matching.dummy_per_group",
+      "notes": "Drawn in the floorplan as proposed; confirm dummy W/L with the analog designer."
+    },
+    {
+      "id": "D005",
+      "kind": "guard_ring",
+      "target": "DP (M1, M2)",
+      "action": "Place a guard ring and keep the pair on a common-centroid / interdigitated pattern",
+      "reason": "Substrate noise and Vth matching dominate input-referred offset",
+      "owner": "layout",
+      "status": "proposed",
+      "area_delta_um2": 39.62,
+      "confidence": "rule",
+      "rule": "matching.guard_ring_for_critical",
+      "notes": "Do not route noisy digital or clock lines across the pair."
+    },
+    {
+      "id": "D006",
+      "kind": "routing_intent",
+      "target": "DP (M1, M2)",
+      "action": "Keep input gate routing symmetric and shielded; reserve a clean channel to the pair",
+      "reason": "Input parasitics and coupling directly degrade offset and noise",
+      "owner": "both",
+      "status": "proposed",
+      "area_delta_um2": 0.0,
+      "confidence": "heuristic",
+      "rule": "layout_delta.guard_ring_for_input_pair",
+      "notes": ""
+    },
+    {
+      "id": "D007",
+      "kind": "dummy",
+      "target": "CM (M3, M4)",
+      "action": "Add 2 boundary dummy device(s); see the dashed DM blocks in the floorplan",
+      "reason": "Preserve edge matching for current_mirror",
+      "owner": "layout",
+      "status": "proposed",
+      "area_delta_um2": 87.8,
+      "confidence": "rule",
+      "rule": "matching.dummy_per_group",
+      "notes": "Drawn in the floorplan as proposed; confirm dummy W/L with the analog designer."
+    },
+    {
+      "id": "D008",
+      "kind": "dummy_logic",
+      "target": "CM (M3, M4)",
+      "action": "Add a dummy mirror branch / dummy stack next to the mirror",
+      "reason": "Keeps the mirror environment identical at the boundary and reduces systematic ratio error",
+      "owner": "analog",
+      "status": "proposed",
+      "area_delta_um2": 0.0,
+      "confidence": "heuristic",
+      "rule": "layout_delta.boundary_dummies_per_critical_group",
+      "notes": "May be removable if the mirror is far from the block boundary."
+    },
+    {
+      "id": "D009",
+      "kind": "dummy_logic",
+      "target": "EN (M8)",
+      "action": "Add a dummy switch (same W/L, gate tied off) next to the switch",
+      "reason": "Balances charge injection and keeps the switch environment symmetric",
+      "owner": "analog",
+      "status": "proposed",
+      "area_delta_um2": 3.89,
+      "confidence": "heuristic",
+      "rule": "layout_delta.dummy_logic_for_switches",
+      "notes": ""
+    },
+    {
+      "id": "D010",
+      "kind": "dummy_logic",
+      "target": "ADJ (M9)",
+      "action": "Add a dummy switch (same W/L, gate tied off) next to the switch",
+      "reason": "Balances charge injection and keeps the switch environment symmetric",
+      "owner": "analog",
+      "status": "proposed",
+      "area_delta_um2": 2.34,
+      "confidence": "heuristic",
+      "rule": "layout_delta.dummy_logic_for_switches",
+      "notes": ""
+    },
+    {
+      "id": "D011",
+      "kind": "decap",
+      "target": "vdd/vss",
+      "action": "Add a 2.00 pF decap between VDD and VSS near the block",
+      "reason": "Supply transient / PEX-induced ringing; reserve the area now so it does not force a re-layout later",
+      "owner": "both",
+      "status": "proposed",
+      "area_delta_um2": 1466.67,
+      "confidence": "heuristic",
+      "rule": "block.decap_min_pf / block.decap_ratio_to_comp",
+      "notes": "Value is an initial proposal; confirm with the analog designer."
+    },
+    {
+      "id": "D012",
+      "kind": "reserve",
+      "target": "block",
+      "action": "Keep 8% of the block area as an uncommitted PEX-fix reserve",
+      "reason": "Absorbs predictable late fixes (extra dummies, decap, routing) without moving the block boundary",
+      "owner": "both",
+      "status": "proposed",
+      "area_delta_um2": 270.13,
+      "confidence": "rule",
+      "rule": "block.reserve_fraction",
+      "notes": "The reserve is drawn as the hatched strip to the right of the floorplan."
+    }
+  ],
+  "pex_resim_scope": [
+    "DC offset / input-referred noise after input-pair and tail routing parasitics",
+    "AC gain / phase margin after current-mirror parasitic extraction",
+    "Stability (loop gain / phase margin) after Cc and output-node parasitics",
+    "Large-signal swing / EM and IR-drop check after output routing",
+    "Post-layout DC operating point after dummy, decap and guard-ring insertion"
+  ],
+  "notes": [
+    "This is a proposal, not an automatic schematic edit.",
+    "Items marked owner=analog must be reflected in the schematic before tape-out.",
+    "Items marked owner=layout must be visible in the floorplan review.",
+    "Proposed delta area exceeds the PEX-fix reserve by 1969 um2; increase the reserve or reduce/relocate deltas."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/analog2layout/annotation.schema.json",
+  "title": "analog2layout device annotation",
+  "description": "Role/match/group/layout annotations proposed by a human or an AI agent. The deterministic netlist remains the source of geometry; this file only carries semantics.",
+  "type": "object",
+  "required": [
+    "design",
+    "devices"
+  ],
+  "properties": {
+    "design": {
+      "type": "string",
+      "description": "Design / subckt name."
+    },
+    "source": {
+      "type": "string",
+      "description": "Netlist path or identifier."
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "role"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Device instance name, e.g. M1."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "input_pair",
+              "current_mirror",
+              "cascode",
+              "tail_current",
+              "output_stage",
+              "compensation",
+              "bias",
+              "enable_switch",
+              "adj_switch",
+              "sense",
+              "esd",
+              "dummy",
+              "decap",
+              "unknown"
+            ]
+          },
+          "match": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Electrical matching group."
+          },
+          "group": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Functional / floorplan group."
+          },
+          "layout": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Intended layout pattern.",
+            "examples": [
+              "common_centroid",
+              "interdigitated",
+              "stacked",
+              "minimal"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "explicit",
+              "name",
+              "topology",
+              "comment",
+              "low",
+              "unknown"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Short, checkable reasons for the annotation."
+          },
+          "notes": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Matching/current ratio for a mirror or paired device."
+          },
+          "tunable": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether the sizing agent may change this device during sizing."
+          },
+          "constraints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Role-specific constraints, e.g. same_wl, common_centroid, max_current_density."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

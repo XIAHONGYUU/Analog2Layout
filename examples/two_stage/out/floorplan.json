@@ -1,0 +1,469 @@
+{
+  "design": "two_stage",
+  "rules": "generic-180",
+  "units": "um",
+  "canvas": {
+    "width": 157.041,
+    "height": 115.82
+  },
+  "symmetry_axis_x": 40.078,
+  "groups": [
+    {
+      "key": "COMP",
+      "role": "compensation",
+      "band": "mid",
+      "x": 84.311,
+      "y": 44.5,
+      "w": 38.73,
+      "h": 25.82,
+      "devices": [
+        "C1"
+      ],
+      "symmetry": null,
+      "label": "COMP"
+    },
+    {
+      "key": "TAIL",
+      "role": "tail_current",
+      "band": "bottom",
+      "x": 29.2,
+      "y": 75.32,
+      "w": 21.756,
+      "h": 10.5,
+      "devices": [
+        "M5",
+        "DM_TAIL_L",
+        "DM_TAIL_R"
+      ],
+      "symmetry": null,
+      "label": "TAIL"
+    },
+    {
+      "key": "OUT",
+      "role": "output_stage",
+      "band": "mid",
+      "x": 56.421,
+      "y": 52.16,
+      "w": 22.89,
+      "h": 10.5,
+      "devices": [
+        "M6",
+        "M7"
+      ],
+      "symmetry": null,
+      "label": "OUT"
+    },
+    {
+      "key": "DP",
+      "role": "input_pair",
+      "band": "mid",
+      "x": 28.735,
+      "y": 54.66,
+      "w": 22.686,
+      "h": 5.5,
+      "devices": [
+        "M1",
+        "M2",
+        "DM_DP_L",
+        "DM_DP_R"
+      ],
+      "symmetry": "vertical",
+      "label": "DP"
+    },
+    {
+      "key": "CM",
+      "role": "current_mirror",
+      "band": "top",
+      "x": 31.769,
+      "y": 34.0,
+      "w": 16.618,
+      "h": 5.5,
+      "devices": [
+        "M3",
+        "M4",
+        "DM_CM_L",
+        "DM_CM_R"
+      ],
+      "symmetry": null,
+      "label": "CM"
+    },
+    {
+      "key": "EN",
+      "role": "enable_switch",
+      "band": "bottom",
+      "x": 16.0,
+      "y": 79.32,
+      "w": 1.6,
+      "h": 2.5,
+      "devices": [
+        "M8"
+      ],
+      "symmetry": null,
+      "label": "EN"
+    },
+    {
+      "key": "ADJ",
+      "role": "adj_switch",
+      "band": "bottom",
+      "x": 22.6,
+      "y": 79.47,
+      "w": 1.6,
+      "h": 2.2,
+      "devices": [
+        "M9"
+      ],
+      "symmetry": null,
+      "label": "ADJ"
+    }
+  ],
+  "devices": [
+    {
+      "name": "C1",
+      "role": "compensation",
+      "group": "COMP",
+      "match": null,
+      "kind": "cap",
+      "x": 84.311,
+      "y": 44.5,
+      "w": 38.73,
+      "h": 25.82,
+      "area_um2": 1100.0,
+      "proposed": false,
+      "detail": "1.5 pF"
+    },
+    {
+      "name": "M5",
+      "role": "tail_current",
+      "group": "TAIL",
+      "match": "TAIL",
+      "kind": "mos",
+      "x": 36.438,
+      "y": 75.32,
+      "w": 7.28,
+      "h": 10.5,
+      "area_um2": 126.79,
+      "proposed": false,
+      "detail": "40/1 nf=4"
+    },
+    {
+      "name": "DM_TAIL_L",
+      "role": "dummy",
+      "group": "TAIL",
+      "match": "TAIL",
+      "kind": "dummy",
+      "x": 29.2,
+      "y": 75.32,
+      "w": 6.188,
+      "h": 8.925,
+      "area_um2": 0.0,
+      "proposed": true,
+      "detail": ""
+    },
+    {
+      "name": "DM_TAIL_R",
+      "role": "dummy",
+      "group": "TAIL",
+      "match": "TAIL",
+      "kind": "dummy",
+      "x": 44.768,
+      "y": 75.32,
+      "w": 6.188,
+      "h": 8.925,
+      "area_um2": 0.0,
+      "proposed": true,
+      "detail": ""
+    },
+    {
+      "name": "M6",
+      "role": "output_stage",
+      "group": "OUT",
+      "match": null,
+      "kind": "mos",
+      "x": 56.421,
+      "y": 52.16,
+      "w": 7.28,
+      "h": 10.5,
+      "area_um2": 90.2,
+      "proposed": false,
+      "detail": "40/1 nf=4"
+    },
+    {
+      "name": "M7",
+      "role": "output_stage",
+      "group": "OUT",
+      "match": null,
+      "kind": "mos",
+      "x": 64.751,
+      "y": 52.16,
+      "w": 14.56,
+      "h": 10.5,
+      "area_um2": 180.4,
+      "proposed": false,
+      "detail": "80/1 nf=8"
+    },
+    {
+      "name": "M1",
+      "role": "input_pair",
+      "group": "DP",
+      "match": "DP",
+      "kind": "mos",
+      "x": 34.273,
+      "y": 54.66,
+      "w": 5.28,
+      "h": 5.5,
+      "area_um2": 57.64,
+      "proposed": false,
+      "detail": "20/0.5 nf=4"
+    },
+    {
+      "name": "M2",
+      "role": "input_pair",
+      "group": "DP",
+      "match": "DP",
+      "kind": "mos",
+      "x": 40.603,
+      "y": 54.66,
+      "w": 5.28,
+      "h": 5.5,
+      "area_um2": 57.64,
+      "proposed": false,
+      "detail": "20/0.5 nf=4"
+    },
+    {
+      "name": "DM_DP_L",
+      "role": "dummy",
+      "group": "DP",
+      "match": "DP",
+      "kind": "dummy",
+      "x": 28.735,
+      "y": 54.66,
+      "w": 4.488,
+      "h": 4.675,
+      "area_um2": 0.0,
+      "proposed": true,
+      "detail": ""
+    },
+    {
+      "name": "DM_DP_R",
+      "role": "dummy",
+      "group": "DP",
+      "match": "DP",
+      "kind": "dummy",
+      "x": 46.933,
+      "y": 54.66,
+      "w": 4.488,
+      "h": 4.675,
+      "area_um2": 0.0,
+      "proposed": true,
+      "detail": ""
+    },
+    {
+      "name": "M3",
+      "role": "current_mirror",
+      "group": "CM",
+      "match": "CM",
+      "kind": "mos",
+      "x": 35.913,
+      "y": 34.0,
+      "w": 3.64,
+      "h": 5.5,
+      "area_um2": 43.9,
+      "proposed": false,
+      "detail": "10/1 nf=2"
+    },
+    {
+      "name": "M4",
+      "role": "current_mirror",
+      "group": "CM",
+      "match": "CM",
+      "kind": "mos",
+      "x": 40.603,
+      "y": 34.0,
+      "w": 3.64,
+      "h": 5.5,
+      "area_um2": 43.9,
+      "proposed": false,
+      "detail": "10/1 nf=2"
+    },
+    {
+      "name": "DM_CM_L",
+      "role": "dummy",
+      "group": "CM",
+      "match": "CM",
+      "kind": "dummy",
+      "x": 31.769,
+      "y": 34.0,
+      "w": 3.094,
+      "h": 4.675,
+      "area_um2": 0.0,
+      "proposed": true,
+      "detail": ""
+    },
+    {
+      "name": "DM_CM_R",
+      "role": "dummy",
+      "group": "CM",
+      "match": "CM",
+      "kind": "dummy",
+      "x": 45.293,
+      "y": 34.0,
+      "w": 3.094,
+      "h": 4.675,
+      "area_um2": 0.0,
+      "proposed": true,
+      "detail": ""
+    },
+    {
+      "name": "M8",
+      "role": "enable_switch",
+      "group": "EN",
+      "match": null,
+      "kind": "mos",
+      "x": 16.0,
+      "y": 79.32,
+      "w": 1.6,
+      "h": 2.5,
+      "area_um2": 3.89,
+      "proposed": false,
+      "detail": "2/0.5 nf=1"
+    },
+    {
+      "name": "M9",
+      "role": "adj_switch",
+      "group": "ADJ",
+      "match": null,
+      "kind": "mos",
+      "x": 22.6,
+      "y": 79.47,
+      "w": 1.6,
+      "h": 2.2,
+      "area_um2": 2.34,
+      "proposed": false,
+      "detail": "1/0.5 nf=1"
+    }
+  ],
+  "ports": [
+    {
+      "name": "VDD",
+      "net": "vdd",
+      "x": 40.078,
+      "y": 27.0,
+      "side": "top"
+    },
+    {
+      "name": "VSS",
+      "net": "vss",
+      "x": 40.078,
+      "y": 89.82,
+      "side": "bottom"
+    },
+    {
+      "name": "INP",
+      "net": "vinp",
+      "x": 36.913,
+      "y": 53.66,
+      "side": "pin-top"
+    },
+    {
+      "name": "INN",
+      "net": "vinn",
+      "x": 43.243,
+      "y": 53.66,
+      "side": "pin-top"
+    },
+    {
+      "name": "VOUT",
+      "net": "vout",
+      "x": 80.211,
+      "y": 57.41,
+      "side": "pin-right"
+    },
+    {
+      "name": "EN",
+      "net": "en",
+      "x": 16.8,
+      "y": 84.32,
+      "side": "bottom"
+    },
+    {
+      "name": "ADJ",
+      "net": "adj",
+      "x": 23.4,
+      "y": 84.17,
+      "side": "bottom"
+    }
+  ],
+  "channels": [
+    {
+      "orientation": "horizontal",
+      "x1": 16.0,
+      "y1": 42.0,
+      "x2": 123.041,
+      "y2": 42.0,
+      "label": "routing channel"
+    },
+    {
+      "orientation": "horizontal",
+      "x1": 16.0,
+      "y1": 72.82,
+      "x2": 123.041,
+      "y2": 72.82,
+      "label": "routing channel"
+    }
+  ],
+  "bands": [
+    {
+      "name": "top",
+      "y0": 34.0,
+      "y1": 39.5
+    },
+    {
+      "name": "mid",
+      "y0": 44.5,
+      "y1": 70.32
+    },
+    {
+      "name": "bottom",
+      "y0": 75.32,
+      "y1": 85.82
+    }
+  ],
+  "reserve": {
+    "x": 127.04083346207418,
+    "y": 34.0,
+    "w": 10.0,
+    "h": 51.81988897471611,
+    "fraction": 0.08,
+    "label": "PEX-fix reserve"
+  },
+  "stats": {
+    "group_count": 7,
+    "device_count": 10,
+    "proposed_dummy_count": 6,
+    "device_area_um2": 1592.75,
+    "core_area_um2": 1409.16,
+    "floorplan_area_um2": 5546.84,
+    "utilization": 0.2871,
+    "core_utilization": 0.254,
+    "whitespace_fraction": 0.7129,
+    "block_width_um": 107.04,
+    "block_height_um": 51.82,
+    "aspect_ratio": 2.066,
+    "squareness": 0.484,
+    "orientation": "landscape",
+    "rows": 3,
+    "groups_by_band": {
+      "top": 1,
+      "mid": 3,
+      "bottom": 3
+    },
+    "arrangement": "3 rows (top/mid/bottom); groups/band: top=1, mid=3, bottom=3; symmetry axis at x=40.1 um"
+  },
+  "notes": [
+    "White-line floorplan intent; not a DRC/LVS-clean layout.",
+    "Proposed dummies/decaps are negotiation items, not silently inserted devices.",
+    "Coordinates are in um with the origin at the top-left of the canvas.",
+    "The symmetry axis is the vertical dashed line through the input pair.",
+    "Block is elongated: aspect 2.07, squareness 0.48. Confirm this shape is compatible with the parent block."
+  ]
+}

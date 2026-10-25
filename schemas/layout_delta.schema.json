@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/analog2layout/layout_delta.schema.json",
+  "title": "analog2layout layout-induced schematic delta",
+  "description": "A reviewable proposal, not an automatic schematic edit.",
+  "type": "object",
+  "required": ["design", "summary", "items", "pex_resim_scope"],
+  "properties": {
+    "design": {"type": "string"},
+    "rules": {"type": "string"},
+    "summary": {
+      "type": "object",
+      "required": ["item_count", "area_delta_um2"],
+      "properties": {
+        "item_count": {"type": "integer", "minimum": 0},
+        "by_kind": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "area_delta_um2": {"type": "number", "minimum": 0},
+        "area_delta_mm2": {"type": "number", "minimum": 0},
+        "area_delta_fraction_of_block": {"type": "number", "minimum": 0},
+        "proposed_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "target", "action", "reason", "owner", "status"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^D[0-9]{3,}$"},
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dummy",
+              "dummy_logic",
+              "guard_ring",
+              "decap",
+              "finger_split",
+              "routing_intent",
+              "reserve"
+            ]
+          },
+          "target": {"type": "string"},
+          "action": {"type": "string"},
+          "reason": {"type": "string"},
+          "owner": {"type": "string", "enum": ["analog", "layout", "both"]},
+          "status": {
+            "type": "string",
+            "enum": ["proposed", "accepted", "rejected", "deferred", "implemented", "closed"]
+          },
+          "area_delta_um2": {"type": "number", "minimum": 0},
+          "confidence": {"type": "string", "enum": ["rule", "heuristic", "manual"]},
+          "rule": {"type": "string"},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "pex_resim_scope": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

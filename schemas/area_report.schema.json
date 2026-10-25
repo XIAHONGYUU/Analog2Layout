@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/analog2layout/area_report.schema.json",
+  "title": "analog2layout area report",
+  "description": "Five-level early-planning area report. Not a signoff extraction.",
+  "type": "object",
+  "required": [
+    "design",
+    "rules",
+    "width_convention",
+    "devices",
+    "groups",
+    "summary",
+    "warnings"
+  ],
+  "properties": {
+    "design": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "name",
+        "confidence",
+        "owner",
+        "approval"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "approval": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "width_convention": {
+      "type": "string",
+      "enum": [
+        "per_finger",
+        "total"
+      ]
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "by_role_um2": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "area_core_um2",
+        "area_active_um2",
+        "area_matched_um2",
+        "area_block_um2",
+        "area_envelope_um2",
+        "area_dummy_um2",
+        "area_reserved_um2",
+        "area_low_um2",
+        "area_high_um2",
+        "role_sources",
+        "area_gate"
+      ],
+      "properties": {
+        "area_core_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_active_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_matched_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_block_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_envelope_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_dummy_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_ring_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_device_routing_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_matching_overhead_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_periphery_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_reserved_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_low_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_high_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_block_fraction": {
+          "type": "number",
+          "minimum": 0
+        },
+        "role_sources": {
+          "type": "object",
+          "required": [
+            "explicit",
+            "name",
+            "other",
+            "unknown_role"
+          ],
+          "properties": {
+            "explicit": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "name": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "other": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unknown_role": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": true
+        },
+        "all_roles_explicit": {
+          "type": "boolean"
+        },
+        "area_gate": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "PASS",
+                "REJECT",
+                "UNCERTAIN",
+                "UNSET"
+              ]
+            },
+            "budget_um2": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "headroom_um2": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "shortfall_um2": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "overlap_um2": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "area_nominal_um2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "area_nominal_mm2": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

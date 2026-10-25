@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "name": "generic-180",
+  "description": "Educational generic 180 nm-ish rule pack. NOT a foundry PDK and NOT for signoff. Replace with a company rule pack before production use.",
+  "confidence": "educational",
+  "owner": "analog design engineer",
+  "approval": "example only; the analog design owner must approve any production rule pack",
+  "units": {
+    "length": "um",
+    "area": "um2",
+    "capacitance": "pF"
+  },
+  "width_convention": "per_finger",
+  "mos": {
+    "min_l_um": 0.18,
+    "min_w_um": 0.22,
+    "max_w_per_finger_um": 10.0,
+    "sd_ext_um": 0.30,
+    "od_ext_um": 0.25,
+    "contact_size_um": 0.22,
+    "contact_spacing_um": 0.22,
+    "routing_overhead": 0.18,
+    "guard_ring_width_um": 0.80,
+    "guard_ring_spacing_um": 0.60,
+    "well_ext_um": 0.60,
+    "gate_pitch_um": 0.56
+  },
+  "matching": {
+    "dummy_per_group": 2,
+    "dummy_width_factor": 1.0,
+    "common_centroid_overhead": 0.12,
+    "matching_overhead": 0.06,
+    "group_spacing_um": 3.0,
+    "band_spacing_um": 5.0,
+    "guard_ring_for_critical": true
+  },
+  "cap": {
+    "density_ff_per_um2": 1.5,
+    "routing_overhead": 0.10,
+    "aspect_ratio": 1.5
+  },
+  "block": {
+    "periphery_um": 4.0,
+    "routing_overhead": 0.10,
+    "reserve_fraction": 0.08,
+    "decap_min_pf": 2.0,
+    "decap_ratio_to_comp": 0.5,
+    "decap_max_pf": 20.0
+  },
+  "estimate": {
+    "low_factor": 0.80,
+    "high_factor": 1.35
+  },
+  "layout_delta": {
+    "boundary_dummies_per_critical_group": 2,
+    "dummy_logic_for_switches": 1,
+    "guard_ring_for_input_pair": true,
+    "max_current_density_ma_per_um": 0.8,
+    "reserve_fraction": 0.08
+  }
+}
