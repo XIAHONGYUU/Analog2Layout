@@ -1,6 +1,6 @@
 # Layout Guideline
 
-> AI-native layout guideline 的展示型工作区。不是生产规则库，不含真实 PDK/公司数据。
+> AI-native layout guideline 的工作区。部分已可运行，部分仍在构想；不含真实 PDK/公司数据。
 
 ## 先看什么
 

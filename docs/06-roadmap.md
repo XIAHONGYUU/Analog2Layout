@@ -1,6 +1,6 @@
 # Roadmap
 
-> 这是一个展示型工作区，不是生产落地计划。路线图只描述“如何把工作流展示得更完整”。
+> 这是一个持续完善中的工作区，当前不是最终生产落地计划。路线图只描述“如何把工作流继续补完整”。
 
 ## v0.1 — 可运行 demo + guideline 骨架（当前）
 
@@ -19,7 +19,7 @@
 - [x] `agent/prompts/compile_layout_card.md`
 - [x] 三个示例 + unittest + GitHub Actions
 
-## v0.2 — 把 guideline 展示层填厚
+## v0.2 — 把 guideline 工作层填厚
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 
@@ -30,16 +30,16 @@
 - [ ] 一个“从 case 回流到 pattern/principle”的示例
 - [ ] Layout Card 的 JSON/YAML 形式（可选）
 
-## v0.3 — 接工具（展示即可）
+## v0.3 — 接工具（先做接口）
 
-**目标**：展示 guideline 如何与现有工具链衔接，不要求生产集成。
+**目标**：说明 guideline 如何与现有工具链衔接，不要求生产集成。
 
 - [ ] KLayout / SVG 叠加：floorplan intent vs actual
 - [ ] 从 Spectre/Calibre 报告提取关键 net 的 R/C，回填 card
 - [ ] Cadence SKILL / OpenROAD / GLayout 的接口草案
 - [ ] 私有 overlay 的目录约定（不含真实数据）
 
-## v1.0 — 完整展示链
+## v1.0 — 完整工作链
 
 **目标**：一个工程师从 README 进入，能在 15 分钟内看懂整套方法。
 

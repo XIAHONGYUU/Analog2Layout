@@ -1,6 +1,6 @@
 # Two-stage OTA（合成示例）
 
-> 这个模块只用于展示 Layout Card 的结构，不对应任何真实项目/PDK。
+> 这个模块只用于说明 Layout Card 的结构，不对应任何真实项目/PDK。
 
 ## 一句话
 

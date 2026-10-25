@@ -2,8 +2,8 @@
 
 ## Goal
 
-Maintain **Analog2Layout** as a **showcase/reference workspace** for technical
-interaction between analog and layout engineers. The primary artifact is now the
+Maintain **Analog2Layout** as an **evolving concept/prototype workspace** for
+technical interaction between analog and layout engineers. The primary artifact is now the
 **AI-native Layout Guideline**:
 
 - a folder structure and workflow for turning analog intent into a one-page
@@ -39,7 +39,7 @@ service, or audit service.
 2. Add a small **card completeness check** (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 3. (done) BGR vs VCOM comparison page added.
-4. Optionally add LDO/SADC/AFE_CH cards only if the showcase needs more breadth.
+4. Optionally add LDO/SADC/AFE_CH cards only if the workspace needs more breadth.
 
 ## Constraints
 

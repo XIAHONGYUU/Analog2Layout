@@ -1,6 +1,6 @@
 # BGR（Bandgap Reference）— 合成示例
 
-> 用于展示 Layout Card 结构，不对应真实项目/PDK；NPN / MOS 两种 core 只作为讨论分支。
+> 用于说明 Layout Card 结构，不对应真实项目/PDK；NPN / MOS 两种 core 只作为讨论分支。
 
 ## 一句话
 

@@ -1,6 +1,6 @@
 # VCOM（公共电极电压）— 合成示例
 
-> 用于展示 Layout Card 结构，不对应真实项目/PDK。
+> 用于说明 Layout Card 结构，不对应真实项目/PDK。
 
 ## 一句话
 

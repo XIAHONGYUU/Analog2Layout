@@ -5,8 +5,8 @@ This file is the durable operating contract for AI agents working in this reposi
 
 ## Mission
 
-Maintain a **showcase/reference workspace** for technical interaction between
-analog and layout engineers:
+Maintain an **evolving concept/prototype workspace** for technical interaction
+between analog and layout engineers:
 
 1. turn device intent (role/match/group/layout) into structured data;
 2. estimate area with explainable, versioned rules;
@@ -15,7 +15,8 @@ analog and layout engineers:
    with a one-page Layout Card as the first-read artifact;
 5. plan predictable post-PEX schematic deltas (dummy/decap/reserve).
 
-The project is a **showcase**, not a production rule base or signoff tool.
+The project is an **evolving concept workspace**, not a final production rule base
+or signoff tool.
 
 **Ownership:** the device-role taxonomy (`a2l/roles.py`, `docs/02-annotation.md`)
 and the rule pack (`rules/*.json`) belong to the analog design engineer/team.
@@ -67,7 +68,7 @@ PYTHONPATH=.tools python3 -c "import cairosvg; cairosvg.svg2png(url='examples/tw
 
 - README is the front door; keep the quickstart working.
 - `docs/03-area-model.md` must match `a2l/area.py` and `rules/generic_180.json`.
-- `docs/08-ai-layout-guideline.md` and `layout-guideline/` are the primary showcase; keep their links and templates consistent.
+- `docs/08-ai-layout-guideline.md` and `layout-guideline/` are the primary artifacts; keep their links and templates consistent.
 - When changing a formula, update the doc and add/adjust a test in the same change.
 - Chinese is the primary documentation language; code identifiers and JSON keys stay English.
 

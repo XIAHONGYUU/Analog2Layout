@@ -127,17 +127,19 @@ should survive individual tasks.
 
 ---
 
-## D-007 — This workspace is a showcase, not a production landing
+## D-007 — This workspace is an evolving concept workspace, not a production landing
 
 - **Status:** active
 - **Date:** 2026-10-25
 - **Owner:** project
 - **Source:** user direction
-- **Decision:** Analog2Layout exists to demonstrate how the workflow should look.
-  It is not a production rule base, signoff tool, or company deployment.
+- **Decision:** Analog2Layout exists to develop and communicate the workflow: some parts are
+  runnable, some are still conceptual, and the workspace will keep evolving. It
+  is not a final production rule base, signoff tool, or company deployment.
 - **Consequences:**
   - docs/examples may be synthetic;
-  - calibration, PDK integration, and company rollout are out of scope;
+  - calibration, PDK integration, and company rollout are not goals of this
+    iteration; they may be explored later;
   - success is measured by clarity of the workflow and artifacts, not by
     production accuracy.
 
@@ -149,7 +151,7 @@ should survive individual tasks.
 - **Date:** 2026-10-25
 - **Owner:** analog design + layout
 - **Source:** user direction
-- **Decision:** The central showcase is a `layout-guideline/` workspace with:
+- **Decision:** The central artifact is a `layout-guideline/` workspace with:
   - Principle (why);
   - Module (what this module fears);
   - Pattern (how this class is drawn);

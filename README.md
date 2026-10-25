@@ -1,21 +1,60 @@
-# Analog2Layout (`a2l`)
+# Analog2Layout
 
 [![ci](https://github.com/XIAHONGYUU/Analog2Layout/actions/workflows/ci.yml/badge.svg)](https://github.com/XIAHONGYUU/Analog2Layout/actions/workflows/ci.yml)
 [![GitHub](https://img.shields.io/badge/GitHub-XIAHONGYUU%2FAnalog2Layout-181717?logo=github)](https://github.com/XIAHONGYUU/Analog2Layout)
 
-> **定位：展示型参考工作区**，不是要落地的规则库或生产工具。它用可运行的 demo 展示“模拟意图 → 面积 → 白线图 → Layout Guideline”应该怎么串起来。
+### 把模拟设计意图编译成版图工程师能直接执行的约束与 Layout Card。
 
-> 把模拟设计师脑中的“这个管子是干什么的、哪里必须匹配、面积大概多少、版图该怎么摆”变成可版本化的数据，让 AI、模拟工程师和版图工程师围着同一张白线图讨论。
+从带 `role` 标注的网表出发，生成面积结构、白线 floorplan、Layout Card 和后期改动清单。当前多数内容仍在构想与迭代阶段：能跑的部分已经能跑通，尚未落地的部分先用结构化草案挂在这里，后续继续完善。
 
-模拟与版图之间最难沟通的，往往不是“能不能画”，而是**意图没有被结构化**：哪些管子是一对、哪些是电流镜、哪些是 cascode、哪些只是 dummy；哪些面积是必须预留的；哪些改动会在 PEX 之后才冒出来。这个工作区想把这些问题前移，做成一套**可运行、可追溯、可展示工作流**的参考原型；不追求生产落地，也不包含真实 PDK/公司规则。
+> **当前阶段**：构想 / 原型
+>
+> **能跑**：角色标注 → 五层面积 → 白线图 → layout delta
+>
+> **在搭**：AI-native Layout Guideline（Principle → Module → Pattern → Case）、BGR/VCOM Card、私有规则 overlay
 
-> 当前版本是 **v0.1 参考实现**，不是签核工具。`rules/generic_180.json` 是教学用的通用规则，不包含任何真实 PDK 参数。
+[Layout Guideline](layout-guideline/README.md) · [BGR Card](layout-guideline/02-modules/bgr/layout-card.md) · [VCOM Card](layout-guideline/02-modules/vcom/layout-card.md) · [白线图 Demo](examples/two_stage/out/floorplan.png) · [Docs](docs/08-ai-layout-guideline.md)
 
 ![two-stage white-line floorplan](examples/two_stage/out/floorplan.png)
 
+## 三分钟看懂
+
+| 你关心 | 入口 | 你会看到 |
+| --- | --- | --- |
+| 管子角色怎么变成面积？ | [面积报告](examples/two_stage/out/area_report.md) | core / active / matched / block / envelope，dummy/ring/periphery 分开 |
+| 布局怎么谈？ | [白线图](examples/two_stage/out/floorplan.svg) | 对称轴、器件编号、dummy、reserve、形状/排列 |
+| Layout guideline 怎么不散？ | [BGR](layout-guideline/02-modules/bgr/layout-card.md) / [VCOM](layout-guideline/02-modules/vcom/layout-card.md) | 一页 7 区块 + Principle / Pattern / Case 下钻 |
+| 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
+| PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
+
+## 一条链
+
+```mermaid
+flowchart LR
+  A[带 role 的网表] --> B[面积 / 形状]
+  B --> C[白线 floorplan]
+  C --> D[Layout Card]
+  D --> E[delta / change log]
+  E --> B
+```
+
+## 当前进展
+
+| 已能跑 | 仍在构想/完善 |
+| --- | --- |
+| role 标注 → 五层面积 → 白线图 → layout delta | 真实 PDK / 公司规则 / 完整私有 overlay |
+| BGR / VCOM / two-stage OTA 的 Layout Card | 更多模块（LDO / SADC / AFE_CH）与 case |
+| Principle → Module → Pattern → Case 的文件夹与模板 | card 完整性检查、工具链适配、自动回流 |
+
+## 这个项目体现的能力
+
+- **模拟语义建模**：把“这个管子是干什么的”变成 role / match / group / layout，再映射到面积与物理意图。
+- **版图物理判断**：匹配、电源回路、寄生、ESD/高压、密度，不停留在“加 dummy / 加宽 / 屏蔽”的口号。
+- **AI-native 工作流**：intent → Layout Card → 版图反馈 → change log，让 AI 编译和检查缺口，而不是替人做签核。
+
 ---
 
-## 1. 它解决什么
+## 1. 具体痛点与产物
 
 | 痛点 | a2l 的做法 | 产物 |
 | --- | --- | --- |
@@ -199,7 +238,7 @@ otherwise                → UNCERTAIN（区间跨过 budget，需要 refine 或
 
 ## 6. AI-native Layout Guideline
 
-> 这是本工作区现在最想展示的部分：不是再写一份更长的 Layout Guideline，而是把 guideline 变成一个**可编译、可下钻、可版本化**的文件夹和工作流。
+> 这是本工作区现在最核心的部分：不是再写一份更长的 Layout Guideline，而是把 guideline 变成一个**可编译、可下钻、可版本化**的文件夹和工作流。
 
 ### 为什么 guideline 最难
 
@@ -320,7 +359,7 @@ examples/
   two_stage/            两阶段 Miller OTA（完整演示）
   ota5/                 5T OTA（最小例子）
   ota5_cascode/         cascode 版本（面积对比）
-layout-guideline/       AI-native Layout Guideline 展示层
+layout-guideline/       AI-native Layout Guideline 工作层
   00-workflow/          角色、步骤、交付物、版本
   01-principles/        匹配、电源、寄生、ESD
   02-modules/           模块 card（含 two-stage-ota 示例）
@@ -367,7 +406,7 @@ tests/                  unittest，无第三方依赖
 - 私有 guideline overlay 的目录约定（不含真实数据）
 
 **v1.0**
-- 一条完整展示链：schematic → area → floorplan → Layout Card → 版图反馈 → change log
+- 一条完整工作链：schematic → area → floorplan → Layout Card → 版图反馈 → change log
 - 3 个模块的 card 可在 2 分钟内读完
 - 公开层只保留通用/合成内容，私有层可替换
 
@@ -425,7 +464,7 @@ make demo
 
 ## 14. 决策记录
 
-关键决定（展示型定位、角色归属、五层面积、Layout Guideline、只做技术交互）记录在 [`DECISIONS.md`](DECISIONS.md)。
+关键决定（工作区定位、角色归属、五层面积、Layout Guideline、只做技术交互）记录在 [`DECISIONS.md`](DECISIONS.md)。
 
 ## License
 
