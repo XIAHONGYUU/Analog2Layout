@@ -1,85 +1,67 @@
 # Roadmap
 
-## v0.1 — 可运行的参考实现（当前）
+> 这是一个展示型工作区，不是生产落地计划。路线图只描述“如何把工作流展示得更完整”。
 
-**目标**：验证“role → area → floorplan → delta”这条链是否成立。
+## v0.1 — 可运行 demo + guideline 骨架（当前）
+
+**目标**：证明“role → area → floorplan → Layout Card → delta”这条链能串起来。
 
 - [x] SPICE-like 解析 + role/match/group/layout
-- [x] 角色 taxonomy + 名字 fallback
-- [x] 规则包 + 可解释面积 + 区间
-- [x] 五层面积口径（core / active / matched / block / envelope）+ 形状/排列指标
-- [x] role/rule ownership + `--require-explicit-roles`
-- [x] 三值面积门（PASS / REJECT / UNCERTAIN）+ `--fail-on-gate`
+- [x] 五层面积口径 + 形状/排列指标
+- [x] 三值面积门 + `--fail-on-gate`
 - [x] 白线图 SVG/JSON + 对称轴 + 端口 + 通道 + reserve
-- [x] layout delta + HANDOFF + HTML 评审包
+- [x] layout delta + HANDOFF + HTML 交接包
+- [x] role/rule ownership + `--require-explicit-roles`
+- [x] `layout-guideline/` 文件夹 + 工作流
+- [x] 一页 Layout Card 示例（two-stage OTA）
+- [x] Principle / Pattern / Template 骨架
+- [x] `agent/prompts/compile_layout_card.md`
 - [x] 三个示例 + unittest + GitHub Actions
-- [x] agent prompt / schema 草案
 
-**验收**：
+## v0.2 — 把 guideline 展示层填厚
 
-```bash
-python3 -m unittest discover -s tests -v
-python3 -m a2l build examples/two_stage/two_stage.sp --out examples/two_stage/out
-```
+**目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 
-## v0.2 — 让输入更可信
+- [ ] 3–5 个模块 card（BGR / LDO / VCOM / SADC / AFE_CH，均为合成/脱敏）
+- [ ] 5–8 个 pattern card（cascode、guard ring、power grid、ESD clamp 等）
+- [ ] 2–3 个 case card（failure / near-miss / tradeoff）
+- [ ] card 完整性检查：缺 `ASK`/`UNKNOWN`/owner/evidence 时提示
+- [ ] 一个“从 case 回流到 pattern/principle”的示例
+- [ ] Layout Card 的 JSON/YAML 形式（可选）
 
-**目标**：减少“标注靠人、规则靠猜”的问题。
+## v0.3 — 接工具（展示即可）
 
-- [ ] 拓扑辅助 role 建议：diode-connected、mirror、cascode、diff pair、switch、output
-- [ ] annotation JSON Schema 校验 + `a2l annotate --check`
-- [ ] 规则包 schema 校验 + 版本迁移
-- [ ] 历史版图校准命令：`a2l calibrate rules.json actual.csv`
-- [ ] 面积基线回归（对比上一版 committed block area）
-- [ ] 更细的匹配模式：common-centroid / interdigitated / stacked / dummy count
-- [ ] 多 subckt / 层次化面积汇总
+**目标**：展示 guideline 如何与现有工具链衔接，不要求生产集成。
 
-**验收**：
+- [ ] KLayout / SVG 叠加：floorplan intent vs actual
+- [ ] 从 Spectre/Calibre 报告提取关键 net 的 R/C，回填 card
+- [ ] Cadence SKILL / OpenROAD / GLayout 的接口草案
+- [ ] 私有 overlay 的目录约定（不含真实数据）
 
-- 对 3 个以上真实（脱敏）模块，面积误差在 ±30% 内；
-- 校准后误差在 ±20% 内；
-- `a2l validate` 能拦住 90% 的 annotation 错误。
+## v1.0 — 完整展示链
 
-## v0.3 — 接工具
+**目标**：一个工程师从 README 进入，能在 15 分钟内看懂整套方法。
 
-**目标**：从“独立原型”变成“工作流的一部分”。
-
-- [ ] KLayout/GDS 导入，比较 floorplan intent vs actual
-- [ ] Cadence SKILL 导出/导入（device property、floorplan JSON）
-- [ ] OpenROAD / GLayout 适配层
-- [ ] 从 Spectre/Calibre 报告回流 PEX 结果
-- [ ] delta 状态文件 + ECO draft
-- [ ] 浏览器交互式白线图（拖动组、改 dummy、导出 JSON）
-
-**验收**：
-
-- 在一个真实模块上完成“schematic → a2l → Virtuoso/KLayout → PEX → delta 回填”的闭环；
-- 版图工程师不再需要口头解释即可开始第一版 floorplan。
-
-## v1.0 — 团队级工作区
-
-**目标**：可审计、可复用、可治理。
-
-- [ ] 公司规则包插件 + 权限/审计
-- [ ] 多模块层级面积汇总
-- [ ] 设计意图版本化 + diff
-- [ ] 与 schematic ECO 闭环（人工确认）
-- [ ] 指标 dashboard：delta coverage、acceptance、late surprises
-- [ ] 公开 benchmark（不含 PDK 机密）
+- [ ] schematic → area → floorplan → Layout Card → 版图反馈 → change log
+- [ ] 3 个模块 card 都能在 2 分钟内读完
+- [ ] 公开层只含通用/合成内容，私有层可替换
+- [ ] 每个 must-preserve 都有 principle/pattern/case 支撑
 
 ## 技术债 / 待决问题
 
-1. **面积口径**：dummy/guard ring/periphery 是否计入“模块面积”？需要团队统一。
-2. **width convention**：`w` 是 per-finger 还是 total？必须在规则包里显式声明并校验。
-3. **role taxonomy 的粒度**：`output_stage` 是否要拆成 `output_nmos`/`output_pmos`？`bias` 是否要拆成 `bias_diode`/`bias_branch`？
-4. **floorplan 评价**：如何量化“这张白线图好不好”？面积利用率、线长、对称性、拥塞、可布线性。
-5. **AI 边界**：哪些 role 可以由 AI 自动确认，哪些必须人工？建议按风险分级。
-6. **公司规则保密**：公开仓库只放 schema 和 generic 规则，真实规则包走私有 submodule/内部 registry。
+1. **Card 的可读性**：一页是否够？哪些内容应该放第二页？
+2. **四层边界**：Principle / Pattern / Module / Case 的重复如何避免？
+3. **私有 overlay**：如何只靠 ID 关联，不泄露公司规则？
+4. **数值归属**：哪些进 rule pack，哪些进 pattern 示例，哪些只留在 private？
+5. **AI 边界**：哪些内容 AI 可以编译，哪些必须人工确认？
+6. **多模块复用**：BGR/LDO/VCOM 的共性如何抽成 principle，而不变成口号？
 
-## 非目标（至少 v1.0 前）
+## 非目标
 
+- 生产规则库 / 公司部署；
 - 自动生成合法版图；
 - 替代 PEX/DRC/LVS；
 - 自动做电路拓扑/尺寸优化；
 - 自动修改原理图并提交；
+- 培训助手、主审、审计服务；
 - 支持完整 SPICE 语义。

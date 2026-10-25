@@ -1,0 +1,61 @@
+module: <name>
+version: 0.1
+owner:
+  analog: <name>
+  layout: <name>
+status: draft
+
+purpose: >
+  <一句话>
+
+ports:
+  inputs: []
+  outputs: []
+  supplies: []
+  controls: []
+
+signal_chain:
+  - <stage1 -> stage2 -> output>
+
+devices:
+  - name: <M1>
+    role: <input_pair>
+    match: <DP>
+    group: <IN>
+    layout: <common_centroid>
+    ratio: null
+    tunable: true
+    constraints: []
+
+node_attributes:
+  <net>:
+    driver: <strong|weak|external|supply>
+    level: <analog|digital|supply|high_voltage>
+    speed: <static|slow|fast|bandwidth>
+    noise: <sensitive|normal|noisy>
+    matching: <high|medium|none>
+    current: <low|medium|high>
+    esd: <yes|no>
+    parasitic: <high|medium|low>
+
+physical_intent:
+  symmetry_axis: <vertical/horizontal/none>
+  matching:
+    <group>: <pattern>
+  isolation:
+    <block>: <guard_ring/keepout/shield>
+  power:
+    <block>: <wide_metal/separate_reference/mesh>
+  floorplan:
+    bands: []
+    reserve: <pex_fix_area>
+  keepouts:
+    - <noisy/clock near sensitive net>
+
+verification:
+  pre_sim_assumptions: []
+  post_layout_targets: []
+  pex_scope: []
+
+open_questions:
+  - <question + owner>

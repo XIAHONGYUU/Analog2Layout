@@ -1,0 +1,130 @@
+# 合成示例：two-stage OTA
+# 真实项目请复制到私有层填写；不要把公司 PDK/项目数据放进 public repo。
+
+module: two_stage_ota
+version: 0.1
+owner:
+  analog: TBD
+  layout: TBD
+status: draft
+
+purpose: >
+  两级 Miller OTA：差分输入对 + 电流镜负载，第二级共源输出 + Miller 补偿。
+
+ports:
+  inputs: [vinp, vinn]
+  output: vout
+  supplies: [vdd, vss]
+  controls: [en, adj]
+
+signal_chain:
+  - input_pair -> current_mirror_load -> output_stage -> vout
+  - tail_current -> input_pair common source
+  - compensation_cap -> output_stage
+
+devices:
+  - name: M1
+    role: input_pair
+    match: DP
+    group: IN
+    layout: common_centroid
+  - name: M2
+    role: input_pair
+    match: DP
+    group: IN
+    layout: common_centroid
+  - name: M3
+    role: current_mirror
+    match: CM
+    group: LOAD
+    layout: interdigitated
+  - name: M4
+    role: current_mirror
+    match: CM
+    group: LOAD
+    layout: interdigitated
+  - name: M5
+    role: tail_current
+    match: TAIL
+    group: BIAS
+    layout: common_centroid
+  - name: M6
+    role: output_stage
+    group: OUT
+    layout: interdigitated
+  - name: M7
+    role: output_stage
+    group: OUT
+    layout: interdigitated
+  - name: C1
+    role: compensation
+    group: COMP
+
+node_attributes:
+  vinp/vinn:
+    driver: external
+    level: analog_input
+    speed: signal_bandwidth
+    noise: sensitive
+    matching: high
+    parasitic: high
+  ntail:
+    driver: tail_current
+    level: analog_internal
+    speed: bias
+    noise: sensitive
+    matching: high
+    parasitic: medium
+  vout:
+    driver: output_stage
+    level: analog_output
+    speed: signal_bandwidth
+    noise: sensitive
+    matching: not_applicable
+    parasitic: high
+  vdd/vss:
+    driver: supply
+    level: supply
+    speed: static
+    noise: supply_noise
+    current: high
+    parasitic: medium
+
+physical_intent:
+  symmetry_axis: vertical_through_input_pair
+  matching:
+    DP: common_centroid_with_boundary_dummies
+    CM: same_unit_same_environment
+    TAIL: symmetric_common_source
+  isolation:
+    input_pair: guard_ring
+    noisy_blocks: keep_away_from_input_pair
+  power:
+    output_stage: wide_metal_short_return
+    reference: separate_from_noisy_supply
+  floorplan:
+    bands: [top, mid, bottom]
+    reserve: pex_fix_area_on_right
+  keepouts:
+    - clock_and_digital_routing_near_input_pair
+    - noisy_supply_near_compensation_cap
+
+verification:
+  pre_sim_assumptions:
+    - estimated_parasitics
+  post_layout_targets:
+    - offset_noise
+    - first_stage_gain
+    - loop_stability
+    - output_em_ir
+  pex_scope:
+    - input_pair_and_tail_parasitics
+    - mirror_and_output_parasitics
+    - compensation_cap_coupling
+
+open_questions:
+  - input_pair_offset_noise_target
+  - mirror_ratio_and_unit_size
+  - output_current_em_target
+  - compensation_cap_value_and_shielding
+  - pdk_specific_ring_dummy_spacing

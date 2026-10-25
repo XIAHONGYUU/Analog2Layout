@@ -1,5 +1,7 @@
 # 白线图：布局意图，而不是合法版图
 
+> 在 AI-native Layout Guideline 中，白线图是 [Layout Card](../layout-guideline/05-templates/layout-card.md) 的第 6 个区块，不是孤立产物。
+
 ## 1. 白线图要回答什么
 
 版图工程师拿到一张白线图时，应该能快速回答：

@@ -73,6 +73,8 @@ role / match / group / layout
 
 三个产物共享同一套 role 和 rule，所以面积、布局、后期改动不会各说各话。
 
+其中最难、也最适合做 AI-native 展示的是 **Layout Guideline**：把 Principle / Module / Pattern / Case 编译成一页 Layout Card。见 [`docs/08-ai-layout-guideline.md`](08-ai-layout-guideline.md)。
+
 ## 4. 设计原则
 
 1. **标注优先于命名**：名字是 fallback，属性才是 source of truth。

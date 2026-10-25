@@ -124,3 +124,70 @@ should survive individual tasks.
   - `UNCERTAIN` is a real outcome, not a hidden warning;
   - the three-valued gate matches AnalogLoop's area gate semantics.
 - **Related:** `a2l/area.py`, `a2l/cli.py`, `docs/03-area-model.md`.
+
+---
+
+## D-007 — This workspace is a showcase, not a production landing
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** project
+- **Source:** user direction
+- **Decision:** Analog2Layout exists to demonstrate how the workflow should look.
+  It is not a production rule base, signoff tool, or company deployment.
+- **Consequences:**
+  - docs/examples may be synthetic;
+  - calibration, PDK integration, and company rollout are out of scope;
+  - success is measured by clarity of the workflow and artifacts, not by
+    production accuracy.
+
+---
+
+## D-008 — AI-native Layout Guideline is the primary artifact
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** analog design + layout
+- **Source:** user direction
+- **Decision:** The central showcase is a `layout-guideline/` workspace with:
+  - Principle (why);
+  - Module (what this module fears);
+  - Pattern (how this class is drawn);
+  - Case (what went wrong / how it was verified);
+  - a one-page Layout Card as the first-read artifact.
+- **Consequences:**
+  - the folder/workflow is part of the deliverable;
+  - the site should be readable in ~2 minutes per module;
+  - specific numbers stay in a private rule/overlay layer.
+
+---
+
+## D-009 — Only technical interaction is in scope
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** project
+- **Source:** user direction
+- **Decision:** Do not build training-assistant, main-review, or audit-service
+  features in this workspace. The workspace only carries technical interaction
+  artifacts: intent, Layout Card, floorplan, delta, change log.
+- **Consequences:**
+  - the old `review_floorplan` prompt was removed;
+  - agent prompts are limited to role annotation and Layout Card compilation;
+  - "review" appears only as human engineering review, not as an AI service.
+
+---
+
+## D-010 — Public generic layer + private company overlay
+
+- **Status:** active
+- **Date:** 2026-10-25
+- **Owner:** project
+- **Source:** project design
+- **Decision:** The public repo contains structure, templates, generic principles,
+  and synthetic examples. Real PDK/company rules, module cards, and raw cases
+  live in a private overlay and are linked by IDs.
+- **Consequences:**
+  - public examples must be synthetic or desensitized;
+  - private content is not copied into public docs;
+  - `source_id` / `rule_key` / `case_id` are the join points.

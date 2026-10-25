@@ -5,14 +5,17 @@ This file is the durable operating contract for AI agents working in this reposi
 
 ## Mission
 
-Build a **role-aware schematic → layout handoff layer** for analog circuits:
+Maintain a **showcase/reference workspace** for technical interaction between
+analog and layout engineers:
 
 1. turn device intent (role/match/group/layout) into structured data;
 2. estimate area with explainable, versioned rules;
 3. generate a white-line floorplan intent with device IDs;
-4. plan predictable post-PEX schematic deltas (dummy/decap/reserve).
+4. compile an AI-native **Layout Guideline** (Principle → Module → Pattern → Case)
+   with a one-page Layout Card as the first-read artifact;
+5. plan predictable post-PEX schematic deltas (dummy/decap/reserve).
 
-The project is a **reference implementation**, not a signoff tool.
+The project is a **showcase**, not a production rule base or signoff tool.
 
 **Ownership:** the device-role taxonomy (`a2l/roles.py`, `docs/02-annotation.md`)
 and the rule pack (`rules/*.json`) belong to the analog design engineer/team.
@@ -27,13 +30,15 @@ treat a new role or a changed rule value as approved.
 - Do not commit proprietary PDK data, company rule files, schematics, or layout data. Use the generic rule pack and synthetic examples.
 - Do not auto-edit a user's schematic. `layout_delta.json` is a proposal; humans accept/reject it.
 - Do not claim DRC/LVS/PEX accuracy. The output is an early planning estimate.
-- Do not present LLM output as geometry truth. Deterministic code owns geometry and arithmetic; AI owns semantics, explanation and review.
+- Do not present LLM output as geometry truth. Deterministic code owns geometry and arithmetic; AI owns semantic compilation, gap marking, and explanation.
+- Do not build training-assistant, main-review, or audit-service features. This workspace only carries technical interaction artifacts.
 - Preserve existing user changes and unrelated files.
 
 ## Architecture rules
 
 - Keep the core dependency-free (Python standard library only) unless a dependency is clearly justified and documented.
 - Keep `a2l/area.py`, `a2l/floorplan.py`, `a2l/delta.py` deterministic and unit-testable.
+- Keep `layout-guideline/` readable in two minutes per module: one-page Layout Card first, deeper Principle/Pattern/Case after.
 - Any new area term must be traceable to a rule key and appear in the report/tests.
 - Any new role must be added to `a2l/roles.py` with band/side/priority and documented in `docs/02-annotation.md`.
 - Keep the SVG readable at a glance: solid = existing, dashed = proposed, hatched = reserved.
@@ -62,6 +67,7 @@ PYTHONPATH=.tools python3 -c "import cairosvg; cairosvg.svg2png(url='examples/tw
 
 - README is the front door; keep the quickstart working.
 - `docs/03-area-model.md` must match `a2l/area.py` and `rules/generic_180.json`.
+- `docs/08-ai-layout-guideline.md` and `layout-guideline/` are the primary showcase; keep their links and templates consistent.
 - When changing a formula, update the doc and add/adjust a test in the same change.
 - Chinese is the primary documentation language; code identifiers and JSON keys stay English.
 
