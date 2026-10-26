@@ -23,9 +23,11 @@
 - [x] BGR vs VCOM 模块优先级对比
 - [x] Principle / Pattern / Template 骨架
 - [x] `agent/prompts/compile_layout_card.md`
-- [x] 五个示例 + unittest + GitHub Actions
+- [x] 六个示例（含 LDO 候选）+ unittest + GitHub Actions
 
 ## v0.2 — 把 guideline 工作层填厚
+
+- [ ] 评估 SKY130 1.8V LDO（41 MOS + pass FET + feedback/enable/startup）作为主目标
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 

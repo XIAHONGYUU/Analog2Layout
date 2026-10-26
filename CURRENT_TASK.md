@@ -68,18 +68,20 @@ service, or audit service.
    adjusted to avoid clipping.
 1. (done) MOSCAP density confirmed as 2 fF/µm²; white-line v0.3 redrawn to
    strict scale with dummies, separate rings, and MOSCAP.
-2. Review v0.3 with the user: ring width/contact spacing, whether OUT also needs
-   DM, MOSCAP voltage/linearity, and whether the strict-scale placement is
-   compact enough. Then adjust.
-3. Use `references/README.md` as the reading map for *The Art of Analog Layout*
+2. Evaluate the LDO candidate (`examples/sky130_ldo_01v8/`): 41 MOS, pass FET,
+   feedback/enable/startup/level shift. Decide whether LDO becomes the primary
+   target and the OP becomes a unit test.
+3. If LDO is primary: build the role map/topology proposal and add R/C/X support
+   before area/floorplan/white-line.
+4. Use `references/README.md` as the reading map for *The Art of Analog Layout*
    (licensed local copy under gitignored `references/private/`).
-4. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
+5. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-5. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
+6. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
    utilization / power return / matching-group stretch.
-6. Add 1–2 real problem records from this target to `07-problems/` and show the
+7. Add 1–2 real problem records from this target to `07-problems/` and show the
    resulting principle/pattern patch.
-7. Add a small card completeness check (not a review service): flags missing
+8. Add a small card completeness check (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 
 ## Constraints

@@ -1,5 +1,7 @@
 # 第一个真实目标：SKY130 两级 Miller OP
 
+> 这个 10 MOS OP 现在作为 **unit test**；更大的真实目标候选是 [SKY130 1.8V LDO](12-target-ldo.md)（41 MOS + pass FET + feedback/enable/startup）。
+
 ## 1. 目标
 
 用一张**真实的、开源的、经典的两级 Miller 运放**网表跑通：

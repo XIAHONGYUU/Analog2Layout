@@ -239,7 +239,7 @@ def parse_text(text: str, *, path: str = "<memory>", name: str | None = None) ->
             # handoff view.  Ignore them explicitly rather than guessing.
             continue
 
-        if head.startswith("m"):
+        if head.startswith("m") or head.startswith("xm"):
             nodes, model, param_tokens = _parse_nodes_and_model(tokens, line_no, warnings)
             params = _parse_key_values(param_tokens)
             device = Device(
