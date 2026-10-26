@@ -54,7 +54,7 @@ layout-guideline/
   02-modules/                 模块 card（含一个合成示例）
   03-patterns/                diff pair、current mirror 等画法
   04-cases/                   脱敏案例与反例
-  05-templates/               card / intent / area-target / change-log
+  05-templates/               card / intent / area-target / layout-constraints / change-log
   06-sources/                 来源、证据等级、公开/私有边界
   07-problems/                问题记录与 guideline patch
 ```

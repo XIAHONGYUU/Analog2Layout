@@ -4,6 +4,7 @@
 
 - [Layout Card](layout-card.md)
 - [White-line layout plan](white-line.md)
+- [Layout constraints](constraints.yaml)
 - [Netlist](../../../examples/sky130_two_stage_opamp/opamp.sp)
 - [目标说明](../../../docs/11-target-sky130-opamp.md)
 - [来源与许可](../../../examples/sky130_two_stage_opamp/README.md)

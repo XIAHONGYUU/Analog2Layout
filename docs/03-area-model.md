@@ -147,7 +147,15 @@ area      = OD_area + ring_area + routing
 area = C / cap_density
 ```
 
-`cap_density` 单位是 `fF/µm²`。generic 规则用 1.5 fF/µm²，仅用于演示；真实 MOM/MIM 密度必须来自工艺厂或公司规则。
+`cap_density` 单位是 `fF/µm²`。generic 规则用 1.5 fF/µm²，仅用于演示；**这不是 MOSCAP 的密度**，真实 MOSCAP / MOM / MIM 密度必须来自工艺厂或公司规则。
+
+电容类型必须显式写清楚：
+
+- 非高精度 OP 的 Miller/补偿电容通常优先 **MOSCAP**（密度高、面积小），但要检查电压系数、线性度、底板寄生和匹配；
+- 高线性/高匹配场景才优先 MOM/MIM；
+- 同一电容值，MOSCAP / MOM / MIM 的面积可能差 2–5 倍，不能只用一个 `cap_density` 混算。
+
+当前 `C1_CC=3 pF` 的 2200 µm² 是 generic-180 的 1.5 fF/µm² 结果，**不能当作 SKY130 MOSCAP 面积**。
 
 ### 3.3 匹配组
 

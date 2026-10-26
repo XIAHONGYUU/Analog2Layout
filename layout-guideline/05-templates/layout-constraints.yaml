@@ -1,0 +1,71 @@
+# Layout constraints for a white-line / floorplan sketch.
+# Values marked ASK must be confirmed by analog/layout owner; UNKNOWN means no
+# source has been provided. Do not invent PDK numbers.
+
+module: <name>
+source: <netlist path>
+rules_source: <educational | pdk | company>   # default educational
+
+devices:
+  - name: <M1_DP>
+    role: <input_pair>
+    w_um: <number>
+    l_um: <number>
+    nf: <number>
+    m: <number>
+    total_w_um: <number>
+    current_density: <ASK>
+    scale_class: <small | medium | large>   # for readable sketches
+
+dummies:
+  DP:
+    sides: both
+    count_per_side: <ASK>
+    same_wl: true
+    gate_tie: <ASK>
+    shared_source: <ASK>
+  CM:
+    sides: both
+    count_per_side: <ASK>
+    same_wl: true
+    gate_tie: <ASK>
+  TAIL:
+    sides: both
+    count_per_side: <ASK>
+    same_wl: true
+    gate_tie: <ASK>
+
+rings:
+  DP:
+    type: <ASK>                 # N+ / P+ / deep N-well / ...
+    width_um: <ASK>
+    contact_spacing_um: <ASK>
+    ring_to_device_um: <ASK>
+    ring_to_ring_um: <ASK>
+  CM:
+    type: <ASK>
+    width_um: <ASK>
+    ring_to_device_um: <ASK>
+
+caps:
+  C1_CC:
+    type: MOSCAP                # non-high-precision OP default
+    value_pf: 3
+    density_ff_per_um2: <ASK>   # not the generic 1.5 fF/um2
+    voltage_coefficient: <ASK>
+    linearity: <ASK>
+    bottom_plate_parasitic: <ASK>
+
+compactness:
+  abutment:
+    - <DP/CM share ring?>
+  shared_rings: <ASK>
+  vdd_trunk: <ASK>
+  vss_trunk: <ASK>
+  target_width_um: <ASK>
+  target_height_um: <ASK>
+
+open_questions:
+  - <dummy count / gate tie>
+  - <ring spacing source>
+  - <MOSCAP density / linearity>

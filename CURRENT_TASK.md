@@ -51,6 +51,9 @@ service, or audit service.
 - White-line layout plan v0.1 generated at
   `docs/targets/sky130-opamp/white-line.svg/png`: all 10 MOS, DP/CM ring,
   TAIL/BIAS, EN, CC, OUT, and short notes in one layout view.
+- v0.1 is a topology placeholder, **not reviewable layout**: no real dummies,
+  not compact, not to scale, arbitrary ring spacing, and C1 drawn MOM-like
+  instead of MOSCAP. v0.2 needs a constraint table before redraw.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -62,9 +65,10 @@ service, or audit service.
 
 0. (done) First-page diagrams checked at 880 px width; tall/short labels were
    adjusted to avoid clipping.
-1. (done) Generated the SKY130 target Layout Card and white-line layout plan;
-   next is stage-by-stage review with the user. Start with the white-line:
-   device arrangement, ring extent, SAB/keepout, and notes.
+1. Fill `layout-guideline/02-modules/sky130-two-stage-opamp/constraints.yaml`
+   with analog/layout decisions: dummy count/gate tie, W/L/finger/area scale,
+   ring width/spacing, MOSCAP density/linearity, compactness/abutment. Then
+   redraw the SKY130 white-line as v0.2.
 2. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
 3. Add a target-bbox/aspect variant generator (square / wide / tall) and compare

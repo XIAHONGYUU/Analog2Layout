@@ -1,11 +1,11 @@
 # Layout Card — SKY130 two-stage Miller OP
 
 **版本**：v0.1 · **owner**：analog + layout · **状态**：draft · **阅读目标**：2 分钟
-**产物**：[netlist](../../../examples/sky130_two_stage_opamp/opamp.sp) · [area report](../../../docs/targets/sky130-opamp/area_report.md) · [floorplan](../../../docs/targets/sky130-opamp/floorplan.png) · [HANDOFF](../../../docs/targets/sky130-opamp/HANDOFF.md)
+**产物**：[netlist](../../../examples/sky130_two_stage_opamp/opamp.sp) · [constraints](constraints.yaml) · [area report](../../../docs/targets/sky130-opamp/area_report.md) · [floorplan](../../../docs/targets/sky130-opamp/floorplan.png) · [HANDOFF](../../../docs/targets/sky130-opamp/HANDOFF.md)
 
 ## 1. 一句话 + 信号链
 
-10 MOS + 1 个 3 pF 补偿电容的两级 Miller OP，带真实 bias 镜像和 active-high enable；10 pF 负载是外部 testbench，不计入 core 面积。
+10 MOS + 1 个 3 pF 补偿电容（MOSCAP 首选）的两级 Miller OP，带真实 bias 镜像和 active-high enable；10 pF 负载是外部 testbench，不计入 core 面积。
 
 ```text
 INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
@@ -52,7 +52,7 @@ INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
 | `BIAS` | `M8_BIAS` | `bias` | — | diode 连接；远离 EN/数字控制线 |
 | `EN` | `M9_EN`, `M10_EN_PD` | `enable_switch` | — | `EN=0` 真关断；pull-up 有效 |
 | `OUT` | `M6_OUT`, `M7_OUT` | `output_stage` | — | 宽金属、多过孔、EM/IR |
-| `CC` | `C1_CC` | `compensation` | — | 3 pF；输出节点；注意寄生/耦合 |
+| `CC` | `C1_CC` | `compensation` | — | 3 pF；非高精度 OP 优先 MOSCAP；MOM/MIM 仅在需要时；注意寄生/耦合 |
 
 **关键尺寸**：`M1/M2/M3/M4/M5/M8 = 0.75/0.5`；`M6 = 8.5/0.5, nf=2`；`M7 = 6.5/0.5`；`M9 = 2/0.5`；`M10 = 1/0.5`；`C1 = 3 pF`。
 
@@ -61,7 +61,7 @@ INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
 ![White-line layout plan detail](../../../docs/targets/sky130-opamp/white-line-detail.png)
 
 - **White-line 结构**：`CM` 左上、`DP` 中左、`TAIL/BIAS` + `EN` 左下、`CC` 中右、`OUT` 右侧；`RING` 包 `DP/CM`。
-- 每个 MOS 单独成阵列块：`DP/CM` 各 4 指，`M6_OUT` 2 指宽管，`M7_OUT` 1 指长管，`C1_CC` 大电容阵列。
+- 每个 MOS 单独成阵列块：`DP/CM` 各 4 指，`M6_OUT` 2 指宽管，`M7_OUT` 1 指长管，`C1_CC` 用 MOSCAP 块（首选）。
 - `TAIL/BIAS` 的 `M5/M8` 各 2 指；`EN` 的 `M9/M10` 各 2 指；`I0` 是虚线理想源。
 - 这张 white-line 不是合法版图，也不是自动 floorplan；它表达的是**版图结构和摆放意图**。
 - 自动 floorplan snapshot（块级）：97.0 × 51.2 µm；aspect 1.90；3 行；利用率 41.8%；[快照](../../../docs/targets/sky130-opamp/floorplan.png)。
@@ -78,11 +78,14 @@ INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
 
 **待确认**
 
+- `ASK` `DP` / `CM` / `TAIL` 外侧 dummy 的数量、W/L、栅接法、是否共用 source？owner：analog + layout。
 - `ASK` 6 个 boundary dummy 是否接受？`TAIL` 单器件是否需要 dummy tail？owner：analog。
 - `ASK` reserve 怎么处理：加到 ≥1827 µm²，还是拒绝 2 pF decap / 改 floorplan？owner：analog + layout。
 - `ASK` `EN` 的极性/关断时间/漏电目标是什么？`EN=0` 时 `VOUT` 允许浮空还是必须拉低？owner：analog。
 - `ASK` 10 pF 负载、ESD、输出过流是否属于本模块边界？owner：analog + layout。
 - `ASK` 是否把理想 `I0` 换成真实 bias 生成器？owner：analog。
+- `ASK` `C1_CC` 用 MOSCAP 还是 MOM/MIM？非高精度 OP 先按 MOSCAP，但需要电压系数/线性度/底板寄生确认。owner：analog。
+- `ASK` MOS 相对尺寸是否按真实 W/L/area 重画？当前 white-line 是“可读性尺寸”，不是比例尺寸。owner：layout。
 
 **UNKNOWN**
 

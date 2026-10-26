@@ -1,5 +1,7 @@
 # White-line layout plan — SKY130 two-stage OP
 
+> **v0.1 状态：拓扑占位图，不是可评审版图。** 已知问题：没有真实 dummy 管、布局不紧凑、MOS 相对尺寸不是按 W/L 比例、ring 间距没有 PDK 规则、`C1_CC` 画成了 MOM-like 阵列而不是 MOSCAP。下面保留它作为讨论底稿，v0.2 按约束重画。
+
 ![SKY130 white-line layout plan](../../../docs/targets/sky130-opamp/white-line.png)
 
 布局细节：
@@ -38,6 +40,22 @@
 - `C1_CC` 画成大阵列，因为当前 generic-180 下它占 device area 的 95.8%；
 - `RING` 先包 `DP/CM`，`TAIL/BIAS/OUT` 的 ring 还没画。
 
+## v0.1 已知问题
+
+- **dummy**：现在只有边界 `DM` 虚线框，不是真实 dummy 管；输入对、尾电流、负载管外侧都需要真实 dummy（数量/尺寸/栅接法待定）。
+- **紧凑度**：为了放标签把组拉开了，不是真实 layout 的紧凑摆放；需要 abutment / shared ring / 共用源漏 / 走线通道。
+- **相对尺寸**：`M6_OUT` 和 `M7_OUT` 都画成 300 宽，`M3/M4` 各 130 宽，`C1` 250×240；这些是“可读性尺寸”，不是按真实 W/L/area 比例。
+- **ring 间距**：`RING` 只是示意虚线，ring 宽度、contact、ring-to-device、N/P ring、well 间距都没有规则依据。
+- **电容类型**：`C1_CC` 现在画成 4 指 MOM-like 阵列；非高精度 OP 应该优先 MOSCAP，面积/寄生/线性度都要重算。
+
+## v0.2 需要先确定的约束
+
+1. `DP` / `CM` / `TAIL` 外侧 dummy 的数量、W/L、栅接法、是否共用 source；
+2. 每个器件的 W/L、nf、m、current density，以及按面积的相对缩放；
+3. ring 宽度、contact、ring-to-device、ring-to-ring、N/P ring、well 间距（PDK/公司规则）；
+4. `C1_CC` 用 MOSCAP 还是 MOM/MIM，密度/电压系数/线性度/底板寄生；
+5. 紧凑摆放目标：哪些组 abut、哪些 ring 共享、VDD/VSS 主干怎么走。
+
 ## 当前未决
 
 - `ASK` `RING` 只包 `DP/CM`，还是也要包 `TAIL/BIAS` / `OUT`？
@@ -51,6 +69,7 @@
 ## 相关
 
 - [Layout Card](layout-card.md)
+- [Layout constraints](constraints.yaml)
 - [SVG 源文件](../../../docs/targets/sky130-opamp/white-line.svg)
 - [生成脚本](../../../docs/targets/sky130-opamp/make_white_line_layout.py)
 - [Netlist](../../../examples/sky130_two_stage_opamp/opamp.sp)

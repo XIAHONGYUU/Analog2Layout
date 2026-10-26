@@ -34,7 +34,7 @@
 | `M8_BIAS` | NMOS | 0.75/0.5 | bias 镜像二极管 |
 | `M9_EN` | NMOS | 2/0.5 | bias 支路使能开关 |
 | `M10_EN_PD` | PMOS | 1/0.5 | EN=0 时把 bias 节点拉高，确保关断 |
-| `C1_CC` | cap | 3 pF | Miller 补偿 |
+| `C1_CC` | MOSCAP（首选） | 3 pF | Miller 补偿；非高精度 OP 优先 MOSCAP |
 
 ## 4. 名字推断结果
 

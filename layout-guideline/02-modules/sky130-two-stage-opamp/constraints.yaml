@@ -1,0 +1,59 @@
+module: sky130_two_stage_opamp
+source: examples/sky130_two_stage_opamp/opamp.sp
+rules_source: educational   # generic-180 only; no SKY130/company rule pack
+
+devices:
+  - {name: M1_DP, role: input_pair,     w_um: 0.75, l_um: 0.5, nf: 1, m: 1, total_w_um: 0.75,  scale_class: small}
+  - {name: M2_DP, role: input_pair,     w_um: 0.75, l_um: 0.5, nf: 1, m: 1, total_w_um: 0.75,  scale_class: small}
+  - {name: M3_CM, role: current_mirror, w_um: 0.75, l_um: 0.5, nf: 1, m: 1, total_w_um: 0.75,  scale_class: small}
+  - {name: M4_CM, role: current_mirror, w_um: 0.75, l_um: 0.5, nf: 1, m: 1, total_w_um: 0.75,  scale_class: small}
+  - {name: M5_TAIL, role: tail_current, w_um: 0.75, l_um: 0.5, nf: 1, m: 1, total_w_um: 0.75,  scale_class: small}
+  - {name: M6_OUT, role: output_stage,  w_um: 8.5,  l_um: 0.5, nf: 2, m: 1, total_w_um: 17.0, scale_class: large}
+  - {name: M7_OUT, role: output_stage,  w_um: 6.5,  l_um: 0.5, nf: 1, m: 1, total_w_um: 6.5,  scale_class: medium}
+  - {name: M8_BIAS, role: bias,         w_um: 0.75, l_um: 0.5, nf: 1, m: 1, total_w_um: 0.75,  scale_class: small}
+  - {name: M9_EN, role: enable_switch,  w_um: 2.0,  l_um: 0.5, nf: 1, m: 1, total_w_um: 2.0,  scale_class: small}
+  - {name: M10_EN_PD, role: enable_switch, w_um: 1.0, l_um: 0.5, nf: 1, m: 1, total_w_um: 1.0, scale_class: small}
+
+dummies:
+  DP:   {sides: both, count_per_side: ASK, same_wl: true, gate_tie: ASK, shared_source: ASK}
+  CM:   {sides: both, count_per_side: ASK, same_wl: true, gate_tie: ASK}
+  TAIL: {sides: both, count_per_side: ASK, same_wl: true, gate_tie: ASK}
+
+rings:
+  DP:
+    type: ASK
+    width_um: ASK
+    contact_spacing_um: ASK
+    ring_to_device_um: ASK
+    ring_to_ring_um: ASK
+  CM:
+    type: ASK
+    width_um: ASK
+    contact_spacing_um: ASK
+    ring_to_device_um: ASK
+
+caps:
+  C1_CC:
+    type: MOSCAP
+    value_pf: 3
+    density_ff_per_um2: ASK
+    voltage_coefficient: ASK
+    linearity: ASK
+    bottom_plate_parasitic: ASK
+
+compactness:
+  abutment:
+    - "DP/M1-M2: common-centroid, shared source node"
+    - "CM/M3-M4: shared gate net, same well"
+    - "TAIL/BIAS: M5/M8 mirror, keep close"
+  shared_rings: ASK
+  vdd_trunk: ASK
+  vss_trunk: ASK
+  target_width_um: ASK
+  target_height_um: ASK
+
+open_questions:
+  - "dummy count per side and gate tie"
+  - "ring width / contact / ring-to-device / ring-to-ring"
+  - "C1 MOSCAP density / voltage coefficient / linearity"
+  - "which groups abut / share a ring"
