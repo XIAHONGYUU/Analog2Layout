@@ -31,6 +31,6 @@ M16 ibias ibias vss vss nmos w=162u l=2u
 * bias / compensation
 I_BIAS n002 ibias 100u
 R1 n003 n006 3.33k
-C1_CC vout n012 5p
+C1_CC vout n012 5p area_core_um2=50 w_layout_um=5u h_layout_um=10u
 
 .ends classa_opamp

@@ -35,6 +35,15 @@ class ClassAReviewTests(unittest.TestCase):
         self.assertEqual(devices["M8"].params["w"], "9u")
         self.assertEqual(devices["M8"].params["m"], "12")
 
+    def test_fixed_mom_cap_geometry(self):
+        netlist = parse_file(SIZED)
+        report = estimate_area(netlist, self.rules)
+        cap = next(d for d in report.devices if d.name == "C1_CC")
+        self.assertAlmostEqual(cap.area_core_um2, 50.0)
+        self.assertAlmostEqual(cap.area_total_um2, 50.0)
+        self.assertAlmostEqual(cap.w_layout_um, 5.0)
+        self.assertAlmostEqual(cap.h_layout_um, 10.0)
+
 
 if __name__ == "__main__":
     unittest.main()

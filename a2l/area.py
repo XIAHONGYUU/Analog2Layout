@@ -23,6 +23,7 @@ from typing import Any
 from .netlist import Device, Netlist
 from .roles import RoleSpec, get_role
 from .rules import Rules
+from .units import parse_length_um
 
 
 @dataclass
@@ -324,6 +325,21 @@ def _estimate_device(
     )
 
 
+def _float_param(raw: str | None) -> float:
+    if raw is None:
+        return 0.0
+    try:
+        return float(raw)
+    except ValueError:
+        return 0.0
+
+
+def _length_param(raw: str | None) -> float:
+    if raw is None:
+        return 0.0
+    return parse_length_um(raw, what="cap layout geometry")
+
+
 def _estimate_cap(
     device: Device,
     rules: Rules,
@@ -335,21 +351,44 @@ def _estimate_cap(
     if c_pf <= 0:
         raise ValueError("capacitance must be > 0")
 
-    density = float(rules.cap("density_ff_per_um2", 1.5))
-    if density <= 0:
-        raise ValueError("cap.density_ff_per_um2 must be > 0")
+    # A target may pin a capacitor to an explicit layout block (for example a
+    # 5 x 10 um MOM cap).  In that case the density rule is not used: the
+    # geometry is the area, and the block is assumed to include its own routing.
+    fixed_area = _float_param(device.params.get("area_core_um2"))
+    fixed_w = _length_param(device.params.get("w_layout_um"))
+    fixed_h = _length_param(device.params.get("h_layout_um"))
+    if fixed_area > 0 or (fixed_w > 0 and fixed_h > 0):
+        if fixed_area <= 0:
+            fixed_area = fixed_w * fixed_h
+        if fixed_w <= 0:
+            fixed_w = math.sqrt(fixed_area)
+        if fixed_h <= 0:
+            fixed_h = fixed_area / fixed_w
+        area = fixed_area
+        w_layout = fixed_w
+        h_layout = fixed_h
+        routing_area = 0.0
+        total_area = area
+        fixed_note = "fixed layout geometry; density rule bypassed"
+    else:
+        density = float(rules.cap("density_ff_per_um2", 1.5))
+        if density <= 0:
+            raise ValueError("cap.density_ff_per_um2 must be > 0")
 
-    aspect = float(rules.cap("aspect_ratio", 1.5))
-    area = c_pf * 1000.0 / density  # 1 pF = 1000 fF
-    side = math.sqrt(area / max(aspect, 0.1))
-    w_layout = side * max(aspect, 0.1)
-    h_layout = side
+        aspect = float(rules.cap("aspect_ratio", 1.5))
+        area = c_pf * 1000.0 / density  # 1 pF = 1000 fF
+        side = math.sqrt(area / max(aspect, 0.1))
+        w_layout = side * max(aspect, 0.1)
+        h_layout = side
 
-    routing_overhead = float(rules.cap("routing_overhead", 0.10))
-    routing_area = area * routing_overhead
-    total_area = area + routing_area
+        routing_overhead = float(rules.cap("routing_overhead", 0.10))
+        routing_area = area * routing_overhead
+        total_area = area + routing_area
+        fixed_note = ""
 
-    if spec.id == "compensation":
+    if fixed_note:
+        note = f"{fixed_note}; compensation cap"
+    elif spec.id == "compensation":
         note = "compensation cap; keep away from noisy nodes"
     elif spec.id == "decap":
         note = "decoupling cap; place near supply pins"

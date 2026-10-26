@@ -157,6 +157,16 @@ area = C / cap_density
 
 当前 `C1_CC=3 pF` 的 core 面积是 1500 µm²（3 pF ÷ 2 fF/µm²），加 routing overhead 后约 1650 µm²；这是 educational MOSCAP 结果，**不能当作 SKY130 签核面积**。
 
+如果实例已经有明确的版图几何，可以用**固定几何覆盖**：
+
+```spice
+C1_CC vout n012 5p area_core_um2=50 w_layout_um=5u h_layout_um=10u
+```
+
+此时直接采用 `area_core_um2` / `w_layout_um` / `h_layout_um`，不再用
+`cap_density` 反算；`area_total_um2` 等于该块面积，默认这个块已经包含
+自己的 routing。class-A 参考电路的 5 pF MOM 就是固定 **5 × 10 µm = 50 µm²**。
+
 ### 3.3 匹配组
 
 ```text

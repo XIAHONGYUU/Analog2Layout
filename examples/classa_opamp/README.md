@@ -59,9 +59,12 @@ The key check is simple: **M13's gate has no signal path**; it is tied to
 
 ## Current netlist
 
-- 16 MOS + 1 compensation cap (`C1_CC = 5 pF`).
-- `I_BIAS = 100 µA`, `R1 = 3.33 kΩ`; both currently ignored by the parser.
-- External `CL = 10 pF` is documented but not in the core netlist.
+- 16 MOS + 1 compensation cap.
+- `C1_CC = 5 pF` MOM, fixed **5 × 10 µm = 50 µm²** layout block; see [cap-mom-5x10.png](cap-mom-5x10.png).
+- `R1 = 3.33 kΩ`, `w=2 µm`, `L=3 µm`, `m=4`; the parser currently ignores R.
+- `I_BIAS = 100 µA` is an ideal source: **no layout impact**.
+- External `CL = 10 pF` is a testbench load: **no layout impact**.
+- `VDD/VSS = 2 V / 0 V` are supplies: **no layout impact**.
 
 ```bash
 python3 -m a2l analyze examples/classa_opamp/opamp.sp
@@ -74,7 +77,7 @@ python3 -m a2l analyze examples/classa_opamp/opamp.sized.sp
 
 ## Documents
 
-- [sizing.md](sizing.md): original W/L, m=1 check, and matching-group ratio analysis.
+- [sizing.md](sizing.md): unit W, m conversion, matching-group ratios, C1_CC fixed MOM block.
 
 - [structure.md](structure.md): node-by-node explanation, corrected to class A.
 - [textbook.md](textbook.md): what Allen & Holberg say about class AB, and why
