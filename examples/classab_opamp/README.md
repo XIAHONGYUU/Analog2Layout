@@ -31,6 +31,11 @@ upstream **schematic image**, unlike the LDO.
 python3 -m a2l analyze examples/classab_opamp/opamp.sp
 ```
 
+## Second-stage structure
+
+See [structure.md](structure.md) for a node-by-node explanation of
+M6/M7/M8/M9/M10/M11/M12/M13/M14/R1/Cc, including the R1-vs-README discrepancy.
+
 ## What to judge
 
 - Which devices belong to `input_pair`, `current_mirror`, `output_stage`,
