@@ -74,7 +74,8 @@ service, or audit service.
    strict scale with dummies, separate rings, and MOSCAP.
 2. LDO is now the primary target; OP is a unit test. Review the agent role
    proposal in `examples/sky130_ldo_01v8/ldo.annotated.sp` (41 explicit roles,
-   14 groups, pass FET = 83.4% of device area).
+   14 groups, pass FET = 83.4% of device area) against the reconstructed
+   block schematic in `docs/targets/sky130-ldo/schematic.png`.
 3. Add `XR*` resistor / `XC*` MIM area and `x1/x2` level-shifter black boxes.
 4. Fix the 14-group floorplan: the pass FET is folded, but the block is still
    605.6 µm wide because all groups are packed into 3 bands. Then build the LDO

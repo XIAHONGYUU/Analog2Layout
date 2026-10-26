@@ -12,6 +12,14 @@ unit test.
 - License: Apache-2.0 (see `LICENSE`)
 - Netlist copied from `netlist/schematic/sky130_am_ip__ldo_01v8.spice`
 
+## Schematic view
+
+![Reconstructed LDO block schematic](../../docs/targets/sky130-ldo/schematic.png)
+
+Upstream has no PNG screenshot; it has an xschem `.sch`. This block schematic is
+reconstructed from the block labels + netlist for role-map review, not a
+transistor-level screenshot.
+
 ## Why this is a better target
 
 - **41 MOS** plus one power pass device with `m=1000` (`XM61`);

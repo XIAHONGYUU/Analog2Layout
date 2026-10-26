@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="960" viewBox="0 0 1700 960" role="img" aria-label="SKY130 LDO reconstructed block schematic">
+<rect x="0" y="0" width="1700" height="960" rx="10" fill="#0A0F16" stroke="#F8FAFC" stroke-width="1.5"/>
+<text x="44" y="50" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="30" font-weight="700" fill="#F8FAFC" text-anchor="start">SKY130 1.8V LDO — reconstructed block schematic</text>
+<text x="44" y="78" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="13" font-weight="400" fill="#94A3B8" text-anchor="start">from upstream xschem block labels + netlist · role proposal v0.1 · not an upstream screenshot</text>
+<text x="44" y="98" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#64748B" text-anchor="start">Apache-2.0 source: sky130_am_ip__ldo_01v8 · pass FET m=1000 · R/C/X area still pending</text>
+<rect x="40" y="186" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#FBBF24" stroke-width="1"/>
+<text x="105" y="204" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle">AVDD</text>
+<line x1="170" y1="200" x2="210" y2="200" stroke="#FBBF24" stroke-width="1.5"/>
+<rect x="40" y="226" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#94A3B8" stroke-width="1"/>
+<text x="105" y="244" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#94A3B8" text-anchor="middle">AVSS</text>
+<line x1="170" y1="240" x2="210" y2="240" stroke="#94A3B8" stroke-width="1.5"/>
+<rect x="40" y="266" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#F472B6" stroke-width="1"/>
+<text x="105" y="284" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#F472B6" text-anchor="middle">ENA</text>
+<line x1="170" y1="280" x2="210" y2="280" stroke="#F472B6" stroke-width="1.5"/>
+<rect x="40" y="306" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#22D3EE" stroke-width="1"/>
+<text x="105" y="324" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#22D3EE" text-anchor="middle">VREF_EXT</text>
+<line x1="170" y1="320" x2="210" y2="320" stroke="#22D3EE" stroke-width="1.5"/>
+<rect x="40" y="346" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#A78BFA" stroke-width="1"/>
+<text x="105" y="364" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#A78BFA" text-anchor="middle">SEL_EXT</text>
+<line x1="170" y1="360" x2="210" y2="360" stroke="#A78BFA" stroke-width="1.5"/>
+<rect x="40" y="386" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#FBBF24" stroke-width="1"/>
+<text x="105" y="404" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle">DVDD</text>
+<line x1="170" y1="400" x2="210" y2="400" stroke="#FBBF24" stroke-width="1.5"/>
+<rect x="40" y="426" width="130" height="28" rx="7" fill="#0E1A2B" stroke="#94A3B8" stroke-width="1"/>
+<text x="105" y="444" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#94A3B8" text-anchor="middle">DVSS</text>
+<line x1="170" y1="440" x2="210" y2="440" stroke="#94A3B8" stroke-width="1.5"/>
+<rect x="470" y="200" width="240" height="130" rx="12" fill="#0E1A2B" stroke="#22D3EE" stroke-width="2"/>
+<text x="490" y="228" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="15" font-weight="700" fill="#22D3EE" text-anchor="start">Error amplifier</text>
+<text x="490" y="250" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM52/53 input pair</text>
+<text x="490" y="266" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM54 tail · XM57/58 cascode</text>
+<text x="490" y="282" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM46/56 load · XM55 sink</text>
+<text x="490" y="312" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">VREF → error → VERR</text>
+<rect x="760" y="200" width="200" height="130" rx="12" fill="#0E1A2B" stroke="#FBBF24" stroke-width="2"/>
+<text x="780" y="228" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="15" font-weight="700" fill="#FBBF24" text-anchor="start">Buffer</text>
+<text x="780" y="250" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM59 driver</text>
+<text x="780" y="266" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM60 current source</text>
+<text x="780" y="300" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">VERR → VPASS</text>
+<rect x="1010" y="200" width="220" height="130" rx="12" fill="#0E1A2B" stroke="#F59E0B" stroke-width="2"/>
+<text x="1030" y="228" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="15" font-weight="700" fill="#F59E0B" text-anchor="start">Pass transistor</text>
+<text x="1030" y="250" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM61  W=5 L=0.5</text>
+<text x="1030" y="266" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">m=1000 · power FET</text>
+<text x="1030" y="300" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">VPASS → VOUT</text>
+<rect x="120" y="600" width="220" height="120" rx="12" fill="#0E1A2B" stroke="#34D399" stroke-width="2"/>
+<text x="138" y="626" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="14" font-weight="700" fill="#34D399" text-anchor="start">Current reference</text>
+<text x="138" y="648" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM62–XM69</text>
+<text x="138" y="664" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">bias mirrors / cascode</text>
+<text x="138" y="694" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">role proposal</text>
+<rect x="380" y="600" width="180" height="120" rx="12" fill="#0E1A2B" stroke="#34D399" stroke-width="2"/>
+<text x="398" y="626" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="14" font-weight="700" fill="#34D399" text-anchor="start">Start-up</text>
+<text x="398" y="648" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM70–XM74</text>
+<text x="398" y="664" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">VSTART / VBIAS_N</text>
+<text x="398" y="694" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">role proposal</text>
+<rect x="600" y="600" width="210" height="120" rx="12" fill="#0E1A2B" stroke="#A78BFA" stroke-width="2"/>
+<text x="618" y="626" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="14" font-weight="700" fill="#A78BFA" text-anchor="start">1.2V reference</text>
+<text x="618" y="648" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM79–XM82</text>
+<text x="618" y="664" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">VREF_INT</text>
+<text x="618" y="694" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">role proposal</text>
+<rect x="850" y="600" width="200" height="120" rx="12" fill="#0E1A2B" stroke="#A78BFA" stroke-width="2"/>
+<text x="868" y="626" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="14" font-weight="700" fill="#A78BFA" text-anchor="start">Voltage ref mux</text>
+<text x="868" y="648" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM75–XM78</text>
+<text x="868" y="664" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">VREF_EXT / INT</text>
+<text x="868" y="694" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">role proposal</text>
+<rect x="1090" y="600" width="200" height="120" rx="12" fill="#0E1A2B" stroke="#F472B6" stroke-width="2"/>
+<text x="1108" y="626" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="14" font-weight="700" fill="#F472B6" text-anchor="start">Enable</text>
+<text x="1108" y="648" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XM83–XM90</text>
+<text x="1108" y="664" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">ENA / NENA</text>
+<text x="1108" y="694" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">role proposal</text>
+<rect x="1320" y="430" width="230" height="170" rx="12" fill="#0E1A2B" stroke="#60A5FA" stroke-width="2"/>
+<text x="1340" y="458" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="14" font-weight="700" fill="#60A5FA" text-anchor="start">Feedback divider</text>
+<text x="1340" y="480" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">XR4 / XR5</text>
+<text x="1340" y="496" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">VOUT → VM</text>
+<text x="1340" y="520" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">R ratio sets VOUT</text>
+<text x="1340" y="560" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#F472B6" text-anchor="start">not parsed yet</text>
+<text x="1600" y="308" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="16" font-weight="700" fill="#F59E0B" text-anchor="start">VOUT</text>
+<line x1="1230" y1="300" x2="1590" y2="300" stroke="#F59E0B" stroke-width="2.5"/>
+<circle cx="1590" cy="300" r="5" fill="#F59E0B"/>
+<line x1="710" y1="265" x2="760" y2="265" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"/>
+<line x1="760" y1="265" x2="751.2241743810963" y2="269.79425538604204" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"/>
+<line x1="760" y1="265" x2="751.2241743810963" y2="260.20574461395796" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"/>
+<line x1="960" y1="265" x2="1010" y2="265" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"/>
+<line x1="1010" y1="265" x2="1001.2241743810963" y2="269.79425538604204" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"/>
+<line x1="1010" y1="265" x2="1001.2241743810963" y2="260.20574461395796" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"/>
+<line x1="210" y1="320" x2="470" y2="300" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="470" y1="300" x2="461.61772630556106" y2="305.45320893708623" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="470" y1="300" x2="460.8823210998236" y2="295.89294126249956" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="210" y1="360" x2="850" y2="600" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="850" y1="600" x2="840.0995629647617" y2="601.4076031085797" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="850" y1="600" x2="843.4663138667632" y2="592.4296007032423" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="210" y1="280" x2="1090" y2="660" stroke="#F472B6" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1090" y1="660" x2="1080.04262937172" y2="660.9223720350641" stroke="#F472B6" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1090" y1="660" x2="1083.843860384452" y2="652.1195212687375" stroke="#F472B6" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="330" y1="600" x2="470" y2="330" stroke="#34D399" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="470" y1="330" x2="470.2164587792369" y2="339.99765700536335" stroke="#34D399" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="470" y1="330" x2="461.7042148914724" y2="335.5839009154114" stroke="#34D399" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="470" y1="600" x2="470" y2="330" stroke="#34D399" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="470" y1="330" x2="474.79425538604204" y2="338.77582561890375" stroke="#34D399" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="470" y1="330" x2="465.20574461395796" y2="338.77582561890375" stroke="#34D399" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="705" y1="600" x2="705" y2="330" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="705" y1="330" x2="709.794255386042" y2="338.77582561890375" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="705" y1="330" x2="700.205744613958" y2="338.77582561890375" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="950" y1="600" x2="705" y2="330" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="705" y1="330" x2="714.4477014688142" y2="333.2773368694973" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="705" y1="330" x2="707.3468310056311" y2="339.72071932683014" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1590" y1="300" x2="1590" y2="430" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="1590" y1="430" x2="1585.205744613958" y2="421.22417438109625" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="1590" y1="430" x2="1594.794255386042" y2="421.22417438109625" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="1435" y1="430" x2="650" y2="330" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="650" y1="330" x2="659.3113116032375" y2="326.3531553052791" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="650" y1="330" x2="658.0996371265943" y2="335.86479994692877" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="1190" y1="600" x2="590" y2="330" stroke="#F472B6" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+<line x1="1190" y1="600" x2="880" y2="330" stroke="#F472B6" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+<line x1="1190" y1="600" x2="1130" y2="330" stroke="#F472B6" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+<line x1="44" y1="900" x2="1656" y2="900" stroke="#64748B" stroke-width="1"/>
+<text x="44" y="925" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">block-level reconstruction; not the upstream transistor schematic · R/C/X and level shifters not in area</text>
+<text x="1656" y="925" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="10" font-weight="400" fill="#64748B" text-anchor="end">v0.1 · synthetic view</text>
+</svg>

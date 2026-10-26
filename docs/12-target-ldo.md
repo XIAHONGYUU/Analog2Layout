@@ -47,6 +47,15 @@ agent's advantage:
 4. **Control/analog mix**: enable, startup, reference select, level shifters —
    good test for role grouping and module boundaries.
 
+## Reconstructed block schematic
+
+![LDO block schematic](targets/sky130-ldo/schematic.png)
+
+上游仓库没有现成 PNG，只有
+[`xschem/sky130_am_ip__ldo_01v8.sch`](https://github.com/fossi-foundation/sky130_am_ip__ldo_01v8/blob/main/xschem/sky130_am_ip__ldo_01v8.sch)。
+这张图是**从 xschem block label + netlist 重建的 block schematic**，不是上游原始截图；
+用来先审 role map，不是晶体管级 schematic。
+
 ## Current run
 
 Raw netlist:

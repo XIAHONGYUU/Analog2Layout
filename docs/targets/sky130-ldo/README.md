@@ -15,4 +15,7 @@ python3 -m a2l build examples/sky130_ldo_01v8/ldo.annotated.sp \
 - floorplan is wide (605.6 µm) because 14 groups are still packed into 3 bands;
   power-device folding reduced the pass FET from 1320 µm to ~94 µm per row.
 
+- [`schematic.svg`](schematic.svg) / [`schematic.png`](schematic.png):
+  reconstructed block schematic (not an upstream screenshot)
+
 Files are copied from `out/sky130_ldo/`; regenerate with the command above.
