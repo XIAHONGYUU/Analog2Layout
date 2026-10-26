@@ -137,7 +137,7 @@ def draw_group(g):
     cy = gy + RING_W + RING_GAP
     # shared dummy columns
     for side in (-1, 1):
-        dx = cx if side < 0 else cx + a["aw"]
+        dx = cx if side < 0 else cx + a["fw"] + a["aw"]
         for r in range(a["rows"]):
             rect(dx, cy + r*a["fh"], a["fw"], a["fh"], fill="#e2e8f0", stroke="#94a3b8", sw=0.45, dash="2 1")
             if r == 0:
