@@ -35,6 +35,8 @@ python3 -m a2l analyze examples/classab_opamp/opamp.sp
 
 See [structure.md](structure.md) for a node-by-node explanation of
 M6/M7/M8/M9/M10/M11/M12/M13/M14/R1/Cc, including the R1-vs-README discrepancy.
+See [textbook.md](textbook.md) for the Allen & Holberg class-AB / floating-current-source
+explanation and how it maps to this netlist.
 
 ## What to judge
 
