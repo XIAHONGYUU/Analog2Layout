@@ -36,7 +36,7 @@
 | 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
 
-> **第一个真实目标**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 个 MOS + 1 个补偿电容，包含真实的 bias/enable 辅助管；[网表](examples/sky130_two_stage_opamp/opamp.sp) · [来源与许可](examples/sky130_two_stage_opamp/README.md)。
+> **第一个真实目标**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 个 MOS + 1 个补偿电容，包含真实的 bias/enable 辅助管；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [网表](examples/sky130_two_stage_opamp/opamp.sp) · [来源与许可](examples/sky130_two_stage_opamp/README.md)。
 
 ## 一条链
 
@@ -334,6 +334,7 @@ Layout Guideline 的价值不在“写得多全”，而在**以前项目的问�
 - [two-stage OTA Layout Card](layout-guideline/02-modules/two-stage-ota/layout-card.md)
 - [BGR Layout Card](layout-guideline/02-modules/bgr/layout-card.md)
 - [VCOM Layout Card](layout-guideline/02-modules/vcom/layout-card.md)
+- [SKY130 two-stage OP Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md)
 - [Layout Card 模板](layout-guideline/05-templates/layout-card.md)
 
 > 这个工作区只体现**技术交互**：intent、card、floorplan、delta、change log。

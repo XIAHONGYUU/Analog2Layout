@@ -46,6 +46,8 @@ service, or audit service.
   example and in `docs/11-target-sky130-opamp.md`.
 - Target run: 11 devices / 7 groups / device core 2048 µm² / block 3526 µm² /
   gate PASS at 6000 µm²; `validate --require-known-roles` passes.
+- Layout Card v0.1 generated at `layout-guideline/02-modules/sky130-two-stage-opamp/`;
+  it includes the reserve shortfall (1545 µm²) as a Top 3 risk.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -57,8 +59,9 @@ service, or audit service.
 
 0. (done) First-page diagrams checked at 880 px width; tall/short labels were
    adjusted to avoid clipping.
-1. Generate a one-page Layout Card for the SKY130 target and link it from the
-   module index.
+1. (done) Generated the SKY130 target Layout Card; next is stage-by-stage review
+   with the user (Top 3 risks, Must preserve, Forbidden, device table, floorplan,
+   evidence).
 2. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
 3. Add a target-bbox/aspect variant generator (square / wide / tall) and compare

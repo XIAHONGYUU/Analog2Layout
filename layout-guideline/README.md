@@ -10,6 +10,7 @@
    - [two-stage OTA](02-modules/two-stage-ota/layout-card.md)
    - [BGR](02-modules/bgr/layout-card.md)
    - [VCOM](02-modules/vcom/layout-card.md)
+   - [SKY130 two-stage OP](02-modules/sky130-two-stage-opamp/layout-card.md)
    - [BGR vs VCOM 对比](02-modules/bgr-vcom-comparison.md)
 2. 再看 [工作流](00-workflow/README.md)：模拟、AI、版图各自做什么。
 3. 问题回流见 [07-problems](07-problems/README.md)。

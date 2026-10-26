@@ -29,7 +29,8 @@
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 
-- [ ] SKY130 two-stage OP 的 Layout Card + intent
+- [x] SKY130 two-stage OP 的 Layout Card
+- [ ] SKY130 two-stage OP 的 intent + 修正记录
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`
 - [ ] target bbox/aspect 的 floorplan 变体生成器（square / wide / tall）

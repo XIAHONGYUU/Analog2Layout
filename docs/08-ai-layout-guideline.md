@@ -64,6 +64,7 @@ Layout Card 是版图工程师第一眼看到的东西。它必须能在 **2 分
 - [two-stage OTA](../layout-guideline/02-modules/two-stage-ota/layout-card.md)
 - [BGR](../layout-guideline/02-modules/bgr/layout-card.md)
 - [VCOM](../layout-guideline/02-modules/vcom/layout-card.md)
+- [SKY130 two-stage OP](../layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md)
 - [BGR vs VCOM](../layout-guideline/02-modules/bgr-vcom-comparison.md)
 
 ## 4. 正确的工作流
