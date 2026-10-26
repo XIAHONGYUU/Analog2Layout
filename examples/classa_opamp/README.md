@@ -37,12 +37,14 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 
 ![White-line layout plan](white-line.png)
 
-Strict-scale intent view with **vertical-finger MOS arrays**:
+Strict-scale intent view with **interdigitated vertical-finger arrays**:
 `W` = finger height, `L` = finger width, `m` = number of parallel fingers,
-adjacent fingers share S/D, `d` dummies at both W ends, one ring per matched group,
-one DNW, fixed 5 × 10 µm MOM block, and a 4-unit R1. The array style follows the
-vertical-finger/shared-S/D MOS arrangement visible in the `project_siliconeyes`
-layout review images. It is **not** DRC/LVS/PEX signoff.
+matched devices share one array and their fingers are interleaved; adjacent
+fingers share S/D; `d` dummies are **shared** at the two W ends of each group;
+one ring per group; one DNW; fixed 5 × 10 µm MOM block and a 4-unit R1.
+Placement follows: **input/output center, PMOS upper, NMOS lower**. The array
+style follows the vertical-finger/shared-S/D MOS arrangement visible in the
+`project_siliconeyes` layout review images. It is **not** DRC/LVS/PEX signoff.
 
 Source: [white-line.svg](white-line.svg) · detail: [white-line-detail.png](white-line-detail.png) · editable generator: [make_white_line.py](make_white_line.py).
 
