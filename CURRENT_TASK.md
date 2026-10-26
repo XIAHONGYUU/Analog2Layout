@@ -55,6 +55,10 @@ service, or audit service.
   separate rings per matched group, MOSCAP 3 pF @ 2 fF/µm². Ring spacing is still
   an educational placeholder; labels use numbers + legend because tiny devices
   cannot hold text at true scale.
+- LDO is now the primary target: raw netlist 41 MOS / 41 unknown; agent role
+  proposal 41 explicit / 14 groups; block 14649 µm², gate PASS @ 30000 µm²;
+  pass FET XM61 = 83.4% of device area. Floorplan still 605.6 µm wide because
+  14 groups are packed into 3 bands.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -68,20 +72,22 @@ service, or audit service.
    adjusted to avoid clipping.
 1. (done) MOSCAP density confirmed as 2 fF/µm²; white-line v0.3 redrawn to
    strict scale with dummies, separate rings, and MOSCAP.
-2. Evaluate the LDO candidate (`examples/sky130_ldo_01v8/`): 41 MOS, pass FET,
-   feedback/enable/startup/level shift. Decide whether LDO becomes the primary
-   target and the OP becomes a unit test.
-3. If LDO is primary: build the role map/topology proposal and add R/C/X support
-   before area/floorplan/white-line.
-4. Use `references/README.md` as the reading map for *The Art of Analog Layout*
+2. LDO is now the primary target; OP is a unit test. Review the agent role
+   proposal in `examples/sky130_ldo_01v8/ldo.annotated.sp` (41 explicit roles,
+   14 groups, pass FET = 83.4% of device area).
+3. Add `XR*` resistor / `XC*` MIM area and `x1/x2` level-shifter black boxes.
+4. Fix the 14-group floorplan: the pass FET is folded, but the block is still
+   605.6 µm wide because all groups are packed into 3 bands. Then build the LDO
+   white-line/card.
+5. Use `references/README.md` as the reading map for *The Art of Analog Layout*
    (licensed local copy under gitignored `references/private/`).
-5. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
+6. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-6. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
+7. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
    utilization / power return / matching-group stretch.
-7. Add 1–2 real problem records from this target to `07-problems/` and show the
+8. Add 1–2 real problem records from this target to `07-problems/` and show the
    resulting principle/pattern patch.
-8. Add a small card completeness check (not a review service): flags missing
+9. Add a small card completeness check (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 
 ## Constraints

@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 694.073 168.040" width="4164" height="1008" role="img" aria-label="Floorplan sketch intent for ldo.annotated" style="max-width:100%;background:#ffffff">
+<title>ldo.annotated — floorplan intent</title>
+
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+  </marker>
+  <pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="4" stroke="#d1d5db" stroke-width="0.35"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="694.073" height="168.040" fill="#ffffff"/>
+<rect x="625.623" y="34.000" width="48.450" height="104.040" rx="0" fill="url(#hatch)" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.5,1.8"/>
+<text x="649.848" y="84.020" fill="#6b7280" font-size="2.4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.15" transform="rotate(-90 649.848 84.020)" opacity="1">PEX-FIX RESERVE 8%</text>
+<text x="652.248" y="94.020" fill="#9ca3af" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 652.248 94.020)" opacity="1">keep uncommitted</text>
+<text x="9.000" y="40.770" fill="#9ca3af" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.25" transform="rotate(-90 9.000 40.770)" opacity="1">TOP</text>
+<text x="9.000" y="91.040" fill="#9ca3af" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.25" transform="rotate(-90 9.000 91.040)" opacity="1">MID</text>
+<text x="9.000" y="136.290" fill="#9ca3af" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.25" transform="rotate(-90 9.000 136.290)" opacity="1">BOTTOM</text>
+<line x1="16.000" y1="50.040" x2="621.623" y2="50.040" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" stroke-dasharray="2.0,2.0" opacity="1"/>
+<line x1="16.000" y1="132.040" x2="621.623" y2="132.040" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" stroke-dasharray="2.0,2.0" opacity="1"/>
+<rect x="154.940" y="52.540" width="94.286" height="77.000" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="155.240" y="49.840" width="14.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="155.640" y="51.140" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">PASS · OUT</text>
+<rect x="184.950" y="38.570" width="277.905" height="4.400" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="185.250" y="43.070" width="15.250" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="185.650" y="44.370" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">BIAS_N · CM</text>
+<rect x="108.610" y="39.670" width="71.340" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="108.910" y="41.970" width="12.750" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="109.310" y="43.270" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">BIAS · CM</text>
+<rect x="467.855" y="39.670" width="34.334" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="468.155" y="41.970" width="15.250" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="468.555" y="43.270" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">BIAS_P · CM</text>
+<rect x="507.189" y="39.670" width="34.334" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="507.489" y="41.970" width="12.750" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="507.889" y="43.270" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">LOAD · CM</text>
+<rect x="16.000" y="135.190" width="66.360" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="16.300" y="132.490" width="16.500" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="16.700" y="133.790" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">START · BIAS</text>
+<rect x="562.743" y="39.670" width="45.680" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="563.043" y="41.970" width="11.500" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="563.443" y="43.270" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">REF · CM</text>
+<rect x="134.560" y="134.540" width="19.440" height="3.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="134.860" y="131.840" width="14.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="135.260" y="133.140" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">ERR · TAIL</text>
+<rect x="138.620" y="89.790" width="11.320" height="2.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="613.423" y="34.000" width="1.600" height="13.540" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="613.723" y="47.640" width="16.500" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="614.123" y="48.940" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">BIAS_C · CAS</text>
+<rect x="620.023" y="34.000" width="1.600" height="13.540" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="620.323" y="47.640" width="5.250" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="620.723" y="48.940" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">CAS</text>
+<rect x="546.523" y="39.670" width="11.220" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="546.823" y="41.970" width="17.750" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="547.223" y="43.270" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">PASS_DRV · CM</text>
+<rect x="87.360" y="134.790" width="25.400" height="3.000" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="87.660" y="132.090" width="4.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="88.060" y="133.390" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">EN</text>
+<rect x="117.760" y="134.790" width="11.800" height="3.000" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="118.060" y="132.090" width="12.750" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="118.460" y="133.390" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">SEL · ADJ</text>
+<line x1="144.280" y1="32.000" x2="144.280" y2="140.040" stroke="#dc2626" stroke-width="0.35" stroke-linecap="round" stroke-dasharray="3.0,2.0" opacity="0.55"/>
+<text x="145.480" y="31.200" fill="#dc2626" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="0.85">SYM AXIS</text>
+<rect x="154.940" y="52.540" width="94.286" height="77.000" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="202.083" y="89.240" fill="#111827" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM61</text>
+<text x="202.083" y="92.240" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">OUT</text>
+<text x="202.083" y="94.740" fill="#9ca3af" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">5000/0.5 nf=1</text>
+<rect x="249.353" y="38.570" width="98.200" height="4.400" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="298.453" y="40.070" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM66</text>
+<text x="298.453" y="42.570" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">CM</text>
+<rect x="349.352" y="38.570" width="49.100" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="373.902" y="39.670" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM67</text>
+<rect x="184.950" y="38.570" width="62.603" height="2.805" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="400.253" y="38.570" width="62.603" height="2.805" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="108.610" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="112.520" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM48</text>
+<rect x="118.230" y="39.670" width="10.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="123.640" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM68</text>
+<rect x="130.850" y="39.670" width="49.100" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="155.400" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM69</text>
+<rect x="476.302" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="480.212" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM62</text>
+<rect x="485.922" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="489.832" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM64</text>
+<rect x="467.855" y="39.670" width="6.647" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="495.542" y="39.670" width="6.647" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="515.636" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="519.546" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM46</text>
+<rect x="525.256" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="529.166" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM56</text>
+<rect x="507.189" y="39.670" width="6.647" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="534.876" y="39.670" width="6.647" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="16.000" y="135.190" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="16.800" y="136.290" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM70</text>
+<rect x="19.400" y="135.190" width="2.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="20.810" y="136.290" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM71</text>
+<rect x="24.020" y="135.190" width="2.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="25.430" y="136.290" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM72</text>
+<rect x="28.640" y="135.190" width="2.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="30.050" y="136.290" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM73</text>
+<rect x="33.260" y="135.190" width="49.100" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="57.810" y="136.290" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM74</text>
+<rect x="562.743" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="566.653" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM79</text>
+<rect x="572.363" y="39.670" width="10.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="577.773" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM80</text>
+<rect x="584.983" y="39.670" width="10.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="590.393" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM81</text>
+<rect x="597.603" y="39.670" width="10.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="603.013" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM82</text>
+<rect x="134.560" y="134.540" width="9.820" height="3.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="139.470" y="136.290" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM54</text>
+<rect x="146.180" y="134.540" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="150.090" y="135.640" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM55</text>
+<rect x="141.780" y="89.790" width="1.600" height="2.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="142.580" y="91.040" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM52</text>
+<rect x="145.180" y="89.790" width="1.600" height="2.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="145.980" y="91.040" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM53</text>
+<rect x="138.620" y="89.790" width="1.360" height="2.125" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="148.580" y="89.790" width="1.360" height="2.125" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="613.423" y="37.670" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="614.223" y="38.770" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM63</text>
+<rect x="613.423" y="41.670" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="614.223" y="42.770" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM65</text>
+<rect x="613.423" y="45.670" width="1.360" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="613.423" y="34.000" width="1.360" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="620.023" y="37.670" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="620.823" y="38.770" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM57</text>
+<rect x="620.023" y="41.670" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="620.823" y="42.770" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM58</text>
+<rect x="620.023" y="45.670" width="1.360" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="620.023" y="34.000" width="1.360" height="1.870" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="546.523" y="39.670" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="547.323" y="40.770" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM59</text>
+<rect x="549.923" y="39.670" width="7.820" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="553.833" y="40.770" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM60</text>
+<rect x="87.360" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="88.160" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM83</text>
+<rect x="90.760" y="134.790" width="1.600" height="3.000" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="91.560" y="136.290" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM84</text>
+<rect x="94.160" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="94.960" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM85</text>
+<rect x="97.560" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="98.360" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM86</text>
+<rect x="100.960" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="101.760" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM87</text>
+<rect x="104.360" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="105.160" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM88</text>
+<rect x="107.760" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="108.560" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM89</text>
+<rect x="111.160" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="111.960" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM90</text>
+<rect x="117.760" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="118.560" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM75</text>
+<rect x="121.160" y="134.790" width="1.600" height="3.000" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="121.960" y="136.290" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM76</text>
+<rect x="124.560" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="125.360" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM77</text>
+<rect x="127.960" y="134.790" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="128.760" y="135.890" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">XM78</text>
+<rect x="143.180" y="25.900" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="144.280" y="24.000" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">VDD</text>
+<line x1="144.280" y1="28.100" x2="144.280" y2="34.000" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="143.180" y="140.940" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="144.280" y="145.440" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">VSS</text>
+<line x1="144.280" y1="140.940" x2="144.280" y2="138.040" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="141.480" y="87.690" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="142.580" y="86.790" fill="#111827" font-size="1.35" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">INP</text>
+<line x1="142.580" y1="89.890" x2="142.580" y2="91.590" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="144.880" y="87.690" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="145.980" y="84.990" fill="#111827" font-size="1.35" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">INN</text>
+<line x1="145.980" y1="89.890" x2="145.980" y2="91.590" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="249.026" y="89.940" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="252.126" y="91.040" fill="#111827" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 252.126 91.040)" opacity="1">VOUT</text>
+<line x1="249.026" y1="91.040" x2="247.326" y2="91.040" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="98.960" y="139.190" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="100.060" y="143.690" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">EN</text>
+<line x1="100.060" y1="139.190" x2="100.060" y2="138.040" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="122.560" y="139.190" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="123.660" y="143.690" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">ADJ</text>
+<line x1="123.660" y1="139.190" x2="123.660" y2="138.040" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<line x1="16.000" y1="20.000" x2="621.623" y2="20.000" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)" opacity="1"/>
+<line x1="16.000" y1="18.600" x2="16.000" y2="21.400" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<line x1="621.623" y1="18.600" x2="621.623" y2="21.400" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<text x="318.812" y="18.300" fill="#6b7280" font-size="2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">W = 605.6 um</text>
+<line x1="689.073" y1="34.000" x2="689.073" y2="138.040" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)" opacity="1"/>
+<line x1="687.673" y1="34.000" x2="690.473" y2="34.000" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<line x1="687.673" y1="138.040" x2="690.473" y2="138.040" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<text x="691.073" y="86.020" fill="#6b7280" font-size="2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 691.073 86.020)" opacity="1">H = 104.0 um</text>
+<text x="16.000" y="8.500" fill="#111827" font-size="6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">ldo.annotated — floorplan intent</text>
+<text x="16.000" y="14.600" fill="#6b7280" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">rules: generic-180  ·  symmetry x=144.3 um  ·  41 devices + 12 proposed dummies / 14 groups</text>
+<line x1="16.000" y1="148.040" x2="678.073" y2="148.040" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<text x="16.000" y="152.240" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">SOLID existing · DASHED proposed · HATCH PEX reserve · grey dash = routing channel · um</text>
+<text x="16.000" y="156.640" fill="#9ca3af" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">DP input pair   CM current mirror   CAS cascode   TAIL tail   OUT output   COMP cap   SW switch   DM dummy</text>
+<text x="16.000" y="164.040" fill="#9ca3af" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">a2l v0.1  ·  early planning estimate, not DRC/LVS clean  ·  rules are educational, replace with a company rule pack</text>
+<rect x="0.5" y="0.5" width="693.073" height="167.040" fill="none" stroke="#d1d5db" stroke-width="0.3"/>
+</svg>

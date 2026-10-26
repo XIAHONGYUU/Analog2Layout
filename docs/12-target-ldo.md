@@ -1,4 +1,4 @@
-# Candidate target: SKY130 1.8 V LDO
+# Primary target: SKY130 1.8 V LDO
 
 ## Why replace the 10-MOS OP
 
@@ -11,13 +11,15 @@ agent's advantage:
 - no power stage, no feedback divider, no startup, no level shifters, no
   hierarchy.
 
-## Candidate
+## Primary target
 
 - IP: `sky130_am_ip__ldo_01v8`
 - Source:
   [fossi-foundation/sky130_am_ip__ldo_01v8](https://github.com/fossi-foundation/sky130_am_ip__ldo_01v8)
 - License: Apache-2.0
 - Local copy: [`examples/sky130_ldo_01v8/ldo.sp`](../examples/sky130_ldo_01v8/ldo.sp)
+- Annotated proposal: [`examples/sky130_ldo_01v8/ldo.annotated.sp`](../examples/sky130_ldo_01v8/ldo.annotated.sp)
+- Run snapshot: [`docs/targets/sky130-ldo/`](targets/sky130-ldo/)
 - Local license: [`examples/sky130_ldo_01v8/LICENSE`](../examples/sky130_ldo_01v8/LICENSE)
 
 ## Size / content
@@ -47,19 +49,43 @@ agent's advantage:
 
 ## Current run
 
+Raw netlist:
+
 ```text
 Devices:  41 (41 MOS, 0 cap) in 41 groups
 Unknown:  41
 Block:    12203 µm² (undercount; R/C/X ignored)
 ```
 
-## Decision needed
+Agent role proposal (`ldo.annotated.sp`):
 
-- Make LDO the new primary target, with OP as a unit test?
-- Should the agent propose the LDO role map from topology, or will analog provide
-  the `role=` overlay?
-- Do we add `pass_device`, `feedback_divider`, `level_shift` roles, or map them to
-  existing `output_stage` / `bias` / `adj_switch`?
+```text
+Devices:  41 (41 MOS, 0 cap) in 14 groups
+Roles:    41 explicit overrides, 0 unknown
+Block:    14649 µm²
+Envelope: 15820 µm²
+Gate:     PASS @ 30000 µm²
+Dominant: output_stage (XM61 pass FET) 83.4%
+```
+
+This is a **proposal**, not analog-approved. `pass_device` is mapped to
+`output_stage`; `startup` is mapped to `bias`; select is `adj_switch`.
+
+## Floorplan finding
+
+The pass FET is `W=5, L=0.5, m=1000`. Without folding, the floorplan becomes a
+14k-pixel strip. A readability fold at 100 µm reduced it to ~94 µm per row, but
+the 14 groups are still packed into 3 bands, so the block is still **605.6 µm
+wide**. This is a floorplan-algorithm gap, not a device-rule result.
+
+## Still to build
+
+- `XR*` resistor and `XC*` MIM capacitor area;
+- `x1/x2` level-shifter black-box area;
+- better multi-row/multi-column floorplan for 14 groups;
+- LDO white-line layout plan (pass FET, feedback divider, enable/startup, level
+  shifters);
+- LDO Layout Card and guideline.
 
 ## Why this matters
 

@@ -169,6 +169,10 @@
           },
           "detail": {
             "type": "string"
+          },
+          "fold": {
+            "type": "integer",
+            "minimum": 1
           }
         },
         "additionalProperties": false

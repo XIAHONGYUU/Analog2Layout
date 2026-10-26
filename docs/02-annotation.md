@@ -77,6 +77,8 @@ a2l 从名字中提取语义 token，并把它作为 role / match / group 的主
 | `sense`, `sns` | `sense` |
 | `esd` | `esd` |
 
+真实开源 IP 的网表经常是 `XM46`、`XM52` 这种通用名字，没有 role token。此时名字不能作为语义来源；需要 topology-based role proposal + 人工确认的 `role=` overlay。当前 LDO 目标就是这种情况。
+
 名字 token 同时用于 **match / group 提议**：
 
 - `M1_DP` / `M2_DP` → match `DP`；

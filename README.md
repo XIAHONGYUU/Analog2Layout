@@ -36,9 +36,9 @@
 | 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
 
-> **第一个真实目标**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 个 MOS + 1 个补偿电容，包含真实的 bias/enable 辅助管；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png) · [网表](examples/sky130_two_stage_opamp/opamp.sp)。
+> **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [snapshot](docs/targets/sky130-ldo/)。
 >
-> **更大候选**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[网表](examples/sky130_ldo_01v8/ldo.sp)。
+> **Unit test**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 MOS + 1 cap；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png)。
 
 ## 一条链
 
@@ -415,7 +415,7 @@ examples/
   ota5_cascode/         cascode 版本（面积对比）
   name_only_ota/        只有名字、没有 role= 的网表示例
   sky130_two_stage_opamp/  SKY130 两级 Miller OP（小目标 / unit test）
-  sky130_ldo_01v8/        SKY130 1.8V LDO 候选（41 MOS + pass FET + enable/startup）
+  sky130_ldo_01v8/        SKY130 1.8V LDO 主目标（41 MOS + pass FET + enable/startup）
 layout-guideline/       AI-native Layout Guideline 工作层
   00-workflow/          角色、步骤、交付物、版本
   01-principles/        匹配、电源、寄生、ESD、敏感区/复用
@@ -455,7 +455,7 @@ tests/                  unittest，无第三方依赖
 - BGR vs VCOM 的模块优先级对比
 - 目标 bbox/aspect 的变体概念 + 问题回流 `07-problems/`
 - SKY130 两级 Miller OP 真实目标（10 MOS + 1 cap，含 bias/enable）
-- 六个示例（含 LDO 候选）+ 测试 + CI
+- 六个示例（LDO 主目标 + OP unit test）+ 测试 + CI
 
 **v0.2**
 - 面积模型：device_core / sensitive_core / flexible_area / reuse_candidate

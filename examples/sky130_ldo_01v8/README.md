@@ -23,21 +23,33 @@ unit test.
 
 ## Current parser result
 
+Raw netlist:
+
 ```text
 Devices: 41 (41 MOS, 0 cap) in 41 groups
 Role sources: name 0, explicit 0, unknown 41
 Block: 12203 µm² (undercount: R, MIM C, X subcircuits ignored)
 ```
 
-This exposes the real problem: the netlist uses `XM46`, `XM52`, ... — names do
-not carry semantic roles. A normal netlist needs a role map or topology-based
-proposal before area/floorplan/white-line can be trusted.
+Agent role proposal: [`ldo.annotated.sp`](ldo.annotated.sp)
+
+```text
+Devices: 41 (41 MOS, 0 cap) in 14 groups
+Role sources: explicit 41, unknown 0
+Block: 14649 µm²
+Gate: PASS @ 30000 µm²
+Pass FET XM61: 83.4% of device area
+```
+
+The role map is **proposed by the agent from topology**, not approved by the
+analog owner. `pass_device` is mapped to `output_stage` for now.
 
 ## Run
 
 ```bash
-python3 -m a2l analyze examples/sky130_ldo_01v8/ldo.sp
-python3 -m a2l validate examples/sky130_ldo_01v8/ldo.sp
+python3 -m a2l analyze examples/sky130_ldo_01v8/ldo.annotated.sp
+python3 -m a2l validate examples/sky130_ldo_01v8/ldo.annotated.sp --require-known-roles
+python3 -m a2l build examples/sky130_ldo_01v8/ldo.annotated.sp --out out/sky130_ldo --area-budget-mm2 0.03 --fail-on-gate
 ```
 
 ## Known gaps
@@ -47,4 +59,4 @@ python3 -m a2l validate examples/sky130_ldo_01v8/ldo.sp
 - `x1/x2` level shifters ignored;
 - role taxonomy has no `pass_device` (could map to `output_stage` or add a new role
   with analog-owner approval);
-- all 41 MOS currently `unknown`.
+- raw netlist: all 41 MOS `unknown`; annotated proposal: 41 explicit, still needs analog review.

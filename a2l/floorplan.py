@@ -45,6 +45,7 @@ class FPDevice:
     proposed: bool = False
     label: str = ""
     detail: str = ""
+    fold: int = 1
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -57,6 +58,7 @@ class FPDevice:
             "y": round(self.y, 3),
             "w": round(self.w, 3),
             "h": round(self.h, 3),
+            "fold": self.fold,
             "area_um2": round(self.area_um2, 2),
             "proposed": self.proposed,
             "detail": self.detail,
@@ -300,6 +302,16 @@ def _arrange_group(
         area = device_areas[name]
         w = max(area.w_layout_um, 1.6)
         h = max(area.h_layout_um, 2.2)
+
+        # A power device (e.g. an LDO pass FET with m=1000) can be hundreds of
+        # micrometres wide.  Fold it into a compact multi-row block so the sketch
+        # does not become a single 14k-pixel strip.  This is a readability /
+        # floorplan heuristic, not a PDK rule.
+        max_width_um = 100.0
+        fold = max(1, int((w + max_width_um - 1e-9) // max_width_um) if w > max_width_um else 1)
+        if fold > 1:
+            w = w / fold
+            h = h * fold
         if area.kind == "cap":
             detail = f"{area.c_pf:g} pF"
         elif area.kind == "mos":
@@ -322,6 +334,7 @@ def _arrange_group(
                 core_area_um2=area.area_core_um2,
                 label=area.name,
                 detail=detail,
+                fold=fold,
             )
         )
 

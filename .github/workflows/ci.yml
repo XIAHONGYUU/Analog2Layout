@@ -23,11 +23,14 @@ jobs:
           python -m a2l validate examples/two_stage/two_stage.sp --require-known-roles
           python -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
           python -m a2l validate examples/sky130_two_stage_opamp/opamp.sp --require-known-roles
+          python -m a2l validate examples/sky130_ldo_01v8/ldo.annotated.sp --require-known-roles
       - name: Build the reference example
         run: python -m a2l build examples/two_stage/two_stage.sp --out out/two_stage --area-budget-mm2 0.005 --fail-on-gate
       - name: Build the name-only example
         run: python -m a2l build examples/name_only_ota/ota_named.sp --out out/name_only --area-budget-mm2 0.005
       - name: Build the SKY130 op-amp example
         run: python -m a2l build examples/sky130_two_stage_opamp/opamp.sp --out out/sky130_opamp --area-budget-mm2 0.006 --fail-on-gate
+      - name: Build the LDO target
+        run: python -m a2l build examples/sky130_ldo_01v8/ldo.annotated.sp --out out/sky130_ldo --area-budget-mm2 0.03 --fail-on-gate
       - name: Compare two architectures
         run: python -m a2l compare examples/ota5/ota5.sp examples/ota5_cascode/ota5_cascode.sp

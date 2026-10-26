@@ -27,7 +27,7 @@ treat a new role or a changed rule value as approved.
 
 - Do not invent foundry/company rule values. Every number must come from a rule pack or be explicitly marked as a heuristic.
 - Do not add/remove/rename a role or change a rule value without an explicit analog-owner request. Propose it in an issue/PR instead.
-- Names are the primary semantic source in real simulation/verification netlists. Explicit `role=` is an optional confirmed override; use `a2l validate --require-known-roles` to catch `unknown` roles.
+- Names are the primary semantic source **when they carry role tokens**. Real IP netlists may use generic names (`XM46`); then the agent must propose roles from topology and a human must confirm the `role=` overlay. Use `a2l validate --require-known-roles` to catch `unknown` roles.
 - Do not commit proprietary PDK data, company rule files, schematics, or layout data. Use the generic rule pack and synthetic examples.
 - Do not auto-edit a user's schematic. `layout_delta.json` is a proposal; humans accept/reject it.
 - Do not claim DRC/LVS/PEX accuracy. The output is an early planning estimate.
@@ -56,6 +56,8 @@ python3 -m a2l compare examples/ota5/ota5.sp examples/ota5_cascode/ota5_cascode.
 python3 -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
 python3 -m a2l validate examples/sky130_two_stage_opamp/opamp.sp --require-known-roles
 python3 -m a2l build examples/sky130_two_stage_opamp/opamp.sp --out out/sky130_opamp --area-budget-mm2 0.006 --fail-on-gate
+python3 -m a2l validate examples/sky130_ldo_01v8/ldo.annotated.sp --require-known-roles
+python3 -m a2l build examples/sky130_ldo_01v8/ldo.annotated.sp --out out/sky130_ldo --area-budget-mm2 0.03 --fail-on-gate
 ```
 
 If you change the SVG renderer, also rasterize and inspect the preview:
