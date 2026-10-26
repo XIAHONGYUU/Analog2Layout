@@ -20,18 +20,18 @@ A real transistor-level schematic + netlist for role-map review.
 
 ![Annotated class-A OP](schematic-annotated.png)
 
-All dimensions are **W/L in µm**; every device has **L = 2 µm**.
+All dimensions are **W in µm**; every MOS has **L = 2 µm**; `m` is the parallel multiplicity; total W = W × m.
 
-| Device | W/L (µm) | Device | W/L (µm) |
-| --- | ---: | --- | ---: |
-| M1 | 80/2 | M2 | 80/2 |
-| M3 | 64/2 | M4 | 64/2 |
-| M5 | 162/2 | M6 | 240/2 |
-| M7 | 240/2 | M8 | 109/2 |
-| M9 | 109/2 | M10 | 194/2 |
-| M11 | 240/2 | M12 | 240/2 |
-| M13 | 640/2 | M14 | 1800/2 |
-| M15 | 128/2 | M16 | 162/2 |
+| Device | W (µm) | m | total W | Device | W (µm) | m | total W |
+| --- | ---: | ---: | ---: | --- | ---: | ---: | ---: |
+| M1 | 10 | 8 | 80 | M2 | 10 | 8 | 80 |
+| M3 | 8 | 8 | 64 | M4 | 8 | 8 | 64 |
+| M5 | 2 | 81 | 162 | M6 | 12 | 20 | 240 |
+| M7 | 12 | 20 | 240 | M8 | 9 | 12 | 108 |
+| M9 | 9 | 12 | 108 | M10 | 2 | 97 | 194 |
+| M11 | 8 | 30 | 240 | M12 | 8 | 30 | 240 |
+| M13 | 8 | 80 | 640 | M14 | 18 | 100 | 1800 |
+| M15 | 8 | 16 | 128 | M16 | 2 | 81 | 162 |
 
 ## What the netlist actually is
 
@@ -65,7 +65,12 @@ The key check is simple: **M13's gate has no signal path**; it is tied to
 
 ```bash
 python3 -m a2l analyze examples/classa_opamp/opamp.sp
+python3 -m a2l analyze examples/classa_opamp/opamp.sized.sp
 ```
+
+- `opamp.sp`: original total-W values.
+- `opamp.sized.sp`: the same topology with unit `w=...` and `m=...` from
+  [sizing.md](sizing.md); total W is preserved (M8/M9 changed 109→108).
 
 ## Documents
 

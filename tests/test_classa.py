@@ -7,6 +7,7 @@ from a2l.rules import default_rules_path, load_rules
 
 ROOT = Path(__file__).resolve().parent.parent
 NETLIST = ROOT / "examples" / "classa_opamp" / "opamp.sp"
+SIZED = ROOT / "examples" / "classa_opamp" / "opamp.sized.sp"
 
 
 class ClassAReviewTests(unittest.TestCase):
@@ -24,6 +25,15 @@ class ClassAReviewTests(unittest.TestCase):
     def test_raw_names_need_role_map(self):
         self.assertEqual(self.report.summary["role_sources"]["unknown"], 16)
         self.assertFalse(self.report.summary["all_roles_known"])
+
+    def test_sized_netlist_uses_unit_w_and_m(self):
+        netlist = parse_file(SIZED)
+        self.assertEqual(len(netlist.devices), 17)
+        devices = netlist.device_by_name()
+        self.assertEqual(devices["M14"].params["w"], "18u")
+        self.assertEqual(devices["M14"].params["m"], "100")
+        self.assertEqual(devices["M8"].params["w"], "9u")
+        self.assertEqual(devices["M8"].params["m"], "12")
 
 
 if __name__ == "__main__":
