@@ -171,12 +171,12 @@ def draw_array(name, x, y, color):
     line(d0x + pw + 0.25, d0y, d0x + pw + 0.25, d0y + ph, stroke="#0f172a", sw=0.5)
     line(d0x + pw + 0.15, d0y, d0x + pw + 0.35, d0y, stroke="#0f172a", sw=0.5)
     line(d0x + pw + 0.15, d0y + ph, d0x + pw + 0.35, d0y + ph, stroke="#0f172a", sw=0.5)
-    txt_um(d0x + pw + 0.45, d0y + ph/2, f"W{int(ph)}", 5.5, "#0f172a", 600)
+    txt_um(d0x + pw + 0.45, d0y + ph/2, f"W{round(ph)}", 5.5, "#0f172a", 600)
     # L (horizontal)
     line(d0x, d0y + ph + 0.25, d0x + pw, d0y + ph + 0.25, stroke="#0f172a", sw=0.5)
     line(d0x, d0y + ph + 0.15, d0x, d0y + ph + 0.35, stroke="#0f172a", sw=0.5)
     line(d0x + pw, d0y + ph + 0.15, d0x + pw, d0y + ph + 0.35, stroke="#0f172a", sw=0.5)
-    txt_um(d0x + pw/2, d0y + ph + 0.75, f"L{int(pw)}", 5.5, "#0f172a", 600, "middle")
+    txt_um(d0x + pw/2, d0y + ph + 0.75, f"L{round(pw)}", 5.5, "#0f172a", 600, "middle")
 
 for g in GROUPS:
     gx, gy = POS[g]

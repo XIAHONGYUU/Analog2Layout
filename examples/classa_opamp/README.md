@@ -44,7 +44,7 @@ one DNW, fixed 5 × 10 µm MOM block, and a 4-unit R1. The array style follows t
 vertical-finger/shared-S/D MOS arrangement visible in the `project_siliconeyes`
 layout review images. It is **not** DRC/LVS/PEX signoff.
 
-Source: [white-line.svg](white-line.svg) · editable generator: [make_white_line.py](make_white_line.py).
+Source: [white-line.svg](white-line.svg) · detail: [white-line-detail.png](white-line-detail.png) · editable generator: [make_white_line.py](make_white_line.py).
 
 ## What the netlist actually is
 
