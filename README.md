@@ -423,6 +423,7 @@ layout-guideline/       AI-native Layout Guideline 工作层
   06-sources/           公开/私有边界与证据等级
   07-problems/          问题记录 → guideline patch
 docs/                   问题、标注、面积、floorplan、white line 区分、variants、真实目标、guideline、roadmap
+references/             书目/阅读地图（版权书只留本地私有副本入口）
   diagrams/             三分钟总览 / 完整四联图 / 变体 / 问题闭环
 agent/prompts/          role 解析 + Layout Card 编译 prompt
 schemas/                annotation / area_report / floorplan / delta 的 JSON Schema

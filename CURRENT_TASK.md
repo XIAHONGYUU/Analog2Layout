@@ -53,7 +53,10 @@ service, or audit service.
   TAIL/BIAS, EN, CC, OUT, and short notes in one layout view.
 - v0.1 is a topology placeholder, **not reviewable layout**: no real dummies,
   not compact, not to scale, arbitrary ring spacing, and C1 drawn MOM-like
-  instead of MOSCAP. v0.2 needs a constraint table before redraw.
+  instead of MOSCAP.
+- v0.2 now has DM at both W ends (S/D shared), separate rings per matched group,
+  and a MOSCAP block. Still pending: MOSCAP density unit, current density,
+  ring contact/spacing, and exact relative size scaling.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -65,17 +68,18 @@ service, or audit service.
 
 0. (done) First-page diagrams checked at 880 px width; tall/short labels were
    adjusted to avoid clipping.
-1. Fill `layout-guideline/02-modules/sky130-two-stage-opamp/constraints.yaml`
-   with analog/layout decisions: dummy count/gate tie, W/L/finger/area scale,
-   ring width/spacing, MOSCAP density/linearity, compactness/abutment. Then
-   redraw the SKY130 white-line as v0.2.
-2. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
+1. Review `constraints.yaml` with the user; confirm the MOSCAP density unit
+   (2 pF/µm² vs 2 fF/µm²) and current-density inputs. Then redraw the SKY130
+   white-line as v0.2 with real dummies and separate rings per matched group.
+2. Use `references/README.md` as the reading map for *The Art of Analog Layout*
+   (licensed local copy under gitignored `references/private/`).
+3. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-3. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
+4. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
    utilization / power return / matching-group stretch.
-4. Add 1–2 real problem records from this target to `07-problems/` and show the
+5. Add 1–2 real problem records from this target to `07-problems/` and show the
    resulting principle/pattern patch.
-5. Add a small card completeness check (not a review service): flags missing
+6. Add a small card completeness check (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 
 ## Constraints

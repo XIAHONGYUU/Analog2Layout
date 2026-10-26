@@ -21,3 +21,6 @@ out/
 .idea/
 .vscode/
 *.swp
+
+# Local licensed references (do not commit)
+references/private/

@@ -32,7 +32,7 @@
 - [x] SKY130 two-stage OP 的 Layout Card
 - [x] SKY130 two-stage OP 的 white-line layout plan（10 MOS + DP/CM ring + 短注释）
 - [x] SKY130 two-stage OP 的 layout constraints 模板（dummy/ring/scale/MOSCAP，ASK 占位）
-- [ ] SKY130 two-stage OP 的 v0.2 white-line（按约束重画）
+- [x] SKY130 two-stage OP 的 v0.2 white-line（dummy / MOSCAP / 独立 ring；ring 间距仍为 educational placeholder）
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`
 - [ ] target bbox/aspect 的 floorplan 变体生成器（square / wide / tall）

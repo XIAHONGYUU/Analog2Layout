@@ -15,33 +15,73 @@ devices:
   - {name: M10_EN_PD, role: enable_switch, w_um: 1.0, l_um: 0.5, nf: 1, m: 1, total_w_um: 1.0, scale_class: small}
 
 dummies:
-  DP:   {sides: both, count_per_side: ASK, same_wl: true, gate_tie: ASK, shared_source: ASK}
-  CM:   {sides: both, count_per_side: ASK, same_wl: true, gate_tie: ASK}
-  TAIL: {sides: both, count_per_side: ASK, same_wl: true, gate_tie: ASK}
+  DP:
+    sides: both_w_ends
+    count_per_side: 1
+    connection: source_drain_shared
+    wl_policy: same_as_active
+    wl_exception: "if W/L < 0.5: same W, minimum L"
+    gate_tie: layout_independent
+  CM:
+    sides: both_w_ends
+    count_per_side: 1
+    connection: source_drain_shared
+    wl_policy: same_as_active
+    wl_exception: "if W/L < 0.5: same W, minimum L"
+    gate_tie: layout_independent
+  TAIL:
+    sides: both_w_ends
+    count_per_side: 1
+    connection: source_drain_shared
+    wl_policy: same_as_active
+    wl_exception: "if W/L < 0.5: same W, minimum L"
+    gate_tie: layout_independent
 
 rings:
+  rules_source: educational_placeholder
+  shared_rings: false          # every matched group gets its own ring
   DP:
-    type: ASK
-    width_um: ASK
+    separate: true
+    type: educational_placeholder
+    width_um: 1.0
     contact_spacing_um: ASK
-    ring_to_device_um: ASK
+    ring_to_device_um: 1.5
     ring_to_ring_um: ASK
   CM:
-    type: ASK
-    width_um: ASK
+    separate: true
+    type: educational_placeholder
+    width_um: 1.0
     contact_spacing_um: ASK
-    ring_to_device_um: ASK
+    ring_to_device_um: 1.5
+  TAIL:
+    separate: true
+    type: educational_placeholder
+    width_um: 1.0
+    ring_to_device_um: 1.5
+  OUT:
+    separate: true
+    type: educational_placeholder
+    width_um: 1.0
+    ring_to_device_um: 1.5
 
 caps:
   C1_CC:
     type: MOSCAP
     value_pf: 3
+    density_stated: "2 pF/um2 (1x1 MOSCAP)"
+    unit_check: "likely 2 fF/um2; 2 pF/um2 is ~200-1000x typical; confirm pF vs fF"
     density_ff_per_um2: ASK
     voltage_coefficient: ASK
     linearity: ASK
     bottom_plate_parasitic: ASK
 
+sizing:
+  current_density_ua_per_um: ASK
+  size_class_basis: "total W/L + current; small/medium/large for readable sketch"
+  note: "current density is not derivable from netlist alone; needs bias current and W/L"
+
 compactness:
+  matched_group_rings: separate
   abutment:
     - "DP/M1-M2: common-centroid, shared source node"
     - "CM/M3-M4: shared gate net, same well"
@@ -53,7 +93,7 @@ compactness:
   target_height_um: ASK
 
 open_questions:
-  - "dummy count per side and gate tie"
-  - "ring width / contact / ring-to-device / ring-to-ring"
-  - "C1 MOSCAP density / voltage coefficient / linearity"
-  - "which groups abut / share a ring"
+  - "confirm MOSCAP density unit: 2 pF/um2 or 2 fF/um2"
+  - "ring contact spacing / ring-to-ring for educational placeholder"
+  - "current density / bias current per branch"
+  - "VDD/VSS trunk and abutment targets"

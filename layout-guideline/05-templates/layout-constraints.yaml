@@ -19,23 +19,30 @@ devices:
 
 dummies:
   DP:
-    sides: both
-    count_per_side: <ASK>
-    same_wl: true
-    gate_tie: <ASK>
-    shared_source: <ASK>
+    sides: both_w_ends
+    count_per_side: <1>
+    connection: source_drain_shared
+    wl_policy: same_as_active
+    wl_exception: "if W/L < 0.5: same W, minimum L"
+    gate_tie: layout_independent
   CM:
-    sides: both
-    count_per_side: <ASK>
-    same_wl: true
-    gate_tie: <ASK>
+    sides: both_w_ends
+    count_per_side: <1>
+    connection: source_drain_shared
+    wl_policy: same_as_active
+    wl_exception: "if W/L < 0.5: same W, minimum L"
+    gate_tie: layout_independent
   TAIL:
-    sides: both
-    count_per_side: <ASK>
-    same_wl: true
-    gate_tie: <ASK>
+    sides: both_w_ends
+    count_per_side: <1>
+    connection: source_drain_shared
+    wl_policy: same_as_active
+    wl_exception: "if W/L < 0.5: same W, minimum L"
+    gate_tie: layout_independent
 
 rings:
+  rules_source: educational_placeholder
+  shared_rings: false          # separate ring for each matched group
   DP:
     type: <ASK>                 # N+ / P+ / deep N-well / ...
     width_um: <ASK>
@@ -51,12 +58,20 @@ caps:
   C1_CC:
     type: MOSCAP                # non-high-precision OP default
     value_pf: 3
+    density_stated: "<value + unit>"
+    unit_check: "<confirm pF vs fF>"
     density_ff_per_um2: <ASK>   # not the generic 1.5 fF/um2
     voltage_coefficient: <ASK>
     linearity: <ASK>
     bottom_plate_parasitic: <ASK>
 
+sizing:
+  current_density_ua_per_um: <ASK>   # requires bias current / operating point
+  size_class_basis: "total W/L + current; small/medium/large for readable sketch"
+  note: "size_class is a drawing aid, not an electrical rule"
+
 compactness:
+  matched_group_rings: separate
   abutment:
     - <DP/CM share ring?>
   shared_rings: <ASK>

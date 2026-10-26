@@ -60,7 +60,9 @@ INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
 
 ![White-line layout plan detail](../../../docs/targets/sky130-opamp/white-line-detail.png)
 
-- **White-line 结构**：`CM` 左上、`DP` 中左、`TAIL/BIAS` + `EN` 左下、`CC` 中右、`OUT` 右侧；`RING` 包 `DP/CM`。
+- **White-line 结构**：`CM` 左上、`DP` 中左、`TAIL/BIAS` + `EN` 左下、`CC` 中右、`OUT` 右侧。
+- **每个匹配组独立 ring**：`CM`、`DP`、`TAIL/BIAS`、`EN`、`OUT` 各自围环，不共享 ring；ring 间距先用 educational placeholder。
+- **dummy**：`CM/DP/TAIL` 的 W 方向两端各 1 个 DM，源漏共用；默认 W/L 同正常 MOS，`W/L<0.5` 时同 W、最小 L。
 - 每个 MOS 单独成阵列块：`DP/CM` 各 4 指，`M6_OUT` 2 指宽管，`M7_OUT` 1 指长管，`C1_CC` 用 MOSCAP 块（首选）。
 - `TAIL/BIAS` 的 `M5/M8` 各 2 指；`EN` 的 `M9/M10` 各 2 指；`I0` 是虚线理想源。
 - 这张 white-line 不是合法版图，也不是自动 floorplan；它表达的是**版图结构和摆放意图**。
