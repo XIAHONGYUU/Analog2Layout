@@ -37,23 +37,34 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 
 ![Compact white-line](white-line.png)
 
-This version uses **flexible array shapes** instead of fixed row counts:
+This version uses flexible array rows and a compact two-row main placement:
 
-- arrays are reshaped to make the two main rows nearly equal height;
+- rows are chosen to make the two main rows nearly equal height;
 - current rows: LOAD 6, FOLD 4, MIRROR_N 5, IN 5, MIRROR_P 6, BIAS 20, OUT 6;
-- 2/4/6-row shapes are preferred, but a group can use another row count when
-  that removes a large height mismatch;
-- gate pitch is now **L + 0.36 µm** for `sd_mode=shared`;
-- ring gap is **0.8 µm**, group gap is **2 µm**;
+- gate pitch is **L + 0.36 µm** for `sd_mode=shared`;
+- ring gap **0.8 µm**, group gap **2 µm**;
 - dummies use the same finger geometry as active devices; only the external
   `DM` label differs;
 - no `FILL DM` blocks and no fake dummy fill;
-- only the real edge dummies + BIAS_N spare cell are dummy;
 - DNW1 is a stepped outline; M14 is in DNW2 at the outer right, 8 µm away;
-- input pair in the center row; PMOS upper, NMOS lower.
+- input pair in the center row; PMOS upper, NMOS lower;
+- C1/R1 are placed **between DNW1 and DNW2**, and their area is counted.
 
-Approximate main-DNW fill is now about **89%**; overall bbox is still limited by
-the required 8 µm DNW gap and the outer output block.
+Approximate area accounting (inside-ring effective area + R/C, divided by the
+DNW1+DNW2 outer area):
+
+```text
+ring-inner effective area ≈ 11,690 µm²
+C1 + R1                    ≈     74 µm²
+effective total            ≈ 11,764 µm²
+DNW1 + DNW2 outer          ≈ 15,965 µm²
+utilization                ≈ 73.7%
+```
+
+If the denominator is the total outer bounding box including the 8 µm DNW gap and
+C1/R1, utilization is about **67.7%**.
+
+If “inside ring” includes the ring metal itself, the number is about **81.6%**.
 
 Detail crop:
 

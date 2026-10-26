@@ -13,6 +13,8 @@
 <text x="978.4" y="38.0" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="600" fill="#0f766e" text-anchor="middle">8 µm</text>
 <rect x="714.5" y="110.0" width="130.3" height="496.8" rx="1" fill="none" stroke="#d97706" stroke-width="1.2" opacity="1"/>
 <rect x="723.5" y="119.0" width="112.3" height="478.8" rx="1" fill="none" stroke="#d97706" stroke-width="0.7" opacity="1"/>
+<rect x="712.7" y="108.2" width="133.9" height="500.4" rx="0" fill="none" stroke="#1d4ed8" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="712.7" y="120.8" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#1d4ed8" text-anchor="start">NW</text>
 <rect x="730.7" y="126.2" width="12.2" height="77.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="732.3" y="128.9" width="9.0" height="72.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="731.1" y1="127.3" x2="742.5" y2="127.3" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -218,6 +220,8 @@
 <text x="714.5" y="108.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="600" fill="#475569" text-anchor="start">W8/L1  m=16/8/8  DM shared</text>
 <rect x="60.0" y="637.4" width="287.3" height="486.0" rx="1" fill="none" stroke="#ea580c" stroke-width="1.2" opacity="1"/>
 <rect x="69.0" y="646.4" width="269.3" height="468.0" rx="1" fill="none" stroke="#ea580c" stroke-width="0.7" opacity="1"/>
+<rect x="58.2" y="635.6" width="290.9" height="489.6" rx="0" fill="none" stroke="#1d4ed8" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="58.2" y="648.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#1d4ed8" text-anchor="start">NW</text>
 <rect x="76.2" y="653.6" width="21.2" height="113.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="77.8" y="656.3" width="18.0" height="108.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="76.7" y1="654.7" x2="97.0" y2="654.7" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -423,6 +427,8 @@
 <text x="60.0" y="635.6" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="600" fill="#475569" text-anchor="start">W12/L2  m=20/20  DM shared</text>
 <rect x="365.3" y="637.4" width="181.1" height="464.4" rx="1" fill="none" stroke="#7c3aed" stroke-width="1.2" opacity="1"/>
 <rect x="374.3" y="646.4" width="163.1" height="446.4" rx="1" fill="none" stroke="#7c3aed" stroke-width="0.7" opacity="1"/>
+<rect x="363.5" y="635.6" width="184.7" height="468.0" rx="0" fill="none" stroke="#64748b" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="363.5" y="648.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#475569" text-anchor="start">PW</text>
 <rect x="381.5" y="653.6" width="21.2" height="86.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="383.1" y="656.3" width="18.0" height="81.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="381.9" y1="654.7" x2="402.3" y2="654.7" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -576,6 +582,8 @@
 <text x="365.3" y="635.6" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="600" fill="#475569" text-anchor="start">W9/L2  m=12/12  DM shared</text>
 <rect x="428.6" y="110.0" width="267.8" height="509.4" rx="1" fill="none" stroke="#0284c7" stroke-width="1.2" opacity="1"/>
 <rect x="437.6" y="119.0" width="249.8" height="491.4" rx="1" fill="none" stroke="#0284c7" stroke-width="0.7" opacity="1"/>
+<rect x="426.8" y="108.2" width="271.4" height="513.0" rx="0" fill="none" stroke="#64748b" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="426.8" y="120.8" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#475569" text-anchor="start">PW</text>
 <rect x="444.8" y="126.2" width="39.2" height="95.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="446.5" y="128.9" width="36.0" height="90.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="445.3" y1="127.3" x2="483.6" y2="127.3" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -709,6 +717,8 @@
 <text x="428.6" y="108.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="600" fill="#475569" text-anchor="start">W10/L4  m=8/8  DM shared</text>
 <rect x="1041.4" y="110.0" width="265.0" height="1036.8" rx="1" fill="none" stroke="#be185d" stroke-width="1.2" opacity="1"/>
 <rect x="1050.4" y="119.0" width="247.0" height="1018.8" rx="1" fill="none" stroke="#be185d" stroke-width="0.7" opacity="1"/>
+<rect x="1039.6" y="108.2" width="268.6" height="1040.4" rx="0" fill="none" stroke="#64748b" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="1039.6" y="120.8" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#475569" text-anchor="start">PW</text>
 <rect x="1057.6" y="126.2" width="12.2" height="167.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="1059.2" y="128.9" width="9.0" height="162.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="1058.0" y1="127.3" x2="1069.3" y2="127.3" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -1178,6 +1188,8 @@
 <text x="1041.4" y="108.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="600" fill="#475569" text-anchor="start">W18/L1  m=100  DM shared</text>
 <rect x="60.0" y="110.0" width="350.6" height="496.8" rx="1" fill="none" stroke="#dc2626" stroke-width="1.2" opacity="1"/>
 <rect x="69.0" y="119.0" width="332.6" height="478.8" rx="1" fill="none" stroke="#dc2626" stroke-width="0.7" opacity="1"/>
+<rect x="58.2" y="108.2" width="354.2" height="500.4" rx="0" fill="none" stroke="#1d4ed8" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="58.2" y="120.8" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#1d4ed8" text-anchor="start">NW</text>
 <rect x="76.2" y="126.2" width="12.2" height="77.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="77.8" y="128.9" width="9.0" height="72.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="76.7" y1="127.3" x2="88.0" y2="127.3" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -1815,6 +1827,8 @@
 <text x="60.0" y="108.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="600" fill="#475569" text-anchor="start">W8/L1  m=30/30/80  DM shared</text>
 <rect x="564.4" y="637.4" width="351.0" height="500.4" rx="1" fill="none" stroke="#059669" stroke-width="1.2" opacity="1"/>
 <rect x="573.4" y="646.4" width="333.0" height="482.4" rx="1" fill="none" stroke="#059669" stroke-width="0.7" opacity="1"/>
+<rect x="562.6" y="635.6" width="354.6" height="504.0" rx="0" fill="none" stroke="#64748b" stroke-width="0.5" opacity="1" stroke-dasharray="3 2"/>
+<text x="562.6" y="648.2" font-family="'DejaVu Sans Mono',monospace" font-size="5.5" font-weight="700" fill="#475569" text-anchor="start">PW</text>
 <rect x="580.6" y="653.6" width="21.2" height="23.4" rx="0" fill="#ffffff" stroke="#64748b" stroke-width="0.35" opacity="0.45"/>
 <rect x="582.2" y="656.3" width="18.0" height="18.0" rx="0" fill="#cbd5e1" stroke="none" stroke-width="1.0" opacity="0.45"/>
 <line x1="581.0" y1="654.7" x2="601.4" y2="654.7" stroke="#64748b" stroke-width="0.3" stroke-linecap="round"/>
@@ -3081,4 +3095,7 @@
 <text x="1368.3" y="385.0" font-family="'DejaVu Sans Mono',monospace" font-size="6.5" font-weight="400" fill="#64748b" text-anchor="start">DM = shared dummy column (both ends)</text>
 <text x="1368.3" y="399.0" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="400" fill="#64748b" text-anchor="start">ring 1.0 µm / gap 1.5 µm (edu)</text>
 <text x="1368.3" y="413.0" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="400" fill="#64748b" text-anchor="start">M13 PMOS current source · M14 output</text>
+<text x="1368.3" y="439.0" font-family="'DejaVu Sans Mono',monospace" font-size="6.0" font-weight="400" fill="#475569" text-anchor="start">effective area = ring inner + R/C = 11764 um2</text>
+<text x="1368.3" y="451.0" font-family="'DejaVu Sans Mono',monospace" font-size="6.0" font-weight="400" fill="#475569" text-anchor="start">max DNW area = DNW1+DNW2 = 15965 um2</text>
+<text x="1368.3" y="463.0" font-family="'DejaVu Sans Mono',monospace" font-size="6.0" font-weight="400" fill="#475569" text-anchor="start">utilization = 73.7% (sum), 67.2% (bbox)</text>
 </svg>

@@ -135,6 +135,13 @@ def draw_group(g):
     # ring
     rect(gx, gy, ow, oh, fill="none", stroke=color, sw=1.2, rx=1)
     rect(gx+RING_W, gy+RING_W, ow-2*RING_W, oh-2*RING_W, fill="none", stroke=color, sw=0.7, rx=1)
+    # simplified well boundary (NW for PMOS, PW for NMOS); not a DRC drawing
+    if g in ("MIRROR_P", "LOAD_P", "FOLD_P"):
+        rect(gx-0.2, gy-0.2, ow+0.4, oh+0.4, fill="none", stroke="#1d4ed8", sw=0.5, dash="3 2")
+        txt_um(gx-0.2, gy+1.2, "NW", 5.5, "#1d4ed8", 700)
+    else:
+        rect(gx-0.2, gy-0.2, ow+0.4, oh+0.4, fill="none", stroke="#64748b", sw=0.5, dash="3 2")
+        txt_um(gx-0.2, gy+1.2, "PW", 5.5, "#475569", 700)
     cx = gx + RING_W + RING_GAP
     cy = gy + RING_W + RING_GAP
     # shared dummy columns
@@ -228,6 +235,18 @@ for g in ORDER:
 txt(lx, ry+6, "DM = shared dummy column (both ends)", 6.5, "#64748b", family="'DejaVu Sans Mono',monospace")
 txt(lx, ry+20, "ring 1.0 µm / gap 1.5 µm (edu)", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
 txt(lx, ry+34, "M13 PMOS current source · M14 output", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
+
+# Effective area: inside ring + R/C; max area: DNW1 + DNW2 outer area
+ring_inner = sum(max(0, GD[g][0]-2*RING_W) * max(0, GD[g][1]-2*RING_W) for g in GROUPS)
+rc_area = 5*10 + 4*(2*3)
+dnw1_area = (row1_right+3-(-3))*(step_y-(-3)) + (row2_right+3-(-3))*(main_h+3-step_y)
+dnw2_area = (GD["OUT"][0]+6)*(GD["OUT"][1]+6)
+eff = ring_inner + rc_area
+util_sum = eff / (dnw1_area + dnw2_area)
+util_bbox = eff / (((OUT_X+GD["OUT"][0]+3)-(-3))*((max(main_h, GD["OUT"][1])+3)-(-3)))
+txt(lx,ry+60,f"effective area = ring inner + R/C = {eff:.0f} um2",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
+txt(lx,ry+72,f"max DNW area = DNW1+DNW2 = {dnw1_area+dnw2_area:.0f} um2",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
+txt(lx,ry+84,f"utilization = {util_sum*100:.1f}% (sum), {util_bbox*100:.1f}% (bbox)",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
 
 add('</svg>')
 Path('examples/classa_opamp/white-line.svg').write_text('\n'.join(out), encoding='utf-8')
