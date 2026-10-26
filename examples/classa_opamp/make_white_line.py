@@ -81,8 +81,8 @@ main_h=row1_h+2+row2_h
 OUT_X=main_w+14
 OUT_Y=max(0,(main_h-GD["OUT"][1])/2)
 POS["OUT"]=(OUT_X,OUT_Y)
-C1=(OUT_X+2,OUT_Y+GD["OUT"][1]+6)
-R1=(C1[0]+7,C1[1])
+C1=(main_w+5, 10)
+R1=(main_w+5, 22)
 dnw2_h=GD["OUT"][1]+6
 layout_w=OUT_X+GD["OUT"][0]+4
 layout_h=max(main_h+3,R1[1]+4)
@@ -138,10 +138,10 @@ def draw_group(g):
     # simplified well boundary (NW for PMOS, PW for NMOS); not a DRC drawing
     if g in ("MIRROR_P", "LOAD_P", "FOLD_P"):
         rect(gx-0.2, gy-0.2, ow+0.4, oh+0.4, fill="none", stroke="#1d4ed8", sw=0.5, dash="3 2")
-        txt_um(gx-0.2, gy+1.2, "NW", 5.5, "#1d4ed8", 700)
+        txt_um(gx+ow-3.0, gy-0.4, "NW", 7, "#1d4ed8", 700)
     else:
         rect(gx-0.2, gy-0.2, ow+0.4, oh+0.4, fill="none", stroke="#64748b", sw=0.5, dash="3 2")
-        txt_um(gx-0.2, gy+1.2, "PW", 5.5, "#475569", 700)
+        txt_um(gx+ow-3.0, gy-0.4, "PW", 7, "#475569", 700)
     cx = gx + RING_W + RING_GAP
     cy = gy + RING_W + RING_GAP
     # shared dummy columns
@@ -208,7 +208,7 @@ rect(c1x, c1y, 5, 10, fill="#ede9fe", stroke="#7c3aed", sw=1.0)
 txt_um(c1x, c1y - 1.0, "C1_CC 5pF MOM 5×10", 6, "#5b21b6", 600)
 r1x, r1y = R1
 for i in range(4):
-    rect(r1x + i*2.5, r1y, 2, 3, fill="#fef3c7", stroke="#b45309", sw=0.6)
+    rect(r1x + (i % 2)*2.5, r1y + (i // 2)*3.5, 2, 3, fill="#fef3c7", stroke="#b45309", sw=0.6)
 txt_um(r1x, r1y - 1.0, "R1 4×(2×3) 3.33k", 6, "#92400e", 600)
 
 # scale
