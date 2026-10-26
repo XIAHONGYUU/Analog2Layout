@@ -34,6 +34,11 @@ class ClassAReviewTests(unittest.TestCase):
         self.assertEqual(devices["M14"].params["m"], "100")
         self.assertEqual(devices["M8"].params["w"], "9u")
         self.assertEqual(devices["M8"].params["m"], "12")
+        self.assertEqual(devices["M1"].l_um, 4.0)
+        self.assertEqual(devices["M3"].l_um, 1.0)
+        self.assertEqual(devices["M6"].l_um, 2.0)
+        self.assertEqual(devices["M13"].l_um, 1.0)
+        self.assertEqual(devices["M14"].l_um, 1.0)
 
     def test_fixed_mom_cap_geometry(self):
         netlist = parse_file(SIZED)

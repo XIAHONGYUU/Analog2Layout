@@ -7,25 +7,25 @@
 .subckt classa_opamp vinp vinn vout vdd vss ibias
 
 * input pair
-M1  n007 vinp n010 vss nmos w=10u l=2u m=8
-M2  n005 vinn n010 vss nmos w=10u l=2u m=8
+M1 n007 vinp n010 vss nmos w=10u l=4u m=8
+M2 n005 vinn n010 vss nmos w=10u l=4u m=8
 
 * PMOS current-source loads
-M3  n007 n002 vdd vdd pmos w=8u  l=2u m=8
-M4  n005 n002 vdd vdd pmos w=8u  l=2u m=8
-M6  n011 n006 n007 vdd pmos w=12u l=2u m=20
-M7  n012 n006 n005 vdd pmos w=12u l=2u m=20
-M11 n003 n006 n004 vdd pmos w=8u  l=2u m=30
-M12 n004 n003 vdd vdd pmos w=8u  l=2u m=30
-M13 vout n003 vdd vdd pmos w=8u  l=2u m=80
+M3 n007 n002 vdd vdd pmos w=8u l=1u m=8
+M4 n005 n002 vdd vdd pmos w=8u l=1u m=8
+M6 n011 n006 n007 vdd pmos w=12u l=2u m=20
+M7 n012 n006 n005 vdd pmos w=12u l=2u m=20
+M11 n003 n006 n004 vdd pmos w=8u l=1u m=30
+M12 n004 n003 vdd vdd pmos w=8u l=1u m=30
+M13 vout n003 vdd vdd pmos w=8u l=1u m=80
 
 * NMOS bias / mirror
-M5  n010 ibias vss vss nmos w=2u  l=2u m=81
-M8  n011 n011 vss vss nmos w=9u  l=2u m=12
-M9  n012 n011 vss vss nmos w=9u  l=2u m=12
-M10 n006 ibias vss vss nmos w=2u  l=2u m=97
-M14 vout n012 vss vss nmos w=18u l=2u m=100
-M15 n002 n002 vdd vdd pmos w=8u  l=2u m=16
+M5 n010 ibias vss vss nmos w=2u l=2u m=81
+M8 n011 n011 vss vss nmos w=9u l=2u m=12
+M9 n012 n011 vss vss nmos w=9u l=2u m=12
+M10 n006 ibias vss vss nmos w=2u l=2u m=97
+M14 vout n012 vss vss nmos w=18u l=1u m=100
+M15 n002 n002 vdd vdd pmos w=8u l=1u m=16
 M16 ibias ibias vss vss nmos w=2u l=2u m=81
 
 * bias / compensation

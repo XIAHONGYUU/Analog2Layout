@@ -20,18 +20,28 @@ A real transistor-level schematic + netlist for role-map review.
 
 ![Annotated class-A OP](schematic-annotated.png)
 
-All dimensions are **W in µm**; every MOS has **L = 2 µm**; `m` is the parallel multiplicity; total W = W × m.
+All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W × m.
 
-| Device | W (µm) | m | total W | Device | W (µm) | m | total W |
-| --- | ---: | ---: | ---: | --- | ---: | ---: | ---: |
-| M1 | 10 | 8 | 80 | M2 | 10 | 8 | 80 |
-| M3 | 8 | 8 | 64 | M4 | 8 | 8 | 64 |
-| M5 | 2 | 81 | 162 | M6 | 12 | 20 | 240 |
-| M7 | 12 | 20 | 240 | M8 | 9 | 12 | 108 |
-| M9 | 9 | 12 | 108 | M10 | 2 | 97 | 194 |
-| M11 | 8 | 30 | 240 | M12 | 8 | 30 | 240 |
-| M13 | 8 | 80 | 640 | M14 | 18 | 100 | 1800 |
-| M15 | 8 | 16 | 128 | M16 | 2 | 81 | 162 |
+| Device | W/L (µm) | m | total W | Device | W/L (µm) | m | total W |
+| --- | --- | ---: | ---: | --- | --- | ---: | ---: |
+| M1 | 10/4 | 8 | 80 | M2 | 10/4 | 8 | 80 |
+| M3 | 8/1 | 8 | 64 | M4 | 8/1 | 8 | 64 |
+| M5 | 2/2 | 81 | 162 | M6 | 12/2 | 20 | 240 |
+| M7 | 12/2 | 20 | 240 | M8 | 9/2 | 12 | 108 |
+| M9 | 9/2 | 12 | 108 | M10 | 2/2 | 97 | 194 |
+| M11 | 8/1 | 30 | 240 | M12 | 8/1 | 30 | 240 |
+| M13 | 8/1 | 80 | 640 | M14 | 18/1 | 100 | 1800 |
+| M15 | 8/1 | 16 | 128 | M16 | 2/2 | 81 | 162 |
+
+## White-line layout plan
+
+![White-line layout plan](white-line.png)
+
+Strict-scale intent view: folded MOS arrays (`m` parallel units), `d` dummies at
+group W ends, one ring per matched group, one DNW, fixed 5 × 10 µm MOM block,
+and a 4-unit R1. It is **not** DRC/LVS/PEX signoff.
+
+Source: [white-line.svg](white-line.svg) · editable generator: [make_white_line.py](make_white_line.py).
 
 ## What the netlist actually is
 
