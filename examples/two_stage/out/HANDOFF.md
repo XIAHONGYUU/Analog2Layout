@@ -17,8 +17,8 @@
 | Dummy area | 457 µm² |
 | Estimate range | 2701 µm² – 4558 µm² |
 | Area gate | **PASS** (budget 5000 µm²) |
-| Shape | 107.0 × 51.8 µm; aspect 2.07; squareness 0.48; landscape |
-| Arrangement | 3 rows (top/mid/bottom); groups/band: top=1, mid=3, bottom=3; symmetry axis at x=40.1 um |
+| Shape | 109.7 × 51.8 µm; aspect 2.12; squareness 0.47; landscape |
+| Arrangement | 3 rows (top/mid/bottom); groups/band: top=1, mid=3, bottom=3; symmetry axis at x=40.8 um |
 | Devices / groups | 10 / 7 |
 | Rules | `generic-180` (educational); owner: analog design engineer |
 | Width convention | `per_finger` |
@@ -82,7 +82,7 @@ These are the predictable changes that otherwise show up late in PEX. Accept or 
 - Are the proposed boundary dummies and dummy branches wanted, or should they be removed?
 - Is the decap value / location acceptable, or should it be split between supplies?
 - Does the reserved PEX-fix area match the team's risk tolerance for this block?
-- The block is elongated (aspect 2.07, squareness 0.48); is this shape compatible with the parent block and the intended pin locations?
+- The block is elongated (aspect 2.12, squareness 0.47); is this shape compatible with the parent block and the intended pin locations?
 
 ## 7. Warnings
 

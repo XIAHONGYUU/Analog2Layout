@@ -233,6 +233,10 @@ def _draw_groups(canvas: SVGCanvas, floorplan: Floorplan) -> None:
 
 
 def _group_label(canvas: SVGCanvas, group: FPGroup) -> None:
+    # The input pair already has INP/INN port labels and short M1/M2 IDs; a
+    # group tag here would collide with the port labels at small dimensions.
+    if group.role == "input_pair":
+        return
     label = group.label
     width = max(3.0, len(label) * 1.25 + 1.5)
     x = group.x + 0.7
@@ -294,18 +298,15 @@ def _draw_device(canvas: SVGCanvas, device: FPDevice) -> None:
     elif device.w >= 4.6 and device.h >= 4.0:
         canvas.text(cx, cy - 0.7, name, size=2.2, anchor="middle", weight="bold")
         canvas.text(cx, cy + 1.8, role, size=1.5, anchor="middle", fill=MUTED)
-    elif device.h >= 2.0:
-        canvas.text(
-            cx,
-            cy,
-            name,
-            size=1.9,
-            anchor="middle",
-            weight="bold",
-            rotate=-90,
-        )
     else:
-        canvas.text(cx, device.y - 0.9, name, size=1.7, anchor="middle", weight="bold")
+        # Small devices cannot hold the full name/role.  Keep a short device ID
+        # inside the shape; the group label + area report carry the full role.
+        # Proposed dummies stay unlabeled: the dashed outline already says
+        # "proposed", and a "DM" label would collide with the neighbouring device.
+        if not device.proposed:
+            short = name.split("_", 1)[0]
+            size = max(0.75, min(1.2, min(device.w, device.h) * 0.62))
+            canvas.text(cx, cy, short, size=size, anchor="middle", weight="bold")
 
 
 def _draw_ports(
@@ -332,7 +333,10 @@ def _draw_ports(
             canvas.text(port.x, port.y + 3.4, port.name, size=2.5, anchor="middle", weight="bold")
             canvas.line(port.x, port.y - size / 2.0, port.x, bottom, stroke=FAINT, stroke_width=0.3)
         elif port.side == "pin-top":
-            canvas.text(port.x, port.y - 2.2, port.name, size=1.9, anchor="middle", weight="bold")
+            # INP/INN sit close together on a matched pair; stagger them so the
+            # labels do not collide when the devices are small.
+            dy = 3.8 if port.name == "INN" else 2.0
+            canvas.text(port.x, port.y - dy, port.name, size=1.35, anchor="middle", weight="bold")
             canvas.line(port.x, port.y + size / 2.0, port.x, port.y + 2.8, stroke=FAINT, stroke_width=0.3)
         elif port.side == "pin-right":
             canvas.text(port.x + 2.0, port.y, port.name, size=1.6, anchor="middle", weight="bold", rotate=-90)

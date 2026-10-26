@@ -36,6 +36,8 @@
 | 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
 
+> **第一个真实目标**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 个 MOS + 1 个补偿电容，包含真实的 bias/enable 辅助管；[网表](examples/sky130_two_stage_opamp/opamp.sp) · [来源与许可](examples/sky130_two_stage_opamp/README.md)。
+
 ## 一条链
 
 ```mermaid
@@ -97,6 +99,7 @@ xdg-open examples/two_stage/out/index.html
 - [AI-native Layout Guideline](layout-guideline/README.md)
 - [two-stage OTA 的一页 Layout Card](layout-guideline/02-modules/two-stage-ota/layout-card.md)
 - [name-only OTA 示例](examples/name_only_ota/README.md)
+- [SKY130 两级 Miller OP](examples/sky130_two_stage_opamp/README.md)
 
 常用命令：
 
@@ -404,6 +407,7 @@ examples/
   ota5/                 5T OTA（最小例子）
   ota5_cascode/         cascode 版本（面积对比）
   name_only_ota/        只有名字、没有 role= 的网表示例
+  sky130_two_stage_opamp/  SKY130 两级 Miller OP（真实开源基线 + bias/enable）
 layout-guideline/       AI-native Layout Guideline 工作层
   00-workflow/          角色、步骤、交付物、版本
   01-principles/        匹配、电源、寄生、ESD、敏感区/复用
@@ -413,7 +417,7 @@ layout-guideline/       AI-native Layout Guideline 工作层
   05-templates/         card / intent / area-target / change-log 模板
   06-sources/           公开/私有边界与证据等级
   07-problems/          问题记录 → guideline patch
-docs/                   问题、标注、面积、floorplan、white line 区分、variants、guideline、roadmap
+docs/                   问题、标注、面积、floorplan、white line 区分、variants、真实目标、guideline、roadmap
   diagrams/             三分钟总览 / 完整四联图 / 变体 / 问题闭环
 agent/prompts/          role 解析 + Layout Card 编译 prompt
 schemas/                annotation / area_report / floorplan / delta 的 JSON Schema
@@ -441,7 +445,8 @@ tests/                  unittest，无第三方依赖
 - 一页 Layout Card 示例：two-stage OTA / BGR / VCOM
 - BGR vs VCOM 的模块优先级对比
 - 目标 bbox/aspect 的变体概念 + 问题回流 `07-problems/`
-- 四个示例 + 测试 + CI
+- SKY130 两级 Miller OP 真实目标（10 MOS + 1 cap，含 bias/enable）
+- 五个示例 + 测试 + CI
 
 **v0.2**
 - 面积模型：device_core / sensitive_core / flexible_area / reuse_candidate

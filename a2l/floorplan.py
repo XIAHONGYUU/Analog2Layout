@@ -293,7 +293,7 @@ def _arrange_group(
     used_names: set[str],
 ) -> FPGroup:
     spec = get_role(area_group.role)
-    gap = max(0.8, float(rules.matching("group_spacing_um", 3.0)) * 0.35)
+    gap = max(1.8, float(rules.matching("group_spacing_um", 3.0)) * 0.35)
     devices: list[FPDevice] = []
 
     for name in [device.name for device in area_group.devices]:

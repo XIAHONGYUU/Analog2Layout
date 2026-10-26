@@ -13,6 +13,7 @@
 - [x] layout delta + HANDOFF + HTML 交接包
 - [x] name token as primary source + optional role override + `--require-known-roles`
 - [x] name-only netlist example + match/group inference
+- [x] first real target: SKY130 two-stage Miller OP (10 MOS + bias/enable)
 - [x] floorplan sketch terminology separated from Virtuoso white line
 - [x] sensitive-region/reuse principle documented
 - [x] target-bbox/aspect variant concept documented
@@ -22,12 +23,13 @@
 - [x] BGR vs VCOM 模块优先级对比
 - [x] Principle / Pattern / Template 骨架
 - [x] `agent/prompts/compile_layout_card.md`
-- [x] 四个示例 + unittest + GitHub Actions
+- [x] 五个示例 + unittest + GitHub Actions
 
 ## v0.2 — 把 guideline 工作层填厚
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。
 
+- [ ] SKY130 two-stage OP 的 Layout Card + intent
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`
 - [ ] target bbox/aspect 的 floorplan 变体生成器（square / wide / tall）

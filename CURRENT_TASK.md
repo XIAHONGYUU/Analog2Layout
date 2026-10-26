@@ -14,7 +14,7 @@ technical interaction between analog and layout engineers. The primary artifact 
 This is **not** a production rule base, signoff tool, training assistant, review
 service, or audit service.
 
-## Current state (2026-10-25)
+## Current state (2026-10-26)
 
 - Deterministic demo works: name/role semantics → five-level area → floorplan
   sketch → layout delta.
@@ -39,24 +39,33 @@ service, or audit service.
   `sensitive_core` / `flexible_area` / `reuse_candidate` are still pending.
 - `docs/diagrams/` contains the first-read visuals: three-minute overview,
   four-panel full overview, variants, and the guideline problem loop.
+- First real target added: `examples/sky130_two_stage_opamp/` — a name-only
+  SKY130 two-stage Miller op-amp derived from an MIT-licensed open-source design
+  (Nithin P, 2024), with 10 MOS + 1 compensation cap and a real bias/enable
+  branch (`M8_BIAS`, `M9_EN`, `M10_EN_PD`). Source/license are recorded in the
+  example and in `docs/11-target-sky130-opamp.md`.
+- Target run: 11 devices / 7 groups / device core 2048 µm² / block 3526 µm² /
+  gate PASS at 6000 µm²; `validate --require-known-roles` passes.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
   `compile_layout_card`. The old `review_floorplan` prompt was removed.
-- Tests/build still pass; demo output remains in `examples/two_stage/out/`.
+- 40 unittest tests pass; demo output remains in `examples/two_stage/out/`.
 - Git: public repo at https://github.com/XIAHONGYUU/Analog2Layout, CI green.
 
 ## Next atomic action
 
 0. (done) First-page diagrams checked at 880 px width; tall/short labels were
    adjusted to avoid clipping.
-1. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
+1. Generate a one-page Layout Card for the SKY130 target and link it from the
+   module index.
+2. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-2. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
+3. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
    utilization / power return / matching-group stretch.
-3. Add 2–3 real problem records to `07-problems/` and show the resulting
-   principle/pattern patch.
-4. Add a small card completeness check (not a review service): flags missing
+4. Add 1–2 real problem records from this target to `07-problems/` and show the
+   resulting principle/pattern patch.
+5. Add a small card completeness check (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 
 ## Constraints
@@ -91,4 +100,6 @@ service, or audit service.
 python3 -m unittest discover -s tests -v
 python3 -m a2l build examples/two_stage/two_stage.sp --out examples/two_stage/out --area-budget-mm2 0.005 --fail-on-gate
 python3 -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
+python3 -m a2l validate examples/sky130_two_stage_opamp/opamp.sp --require-known-roles
+python3 -m a2l build examples/sky130_two_stage_opamp/opamp.sp --out out/sky130_opamp --area-budget-mm2 0.006 --fail-on-gate
 ```

@@ -24,7 +24,7 @@
 <circle cx="72" cy="146" r="15" fill="#22D3EE" stroke="none" stroke-width="0"/>
 <text x="72" y="151" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#08111F" text-anchor="middle">1</text>
 <text x="96" y="152" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="23" font-weight="700" fill="#E6EEF8" text-anchor="start">名字就是语义</text>
-<text x="72" y="180" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="400" fill="#8FA3BF" text-anchor="start">真实网表只有器件名</text>
+<text x="72" y="180" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="400" fill="#8FA3BF" text-anchor="start">SKY130 OP · 只有器件名</text>
 <rect x="440" y="110" width="360" height="470" rx="18" fill="#0E1A2B" stroke="#1E3552" stroke-width="1"/>
 <circle cx="464" cy="146" r="15" fill="#F5B74E" stroke="none" stroke-width="0"/>
 <text x="464" y="151" font-family="'Noto Sans CJK SC','Noto Sans CJK JP','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" fill="#08111F" text-anchor="middle">2</text>

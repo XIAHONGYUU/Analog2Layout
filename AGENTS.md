@@ -54,6 +54,8 @@ python3 -m unittest discover -s tests -v
 python3 -m a2l build examples/two_stage/two_stage.sp --out examples/two_stage/out --area-budget-mm2 0.005 --fail-on-gate
 python3 -m a2l compare examples/ota5/ota5.sp examples/ota5_cascode/ota5_cascode.sp --area-budget-mm2 0.005 --fail-on-gate
 python3 -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
+python3 -m a2l validate examples/sky130_two_stage_opamp/opamp.sp --require-known-roles
+python3 -m a2l build examples/sky130_two_stage_opamp/opamp.sp --out out/sky130_opamp --area-budget-mm2 0.006 --fail-on-gate
 ```
 
 If you change the SVG renderer, also rasterize and inspect the preview:

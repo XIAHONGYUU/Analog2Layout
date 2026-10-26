@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157.041 115.820" width="942" height="695" role="img" aria-label="Floorplan sketch intent for two_stage" style="max-width:100%;background:#ffffff">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159.666 115.820" width="958" height="695" role="img" aria-label="Floorplan sketch intent for two_stage" style="max-width:100%;background:#ffffff">
 <title>two_stage — floorplan intent</title>
 
 <defs>
@@ -9,114 +9,108 @@
     <line x1="0" y1="0" x2="0" y2="4" stroke="#d1d5db" stroke-width="0.35"/>
   </pattern>
 </defs>
-<rect x="0" y="0" width="157.041" height="115.820" fill="#ffffff"/>
-<rect x="127.041" y="34.000" width="10.000" height="51.820" rx="0" fill="url(#hatch)" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.5,1.8"/>
-<text x="132.041" y="57.910" fill="#6b7280" font-size="2.4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.15" transform="rotate(-90 132.041 57.910)" opacity="1">PEX-FIX RESERVE 8%</text>
-<text x="134.441" y="67.910" fill="#9ca3af" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 134.441 67.910)" opacity="1">keep uncommitted</text>
+<rect x="0" y="0" width="159.666" height="115.820" fill="#ffffff"/>
+<rect x="129.666" y="34.000" width="10.000" height="51.820" rx="0" fill="url(#hatch)" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.5,1.8"/>
+<text x="134.666" y="57.910" fill="#6b7280" font-size="2.4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.15" transform="rotate(-90 134.666 57.910)" opacity="1">PEX-FIX RESERVE 8%</text>
+<text x="137.066" y="67.910" fill="#9ca3af" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 137.066 67.910)" opacity="1">keep uncommitted</text>
 <text x="9.000" y="36.750" fill="#9ca3af" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.25" transform="rotate(-90 9.000 36.750)" opacity="1">TOP</text>
 <text x="9.000" y="57.410" fill="#9ca3af" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.25" transform="rotate(-90 9.000 57.410)" opacity="1">MID</text>
 <text x="9.000" y="80.570" fill="#9ca3af" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.25" transform="rotate(-90 9.000 80.570)" opacity="1">BOTTOM</text>
-<line x1="16.000" y1="42.000" x2="123.041" y2="42.000" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" stroke-dasharray="2.0,2.0" opacity="1"/>
-<line x1="16.000" y1="72.820" x2="123.041" y2="72.820" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" stroke-dasharray="2.0,2.0" opacity="1"/>
-<rect x="84.311" y="44.500" width="38.730" height="25.820" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
-<rect x="84.611" y="41.800" width="6.500" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
-<text x="85.011" y="43.100" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">COMP</text>
-<rect x="29.200" y="75.320" width="21.756" height="10.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<line x1="16.000" y1="42.000" x2="125.666" y2="42.000" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" stroke-dasharray="2.0,2.0" opacity="1"/>
+<line x1="16.000" y1="72.820" x2="125.666" y2="72.820" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" stroke-dasharray="2.0,2.0" opacity="1"/>
+<rect x="86.936" y="44.500" width="38.730" height="25.820" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="87.236" y="41.800" width="6.500" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="87.636" y="43.100" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">COMP</text>
+<rect x="29.200" y="75.320" width="23.256" height="10.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
 <rect x="29.500" y="72.620" width="6.500" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
 <text x="29.900" y="73.920" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">TAIL</text>
-<rect x="56.421" y="52.160" width="22.890" height="10.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
-<rect x="56.721" y="49.460" width="5.250" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
-<text x="57.121" y="50.760" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">OUT</text>
-<rect x="28.735" y="54.660" width="22.686" height="5.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
-<rect x="29.035" y="51.960" width="4.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
-<text x="29.435" y="53.260" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">DP</text>
-<rect x="31.769" y="34.000" width="16.618" height="5.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
-<rect x="32.069" y="39.600" width="4.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
-<text x="32.469" y="40.900" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">CM</text>
+<rect x="58.296" y="52.160" width="23.640" height="10.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="58.596" y="49.460" width="5.250" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="58.996" y="50.760" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">OUT</text>
+<rect x="28.360" y="54.660" width="24.936" height="5.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="31.394" y="34.000" width="18.868" height="5.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
+<rect x="31.694" y="39.600" width="4.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="32.094" y="40.900" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">CM</text>
 <rect x="16.000" y="79.320" width="1.600" height="2.500" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
 <rect x="16.300" y="76.620" width="4.000" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
 <text x="16.700" y="77.920" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">EN</text>
 <rect x="22.600" y="79.470" width="1.600" height="2.200" rx="0.8" fill="none" stroke="#9ca3af" stroke-width="0.3" stroke-dasharray="2.8,1.8"/>
 <rect x="22.900" y="76.770" width="5.250" height="2.600" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
 <text x="23.300" y="78.070" fill="#6b7280" font-size="2.1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">ADJ</text>
-<line x1="40.078" y1="32.000" x2="40.078" y2="87.820" stroke="#dc2626" stroke-width="0.35" stroke-linecap="round" stroke-dasharray="3.0,2.0" opacity="0.55"/>
-<text x="41.278" y="31.200" fill="#dc2626" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="0.85">SYM AXIS</text>
-<rect x="84.311" y="44.500" width="38.730" height="25.820" rx="0" fill="#fafafa" stroke="#111827" stroke-width="0.32"/>
-<text x="103.676" y="55.610" fill="#111827" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">C1</text>
-<text x="103.676" y="58.610" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">COMP</text>
-<text x="103.676" y="61.110" fill="#9ca3af" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">1.5 pF</text>
-<rect x="36.438" y="75.320" width="7.280" height="10.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="40.078" y="79.870" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M5</text>
-<text x="40.078" y="82.370" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">TAIL</text>
+<line x1="40.828" y1="32.000" x2="40.828" y2="87.820" stroke="#dc2626" stroke-width="0.35" stroke-linecap="round" stroke-dasharray="3.0,2.0" opacity="0.55"/>
+<text x="42.028" y="31.200" fill="#dc2626" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="0.85">SYM AXIS</text>
+<rect x="86.936" y="44.500" width="38.730" height="25.820" rx="0" fill="#fafafa" stroke="#111827" stroke-width="0.32"/>
+<text x="106.301" y="55.610" fill="#111827" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">C1</text>
+<text x="106.301" y="58.610" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">COMP</text>
+<text x="106.301" y="61.110" fill="#9ca3af" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">1.5 pF</text>
+<rect x="37.188" y="75.320" width="7.280" height="10.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="40.828" y="79.870" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M5</text>
+<text x="40.828" y="82.370" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">TAIL</text>
 <rect x="29.200" y="75.320" width="6.188" height="8.925" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
 <text x="32.294" y="79.082" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">DM</text>
 <text x="32.294" y="81.582" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DM</text>
-<rect x="44.768" y="75.320" width="6.188" height="8.925" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
-<text x="47.862" y="79.082" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">DM</text>
-<text x="47.862" y="81.582" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DM</text>
-<rect x="56.421" y="52.160" width="7.280" height="10.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="60.061" y="56.710" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M6</text>
-<text x="60.061" y="59.210" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">OUT</text>
-<rect x="64.751" y="52.160" width="14.560" height="10.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="72.031" y="55.610" fill="#111827" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M7</text>
-<text x="72.031" y="58.610" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">OUT</text>
-<text x="72.031" y="61.110" fill="#9ca3af" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">80/1 nf=8</text>
-<rect x="34.273" y="54.660" width="5.280" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="36.913" y="56.710" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M1</text>
-<text x="36.913" y="59.210" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DP</text>
-<rect x="40.603" y="54.660" width="5.280" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="43.243" y="56.710" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M2</text>
-<text x="43.243" y="59.210" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DP</text>
-<rect x="28.735" y="54.660" width="4.488" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
-<text x="30.979" y="56.997" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 30.979 56.997)" opacity="1">DM</text>
-<rect x="46.933" y="54.660" width="4.488" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
-<text x="49.177" y="56.997" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 49.177 56.997)" opacity="1">DM</text>
-<rect x="35.913" y="34.000" width="3.640" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="37.733" y="36.750" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 37.733 36.750)" opacity="1">M3</text>
-<rect x="40.603" y="34.000" width="3.640" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="42.423" y="36.750" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 42.423 36.750)" opacity="1">M4</text>
-<rect x="31.769" y="34.000" width="3.094" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
-<text x="33.316" y="36.337" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 33.316 36.337)" opacity="1">DM</text>
-<rect x="45.293" y="34.000" width="3.094" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
-<text x="46.840" y="36.337" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 46.840 36.337)" opacity="1">DM</text>
+<rect x="46.268" y="75.320" width="6.188" height="8.925" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<text x="49.362" y="79.082" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">DM</text>
+<text x="49.362" y="81.582" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DM</text>
+<rect x="58.296" y="52.160" width="7.280" height="10.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="61.936" y="56.710" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M6</text>
+<text x="61.936" y="59.210" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">OUT</text>
+<rect x="67.376" y="52.160" width="14.560" height="10.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="74.656" y="55.610" fill="#111827" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M7</text>
+<text x="74.656" y="58.610" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">OUT</text>
+<text x="74.656" y="61.110" fill="#9ca3af" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">80/1 nf=8</text>
+<rect x="34.648" y="54.660" width="5.280" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="37.288" y="56.710" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M1</text>
+<text x="37.288" y="59.210" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DP</text>
+<rect x="41.728" y="54.660" width="5.280" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="44.368" y="56.710" fill="#111827" font-size="2.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M2</text>
+<text x="44.368" y="59.210" fill="#6b7280" font-size="1.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">DP</text>
+<rect x="28.360" y="54.660" width="4.488" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="48.808" y="54.660" width="4.488" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="36.288" y="34.000" width="3.640" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="38.108" y="36.750" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M3</text>
+<rect x="41.728" y="34.000" width="3.640" height="5.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
+<text x="43.548" y="36.750" fill="#111827" font-size="1.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M4</text>
+<rect x="31.394" y="34.000" width="3.094" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
+<rect x="47.168" y="34.000" width="3.094" height="4.675" rx="0" fill="#f3f4f6" stroke="#111827" stroke-width="0.3" stroke-dasharray="2.2,1.4"/>
 <rect x="16.000" y="79.320" width="1.600" height="2.500" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="16.800" y="80.570" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 16.800 80.570)" opacity="1">M8</text>
+<text x="16.800" y="80.570" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M8</text>
 <rect x="22.600" y="79.470" width="1.600" height="2.200" rx="0" fill="#ffffff" stroke="#111827" stroke-width="0.32"/>
-<text x="23.400" y="80.570" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 23.400 80.570)" opacity="1">M9</text>
-<rect x="38.978" y="25.900" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
-<text x="40.078" y="24.000" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">VDD</text>
-<line x1="40.078" y1="28.100" x2="40.078" y2="34.000" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
-<rect x="38.978" y="88.720" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
-<text x="40.078" y="93.220" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">VSS</text>
-<line x1="40.078" y1="88.720" x2="40.078" y2="85.820" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
-<rect x="35.813" y="52.560" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
-<text x="36.913" y="51.460" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">INP</text>
-<line x1="36.913" y1="54.760" x2="36.913" y2="56.460" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
-<rect x="42.143" y="52.560" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
-<text x="43.243" y="51.460" fill="#111827" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">INN</text>
-<line x1="43.243" y1="54.760" x2="43.243" y2="56.460" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
-<rect x="79.111" y="56.310" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
-<text x="82.211" y="57.410" fill="#111827" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 82.211 57.410)" opacity="1">VOUT</text>
-<line x1="79.111" y1="57.410" x2="77.411" y2="57.410" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<text x="23.400" y="80.570" fill="#111827" font-size="0.992" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">M9</text>
+<rect x="39.728" y="25.900" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="40.828" y="24.000" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">VDD</text>
+<line x1="40.828" y1="28.100" x2="40.828" y2="34.000" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="39.728" y="88.720" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="40.828" y="93.220" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">VSS</text>
+<line x1="40.828" y1="88.720" x2="40.828" y2="85.820" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="36.188" y="52.560" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="37.288" y="51.660" fill="#111827" font-size="1.35" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">INP</text>
+<line x1="37.288" y1="54.760" x2="37.288" y2="56.460" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="43.268" y="52.560" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="44.368" y="49.860" fill="#111827" font-size="1.35" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">INN</text>
+<line x1="44.368" y1="54.760" x2="44.368" y2="56.460" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
+<rect x="81.736" y="56.310" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
+<text x="84.836" y="57.410" fill="#111827" font-size="1.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 84.836 57.410)" opacity="1">VOUT</text>
+<line x1="81.736" y1="57.410" x2="80.036" y2="57.410" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
 <rect x="15.700" y="83.220" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
 <text x="16.800" y="87.720" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">EN</text>
 <line x1="16.800" y1="83.220" x2="16.800" y2="85.820" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
 <rect x="22.300" y="83.070" width="2.200" height="2.200" rx="0" fill="#111827" stroke="#111827" stroke-width="0.2"/>
 <text x="23.400" y="87.570" fill="#111827" font-size="2.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle" opacity="1">ADJ</text>
 <line x1="23.400" y1="83.070" x2="23.400" y2="85.820" stroke="#d1d5db" stroke-width="0.3" stroke-linecap="round" opacity="1"/>
-<line x1="16.000" y1="20.000" x2="123.041" y2="20.000" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)" opacity="1"/>
+<line x1="16.000" y1="20.000" x2="125.666" y2="20.000" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)" opacity="1"/>
 <line x1="16.000" y1="18.600" x2="16.000" y2="21.400" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
-<line x1="123.041" y1="18.600" x2="123.041" y2="21.400" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
-<text x="69.520" y="18.300" fill="#6b7280" font-size="2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">W = 107.0 um</text>
-<line x1="152.041" y1="34.000" x2="152.041" y2="85.820" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)" opacity="1"/>
-<line x1="150.641" y1="34.000" x2="153.441" y2="34.000" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
-<line x1="150.641" y1="85.820" x2="153.441" y2="85.820" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
-<text x="154.041" y="59.910" fill="#6b7280" font-size="2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 154.041 59.910)" opacity="1">H = 51.8 um</text>
+<line x1="125.666" y1="18.600" x2="125.666" y2="21.400" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<text x="70.833" y="18.300" fill="#6b7280" font-size="2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" opacity="1">W = 109.7 um</text>
+<line x1="154.666" y1="34.000" x2="154.666" y2="85.820" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)" opacity="1"/>
+<line x1="153.266" y1="34.000" x2="156.066" y2="34.000" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<line x1="153.266" y1="85.820" x2="156.066" y2="85.820" stroke="#6b7280" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<text x="156.666" y="59.910" fill="#6b7280" font-size="2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 156.666 59.910)" opacity="1">H = 51.8 um</text>
 <text x="16.000" y="8.500" fill="#111827" font-size="6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="bold" text-anchor="start" dominant-baseline="middle" opacity="1">two_stage — floorplan intent</text>
-<text x="16.000" y="14.600" fill="#6b7280" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">rules: generic-180  ·  symmetry x=40.1 um  ·  10 devices + 6 proposed dummies / 7 groups</text>
-<line x1="16.000" y1="95.820" x2="141.041" y2="95.820" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
+<text x="16.000" y="14.600" fill="#6b7280" font-size="2.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">rules: generic-180  ·  symmetry x=40.8 um  ·  10 devices + 6 proposed dummies / 7 groups</text>
+<line x1="16.000" y1="95.820" x2="143.666" y2="95.820" stroke="#d1d5db" stroke-width="0.25" stroke-linecap="round" opacity="1"/>
 <text x="16.000" y="100.020" fill="#6b7280" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">SOLID existing · DASHED proposed · HATCH PEX reserve · grey dash = routing channel · um</text>
 <text x="16.000" y="104.420" fill="#9ca3af" font-size="1.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">DP input pair   CM current mirror   CAS cascode   TAIL tail   OUT output   COMP cap   SW switch   DM dummy</text>
 <text x="16.000" y="111.820" fill="#9ca3af" font-size="1.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" text-anchor="start" dominant-baseline="middle" opacity="1">a2l v0.1  ·  early planning estimate, not DRC/LVS clean  ·  rules are educational, replace with a company rule pack</text>
-<rect x="0.5" y="0.5" width="156.041" height="114.820" fill="none" stroke="#d1d5db" stroke-width="0.3"/>
+<rect x="0.5" y="0.5" width="158.666" height="114.820" fill="none" stroke="#d1d5db" stroke-width="0.3"/>
 </svg>
