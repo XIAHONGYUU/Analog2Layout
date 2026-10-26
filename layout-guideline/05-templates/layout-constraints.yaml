@@ -57,26 +57,21 @@ rings:
 caps:
   C1_CC:
     type: MOSCAP                # non-high-precision OP default
-    value_pf: 3
-    density_stated: "<value + unit>"
-    unit_check: "<confirm pF vs fF>"
-    density_ff_per_um2: <ASK>   # not the generic 1.5 fF/um2
+    value_pf: <value>
+    density_ff_per_um2: <value>  # e.g. 2 fF/um2; from analog/PDK
+    area_core_um2: <value>
     voltage_coefficient: <ASK>
     linearity: <ASK>
     bottom_plate_parasitic: <ASK>
 
-sizing:
-  current_density_ua_per_um: <ASK>   # requires bias current / operating point
-  size_class_basis: "total W/L + current; small/medium/large for readable sketch"
-  note: "size_class is a drawing aid, not an electrical rule"
-
-compactness:
+layout:
+  scale: "strict w_layout/h_layout"
+  scale_bar_um: <value>
+  sd_sharing: <all_matched_groups | none>
+  ring_sharing: <none for matched groups>
+  bias_current_owner: analog
   matched_group_rings: separate
-  abutment:
-    - <DP/CM share ring?>
-  shared_rings: <ASK>
-  vdd_trunk: <ASK>
-  vss_trunk: <ASK>
+  compactness: <abutment / group spacing>
   target_width_um: <ASK>
   target_height_um: <ASK>
 

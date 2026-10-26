@@ -15,14 +15,14 @@
     "min_l_um": 0.18,
     "min_w_um": 0.22,
     "max_w_per_finger_um": 10.0,
-    "sd_ext_um": 0.30,
+    "sd_ext_um": 0.3,
     "od_ext_um": 0.25,
     "contact_size_um": 0.22,
     "contact_spacing_um": 0.22,
     "routing_overhead": 0.18,
-    "guard_ring_width_um": 0.80,
-    "guard_ring_spacing_um": 0.60,
-    "well_ext_um": 0.60,
+    "guard_ring_width_um": 0.8,
+    "guard_ring_spacing_um": 0.6,
+    "well_ext_um": 0.6,
     "gate_pitch_um": 0.56
   },
   "matching": {
@@ -35,20 +35,22 @@
     "guard_ring_for_critical": true
   },
   "cap": {
-    "density_ff_per_um2": 1.5,
-    "routing_overhead": 0.10,
-    "aspect_ratio": 1.5
+    "density_ff_per_um2": 2.0,
+    "routing_overhead": 0.1,
+    "aspect_ratio": 1.5,
+    "type": "moscap",
+    "note": "educational MOSCAP density from analog owner; 1x1 um = 2 fF"
   },
   "block": {
     "periphery_um": 4.0,
-    "routing_overhead": 0.10,
+    "routing_overhead": 0.1,
     "reserve_fraction": 0.08,
     "decap_min_pf": 2.0,
     "decap_ratio_to_comp": 0.5,
     "decap_max_pf": 20.0
   },
   "estimate": {
-    "low_factor": 0.80,
+    "low_factor": 0.8,
     "high_factor": 1.35
   },
   "layout_delta": {

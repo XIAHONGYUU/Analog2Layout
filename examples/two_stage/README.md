@@ -12,10 +12,10 @@ Expected summary (generic-180 rules):
 | --- | ---: |
 | Devices | 10 (9 MOS + 1 cap) |
 | Groups | 7 |
-| Nominal block area | ≈ 3377 µm² |
-| Range | ≈ 2701–4558 µm² |
-| PEX-fix reserve | ≈ 270 µm² |
-| Area gate @ 0.005 mm² | PASS (headroom ≈ 442 µm²) |
+| Nominal block area | ≈ 3021 µm² |
+| Range | ≈ 2417–4079 µm² |
+| PEX-fix reserve | ≈ 242 µm² |
+| Area gate @ 0.005 mm² | PASS (headroom ≈ 921 µm²) |
 | Proposed deltas | 12 |
 
 ## What to look at

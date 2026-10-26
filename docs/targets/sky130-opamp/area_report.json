@@ -277,12 +277,12 @@
       "nf": 1,
       "m": 1,
       "total_w_um": 0.0,
-      "w_layout_um": 54.772,
-      "h_layout_um": 36.515,
-      "area_core_um2": 2000.0,
+      "w_layout_um": 47.434,
+      "h_layout_um": 31.623,
+      "area_core_um2": 1500.0,
       "area_ring_um2": 0.0,
-      "area_routing_um2": 200.0,
-      "area_total_um2": 2200.0,
+      "area_routing_um2": 150.0,
+      "area_total_um2": 1650.0,
       "c_pf": 3.0,
       "notes": [
         "compensation cap; keep away from noisy nodes"
@@ -298,14 +298,14 @@
         "C1_CC"
       ],
       "device_count": 1,
-      "area_no_dummy_um2": 2200.0,
+      "area_no_dummy_um2": 1650.0,
       "dummy_count": 0,
       "existing_dummy_count": 0,
       "area_dummy_um2": 0.0,
       "overhead_fraction": 0.0,
-      "area_with_dummy_um2": 2200.0,
-      "area_low_um2": 1760.0,
-      "area_high_um2": 2970.0
+      "area_with_dummy_um2": 1650.0,
+      "area_low_um2": 1320.0,
+      "area_high_um2": 2227.5
     },
     {
       "key": "DP",
@@ -420,47 +420,47 @@
     "cap_count": 1,
     "group_count": 7,
     "width_convention": "per_finger",
-    "area_core_um2": 2048.18,
-    "area_active_um2": 2296.22,
-    "area_matched_um2": 2363.97,
-    "area_block_um2": 3526.5,
-    "area_envelope_um2": 3808.62,
+    "area_core_um2": 1548.18,
+    "area_active_um2": 1746.22,
+    "area_matched_um2": 1813.97,
+    "area_block_um2": 2815.37,
+    "area_envelope_um2": 3040.6,
     "area_ring_um2": 33.36,
-    "area_device_routing_um2": 214.68,
+    "area_device_routing_um2": 164.68,
     "area_dummy_um2": 58.92,
     "dummy_area_um2": 58.92,
     "area_matching_overhead_um2": 8.84,
-    "area_periphery_um2": 1162.52,
-    "area_reserved_um2": 282.12,
-    "area_parts_no_dummy_um2": 2296.22,
-    "area_parts_with_dummy_um2": 2363.97,
-    "area_block_no_dummy_um2": 3439.61,
-    "area_block_with_dummy_um2": 3526.5,
-    "area_core_fraction": 0.5808,
-    "area_active_fraction": 0.6511,
-    "area_matched_fraction": 0.6703,
+    "area_periphery_um2": 1001.4,
+    "area_reserved_um2": 225.23,
+    "area_parts_no_dummy_um2": 1746.22,
+    "area_parts_with_dummy_um2": 1813.97,
+    "area_block_no_dummy_um2": 2726.7,
+    "area_block_with_dummy_um2": 2815.37,
+    "area_core_fraction": 0.5499,
+    "area_active_fraction": 0.6202,
+    "area_matched_fraction": 0.6443,
     "area_block_fraction": 1.0,
     "area_envelope_fraction": 1.08,
-    "area_ring_fraction": 0.0095,
-    "area_device_routing_fraction": 0.0609,
-    "area_dummy_fraction": 0.0167,
-    "area_matching_fraction": 0.0025,
-    "area_periphery_fraction": 0.3297,
+    "area_ring_fraction": 0.0118,
+    "area_device_routing_fraction": 0.0585,
+    "area_dummy_fraction": 0.0209,
+    "area_matching_fraction": 0.0031,
+    "area_periphery_fraction": 0.3557,
     "area_reserve_fraction": 0.08,
-    "area_nominal_um2": 3526.5,
-    "area_low_um2": 2821.2,
-    "area_high_um2": 4760.77,
-    "area_nominal_mm2": 0.003526,
-    "area_mm2": 0.003526,
-    "area_envelope_mm2": 0.003809,
-    "area_low_mm2": 0.002821,
-    "area_high_mm2": 0.004761,
-    "area_reserved_mm2": 0.000282,
+    "area_nominal_um2": 2815.37,
+    "area_low_um2": 2252.3,
+    "area_high_um2": 3800.75,
+    "area_nominal_mm2": 0.002815,
+    "area_mm2": 0.002815,
+    "area_envelope_mm2": 0.003041,
+    "area_low_mm2": 0.002252,
+    "area_high_mm2": 0.003801,
+    "area_reserved_mm2": 0.000225,
     "area_gate": {
       "status": "PASS",
       "budget_um2": 6000.0,
       "budget_mm2": 0.006,
-      "headroom_um2": 1239.23,
+      "headroom_um2": 2199.25,
       "shortfall_um2": 0.0,
       "overlap_um2": 0.0
     },
@@ -474,23 +474,23 @@
     "dominant_roles": [
       {
         "role": "compensation",
-        "area_um2": 2200.0,
-        "share": 0.9581
+        "area_um2": 1650.0,
+        "share": 0.9449
       },
       {
         "role": "output_stage",
         "area_um2": 38.94,
-        "share": 0.017
+        "share": 0.0223
       },
       {
         "role": "input_pair",
         "area_um2": 19.64,
-        "share": 0.0086
+        "share": 0.0112
       },
       {
         "role": "current_mirror",
         "area_um2": 19.64,
-        "share": 0.0086
+        "share": 0.0112
       }
     ],
     "notes": [
@@ -508,7 +508,7 @@
     "output_stage": 38.94,
     "bias": 1.95,
     "enable_switch": 6.23,
-    "compensation": 2200.0
+    "compensation": 1650.0
   },
   "warnings": [
     "match group 'TAIL' has only one device; matching assumptions are weak"

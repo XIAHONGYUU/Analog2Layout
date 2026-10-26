@@ -252,12 +252,12 @@
       "nf": 1,
       "m": 1,
       "total_w_um": 0.0,
-      "w_layout_um": 38.73,
-      "h_layout_um": 25.82,
-      "area_core_um2": 1000.0,
+      "w_layout_um": 33.541,
+      "h_layout_um": 22.361,
+      "area_core_um2": 750.0,
       "area_ring_um2": 0.0,
-      "area_routing_um2": 100.0,
-      "area_total_um2": 1100.0,
+      "area_routing_um2": 75.0,
+      "area_total_um2": 825.0,
       "c_pf": 1.5,
       "notes": [
         "compensation cap; keep away from noisy nodes"
@@ -273,14 +273,14 @@
         "C1"
       ],
       "device_count": 1,
-      "area_no_dummy_um2": 1100.0,
+      "area_no_dummy_um2": 825.0,
       "dummy_count": 0,
       "existing_dummy_count": 0,
       "area_dummy_um2": 0.0,
       "overhead_fraction": 0.0,
-      "area_with_dummy_um2": 1100.0,
-      "area_low_um2": 880.0,
-      "area_high_um2": 1485.0
+      "area_with_dummy_um2": 825.0,
+      "area_low_um2": 660.0,
+      "area_high_um2": 1113.75
     },
     {
       "key": "TAIL",
@@ -394,47 +394,47 @@
     "cap_count": 1,
     "group_count": 7,
     "width_convention": "per_finger",
-    "area_core_um2": 1409.16,
-    "area_active_um2": 1706.7,
-    "area_matched_um2": 2247.21,
-    "area_block_um2": 3376.65,
-    "area_envelope_um2": 3646.78,
+    "area_core_um2": 1159.16,
+    "area_active_um2": 1431.7,
+    "area_matched_um2": 1972.21,
+    "area_block_um2": 3021.44,
+    "area_envelope_um2": 3263.15,
     "area_ring_um2": 104.99,
-    "area_device_routing_um2": 192.55,
+    "area_device_routing_um2": 167.55,
     "area_dummy_um2": 456.66,
     "dummy_area_um2": 456.66,
     "area_matching_overhead_um2": 83.85,
-    "area_periphery_um2": 1129.44,
-    "area_reserved_um2": 270.13,
-    "area_parts_no_dummy_um2": 1706.7,
-    "area_parts_with_dummy_um2": 2247.21,
-    "area_block_no_dummy_um2": 2674.86,
-    "area_block_with_dummy_um2": 3376.65,
-    "area_core_fraction": 0.4173,
-    "area_active_fraction": 0.5054,
-    "area_matched_fraction": 0.6655,
+    "area_periphery_um2": 1049.23,
+    "area_reserved_um2": 241.71,
+    "area_parts_no_dummy_um2": 1431.7,
+    "area_parts_with_dummy_um2": 1972.21,
+    "area_block_no_dummy_um2": 2311.21,
+    "area_block_with_dummy_um2": 3021.44,
+    "area_core_fraction": 0.3836,
+    "area_active_fraction": 0.4738,
+    "area_matched_fraction": 0.6527,
     "area_block_fraction": 1.0,
     "area_envelope_fraction": 1.08,
-    "area_ring_fraction": 0.0311,
-    "area_device_routing_fraction": 0.057,
-    "area_dummy_fraction": 0.1352,
-    "area_matching_fraction": 0.0248,
-    "area_periphery_fraction": 0.3345,
+    "area_ring_fraction": 0.0347,
+    "area_device_routing_fraction": 0.0555,
+    "area_dummy_fraction": 0.1511,
+    "area_matching_fraction": 0.0278,
+    "area_periphery_fraction": 0.3473,
     "area_reserve_fraction": 0.08,
-    "area_nominal_um2": 3376.65,
-    "area_low_um2": 2701.32,
-    "area_high_um2": 4558.48,
-    "area_nominal_mm2": 0.003377,
-    "area_mm2": 0.003377,
-    "area_envelope_mm2": 0.003647,
-    "area_low_mm2": 0.002701,
-    "area_high_mm2": 0.004558,
-    "area_reserved_mm2": 0.00027,
+    "area_nominal_um2": 3021.44,
+    "area_low_um2": 2417.15,
+    "area_high_um2": 4078.94,
+    "area_nominal_mm2": 0.003021,
+    "area_mm2": 0.003021,
+    "area_envelope_mm2": 0.003263,
+    "area_low_mm2": 0.002417,
+    "area_high_mm2": 0.004079,
+    "area_reserved_mm2": 0.000242,
     "area_gate": {
       "status": "PASS",
       "budget_um2": 5000.0,
       "budget_mm2": 0.005,
-      "headroom_um2": 441.52,
+      "headroom_um2": 921.06,
       "shortfall_um2": 0.0,
       "overlap_um2": 0.0
     },
@@ -448,23 +448,23 @@
     "dominant_roles": [
       {
         "role": "compensation",
-        "area_um2": 1100.0,
-        "share": 0.6445
+        "area_um2": 825.0,
+        "share": 0.5762
       },
       {
         "role": "output_stage",
         "area_um2": 270.6,
-        "share": 0.1586
+        "share": 0.189
       },
       {
         "role": "tail_current",
         "area_um2": 126.79,
-        "share": 0.0743
+        "share": 0.0886
       },
       {
         "role": "input_pair",
         "area_um2": 115.28,
-        "share": 0.0675
+        "share": 0.0805
       }
     ],
     "notes": [
@@ -482,7 +482,7 @@
     "output_stage": 270.6,
     "enable_switch": 3.89,
     "adj_switch": 2.34,
-    "compensation": 1100.0
+    "compensation": 825.0
   },
   "warnings": [
     "match group 'TAIL' has only one device; matching assumptions are weak"

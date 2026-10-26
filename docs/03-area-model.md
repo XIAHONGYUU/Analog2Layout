@@ -111,7 +111,7 @@ else:                     UNCERTAIN -> refine / layout check
 | `UNCERTAIN` | 区间跨过预算 | `overlap_um2`，建议 refine |
 | `UNSET` | 没给 budget | 不判断 |
 
-示例：budget 5000 µm²，range 2701–4558 µm² → PASS，headroom 442 µm²。
+示例：budget 5000 µm²，range 2417–4079 µm² → PASS，headroom 921 µm²。
 
 这个门和 AnalogLoop 的 area gate 思路一致：**面积不是标量，先用区间做三值判断，再决定是否值得花仿真/版图时间。**
 
@@ -147,7 +147,7 @@ area      = OD_area + ring_area + routing
 area = C / cap_density
 ```
 
-`cap_density` 单位是 `fF/µm²`。generic 规则用 1.5 fF/µm²，仅用于演示；**这不是 MOSCAP 的密度**，真实 MOSCAP / MOM / MIM 密度必须来自工艺厂或公司规则。
+`cap_density` 单位是 `fF/µm²`。generic 规则现在用 **2 fF/µm²** 作为 educational MOSCAP 密度（1×1 µm = 2 fF）；真实 MOSCAP / MOM / MIM 密度必须来自工艺厂或公司规则。
 
 电容类型必须显式写清楚：
 
@@ -155,7 +155,7 @@ area = C / cap_density
 - 高线性/高匹配场景才优先 MOM/MIM；
 - 同一电容值，MOSCAP / MOM / MIM 的面积可能差 2–5 倍，不能只用一个 `cap_density` 混算。
 
-当前 `C1_CC=3 pF` 的 2200 µm² 是 generic-180 的 1.5 fF/µm² 结果，**不能当作 SKY130 MOSCAP 面积**。
+当前 `C1_CC=3 pF` 的 core 面积是 1500 µm²（3 pF ÷ 2 fF/µm²），加 routing overhead 后约 1650 µm²；这是 educational MOSCAP 结果，**不能当作 SKY130 签核面积**。
 
 ### 3.3 匹配组
 

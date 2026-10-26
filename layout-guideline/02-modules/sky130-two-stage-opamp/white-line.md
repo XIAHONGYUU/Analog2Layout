@@ -1,7 +1,8 @@
-# White-line layout plan — SKY130 two-stage OP (v0.2)
+# White-line layout plan — SKY130 two-stage OP (v0.3, strict scale)
 
-> **v0.2 已按约束重画：DP/CM/TAIL 的 W 方向两端各一个 dummy，源漏共用；每个匹配组独立 ring；C1 改成 MOSCAP。**
-> 仍不是 rule-valid layout：相对尺寸是 size class，ring 间距是 educational placeholder，MOSCAP 密度单位待确认。
+> **v0.3 按真实 `w_layout/h_layout` 严格缩放，带 10 µm 比例尺。**
+> DP/CM/TAIL 的 W 方向两端各一个 dummy，源漏共用；每个匹配组独立 ring；C1 改成 MOSCAP（3 pF @ 2 fF/µm² = 1500 µm²）。
+> ring 宽度/间距仍是 educational placeholder，不是 PDK 数值。
 
 ![SKY130 white-line layout plan](../../../docs/targets/sky130-opamp/white-line.png)
 
@@ -9,49 +10,39 @@
 
 ![SKY130 white-line layout detail](../../../docs/targets/sky130-opamp/white-line-detail.png)
 
-## 这是什么
-
-这是**版图结构的白线草图**：左边是 block-level circuit reference，右边是器件/ring/dummy 的摆放和排列方式。
-它和电路图放在同一个视图里，但不是“在 schematic 符号上画注释框”，也不是合法版图。
-
 ## 图上怎么读
 
-| 区域 | 版图结构 | 说明 |
-| --- | --- | --- |
-| `CM` | `DM / M3_CM / M4_CM / DM`，各 4 指 | 两端各 1 个 dummy；源漏共用；同 well；独立 ring |
-| `DP` | `DM / M1_DP / M2_DP / DM`，各 4 指 | common-centroid / ABBA；两端各 1 个 dummy；独立 ring |
-| `TAIL/BIAS` | `DM / M5_TAIL / M8_BIAS / DM`，各 2 指 | M5/M8 镜像比例；两端各 1 个 dummy；独立 ring |
-| `EN` | `M9_EN / M10_EN_PD`，各 2 指 | EN=0：M9 off，M10 把 `nbias` 拉高；独立 ring |
-| `C1_CC` | MOSCAP 块 | 非高精度 OP 首选；密度按你说的 2 pF/µm² 暂记，但 **unit check pending** |
-| `OUT` | `M6_OUT` 2 指 / `M7_OUT` 1 指 | 宽金属、多过孔、EM/IR；输出组独立 ring |
-| `I0` | 虚线理想电流源 | 30 µA，真实 bias 生成器待补 |
+- 小方块里的数字 `1..10` 是 MOS 编号，对应右侧 `DEVICE LEGEND`；
+- `d` 是 dummy，和同组 MOS 同 W/L，源漏共用；
+- 白色实线框是器件；白色双框是 ring；
+- 左下角是 **10 µm 比例尺**；所有器件框按 `area_report.json` 的 `w_layout/h_layout` 绘制；
+- 因为尺寸严格，0.75/0.5 的管子只有约 1.3×1.25 µm，放不下文字，所以用编号 + 图例，不用文字硬塞。
 
-## dummy 规则（已按你的定义）
+## 已落实的规则
 
-- 位置：MOS 的 **W 方向外侧两端各一个**；
-- 连接：**源漏共用**；
-- W/L：默认与正常 MOS 相同；如果 `W/L < 0.5`，用**相同 W、最小 L**；
-- gate 连接：和布局无关，先不画 gate tie；
-- 当前图：CM/DP 各 2 个 DM，TAIL 2 个 DM，共 6 个。
+| 项 | 当前做法 |
+| --- | --- |
+| dummy 位置 | DP/CM/TAIL 的 W 方向两端各 1 个 |
+| dummy 连接 | 源漏共用；不同端接不同电位（电位由 schematic 决定） |
+| dummy W/L | 默认同正常 MOS；`W/L<0.5` 时同 W、最小 L |
+| dummy gate | 和布局无关，不画 gate tie |
+| ring | CM、DP、TAIL/BIAS、EN、OUT 各自独立 ring，不共享 |
+| ring 间距 | `1.0 µm width / 1.5 µm gap`，educational placeholder |
+| C1 | MOSCAP，3 pF @ 2 fF/µm² → 1500 µm² core |
+| 比例 | `w_layout/h_layout` 严格缩放；10 µm scale bar |
 
-## ring / 紧凑度
+## 当前仍待确认
 
-- 每个匹配组**独立围环**：CM、DP、TAIL/BIAS、EN、OUT 各自一个 ring；不共享 ring。
-- 当前 ring 间距是 **educational placeholder**：`ring width 1.0 µm / ring-to-device 1.5 µm`，不是 PDK 数值。
-- 组间比 v0.1 紧凑，但仍是“可读性摆放”；真正的 abutment / 共用源漏 / VDD/VSS 主干还要继续定。
+- `ASK` ring 的 contact / ring-to-ring / well 间距：现在只是 educational placeholder。
+- `ASK` MOSCAP 的电压系数、线性度、底板寄生：面积按 2 fF/µm² 算，电学边界未确认。
+- `ASK` `TAIL` 单器件是否真的需要 dummy tail；当前按“两端各 1 个 dummy”画了。
+- `ASK` output 组是否也需要 DM；当前 OUT 只围 ring，没加 DM。
 
-## 仍待确认
+## current density / size class
 
-- `ASK` MOSCAP 密度：你写的是 **2 pF/µm²**；1×1 µm 的 MOSCAP 若真是 2 pF，会比典型 180nm MOSCAP 高约 2–3 个数量级。请确认是 **2 pF/µm²** 还是 **2 fF/µm²**。
-- `ASK` current density / 各支路 bias 电流：现在只有 `I0=30 µA` 和镜像比例，不能推出每个管子的真实电流密度。
-- `ASK` MOS 相对尺寸：当前用 `small/medium/large` 档位，不是严格按 W/L/area 比例。
-- `ASK` ring 的 contact/ring-to-ring/well 间距：先用 educational placeholder，等 PDK/公司规则。
-- `ASK` VDD/VSS 主干、哪些组 abut、哪些 source/drain 真正共用。
-
-## current density / size class 是什么
-
-- **current density**：单位沟道宽度承载的电流（例如 µA/µm），用来决定 W、finger 数、金属宽度和 EM 余量。它需要 bias 电流和工作点，不能只从网表名字推出。
-- **size class**：为了白线图可读，把器件按总 W/L 和电流粗分为 `small / medium / large`。它不是电气规则，只是画图时的相对尺寸档位；真实版图仍要按 W/L/area 比例。
+- **bias 电流是模拟设计给的**，不是版图自己决定的；版图只接收 W/L、电流/EM 约束，不在这里重新选工作点。
+- **current density** 是模拟 sizing 的指标（单位宽度电流，例如 µA/µm），用来决定 W/finger/金属宽度；没有 analog 给的 bias 电流时，版图不应自己编。
+- **size class** 只是白线图的可读性档位；v0.3 已经改成严格比例，不再用 `small/medium/large` 代替真实尺寸。
 
 ## 相关
 

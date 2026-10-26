@@ -235,7 +235,7 @@ area_low  >  budget      → REJECT
 otherwise                → UNCERTAIN（区间跨过 budget，需要 refine 或 layout check）
 ```
 
-示例：budget 5000 µm²，range 2701–4558 µm² → **PASS，headroom 442 µm²**。CI 里加 `--fail-on-gate` 后，REJECT/UNCERTAIN 会直接让构建失败，而不是只打印一行警告。
+示例：budget 5000 µm²，range 2417–4079 µm² → **PASS，headroom 921 µm²**。CI 里加 `--fail-on-gate` 后，REJECT/UNCERTAIN 会直接让构建失败，而不是只打印一行警告。
 
 所有系数都来自 [`rules/generic_180.json`](rules/generic_180.json)，报告里能追溯到具体 rule key；公司规则包的创建/校准约定见 [`rules/README.md`](rules/README.md)。**它的价值是比较架构、暴露面积大头、提前发现 dummy/decap 的成本，而不是替代签核提取。**
 

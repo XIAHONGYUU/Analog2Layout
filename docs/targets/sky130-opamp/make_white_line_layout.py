@@ -6,162 +6,187 @@ MONO = "'Noto Sans Mono CJK SC','Noto Sans Mono',monospace"
 BG="#0A0F16"; WHITE="#F8FAFC"; MUTED="#94A3B8"; DIM="#64748B"
 CYAN="#22D3EE"; AMBER="#FBBF24"; PURPLE="#A78BFA"; GREEN="#34D399"; PINK="#F472B6"; ORANGE="#F59E0B"
 
+S=16.0; OX=380.0; OY=220.0
 out=[]
 def add(s): out.append(s)
-def rect(x,y,w,h,fill="none",stroke=WHITE,rx=0,sw=1.6,dash=None,opacity=1):
+def X(x): return OX + x*S
+def Y(y): return OY + y*S
+def rect_um(x,y,w,h,fill="none",stroke=WHITE,rx=0,sw=1.4,dash=None,opacity=1):
     d=f' stroke-dasharray="{dash}"' if dash else ""
-    add(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" opacity="{opacity}"{d}/>')
-def line(x1,y1,x2,y2,stroke=WHITE,sw=1.6,dash=None,opacity=1):
+    add(f'<rect x="{X(x):.1f}" y="{Y(y):.1f}" width="{w*S:.1f}" height="{h*S:.1f}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" opacity="{opacity}"{d}/>')
+def line_um(x1,y1,x2,y2,stroke=WHITE,sw=1.2,dash=None):
     d=f' stroke-dasharray="{dash}"' if dash else ""
-    add(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" opacity="{opacity}"{d}/>')
-def text(x,y,s,size=13,fill=WHITE,weight=400,anchor="start",family=FONT):
-    add(f'<text x="{x}" y="{y}" font-family="{family}" font-size="{size}" font-weight="{weight}" fill="{fill}" text-anchor="{anchor}">{escape(s)}</text>')
-def arrow(x1,y1,x2,y2,color=WHITE,sw=1.5):
-    line(x1,y1,x2,y2,color,sw)
+    add(f'<line x1="{X(x1):.1f}" y1="{Y(y1):.1f}" x2="{X(x2):.1f}" y2="{Y(y2):.1f}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round"{d}/>')
+def text_px(x,y,s,size=13,fill=WHITE,weight=400,anchor="start",family=FONT):
+    add(f'<text x="{x:.1f}" y="{y:.1f}" font-family="{family}" font-size="{size}" font-weight="{weight}" fill="{fill}" text-anchor="{anchor}">{escape(s)}</text>')
+def text_um(x,y,s,size=11,fill=WHITE,weight=400,anchor="start",family=MONO):
+    text_px(X(x),Y(y),s,size,fill,weight,anchor,family)
+def arrow_px(x1,y1,x2,y2,color=WHITE,sw=1.3):
+    add(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{sw}" stroke-linecap="round"/>')
     import math
-    ang=math.atan2(y2-y1,x2-x1); L=9
+    ang=math.atan2(y2-y1,x2-x1); L=8
     for s in (-0.5,0.5):
         add(f'<line x1="{x2}" y1="{y2}" x2="{x2-L*math.cos(ang+s)}" y2="{y2-L*math.sin(ang+s)}" stroke="{color}" stroke-width="{sw}" stroke-linecap="round"/>')
 
-def array(x,y,w,h,count,label,sub="",color=WHITE,fill="none"):
-    rect(x,y,w,h,fill,color,3,2.0)
-    margin=8; gap=4
-    fw=(w-2*margin-(count-1)*gap)/count
-    for i in range(count):
-        fx=x+margin+i*(fw+gap)
-        rect(fx,y+8,fw,h-16,"none",color,1,1.7)
-    line(x+5,y+4,x+w-5,y+4,color,2)
-    line(x+5,y+h-4,x+w-5,y+h-4,color,2)
-    text(x+2,y-7,label,10.5,color,700,family=MONO)
-    if sub: text(x+2,y+h+14,sub,8.5,MUTED,400,family=MONO)
+def ring(gx,gy,gw,gh,label):
+    # outer ring; 1.0 um ring width, 1.5 um gap to device
+    rect_um(gx,gy,gw,gh,"none",WHITE,0,1.2)
+    rect_um(gx+1.0,gy+1.0,gw-2.0,gh-2.0,"none",WHITE,0,1.2)
+    text_um(gx,gy-0.55,label,9,MUTED,600)
 
-def ring(x,y,w,h,label=""):
-    rect(x,y,w,h,"none",WHITE,8,1.3,"5 6")
+def dev(gx,gy,dx,dy,w,h,num,color,label="",dummy=False):
+    fill="#111827" if dummy else "none"
+    rect_um(gx+dx,gy+dy,w,h,fill,color,1,2.0,"3 3" if dummy else None)
+    # S/D rails
+    line_um(gx+dx+0.15,gy+dy+0.2,gx+dx+w-0.15,gy+dy+0.2,color,1.0)
+    line_um(gx+dx+0.15,gy+dy+h-0.2,gx+dx+w-0.15,gy+dy+h-0.2,color,1.0)
+    text_um(gx+dx+w/2,gy+dy+h/2+0.35,num,8,color,700,"middle")
+    if label:
+        text_um(gx+dx,gy+dy+h+0.45,label,7.5,MUTED,400)
 
-def dm(x,y,w,h,count,label="DM"):
-    array(x,y,w,h,count,label,"",WHITE)
-
-def moscap(x,y,w,h):
-    # layout-style MOSCAP: one large gate plate, S/D tied at both ends
-    rect(x,y,w,h,"none",PURPLE,5,2.0)
-    line(x+10,y+18,x+w-10,y+18,PURPLE,2)
-    line(x+10,y+h-18,x+w-10,y+h-18,PURPLE,2)
-    line(x+18,y+18,x+18,y+h-18,PURPLE,4)
-    text(x+2,y-8,"C1_CC",11,PURPLE,700,family=MONO)
-    text(x+2,y+22,"MOSCAP",9,PURPLE,600,family=MONO)
-    text(x+2,y+h-8,"S/D tied",8,MUTED,family=MONO)
-
-def refbox(x,y,w,h,label,sub="",color=WHITE):
-    rect(x,y,w,h,"none",color,8,1.4)
-    text(x+10,y+20,label,12,color,700,family=MONO)
-    if sub: text(x+10,y+36,sub,9,MUTED,400,family=MONO)
-
-W,H=1800,1100
-add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="SKY130 op-amp white-line layout plan v0.2">')
-rect(0,0,W,H,BG)
-text(48,52,"SKY130 two-stage Miller OP — white-line layout plan v0.2",31,WHITE,700)
-text(48,82,"dummy at both W ends · source/drain shared · separate ring per matched group · MOSCAP C1",14,MUTED)
-text(48,104,"not to scale · educational ring placeholder · MOSCAP density pending",11,DIM,family=MONO)
+W,H=2000,1050
+add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="SKY130 op-amp strict-scale white-line layout plan">')
+rect_um(-1000,-1000,5000,5000,BG)
+text_px(44,48,"SKY130 two-stage Miller OP — strict-scale white-line layout plan",30,WHITE,700)
+text_px(44,76,"true relative dimensions · scale bar · dummy at both W ends · separate ring per matched group · MOSCAP",13,MUTED)
+text_px(44,96,"synthetic SKY130 target · educational ring width/gap · not a legal layout",10,DIM,family=MONO)
 
 # left circuit reference
-line(350,140,350,1010,DIM,1)
-text(48,150,"CIRCUIT REFERENCE",11,MUTED,700,family=MONO)
-refbox(64,180,210,48,"INP / INN","differential input",CYAN)
-arrow(169,228,169,258,WHITE,1.4)
-refbox(64,260,210,48,"DP  M1/M2","input pair + DM",CYAN)
-arrow(169,308,169,338,WHITE,1.4)
-refbox(64,340,210,48,"CM  M3/M4","load mirror + DM",AMBER)
-arrow(169,388,169,418,WHITE,1.4)
-refbox(64,420,210,48,"OUT  M6/M7","second stage",ORANGE)
-arrow(169,468,169,498,WHITE,1.4)
-refbox(64,500,210,48,"VOUT","output",ORANGE)
-refbox(64,620,210,48,"TAIL/BIAS  M5/M8","mirror + DM",GREEN)
-arrow(169,620,169,590,WHITE,1.4)
-refbox(64,700,210,48,"EN  M9/M10","active-high enable",PINK)
-arrow(169,700,169,668,WHITE,1.4)
-refbox(64,780,210,48,"MOSCAP  C1","3 pF · preferred",PURPLE)
-arrow(274,444,300,444,WHITE,1.4)
-text(304,448,"to OUT node",9,MUTED,family=MONO)
-text(64,860,"I0 ideal 30 µA",11,MUTED,600,family=MONO)
-text(64,878,"real bias TBD",9,DIM,family=MONO)
+text_px(44,132,"CIRCUIT REFERENCE",10,MUTED,700,family=MONO)
+def ref(x,y,w,h,label,sub,color):
+    rect_um(0,0,0,0)  # no-op keeps helper use explicit
+    add(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="7" fill="none" stroke="{color}" stroke-width="1.3"/>')
+    text_px(x+9,y+18,label,11,color,700,family=MONO)
+    text_px(x+9,y+33,sub,8,MUTED)
+ref(44,150,250,44,"INP / INN","differential input",CYAN)
+arrow_px(169,194,169,222,WHITE,1.2)
+ref(44,222,250,44,"DP  M1/M2","input pair + DM",CYAN)
+arrow_px(169,266,169,294,WHITE,1.2)
+ref(44,294,250,44,"CM  M3/M4","load mirror + DM",AMBER)
+arrow_px(169,338,169,366,WHITE,1.2)
+ref(44,366,250,44,"OUT  M6/M7","second stage",ORANGE)
+arrow_px(169,410,169,438,WHITE,1.2)
+ref(44,438,250,44,"VOUT","output",ORANGE)
+ref(44,520,250,44,"TAIL/BIAS  M5/M8","mirror + DM",GREEN)
+arrow_px(169,520,169,490,WHITE,1.2)
+ref(44,586,250,44,"EN  M9/M10","enable",PINK)
+arrow_px(169,586,169,556,WHITE,1.2)
+ref(44,652,250,44,"MOSCAP  C1","3 pF",PURPLE)
+arrow_px(294,388,318,388,WHITE,1.2)
+text_px(322,392,"to OUT node",8,MUTED,family=MONO)
+text_px(44,740,"I0 ideal 30 µA",10,MUTED,600,family=MONO)
+text_px(44,756,"real bias TBD",8,DIM)
 
-# plan
-rect(420,180,1260,770,"none",WHITE,8,2.0)
-text(436,170,"LAYOUT PLAN",11,MUTED,700,family=MONO)
-text(436,944,"solid = device / DM · dashed = ring · no legal spacing claim",10,MUTED,family=MONO)
+# plan outer block
+block_x0=-1.5; block_y0=-1.5; block_w=74.3; block_h=34.7
+rect_um(block_x0,block_y0,block_w,block_h,"none",WHITE,0,1.8)
+text_px(X(block_x0),Y(block_y0)-10,"LAYOUT PLAN (scale 16 px/µm)",11,MUTED,700,family=MONO)
 
-# ports
-text(900,160,"VDD",12,AMBER,700,"middle",MONO)
-line(900,180,900,220,AMBER,2)
-text(900,1015,"VSS",12,MUTED,700,"middle",MONO)
-line(900,950,900,1000,MUTED,2)
-text(408,500,"INP",11,CYAN,700,"end",MONO)
-text(408,550,"INN",11,CYAN,700,"end",MONO)
-line(420,495,450,495,CYAN,2)
-line(420,545,450,545,CYAN,2)
-text(1692,600,"VOUT",12,ORANGE,700,family=MONO)
-line(1680,600,1720,600,ORANGE,2)
-text(880,980,"EN",11,PINK,700,"middle",MONO)
-line(880,950,880,990,PINK,2)
+# CM
+gx,gy,gw,gh=0,0,10.28,6.25
+ring(gx,gy,gw,gh,"CM RING")
+dev(gx,gy,2.5,2.5,1.32,1.25,"d",WHITE,"",True)
+dev(gx,gy,3.82,2.5,1.32,1.25,"1",AMBER,"")
+dev(gx,gy,5.14,2.5,1.32,1.25,"2",AMBER,"")
+dev(gx,gy,6.46,2.5,1.32,1.25,"d",WHITE,"",True)
 
-# CM: dummy / M3 / M4 / dummy
-ring(450,225,480,175,"RING")
-text(432,215,"CM",12,WHITE,700,family=MONO)
-dm(470,255,85,105,4,"DM")
-array(565,255,85,105,4,"M3_CM","0.75/0.5",AMBER)
-array(660,255,85,105,4,"M4_CM","0.75/0.5",AMBER)
-dm(755,255,85,105,4,"DM")
-text(470,378,"S/D shared",8,MUTED,family=MONO)
+# DP
+gx,gy=0,8
+ring(gx,gy,10.28,6.25,"DP RING")
+dev(gx,gy,2.5,2.5,1.32,1.25,"d",WHITE,"",True)
+dev(gx,gy,3.82,2.5,1.32,1.25,"3",CYAN,"")
+dev(gx,gy,5.14,2.5,1.32,1.25,"4",CYAN,"")
+dev(gx,gy,6.46,2.5,1.32,1.25,"d",WHITE,"",True)
 
-# DP: dummy / M1 / M2 / dummy
-ring(450,420,480,185,"RING")
-text(432,410,"DP",12,WHITE,700,family=MONO)
-dm(470,455,85,115,4,"DM")
-array(565,455,85,115,4,"M1_DP","0.75/0.5",CYAN)
-array(660,455,85,115,4,"M2_DP","0.75/0.5",CYAN)
-dm(755,455,85,115,4,"DM")
-text(470,588,"S/D shared",8,MUTED,family=MONO)
+# TAIL / BIAS
+gx,gy=0,16
+ring(gx,gy,10.28,6.25,"TAIL/BIAS RING")
+dev(gx,gy,2.5,2.5,1.32,1.25,"d",WHITE,"",True)
+dev(gx,gy,3.82,2.5,1.32,1.25,"5",GREEN,"")
+dev(gx,gy,5.14,2.5,1.32,1.25,"6",GREEN,"")
+dev(gx,gy,6.46,2.5,1.32,1.25,"d",WHITE,"",True)
 
-# TAIL / BIAS ring
-ring(450,630,350,180,"RING")
-text(432,620,"TAIL/BIAS",12,WHITE,700,family=MONO)
-dm(470,665,70,100,2,"DM")
-array(550,665,70,100,2,"M5_TAIL","0.75/0.5",GREEN)
-array(630,665,70,100,2,"M8_BIAS","0.75/0.5",GREEN)
-dm(710,665,70,100,2,"DM")
-text(470,788,"M5/M8 ratio · single tail?",8,MUTED,family=MONO)
-
-# EN ring
-ring(820,630,210,180,"RING")
-text(802,620,"EN",12,WHITE,700,family=MONO)
-array(840,665,75,100,2,"M9_EN","2/0.5",PINK)
-array(930,665,75,100,2,"M10_EN_PD","1/0.5",PINK)
-text(840,788,"EN=0: M9 off · M10 high",8,MUTED,family=MONO)
+# EN
+gx,gy,gw,gh=0,23.5,7.84,7.5
+ring(gx,gy,gw,gh,"EN RING")
+dev(gx,gy,2.5,2.5,1.32,2.5,"7",PINK,"")
+dev(gx,gy,3.82,2.5,1.32,1.5,"8",PINK,"")
 
 # MOSCAP
-moscap(1080,470,150,200)
-text(1080,700,"density: 2 pF/µm² stated",8,MUTED,family=MONO)
-text(1080,714,"unit check pending",8,MUTED,family=MONO)
+cx,cy,cw,ch=12,0,47.434,31.623
+rect_um(cx,cy,cw,ch,"none",PURPLE,3,2.0)
+line_um(cx+2,cy+3,cx+cw-2,cy+3,PURPLE,1.4)
+line_um(cx+2,cy+ch-3,cx+cw-2,cy+ch-3,PURPLE,1.4)
+line_um(cx+cw/2,cy+3,cx+cw/2,cy+ch-3,PURPLE,3.0)
+text_um(cx+2,cy-0.8,"C1_CC — MOSCAP",9,PURPLE,700)
+text_um(cx+2,cy+6,"3 pF @ 2 fF/µm² → 1500 µm²",7.5,MUTED)
+text_um(cx+2,cy+ch-5,"S/D tied",7,MUTED)
 
-# OUT ring
-ring(1300,300,280,520,"RING")
-text(1282,290,"OUT",12,WHITE,700,family=MONO)
-array(1330,330,170,150,2,"M6_OUT","8.5/0.5 · nf=2",ORANGE)
-array(1330,550,120,120,1,"M7_OUT","6.5/0.5",ORANGE)
-text(1330,700,"wide metal / multi-via / EM",8,MUTED,family=MONO)
+# OUT
+gx,gy,gw,gh=62,0,9.26,14.0
+ring(gx,gy,gw,gh,"OUT RING")
+dev(gx,gy,2.5,2.5,2.64,9.0,"9",ORANGE,"")
+dev(gx,gy,5.44,2.5,1.32,7.0,"10",ORANGE,"")
 
-# I0 dashed
-rect(1080,300,100,60,"none",GREEN,5,1.2,"4 4")
-text(1130,330,"I0",11,GREEN,700,"middle",MONO)
-text(1130,348,"30 µA",9,MUTED,400,"middle",MONO)
+# ports
+text_px(X(36),Y(-1.5)-12,"VDD",11,AMBER,700,"middle",MONO)
+line_um(36,-1.5,36,0,AMBER,1.4)
+text_px(X(36),Y(33.2)+16,"VSS",11,MUTED,700,"middle",MONO)
+line_um(36,33.2,36,34.7,MUTED,1.4)
+text_px(X(-1.5)-14,Y(10.5)+12,"INP",10,CYAN,700,"end",MONO)
+text_px(X(-1.5)-14,Y(11.5)+12,"INN",10,CYAN,700,"end",MONO)
+line_um(-1.5,10.5,0,10.5,CYAN,1.2)
+line_um(-1.5,11.5,0,11.5,CYAN,1.2)
+text_px(X(72.8)+10,Y(7)+4,"VOUT",10,ORANGE,700,family=MONO)
+line_um(72.8,7,74.3,7,ORANGE,1.2)
+text_px(X(4),Y(34.0)+4,"EN",10,PINK,700,"middle",MONO)
+line_um(4,31.0,4,33.2,PINK,1.2)
 
-# ring gap note
-text(450,830,"RING gap/width: educational placeholder (1.0/1.5 µm), not PDK",8,MUTED,family=MONO)
+# scale bar / dimensions
+sx=380; sy=820
+line_um(0,38,0,38,WHITE,0)  # no-op
+add(f'<line x1="{sx}" y1="{sy}" x2="{sx+10*S}" y2="{sy}" stroke="{WHITE}" stroke-width="2"/>')
+add(f'<line x1="{sx}" y1="{sy-5}" x2="{sx}" y2="{sy+5}" stroke="{WHITE}" stroke-width="2"/>')
+add(f'<line x1="{sx+10*S}" y1="{sy-5}" x2="{sx+10*S}" y2="{sy+5}" stroke="{WHITE}" stroke-width="2"/>')
+text_px(sx+10*S/2,sy-10,"10 µm",10,WHITE,600,"middle",MONO)
+text_px(sx,sy+22,"scale bar · all device boxes are drawn from w_layout/h_layout",9,MUTED)
+
+# width/height dims
+add(f'<line x1="{X(block_x0)}" y1="{Y(block_y0)-28}" x2="{X(block_x0+block_w)}" y2="{Y(block_y0)-28}" stroke="{MUTED}" stroke-width="1"/>')
+text_px((X(block_x0)+X(block_x0+block_w))/2,Y(block_y0)-34,f"{block_w:.1f} µm",9,MUTED,400,"middle",MONO)
+add(f'<line x1="{X(block_x0+block_w)+28}" y1="{Y(block_y0)}" x2="{X(block_x0+block_w)+28}" y2="{Y(block_y0+block_h)}" stroke="{MUTED}" stroke-width="1"/>')
+text_px(X(block_x0+block_w)+36,(Y(block_y0)+Y(block_y0+block_h))/2,f"{block_h:.1f} µm",9,MUTED,400,"start",MONO)
+
+# legend
+lx=1580; ly=200
+text_px(lx,ly,"DEVICE LEGEND",10,MUTED,700,family=MONO)
+text_px(lx,ly+18,"#   name        W/L (µm)   nf",9,DIM,400,family=MONO)
+rows=[
+ ("1","M3_CM","0.75/0.5","1"),("2","M4_CM","0.75/0.5","1"),
+ ("3","M1_DP","0.75/0.5","1"),("4","M2_DP","0.75/0.5","1"),
+ ("5","M5_TAIL","0.75/0.5","1"),("6","M8_BIAS","0.75/0.5","1"),
+ ("7","M9_EN","2/0.5","1"),("8","M10_EN_PD","1/0.5","1"),
+ ("9","M6_OUT","8.5/0.5","2"),("10","M7_OUT","6.5/0.5","1"),
+ ("d","boundary DM","same as active","1"),
+]
+ry=ly+40
+for n,name,wl,nf in rows:
+    text_px(lx,ry,n,8,WHITE,600,family=MONO)
+    text_px(lx+34,ry,name,8,WHITE,400,family=MONO)
+    text_px(lx+142,ry,wl,8,MUTED,400,family=MONO)
+    text_px(lx+222,ry,nf,8,MUTED,400,family=MONO)
+    ry+=20
+text_px(lx,ry+10,"d = dummy, same W/L, S/D shared",8,MUTED)
+text_px(lx,ry+26,"ring: 1.0 µm width / 1.5 µm gap",8,MUTED)
+text_px(lx,ry+42,"educational placeholder, not PDK",8,MUTED)
+text_px(lx,ry+62,"DP: common-centroid / ABBA",8,MUTED)
+text_px(lx,ry+78,"EN=0: M9 off / M10 high",8,MUTED)
+text_px(lx,ry+94,"OUT: wide metal / vias / EM",8,MUTED)
 
 # footer
-line(48,1040,1752,1040,DIM,1)
-text(48,1068,"v0.2 · dummies at W ends, S/D shared, separate rings, MOSCAP · not a legal layout",10,MUTED)
-text(1752,1068,"synthetic SKY130 target",10,DIM,400,"end")
+add(f'<line x1="44" y1="1015" x2="1956" y2="1015" stroke="{DIM}" stroke-width="1"/>')
+text_px(44,1040,"strict-scale sketch · device boxes from generic-180 w_layout/h_layout · not a legal layout",9,MUTED)
+text_px(1956,1040,"v0.3 · synthetic SKY130 target",9,DIM,400,"end")
 add('</svg>')
 Path('docs/targets/sky130-opamp/white-line.svg').write_text('\n'.join(out),encoding='utf-8')
 print('wrote')

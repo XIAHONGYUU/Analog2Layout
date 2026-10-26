@@ -15,6 +15,6 @@ testbench，不算 core 面积。
 
 ## 当前快照
 
-- block 3526 µm²，envelope 3809 µm²，PASS @ 6000 µm²
+- block 2815 µm²，envelope 3041 µm²，PASS @ 6000 µm²
 - 7 组，6 个 proposed dummies，11 个 proposed deltas
-- reserve shortfall 1545 µm²（见 Card 的 Top 3 risks）
+- reserve shortfall 1178 µm²（见 Card 的 Top 3 risks）

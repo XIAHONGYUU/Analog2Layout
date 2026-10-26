@@ -8,17 +8,17 @@
 
 | Metric | Value |
 | --- | ---: |
-| Device core | 2048 µm² |
-| Active area (+ ring/routing) | 2296 µm² |
-| Matched area (+ dummy/matching) | 2364 µm² |
-| **Block area** | **3526 µm²** |
-| PEX-fix reserve | 282 µm² |
-| Total envelope | 3809 µm² |
+| Device core | 1548 µm² |
+| Active area (+ ring/routing) | 1746 µm² |
+| Matched area (+ dummy/matching) | 1814 µm² |
+| **Block area** | **2815 µm²** |
+| PEX-fix reserve | 225 µm² |
+| Total envelope | 3041 µm² |
 | Dummy area | 59 µm² |
-| Estimate range | 2821 µm² – 4761 µm² |
+| Estimate range | 2252 µm² – 3801 µm² |
 | Area gate | **PASS** (budget 6000 µm²) |
-| Shape | 97.0 × 51.2 µm; aspect 1.90; squareness 0.53; landscape |
-| Arrangement | 3 rows (top/mid/bottom); groups/band: top=1, mid=3, bottom=3; symmetry axis at x=36.6 um |
+| Shape | 92.8 × 46.3 µm; aspect 2.00; squareness 0.50; landscape |
+| Arrangement | 3 rows (top/mid/bottom); groups/band: top=1, mid=3, bottom=3; symmetry axis at x=39.7 um |
 | Devices / groups | 11 / 7 |
 | Rules | `generic-180` (educational); owner: analog design engineer |
 | Width convention | `per_finger` |
@@ -38,7 +38,7 @@
 
 | Group | Role | Devices | Match | Layout intent | Area |
 | --- | --- | --- | --- | --- | ---: |
-| `CC` | compensation | `C1_CC` | `—` | — | 2200 µm² |
+| `CC` | compensation | `C1_CC` | `—` | — | 1650 µm² |
 | `DP` | input_pair | `M1_DP`, `M2_DP` | `DP` | — | 44 µm² |
 | `CM` | current_mirror | `M3_CM`, `M4_CM` | `CM` | — | 42 µm² |
 | `OUT` | output_stage | `M6_OUT`, `M7_OUT` | `—` | — | 39 µm² |
@@ -50,7 +50,7 @@
 
 These are the predictable changes that otherwise show up late in PEX. Accept or reject each item **before** the layout is frozen.
 
-> **Reserve check:** proposed deltas total 1827 µm², but the PEX-fix reserve is 282 µm² — shortfall 1545 µm². Increase the reserve or reduce/relocate deltas before freezing the floorplan.
+> **Reserve check:** proposed deltas total 1404 µm², but the PEX-fix reserve is 225 µm² — shortfall 1178 µm². Increase the reserve or reduce/relocate deltas before freezing the floorplan.
 
 | ID | Kind | Target | Action | Owner | Area impact | Status |
 | --- | --- | --- | --- | --- | ---: | --- |
@@ -63,8 +63,8 @@ These are the predictable changes that otherwise show up late in PEX. Accept or 
 | `D007` | dummy | TAIL (M5_TAIL) | Add 2 boundary dummy device(s); see the dashed DM blocks in the floorplan | layout | 20 µm² | proposed |
 | `D008` | dummy_logic | TAIL (M5_TAIL) | Add a dummy tail device on the unused side of the tail current source | analog | 0 µm² | proposed |
 | `D009` | dummy_logic | EN (M9_EN, M10_EN_PD) | Add a dummy switch (same W/L, gate tied off) next to the switch | analog | 6 µm² | proposed |
-| `D010` | decap | vdd/vss | Add a 2.00 pF decap between VDD and VSS near the block | both | 1467 µm² | proposed |
-| `D011` | reserve | block | Keep 8% of the block area as an uncommitted PEX-fix reserve | both | 282 µm² | proposed |
+| `D010` | decap | vdd/vss | Add a 2.00 pF decap between VDD and VSS near the block | both | 1100 µm² | proposed |
+| `D011` | reserve | block | Keep 8% of the block area as an uncommitted PEX-fix reserve | both | 225 µm² | proposed |
 
 ## 5. PEX re-simulation scope
 
@@ -81,6 +81,7 @@ These are the predictable changes that otherwise show up late in PEX. Accept or 
 - Are the proposed boundary dummies and dummy branches wanted, or should they be removed?
 - Is the decap value / location acceptable, or should it be split between supplies?
 - Does the reserved PEX-fix area match the team's risk tolerance for this block?
+- The block is elongated (aspect 2.00, squareness 0.50); is this shape compatible with the parent block and the intended pin locations?
 
 ## 7. Warnings
 

@@ -8,14 +8,14 @@
 | --- | ---: |
 | Devices | 11 (10 MOS, 1 cap) |
 | Functional groups | 7 |
-| Device core (OD/cap) | 2048 µm² |
-| Active area (+ guard ring + device routing) | 2296 µm² |
-| Matched area (+ dummy + matching overhead) | 2364 µm² |
-| Block area (+ periphery + block routing) | **3526 µm²** |
-| PEX-fix reserve | 282 µm² |
-| Total envelope (block + reserve) | 3809 µm² |
+| Device core (OD/cap) | 1548 µm² |
+| Active area (+ guard ring + device routing) | 1746 µm² |
+| Matched area (+ dummy + matching overhead) | 1814 µm² |
+| Block area (+ periphery + block routing) | **2815 µm²** |
+| PEX-fix reserve | 225 µm² |
+| Total envelope (block + reserve) | 3041 µm² |
 | Dummy area | 59 µm² |
-| Estimate range | 2821 µm² – 4761 µm² |
+| Estimate range | 2252 µm² – 3801 µm² |
 | Area gate | **PASS** (budget 6000 µm²) |
 | Width convention | `per_finger` |
 
@@ -25,13 +25,13 @@
 
 | Bucket | Area | Share of block |
 | --- | ---: | ---: |
-| Device core | 2048 µm² | 58.1% |
-| Guard ring | 33 µm² | 0.9% |
-| Device routing | 215 µm² | 6.1% |
-| Dummy | 59 µm² | 1.7% |
-| Matching overhead | 9 µm² | 0.2% |
-| Periphery + block routing | 1163 µm² | 33.0% |
-| PEX-fix reserve | 282 µm² | 8.0% |
+| Device core | 1548 µm² | 55.0% |
+| Guard ring | 33 µm² | 1.2% |
+| Device routing | 165 µm² | 5.9% |
+| Dummy | 59 µm² | 2.1% |
+| Matching overhead | 9 µm² | 0.3% |
+| Periphery + block routing | 1001 µm² | 35.6% |
+| PEX-fix reserve | 225 µm² | 8.0% |
 
 ### Annotation provenance
 
@@ -46,19 +46,19 @@
 
 | Role | Area | Share of device area |
 | --- | ---: | ---: |
-| 补偿电容 (`compensation`) | 2200 µm² | 95.8% |
-| 输出级 (`output_stage`) | 39 µm² | 1.7% |
-| 差分输入对 (`input_pair`) | 20 µm² | 0.9% |
-| 电流镜 (`current_mirror`) | 20 µm² | 0.9% |
-| 尾电流源 (`tail_current`) | 10 µm² | 0.4% |
-| 使能管 (`enable_switch`) | 6 µm² | 0.3% |
+| 补偿电容 (`compensation`) | 1650 µm² | 94.5% |
+| 输出级 (`output_stage`) | 39 µm² | 2.2% |
+| 差分输入对 (`input_pair`) | 20 µm² | 1.1% |
+| 电流镜 (`current_mirror`) | 20 µm² | 1.1% |
+| 尾电流源 (`tail_current`) | 10 µm² | 0.6% |
+| 使能管 (`enable_switch`) | 6 µm² | 0.4% |
 | 偏置 (`bias`) | 2 µm² | 0.1% |
 
 ## Groups
 
 | Group | Role | Devices | Dummies | Area (with overhead) |
 | --- | --- | ---: | ---: | ---: |
-| `CC` | compensation | 1 | 0 | 2200 µm² |
+| `CC` | compensation | 1 | 0 | 1650 µm² |
 | `DP` | input_pair | 2 | 2 | 44 µm² |
 | `CM` | current_mirror | 2 | 2 | 42 µm² |
 | `OUT` | output_stage | 2 | 0 | 39 µm² |
@@ -80,7 +80,7 @@
 | `M8_BIAS` | bias | `BIAS` | 0.75/0.5 | 1×1 | 0.75 | 1.3 × 1.2 | 2 µm² |
 | `M9_EN` | enable_switch | `EN` | 2/0.5 | 1×1 | 2 | 1.3 × 2.5 | 4 µm² |
 | `M10_EN_PD` | enable_switch | `EN` | 1/0.5 | 1×1 | 1 | 1.3 × 1.5 | 2 µm² |
-| `C1_CC` | compensation | `CC` | — | — | — | 54.8 × 36.5 | 2200 µm² |
+| `C1_CC` | compensation | `CC` | — | — | — | 47.4 × 31.6 | 1650 µm² |
 
 ## Warnings
 

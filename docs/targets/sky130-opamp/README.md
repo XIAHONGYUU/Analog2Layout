@@ -9,11 +9,11 @@ python3 -m a2l build examples/sky130_two_stage_opamp/opamp.sp \
 ```
 
 - 11 devices (10 MOS, 1 cap), 7 groups
-- block 3526 µm², envelope 3809 µm², gate PASS @ 6000 µm²
+- block 2815 µm², envelope 3041 µm², gate PASS @ 6000 µm²
 - 6 proposed dummies, 11 proposed deltas
-- reserve shortfall: 1545 µm² (proposed deltas exceed reserve)
-- [`white-line.svg`](white-line.svg) / [`white-line.png`](white-line.png): v0.2
-  layout-plan white-line sketch (dummies, separate rings, MOSCAP)
+- reserve shortfall: 1178 µm² (proposed deltas exceed reserve)
+- [`white-line.svg`](white-line.svg) / [`white-line.png`](white-line.png): v0.3
+  strict-scale white-line layout sketch (dummies, separate rings, MOSCAP)
 - [`white-line-detail.png`](white-line-detail.png): cropped layout-plan detail
 - [`make_white_line_layout.py`](make_white_line_layout.py): editable generator
 

@@ -11,12 +11,12 @@
       "decap": 1,
       "reserve": 1
     },
-    "area_delta_um2": 2239.3,
-    "area_delta_mm2": 0.002239,
-    "area_delta_fraction_of_block": 0.6632,
+    "area_delta_um2": 1844.22,
+    "area_delta_mm2": 0.001844,
+    "area_delta_fraction_of_block": 0.6104,
     "proposed_count": 12,
-    "reserve_um2": 270.13,
-    "reserve_shortfall_um2": 1969.17,
+    "reserve_um2": 241.71,
+    "reserve_shortfall_um2": 1602.51,
     "reserve_sufficient": false
   },
   "items": [
@@ -158,7 +158,7 @@
       "reason": "Supply transient / PEX-induced ringing; reserve the area now so it does not force a re-layout later",
       "owner": "both",
       "status": "proposed",
-      "area_delta_um2": 1466.67,
+      "area_delta_um2": 1100.0,
       "confidence": "heuristic",
       "rule": "block.decap_min_pf / block.decap_ratio_to_comp",
       "notes": "Value is an initial proposal; confirm with the analog designer."
@@ -171,7 +171,7 @@
       "reason": "Absorbs predictable late fixes (extra dummies, decap, routing) without moving the block boundary",
       "owner": "both",
       "status": "proposed",
-      "area_delta_um2": 270.13,
+      "area_delta_um2": 241.71,
       "confidence": "rule",
       "rule": "block.reserve_fraction",
       "notes": "The reserve is drawn as the hatched strip to the right of the floorplan."
@@ -188,6 +188,6 @@
     "This is a proposal, not an automatic schematic edit.",
     "Items marked owner=analog must be reflected in the schematic before tape-out.",
     "Items marked owner=layout must be visible in the floorplan review.",
-    "Proposed delta area exceeds the PEX-fix reserve by 1969 um2; increase the reserve or reduce/relocate deltas."
+    "Proposed delta area exceeds the PEX-fix reserve by 1603 um2; increase the reserve or reduce/relocate deltas."
   ]
 }

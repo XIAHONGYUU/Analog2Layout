@@ -44,19 +44,17 @@ service, or audit service.
   (Nithin P, 2024), with 10 MOS + 1 compensation cap and a real bias/enable
   branch (`M8_BIAS`, `M9_EN`, `M10_EN_PD`). Source/license are recorded in the
   example and in `docs/11-target-sky130-opamp.md`.
-- Target run: 11 devices / 7 groups / device core 2048 µm² / block 3526 µm² /
+- Target run: 11 devices / 7 groups / device core 1548 µm² / block 2815 µm² /
   gate PASS at 6000 µm²; `validate --require-known-roles` passes.
-- Layout Card v0.1 generated at `layout-guideline/02-modules/sky130-two-stage-opamp/`;
-  it includes the reserve shortfall (1545 µm²) as a Top 3 risk.
-- White-line layout plan v0.1 generated at
+- Layout Card v0.2 generated at `layout-guideline/02-modules/sky130-two-stage-opamp/`;
+  it includes the reserve shortfall (1178 µm²) as a Top 3 risk.
+- White-line layout plan v0.3 generated at
   `docs/targets/sky130-opamp/white-line.svg/png`: all 10 MOS, DP/CM ring,
   TAIL/BIAS, EN, CC, OUT, and short notes in one layout view.
-- v0.1 is a topology placeholder, **not reviewable layout**: no real dummies,
-  not compact, not to scale, arbitrary ring spacing, and C1 drawn MOM-like
-  instead of MOSCAP.
-- v0.2 now has DM at both W ends (S/D shared), separate rings per matched group,
-  and a MOSCAP block. Still pending: MOSCAP density unit, current density,
-  ring contact/spacing, and exact relative size scaling.
+- v0.3 is strict-scale: device boxes use `w_layout/h_layout`, DM at both W ends,
+  separate rings per matched group, MOSCAP 3 pF @ 2 fF/µm². Ring spacing is still
+  an educational placeholder; labels use numbers + legend because tiny devices
+  cannot hold text at true scale.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -68,18 +66,20 @@ service, or audit service.
 
 0. (done) First-page diagrams checked at 880 px width; tall/short labels were
    adjusted to avoid clipping.
-1. Review `constraints.yaml` with the user; confirm the MOSCAP density unit
-   (2 pF/µm² vs 2 fF/µm²) and current-density inputs. Then redraw the SKY130
-   white-line as v0.2 with real dummies and separate rings per matched group.
-2. Use `references/README.md` as the reading map for *The Art of Analog Layout*
+1. (done) MOSCAP density confirmed as 2 fF/µm²; white-line v0.3 redrawn to
+   strict scale with dummies, separate rings, and MOSCAP.
+2. Review v0.3 with the user: ring width/contact spacing, whether OUT also needs
+   DM, MOSCAP voltage/linearity, and whether the strict-scale placement is
+   compact enough. Then adjust.
+3. Use `references/README.md` as the reading map for *The Art of Analog Layout*
    (licensed local copy under gitignored `references/private/`).
-3. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
+4. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-4. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
+5. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
    utilization / power return / matching-group stretch.
-5. Add 1–2 real problem records from this target to `07-problems/` and show the
+6. Add 1–2 real problem records from this target to `07-problems/` and show the
    resulting principle/pattern patch.
-6. Add a small card completeness check (not a review service): flags missing
+7. Add a small card completeness check (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 
 ## Constraints

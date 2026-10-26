@@ -68,32 +68,23 @@ caps:
   C1_CC:
     type: MOSCAP
     value_pf: 3
-    density_stated: "2 pF/um2 (1x1 MOSCAP)"
-    unit_check: "likely 2 fF/um2; 2 pF/um2 is ~200-1000x typical; confirm pF vs fF"
-    density_ff_per_um2: ASK
+    density_ff_per_um2: 2.0
+    area_core_um2: 1500
     voltage_coefficient: ASK
     linearity: ASK
     bottom_plate_parasitic: ASK
 
-sizing:
-  current_density_ua_per_um: ASK
-  size_class_basis: "total W/L + current; small/medium/large for readable sketch"
-  note: "current density is not derivable from netlist alone; needs bias current and W/L"
-
-compactness:
+layout:
+  scale: "strict w_layout/h_layout"
+  scale_bar_um: 10
+  sd_sharing: all_matched_groups   # if shared, share; terminals carry different nets
+  ring_sharing: none               # every matched group has its own ring
+  bias_current_owner: analog       # layout does not choose branch current
   matched_group_rings: separate
-  abutment:
-    - "DP/M1-M2: common-centroid, shared source node"
-    - "CM/M3-M4: shared gate net, same well"
-    - "TAIL/BIAS: M5/M8 mirror, keep close"
-  shared_rings: ASK
-  vdd_trunk: ASK
-  vss_trunk: ASK
-  target_width_um: ASK
-  target_height_um: ASK
+  compactness: "strict-scale placement; within-group S/D shared; groups kept close"
 
 open_questions:
-  - "confirm MOSCAP density unit: 2 pF/um2 or 2 fF/um2"
   - "ring contact spacing / ring-to-ring for educational placeholder"
-  - "current density / bias current per branch"
-  - "VDD/VSS trunk and abutment targets"
+  - "MOSCAP voltage coefficient / linearity / bottom-plate parasitic"
+  - "TAIL single device: is a dummy tail required?"
+  - "OUT group: does it need DM as well as a ring?"

@@ -31,7 +31,7 @@ class AreaTests(unittest.TestCase):
         devices = {device.name: device for device in report.devices}
         self.assertGreater(devices["M1"].area_total_um2, 0)
         self.assertGreater(devices["C1"].area_total_um2, 0)
-        self.assertAlmostEqual(devices["C1"].area_core_um2, 1000.0, places=3)
+        self.assertAlmostEqual(devices["C1"].area_core_um2, 750.0, places=3)
 
     def test_area_hierarchy_and_provenance(self):
         netlist = parse_file(ROOT / "examples" / "two_stage" / "two_stage.sp")

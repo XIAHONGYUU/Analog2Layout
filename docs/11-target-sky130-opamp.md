@@ -34,7 +34,7 @@
 | `M8_BIAS` | NMOS | 0.75/0.5 | bias 镜像二极管 |
 | `M9_EN` | NMOS | 2/0.5 | bias 支路使能开关 |
 | `M10_EN_PD` | PMOS | 1/0.5 | EN=0 时把 bias 节点拉高，确保关断 |
-| `C1_CC` | MOSCAP（首选） | 3 pF | Miller 补偿；非高精度 OP 优先 MOSCAP |
+| `C1_CC` | MOSCAP（首选） | 3 pF @ 2 fF/µm² | Miller 补偿；非高精度 OP 优先 MOSCAP |
 
 ## 4. 名字推断结果
 
@@ -56,16 +56,16 @@
 
 ```text
 Devices:   11 (10 MOS, 1 cap) in 7 groups
-Device:    2048 µm² (device core)
-Block:     3526 µm²
-Envelope:  3809 µm²
-Range:     2821 – 4761 µm²
-Gate:      PASS @ 6000 µm², headroom 1239 µm²
+Device:    1548 µm² (device core)
+Block:     2815 µm²
+Envelope:  3041 µm²
+Range:     2252 – 3801 µm²
+Gate:      PASS @ 6000 µm², headroom 2199 µm²
 Dummies:   6 proposed
 Deltas:    11 proposed
 ```
 
-注意：`C1_CC` 的 3 pF 在 generic 规则下占了 device area 的 95.8%，所以面积大头是
+注意：`C1_CC` 的 3 pF 在 generic 规则下占了 device area 的 94.5%，所以面积大头是
 补偿电容，不是 MOS。这是教育规则包的结果，不是 SKY130 的真实电容密度。
 
 ## 6. 这次暴露的模型问题
@@ -75,7 +75,7 @@ Deltas:    11 proposed
 2. **ideal I0 仍是理想源**；下一步应换成真实的 bias 生成支路（beta multiplier
    或 resistor-based），否则 bias 面积/噪声/启动都没有被评估。
 3. **10 pF 负载**是 testbench，不是 core；面积报告不应包含它。
-4. **generic-180 规则**只能做流程演示，不能把 3526 µm² 当成 SKY130 签核面积。
+4. **generic-180 规则**只能做流程演示，不能把 2815 µm² 当成 SKY130 签核面积。
 5. **敏感区/复用**还没在这个真实目标上展开；下一步把 input pair、mirror、
    bias、enable 的 ring/WPE/dummy/routing reserve 单独列出来。
 

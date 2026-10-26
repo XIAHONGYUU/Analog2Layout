@@ -3,8 +3,8 @@
   "rules": "generic-180",
   "units": "um",
   "canvas": {
-    "width": 159.666,
-    "height": 115.82
+    "width": 154.477,
+    "height": 112.361
   },
   "symmetry_axis_x": 40.828,
   "groups": [
@@ -14,8 +14,8 @@
       "band": "mid",
       "x": 86.936,
       "y": 44.5,
-      "w": 38.73,
-      "h": 25.82,
+      "w": 33.541,
+      "h": 22.361,
       "devices": [
         "C1"
       ],
@@ -27,7 +27,7 @@
       "role": "tail_current",
       "band": "bottom",
       "x": 29.2,
-      "y": 75.32,
+      "y": 71.861,
       "w": 23.256,
       "h": 10.5,
       "devices": [
@@ -43,7 +43,7 @@
       "role": "output_stage",
       "band": "mid",
       "x": 58.296,
-      "y": 52.16,
+      "y": 50.43,
       "w": 23.64,
       "h": 10.5,
       "devices": [
@@ -58,7 +58,7 @@
       "role": "input_pair",
       "band": "mid",
       "x": 28.36,
-      "y": 54.66,
+      "y": 52.93,
       "w": 24.936,
       "h": 5.5,
       "devices": [
@@ -92,7 +92,7 @@
       "role": "enable_switch",
       "band": "bottom",
       "x": 16.0,
-      "y": 79.32,
+      "y": 75.861,
       "w": 1.6,
       "h": 2.5,
       "devices": [
@@ -106,7 +106,7 @@
       "role": "adj_switch",
       "band": "bottom",
       "x": 22.6,
-      "y": 79.47,
+      "y": 76.011,
       "w": 1.6,
       "h": 2.2,
       "devices": [
@@ -125,9 +125,9 @@
       "kind": "cap",
       "x": 86.936,
       "y": 44.5,
-      "w": 38.73,
-      "h": 25.82,
-      "area_um2": 1100.0,
+      "w": 33.541,
+      "h": 22.361,
+      "area_um2": 825.0,
       "proposed": false,
       "detail": "1.5 pF"
     },
@@ -138,7 +138,7 @@
       "match": "TAIL",
       "kind": "mos",
       "x": 37.188,
-      "y": 75.32,
+      "y": 71.861,
       "w": 7.28,
       "h": 10.5,
       "area_um2": 126.79,
@@ -152,7 +152,7 @@
       "match": "TAIL",
       "kind": "dummy",
       "x": 29.2,
-      "y": 75.32,
+      "y": 71.861,
       "w": 6.188,
       "h": 8.925,
       "area_um2": 0.0,
@@ -166,7 +166,7 @@
       "match": "TAIL",
       "kind": "dummy",
       "x": 46.268,
-      "y": 75.32,
+      "y": 71.861,
       "w": 6.188,
       "h": 8.925,
       "area_um2": 0.0,
@@ -180,7 +180,7 @@
       "match": null,
       "kind": "mos",
       "x": 58.296,
-      "y": 52.16,
+      "y": 50.43,
       "w": 7.28,
       "h": 10.5,
       "area_um2": 90.2,
@@ -194,7 +194,7 @@
       "match": null,
       "kind": "mos",
       "x": 67.376,
-      "y": 52.16,
+      "y": 50.43,
       "w": 14.56,
       "h": 10.5,
       "area_um2": 180.4,
@@ -208,7 +208,7 @@
       "match": "DP",
       "kind": "mos",
       "x": 34.648,
-      "y": 54.66,
+      "y": 52.93,
       "w": 5.28,
       "h": 5.5,
       "area_um2": 57.64,
@@ -222,7 +222,7 @@
       "match": "DP",
       "kind": "mos",
       "x": 41.728,
-      "y": 54.66,
+      "y": 52.93,
       "w": 5.28,
       "h": 5.5,
       "area_um2": 57.64,
@@ -236,7 +236,7 @@
       "match": "DP",
       "kind": "dummy",
       "x": 28.36,
-      "y": 54.66,
+      "y": 52.93,
       "w": 4.488,
       "h": 4.675,
       "area_um2": 0.0,
@@ -250,7 +250,7 @@
       "match": "DP",
       "kind": "dummy",
       "x": 48.808,
-      "y": 54.66,
+      "y": 52.93,
       "w": 4.488,
       "h": 4.675,
       "area_um2": 0.0,
@@ -320,7 +320,7 @@
       "match": null,
       "kind": "mos",
       "x": 16.0,
-      "y": 79.32,
+      "y": 75.861,
       "w": 1.6,
       "h": 2.5,
       "area_um2": 3.89,
@@ -334,7 +334,7 @@
       "match": null,
       "kind": "mos",
       "x": 22.6,
-      "y": 79.47,
+      "y": 76.011,
       "w": 1.6,
       "h": 2.2,
       "area_um2": 2.34,
@@ -354,42 +354,42 @@
       "name": "VSS",
       "net": "vss",
       "x": 40.828,
-      "y": 89.82,
+      "y": 86.361,
       "side": "bottom"
     },
     {
       "name": "INP",
       "net": "vinp",
       "x": 37.288,
-      "y": 53.66,
+      "y": 51.93,
       "side": "pin-top"
     },
     {
       "name": "INN",
       "net": "vinn",
       "x": 44.368,
-      "y": 53.66,
+      "y": 51.93,
       "side": "pin-top"
     },
     {
       "name": "VOUT",
       "net": "vout",
       "x": 82.836,
-      "y": 57.41,
+      "y": 55.68,
       "side": "pin-right"
     },
     {
       "name": "EN",
       "net": "en",
       "x": 16.8,
-      "y": 84.32,
+      "y": 80.861,
       "side": "bottom"
     },
     {
       "name": "ADJ",
       "net": "adj",
       "x": 23.4,
-      "y": 84.17,
+      "y": 80.711,
       "side": "bottom"
     }
   ],
@@ -398,16 +398,16 @@
       "orientation": "horizontal",
       "x1": 16.0,
       "y1": 42.0,
-      "x2": 125.666,
+      "x2": 120.477,
       "y2": 42.0,
       "label": "routing channel"
     },
     {
       "orientation": "horizontal",
       "x1": 16.0,
-      "y1": 72.82,
-      "x2": 125.666,
-      "y2": 72.82,
+      "y1": 69.361,
+      "x2": 120.477,
+      "y2": 69.361,
       "label": "routing channel"
     }
   ],
@@ -420,19 +420,19 @@
     {
       "name": "mid",
       "y0": 44.5,
-      "y1": 70.32
+      "y1": 66.861
     },
     {
       "name": "bottom",
-      "y0": 75.32,
-      "y1": 85.82
+      "y0": 71.861,
+      "y1": 82.361
     }
   ],
   "reserve": {
-    "x": 129.66583346207418,
+    "x": 124.47701966249684,
     "y": 34.0,
     "w": 10.0,
-    "h": 51.81988897471611,
+    "h": 48.36067977499789,
     "fraction": 0.08,
     "label": "PEX-fix reserve"
   },
@@ -440,16 +440,16 @@
     "group_count": 7,
     "device_count": 10,
     "proposed_dummy_count": 6,
-    "device_area_um2": 1592.75,
-    "core_area_um2": 1409.16,
-    "floorplan_area_um2": 5682.87,
-    "utilization": 0.2803,
-    "core_utilization": 0.248,
-    "whitespace_fraction": 0.7197,
-    "block_width_um": 109.67,
-    "block_height_um": 51.82,
-    "aspect_ratio": 2.116,
-    "squareness": 0.473,
+    "device_area_um2": 1342.75,
+    "core_area_um2": 1159.16,
+    "floorplan_area_um2": 5052.58,
+    "utilization": 0.2658,
+    "core_utilization": 0.2294,
+    "whitespace_fraction": 0.7342,
+    "block_width_um": 104.48,
+    "block_height_um": 48.36,
+    "aspect_ratio": 2.16,
+    "squareness": 0.463,
     "orientation": "landscape",
     "rows": 3,
     "groups_by_band": {
@@ -464,6 +464,6 @@
     "Proposed dummies/decaps are negotiation items, not silently inserted devices.",
     "Coordinates are in um with the origin at the top-left of the canvas.",
     "The symmetry axis is the vertical dashed line through the input pair.",
-    "Block is elongated: aspect 2.12, squareness 0.47. Confirm this shape is compatible with the parent block."
+    "Block is elongated: aspect 2.16, squareness 0.46. Confirm this shape is compatible with the parent block."
   ]
 }
