@@ -1,5 +1,5 @@
 from html import escape
-from math import ceil, sqrt
+from math import ceil, sqrt, log
 from pathlib import Path
 
 # group, [(name, W, L, m, color)], placement row
@@ -14,11 +14,11 @@ GROUPS = {
 }
 ORDER = ["LOAD_P", "FOLD_P", "MIRROR_N", "IN_DP", "OUT", "MIRROR_P", "BIAS_N"]
 
-S = 6.0
+S = 9.0
 OX, OY = 60.0, 110.0
 RING_W = 1.0
-RING_GAP = 1.5
-GAP = 5.0
+RING_GAP = 0.8
+GAP = 2.0
 
 def interleave(devs):
     # weighted round-robin, no same device twice in a row when avoidable
@@ -30,27 +30,28 @@ def interleave(devs):
         rem[i]-=1; last=i
     return seq
 
-def array_dims(devs):
+def array_dims(devs, target_h):
     w, l = devs[0][1], devs[0][2]
     total = sum(d[3] for d in devs)
-    fw = l + 0.8
-    fh = w + 1.0
-    # Prefer a factor pair (no empty fingers inside the ring); among exact
-    # pairs choose the aspect closest to square.  If the count is prime, allow
-    # the minimum number of empty cells.
+    fw = l + 0.36
+    fh = w + 0.60
     best = None
-    for c in range(1, total + 1):
-        r = ceil(total / c)
-        waste = c * r - total
-        aspect = (c * fw) / (r * fh)
-        score = abs(__import__("math").log(aspect)) + waste * 0.5
+    for rows in range(1, total + 1):
+        cols = ceil(total / rows)
+        empty = rows * cols - total
+        h = rows * fh
+        score = abs(h - target_h) + empty * 0.02
+        if rows in (2, 4, 6):
+            score -= 0.8
+        aw = cols * fw
+        aspect = aw / max(h, 0.1)
+        score += abs(log(aspect / 1.0)) * 0.35
         if best is None or score < best[0]:
-            best = (score, c, r)
-    cols, rows = best[1], best[2]
-    return dict(fw=fw, fh=fh, cols=cols, rows=rows,
-                aw=cols*fw, ah=rows*fh, total=total)
+            best = (score, cols, rows, aw, h, empty)
+    return dict(fw=fw, fh=fh, cols=best[1], rows=best[2], aw=best[3], ah=best[4], empty=best[5])
 
-A = {g: array_dims(ds) for g, ds in GROUPS.items()}
+TARGET = {"LOAD_P":53,"FOLD_P":52,"MIRROR_N":52,"IN_DP":53,"MIRROR_P":53,"BIAS_N":52,"OUT":110}
+A = {g: array_dims(ds, TARGET[g]) for g, ds in GROUPS.items()}
 SEQ = {g: interleave(ds) for g, ds in GROUPS.items()}
 
 def group_dims(g):
@@ -140,9 +141,15 @@ def draw_group(g):
     for side in (-1, 1):
         dx = cx if side < 0 else cx + a["fw"] + a["aw"]
         for r in range(a["rows"]):
-            rect(dx, cy + r*a["fh"], a["fw"], a["fh"], fill="#e2e8f0", stroke="#94a3b8", sw=0.45, dash="2 1")
+            # dummy is the same finger geometry as active; only the label differs
+            rect(dx, cy + r*a["fh"], a["fw"], a["fh"], fill="#ffffff", stroke="#64748b", sw=0.35, opacity=0.45)
+            pw = a["fw"] - 0.36
+            ph = a["fh"] - 0.60
+            rect(dx + 0.18, cy + r*a["fh"] + 0.30, pw, ph, fill="#cbd5e1", stroke="none", opacity=0.45)
+            line(dx + 0.05, cy + r*a["fh"] + 0.12, dx + a["fw"] - 0.05, cy + r*a["fh"] + 0.12, stroke="#64748b", sw=0.3)
+            line(dx + 0.05, cy + r*a["fh"] + a["fh"] - 0.12, dx + a["fw"] - 0.05, cy + r*a["fh"] + a["fh"] - 0.12, stroke="#64748b", sw=0.3)
             if r == 0:
-                txt_um(dx + a["fw"]/2, cy + r*a["fh"] + 1.1, "DM", 6.2, "#475569", 700, "middle")
+                txt_um(dx + a["fw"]/2, cy + r*a["fh"] - 0.3, "DM", 5.5, "#475569", 700, "middle")
     # fingers, interleaved
     for idx, (name, w, l, col) in enumerate(SEQ[g]):
         r, c = divmod(idx, a["cols"])
@@ -151,8 +158,8 @@ def draw_group(g):
         fx = cx + a["fw"] + c*a["fw"]
         fy = cy + r*a["fh"]
         rect(fx, fy, a["fw"], a["fh"], fill="#ffffff", stroke=col, sw=0.35, opacity=0.5)
-        pw = a["fw"] - 0.8
-        ph = a["fh"] - 1.0
+        pw = a["fw"] - 0.36
+        ph = a["fh"] - 0.60
         rect(fx + 0.4, fy + 0.5, pw, ph, fill=col, stroke="none", opacity=0.42)
         line(fx + 0.1, fy + 0.2, fx + a["fw"] - 0.1, fy + 0.2, stroke=col, sw=0.35)
         line(fx + 0.1, fy + a["fh"] - 0.2, fx + a["fw"] - 0.1, fy + a["fh"] - 0.2, stroke=col, sw=0.35)
@@ -163,13 +170,16 @@ def draw_group(g):
         r, c = divmod(idx, a["cols"])
         fx = cx + a["fw"] + c*a["fw"]
         fy = cy + r*a["fh"]
-        rect(fx, fy, a["fw"], a["fh"], fill="#e2e8f0", stroke="#94a3b8", sw=0.4, dash="2 1")
-        txt_um(fx + a["fw"]/2, fy + a["fh"]/2, "d", 5, "#64748b", 700, "middle")
+        rect(fx, fy, a["fw"], a["fh"], fill="#ffffff", stroke="#64748b", sw=0.35, opacity=0.45)
+        pw = a["fw"] - 0.36; ph = a["fh"] - 0.60
+        rect(fx + 0.18, fy + 0.30, pw, ph, fill="#cbd5e1", stroke="none", opacity=0.45)
+        line(fx + 0.05, fy + 0.12, fx + a["fw"] - 0.05, fy + 0.12, stroke="#64748b", sw=0.3)
+        line(fx + 0.05, fy + a["fh"] - 0.12, fx + a["fw"] - 0.05, fy + a["fh"] - 0.12, stroke="#64748b", sw=0.3)
     # array border
     rect(cx + a["fw"], cy, a["aw"], a["ah"], fill="none", stroke=color, sw=0.8)
     # W/L on first finger
     fx, fy = cx + a["fw"], cy
-    pw, ph = a["fw"] - 0.8, a["fh"] - 1.0
+    pw, ph = a["fw"] - 0.36, a["fh"] - 0.60
     line(fx + pw + 0.25, fy + 0.5, fx + pw + 0.25, fy + 0.5 + ph, stroke="#0f172a", sw=0.45)
     line(fx + pw + 0.15, fy + 0.5, fx + pw + 0.35, fy + 0.5, stroke="#0f172a", sw=0.45)
     line(fx + pw + 0.15, fy + 0.5 + ph, fx + pw + 0.35, fy + 0.5 + ph, stroke="#0f172a", sw=0.45)
@@ -223,4 +233,4 @@ add('</svg>')
 Path('examples/classa_opamp/white-line.svg').write_text('\n'.join(out), encoding='utf-8')
 print('layout', layout_w, layout_h, 'canvas', W, H)
 for g in ORDER:
-    print(g, GD[g], A[g]['cols'], A[g]['rows'], A[g]['total'])
+    print(g, GD[g], A[g]['cols'], A[g]['rows'], sum(d[3] for d in GROUPS[g]))

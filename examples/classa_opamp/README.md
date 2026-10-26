@@ -37,21 +37,23 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 
 ![Compact white-line](white-line.png)
 
-This is the simplified intent version:
+This version uses **flexible array shapes** instead of fixed row counts:
 
-- one merged array per matched group;
-- interdigitated fingers, W/L/m on the array;
-- one shared `DM` finger at both ends of every row;
-- one ring per group;
-- **no `FILL DM` gray blocks** and no fake dummy fill;
-- only the real edge dummies and the BIAS_N spare cell are dummy;
-- **DNW1 is a stepped outline** around the two group rows, not a big rectangle;
-- M14 is at the outer right, in its own DNW2, 8 µm between DNW outlines;
-- input pair in the center row; PMOS upper, NMOS lower;
-- C1/R1 side-by-side outside DNW2.
+- arrays are reshaped to make the two main rows nearly equal height;
+- current rows: LOAD 6, FOLD 4, MIRROR_N 5, IN 5, MIRROR_P 6, BIAS 20, OUT 6;
+- 2/4/6-row shapes are preferred, but a group can use another row count when
+  that removes a large height mismatch;
+- gate pitch is now **L + 0.36 µm** for `sd_mode=shared`;
+- ring gap is **0.8 µm**, group gap is **2 µm**;
+- dummies use the same finger geometry as active devices; only the external
+  `DM` label differs;
+- no `FILL DM` blocks and no fake dummy fill;
+- only the real edge dummies + BIAS_N spare cell are dummy;
+- DNW1 is a stepped outline; M14 is in DNW2 at the outer right, 8 µm away;
+- input pair in the center row; PMOS upper, NMOS lower.
 
-The previous rule-aware CT/diff detail panel was removed: this is a white-line
-intent, not a DRC drawing.
+Approximate main-DNW fill is now about **89%**; overall bbox is still limited by
+the required 8 µm DNW gap and the outer output block.
 
 Detail crop:
 
