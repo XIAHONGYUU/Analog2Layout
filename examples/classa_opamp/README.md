@@ -16,6 +16,23 @@ A real transistor-level schematic + netlist for role-map review.
 - Original netlist: `src/AHLowVoltageOpAmp.net`
 - Original schematic: [`schematic.png`](schematic.png)
 
+## Annotated schematic
+
+![Annotated class-A OP](schematic-annotated.png)
+
+All dimensions are **W/L in µm**; every device has **L = 2 µm**.
+
+| Device | W/L (µm) | Device | W/L (µm) |
+| --- | ---: | --- | ---: |
+| M1 | 80/2 | M2 | 80/2 |
+| M3 | 64/2 | M4 | 64/2 |
+| M5 | 162/2 | M6 | 240/2 |
+| M7 | 240/2 | M8 | 109/2 |
+| M9 | 109/2 | M10 | 194/2 |
+| M11 | 240/2 | M12 | 240/2 |
+| M13 | 640/2 | M14 | 1800/2 |
+| M15 | 128/2 | M16 | 162/2 |
+
 ## What the netlist actually is
 
 - **16 MOS** + one compensation cap (`C1_CC = 5 pF`);
