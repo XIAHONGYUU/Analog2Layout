@@ -12,6 +12,8 @@ python3 -m a2l build examples/sky130_two_stage_opamp/opamp.sp \
 - block 3526 µm², envelope 3809 µm², gate PASS @ 6000 µm²
 - 6 proposed dummies, 11 proposed deltas
 - reserve shortfall: 1545 µm² (proposed deltas exceed reserve)
+- [`white-line.svg`](white-line.svg) / [`white-line.png`](white-line.png): schematic-level
+  white-line annotation for the op-amp
 
 Files are copied from `out/sky130_opamp/` for documentation; regenerate them
 with the command above.

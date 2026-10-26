@@ -36,7 +36,7 @@
 | 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
 
-> **第一个真实目标**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 个 MOS + 1 个补偿电容，包含真实的 bias/enable 辅助管；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [网表](examples/sky130_two_stage_opamp/opamp.sp) · [来源与许可](examples/sky130_two_stage_opamp/README.md)。
+> **第一个真实目标**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 个 MOS + 1 个补偿电容，包含真实的 bias/enable 辅助管；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png) · [网表](examples/sky130_two_stage_opamp/opamp.sp)。
 
 ## 一条链
 

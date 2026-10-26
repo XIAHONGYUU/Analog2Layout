@@ -66,6 +66,7 @@ INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
 - 右侧 8% 是 PEX-fix reserve；当前草图利用率 41.8%，空白 58.2%。
 - `C1_CC` 的 3 pF 在 generic-180 下占 device area 的 95.8%，所以这张图是“电容主导”的 floorplan，不是 MOS 主导。
 - 小于 2 µm 的器件用短 ID（`M1`、`M3`…），完整名字/role 见上表；这不是合法版图。
+- **White-line 辅助图**：[SVG](../../../docs/targets/sky130-opamp/white-line.svg) · [PNG](../../../docs/targets/sky130-opamp/white-line.png)。白色虚线=功能组/ring/keepout，彩色线=net。
 
 ## 7. Evidence / open questions
 

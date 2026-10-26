@@ -35,6 +35,13 @@
 2. **floorplan sketch**：把同样的意图映射到版图规划图，方便版图工程师讨论摆放；
 3. 两者共享 role / match / group / sensitive-region 数据，但不共享“图形语义”。
 
+## 当前示例
+
+SKY130 两级 OP 的 white-line schematic 标注：
+
+- [white-line.png](targets/sky130-opamp/white-line.png)
+- [white-line.svg](targets/sky130-opamp/white-line.svg)
+
 ## 相关
 
 - [Floorplan sketch 说明](04-floorplan.md)
