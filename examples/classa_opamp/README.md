@@ -40,8 +40,9 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 Strict-scale intent view with **interdigitated vertical-finger arrays**:
 `W` = finger height, `L` = finger width, `m` = number of parallel fingers,
 matched devices share one array and their fingers are interleaved; adjacent
-fingers share S/D; `d` dummies are **shared** at the two W ends of each group;
-one ring per group; one DNW; fixed 5 × 10 µm MOM block and a 4-unit R1.
+fingers share S/D; `DM` dummy columns are **shared** at the two W ends of each group;
+one ring per group; **two DNWs** (main block + M14 output, 8 µm apart);
+fixed 5 × 10 µm MOM block and a 4-unit R1.
 Placement follows: **input/output center, PMOS upper, NMOS lower**. The array
 style follows the vertical-finger/shared-S/D MOS arrangement visible in the
 `project_siliconeyes` layout review images. It is **not** DRC/LVS/PEX signoff.

@@ -62,25 +62,33 @@ def group_dims(g):
 
 GD = {g: group_dims(g) for g in GROUPS}
 
-# tight mosaic: left column (PMOS upper, NMOS lower), center (input/output), right (PMOS upper, NMOS lower)
+# Main DNW: left column (PMOS upper / NMOS lower) and center column
+# (input / PMOS mirror / NMOS bias).  M14 is in its own DNW, 8 um away.
 POS = {}
 POS["LOAD_P"] = (0, 0)
 POS["FOLD_P"] = (0, GD["LOAD_P"][1] + GAP)
 POS["MIRROR_N"] = (0, GD["LOAD_P"][1] + GD["FOLD_P"][1] + 2*GAP)
 left_w = max(GD[g][0] for g in ("LOAD_P", "FOLD_P", "MIRROR_N"))
-LX = left_w + GAP
-POS["IN_DP"] = (LX, 0)
-POS["OUT"] = (LX, GD["IN_DP"][1] + GAP)
-center_w = max(GD[g][0] for g in ("IN_DP", "OUT"))
-CX = LX + center_w + GAP
-POS["MIRROR_P"] = (CX, 0)
-POS["BIAS_N"] = (CX, GD["MIRROR_P"][1] + GAP)
+CX = left_w + GAP
+POS["IN_DP"] = (CX, 0)
+POS["MIRROR_P"] = (CX, GD["IN_DP"][1] + GAP)
+POS["BIAS_N"] = (CX, GD["IN_DP"][1] + GD["MIRROR_P"][1] + 2*GAP)
+right_w = max(GD[g][0] for g in ("IN_DP", "MIRROR_P", "BIAS_N"))
+main_w = CX + right_w
+main_h = max(
+    POS["MIRROR_N"][1] + GD["MIRROR_N"][1],
+    POS["BIAS_N"][1] + GD["BIAS_N"][1],
+)
 
-C1 = (CX + 2, POS["BIAS_N"][1] + GD["BIAS_N"][1] + 8)
-R1 = (CX + 2, C1[1] + 16)
-layout_w = max(GD[g][0] + POS[g][0] for g in GROUPS) + 4
-layout_h = max(POS[g][1] + GD[g][1] for g in GROUPS)
-layout_h = max(layout_h, C1[1] + 12, R1[1] + 5)
+# M14: separate DNW, 8 um gap between DNW outlines.
+OUT_X = main_w + 14  # main DNW right = main_w+3, OUT DNW left = OUT_X-3
+OUT_Y = 16
+POS["OUT"] = (OUT_X, OUT_Y)
+C1 = (OUT_X + 2, OUT_Y + GD["OUT"][1] + 8)
+R1 = (OUT_X + 2, C1[1] + 16)
+dnw2_h = GD["OUT"][1] + 6  # M14 only; C1/R1 stay outside this DNW
+layout_w = OUT_X + GD["OUT"][0] + 4
+layout_h = max(main_h + 3, R1[1] + 6)
 
 W = int(OX + layout_w * S + 520)
 H = int(OY + layout_h * S + 160)
@@ -102,12 +110,19 @@ def txt_um(x,y,s,size=9,fill="#0f172a",weight=400,anchor="start",family="'DejaVu
 add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="class-A op-amp white-line layout plan">')
 rect(-1000,-1000,5000,5000,fill="#f8fafc",stroke="none")
 txt(34,38,"Class-A CMOS OP — compact white-line layout plan",27,"#0f172a",700)
-txt(34,64,"interdigitated matched arrays · shared S/D · shared dummies · one ring per group · one DNW",11,"#475569")
+txt(34,64,"interdigitated matched arrays · shared S/D · shared DM columns · two DNWs (M14 separate, 8 µm gap)",11,"#475569")
 txt(34,82,"PMOS upper · NMOS lower · input/output center · W=finger height, L=finger width, m=fingers",9,"#64748b",family="'DejaVu Sans Mono',monospace")
 
-# DNW tight
-rect(-3,-3,layout_w+6,layout_h+6,fill="none",stroke="#0f766e",sw=1.3,rx=2,dash="7 4")
-txt_um(-2,layout_h+2,"DNW (one) · NW/PW one well · PMOS bulk=VDD · NMOS bulk=VSS",7.5,"#0f766e",600)
+# Two DNWs: main block and separate output device
+rect(-3,-3,main_w+6,main_h+6,fill="none",stroke="#0f766e",sw=1.3,rx=2,dash="7 4")
+rect(OUT_X-3,OUT_Y-3,GD["OUT"][0]+6,dnw2_h,fill="none",stroke="#0f766e",sw=1.3,rx=2,dash="7 4")
+txt_um(-2,main_h+2,"DNW1 · main · one NW/PW well · PMOS bulk=VDD · NMOS bulk=VSS",7.5,"#0f766e",600)
+txt_um(OUT_X-3,OUT_Y-4,"DNW2 · M14 output",7.5,"#0f766e",600)
+# 8 um gap dimension
+line(main_w+3, -7, OUT_X-3, -7, stroke="#0f766e", sw=0.8)
+line(main_w+3, -9, main_w+3, -5, stroke="#0f766e", sw=0.8)
+line(OUT_X-3, -9, OUT_X-3, -5, stroke="#0f766e", sw=0.8)
+txt_um((main_w+3+OUT_X-3)/2, -8, "8 µm",6,"#0f766e",600,"middle")
 
 def draw_group(g):
     gx, gy = POS[g]
@@ -126,7 +141,7 @@ def draw_group(g):
         for r in range(a["rows"]):
             rect(dx, cy + r*a["fh"], a["fw"], a["fh"], fill="#e2e8f0", stroke="#94a3b8", sw=0.45, dash="2 1")
             if r == 0:
-                txt_um(dx + a["fw"]/2, cy + r*a["fh"] + a["fh"]/2 + 0.4, "d", 6, "#64748b", 700, "middle")
+                txt_um(dx + a["fw"]/2, cy + r*a["fh"] + 1.1, "DM", 6.2, "#475569", 700, "middle")
     # fingers, interleaved
     for idx, (name, w, l, col) in enumerate(SEQ[g]):
         r, c = divmod(idx, a["cols"])
@@ -155,7 +170,7 @@ def draw_group(g):
     label = "/".join(d[0] for d in ds)
     txt_um(gx, gy - 1.0, label, 7, color, 700)
     dims = "/".join(str(d[3]) for d in ds)
-    txt_um(gx, gy - 0.2, f"W{ds[0][1]}/L{ds[0][2]}  m={dims}", 5.5, "#475569", 600)
+    txt_um(gx, gy - 0.2, f"W{ds[0][1]}/L{ds[0][2]}  m={dims}  DM shared", 5.5, "#475569", 600)
 
 for g in ORDER:
     draw_group(g)
@@ -190,7 +205,7 @@ for g in ORDER:
         txt(lx+7, ry, f"{name:4s} {w}/{l} m={m}", 6.8, "#334155", family="'DejaVu Sans Mono',monospace")
         ry += 10
     ry += 2
-txt(lx, ry+6, "d = shared dummy finger", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
+txt(lx, ry+6, "DM = shared dummy column (both ends)", 6.5, "#64748b", family="'DejaVu Sans Mono',monospace")
 txt(lx, ry+20, "ring 1.0 µm / gap 1.5 µm (edu)", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
 txt(lx, ry+34, "M13 PMOS current source · M14 output", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
 
