@@ -2,130 +2,80 @@
 
 ## Goal
 
-Maintain **Analog2Layout** as an **evolving workspace** for
-technical interaction between analog and layout engineers. The primary artifact is now the
-**AI-native Layout Guideline**:
+Maintain **Analog2Layout** as an **evolving workspace** for technical interaction
+between analog and layout engineers: role/area → floorplan/white-line intent →
+Layout Card → layout delta. This is not a production rule base, signoff tool,
+training assistant, review service, or audit service.
 
-- a folder structure and workflow for turning analog intent into a one-page
-  Layout Card;
-- a demo that links role/area/floorplan/delta to the Layout Card;
-- a public, generic scaffold that a company can overlay with private rules.
+## Current state (2026-10-26 end of day)
 
-This is **not** a production rule base, signoff tool, training assistant, review
-service, or audit service.
-
-## Current state (2026-10-26)
-
-- Deterministic demo works: name/role semantics → five-level area → floorplan
-  sketch → layout delta.
-- `layout-guideline/` scaffold added:
-  - `00-workflow/` roles, steps, deliverables;
-  - `01-principles/` matching, power/ground, signal/parasitics, ESD/HV,
-    sensitive-region/reuse;
-  - `02-modules/` three cards: two-stage OTA, BGR, VCOM; plus BGR vs VCOM comparison;
-  - `03-patterns/` diff pair, current mirror, resistor/cap array, trim network,
-    output stage;
-  - `04-cases/` two synthetic cases: BGR reference return, VCOM power return;
-  - `05-templates/` card/intent/area-target/change-log; `06-sources/`;
-  - `07-problems/` problem-to-guideline loop.
-- `examples/name_only_ota/` demonstrates name-token parsing and match inference
-  with no `role=` properties; `--require-known-roles` replaces the old
-  explicit-role flag.
-- `docs/09-white-line-and-floorplan.md` separates Virtuoso white line from our
-  floorplan sketch.
-- `docs/10-layout-variants.md` documents target-bbox variants (200×200 vs
-  100×400); code generation is still pending.
-- Sensitive-core vs device-core distinction documented; code metrics for
-  `sensitive_core` / `flexible_area` / `reuse_candidate` are still pending.
-- `docs/diagrams/` contains the first-read visuals: three-minute overview,
-  four-panel full overview, variants, and the guideline problem loop.
-- First real target added: `examples/sky130_two_stage_opamp/` — a name-only
-  SKY130 two-stage Miller op-amp derived from an MIT-licensed open-source design
-  (Nithin P, 2024), with 10 MOS + 1 compensation cap and a real bias/enable
-  branch (`M8_BIAS`, `M9_EN`, `M10_EN_PD`). Source/license are recorded in the
-  example and in `docs/11-target-sky130-opamp.md`.
-- Target run: 11 devices / 7 groups / device core 1548 µm² / block 2815 µm² /
-  gate PASS at 6000 µm²; `validate --require-known-roles` passes.
-- Layout Card v0.2 generated at `layout-guideline/02-modules/sky130-two-stage-opamp/`;
-  it includes the reserve shortfall (1178 µm²) as a Top 3 risk.
-- White-line layout plan v0.3 generated at
-  `docs/targets/sky130-opamp/white-line.svg/png`: all 10 MOS, DP/CM ring,
-  TAIL/BIAS, EN, CC, OUT, and short notes in one layout view.
-- v0.3 is strict-scale: device boxes use `w_layout/h_layout`, DM at both W ends,
-  separate rings per matched group, MOSCAP 3 pF @ 2 fF/µm². Ring spacing is still
-  an educational placeholder; labels use numbers + legend because tiny devices
-  cannot hold text at true scale.
-- LDO is now the primary target: raw netlist 41 MOS / 41 unknown; agent role
-  proposal 41 explicit / 14 groups; block 14649 µm², gate PASS @ 30000 µm²;
-  pass FET XM61 = 83.4% of device area. Floorplan still 605.6 µm wide because
-  14 groups are packed into 3 bands.
-- `docs/08-ai-layout-guideline.md` explains the four-layer model
-  (Principle → Module → Pattern → Case) and the workflow.
-- Agent layer now has two technical prompts: `annotate_roles` and
-  `compile_layout_card`. The old `review_floorplan` prompt was removed.
-- 40 unittest tests pass; demo output remains in `examples/two_stage/out/`.
-- Git: public repo at https://github.com/XIAHONGYUU/Analog2Layout, CI green.
+- The workspace still has the deterministic a2l core: name/role → five-level area
+  → floorplan sketch → layout delta; 49 unittest tests pass.
+- The SKY130 two-stage OP remains a **unit test** (10 MOS + 1 cap); the SKY130
+  1.8 V LDO remains the **primary system target** but is **paused** while we
+  finish the layout-realization exercise.
+- A 16-MOS **class-A reference** was added from a real schematic/netlist
+  (`examples/classa_opamp/`). Upstream calls it class-AB, but the netlist only
+  drives M14; M13 is a PMOS current-source load. The target is corrected to
+  class-A.
+- User-defined sizing is recorded: W/L/m, M8/M9 = 108 (W=9, m=12), R1 2×3
+  m=4, C1 5 pF MOM fixed 5×10 µm = 50 µm².
+- White-line exercise (latest):
+  - merged interdigitated arrays; shared DM at both ends; no fake `FILL DM`;
+  - flexible array rows (2/4/6 preferred, other rows allowed);
+  - `sd_mode=shared`; gate pitch **L+0.36 µm**; ring gap **0.8 µm**; group gap
+    **2 µm**;
+  - dummy fingers have the same finger geometry as active devices; only the
+    external `DM` label differs;
+  - input pair in the center row; PMOS upper / NMOS lower; M14 at the outer
+    right in its own DNW; DNW1/DNW2 gap **8 µm**;
+  - R/C placed between DNW1 and DNW2 and counted in area;
+  - NW/PW shown as simplified well outlines;
+  - no DRC/LVS or exact CT-ring drawing.
+- Effective-area accounting (current number):
+  - ring-inner effective area + R/C = **11,764 µm²**;
+  - DNW1+DNW2 outer area = **15,965 µm²**;
+  - utilization = **73.7%** by DNW sum; **67.7%** by total bbox; **81.6%** if
+    ring metal is included.
+- CT fit check: with 0.36 µm gate-to-gate S/D, one CT needs
+  0.055+0.17+0.04 = 0.265 µm, so it fits; W > 5.7 µm needs multiple CT rows.
+- Still open: exact NW/PW outlines, complete CT ring, top/bottom half-W dummy
+  variant, exact R/C model footprint, and returning to the LDO white-line/card.
+- Git: latest class-A white-line code plus this documentation update; CI green.
 
 ## Next atomic action
 
-0. (done) First-page diagrams checked at 880 px width; tall/short labels were
-   adjusted to avoid clipping.
-1. (done) MOSCAP density confirmed as 2 fF/µm²; white-line v0.3 redrawn to
-   strict scale with dummies, separate rings, and MOSCAP.
-2. LDO is now the primary target; OP is a unit test. LDO has no upstream
-   screenshot, so `examples/classa_opamp/` was added as a **16-MOS class-A
-   review target with both schematic.png and opamp.sp**. Correction: the upstream
-   calls it class AB, but the netlist only drives M14; M13 is a PMOS current-source
-   load. Use it to judge the role vocabulary before applying it to the 41-MOS LDO.
-3. Review the agent role proposal in `examples/sky130_ldo_01v8/ldo.annotated.sp`
-   (41 explicit roles, 14 groups, pass FET = 83.4% of device area).
-4. Add `XR*` resistor / `XC*` MIM area and `x1/x2` level-shifter black boxes.
-5. Fix the 14-group floorplan: the pass FET is folded, but the block is still
-   605.6 µm wide because all groups are packed into 3 bands. Then build the LDO
-   white-line/card.
-6. Use `references/README.md` as the reading map for *The Art of Analog Layout*
-   (licensed local copy under gitignored `references/private/`).
-7. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
-   `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-8. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
-   utilization / power return / matching-group stretch.
-9. Add 1–2 real problem records from this target to `07-problems/` and show the
-   resulting principle/pattern patch.
-10. Add a small card completeness check (not a review service): flags missing
-   `ASK` / `UNKNOWN` / owner / evidence / source links.
+1. Tomorrow: deep review of the layout flow, not another incremental tweak.
+2. Review the effective-area definition:
+   - ring inner vs ring metal included;
+   - DNW sum vs total bbox denominator;
+   - whether R/C and routing inside the DNW gap count.
+3. Decide whether the class-A exercise becomes the standard layout-reference case
+   or remains a teaching target beside the LDO.
+4. Then resume the LDO target: R/C/X area, 14-group floorplan, LDO white-line/card.
 
 ## Constraints
 
-- Scope: workflow/demo only; no production landing, no real PDK/company rules.
-- Public repo contains generic/synthetic content only.
-- No training assistant, main-review, or audit service.
-- Only technical interaction artifacts: intent, card, floorplan, delta, change log.
+- Scope: workflow/demo/white-line intent; no production landing, no real PDK or
+  company rules; no DRC/LVS claims.
+- Public repo contains generic/synthetic/desensitized content only.
 - Do not auto-edit a schematic; delta is a proposal.
+- Dummy fill must be real geometry, not fake area padding.
 - No remote push without explicit user instruction.
 
 ## Done when
 
-- A layout engineer can read the two-stage, BGR, or VCOM Layout Card in ~2 minutes
-  and state the top 3 risks / must-preserve items.
-- The workflow in `layout-guideline/00-workflow/` is clear enough to add a new
-  module from templates.
-- README links the guideline scaffold and docs/08 correctly.
-- Existing tests/build still pass.
+- The layout-reference case can be read as a white-line intent: arrays, DM,
+  rings, DNW, R/C, NW/PW, scale, and effective-area number are consistent.
+- The LDO target resumes with R/C/X support and a compact 14-group floorplan.
+- Tests/build remain green.
 
 ## Open questions
 
-- Sensitive region 的边界：按模块、按 group、还是按 net 划分？
-- 复用敏感区时，最小必须携带哪些版本/验证条件？
-- 目标 bbox 变体需要多少候选？谁来做最终选择？
-- 问题回流到什么阈值必须升级为 principle/pattern，而不是只留在 case？
-- Layout Card 是否需要机器可读形式（JSON/YAML）？
-
-## Verification
-
-```bash
-python3 -m unittest discover -s tests -v
-python3 -m a2l build examples/two_stage/two_stage.sp --out examples/two_stage/out --area-budget-mm2 0.005 --fail-on-gate
-python3 -m a2l validate examples/name_only_ota/ota_named.sp --require-known-roles
-python3 -m a2l validate examples/sky130_two_stage_opamp/opamp.sp --require-known-roles
-python3 -m a2l build examples/sky130_two_stage_opamp/opamp.sp --out out/sky130_opamp --area-budget-mm2 0.006 --fail-on-gate
-```
+- Effective area: include ring metal or only ring interior?
+- Denominator: sum of DNW outer areas or total DNW bounding box?
+- Do we keep `sd_mode=shared` for the class-A reference, or switch to separated
+  S/D for matched pairs later?
+- Do we add top/bottom half-W dummies to the input pair, or keep the flattened
+  left DNW?
+- What is the next layout-review milestone: CT ring, NW/PW spacing, or LDO?

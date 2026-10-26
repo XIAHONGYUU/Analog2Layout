@@ -35,12 +35,15 @@
 | Layout guideline 怎么不散？ | [BGR](layout-guideline/02-modules/bgr/layout-card.md) / [VCOM](layout-guideline/02-modules/vcom/layout-card.md) | 一页 7 区块 + Principle / Pattern / Case 下钻 |
 | 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
+| 真实 MOS 怎么排成白线？ | [class-A white-line](examples/classa_opamp/white-line.png) | merged array、DM、ring、DNW、NW/PW、有效面积 |
 
 > **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [snapshot](docs/targets/sky130-ldo/)。
 >
 > **Unit test**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 MOS + 1 cap；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png)。
 >
 > **有图有网表的 review target**：[class-A CMOS OP](examples/classa_opamp/README.md)。16 MOS、2 V；上游 README 称 class AB，但按网表实际是 **class A（只有 M14 信号输出，M13 是 PMOS 电流源负载）**；[schematic](examples/classa_opamp/schematic.png) · [netlist](examples/classa_opamp/opamp.sp)。
+>
+> **2026-10-26 白线练习**：16-MOS class-A 的紧凑 layout intent。[White-line](examples/classa_opamp/white-line.png) · [detail](examples/classa_opamp/white-line-detail.png) · 有效面积 **11,764 µm²**，DNW1+DNW2 **15,965 µm²**，利用率 **73.7%**（DNW sum）/ **67.7%**（bbox）/ **81.6%**（含 ring）。
 
 ## 一条链
 
@@ -60,6 +63,7 @@ flowchart LR
 | 能跑（CLI） | 名字/角色解析 → 五层面积 → 布局草图 → layout delta |
 | 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
 | 正在补全 | 真实 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
+| 2026-10-26 新增 | class-A 16-MOS 白线练习；灵活 rows、gate pitch L+0.36、同形 dummy、DNW1/DNW2、R/C 入面积、有效面积 73.7% |
 
 ## 这个项目体现的能力
 
@@ -458,7 +462,8 @@ tests/                  unittest，无第三方依赖
 - BGR vs VCOM 的模块优先级对比
 - 目标 bbox/aspect 的变体概念 + 问题回流 `07-problems/`
 - SKY130 两级 Miller OP 真实目标（10 MOS + 1 cap，含 bias/enable）
-- 七个示例（LDO 主目标 + OP unit test + class-A review）+ 测试 + CI
+- 七个示例（LDO 主目标 + OP unit test + class-A layout reference）+ 测试 + CI
+- class-A 白线：flexible rows / DM / DNW / NW-PW / 有效面积 73.7%
 
 **v0.2**
 - 面积模型：device_core / sensitive_core / flexible_area / reuse_candidate

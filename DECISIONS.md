@@ -276,3 +276,27 @@ should survive individual tasks.
   - new problems are deduplicated against existing problems/cases;
   - a recurrence (≥2) requires a guideline change before closure;
   - project-specific numbers stay in the private rule pack.
+
+---
+
+## D-016 — Class-A reference is a layout-realization exercise, not a signoff target
+
+- **Status:** active
+- **Date:** 2026-10-26
+- **Owner:** analog design + layout
+- **Source:** user direction + class-A reference review
+- **Decision:** The 16-MOS class-A reference (`examples/classa_opamp/`) is used to
+  exercise layout intent: merged/interdigitated arrays, shared DM, flexible array
+  rows, stepped DNW, outer M14 DNW, R/C in the DNW gap, and effective-area
+  accounting. It is **not** a DRC/LVS/PEX signoff layout. `sd_mode=shared` is a
+  temporary mode; the matching rule's "avoid shared S/D" remains a future
+  decision.
+- **Consequences:**
+  - gate pitch is `L+0.36 µm` in shared mode; ring gap 0.8 µm; group gap 2 µm;
+  - dummy fingers use the same geometry as active fingers; only the external
+    `DM` label differs; no fake `FILL DM` padding;
+  - NW/PW are simplified outlines, not extracted wells;
+  - effective area = ring-inner area + R/C; max area = DNW1+DNW2 outer; current
+    utilization 73.7% (DNW sum), 67.7% (bbox), 81.6% (ring metal included);
+  - no DRC/LVS claims; no full CT ring.
+- **Related:** `examples/classa_opamp/README.md`, `examples/classa_opamp/white-line.png`, `CURRENT_TASK.md`.
