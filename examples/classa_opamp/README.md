@@ -37,9 +37,12 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 
 ![White-line layout plan](white-line.png)
 
-Strict-scale intent view: folded MOS arrays (`m` parallel units), `d` dummies at
-group W ends, one ring per matched group, one DNW, fixed 5 × 10 µm MOM block,
-and a 4-unit R1. It is **not** DRC/LVS/PEX signoff.
+Strict-scale intent view with **vertical-finger MOS arrays**:
+`W` = finger height, `L` = finger width, `m` = number of parallel fingers,
+adjacent fingers share S/D, `d` dummies at both W ends, one ring per matched group,
+one DNW, fixed 5 × 10 µm MOM block, and a 4-unit R1. The array style follows the
+vertical-finger/shared-S/D MOS arrangement visible in the `project_siliconeyes`
+layout review images. It is **not** DRC/LVS/PEX signoff.
 
 Source: [white-line.svg](white-line.svg) · editable generator: [make_white_line.py](make_white_line.py).
 
