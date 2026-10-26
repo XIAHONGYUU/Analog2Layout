@@ -73,9 +73,10 @@ service, or audit service.
 1. (done) MOSCAP density confirmed as 2 fF/µm²; white-line v0.3 redrawn to
    strict scale with dummies, separate rings, and MOSCAP.
 2. LDO is now the primary target; OP is a unit test. LDO has no upstream
-   screenshot, so `examples/classab_opamp/` was added as a **16-MOS class-AB
-   review target with both schematic.png and opamp.sp**. Use it to judge the role
-   vocabulary before applying it to the 41-MOS LDO.
+   screenshot, so `examples/classa_opamp/` was added as a **16-MOS class-A
+   review target with both schematic.png and opamp.sp**. Correction: the upstream
+   calls it class AB, but the netlist only drives M14; M13 is a PMOS current-source
+   load. Use it to judge the role vocabulary before applying it to the 41-MOS LDO.
 3. Review the agent role proposal in `examples/sky130_ldo_01v8/ldo.annotated.sp`
    (41 explicit roles, 14 groups, pass FET = 83.4% of device area).
 4. Add `XR*` resistor / `XC*` MIM area and `x1/x2` level-shifter black boxes.

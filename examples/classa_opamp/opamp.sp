@@ -1,10 +1,10 @@
-* Low-voltage class-AB CMOS op-amp — adapted from an MIT-licensed LTspice design
+* Low-voltage class-A CMOS op-amp — adapted from an MIT-licensed LTspice design
 * Source: https://github.com/Amirhossein7717/low-voltage-cmos-opamp
 * Original: src/AHLowVoltageOpAmp.net, 0.8 um Level=1 models, 2 V supply.
 * This adaptation keeps the 15-MOS topology and renames the supply/load nodes.
 * External 10 pF load is documented but not included in the core area.
 
-.subckt classab_opamp vinp vinn vout vdd vss ibias
+.subckt classa_opamp vinp vinn vout vdd vss ibias
 
 * input pair
 M1  n007 vinp n010 vss nmos w=80u   l=2u
@@ -33,4 +33,4 @@ I_BIAS n002 ibias 100u
 R1 n003 n006 3.33k
 C1_CC vout n012 5p
 
-.ends classab_opamp
+.ends classa_opamp

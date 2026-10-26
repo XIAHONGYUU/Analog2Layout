@@ -6,10 +6,10 @@ from a2l.netlist import parse_file
 from a2l.rules import default_rules_path, load_rules
 
 ROOT = Path(__file__).resolve().parent.parent
-NETLIST = ROOT / "examples" / "classab_opamp" / "opamp.sp"
+NETLIST = ROOT / "examples" / "classa_opamp" / "opamp.sp"
 
 
-class ClassAbReviewTests(unittest.TestCase):
+class ClassAReviewTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.rules = load_rules(default_rules_path())
