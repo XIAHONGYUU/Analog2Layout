@@ -69,6 +69,8 @@ python3 -m a2l analyze examples/classa_opamp/opamp.sp
 
 ## Documents
 
+- [sizing.md](sizing.md): original W/L, m=1 check, and matching-group ratio analysis.
+
 - [structure.md](structure.md): node-by-node explanation, corrected to class A.
 - [textbook.md](textbook.md): what Allen & Holberg say about class AB, and why
   this circuit is not it.
