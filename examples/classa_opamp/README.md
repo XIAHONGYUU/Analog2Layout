@@ -35,19 +35,39 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 
 ## White-line layout plan
 
-![White-line layout plan](white-line.png)
+![Rule-aware white-line](white-line.png)
 
-Strict-scale intent view with **interdigitated vertical-finger arrays**:
-`W` = finger height, `L` = finger width, `m` = number of parallel fingers,
-matched devices share one array and their fingers are interleaved; adjacent
-fingers share S/D; `DM` dummy columns are **shared** at the two W ends of each group;
-one ring per group; **two DNWs** (main block + M14 output, 8 µm apart);
-fixed 5 × 10 µm MOM block and a 4-unit R1.
-Placement follows: **input/output center, PMOS upper, NMOS lower**. The array
-style follows the vertical-finger/shared-S/D MOS arrangement visible in the
-`project_siliconeyes` layout review images. It is **not** DRC/LVS/PEX signoff.
+This version uses a **SKY130 rule-aware MOS primitive**:
 
-Source: [white-line.svg](white-line.svg) · detail: [white-line-detail.png](white-line-detail.png) · editable generator: [make_white_line.py](make_white_line.py).
+- `diff`/AA strip;
+- `poly` gate with 0.13 µm endcap;
+- shared S/D (`sd_mode=shared`);
+- `licon` CT arrays (0.17 µm, 0.17 µm spacing, 0.04 µm diff enclosure, 0.055 µm gate clearance);
+- `li` local interconnect;
+- `mcon` + `M1` straps;
+- dummy fingers and dummy fill arrays.
+
+The main array is compact and uses **interdigitated matched fingers**, one shared
+dummy finger at both ends of every row. `M14` is in its own DNW at the outer
+right; DNW1/DNW2 outlines are **8 µm** apart. The input pair is kept in the center
+column; output is allowed at the outer edge. C1/R1 sit outside DNW2.
+
+Current estimate from the generator geometry:
+
+```text
+DNW1 fill ≈ 89% (including dummy fill)
+DNW2 fill ≈ 81%
+bbox ≈ 62% (the 8 µm DNW gap, C1/R1 and outer output block are included)
+```
+
+Detail crop:
+
+![White-line detail](white-line-detail.png)
+
+The primitive detail panel is included at the bottom of the full image; it shows
+the actual diff/poly/CT/li/mcon/M1 stack and the SKY130 values used.
+
+Source: [white-line.svg](white-line.svg) · generator: [make_white_line.py](make_white_line.py).
 
 ## What the netlist actually is
 
