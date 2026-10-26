@@ -245,7 +245,7 @@ otherwise                → UNCERTAIN（区间跨过 budget，需要 refine 或
 
 ## 5. 布局草图：给版图工程师一张能直接讨论的图
 
-> 术语说明：Virtuoso 里的 **white line** 是 schematic 上的标志辅助线；这里输出的 `floorplan.svg` 是独立的**布局草图 / floorplan sketch**，两者不是同一个概念。详见 [`docs/09-white-line-and-floorplan.md`](docs/09-white-line-and-floorplan.md)。
+> 术语说明：Virtuoso 的 **white line** 是辅助线/标志线，可以承载器件形状、ring、SAB、keepout 等版图结构；本工作区的 **white-line layout plan** 是这类结构图。`floorplan.svg` 则是自动推导的块级布局草图，两者不是同一个 artifact。详见 [`docs/09-white-line-and-floorplan.md`](docs/09-white-line-and-floorplan.md)。
 
 `floorplan.svg` 不是合法版图，而是**布局意图**：
 
@@ -262,6 +262,10 @@ otherwise                → UNCERTAIN（区间跨过 budget，需要 refine 或
 - 底部标出 routing channel、对称轴和规则包版本。
 
 版图工程师可以在这张图上直接标“这里要加 guard ring”“这个 dummy 不要”“输出要换方向”，模拟工程师也可以用它比较不同架构的面积。
+
+### White-line layout plan
+
+SKY130 OP 的 white-line 不是 schematic 注释框，而是把每个 MOS 的阵列、ring、dummy 和摆放直接画出来；和电路参考放在同一个视图里。见 [white-line layout plan](layout-guideline/02-modules/sky130-two-stage-opamp/white-line.md)。
 
 ---
 

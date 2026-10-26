@@ -48,9 +48,9 @@ service, or audit service.
   gate PASS at 6000 µm²; `validate --require-known-roles` passes.
 - Layout Card v0.1 generated at `layout-guideline/02-modules/sky130-two-stage-opamp/`;
   it includes the reserve shortfall (1545 µm²) as a Top 3 risk.
-- White-line schematic annotation v0.1 generated at
+- White-line layout plan v0.1 generated at
   `docs/targets/sky130-opamp/white-line.svg/png`: all 10 MOS, DP/CM ring,
-  TAIL/BIAS, EN, CC, OUT, and short notes in one schematic view.
+  TAIL/BIAS, EN, CC, OUT, and short notes in one layout view.
 - `docs/08-ai-layout-guideline.md` explains the four-layer model
   (Principle → Module → Pattern → Case) and the workflow.
 - Agent layer now has two technical prompts: `annotate_roles` and
@@ -62,9 +62,9 @@ service, or audit service.
 
 0. (done) First-page diagrams checked at 880 px width; tall/short labels were
    adjusted to avoid clipping.
-1. (done) Generated the SKY130 target Layout Card and white-line schematic
-   annotation; next is stage-by-stage review with the user. Start with the
-   white-line: ring extent, group boxes, notes, and missing annotations.
+1. (done) Generated the SKY130 target Layout Card and white-line layout plan;
+   next is stage-by-stage review with the user. Start with the white-line:
+   device arrangement, ring extent, SAB/keepout, and notes.
 2. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
 3. Add a target-bbox/aspect variant generator (square / wide / tall) and compare

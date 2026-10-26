@@ -89,7 +89,7 @@ Deltas:    11 proposed
 ## 8. 相关
 
 - [Layout Card](../layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md)
-- [White-line annotation](../layout-guideline/02-modules/sky130-two-stage-opamp/white-line.md)
+- [White-line layout plan](../layout-guideline/02-modules/sky130-two-stage-opamp/white-line.md)
 - [网表](../examples/sky130_two_stage_opamp/opamp.sp)
 - [示例说明](../examples/sky130_two_stage_opamp/README.md)
 - [MIT LICENSE](../examples/sky130_two_stage_opamp/LICENSE)

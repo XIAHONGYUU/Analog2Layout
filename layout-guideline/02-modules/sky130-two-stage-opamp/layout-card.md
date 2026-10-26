@@ -56,17 +56,16 @@ INP/INN → M1/M2 (DP) → M3/M4 (CM load) → M6/M7 (OUT) → VOUT
 
 **关键尺寸**：`M1/M2/M3/M4/M5/M8 = 0.75/0.5`；`M6 = 8.5/0.5, nf=2`；`M7 = 6.5/0.5`；`M9 = 2/0.5`；`M10 = 1/0.5`；`C1 = 3 pF`。
 
-## 6. Floorplan
+## 6. Floorplan / white-line layout plan
 
-![SKY130 op-amp floorplan snapshot](../../../docs/targets/sky130-opamp/floorplan.png)
+![White-line layout plan detail](../../../docs/targets/sky130-opamp/white-line-detail.png)
 
-- 97.0 × 51.2 µm；aspect 1.90；squareness 0.53；landscape；3 行。
-- 上：`CM`；中：`DP` + `OUT` + `CC`；下：`BIAS` + `EN` + `TAIL`。
-- 对称轴 x=36.6 µm；`INP/INN` 在输入对上方，`VOUT` 在输出级右侧，`EN` 在左下。
-- 右侧 8% 是 PEX-fix reserve；当前草图利用率 41.8%，空白 58.2%。
-- `C1_CC` 的 3 pF 在 generic-180 下占 device area 的 95.8%，所以这张图是“电容主导”的 floorplan，不是 MOS 主导。
-- 小于 2 µm 的器件用短 ID（`M1`、`M3`…），完整名字/role 见上表；这不是合法版图。
-- **White-line 辅助图**：[SVG](../../../docs/targets/sky130-opamp/white-line.svg) · [PNG](../../../docs/targets/sky130-opamp/white-line.png)。白色虚线=功能组/ring/keepout，彩色线=net。
+- **White-line 结构**：`CM` 左上、`DP` 中左、`TAIL/BIAS` + `EN` 左下、`CC` 中右、`OUT` 右侧；`RING` 包 `DP/CM`。
+- 每个 MOS 单独成阵列块：`DP/CM` 各 4 指，`M6_OUT` 2 指宽管，`M7_OUT` 1 指长管，`C1_CC` 大电容阵列。
+- `TAIL/BIAS` 的 `M5/M8` 各 2 指；`EN` 的 `M9/M10` 各 2 指；`I0` 是虚线理想源。
+- 这张 white-line 不是合法版图，也不是自动 floorplan；它表达的是**版图结构和摆放意图**。
+- 自动 floorplan snapshot（块级）：97.0 × 51.2 µm；aspect 1.90；3 行；利用率 41.8%；[快照](../../../docs/targets/sky130-opamp/floorplan.png)。
+- 小于 2 µm 的器件用短 ID（`M1`、`M3`…）；完整名字/role 见上表；这不是合法版图。
 
 ## 7. Evidence / open questions
 

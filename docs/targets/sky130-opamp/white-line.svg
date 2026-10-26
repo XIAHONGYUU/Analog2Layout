@@ -1,220 +1,207 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-label="SKY130 op-amp white-line annotation">
-<rect x="0" y="0" width="1800" height="1120" rx="0" fill="#0A0F16" stroke="#F8FAFC" stroke-width="1.5" opacity="1"/>
-<text x="56" y="56" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="34" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">SKY130 two-stage Miller OP — white-line annotation</text>
-<text x="56" y="88" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">schematic + white dashed annotation + ring / keepout + short notes</text>
-<text x="56" y="112" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">v0.1 · synthetic target · not a legal layout</text>
-<line x1="1250" y1="50" x2="1300" y2="50" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="1310" y="55" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">white dashed = annotation / ring / keepout</text>
-<line x1="1250" y1="76" x2="1300" y2="76" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="1310" y="81" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">colored = net</text>
-<line x1="470" y1="260" x2="470" y2="340" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="452" y1="272" x2="452" y2="328" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="426" y1="300" x2="452" y2="300" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="470" y1="260" x2="470" y2="244" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="470" y1="340" x2="470" y2="356" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<circle cx="443" cy="300" r="8" fill="none" stroke="#F8FAFC" stroke-width="2"/>
-<polygon points="496,272 482,279 482,265" fill="#F8FAFC"/>
-<text x="490" y="296" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M3_CM</text>
-<text x="490" y="313" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">PMOS</text>
-<text x="480" y="366" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="start" opacity="1">n1</text>
-<text x="420" y="303" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="end" opacity="1">n1</text>
-<line x1="470" y1="244" x2="470" y2="226" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="458" y1="226" x2="482" y2="226" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="470" y="219" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle" opacity="1">VDD</text>
-<line x1="620" y1="260" x2="620" y2="340" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="602" y1="272" x2="602" y2="328" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="576" y1="300" x2="602" y2="300" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="620" y1="260" x2="620" y2="244" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="620" y1="340" x2="620" y2="356" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<circle cx="593" cy="300" r="8" fill="none" stroke="#F8FAFC" stroke-width="2"/>
-<polygon points="646,272 632,279 632,265" fill="#F8FAFC"/>
-<text x="640" y="296" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M4_CM</text>
-<text x="640" y="313" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">PMOS</text>
-<text x="630" y="366" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="start" opacity="1">n2</text>
-<text x="570" y="303" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="end" opacity="1">n1</text>
-<line x1="620" y1="244" x2="620" y2="226" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="608" y1="226" x2="632" y2="226" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="620" y="219" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle" opacity="1">VDD</text>
-<rect x="410" y="230" width="270" height="150" rx="10" fill="none" stroke="#F8FAFC" stroke-width="1.8" opacity="1" stroke-dasharray="10 7"/>
-<text x="360" y="220" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="14" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">CM</text>
-<line x1="470" y1="500" x2="470" y2="580" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="452" y1="512" x2="452" y2="568" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="426" y1="540" x2="452" y2="540" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="470" y1="500" x2="470" y2="484" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="470" y1="580" x2="470" y2="596" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="482,568 496,561 496,575" fill="#F8FAFC"/>
-<text x="490" y="536" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M1_DP</text>
-<text x="490" y="553" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">NMOS</text>
-<text x="480" y="488" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="start" opacity="1">n1</text>
-<text x="480" y="606" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">ntail</text>
-<text x="420" y="543" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="end" opacity="1">INP</text>
-<line x1="620" y1="500" x2="620" y2="580" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="602" y1="512" x2="602" y2="568" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="576" y1="540" x2="602" y2="540" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="620" y1="500" x2="620" y2="484" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="620" y1="580" x2="620" y2="596" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="632,568 646,561 646,575" fill="#F8FAFC"/>
-<text x="640" y="536" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M2_DP</text>
-<text x="640" y="553" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">NMOS</text>
-<text x="630" y="488" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="start" opacity="1">n2</text>
-<text x="630" y="606" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">ntail</text>
-<text x="570" y="543" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="end" opacity="1">INN</text>
-<rect x="410" y="470" width="270" height="150" rx="10" fill="none" stroke="#F8FAFC" stroke-width="1.8" opacity="1" stroke-dasharray="10 7"/>
-<text x="360" y="460" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="14" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">DP</text>
-<rect x="388" y="208" width="314" height="434" rx="14" fill="none" stroke="#F8FAFC" stroke-width="1.2" opacity="1" stroke-dasharray="4 6"/>
-<text x="388" y="198" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="start" opacity="1">RING (layout)</text>
-<line x1="388" y1="208" x2="406" y2="208" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="388" y1="208" x2="388" y2="226" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="702" y1="208" x2="684" y2="208" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="702" y1="208" x2="702" y2="226" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="388" y1="642" x2="406" y2="642" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="388" y1="642" x2="388" y2="624" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="702" y1="642" x2="684" y2="642" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="702" y1="642" x2="702" y2="624" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="500" y1="720" x2="500" y2="800" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="482" y1="732" x2="482" y2="788" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="456" y1="760" x2="482" y2="760" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="500" y1="720" x2="500" y2="704" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="500" y1="800" x2="500" y2="816" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="512,788 526,781 526,795" fill="#F8FAFC"/>
-<text x="520" y="756" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M5_TAIL</text>
-<text x="520" y="773" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">NMOS</text>
-<text x="510" y="708" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">ntail</text>
-<text x="510" y="826" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">nsw</text>
-<text x="450" y="763" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="end" opacity="1">nbias</text>
-<line x1="650" y1="720" x2="650" y2="800" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="632" y1="732" x2="632" y2="788" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="606" y1="760" x2="632" y2="760" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="650" y1="720" x2="650" y2="704" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="650" y1="800" x2="650" y2="816" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="662,788 676,781 676,795" fill="#F8FAFC"/>
-<text x="670" y="756" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M8_BIAS</text>
-<text x="670" y="773" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">NMOS</text>
-<text x="660" y="708" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">nbias</text>
-<text x="660" y="826" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">nsw</text>
-<text x="600" y="763" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="end" opacity="1">nbias</text>
-<rect x="450" y="690" width="270" height="150" rx="10" fill="none" stroke="#F8FAFC" stroke-width="1.8" opacity="1" stroke-dasharray="10 7"/>
-<text x="400" y="680" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="14" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">TAIL / BIAS</text>
-<line x1="900" y1="820" x2="900" y2="900" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="882" y1="832" x2="882" y2="888" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="856" y1="860" x2="882" y2="860" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="900" y1="820" x2="900" y2="804" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="900" y1="900" x2="900" y2="916" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="912,888 926,881 926,895" fill="#F8FAFC"/>
-<text x="920" y="856" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M9_EN</text>
-<text x="920" y="873" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">NMOS</text>
-<text x="910" y="808" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">nsw</text>
-<text x="850" y="863" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#F472B6" text-anchor="end" opacity="1">EN</text>
-<line x1="900" y1="916" x2="900" y2="934" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="888" y1="934" x2="912" y2="934" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="900" y="947" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#94A3B8" text-anchor="middle" opacity="1">VSS</text>
-<line x1="1050" y1="820" x2="1050" y2="900" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="1032" y1="832" x2="1032" y2="888" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1006" y1="860" x2="1032" y2="860" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1050" y1="820" x2="1050" y2="804" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1050" y1="900" x2="1050" y2="916" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<circle cx="1023" cy="860" r="8" fill="none" stroke="#F8FAFC" stroke-width="2"/>
-<polygon points="1076,832 1062,839 1062,825" fill="#F8FAFC"/>
-<text x="1070" y="856" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M10_EN_PD</text>
-<text x="1070" y="873" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">PMOS</text>
-<text x="1060" y="926" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">nbias</text>
-<text x="1000" y="863" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#F472B6" text-anchor="end" opacity="1">EN</text>
-<line x1="1050" y1="804" x2="1050" y2="786" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1038" y1="786" x2="1062" y2="786" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="1050" y="779" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle" opacity="1">VDD</text>
-<rect x="840" y="790" width="320" height="170" rx="10" fill="none" stroke="#F8FAFC" stroke-width="1.8" opacity="1" stroke-dasharray="10 7"/>
-<text x="820" y="760" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="14" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">EN</text>
-<circle cx="800" cy="540" r="22" fill="none" stroke="#F8FAFC" stroke-width="2"/>
-<line x1="800" y1="500" x2="800" y2="518" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="800" y1="562" x2="800" y2="580" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="800,548 793,532 807,532" fill="#F8FAFC"/>
-<text x="834" y="538" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">I0</text>
-<text x="834" y="555" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">ideal 30 µA</text>
-<text x="810" y="488" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#FBBF24" text-anchor="start" opacity="1">VDD</text>
-<text x="810" y="606" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="start" opacity="1">nbias</text>
-<line x1="1140" y1="500" x2="1140" y2="528" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1140" y1="552" x2="1140" y2="580" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1112" y1="528" x2="1168" y2="528" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="1112" y1="552" x2="1168" y2="552" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<text x="1178" y="536" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">C1_CC</text>
-<text x="1178" y="553" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">3 pF</text>
-<text x="1150" y="488" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="start" opacity="1">n2</text>
-<text x="1150" y="606" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="start" opacity="1">VOUT</text>
-<rect x="1080" y="470" width="150" height="150" rx="10" fill="none" stroke="#F8FAFC" stroke-width="1.8" opacity="1" stroke-dasharray="10 7"/>
-<text x="1040" y="460" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="14" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">CC</text>
-<line x1="1420" y1="380" x2="1420" y2="460" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="1402" y1="392" x2="1402" y2="448" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1376" y1="420" x2="1402" y2="420" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1420" y1="380" x2="1420" y2="364" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1420" y1="460" x2="1420" y2="476" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<circle cx="1393" cy="420" r="8" fill="none" stroke="#F8FAFC" stroke-width="2"/>
-<polygon points="1446,392 1432,399 1432,385" fill="#F8FAFC"/>
-<text x="1440" y="416" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M6_OUT</text>
-<text x="1440" y="433" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">PMOS</text>
-<text x="1430" y="486" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="start" opacity="1">VOUT</text>
-<text x="1370" y="423" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#93C5FD" text-anchor="end" opacity="1">n2</text>
-<line x1="1420" y1="364" x2="1420" y2="346" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1408" y1="346" x2="1432" y2="346" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="1420" y="339" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle" opacity="1">VDD</text>
-<line x1="1420" y1="680" x2="1420" y2="760" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" opacity="1"/>
-<line x1="1402" y1="692" x2="1402" y2="748" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1376" y1="720" x2="1402" y2="720" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1420" y1="680" x2="1420" y2="664" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1420" y1="760" x2="1420" y2="776" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<polygon points="1432,748 1446,741 1446,755" fill="#F8FAFC"/>
-<text x="1440" y="716" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">M7_OUT</text>
-<text x="1440" y="733" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">NMOS</text>
-<text x="1430" y="668" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="start" opacity="1">VOUT</text>
-<text x="1370" y="723" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#34D399" text-anchor="end" opacity="1">nbias</text>
-<line x1="1420" y1="776" x2="1420" y2="794" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1408" y1="794" x2="1432" y2="794" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<text x="1420" y="807" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="700" fill="#94A3B8" text-anchor="middle" opacity="1">VSS</text>
-<rect x="1350" y="340" width="180" height="500" rx="10" fill="none" stroke="#F8FAFC" stroke-width="1.8" opacity="1" stroke-dasharray="10 7"/>
-<text x="1320" y="330" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="14" font-weight="700" fill="#F8FAFC" text-anchor="start" opacity="1">OUT</text>
-<line x1="1420" y1="478" x2="1420" y2="620" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1420" y1="664" x2="1420" y2="620" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1420" y1="620" x2="1560" y2="620" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<circle cx="1560" cy="620" r="5" fill="#F59E0B" stroke="none" stroke-width="0"/>
-<text x="1550" y="602" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="end" opacity="1">VOUT</text>
-<line x1="1560" y1="620" x2="1560" y2="740" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round" opacity="1" stroke-dasharray="4 4"/>
-<line x1="1538" y1="740" x2="1582" y2="740" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1538" y1="760" x2="1582" y2="760" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
-<line x1="1560" y1="760" x2="1560" y2="900" stroke="#94A3B8" stroke-width="1.4" stroke-linecap="round" opacity="1" stroke-dasharray="4 4"/>
-<text x="1590" y="744" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">10 pF</text>
-<text x="1590" y="762" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">external</text>
-<text x="1590" y="778" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start" opacity="1">not core</text>
-<line x1="320" y1="200" x2="388" y2="200" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
-<line x1="388" y1="200" x2="380.10175694298664" y2="204.31482984743784" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<line x1="388" y1="200" x2="380.10175694298664" y2="195.68517015256216" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<text x="56" y="194" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="start" opacity="1">RING: layout guard ring</text>
-<text x="56" y="214" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">white dashed = annotation</text>
-<line x1="320" y1="300" x2="410" y2="300" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
-<line x1="410" y1="300" x2="402.10175694298664" y2="304.3148298474378" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<line x1="410" y1="300" x2="402.10175694298664" y2="295.6851701525622" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<text x="56" y="294" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="start" opacity="1">CM: same source/well</text>
-<text x="56" y="314" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">boundary dummy</text>
-<line x1="320" y1="520" x2="410" y2="520" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
-<line x1="410" y1="520" x2="402.10175694298664" y2="524.3148298474379" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<line x1="410" y1="520" x2="402.10175694298664" y2="515.6851701525621" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<text x="56" y="514" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="start" opacity="1">DP: common-centroid</text>
-<text x="56" y="534" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">symmetric gate + dummy</text>
-<line x1="330" y1="760" x2="450" y2="760" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
-<line x1="450" y1="760" x2="442.10175694298664" y2="764.3148298474379" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<line x1="450" y1="760" x2="442.10175694298664" y2="755.6851701525621" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<text x="56" y="754" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="start" opacity="1">TAIL / BIAS: M5/M8 ratio</text>
-<text x="56" y="774" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">single tail -&gt; dummy tail?</text>
-<line x1="1530" y1="520" x2="1560" y2="520" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
-<line x1="1560" y1="520" x2="1552.1017569429866" y2="524.3148298474379" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<line x1="1560" y1="520" x2="1552.1017569429866" y2="515.6851701525621" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<text x="1580" y="514" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="12" font-weight="600" fill="#F8FAFC" text-anchor="start" opacity="1">OUT: wide metal</text>
-<text x="1580" y="532" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">multi-via / EM</text>
-<text x="870" y="528" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">real bias TBD</text>
-<line x1="975" y1="990" x2="975" y2="960" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
-<line x1="975" y1="960" x2="970.6851701525621" y2="967.8982430570134" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<line x1="975" y1="960" x2="979.3148298474379" y2="967.8982430570134" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
-<text x="840" y="1005" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="600" fill="#F8FAFC" text-anchor="start" opacity="1">EN=0: M9 off; M10 pulls nbias high</text>
-<text x="840" y="1023" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">check leakage / startup / VOUT state</text>
-<line x1="56" y1="1060" x2="1744" y2="1060" stroke="#64748B" stroke-width="1" stroke-linecap="round" opacity="1"/>
-<text x="56" y="1086" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#94A3B8" text-anchor="start" opacity="1">white dashed = annotation / ring / keepout · colored = net</text>
-<text x="1744" y="1086" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#64748B" text-anchor="end" opacity="1">v0.1 · 10 MOS + 1 cap · synthetic SKY130 target</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-label="SKY130 op-amp white-line layout plan">
+<rect x="0" y="0" width="1800" height="1100" rx="0" fill="#0A0F16" stroke="#F8FAFC" stroke-width="1.6" opacity="1"/>
+<text x="48" y="52" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="32" font-weight="700" fill="#F8FAFC" text-anchor="start">SKY130 two-stage Miller OP — white-line layout plan</text>
+<text x="48" y="82" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="15" font-weight="400" fill="#94A3B8" text-anchor="start">layout structure + circuit reference in one view · white lines are placement/annotation, not a legal layout</text>
+<text x="48" y="104" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="400" fill="#64748B" text-anchor="start">v0.1 · not to scale · 10 MOS + 1 cap</text>
+<line x1="350" y1="140" x2="350" y2="1010" stroke="#64748B" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<text x="48" y="150" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="start">CIRCUIT REFERENCE</text>
+<rect x="64" y="180" width="210" height="48" rx="8" fill="none" stroke="#22D3EE" stroke-width="1.4" opacity="1"/>
+<text x="74" y="200" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#22D3EE" text-anchor="start">INP / INN</text>
+<text x="74" y="216" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">differential input</text>
+<line x1="169" y1="228" x2="169" y2="258" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="169" y1="258" x2="164.68517015256216" y2="250.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="169" y1="258" x2="173.31482984743784" y2="250.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="64" y="260" width="210" height="48" rx="8" fill="none" stroke="#22D3EE" stroke-width="1.4" opacity="1"/>
+<text x="74" y="280" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#22D3EE" text-anchor="start">DP  M1/M2</text>
+<text x="74" y="296" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">input pair</text>
+<line x1="169" y1="308" x2="169" y2="338" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="169" y1="338" x2="164.68517015256216" y2="330.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="169" y1="338" x2="173.31482984743784" y2="330.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="64" y="340" width="210" height="48" rx="8" fill="none" stroke="#FBBF24" stroke-width="1.4" opacity="1"/>
+<text x="74" y="360" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#FBBF24" text-anchor="start">CM  M3/M4</text>
+<text x="74" y="376" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">PMOS load mirror</text>
+<line x1="169" y1="388" x2="169" y2="418" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="169" y1="418" x2="164.68517015256216" y2="410.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="169" y1="418" x2="173.31482984743784" y2="410.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="64" y="420" width="210" height="48" rx="8" fill="none" stroke="#F59E0B" stroke-width="1.4" opacity="1"/>
+<text x="74" y="440" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="start">OUT  M6/M7</text>
+<text x="74" y="456" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">second stage</text>
+<line x1="169" y1="468" x2="169" y2="498" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="169" y1="498" x2="164.68517015256216" y2="490.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="169" y1="498" x2="173.31482984743784" y2="490.10175694298664" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="64" y="500" width="210" height="48" rx="8" fill="none" stroke="#F59E0B" stroke-width="1.4" opacity="1"/>
+<text x="74" y="520" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="start">VOUT</text>
+<text x="74" y="536" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">output</text>
+<rect x="64" y="620" width="210" height="48" rx="8" fill="none" stroke="#34D399" stroke-width="1.4" opacity="1"/>
+<text x="74" y="640" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#34D399" text-anchor="start">TAIL/BIAS  M5/M8</text>
+<text x="74" y="656" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">mirror + enable</text>
+<line x1="169" y1="620" x2="169" y2="590" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="169" y1="590" x2="173.31482984743784" y2="597.8982430570134" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="169" y1="590" x2="164.68517015256216" y2="597.8982430570134" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="64" y="700" width="210" height="48" rx="8" fill="none" stroke="#F472B6" stroke-width="1.4" opacity="1"/>
+<text x="74" y="720" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F472B6" text-anchor="start">EN  M9/M10</text>
+<text x="74" y="736" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">active-high enable</text>
+<line x1="169" y1="700" x2="169" y2="668" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="169" y1="668" x2="173.31482984743784" y2="675.8982430570134" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="169" y1="668" x2="164.68517015256216" y2="675.8982430570134" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="64" y="780" width="210" height="48" rx="8" fill="none" stroke="#A78BFA" stroke-width="1.4" opacity="1"/>
+<text x="74" y="800" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#A78BFA" text-anchor="start">CC  C1</text>
+<text x="74" y="816" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">3 pF Miller</text>
+<line x1="274" y1="444" x2="300" y2="444" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round" opacity="1"/>
+<line x1="300" y1="444" x2="292.10175694298664" y2="448.3148298474378" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="300" y1="444" x2="292.10175694298664" y2="439.6851701525622" stroke="#F8FAFC" stroke-width="1.4" stroke-linecap="round"/>
+<text x="304" y="448" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">to OUT node</text>
+<text x="64" y="860" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="start">I0 ideal 30 µA</text>
+<text x="64" y="878" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#64748B" text-anchor="start">real bias TBD</text>
+<rect x="430" y="180" width="1270" height="770" rx="8" fill="none" stroke="#F8FAFC" stroke-width="2.0" opacity="1"/>
+<text x="446" y="170" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="start">LAYOUT PLAN</text>
+<text x="446" y="944" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">white = device/ring/keepout · dashed = proposed dummy or ring</text>
+<text x="800" y="160" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#FBBF24" text-anchor="middle">VDD</text>
+<line x1="800" y1="180" x2="800" y2="200" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="800" y="1015" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#94A3B8" text-anchor="middle">VSS</text>
+<line x1="800" y1="950" x2="800" y2="1000" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="420" y="520" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="700" fill="#22D3EE" text-anchor="end">INP</text>
+<text x="420" y="570" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="700" fill="#22D3EE" text-anchor="end">INN</text>
+<line x1="430" y1="515" x2="520" y2="515" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="430" y1="565" x2="520" y2="565" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="1712" y="620" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="start">VOUT</text>
+<line x1="1700" y1="620" x2="1740" y2="620" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="850" y="980" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="700" fill="#F472B6" text-anchor="middle">EN</text>
+<line x1="850" y1="950" x2="850" y2="990" stroke="#F472B6" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<rect x="500" y="235" width="340" height="200" rx="8" fill="none" stroke="#F8FAFC" stroke-width="1.4" opacity="1" stroke-dasharray="5 6"/>
+<line x1="500" y1="235" x2="516" y2="235" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="500" y1="235" x2="500" y2="251" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="235" x2="824" y2="235" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="235" x2="840" y2="251" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="500" y1="435" x2="516" y2="435" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="500" y1="435" x2="500" y2="419" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="435" x2="824" y2="435" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="435" x2="840" y2="419" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="500" y="227" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="start">RING</text>
+<text x="500" y="225" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start">CM</text>
+<rect x="530" y="270" width="130" height="120" rx="3" fill="none" stroke="#FBBF24" stroke-width="2.0" opacity="1"/>
+<rect x="540.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<rect x="569.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<rect x="598.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<rect x="627.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<line x1="536" y1="275" x2="654" y2="275" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="536" y1="385" x2="654" y2="385" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="530" y="262" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#FBBF24" text-anchor="start">M3_CM</text>
+<text x="530" y="406" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">0.75/0.5</text>
+<rect x="680" y="270" width="130" height="120" rx="3" fill="none" stroke="#FBBF24" stroke-width="2.0" opacity="1"/>
+<rect x="690.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<rect x="719.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<rect x="748.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<rect x="777.0" y="280" width="23.0" height="100" rx="1" fill="none" stroke="#FBBF24" stroke-width="1.8" opacity="1"/>
+<line x1="686" y1="275" x2="804" y2="275" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="686" y1="385" x2="804" y2="385" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="680" y="262" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#FBBF24" text-anchor="start">M4_CM</text>
+<text x="680" y="406" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">0.75/0.5</text>
+<rect x="505" y="285" width="14" height="70" rx="2" fill="none" stroke="#F8FAFC" stroke-width="1.3" opacity="1" stroke-dasharray="4 4"/>
+<text x="512.0" y="323.0" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="8" font-weight="700" fill="#94A3B8" text-anchor="middle">DM</text>
+<rect x="821" y="285" width="14" height="70" rx="2" fill="none" stroke="#F8FAFC" stroke-width="1.3" opacity="1" stroke-dasharray="4 4"/>
+<text x="828.0" y="323.0" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="8" font-weight="700" fill="#94A3B8" text-anchor="middle">DM</text>
+<rect x="500" y="455" width="340" height="220" rx="8" fill="none" stroke="#F8FAFC" stroke-width="1.4" opacity="1" stroke-dasharray="5 6"/>
+<line x1="500" y1="455" x2="516" y2="455" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="500" y1="455" x2="500" y2="471" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="455" x2="824" y2="455" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="455" x2="840" y2="471" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="500" y1="675" x2="516" y2="675" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="500" y1="675" x2="500" y2="659" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="675" x2="824" y2="675" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="840" y1="675" x2="840" y2="659" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="500" y="447" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="start">RING</text>
+<text x="500" y="445" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="start">DP</text>
+<rect x="530" y="500" width="130" height="140" rx="3" fill="none" stroke="#22D3EE" stroke-width="2.0" opacity="1"/>
+<rect x="540.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<rect x="569.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<rect x="598.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<rect x="627.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<line x1="536" y1="505" x2="654" y2="505" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="536" y1="635" x2="654" y2="635" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="530" y="492" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#22D3EE" text-anchor="start">M1_DP</text>
+<text x="530" y="656" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">0.75/0.5</text>
+<rect x="680" y="500" width="130" height="140" rx="3" fill="none" stroke="#22D3EE" stroke-width="2.0" opacity="1"/>
+<rect x="690.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<rect x="719.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<rect x="748.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<rect x="777.0" y="510" width="23.0" height="120" rx="1" fill="none" stroke="#22D3EE" stroke-width="1.8" opacity="1"/>
+<line x1="686" y1="505" x2="804" y2="505" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="686" y1="635" x2="804" y2="635" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="680" y="492" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#22D3EE" text-anchor="start">M2_DP</text>
+<text x="680" y="656" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">0.75/0.5</text>
+<rect x="505" y="520" width="14" height="80" rx="2" fill="none" stroke="#F8FAFC" stroke-width="1.3" opacity="1" stroke-dasharray="4 4"/>
+<text x="512.0" y="563.0" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="8" font-weight="700" fill="#94A3B8" text-anchor="middle">DM</text>
+<rect x="821" y="520" width="14" height="80" rx="2" fill="none" stroke="#F8FAFC" stroke-width="1.3" opacity="1" stroke-dasharray="4 4"/>
+<text x="828.0" y="563.0" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="8" font-weight="700" fill="#94A3B8" text-anchor="middle">DM</text>
+<text x="520" y="690" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F8FAFC" text-anchor="start">TAIL/BIAS</text>
+<rect x="520" y="730" width="100" height="120" rx="3" fill="none" stroke="#34D399" stroke-width="2.0" opacity="1"/>
+<rect x="530.0" y="740" width="37.0" height="100" rx="1" fill="none" stroke="#34D399" stroke-width="1.8" opacity="1"/>
+<rect x="573.0" y="740" width="37.0" height="100" rx="1" fill="none" stroke="#34D399" stroke-width="1.8" opacity="1"/>
+<line x1="526" y1="735" x2="614" y2="735" stroke="#34D399" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="526" y1="845" x2="614" y2="845" stroke="#34D399" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="520" y="722" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#34D399" text-anchor="start">M5_TAIL</text>
+<text x="520" y="866" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">0.75/0.5</text>
+<rect x="630" y="730" width="100" height="120" rx="3" fill="none" stroke="#34D399" stroke-width="2.0" opacity="1"/>
+<rect x="640.0" y="740" width="37.0" height="100" rx="1" fill="none" stroke="#34D399" stroke-width="1.8" opacity="1"/>
+<rect x="683.0" y="740" width="37.0" height="100" rx="1" fill="none" stroke="#34D399" stroke-width="1.8" opacity="1"/>
+<line x1="636" y1="735" x2="724" y2="735" stroke="#34D399" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="636" y1="845" x2="724" y2="845" stroke="#34D399" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="630" y="722" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#34D399" text-anchor="start">M8_BIAS</text>
+<text x="630" y="866" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">0.75/0.5</text>
+<text x="520" y="885" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">M5/M8 ratio · single tail?</text>
+<text x="780" y="690" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F8FAFC" text-anchor="start">EN</text>
+<rect x="780" y="730" width="75" height="120" rx="3" fill="none" stroke="#F472B6" stroke-width="2.0" opacity="1"/>
+<rect x="790.0" y="740" width="24.5" height="100" rx="1" fill="none" stroke="#F472B6" stroke-width="1.8" opacity="1"/>
+<rect x="820.5" y="740" width="24.5" height="100" rx="1" fill="none" stroke="#F472B6" stroke-width="1.8" opacity="1"/>
+<line x1="786" y1="735" x2="849" y2="735" stroke="#F472B6" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="786" y1="845" x2="849" y2="845" stroke="#F472B6" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="780" y="722" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F472B6" text-anchor="start">M9_EN</text>
+<text x="780" y="866" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">2/0.5</text>
+<rect x="865" y="730" width="85" height="120" rx="3" fill="none" stroke="#F472B6" stroke-width="2.0" opacity="1"/>
+<rect x="875.0" y="740" width="29.5" height="100" rx="1" fill="none" stroke="#F472B6" stroke-width="1.8" opacity="1"/>
+<rect x="910.5" y="740" width="29.5" height="100" rx="1" fill="none" stroke="#F472B6" stroke-width="1.8" opacity="1"/>
+<line x1="871" y1="735" x2="944" y2="735" stroke="#F472B6" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="871" y1="845" x2="944" y2="845" stroke="#F472B6" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="865" y="722" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F472B6" text-anchor="start">M10_EN_PD</text>
+<text x="865" y="866" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">1/0.5</text>
+<text x="780" y="885" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">EN=0: M9 off · M10 pulls high</text>
+<rect x="1000" y="490" width="250" height="240" rx="3" fill="none" stroke="#A78BFA" stroke-width="2.0" opacity="1"/>
+<rect x="1010.0" y="500" width="53.0" height="220" rx="1" fill="none" stroke="#A78BFA" stroke-width="1.8" opacity="1"/>
+<rect x="1069.0" y="500" width="53.0" height="220" rx="1" fill="none" stroke="#A78BFA" stroke-width="1.8" opacity="1"/>
+<rect x="1128.0" y="500" width="53.0" height="220" rx="1" fill="none" stroke="#A78BFA" stroke-width="1.8" opacity="1"/>
+<rect x="1187.0" y="500" width="53.0" height="220" rx="1" fill="none" stroke="#A78BFA" stroke-width="1.8" opacity="1"/>
+<line x1="1006" y1="495" x2="1244" y2="495" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="1006" y1="725" x2="1244" y2="725" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="1000" y="482" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#A78BFA" text-anchor="start">C1_CC</text>
+<text x="1000" y="746" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">3 pF · area dominant</text>
+<text x="1000" y="760" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">output node · parasitic sensitive</text>
+<rect x="1320" y="320" width="300" height="180" rx="3" fill="none" stroke="#F59E0B" stroke-width="2.0" opacity="1"/>
+<rect x="1330.0" y="330" width="137.0" height="160" rx="1" fill="none" stroke="#F59E0B" stroke-width="1.8" opacity="1"/>
+<rect x="1473.0" y="330" width="137.0" height="160" rx="1" fill="none" stroke="#F59E0B" stroke-width="1.8" opacity="1"/>
+<line x1="1326" y1="325" x2="1614" y2="325" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="1326" y1="495" x2="1614" y2="495" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="1320" y="312" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="start">M6_OUT</text>
+<text x="1320" y="516" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">PMOS · 2 fingers · wide metal</text>
+<rect x="1320" y="590" width="300" height="180" rx="3" fill="none" stroke="#F59E0B" stroke-width="2.0" opacity="1"/>
+<rect x="1330.0" y="600" width="280.0" height="160" rx="1" fill="none" stroke="#F59E0B" stroke-width="1.8" opacity="1"/>
+<line x1="1326" y1="595" x2="1614" y2="595" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<line x1="1326" y1="765" x2="1614" y2="765" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+<text x="1320" y="582" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="start">M7_OUT</text>
+<text x="1320" y="786" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">NMOS · 6.5u · wide metal</text>
+<text x="1320" y="805" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="start">wide metal / multi-via / EM</text>
+<rect x="910" y="320" width="90" height="60" rx="5" fill="none" stroke="#34D399" stroke-width="1.2" opacity="1" stroke-dasharray="4 4"/>
+<text x="955" y="348" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="11" font-weight="700" fill="#34D399" text-anchor="middle">I0</text>
+<text x="955" y="366" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="9" font-weight="400" fill="#94A3B8" text-anchor="middle">30 µA</text>
+<line x1="430" y1="920" x2="1700" y2="920" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<line x1="430" y1="915" x2="430" y2="925" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<line x1="1700" y1="915" x2="1700" y2="925" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<text x="1065.0" y="910" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="middle">block width ~97 µm (not to scale)</text>
+<line x1="1720" y1="200" x2="1720" y2="900" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<line x1="1715" y1="200" x2="1725" y2="200" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<line x1="1715" y1="900" x2="1725" y2="900" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<text x="1732" y="550.0" font-family="'Noto Sans Mono CJK SC','Noto Sans Mono',monospace" font-size="10" font-weight="400" fill="#94A3B8" text-anchor="start">height ~51 µm</text>
+<line x1="48" y1="1040" x2="1752" y2="1040" stroke="#64748B" stroke-width="1" stroke-linecap="round" opacity="1"/>
+<text x="48" y="1068" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#94A3B8" text-anchor="start">white-line layout plan · circuit reference on the left · same design, one view</text>
+<text x="1752" y="1068" font-family="'Noto Sans CJK SC','Noto Sans CJK JP',sans-serif" font-size="11" font-weight="400" fill="#64748B" text-anchor="end">v0.1 · synthetic SKY130 target</text>
 </svg>
