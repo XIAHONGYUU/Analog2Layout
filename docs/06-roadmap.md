@@ -23,12 +23,13 @@
 - [x] BGR vs VCOM 模块优先级对比
 - [x] Principle / Pattern / Template 骨架
 - [x] `agent/prompts/compile_layout_card.md`
-- [x] 六个示例（LDO 主目标 + OP unit test）+ unittest + GitHub Actions
+- [x] 七个示例（LDO 主目标 + OP unit test + class-AB review）+ unittest + GitHub Actions
 
 ## v0.2 — 把 guideline 工作层填厚
 
 - [x] SKY130 1.8V LDO 作为主目标（41 MOS + pass FET + feedback/enable/startup）
 - [x] LDO agent role proposal（41 explicit / 14 groups；analog review pending）
+- [x] LDO 无上游截图；补一个用于判断的 class-AB schematic + netlist（16 MOS）
 - [ ] LDO R/C/X 面积、14 组多行 floorplan、LDO white-line/card
 
 **目标**：让“一页 card + 下钻”这套结构看起来像一个真实可用的工作区。

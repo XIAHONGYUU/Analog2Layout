@@ -39,6 +39,8 @@
 > **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [snapshot](docs/targets/sky130-ldo/)。
 >
 > **Unit test**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 MOS + 1 cap；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png)。
+>
+> **有图有网表的 review target**：[class-AB CMOS OP](examples/classab_opamp/README.md)。16 MOS、2 V、class-AB 输出级；[schematic](examples/classab_opamp/schematic.png) · [netlist](examples/classab_opamp/opamp.sp)。
 
 ## 一条链
 
@@ -416,6 +418,7 @@ examples/
   name_only_ota/        只有名字、没有 role= 的网表示例
   sky130_two_stage_opamp/  SKY130 两级 Miller OP（小目标 / unit test）
   sky130_ldo_01v8/        SKY130 1.8V LDO 主目标（41 MOS + pass FET + enable/startup）
+  classab_opamp/          有 schematic + netlist 的 16 MOS class-AB review target
 layout-guideline/       AI-native Layout Guideline 工作层
   00-workflow/          角色、步骤、交付物、版本
   01-principles/        匹配、电源、寄生、ESD、敏感区/复用
@@ -455,7 +458,7 @@ tests/                  unittest，无第三方依赖
 - BGR vs VCOM 的模块优先级对比
 - 目标 bbox/aspect 的变体概念 + 问题回流 `07-problems/`
 - SKY130 两级 Miller OP 真实目标（10 MOS + 1 cap，含 bias/enable）
-- 六个示例（LDO 主目标 + OP unit test）+ 测试 + CI
+- 七个示例（LDO 主目标 + OP unit test + class-AB review）+ 测试 + CI
 
 **v0.2**
 - 面积模型：device_core / sensitive_core / flexible_area / reuse_candidate

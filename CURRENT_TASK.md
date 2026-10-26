@@ -72,23 +72,25 @@ service, or audit service.
    adjusted to avoid clipping.
 1. (done) MOSCAP density confirmed as 2 fF/µm²; white-line v0.3 redrawn to
    strict scale with dummies, separate rings, and MOSCAP.
-2. LDO is now the primary target; OP is a unit test. Review the agent role
-   proposal in `examples/sky130_ldo_01v8/ldo.annotated.sp` (41 explicit roles,
-   14 groups, pass FET = 83.4% of device area) against the reconstructed
-   block schematic in `docs/targets/sky130-ldo/schematic.png`.
-3. Add `XR*` resistor / `XC*` MIM area and `x1/x2` level-shifter black boxes.
-4. Fix the 14-group floorplan: the pass FET is folded, but the block is still
+2. LDO is now the primary target; OP is a unit test. LDO has no upstream
+   screenshot, so `examples/classab_opamp/` was added as a **16-MOS class-AB
+   review target with both schematic.png and opamp.sp**. Use it to judge the role
+   vocabulary before applying it to the 41-MOS LDO.
+3. Review the agent role proposal in `examples/sky130_ldo_01v8/ldo.annotated.sp`
+   (41 explicit roles, 14 groups, pass FET = 83.4% of device area).
+4. Add `XR*` resistor / `XC*` MIM area and `x1/x2` level-shifter black boxes.
+5. Fix the 14-group floorplan: the pass FET is folded, but the block is still
    605.6 µm wide because all groups are packed into 3 bands. Then build the LDO
    white-line/card.
-5. Use `references/README.md` as the reading map for *The Art of Analog Layout*
+6. Use `references/README.md` as the reading map for *The Art of Analog Layout*
    (licensed local copy under gitignored `references/private/`).
-6. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
+7. Split the area model into `device_core` / `sensitive_core` / `flexible_area` /
    `reuse_candidate`, including ring/WPE/dummy/shielding/routing reservation.
-7. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
+8. Add a target-bbox/aspect variant generator (square / wide / tall) and compare
    utilization / power return / matching-group stretch.
-8. Add 1–2 real problem records from this target to `07-problems/` and show the
+9. Add 1–2 real problem records from this target to `07-problems/` and show the
    resulting principle/pattern patch.
-9. Add a small card completeness check (not a review service): flags missing
+10. Add a small card completeness check (not a review service): flags missing
    `ASK` / `UNKNOWN` / owner / evidence / source links.
 
 ## Constraints
