@@ -303,3 +303,29 @@ should survive individual tasks.
     remain open;
   - no DRC/LVS claims; no full CT ring.
 - **Related:** `examples/classa_opamp/README.md`, `examples/classa_opamp/area-min.png`, `examples/classa_opamp/area-min.svg`, `CURRENT_TASK.md`.
+
+---
+
+## D-017 — White-line skill is hybrid prompt + deterministic scripts, with JSON input
+
+- **Status:** proposed
+- **Date:** 2026-10-28
+- **Owner:** analog design + layout
+- **Source:** user discussion on skill packaging
+- **Decision:** The schematic-to-white-line skill is **not prompt-only**. It will
+  be a hybrid:
+  - prompt layer for clarification, intent, tradeoff explanation, and reporting;
+  - deterministic scripts for arrays, placement, area, geometry assertions, and
+    rendering;
+  - a unified JSON input contract; the netlist remains a semantic source only.
+- **Consequences:**
+  - LLM output is not geometry truth;
+  - R/C-in-DNW, ring AA, dummy geometry, DNW gap, and local-empty checks are
+    script assertions, not prose claims;
+  - acceptance priorities are not fixed from one class-A case; hard constraints,
+    area objective, and soft constraints (input-center tolerance, AR cap, local
+    empty) will be calibrated on 5T OTA, two-stage Miller OTA, class-A, SKY130
+    two-stage OP, and LDO;
+  - no skill code/schema is committed yet; first artifacts are
+    `white-line-input.schema.json` and the class-A golden case.
+- **Related:** `CURRENT_TASK.md`, `examples/classa_opamp/area-min.png`.

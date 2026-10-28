@@ -7,7 +7,7 @@ between analog and layout engineers: role/area → floorplan/white-line intent �
 Layout Card → layout delta. This is not a production rule base, signoff tool,
 training assistant, review service, or audit service.
 
-## Current state (2026-10-28)
+## Current state (2026-10-28 end of day)
 
 - The deterministic a2l core still works: name/role → five-level area → floorplan
   sketch → layout delta; 49 unittest tests pass.
@@ -46,16 +46,39 @@ training assistant, review service, or audit service.
   variant, exact R/C model footprint, input-center/local-route verification, and
   returning to the LDO white-line/card.
 
+## White-line skill direction (2026-10-28)
+
+- Decision under evaluation: **hybrid prompt + deterministic scripts**, not
+  prompt-only. Prompt owns clarification/explanation; scripts own geometry,
+  area, assertions, and rendering.
+- Input will be a **unified JSON** contract. Netlist is a semantic source only;
+  the JSON is the geometry contract.
+- Acceptance priorities are not fixed from the class-A case yet. Hard constraints,
+  primary objective (minimum area), and soft constraints (input-center tolerance,
+  AR cap, local empty rectangles) must be calibrated on multiple structures.
+- Proposed first benchmark set:
+  1. 5T OTA;
+  2. two-stage Miller OTA;
+  3. class-A 16-MOS (golden case);
+  4. SKY130 two-stage OP (real small target);
+  5. LDO 41-MOS (large/pass-FET stress test).
+- No skill code or schema has been committed yet. The next step is the input
+  schema + class-A golden case, then multi-structure comparison.
+- The selected area-min layout (`area-min.png`, 225.9×69.8, 15,766 µm², 74.6%)
+  remains the current class-A reference candidate; open checks are input-center,
+  local empty rectangles, and parasitic/power-return implications.
+
 ## Next atomic action
 
-1. Review the selected area-min full render against the remaining constraints:
-   - input-pair center;
-   - local empty rectangles beyond the passive bay;
-   - R/C ring/DNW enclosure;
-   - parasitic/power-return implications of AR 3.24.
-2. Decide whether to keep AR 3.24 as the class-A reference baseline or use the
-   1.21 baseline when the target slot is less wide.
-3. Then resume the LDO target: R/C/X area, 14-group floorplan, LDO white-line/card.
+1. Define `white-line-input.schema.json` with the minimum device/passive/
+   constraint/rule fields.
+2. Build the class-A golden case from that JSON and record expected metrics.
+3. Run the same flow on 3–5 structures and collect:
+   - total area / aspect / effective area / utilization;
+   - input-center offset;
+   - local empty rectangles;
+   - which constraints eliminate candidates.
+4. Use that data to propose priority tiers, then write `SKILL.md` and scripts.
 
 ## Constraints
 
@@ -75,8 +98,10 @@ training assistant, review service, or audit service.
 
 ## Open questions
 
-- Effective area: ring inner + AA is fixed; include CT/li/M1? currently no.
-- Is input-pair center a hard constraint for the area-first candidate?
-- Is AR 3.24 acceptable as the default class-A reference shape?
-- Do we keep `sd_mode=shared` for the matching pairs?
-- Do we add top/bottom half-W dummies to the input pair?
+- Which 3–5 structures should be the first benchmark set?
+- What fields are mandatory in the input JSON?
+- Is input-pair center a hard constraint or a configurable tolerance?
+- Is AR a hard slot constraint or a soft preference?
+- Which local-empty rule is hard for matched arrays vs non-matched areas?
+- Do we keep `sd_mode=shared` for matched pairs in the skill default?
+- Does the skill need to generate candidate SVGs, or only the selected one plus a manifest?

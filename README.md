@@ -64,6 +64,7 @@ flowchart LR
 | 能跑（CLI） | 名字/角色解析 → 五层面积 → 布局草图 → layout delta |
 | 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
 | 正在补全 | 真实 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
+| 正在设计 | white-line skill：hybrid prompt + deterministic JSON/scripts；验收优先级待多结构校准 |
 | 2026-10-26 新增 | class-A 16-MOS 白线练习；灵活 rows、gate pitch L+0.36、同形 dummy、DNW1/DNW2、R/C 进入主 DNW 并围环、ring AA 计入、有效面积 73.7% |
 
 ## 这个项目体现的能力
@@ -464,9 +465,10 @@ tests/                  unittest，无第三方依赖
 - 目标 bbox/aspect 的变体概念 + 问题回流 `07-problems/`
 - SKY130 两级 Miller OP 真实目标（10 MOS + 1 cap，含 bias/enable）
 - 七个示例（LDO 主目标 + OP unit test + class-A layout reference）+ 测试 + CI
-- class-A 白线：flexible rows / DM / DNW / NW-PW / ring AA / 有效面积 73.7%
+- class-A 白线：flexible rows / DM / DNW / NW-PW / ring AA / area-min full 15,766 µm² / 74.6%
 
 **v0.2**
+- [ ] white-line skill：JSON input schema + deterministic checker + class-A golden case + 3–5 结构 benchmark
 - 面积模型：device_core / sensitive_core / flexible_area / reuse_candidate
 - target bbox/aspect 的 floorplan 变体生成器（square / wide / tall）
 - 2–3 条真实问题记录 → guideline patch
