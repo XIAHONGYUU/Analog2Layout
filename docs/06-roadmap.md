@@ -31,7 +31,7 @@
 - [x] LDO agent role proposal（41 explicit / 14 groups；analog review pending）
 - [x] LDO 无上游截图；补一个用于判断的 class-A schematic + netlist（16 MOS；上游 class AB 说法与网表不符）
 - [x] class-A layout reference：flexible rows / interdigitated arrays / shared DM / DNW1-DNW2 / R-C 入面积 / NW-PW 示意
-- [x] effective-area 记账：ring 内 + R/C / DNW 外框；当前 73.7%（DNW sum）/ 67.7%（bbox）/ 81.6%（含 ring）
+- [x] effective-area 记账：MOS ring outer + R/C ring / 矩形 DNW bbox；baseline 73.7%，area-min full render 15,766 µm² / 74.6% / AR3.24
 - [ ] 2026-10-27 deep review：effective-area 口径、CT/S/D 模式、是否继续 LDO
 - [ ] LDO R/C/X 面积、14 组多行 floorplan、LDO white-line/card
 

@@ -33,6 +33,29 @@ All dimensions are **W/L in µm**; `m` is the parallel multiplicity; total W = W
 | M13 | 8/1 | 80 | 640 | M14 | 18/1 | 100 | 1800 |
 | M15 | 8/1 | 16 | 128 | M16 | 2/2 | 81 | 162 |
 
+## Area-first candidate (2026-10-28)
+
+![Area-min full layout](area-min.png)
+
+This is the selected area-first white-line candidate:
+
+```text
+bbox        = 225.9 × 69.8 µm
+area        = 15,766 µm²
+AR          = 3.24
+effective   = 11,754 µm²
+utilization = 74.6%
+```
+
+- per-group rows: LOAD 3, IN 2, MIRROR_P 3 / FOLD 2, MIRROR_N 3, BIAS 11;
+- M14 output in its own DNW at the outer right;
+- C1/R1 are **inside DNW1**, each with its own AA ring; ring AA is counted;
+- R/C passive bay has no residual local gap;
+- this is a full render, but still a white-line intent, not DRC/LVS signoff.
+
+The earlier packing estimate of 14,051 µm² omitted the 2 µm group gaps and the
+passive-bay insertion; the corrected full layout is **15,766 µm²**.
+
 ## White-line layout plan
 
 ![Compact white-line](white-line.png)
@@ -48,29 +71,30 @@ This version uses flexible array rows and a compact two-row main placement:
 - no `FILL DM` blocks and no fake dummy fill;
 - DNW1 is a stepped outline; M14 is in DNW2 at the outer right, 8 µm away;
 - input pair in the center row; PMOS upper, NMOS lower;
-- C1/R1 are placed **between DNW1 and DNW2**, and their area is counted.
+- C1/R1 are placed **inside DNW1**, each with an AA ring; their area and ring AA are counted.
 
-Approximate area accounting (inside-ring effective area + R/C, divided by the
-DNW1+DNW2 outer area):
+Area accounting (MOS ring outer + guarded C1/R1 ring outer, divided by the
+rectangular bbox around all DNW outer boundaries):
 
 ```text
-ring-inner effective area ≈ 11,690 µm²
-C1 + R1                    ≈     74 µm²
-effective total            ≈ 11,764 µm²
-DNW1 + DNW2 outer          ≈ 15,965 µm²
+MOS ring outer             ≈ 12,956 µm²
+C1/R1 ring outer           ≈     199 µm²
+effective total            ≈ 13,155 µm²
+module bbox                ≈ 147.2 × 121.2 = 17,845 µm²
 utilization                ≈ 73.7%
 ```
 
-If the denominator is the total outer bounding box including the 8 µm DNW gap and
-C1/R1, utilization is about **67.7%**.
-
-If “inside ring” includes the ring metal itself, the number is about **81.6%**.
+The ring AA is explicitly included; R/C are inside DNW1 and have their own AA
+rings. This is the earlier balanced baseline; the selected area-first candidate
+is [area-min.png](area-min.png).
 
 Detail crop:
 
 ![White-line detail](white-line-detail.png)
 
 Source: [white-line.svg](white-line.svg) · generator: [make_white_line.py](make_white_line.py).
+
+Area-min source: [area-min.svg](area-min.svg) · generator: [make_area_min.py](make_area_min.py).
 
 ## What the netlist actually is
 

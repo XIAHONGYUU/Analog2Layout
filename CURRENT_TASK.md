@@ -2,57 +2,60 @@
 
 ## Goal
 
-Maintain **Analog2Layout** as an **evolving workspace** for technical interaction
+Maintain **Analog2Layout** as an evolving workspace for technical interaction
 between analog and layout engineers: role/area → floorplan/white-line intent →
 Layout Card → layout delta. This is not a production rule base, signoff tool,
 training assistant, review service, or audit service.
 
-## Current state (2026-10-26 end of day)
+## Current state (2026-10-28)
 
-- The workspace still has the deterministic a2l core: name/role → five-level area
-  → floorplan sketch → layout delta; 49 unittest tests pass.
-- The SKY130 two-stage OP remains a **unit test** (10 MOS + 1 cap); the SKY130
-  1.8 V LDO remains the **primary system target** but is **paused** while we
-  finish the layout-realization exercise.
-- A 16-MOS **class-A reference** was added from a real schematic/netlist
-  (`examples/classa_opamp/`). Upstream calls it class-AB, but the netlist only
-  drives M14; M13 is a PMOS current-source load. The target is corrected to
-  class-A.
-- User-defined sizing is recorded: W/L/m, M8/M9 = 108 (W=9, m=12), R1 2×3
-  m=4, C1 5 pF MOM fixed 5×10 µm = 50 µm².
-- White-line exercise (latest):
+- The deterministic a2l core still works: name/role → five-level area → floorplan
+  sketch → layout delta; 49 unittest tests pass.
+- The SKY130 two-stage OP remains a unit test; the SKY130 1.8 V LDO remains the
+  primary system target but is paused while the class-A layout-reference exercise
+  is being consolidated.
+- The 16-MOS class-A reference is corrected from the upstream class-AB label:
+  M13 is a PMOS current-source load; only M14 is signal-driven.
+- User-defined sizing is recorded: W/L/m, M8/M9 = 108 (W=9, m=12), R1 2×3 m=4,
+  C1 5 pF MOM fixed 5×10 µm = 50 µm².
+- White-line ground rules:
   - merged interdigitated arrays; shared DM at both ends; no fake `FILL DM`;
-  - flexible array rows (2/4/6 preferred, other rows allowed);
+  - flexible per-group rows (2/4/6 preferred, others allowed);
   - `sd_mode=shared`; gate pitch **L+0.36 µm**; ring gap **0.8 µm**; group gap
     **2 µm**;
-  - dummy fingers have the same finger geometry as active devices; only the
-    external `DM` label differs;
-  - input pair in the center row; PMOS upper / NMOS lower; M14 at the outer
-    right in its own DNW; DNW1/DNW2 gap **8 µm**;
-  - R/C placed between DNW1 and DNW2 and counted in area;
-  - NW/PW shown as simplified well outlines;
-  - no DRC/LVS or exact CT-ring drawing.
-- Effective-area accounting (current number):
-  - ring-inner effective area + R/C = **11,764 µm²**;
-  - DNW1+DNW2 outer area = **15,965 µm²**;
-  - utilization = **73.7%** by DNW sum; **67.7%** by total bbox; **81.6%** if
-    ring metal is included.
-- CT fit check: with 0.36 µm gate-to-gate S/D, one CT needs
-  0.055+0.17+0.04 = 0.265 µm, so it fits; W > 5.7 µm needs multiple CT rows.
-- Still open: exact NW/PW outlines, complete CT ring, top/bottom half-W dummy
-  variant, exact R/C model footprint, and returning to the LDO white-line/card.
-- Git: latest class-A white-line code plus this documentation update; CI green.
+  - dummy fingers have the same geometry as active fingers; only external `DM`
+    labels differ;
+  - R/C are **inside DNW1**, each with an AA ring; ring AA is counted;
+  - ring AA is explicitly part of effective area; no DRC/LVS or full CT ring.
+- Selected area-first full render:
+  - `area-min.png/svg`;
+  - bbox **225.9 × 69.8 µm**, area **15,766 µm²**, AR **3.24**;
+  - effective area **11,754 µm²**, utilization **74.6%**;
+  - per-group rows: LOAD 3, IN 2, MIRROR_P 3 / FOLD 2, MIRROR_N 3, BIAS 11;
+  - R/C passive bay has no residual local gap;
+  - input-center, local-route, and parasitic checks remain open.
+- Balanced baseline retained as `white-line.png/svg`:
+  - bbox 147.2 × 121.2 µm, area 17,845 µm², utilization 73.7%;
+  - useful for comparison; not the selected area-first version.
+- Aspect exploration: tall 0.71 / square 0.99 / mid 1.21 / wide 1.63 /
+  area-min 3.24. Full area ordering and metrics are in
+  `examples/classa_opamp/aspect-candidates.png`.
+- The 14,051 µm² packing estimate was invalid: it omitted the 2 µm group gaps and
+  passive-bay insertion. The corrected full render is **15,766 µm²**.
+- Still open: exact NW/PW boundaries, complete CT ring, top/bottom half-W dummy
+  variant, exact R/C model footprint, input-center/local-route verification, and
+  returning to the LDO white-line/card.
 
 ## Next atomic action
 
-1. Tomorrow: deep review of the layout flow, not another incremental tweak.
-2. Review the effective-area definition:
-   - ring inner vs ring metal included;
-   - DNW sum vs total bbox denominator;
-   - whether R/C and routing inside the DNW gap count.
-3. Decide whether the class-A exercise becomes the standard layout-reference case
-   or remains a teaching target beside the LDO.
-4. Then resume the LDO target: R/C/X area, 14-group floorplan, LDO white-line/card.
+1. Review the selected area-min full render against the remaining constraints:
+   - input-pair center;
+   - local empty rectangles beyond the passive bay;
+   - R/C ring/DNW enclosure;
+   - parasitic/power-return implications of AR 3.24.
+2. Decide whether to keep AR 3.24 as the class-A reference baseline or use the
+   1.21 baseline when the target slot is less wide.
+3. Then resume the LDO target: R/C/X area, 14-group floorplan, LDO white-line/card.
 
 ## Constraints
 
@@ -72,10 +75,8 @@ training assistant, review service, or audit service.
 
 ## Open questions
 
-- Effective area: include ring metal or only ring interior?
-- Denominator: sum of DNW outer areas or total DNW bounding box?
-- Do we keep `sd_mode=shared` for the class-A reference, or switch to separated
-  S/D for matched pairs later?
-- Do we add top/bottom half-W dummies to the input pair, or keep the flattened
-  left DNW?
-- What is the next layout-review milestone: CT ring, NW/PW spacing, or LDO?
+- Effective area: ring inner + AA is fixed; include CT/li/M1? currently no.
+- Is input-pair center a hard constraint for the area-first candidate?
+- Is AR 3.24 acceptable as the default class-A reference shape?
+- Do we keep `sd_mode=shared` for the matching pairs?
+- Do we add top/bottom half-W dummies to the input pair?

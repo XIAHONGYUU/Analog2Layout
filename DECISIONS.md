@@ -287,7 +287,7 @@ should survive individual tasks.
 - **Source:** user direction + class-A reference review
 - **Decision:** The 16-MOS class-A reference (`examples/classa_opamp/`) is used to
   exercise layout intent: merged/interdigitated arrays, shared DM, flexible array
-  rows, stepped DNW, outer M14 DNW, R/C in the DNW gap, and effective-area
+  rows, stepped DNW, outer M14 DNW, guarded R/C inside DNW1, and effective-area
   accounting. It is **not** a DRC/LVS/PEX signoff layout. `sd_mode=shared` is a
   temporary mode; the matching rule's "avoid shared S/D" remains a future
   decision.
@@ -296,7 +296,10 @@ should survive individual tasks.
   - dummy fingers use the same geometry as active fingers; only the external
     `DM` label differs; no fake `FILL DM` padding;
   - NW/PW are simplified outlines, not extracted wells;
-  - effective area = ring-inner area + R/C; max area = DNW1+DNW2 outer; current
-    utilization 73.7% (DNW sum), 67.7% (bbox), 81.6% (ring metal included);
+  - effective area = MOS ring outer (inner + ring AA) + guarded R/C ring outer;
+    max area = rectangular bbox enclosing all DNW outer boundaries;
+    rendered baseline is 17,845 µm² / 73.7%; selected area-first candidate is
+    15,766 µm² / 74.6% at 225.9×69.8 (AR 3.24); other local/parasitic checks
+    remain open;
   - no DRC/LVS claims; no full CT ring.
-- **Related:** `examples/classa_opamp/README.md`, `examples/classa_opamp/white-line.png`, `CURRENT_TASK.md`.
+- **Related:** `examples/classa_opamp/README.md`, `examples/classa_opamp/area-min.png`, `examples/classa_opamp/area-min.svg`, `CURRENT_TASK.md`.

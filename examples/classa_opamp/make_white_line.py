@@ -76,16 +76,27 @@ POS["FOLD_P"]=(0,row1_h+2)
 POS["MIRROR_N"]=(GD["FOLD_P"][0]+2,row1_h+2)
 POS["BIAS_N"]=(POS["MIRROR_N"][0]+GD["MIRROR_N"][0]+2,row1_h+2)
 row2_h=max(GD[g][1] for g in ("FOLD_P","MIRROR_N","BIAS_N"))
-main_w=max(POS[g][0]+GD[g][0] for g in ("MIRROR_P","IN_DP","LOAD_P","FOLD_P","MIRROR_N","BIAS_N"))
+base_main_w=max(POS[g][0]+GD[g][0] for g in ("MIRROR_P","IN_DP","LOAD_P","FOLD_P","MIRROR_N","BIAS_N"))
 main_h=row1_h+2+row2_h
+# Guarded passive bay inside DNW1: C1 over R1, both with AA rings.
+P_GAP=0.8; P_RING=1.0
+C1_W,C1_H=5.0,10.0
+R1_W,R1_H=4.5,6.5
+C1_OUT_W,C1_OUT_H=C1_W+2*(P_GAP+P_RING), C1_H+2*(P_GAP+P_RING)
+R1_OUT_W,R1_OUT_H=R1_W+2*(P_GAP+P_RING), R1_H+2*(P_GAP+P_RING)
+PB_X=max(POS[g][0]+GD[g][0] for g in ("MIRROR_P","IN_DP","LOAD_P"))+2.0
+PB_Y=4.0
+C1_OUT=(PB_X,PB_Y,C1_OUT_W,C1_OUT_H)
+R1_OUT=(PB_X,PB_Y+C1_OUT_H+2.0,R1_OUT_W,R1_OUT_H)
+C1=(PB_X+P_GAP+P_RING, PB_Y+P_GAP+P_RING)
+R1=(PB_X+P_GAP+P_RING, R1_OUT[1]+P_GAP+P_RING)
+main_w=max(base_main_w, PB_X+C1_OUT_W)
 OUT_X=main_w+14
 OUT_Y=max(0,(main_h-GD["OUT"][1])/2)
 POS["OUT"]=(OUT_X,OUT_Y)
-C1=(main_w+5, 10)
-R1=(main_w+5, 22)
 dnw2_h=GD["OUT"][1]+6
 layout_w=OUT_X+GD["OUT"][0]+4
-layout_h=max(main_h+3,R1[1]+4)
+layout_h=main_h+3
 
 W = int(OX + layout_w * S + 520)
 H = int(OY + layout_h * S + 160)
@@ -112,6 +123,7 @@ txt(34,82,"input center · PMOS upper · NMOS lower · M14 outer · W=finger hei
 
 # Two DNWs: DNW1 is a stepped outline around the two group rows; DNW2 is M14 only.
 row1_right=max(POS[g][0]+GD[g][0] for g in ("MIRROR_P","IN_DP","LOAD_P"))
+row1_right=max(row1_right, PB_X+C1_OUT_W)
 row2_right=max(POS[g][0]+GD[g][0] for g in ("FOLD_P","MIRROR_N","BIAS_N"))
 step_y=row1_h+1.0
 pts=[(-3,-3),(row1_right+3,-3),(row1_right+3,step_y),(row2_right+3,step_y),
@@ -132,9 +144,9 @@ def draw_group(g):
     ds = GROUPS[g]
     color = ds[0][4]
     a = A[g]
-    # ring
-    rect(gx, gy, ow, oh, fill="none", stroke=color, sw=1.2, rx=1)
-    rect(gx+RING_W, gy+RING_W, ow-2*RING_W, oh-2*RING_W, fill="none", stroke=color, sw=0.7, rx=1)
+    # ring: AA band + inner boundary
+    rect(gx, gy, ow, oh, fill="#d1fae5", stroke=color, sw=1.2, rx=1)
+    rect(gx+RING_W, gy+RING_W, ow-2*RING_W, oh-2*RING_W, fill="#f8fafc", stroke=color, sw=0.7, rx=1)
     # simplified well boundary (NW for PMOS, PW for NMOS); not a DRC drawing
     if g in ("MIRROR_P", "LOAD_P", "FOLD_P"):
         rect(gx-0.2, gy-0.2, ow+0.4, oh+0.4, fill="none", stroke="#1d4ed8", sw=0.5, dash="3 2")
@@ -202,14 +214,18 @@ def draw_group(g):
 for g in ORDER:
     draw_group(g)
 
-# C1 / R1
-c1x, c1y = C1
-rect(c1x, c1y, 5, 10, fill="#ede9fe", stroke="#7c3aed", sw=1.0)
-txt_um(c1x, c1y - 1.0, "C1_CC 5pF MOM 5×10", 6, "#5b21b6", 600)
-r1x, r1y = R1
+# C1 / R1 inside DNW1, each with an AA guard ring
+for (ox,oy,ow,oh), inner, label, col in (
+    (C1_OUT,(C1_W,C1_H),"C1_CC 5pF MOM 5×10","#5b21b6"),
+    (R1_OUT,(R1_W,R1_H),"R1 4×(2×3) 3.33k","#92400e"),
+):
+    rect(ox, oy, ow, oh, fill="#d1fae5", stroke="#0f766e", sw=0.8)
+    rect(ox+P_RING, oy+P_RING, ow-2*P_RING, oh-2*P_RING, fill="#f8fafc", stroke="#64748b", sw=0.5, dash="2 1")
+    txt_um(ox, oy-0.7, label, 5.8, col, 600)
+c1x,c1y=C1; rect(c1x,c1y,C1_W,C1_H,fill="#ede9fe",stroke="#7c3aed",sw=1.0)
+r1x,r1y=R1
 for i in range(4):
     rect(r1x + (i % 2)*2.5, r1y + (i // 2)*3.5, 2, 3, fill="#fef3c7", stroke="#b45309", sw=0.6)
-txt_um(r1x, r1y - 1.0, "R1 4×(2×3) 3.33k", 6, "#92400e", 600)
 
 # scale
 line(0, layout_h + 8, 50, layout_h + 8, stroke="#0f172a", sw=2)
@@ -236,17 +252,18 @@ txt(lx, ry+6, "DM = shared dummy column (both ends)", 6.5, "#64748b", family="'D
 txt(lx, ry+20, "ring 1.0 µm / gap 1.5 µm (edu)", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
 txt(lx, ry+34, "M13 PMOS current source · M14 output", 7, "#64748b", family="'DejaVu Sans Mono',monospace")
 
-# Effective area: inside ring + R/C; max area: DNW1 + DNW2 outer area
-ring_inner = sum(max(0, GD[g][0]-2*RING_W) * max(0, GD[g][1]-2*RING_W) for g in GROUPS)
-rc_area = 5*10 + 4*(2*3)
-dnw1_area = (row1_right+3-(-3))*(step_y-(-3)) + (row2_right+3-(-3))*(main_h+3-step_y)
-dnw2_area = (GD["OUT"][0]+6)*(GD["OUT"][1]+6)
-eff = ring_inner + rc_area
-util_sum = eff / (dnw1_area + dnw2_area)
-util_bbox = eff / (((OUT_X+GD["OUT"][0]+3)-(-3))*((max(main_h, GD["OUT"][1])+3)-(-3)))
-txt(lx,ry+60,f"effective area = ring inner + R/C = {eff:.0f} um2",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
-txt(lx,ry+72,f"max DNW area = DNW1+DNW2 = {dnw1_area+dnw2_area:.0f} um2",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
-txt(lx,ry+84,f"utilization = {util_sum*100:.1f}% (sum), {util_bbox*100:.1f}% (bbox)",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
+# Effective area: inside outer ring = inner + ring AA; R/C including its ring.
+# Denominator: rectangular bbox enclosing all DNW outer boundaries.
+mos_outer = sum(GD[g][0]*GD[g][1] for g in GROUPS)
+passive_outer = C1_OUT_W*C1_OUT_H + R1_OUT_W*R1_OUT_H
+eff = mos_outer + passive_outer
+bbox_w = (OUT_X+GD["OUT"][0]+3) - (-3)
+bbox_h = (max(main_h, GD["OUT"][1])+3) - (-3)
+bbox_area = bbox_w*bbox_h
+util = eff / bbox_area
+txt(lx,ry+60,f"effective = MOS ring outer + R/C ring = {eff:.0f} um2",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
+txt(lx,ry+72,f"module bbox = {bbox_w:.1f} x {bbox_h:.1f} = {bbox_area:.0f} um2",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
+txt(lx,ry+84,f"utilization = {util*100:.1f}% (ring AA included)",6.0,"#475569",family="'DejaVu Sans Mono',monospace")
 
 add('</svg>')
 Path('examples/classa_opamp/white-line.svg').write_text('\n'.join(out), encoding='utf-8')

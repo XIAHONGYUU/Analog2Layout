@@ -43,7 +43,8 @@
 >
 > **有图有网表的 review target**：[class-A CMOS OP](examples/classa_opamp/README.md)。16 MOS、2 V；上游 README 称 class AB，但按网表实际是 **class A（只有 M14 信号输出，M13 是 PMOS 电流源负载）**；[schematic](examples/classa_opamp/schematic.png) · [netlist](examples/classa_opamp/opamp.sp)。
 >
-> **2026-10-26 白线练习**：16-MOS class-A 的紧凑 layout intent。[White-line](examples/classa_opamp/white-line.png) · [detail](examples/classa_opamp/white-line-detail.png) · 有效面积 **11,764 µm²**，DNW1+DNW2 **15,965 µm²**，利用率 **73.7%**（DNW sum）/ **67.7%**（bbox）/ **81.6%**（含 ring）。
+> **2026-10-26 白线练习**：16-MOS class-A 的紧凑 layout intent。[White-line](examples/classa_opamp/white-line.png) · [detail](examples/classa_opamp/white-line-detail.png) · 有效面积 **13,155 µm²**，模块 bbox **147.2×121.2 = 17,845 µm²**，利用率 **73.7%**（ring AA 计入）。
+> **2026-10-28 area-first candidate**：[area-min.png](examples/classa_opamp/area-min.png) · bbox **225.9×69.8 = 15,766 µm²**，有效面积 **11,754 µm²**，利用率 **74.6%**。这是 full render；packing estimate 14,051 未计 2 µm group gaps，已作废。
 
 ## 一条链
 
@@ -63,7 +64,7 @@ flowchart LR
 | 能跑（CLI） | 名字/角色解析 → 五层面积 → 布局草图 → layout delta |
 | 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
 | 正在补全 | 真实 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
-| 2026-10-26 新增 | class-A 16-MOS 白线练习；灵活 rows、gate pitch L+0.36、同形 dummy、DNW1/DNW2、R/C 入面积、有效面积 73.7% |
+| 2026-10-26 新增 | class-A 16-MOS 白线练习；灵活 rows、gate pitch L+0.36、同形 dummy、DNW1/DNW2、R/C 进入主 DNW 并围环、ring AA 计入、有效面积 73.7% |
 
 ## 这个项目体现的能力
 
@@ -463,7 +464,7 @@ tests/                  unittest，无第三方依赖
 - 目标 bbox/aspect 的变体概念 + 问题回流 `07-problems/`
 - SKY130 两级 Miller OP 真实目标（10 MOS + 1 cap，含 bias/enable）
 - 七个示例（LDO 主目标 + OP unit test + class-A layout reference）+ 测试 + CI
-- class-A 白线：flexible rows / DM / DNW / NW-PW / 有效面积 73.7%
+- class-A 白线：flexible rows / DM / DNW / NW-PW / ring AA / 有效面积 73.7%
 
 **v0.2**
 - 面积模型：device_core / sensitive_core / flexible_area / reuse_candidate
