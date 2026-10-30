@@ -326,6 +326,8 @@ should survive individual tasks.
     area objective, and soft constraints (input-center tolerance, AR cap, local
     empty) will be calibrated on 5T OTA, two-stage Miller OTA, class-A, SKY130
     two-stage OP, and LDO;
-  - no skill code/schema is committed yet; first artifacts are
-    `white-line-input.schema.json` and the class-A golden case.
+  - first artifacts are now in place: `schemas/white_line_input.schema.json`,
+    `examples/classa_opamp/white-line-input.json`,
+    `examples/classa_opamp/white-line-expected.json`, and
+    `tests/test_white_line_input.py`; the deterministic compiler/checker is next.
 - **Related:** `CURRENT_TASK.md`, `examples/classa_opamp/area-min.png`.

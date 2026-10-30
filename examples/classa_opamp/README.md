@@ -96,6 +96,8 @@ Source: [white-line.svg](white-line.svg) · generator: [make_white_line.py](make
 
 Area-min source: [area-min.svg](area-min.svg) · generator: [make_area_min.py](make_area_min.py).
 
+Skill contract inputs: [white-line-input.json](white-line-input.json) · [expected metrics](white-line-expected.json).
+
 ## What the netlist actually is
 
 - **16 MOS** + one compensation cap (`C1_CC = 5 pF`);

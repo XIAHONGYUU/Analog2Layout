@@ -7,10 +7,10 @@ between analog and layout engineers: role/area → floorplan/white-line intent �
 Layout Card → layout delta. This is not a production rule base, signoff tool,
 training assistant, review service, or audit service.
 
-## Current state (2026-10-28 end of day)
+## Current state (2026-10-30)
 
 - The deterministic a2l core still works: name/role → five-level area → floorplan
-  sketch → layout delta; 49 unittest tests pass.
+  sketch → layout delta; 55 unittest tests pass.
 - The SKY130 two-stage OP remains a unit test; the SKY130 1.8 V LDO remains the
   primary system target but is paused while the class-A layout-reference exercise
   is being consolidated.
@@ -42,6 +42,12 @@ training assistant, review service, or audit service.
   `examples/classa_opamp/aspect-candidates.png`.
 - The 14,051 µm² packing estimate was invalid: it omitted the 2 µm group gaps and
   passive-bay insertion. The corrected full render is **15,766 µm²**.
+- Skill contract foundation (2026-10-30):
+  - `schemas/white_line_input.schema.json` defines the unified JSON input;
+  - `examples/classa_opamp/white-line-input.json` is the class-A golden input;
+  - `examples/classa_opamp/white-line-expected.json` records rows and metrics;
+  - `tests/test_white_line_input.py` checks the golden case; 55 tests pass.
+  - No general white-line compiler/skill script yet.
 - Still open: exact NW/PW boundaries, complete CT ring, top/bottom half-W dummy
   variant, exact R/C model footprint, input-center/local-route verification, and
   returning to the LDO white-line/card.
@@ -70,15 +76,12 @@ training assistant, review service, or audit service.
 
 ## Next atomic action
 
-1. Define `white-line-input.schema.json` with the minimum device/passive/
-   constraint/rule fields.
-2. Build the class-A golden case from that JSON and record expected metrics.
-3. Run the same flow on 3–5 structures and collect:
-   - total area / aspect / effective area / utilization;
-   - input-center offset;
-   - local empty rectangles;
-   - which constraints eliminate candidates.
-4. Use that data to propose priority tiers, then write `SKILL.md` and scripts.
+1. (done) Define `white-line-input.schema.json` and the class-A golden case.
+2. Build benchmark input JSONs for 5T OTA, two-stage Miller, SKY130 two-stage OP,
+   and LDO; run the same metric/constraint collection.
+3. Use the benchmark to calibrate priority tiers and thresholds.
+4. Implement `SKILL.md` + deterministic compiler/checker scripts; no prompt-only
+   geometry.
 
 ## Constraints
 

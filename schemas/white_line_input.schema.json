@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/Analog2Layout/white_line_input.schema.json",
+  "title": "Analog2Layout white-line input contract",
+  "description": "Geometry/constraint contract for the schematic-to-white-line skill. The netlist is a semantic source only; this JSON is the geometry source. It is not a DRC/LVS/PEX deck.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "module",
+    "units",
+    "devices",
+    "groups",
+    "passives",
+    "rules",
+    "constraints",
+    "priorities"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "module": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "const": "um"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "netlist": {"type": "string"},
+        "schematic": {"type": "string"},
+        "license": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    },
+    "devices": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "role",
+          "group",
+          "W_um",
+          "L_um",
+          "m",
+          "fingers",
+          "sd_mode",
+          "ring",
+          "well"
+        ],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "role": {"type": "string", "minLength": 1},
+          "group": {"type": "string", "minLength": 1},
+          "W_um": {"type": "number", "exclusiveMinimum": 0},
+          "L_um": {"type": "number", "exclusiveMinimum": 0},
+          "m": {"type": "integer", "minimum": 1},
+          "fingers": {"type": "integer", "minimum": 1},
+          "sd_mode": {"enum": ["shared", "separated"]},
+          "ring": {"type": "boolean"},
+          "well": {"enum": ["NW", "PW", "DNW", "NONE"]},
+          "matched": {"type": "boolean"},
+          "preferred_rows": {
+            "type": "array",
+            "items": {"type": "integer", "minimum": 1}
+          },
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "members", "matched", "ring", "well"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "members": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          },
+          "matched": {"type": "boolean"},
+          "ring": {"type": "boolean"},
+          "well": {"enum": ["NW", "PW", "DNW", "NONE"]},
+          "preferred_rows": {
+            "type": "array",
+            "items": {"type": "integer", "minimum": 1}
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "passives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "value",
+          "unit",
+          "footprint_um",
+          "m",
+          "ring",
+          "dnw"
+        ],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "type": {"enum": ["MOM", "MIM", "resistor", "other"]},
+          "value": {"type": "number", "exclusiveMinimum": 0},
+          "unit": {"type": "string", "minLength": 1},
+          "footprint_um": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "number", "exclusiveMinimum": 0},
+              {"type": "number", "exclusiveMinimum": 0}
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "m": {"type": "integer", "minimum": 1},
+          "ring": {"type": "boolean"},
+          "ring_gap_um": {"type": "number", "minimum": 0},
+          "ring_width_um": {"type": "number", "exclusiveMinimum": 0},
+          "dnw": {"enum": ["DNW1", "DNW2", "NONE"]},
+          "array": {
+            "type": "object",
+            "properties": {
+              "rows": {"type": "integer", "minimum": 1},
+              "cols": {"type": "integer", "minimum": 1},
+              "gap_x_um": {"type": "number", "minimum": 0},
+              "gap_y_um": {"type": "number", "minimum": 0}
+            },
+            "additionalProperties": true
+          },
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "source",
+        "gate_pitch_extra_um",
+        "ring_gap_um",
+        "ring_width_um",
+        "group_gap_um",
+        "dnw_gap_um"
+      ],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "source_version": {"type": "string"},
+        "gate_pitch_extra_um": {"type": "number", "minimum": 0},
+        "ring_gap_um": {"type": "number", "minimum": 0},
+        "ring_width_um": {"type": "number", "exclusiveMinimum": 0},
+        "group_gap_um": {"type": "number", "minimum": 0},
+        "dnw_gap_um": {"type": "number", "exclusiveMinimum": 0},
+        "nwell_spacing_um": {"type": "number", "exclusiveMinimum": 0},
+        "nwell_pdiff_enclosure_um": {"type": "number", "minimum": 0},
+        "ndiff_nwell_spacing_um": {"type": "number", "minimum": 0},
+        "dnwell_spacing_um": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "constraints": {
+      "type": "object",
+      "required": [
+        "objective",
+        "output_outer",
+        "passives_inside_dnw",
+        "local_empty",
+        "dummy_policy",
+        "fake_fill",
+        "area_denominator",
+        "effective_area"
+      ],
+      "properties": {
+        "objective": {"const": "min_area"},
+        "aspect_max": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "input_center_tolerance_um": {"type": ["number", "null"], "minimum": 0},
+        "output_outer": {"type": "boolean"},
+        "passives_inside_dnw": {"type": "boolean"},
+        "local_empty": {
+          "type": "object",
+          "required": ["max_w_um", "max_h_um", "max_area_fraction"],
+          "properties": {
+            "max_w_um": {"type": "number", "exclusiveMinimum": 0},
+            "max_h_um": {"type": "number", "exclusiveMinimum": 0},
+            "max_area_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "dummy_policy": {"const": "same_geometry"},
+        "fake_fill": {"const": false},
+        "area_denominator": {"const": "dnw_bbox"},
+        "effective_area": {"const": "ring_inner_plus_ring_aa_plus_passives"}
+      },
+      "additionalProperties": true
+    },
+    "priorities": {
+      "type": "object",
+      "required": ["hard", "objective", "soft", "calibration"],
+      "properties": {
+        "hard": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        },
+        "objective": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        },
+        "soft": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "calibration": {
+          "type": "string",
+          "enum": ["pending_multi_structure", "calibrated"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true
+}

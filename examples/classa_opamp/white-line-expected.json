@@ -1,0 +1,44 @@
+{
+  "format": "white-line-expected/1.0",
+  "module": "classa_opamp",
+  "input": "examples/classa_opamp/white-line-input.json",
+  "artifact": "examples/classa_opamp/area-min.svg",
+  "generator": "examples/classa_opamp/make_area_min.py",
+  "selection": {
+    "objective": "min_module_bbox_area",
+    "selected_candidate": "area-min",
+    "calibration": "pending_multi_structure"
+  },
+  "rows": {
+    "LOAD_P": 3,
+    "IN_DP": 2,
+    "MIRROR_P": 3,
+    "FOLD_P": 2,
+    "MIRROR_N": 3,
+    "BIAS_N": 11,
+    "OUT": 3
+  },
+  "metrics": {
+    "bbox_um": [225.88, 69.8],
+    "area_um2": 15766.424,
+    "effective_um2": 11754.05,
+    "utilization": 0.74551147425694,
+    "aspect_w_over_h": 3.2361031518624643
+  },
+  "checks": {
+    "passives_inside_dnw": true,
+    "ring_aa_counted": true,
+    "dummy_same_geometry": true,
+    "no_fake_fill": true,
+    "output_outer": true,
+    "dnw_gap_um": 8.0,
+    "local_empty_passive_bay_um2": 0.0,
+    "local_empty_other_regions": "not_checked",
+    "drc_lvs": false
+  },
+  "notes": [
+    "The 14,051 um2 packing estimate is obsolete; it omitted the 2 um group gaps and passive-bay insertion.",
+    "This is a white-line intent, not DRC/LVS signoff.",
+    "Input-pair center, local routing, and parasitic checks remain open."
+  ]
+}
