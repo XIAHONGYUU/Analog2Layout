@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="780" viewBox="0 0 1250 780">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="40" y="42" font-family="'DejaVu Sans',sans-serif" font-size="27" font-weight="700" fill="#0f172a" text-anchor="start">5T OTA — annotated schematic</text>
+<text x="40" y="66" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">examples/ota5/ota5.sp · W/L in µm · nf = fingers, m = parallel multiplicity</text>
+<line x1="110" y1="105" x2="1040" y2="105" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="110" y="95" font-family="'DejaVu Sans',sans-serif" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">VDD</text>
+<line x1="110" y1="680" x2="1040" y2="680" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="110" y="700" font-family="'DejaVu Sans',sans-serif" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">VSS</text>
+<line x1="320" y1="188" x2="320" y2="252" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+<line x1="298" y1="196" x2="298" y2="244" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="298" y1="204" x2="320" y2="204" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="298" y1="236" x2="320" y2="236" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="174" x2="320" y2="188" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="252" x2="320" y2="266" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="298" y1="220" x2="252" y2="220" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<path d="M 320 200 L 328 190 L 312 190 Z" fill="#1d4ed8"/>
+<text x="338" y="192" font-family="'DejaVu Sans',sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">M3</text>
+<text x="338" y="208" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">5/1  nf2  m1</text>
+<text x="338" y="224" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="start">current mirror · CM</text>
+<text x="316" y="170" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">D</text>
+<text x="316" y="278" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">S</text>
+<text x="244" y="214" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="start">G</text>
+<line x1="650" y1="188" x2="650" y2="252" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+<line x1="628" y1="196" x2="628" y2="244" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="628" y1="204" x2="650" y2="204" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="628" y1="236" x2="650" y2="236" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="174" x2="650" y2="188" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="252" x2="650" y2="266" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="628" y1="220" x2="582" y2="220" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<path d="M 650 200 L 658 190 L 642 190 Z" fill="#1d4ed8"/>
+<text x="668" y="192" font-family="'DejaVu Sans',sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">M4</text>
+<text x="668" y="208" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">5/1  nf2  m1</text>
+<text x="668" y="224" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="start">current mirror · CM</text>
+<text x="646" y="170" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">D</text>
+<text x="646" y="278" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">S</text>
+<text x="574" y="214" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="start">G</text>
+<line x1="320" y1="398" x2="320" y2="462" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+<line x1="298" y1="406" x2="298" y2="454" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="298" y1="414" x2="320" y2="414" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="298" y1="446" x2="320" y2="446" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="384" x2="320" y2="398" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="462" x2="320" y2="476" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="298" y1="430" x2="252" y2="430" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<path d="M 320 450 L 328 460 L 312 460 Z" fill="#1d4ed8"/>
+<text x="338" y="402" font-family="'DejaVu Sans',sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">M1</text>
+<text x="338" y="418" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">5/0.5 nf4</text>
+<text x="338" y="434" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="start">input pair · DP</text>
+<text x="316" y="380" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">D</text>
+<text x="316" y="488" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">S</text>
+<text x="244" y="424" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="start">G</text>
+<line x1="650" y1="398" x2="650" y2="462" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+<line x1="628" y1="406" x2="628" y2="454" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="628" y1="414" x2="650" y2="414" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="628" y1="446" x2="650" y2="446" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="384" x2="650" y2="398" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="462" x2="650" y2="476" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="628" y1="430" x2="582" y2="430" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<path d="M 650 450 L 658 460 L 642 460 Z" fill="#1d4ed8"/>
+<text x="668" y="402" font-family="'DejaVu Sans',sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">M2</text>
+<text x="668" y="418" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">5/0.5 nf4</text>
+<text x="668" y="434" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="start">input pair · DP</text>
+<text x="646" y="380" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">D</text>
+<text x="646" y="488" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">S</text>
+<text x="574" y="424" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="start">G</text>
+<line x1="485" y1="538" x2="485" y2="602" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+<line x1="463" y1="546" x2="463" y2="594" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="463" y1="554" x2="485" y2="554" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="463" y1="586" x2="485" y2="586" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+<line x1="485" y1="524" x2="485" y2="538" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="485" y1="602" x2="485" y2="616" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="463" y1="570" x2="417" y2="570" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<path d="M 485 590 L 493 600 L 477 600 Z" fill="#1d4ed8"/>
+<text x="503" y="542" font-family="'DejaVu Sans',sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">M5</text>
+<text x="503" y="558" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">10/1 nf4</text>
+<text x="503" y="574" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="start">tail current · TAIL</text>
+<text x="481" y="520" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">D</text>
+<text x="481" y="628" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">S</text>
+<text x="409" y="564" font-family="'DejaVu Sans',sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="start">G</text>
+<line x1="320" y1="266" x2="320" y2="105" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="320" cy="105" r="4" fill="#1d4ed8"/>
+<line x1="650" y1="266" x2="650" y2="105" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="650" cy="105" r="4" fill="#1d4ed8"/>
+<line x1="320" y1="174" x2="320" y2="320" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="384" x2="320" y2="320" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="320" cy="320" r="4" fill="#1d4ed8"/>
+<line x1="650" y1="174" x2="650" y2="320" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="384" x2="650" y2="320" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="650" cy="320" r="4" fill="#1d4ed8"/>
+<text x="300" y="340" font-family="'DejaVu Sans',sans-serif" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="start">n1</text>
+<text x="665" y="340" font-family="'DejaVu Sans',sans-serif" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="start">vout</text>
+<line x1="252" y1="220" x2="250" y2="220" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="225" y="213" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#1d4ed8" text-anchor="start">n1</text>
+<line x1="582" y1="220" x2="580" y2="220" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="555" y="213" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#1d4ed8" text-anchor="start">n1</text>
+<line x1="252" y1="430" x2="190" y2="430" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="142" y="422" font-family="'DejaVu Sans',sans-serif" font-size="10" font-weight="400" fill="#0f172a" text-anchor="start">vinp</text>
+<line x1="582" y1="430" x2="785" y2="430" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="790" y="422" font-family="'DejaVu Sans',sans-serif" font-size="10" font-weight="400" fill="#0f172a" text-anchor="start">vinn</text>
+<line x1="320" y1="476" x2="320" y2="500" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="476" x2="650" y2="500" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="500" x2="650" y2="500" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="485" y1="524" x2="485" y2="500" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="485" cy="500" r="4" fill="#1d4ed8"/>
+<text x="485" y="516" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="700" fill="#1d4ed8" text-anchor="middle">ntail</text>
+<line x1="417" y1="570" x2="300" y2="570" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="250" y="562" font-family="'DejaVu Sans',sans-serif" font-size="10" font-weight="400" fill="#0f172a" text-anchor="start">nbias</text>
+<line x1="485" y1="616" x2="485" y2="680" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="485" cy="680" r="4" fill="#1d4ed8"/>
+<line x1="650" y1="320" x2="850" y2="320" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<text x="860" y="320" font-family="'DejaVu Sans',sans-serif" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">vout</text>
+<line x1="850" y1="320" x2="850" y2="400" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="400" x2="810" y2="400" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="810" y1="400" x2="810" y2="450" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="810" y1="450" x2="810" y2="480" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="790" y1="465" x2="830" y2="465" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="790" y1="480" x2="830" y2="480" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<line x1="810" y1="480" x2="810" y2="680" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+<circle cx="810" cy="680" r="4" fill="#1d4ed8"/>
+<text x="870" y="455" font-family="'DejaVu Sans',sans-serif" font-size="10" font-weight="600" fill="#0f172a" text-anchor="start">C1  0.5 pF</text>
+<rect x="900" y="70" width="310" height="195" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="918" y="92" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#475569" text-anchor="start">LEGEND / ROLE MAP</text>
+<text x="918" y="112" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="400" fill="#334155" text-anchor="start">M1/M2: input pair (DP)</text>
+<text x="918" y="128" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="400" fill="#334155" text-anchor="start">M3/M4: PMOS mirror load (CM)</text>
+<text x="918" y="144" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="400" fill="#334155" text-anchor="start">M5: NMOS tail current</text>
+<text x="918" y="160" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="400" fill="#334155" text-anchor="start">C1: compensation, vout→VSS</text>
+<text x="918" y="180" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="400" fill="#334155" text-anchor="start">M3 is diode-connected; M4 gate=n1</text>
+<text x="918" y="200" font-family="'DejaVu Sans',sans-serif" font-size="9" font-weight="400" fill="#64748b" text-anchor="start">External pins: vinp, vinn, vout, nbias</text>
+<text x="40" y="748" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#64748b" text-anchor="start">Note: core schematic only; no VDD/VSS sources, input source, load, or .op/.ac testbench.</text>
+</svg>

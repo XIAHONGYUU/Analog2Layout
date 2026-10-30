@@ -1,5 +1,8 @@
 # ota5 — minimal example
 
+![5T OTA annotated schematic](schematic.png)
+
+
 A five-transistor OTA: input pair, current-mirror load, tail current and a
 compensation cap. Good starting point for a new annotation/rule experiment.
 

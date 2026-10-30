@@ -48,6 +48,16 @@ training assistant, review service, or audit service.
   - `examples/classa_opamp/white-line-expected.json` records rows and metrics;
   - `tests/test_white_line_input.py` checks the golden case; 55 tests pass.
   - No general white-line compiler/skill script yet.
+- Benchmark scope decision (2026-10-30, paused for next session):
+  - **5T OTA / cascode 5T are smoke tests only**, not area benchmarks;
+  - **class-A 16-MOS** is the current area golden case;
+  - **LDO** is the large-area/stress case;
+  - a **rail-to-rail OP** is the second area case. No local rail-to-rail netlist
+    exists; the public Efabless rail-to-rail candidate is GPL-3 and too large to
+    copy into this Apache repo. Default plan is a clearly labelled **synthetic
+    rail-to-rail layout benchmark**, unless the user requires a real GPL example.
+  - A first 5T annotated schematic now exists at
+    `examples/ota5/schematic.svg/png`; it is for role review only.
 - Still open: exact NW/PW boundaries, complete CT ring, top/bottom half-W dummy
   variant, exact R/C model footprint, input-center/local-route verification, and
   returning to the LDO white-line/card.
@@ -76,12 +86,13 @@ training assistant, review service, or audit service.
 
 ## Next atomic action
 
-1. (done) Define `white-line-input.schema.json` and the class-A golden case.
-2. Build benchmark input JSONs for 5T OTA, two-stage Miller, SKY130 two-stage OP,
-   and LDO; run the same metric/constraint collection.
-3. Use the benchmark to calibrate priority tiers and thresholds.
-4. Implement `SKILL.md` + deterministic compiler/checker scripts; no prompt-only
-   geometry.
+1. Build the LDO `white-line-input.json` from `ldo.annotated.sp`; keep the
+   agent-proposed roles marked as `proposal`, not analog-approved.
+2. Build a synthetic rail-to-rail OP benchmark (clearly marked `synthetic: true`)
+   with enough MOS/multiplicity/ring/DNW/passive to exercise area tradeoffs.
+3. Run class-A + LDO + rail-to-rail as the area benchmark; 5T/two-stage remain
+   smoke/layout tests.
+4. Only then implement the deterministic compiler/checker and `SKILL.md`.
 
 ## Constraints
 
