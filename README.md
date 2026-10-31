@@ -7,7 +7,7 @@
 
 从带角色语义的网表（名字 token 或 `role=`）出发，生成面积结构、floorplan 草案和后期改动清单；Layout Card 按模板由 AI/人编译并经工程师确认（当前为提示词工作流，CLI 不调用 LLM）。当前工作区持续完善：已经能跑的部分保留可运行 demo，正在补的部分继续用结构化文档推进。
 
-> **当前阶段**：v0.1 工作区
+> **当前阶段**：v0.2 工作区（面积优先白线）
 >
 > **能跑（CLI）**：名字/角色解析 → 五层面积 → 布局草图 → layout delta
 >
@@ -19,11 +19,21 @@
 >
 > **项目背景与我的角色**：本人负责问题定义、角色语义/面积口径/布局规则与验收；代码、示例与文档在 AI 辅助下完成。
 
-[Layout Guideline](layout-guideline/README.md) · [BGR Card](layout-guideline/02-modules/bgr/layout-card.md) · [VCOM Card](layout-guideline/02-modules/vcom/layout-card.md) · [布局草图 Demo](examples/two_stage/out/floorplan.png) · [Docs](docs/08-ai-layout-guideline.md)
+[Layout Guideline](layout-guideline/README.md) · [BGR Card](layout-guideline/02-modules/bgr/layout-card.md) · [VCOM Card](layout-guideline/02-modules/vcom/layout-card.md) · [白线图库](#白线图库) · [Docs](docs/08-ai-layout-guideline.md)
 
-![Analog2Layout 三分钟概览](docs/diagrams/three-minute.png)
+![Area-first class-A white-line](examples/classa_opamp/area-min.png)
 
-> 一张图：真实网表 → 角色/面积 → 布局变体 → 一页 Card。完整四联图见 [overview.png](docs/diagrams/overview.png)。
+> **面积优先白线（16-MOS class-A）**：bbox **225.9 × 69.8 µm**，总面积 **15,766 µm²**，有效面积 **11,754 µm²**，利用率 **74.6%**。R/C 在主 DNW1 内并带 AA ring；M14 在外侧独立 DNW；是 full render，不是 DRC/LVS signoff。
+
+### 白线图库
+
+| Area-first（当前选定） | Balanced baseline |
+| --- | --- |
+| <img src="examples/classa_opamp/area-min.png" width="620"> | <img src="examples/classa_opamp/white-line.png" width="310"> |
+| **阵列细节** | **长宽比候选** |
+| <img src="examples/classa_opamp/white-line-detail.png" width="310"> | <img src="examples/classa_opamp/aspect-candidates.png" width="620"> |
+
+> 图库文件：[area-min.png](examples/classa_opamp/area-min.png) · [white-line.png](examples/classa_opamp/white-line.png) · [white-line-detail.png](examples/classa_opamp/white-line-detail.png) · [aspect-candidates.png](examples/classa_opamp/aspect-candidates.png)
 
 ## 三分钟看懂
 
@@ -35,7 +45,7 @@
 | Layout guideline 怎么不散？ | [BGR](layout-guideline/02-modules/bgr/layout-card.md) / [VCOM](layout-guideline/02-modules/vcom/layout-card.md) | 一页 7 区块 + Principle / Pattern / Case 下钻 |
 | 同一原则在不同模块怎么变？ | [BGR vs VCOM](layout-guideline/02-modules/bgr-vcom-comparison.md) | 匹配/电源/ESD 的优先级差异 |
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
-| 真实 MOS 怎么排成白线？ | [class-A white-line](examples/classa_opamp/white-line.png) | merged array、DM、ring、DNW、NW/PW、有效面积 |
+| 真实 MOS 怎么排成白线？ | [class-A area-first white-line](examples/classa_opamp/area-min.png) | merged array、DM、ring、DNW、NW/PW、有效面积 |
 
 > **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [snapshot](docs/targets/sky130-ldo/)。
 >
@@ -43,8 +53,7 @@
 >
 > **有图有网表的 review target**：[class-A CMOS OP](examples/classa_opamp/README.md)。16 MOS、2 V；上游 README 称 class AB，但按网表实际是 **class A（只有 M14 信号输出，M13 是 PMOS 电流源负载）**；[schematic](examples/classa_opamp/schematic.png) · [netlist](examples/classa_opamp/opamp.sp)。
 >
-> **2026-10-26 白线练习**：16-MOS class-A 的紧凑 layout intent。[White-line](examples/classa_opamp/white-line.png) · [detail](examples/classa_opamp/white-line-detail.png) · 有效面积 **13,155 µm²**，模块 bbox **147.2×121.2 = 17,845 µm²**，利用率 **73.7%**（ring AA 计入）。
-> **2026-10-28 area-first candidate**：[area-min.png](examples/classa_opamp/area-min.png) · bbox **225.9×69.8 = 15,766 µm²**，有效面积 **11,754 µm²**，利用率 **74.6%**。这是 full render；packing estimate 14,051 未计 2 µm group gaps，已作废。
+> **白线对比**：[Area-first 225.9×69.8 / 15,766 µm² / 74.6%](examples/classa_opamp/area-min.png) · [Balanced 147.2×121.2 / 17,845 µm² / 73.7%](examples/classa_opamp/white-line.png) · [detail](examples/classa_opamp/white-line-detail.png)。
 
 ## 一条链
 
@@ -65,7 +74,7 @@ flowchart LR
 | 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
 | 正在补全 | 真实 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
 | 正在设计 | white-line skill：hybrid prompt + deterministic JSON/scripts；schema + class-A golden case 已有，验收优先级待多结构校准 |
-| 2026-10-26 新增 | class-A 16-MOS 白线练习；灵活 rows、gate pitch L+0.36、同形 dummy、DNW1/DNW2、R/C 进入主 DNW 并围环、ring AA 计入、有效面积 73.7% |
+| 2026-10-30 新增 | area-first class-A 白线：225.9×69.8 µm、15,766 µm²、74.6%；R/C 在主 DNW1 内、ring AA 计入；JSON schema + golden case + 5T annotated schematic |
 
 ## 这个项目体现的能力
 
