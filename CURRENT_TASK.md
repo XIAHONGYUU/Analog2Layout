@@ -74,6 +74,8 @@ training assistant, review service, or audit service.
   - 41 MOS + 5 passives + 2 blackboxes + 9 groups;
   - `sd_mode=shared` user-confirmed; `XC3`/`XR6` user-confirmed; `x1/x2` are 5×5 cell+ring placeholders;
   - tests: `tests/test_ldo_white_line_input.py`; full suite 67 tests pass.
+  - resistor segments are folded into 2×2 µm square cells with boundary dummies;
+  - `output_outer` is a soft preference, not a hard constraint.
 - Still open: exact NW/PW boundaries, complete CT ring, top/bottom half-W dummy
   variant, exact R/C model footprint, input-center/local-route verification, and
   returning to the LDO white-line/card.

@@ -44,12 +44,16 @@ class LdoWhiteLineInputTest(unittest.TestCase):
         self.assertEqual(status["XR6"], "user_confirmed")
         self.assertEqual(status["XR4"], "sampled_reviewed")
         self.assertTrue(any("DNW" in u for u in self.data["unknowns"]))
+        self.assertEqual(self.data["constraints"]["output_outer_priority"], "soft")
 
     def test_resistors_are_square_folded_with_dummy(self):
         by_name = {p["name"]: p for p in self.data["passives"]}
         for name, active in (("XR4", 18), ("XR5", 36), ("XR6", 4)):
             arr = by_name[name]["array"]
             self.assertEqual(arr["style"], "square_folded_dummy")
+            self.assertTrue(arr["folded"])
+            self.assertEqual(arr["dummy_layout"], "boundary")
+            self.assertEqual(arr["cell_um"], [2.0, 2.0])
             self.assertEqual(arr["rows"], arr["cols"])
             self.assertEqual(arr["active_cells"], active)
             self.assertGreater(arr["dummy_cells"], 0)

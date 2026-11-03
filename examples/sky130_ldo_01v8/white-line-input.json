@@ -1036,6 +1036,8 @@
       "source_line": 20,
       "array": {
         "style": "square_folded_dummy",
+        "folded": true,
+        "dummy_layout": "boundary",
         "rows": 5,
         "cols": 5,
         "cell_um": [
@@ -1072,6 +1074,8 @@
       "source_line": 21,
       "array": {
         "style": "square_folded_dummy",
+        "folded": true,
+        "dummy_layout": "boundary",
         "rows": 7,
         "cols": 7,
         "cell_um": [
@@ -1166,6 +1170,8 @@
       "source_line": 42,
       "array": {
         "style": "square_folded_dummy",
+        "folded": true,
+        "dummy_layout": "boundary",
         "rows": 3,
         "cols": 3,
         "cell_um": [
@@ -1241,6 +1247,8 @@
     "aspect_max": null,
     "input_center_tolerance_um": null,
     "output_outer": true,
+    "output_outer_priority": "soft",
+    "output_outer_rationale": "LDO VOUT/pass current placement is a floorplan preference; not a hard legality constraint",
     "passives_inside_dnw": true,
     "local_empty": {
       "max_w_um": 5,
@@ -1278,14 +1286,15 @@
     "exact DNW/well boundary polygons inside DNW1/DNW2",
     "passive values and exact physical footprints beyond the specified placeholder blocks",
     "x1/x2 actual LEF/GDS; 5x5 is a user-confirmed placeholder",
-    "VOUT/pass-device physical output placement",
-    "whether output_outer is a hard constraint for this LDO"
+    "VOUT/pass-device physical output placement"
   ],
   "assumptions": [
     "W/L/nf/m come from the NetlistLabel overlay; R/C values are not in the netlist.",
     "All S/D are user-confirmed shared, including XM61.",
     "Passive ring gap/width use 0.8/1.0 um; all passives are in DNW1.",
     "XC3 is a VREF input filter (role decap); XR6 is source degeneration of XM66 (role bias).",
+    "Resistor segments are folded into 2x2 um square cells; the block is square, not a 0.35 um-wide strip.",
+    "output_outer is a soft preference tied to LDO current/pass-device floorplan, not a hard constraint.",
     "x1/x2 are level shifters inside DNW1; 5x5 is a cell+ring placeholder.",
     "DNW2 contains only XM61 and its guard ring; DNW1/DNW2 gap is 8 um outer-to-outer.",
     "White-line is layout intent, not DRC/LVS/PEX signoff."

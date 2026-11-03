@@ -372,7 +372,9 @@ should survive individual tasks.
   - all 41 MOS are user-confirmed `sd_mode=shared`;
   - `XC3` (VREF filter, role decap) and `XR6` (XM66 source degeneration) are
     user-confirmed; `x1/x2` use a 5×5 cell+ring placeholder inside DNW1;
-  - XR4/XR5/XR6 use square folded blocks with boundary dummies;
+  - XR4/XR5/XR6 use square folded blocks with boundary dummies; each 10×0.35 µm
+    segment is folded into a 2×2 µm cell, not laid as a 0.35 µm-wide strip;
+  - `output_outer` is a soft LDO floorplan preference, not a hard constraint;
   - the JSON keeps the overlay's `PROPOSAL, NOT APPROVED` and sampled-review
     status;
   - the compiler must fail or report incomplete area if unknown blackbox area is

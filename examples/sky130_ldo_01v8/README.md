@@ -27,7 +27,9 @@ The generated [`white-line-input.json`](white-line-input.json) contains:
 - `x1/x2` are 5×5 cell+ring placeholders (`footprint_um2=25`,
   `status=estimated`), inside DNW1;
 - `XR4/XR5/XR6` are square folded resistor blocks with boundary dummy cells;
+  each 10×0.35 µm segment is folded into a 2×2 µm cell, not placed as a thin strip;
 - DNW1 contains everything except XM61; DNW2 contains XM61 + guard ring;
+- `output_outer` is a **soft preference** tied to LDO current/pass-device floorplan;
 - the overlay's `PROPOSAL, NOT APPROVED` and sampled-review status are preserved.
 
 Regenerate it with:
