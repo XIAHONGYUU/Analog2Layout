@@ -1,110 +1,177 @@
-# LDO matching review — needs owner confirmation
+# LDO matching review — grouped by W/L and type
 
-This packet is deliberately a **proposal**, not a matching signoff. The compiler
-only clusters a device when the input has a `match` token; unmatched devices are
-not silently merged. Each row must be confirmed or corrected by the analog owner.
+Status: **proposal / needs owner confirmation**. This is not a matching signoff.
 
-Legend: `match` is the current overlay token; `matched=True` means the compiler
-uses a shared interdigitated cluster. `cluster` is the current physical cluster.
+Grouping rule requested by the owner: **same W/L + same device type = one matching bank**.
 
-## AMP
+Important: being in the same W/L bank is **necessary but not sufficient** for physical matching.
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM46 | 1 | 7 | 1 | current_mirror | `LOAD_AMP` | True | `XM46/XM56` |
-| XM48 | 1 | 7 | 1 | current_mirror | `MIR_AMP_net2` | True | `XM48/XM55` |
-| XM52 | 2 | 0.5 | 1 | input_pair | `DP_AMP` | True | `XM52/XM53` |
-| XM53 | 2 | 0.5 | 1 | input_pair | `DP_AMP` | True | `XM52/XM53` |
-| XM54 | 3 | 9 | 1 | tail_current | `—` | False | `XM54` |
-| XM55 | 1 | 7 | 1 | current_mirror | `MIR_AMP_net2` | True | `XM48/XM55` |
-| XM56 | 1 | 7 | 1 | current_mirror | `LOAD_AMP` | True | `XM46/XM56` |
-| XM57 | 1 | 0.5 | 1 | cascode | `CAS_AMP` | True | `XM57/XM58` |
-| XM58 | 1 | 0.5 | 1 | cascode | `CAS_AMP` | True | `XM57/XM58` |
+Devices from different logical groups (for example an enable switch and a bias cascode) can share
 
-## BIAS
+a W/L bank but may still need to be laid out separately. The owner must keep/split each bank.
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM62 | 1 | 7 | 1 | current_mirror | `MIR_BIAS_VBIAS_P` | True | `XM62/XM64` |
-| XM63 | 1 | 0.5 | 1 | cascode | `CAS_BIAS` | True | `XM63/XM65` |
-| XM64 | 1 | 7 | 1 | current_mirror | `MIR_BIAS_VBIAS_P` | True | `XM62/XM64` |
-| XM65 | 1 | 0.5 | 1 | cascode | `CAS_BIAS` | True | `XM63/XM65` |
-| XM66 | 1 | 9 | 20 | current_mirror | `MIR_BIAS_DEG` | True | `XM66/XM67` |
-| XM67 | 1 | 9 | 5 | current_mirror | `MIR_BIAS_DEG` | True | `XM66/XM67` |
-| XM68 | 1 | 10 | 1 | bias | `—` | False | `XM68` |
-| XM69 | 1 | 9 | 5 | current_mirror | `—` | False | `XM69` |
-| XR6 | — | — | — | degeneration | passive | — | `XR6` |
+Device type is read from the SPICE model in `netlistlabel-overlay/ldo.annotated.sp`
 
-## CTRL_EN
+(`sky130_fd_pr__pfet...` → PMOS, `sky130_fd_pr__nfet...` → NMOS), not guessed from names.
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM83 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM83` |
-| XM84 | 2.5 | 0.5 | 1 | enable_switch | `—` | False | `XM84` |
-| XM85 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM85` |
-| XM86 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM86` |
-| XM87 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM87` |
-| XM88 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM88` |
-| XM89 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM89` |
-| XM90 | 1 | 0.5 | 1 | enable_switch | `—` | False | `XM90` |
+## Bank summary
 
-## CTRL_SEL
+| bank | type | W/L (µm) | devices | logical groups | total fingers | current match tokens |
+| --- | --- | --- | ---: | --- | ---: | --- |
+| `PMOS_1x0.5` | PMOS | 1/0.5 | 8 | AMP, BIAS, CTRL_EN, OUT | 8 | `CAS_AMP`, `CAS_BIAS` |
+| `PMOS_2.5x0.5` | PMOS | 2.5/0.5 | 2 | CTRL_EN, CTRL_SEL | 2 | — |
+| `PMOS_1x2` | PMOS | 1/2 | 3 | START | 3 | — |
+| `PMOS_1x7` | PMOS | 1/7 | 6 | AMP, BIAS, OUT, REF | 6 | `LOAD_AMP`, `MIR_BIAS_VBIAS_P` |
+| `PMOS_1x10` | PMOS | 1/10 | 1 | BIAS | 1 | — |
+| `NMOS_1x0.5` | NMOS | 1/0.5 | 8 | CTRL_EN, CTRL_SEL, START | 8 | — |
+| `NMOS_2x0.5` | NMOS | 2/0.5 | 2 | AMP | 2 | `DP_AMP` |
+| `NMOS_5x0.5` | NMOS | 5/0.5 | 1 | OUT | 1000 | — |
+| `NMOS_1x7` | NMOS | 1/7 | 2 | AMP | 2 | `MIR_AMP_net2` |
+| `NMOS_1x9` | NMOS | 1/9 | 4 | BIAS, START | 35 | `MIR_BIAS_DEG` |
+| `NMOS_3x9` | NMOS | 3/9 | 1 | AMP | 1 | — |
+| `NMOS_1x10` | NMOS | 1/10 | 3 | REF | 3 | — |
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM75 | 1 | 0.5 | 1 | adj_switch | `—` | False | `XM75` |
-| XM76 | 2.5 | 0.5 | 1 | adj_switch | `—` | False | `XM76` |
-| XM77 | 1 | 0.5 | 1 | adj_switch | `—` | False | `XM77` |
-| XM78 | 1 | 0.5 | 1 | adj_switch | `—` | False | `XM78` |
+## Banks
 
-## FB
+### `PMOS_1x0.5` — PMOS, W=1 µm, L=0.5 µm
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XR4 | — | — | — | feedback | passive | — | `XR4` |
-| XR5 | — | — | — | feedback | passive | — | `XR5` |
+Logical groups: AMP, BIAS, CTRL_EN, OUT. Current match tokens: `CAS_AMP`, `CAS_BIAS`.
 
-## OUT
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM57 | AMP | cascode | 1 | 1 | 1 | `CAS_AMP` | True | keep / split / add |
+| XM58 | AMP | cascode | 1 | 1 | 1 | `CAS_AMP` | True | keep / split / add |
+| XM63 | BIAS | cascode | 1 | 1 | 1 | `CAS_BIAS` | True | keep / split / add |
+| XM65 | BIAS | cascode | 1 | 1 | 1 | `CAS_BIAS` | True | keep / split / add |
+| XM86 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM88 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM90 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM59 | OUT | output_stage | 1 | 1 | 1 | `—` | False | keep / split / add |
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM59 | 1 | 0.5 | 1 | output_stage | `—` | False | `XM59` |
-| XM60 | 1 | 7 | 1 | current_mirror | `—` | False | `XM60` |
-| XM61 | 5 | 0.5 | 1000 | output_stage | `—` | False | `XM61` |
+### `PMOS_2.5x0.5` — PMOS, W=2.5 µm, L=0.5 µm
 
-## PASSIVE
+Logical groups: CTRL_EN, CTRL_SEL. Current match tokens: none.
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XC1 | — | — | — | decap | passive | — | `XC1` |
-| XC3 | — | — | — | decap | passive | — | `XC3` |
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM84 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM76 | CTRL_SEL | adj_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
 
-## REF
+### `PMOS_1x2` — PMOS, W=1 µm, L=2 µm
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM79 | 1 | 7 | 1 | current_mirror | `—` | False | `XM79` |
-| XM80 | 1 | 10 | 1 | cascode | `—` | False | `XM80` |
-| XM81 | 1 | 10 | 1 | bias | `—` | False | `XM81` |
-| XM82 | 1 | 10 | 1 | bias | `—` | False | `XM82` |
+Logical groups: START. Current match tokens: none.
 
-## START
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM71 | START | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM72 | START | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM73 | START | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
 
-| device | W (µm) | L (µm) | fingers | role | current match | matched | compiler cluster |
-| --- | ---: | ---: | ---: | --- | --- | --- | --- |
-| XM70 | 1 | 0.5 | 1 | bias | `—` | False | `XM70` |
-| XM71 | 1 | 2 | 1 | bias | `—` | False | `XM71` |
-| XM72 | 1 | 2 | 1 | bias | `—` | False | `XM72` |
-| XM73 | 1 | 2 | 1 | bias | `—` | False | `XM73` |
-| XM74 | 1 | 9 | 5 | current_mirror | `—` | False | `XM74` |
+### `PMOS_1x7` — PMOS, W=1 µm, L=7 µm
 
-## Required decisions
+Logical groups: AMP, BIAS, OUT, REF. Current match tokens: `LOAD_AMP`, `MIR_BIAS_VBIAS_P`.
 
-- Confirm the matched pairs and the polarity/order (`A/B`, `M1/M2`) for each cluster.
-- Mark any pair that is **not** truly matched, especially REF/START/CTRL rows with no `match` token.
-- Confirm whether a matched cluster gets two shared end dummies; current compiler does that.
-- Confirm the AA ring target. Current compiler: **1.0 µm ring / 0.8 µm gap** (inherited heuristic; not a PDK value).
-- Confirm DNW enclosure margin. Current compiler: **3.0 µm** (heuristic; separate from the AA ring).
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM46 | AMP | current_mirror | 1 | 1 | 1 | `LOAD_AMP` | True | keep / split / add |
+| XM56 | AMP | current_mirror | 1 | 1 | 1 | `LOAD_AMP` | True | keep / split / add |
+| XM62 | BIAS | current_mirror | 1 | 1 | 1 | `MIR_BIAS_VBIAS_P` | True | keep / split / add |
+| XM64 | BIAS | current_mirror | 1 | 1 | 1 | `MIR_BIAS_VBIAS_P` | True | keep / split / add |
+| XM60 | OUT | current_mirror | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM79 | REF | current_mirror | 1 | 1 | 1 | `—` | False | keep / split / add |
 
-Corrections should be made in `white-line-input.json` or reported back as a table;
-the compiler will then be rerun deterministically.
+### `PMOS_1x10` — PMOS, W=1 µm, L=10 µm
+
+Logical groups: BIAS. Current match tokens: none.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM68 | BIAS | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
+
+### `NMOS_1x0.5` — NMOS, W=1 µm, L=0.5 µm
+
+Logical groups: CTRL_EN, CTRL_SEL, START. Current match tokens: none.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM83 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM85 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM87 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM89 | CTRL_EN | enable_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM75 | CTRL_SEL | adj_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM77 | CTRL_SEL | adj_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM78 | CTRL_SEL | adj_switch | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM70 | START | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
+
+### `NMOS_2x0.5` — NMOS, W=2 µm, L=0.5 µm
+
+Logical groups: AMP. Current match tokens: `DP_AMP`.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM52 | AMP | input_pair | 1 | 1 | 1 | `DP_AMP` | True | keep / split / add |
+| XM53 | AMP | input_pair | 1 | 1 | 1 | `DP_AMP` | True | keep / split / add |
+
+### `NMOS_5x0.5` — NMOS, W=5 µm, L=0.5 µm
+
+Logical groups: OUT. Current match tokens: none.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM61 | OUT | output_stage | 1 | 1000 | 1000 | `—` | False | keep / split / add |
+
+### `NMOS_1x7` — NMOS, W=1 µm, L=7 µm
+
+Logical groups: AMP. Current match tokens: `MIR_AMP_net2`.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM48 | AMP | current_mirror | 1 | 1 | 1 | `MIR_AMP_net2` | True | keep / split / add |
+| XM55 | AMP | current_mirror | 1 | 1 | 1 | `MIR_AMP_net2` | True | keep / split / add |
+
+### `NMOS_1x9` — NMOS, W=1 µm, L=9 µm
+
+Logical groups: BIAS, START. Current match tokens: `MIR_BIAS_DEG`.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM66 | BIAS | current_mirror | 1 | 20 | 20 | `MIR_BIAS_DEG` | True | keep / split / add |
+| XM67 | BIAS | current_mirror | 1 | 5 | 5 | `MIR_BIAS_DEG` | True | keep / split / add |
+| XM69 | BIAS | current_mirror | 1 | 5 | 5 | `—` | False | keep / split / add |
+| XM74 | START | current_mirror | 1 | 5 | 5 | `—` | False | keep / split / add |
+
+### `NMOS_3x9` — NMOS, W=3 µm, L=9 µm
+
+Logical groups: AMP. Current match tokens: none.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM54 | AMP | tail_current | 1 | 1 | 1 | `—` | False | keep / split / add |
+
+### `NMOS_1x10` — NMOS, W=1 µm, L=10 µm
+
+Logical groups: REF. Current match tokens: none.
+
+| device | logical group | role | nf | m | total fingers | current match | matched? | owner decision |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| XM80 | REF | cascode | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM81 | REF | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
+| XM82 | REF | bias | 1 | 1 | 1 | `—` | False | keep / split / add |
+
+## Owner review
+
+- Mark each bank `keep`, `split`, or `add`; a W/L bank is only a candidate set.
+- Same W/L + same type is the physical matching precondition, not proof of matching.
+- Devices in different logical groups need an explicit decision before sharing an array.
+- `XM66/XM67` (NMOS 1/9, m=20/5) are already marked `MIR_BIAS_DEG`; confirm the 20:5 interleave.
+- `XM80/XM81/XM82` are NMOS 1/10 but currently no match token; decide whether they are a matched trio.
+- `XM71/XM72/XM73` are PMOS 1/2 but currently no match token; decide whether they are a matched trio.
+- `XM59/XM60` and the CTRL switches share W/L banks with other functions; do not merge by W/L alone.
+
+## Current `match` tokens (proposal only)
+
+- AMP: `LOAD_AMP` (XM46/XM56), `MIR_AMP_net2` (XM48/XM55), `DP_AMP` (XM52/XM53), `CAS_AMP` (XM57/XM58).
+- BIAS: `MIR_BIAS_VBIAS_P` (XM62/XM64), `CAS_BIAS` (XM63/XM65), `MIR_BIAS_DEG` (XM66/XM67).
+- All other devices have no `match` token and must not be silently clustered.
+
+Corrections can be made directly in this file or returned as a bank/device table; the compiler will then be rerun deterministically.
