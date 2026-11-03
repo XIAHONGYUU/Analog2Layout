@@ -13,6 +13,9 @@ unit test.
 | [`netlistlabel-overlay/`](netlistlabel-overlay/README.md) | NetlistLabel v0.2 semantic overlay | imported proposal; sampled human review |
 | [`white-line-input.json`](white-line-input.json) | white-line geometry contract generated from the overlay | built; unknowns visible |
 | [`make_white_line_input.py`](make_white_line_input.py) | deterministic overlay → JSON importer | reproducible |
+| [`white-line.svg`](white-line.svg) / [`white-line.png`](white-line.png) | device-level LDO white-line baseline | built; **not DRC/LVS** |
+| [`white-line-manifest.json`](white-line-manifest.json) | actual device arrays, blocks, DNW, bbox/area | machine-readable |
+| [`make_white_line.py`](make_white_line.py) | deterministic LDO white-line compiler | reproducible |
 
 The imported overlay is the preferred semantic input for the next LDO
 white-line/area case. It preserves the raw netlist, records source commit and
@@ -54,6 +57,25 @@ python3 -m unittest tests.test_ldo_white_line_input -q
 Upstream has no PNG screenshot; it has an xschem `.sch`. This block schematic is
 reconstructed from the block labels + netlist for role-map review, not a
 transistor-level screenshot.
+
+## LDO white-line baseline
+
+The first **device-level** compiler output is:
+
+```text
+bbox        = 83.56 × 177.40 µm
+area        = 14,823.5 µm²
+effective   = 10,236.1 µm²
+utilization = 69.1%
+aspect      = 0.47
+```
+
+It renders actual device arrays, boundary dummies, per-well rings, passives with
+rings, x1/x2 placeholders, and DNW1/DNW2. The earlier A/B/C multi-agent outputs
+were block-level estimates and are not the acceptance artifact. This baseline
+still has unused area; optimization is the next step.
+
+![LDO white-line baseline](white-line.png)
 
 ## Why this is a better target
 

@@ -74,6 +74,12 @@ training assistant, review service, or audit service.
   - 41 MOS + 5 passives + 2 blackboxes + 9 groups;
   - `sd_mode=shared` user-confirmed; `XC3`/`XR6` user-confirmed; `x1/x2` are 5×5 cell+ring placeholders;
   - tests: `tests/test_ldo_white_line_input.py`; full suite 67 tests pass.
+  - deterministic device-level compiler baseline built:
+    `examples/sky130_ldo_01v8/make_white_line.py`;
+    bbox 83.56×177.40, area 14,823.5 µm², effective 10,236.1 µm²,
+    utilization 69.1%, aspect 0.47; actual device arrays + boundary dummies +
+    per-well rings + passive rings + DNW1/DNW2; `white-line-manifest.json`;
+    72 tests pass. Area optimization is still open.
   - resistor segments are folded into 2×2 µm square cells with boundary dummies;
   - `output_outer` is a soft preference, not a hard constraint.
 - Still open: exact NW/PW boundaries, complete CT ring, top/bottom half-W dummy
@@ -104,9 +110,10 @@ training assistant, review service, or audit service.
 
 ## Next atomic action
 
-1. (done) Build the LDO `white-line-input.json` from
-   `examples/sky130_ldo_01v8/netlistlabel-overlay/ldo.annotated.sp`; keep the
-   overlay roles marked as `proposal` and sampled-review status visible.
+1. (done) Build the LDO `white-line-input.json` from the NetlistLabel overlay.
+2. (done) Build the first deterministic device-level white-line compiler.
+3. Optimize the LDO white-line: reduce unused DNW1 area, improve block packing,
+   keep per-well rings/dummies, and re-check local gaps.
 2. Build a synthetic rail-to-rail OP benchmark (clearly marked `synthetic: true`)
    with enough MOS/multiplicity/ring/DNW/passive to exercise area tradeoffs.
 3. Run class-A + LDO + rail-to-rail as the area benchmark; 5T/two-stage remain

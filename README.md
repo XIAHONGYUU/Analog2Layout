@@ -47,7 +47,7 @@
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
 | 真实 MOS 怎么排成白线？ | [class-A area-first white-line](examples/classa_opamp/area-min.png) | merged array、DM、ring、DNW、NW/PW、有效面积 |
 
-> **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [old role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [NetlistLabel overlay](examples/sky130_ldo_01v8/netlistlabel-overlay/README.md) · [white-line input](examples/sky130_ldo_01v8/white-line-input.json) · [snapshot](docs/targets/sky130-ldo/)。
+> **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [old role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [NetlistLabel overlay](examples/sky130_ldo_01v8/netlistlabel-overlay/README.md) · [white-line input](examples/sky130_ldo_01v8/white-line-input.json) · [LDO white-line](examples/sky130_ldo_01v8/white-line.png) · [snapshot](docs/targets/sky130-ldo/)。
 >
 > **Unit test**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 MOS + 1 cap；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png)。
 >
