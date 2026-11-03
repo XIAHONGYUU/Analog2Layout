@@ -2502,6 +2502,9 @@
     "passive_width_um": 1.0,
     "gap_um": 0.8,
     "dnw_margin_um": 3.0,
+    "pdk_defined": false,
+    "pdk_facts": "pdk/sky130/facts.json",
+    "source": "heuristic, inherited from class-A, not a SKY130 PDK value",
     "note": "the green AA band is 1.0 um; the 3.0 um DNW margin is a separate dashed enclosure, not a ring"
   },
   "assumptions": [

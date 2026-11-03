@@ -411,3 +411,21 @@ should survive individual tasks.
   - no DRC/LVS/PEX claim.
 - **Related:** `examples/sky130_ldo_01v8/make_white_line.py`,
   `examples/sky130_ldo_01v8/white-line-manifest.json`, `CURRENT_TASK.md`.
+
+---
+
+## D-021 — SKY130 facts are traceable; 1.0 µm ring is not a PDK fact
+
+- **Status:** active
+- **Date:** 2026-11-03
+- **Owner:** analog design + layout
+- **Decision:** add `pdk/sky130/facts.json` as a small, deterministic fact registry
+  for SKY130 minimum rules, with `drc_rule`, source line and deck sha256. It is not
+  a complete PDK and not a DRC signoff.
+- **Finding:** the PDK does not define an "AA ring width = 1.0 µm" rule. The local
+  KLayout deck gives `difftap.1` min width 0.15 µm, `difftap.3` min space 0.27 µm,
+  nwell/dnwell/contact enclosures; 1.0 µm is an internal educational heuristic.
+- **Consequences:** `ring_audit.pdk_defined=false`; the compiler keeps 1.0/0.8
+  only as an explicit heuristic until the owner chooses a target. Matching still
+  requires owner confirmation in `matching-review.md`.
+- **Validation:** `python3 pdk/sky130/check.py`; `tests/test_pdk_facts.py`.

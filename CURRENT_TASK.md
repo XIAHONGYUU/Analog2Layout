@@ -113,8 +113,10 @@ training assistant, review service, or audit service.
 
 1. (done) Build the LDO `white-line-input.json` from the NetlistLabel overlay.
 2. (done) Build the first deterministic device-level white-line compiler.
-3. Optimize the LDO white-line: reduce unused DNW1 area, improve block packing,
-   keep per-well rings/dummies, and re-check local gaps.
+3. (done) Establish a small SKY130 PDK fact registry with provenance.
+4. Owner review: confirm `examples/sky130_ldo_01v8/matching-review.md` and choose
+   a ring width/gap target (1.0/0.8 is not PDK).
+5. Optimize the LDO white-line after those decisions: area, local gaps, rings.
 2. Build a synthetic rail-to-rail OP benchmark (clearly marked `synthetic: true`)
    with enough MOS/multiplicity/ring/DNW/passive to exercise area tradeoffs.
 3. Run class-A + LDO + rail-to-rail as the area benchmark; 5T/two-stage remain

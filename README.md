@@ -72,7 +72,8 @@ flowchart LR
 | --- | --- |
 | 能跑（CLI） | 名字/角色解析 → 五层面积 → 布局草图 → layout delta |
 | 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
-| 正在补全 | 真实 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
+| 正在补全 | 完整 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
+| PDK facts | SKY130 最小规则事实源已建立：[pdk/sky130/facts.json](pdk/sky130/facts.json)；1.0 µm ring 不是 PDK 值，只是 educational heuristic |
 | 正在设计 | white-line skill：hybrid prompt + deterministic JSON/scripts；schema + class-A golden case 已有，验收优先级待多结构校准 |
 | 2026-10-30 新增 | area-first class-A 白线：225.9×69.8 µm、15,766 µm²、74.6%；R/C 在主 DNW1 内、ring AA 计入；JSON schema + golden case + 5T annotated schematic |
 
@@ -506,7 +507,7 @@ tests/                  unittest，无第三方依赖
 - 不做寄生提取，不替代 PEX；
 - 不做电路综合或尺寸优化；
 - 不支持完整 SPICE 语法、层次展开、`.param` 表达式；
-- 不内置任何真实 PDK 规则；
+- 不内置完整 PDK 规则；`pdk/sky130/facts.json` 只保存可追溯的最小事实，不是 DRC deck；
 - 不承诺生产落地或公司规则库；
 - 不做培训助手、主审、审计服务；
 - 不自动修改原理图——delta 只是 proposal，必须由人确认。

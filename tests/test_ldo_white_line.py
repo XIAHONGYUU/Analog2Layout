@@ -38,6 +38,8 @@ class LdoWhiteLineTest(unittest.TestCase):
         self.assertEqual(r["mos_width_um"], 1.0)
         self.assertEqual(r["gap_um"], 0.8)
         self.assertEqual(r["dnw_margin_um"], 3.0)
+        self.assertFalse(r["pdk_defined"])
+        self.assertEqual(r["pdk_facts"], "pdk/sky130/facts.json")
         self.assertIn("not a ring", r["note"])
 
     def test_dnw_geometry(self):

@@ -1,0 +1,127 @@
+{
+  "schema": "a2l-pdk-facts/0.1",
+  "pdk": "sky130A",
+  "process": "SkyWater SKY130",
+  "status": "reference facts, not a complete PDK and not a DRC signoff",
+  "source": {
+    "local_reference": "out/refs/sky130.lydrc",
+    "sha256": "81cf4f998fc6fb6925ccc8618afba3dc8530058db1d0e31dc1f6ad5299e52372",
+    "size_bytes": 63820,
+    "deck_revision": "2020-10-04 v1.0",
+    "license": "GPLv3",
+    "official_rules": "https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html",
+    "retrieved": "2026-11-03",
+    "note": "The local KLayout DRC deck is used as the reference. The deck itself is not committed in this repository to avoid copying a full PDK runset."
+  },
+  "layer_aliases": {
+    "AA": "not a Sky130 layer name; the relevant drawn layers are diff (65/20) and tap (65/44)",
+    "ring": "a drawn diff/tap/contact structure, not a single PDK layer or PDK-defined width"
+  },
+  "rules": {
+    "difftap_min_width_um": {
+      "value": 0.15,
+      "unit": "um",
+      "drc_rule": "difftap.1",
+      "source_line": 263,
+      "description": "minimum difftap width"
+    },
+    "difftap_min_space_um": {
+      "value": 0.27,
+      "unit": "um",
+      "drc_rule": "difftap.3",
+      "source_line": 268,
+      "description": "minimum difftap spacing"
+    },
+    "diff_tap_noncoincident_space_um": {
+      "value": 0.13,
+      "unit": "um",
+      "drc_rule": "difftap.7",
+      "source_line": 272,
+      "description": "minimum diff/tap spacing to a non-coincident edge"
+    },
+    "nwell_min_width_um": {
+      "value": 0.84,
+      "unit": "um",
+      "drc_rule": "nwell.1",
+      "source_line": 212,
+      "description": "minimum nwell width"
+    },
+    "nwell_min_space_um": {
+      "value": 1.27,
+      "unit": "um",
+      "drc_rule": "nwell.2a",
+      "source_line": 213,
+      "description": "minimum nwell spacing (merged if less)"
+    },
+    "nwell_enclosing_dnwell_um": {
+      "value": 0.4,
+      "unit": "um",
+      "drc_rule": "nwell.5",
+      "source_line": 216,
+      "description": "minimum nwell enclosure of dnwell, outside uhvi"
+    },
+    "dnwell_enclosing_nwell_um": {
+      "value": 1.03,
+      "unit": "um",
+      "drc_rule": "nwell.6",
+      "source_line": 217,
+      "description": "minimum dnwell enclosure of nwell, outside uhvi"
+    },
+    "dnwell_min_width_um": {
+      "value": 3.0,
+      "unit": "um",
+      "drc_rule": "dnwell.2",
+      "source_line": 205,
+      "description": "minimum dnwell width"
+    },
+    "dnwell_min_space_um": {
+      "value": 6.3,
+      "unit": "um",
+      "drc_rule": "dnwell.3",
+      "source_line": 206,
+      "description": "minimum dnwell spacing"
+    },
+    "nwell_enclosing_pdiff_um": {
+      "value": 0.18,
+      "unit": "um",
+      "drc_rule": "difftap.8",
+      "source_line": 274,
+      "description": "minimum nwell enclosure of p+ diff"
+    },
+    "nwell_enclosing_ntap_um": {
+      "value": 0.18,
+      "unit": "um",
+      "drc_rule": "difftap.10",
+      "source_line": 276,
+      "description": "minimum nwell enclosure of n+ tap"
+    },
+    "diff_enclosing_licon_um": {
+      "value": 0.04,
+      "unit": "um",
+      "drc_rule": "licon.5",
+      "source_line": 369,
+      "description": "minimum diff enclosure of licon"
+    },
+    "tap_enclosing_licon_one_edge_um": {
+      "value": 0.12,
+      "unit": "um",
+      "drc_rule": "licon.7",
+      "source_line": 373,
+      "description": "minimum tap enclosure of licon by one of two opposite edges"
+    }
+  },
+  "ring": {
+    "pdk_defined": false,
+    "question": "Does SKY130 define an AA ring width of 1.0 um?",
+    "answer": "No. The PDK defines minimum widths/spacings/enclosures for diff, tap, nwell, dnwell and contacts. It does not define a 1.0 um 'AA ring' width. 1.0 um is an internal educational heuristic in this workspace.",
+    "one_micron_source": "docs/targets/sky130-opamp/make_white_line_layout.py explicitly calls the 1.0 um ring an educational placeholder, not PDK",
+    "applicable_min_rules": [
+      "difftap_min_width_um",
+      "difftap_min_space_um",
+      "diff_tap_noncoincident_space_um",
+      "diff_enclosing_licon_um",
+      "tap_enclosing_licon_one_edge_um"
+    ],
+    "action": "Do not record 1.0 as a PDK fact. Choose a ring width from a layout decision, then verify it with the actual DRC deck; it must be at least the applicable min width and enclose the chosen taps/contacts."
+  }
+}

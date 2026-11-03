@@ -16,6 +16,7 @@ unit test.
 | [`white-line.svg`](white-line.svg) / [`white-line.png`](white-line.png) | device-level LDO white-line baseline | built; **not DRC/LVS** |
 | [`white-line-manifest.json`](white-line-manifest.json) | actual device clusters, blocks, DNW, bbox/area | machine-readable |
 | [`matching-review.md`](matching-review.md) | owner-confirmation packet for match groups | **needs review** |
+| [`../../pdk/sky130/facts.json`](../../pdk/sky130/facts.json) | SKY130 minimum rules + provenance; no 1.0 µm ring fact | reference |
 | [`make_white_line.py`](make_white_line.py) | deterministic LDO white-line compiler | reproducible |
 
 The imported overlay is the preferred semantic input for the next LDO
@@ -34,6 +35,8 @@ The generated [`white-line-input.json`](white-line-input.json) contains:
   each 10×0.35 µm segment is folded into a 2×2 µm cell, not placed as a thin strip;
 - DNW1 contains everything except XM61; DNW2 contains XM61 + guard ring;
 - `output_outer` is a **soft preference** tied to LDO current/pass-device floorplan;
+- the 1.0 µm ring / 0.8 µm gap / 3.0 µm DNW margin are **heuristics**, not PDK facts;
+  see `pdk/sky130/facts.json` (`ring.pdk_defined=false`);
 - the overlay's `PROPOSAL, NOT APPROVED` and sampled-review status are preserved.
 
 Regenerate it with:

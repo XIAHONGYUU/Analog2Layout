@@ -269,6 +269,8 @@ def main():
                   "x1_x2_inside_dnw1":True,"fake_fill":False,"drc_lvs":False},
         "ring_audit":{"mos_width_um":RING_W,"passive_width_um":RING_W,
                       "gap_um":RING_GAP,"dnw_margin_um":DNW_MARGIN,
+                      "pdk_defined":False,"pdk_facts":"pdk/sky130/facts.json",
+                      "source":"heuristic, inherited from class-A, not a SKY130 PDK value",
                       "note":"the green AA band is 1.0 um; the 3.0 um DNW margin is a separate dashed enclosure, not a ring"},
         "assumptions":["DNW margin 3.0 um is an explicit heuristic, not a PDK rule.",
                        "AA ring width 1.0 um is inherited from class-A; it is not a confirmed PDK rule.",
