@@ -331,3 +331,28 @@ should survive individual tasks.
     `examples/classa_opamp/white-line-expected.json`, and
     `tests/test_white_line_input.py`; the deterministic compiler/checker is next.
 - **Related:** `CURRENT_TASK.md`, `examples/classa_opamp/area-min.png`.
+
+---
+
+## D-018 — NetlistLabel LDO overlay is imported with provenance, not as truth
+
+- **Status:** active
+- **Date:** 2026-11-03
+- **Owner:** analog design + layout
+- **Source:** user request to integrate the NetlistLabel LDO overlay
+- **Decision:** The NetlistLabel v0.2.0 LDO overlay is imported under
+  `examples/sky130_ldo_01v8/netlistlabel-overlay/` as a **non-destructive
+  semantic proposal**. The raw `ldo.sp` remains the source of connectivity; the
+  older `ldo.annotated.sp` remains for comparison.
+- **Consequences:**
+  - source repository/release/commit, raw hash, normalized hashes, and reproduce
+    commands are recorded in `provenance.json`;
+  - personal absolute paths are normalized; `checksums.sha256` covers the
+    imported files;
+  - the overlay header remains `PROPOSAL, NOT APPROVED`; sampled review is not
+    global accuracy;
+  - any white-line input must explicitly carry the review/unknown status and may
+    not silently treat unreviewed nets/passives as facts;
+  - `tests/test_ldo_overlay.py` checks integrity and status.
+- **Related:** `examples/sky130_ldo_01v8/netlistlabel-overlay/README.md`,
+  `CURRENT_TASK.md`.

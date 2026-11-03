@@ -4,6 +4,19 @@ A real, flat, transistor-level LDO from the Efabless/CHIPALOOZA open-source IP
 family. This is a **candidate** for the next main target; the small OP remains a
 unit test.
 
+## Files and status
+
+| Path | Role | Status |
+| --- | --- | --- |
+| [`ldo.sp`](ldo.sp) | raw SKY130 LDO netlist | read-only source |
+| [`ldo.annotated.sp`](ldo.annotated.sp) | earlier A2L role proposal | retained for comparison |
+| [`netlistlabel-overlay/`](netlistlabel-overlay/README.md) | NetlistLabel v0.2 semantic overlay | imported proposal; sampled human review |
+| `white-line-input.json` | future geometry contract | not built |
+
+The imported overlay is the preferred semantic input for the next LDO
+white-line/area case. It preserves the raw netlist, records source commit and
+hashes, and keeps the review status visible.
+
 ## Source
 
 - Upstream:
@@ -67,4 +80,5 @@ python3 -m a2l build examples/sky130_ldo_01v8/ldo.annotated.sp --out out/sky130_
 - `x1/x2` level shifters ignored;
 - role taxonomy has no `pass_device` (could map to `output_stage` or add a new role
   with analog-owner approval);
-- raw netlist: all 41 MOS `unknown`; annotated proposal: 41 explicit, still needs analog review.
+- raw netlist: all 41 MOS `unknown`; older annotated proposal: 41 explicit, still needs analog review.
+- NetlistLabel overlay: 41/41 MOS roles proposed; sampled review accepted 44 device + 6 net + 8 port, but full net/passive review is still incomplete. See [`netlistlabel-overlay/`](netlistlabel-overlay/README.md).

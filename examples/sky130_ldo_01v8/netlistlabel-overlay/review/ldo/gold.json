@@ -1,0 +1,684 @@
+{
+  "schema_version": "0.1",
+  "design": "ldo",
+  "source": "ldo.sp",
+  "instructions": "先读 review.md 或 review.csv。只改 decision 和 label 字段。decision=accept 表示预测正确；decision=correct 表示改了标签；decision=ambiguous 表示确实有歧义，不计入 accuracy；unreviewed 表示尚未复核。predicted 是审计记录，不要改。",
+  "devices": {
+    "XM52": {
+      "id": "D01",
+      "predicted": {
+        "role": "input_pair",
+        "match": "DP_AMP",
+        "group": "AMP",
+        "confidence": 0.85,
+        "top_score": 0.85,
+        "margin": 0.5,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "input_pair",
+      "acceptable_roles": [],
+      "match": "DP_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM53": {
+      "id": "D02",
+      "predicted": {
+        "role": "input_pair",
+        "match": "DP_AMP",
+        "group": "AMP",
+        "confidence": 0.85,
+        "top_score": 0.85,
+        "margin": 0.5,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "input_pair",
+      "acceptable_roles": [],
+      "match": "DP_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM54": {
+      "id": "D03",
+      "predicted": {
+        "role": "tail_current",
+        "match": null,
+        "group": "AMP",
+        "confidence": 0.9,
+        "top_score": 0.9,
+        "margin": 0.55,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "tail_current",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM59": {
+      "id": "D04",
+      "predicted": {
+        "role": "output_stage",
+        "match": null,
+        "group": "OUT",
+        "confidence": 0.72,
+        "top_score": 0.72,
+        "margin": 0.37,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "output_stage",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "OUT",
+      "comment": ""
+    },
+    "XR4": {
+      "id": "D05",
+      "predicted": {
+        "role": "feedback",
+        "match": "FB_DIV",
+        "group": "FB",
+        "confidence": 0.86,
+        "top_score": 0.86,
+        "margin": 0.51,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "feedback",
+      "acceptable_roles": [],
+      "match": "FB_DIV",
+      "group": "FB",
+      "comment": ""
+    },
+    "XR5": {
+      "id": "D06",
+      "predicted": {
+        "role": "feedback",
+        "match": "FB_DIV",
+        "group": "FB",
+        "confidence": 0.86,
+        "top_score": 0.86,
+        "margin": 0.51,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "feedback",
+      "acceptable_roles": [],
+      "match": "FB_DIV",
+      "group": "FB",
+      "comment": ""
+    },
+    "XM61": {
+      "id": "D07",
+      "predicted": {
+        "role": "pass_device",
+        "match": null,
+        "group": "OUT",
+        "confidence": 0.95,
+        "top_score": 0.95,
+        "margin": 0.6,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "pass_device",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "OUT",
+      "comment": ""
+    },
+    "XM60": {
+      "id": "D08",
+      "predicted": {
+        "role": "current_mirror",
+        "match": null,
+        "group": "OUT",
+        "confidence": 0.5,
+        "top_score": 0.5,
+        "margin": 0.1,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "OUT",
+      "comment": ""
+    },
+    "XC1": {
+      "id": "D09",
+      "predicted": {
+        "role": "decap",
+        "match": null,
+        "group": "PASSIVE",
+        "confidence": 0.5,
+        "top_score": 0.5,
+        "margin": 0.15,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "role": "decap",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "PASSIVE",
+      "comment": ""
+    },
+    "XM70": {
+      "id": "D10",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "START",
+        "confidence": 0.55,
+        "top_score": 0.55,
+        "margin": 0.2,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "START",
+      "comment": ""
+    },
+    "XC3": {
+      "id": "D11",
+      "predicted": {
+        "role": "decap",
+        "match": null,
+        "group": "PASSIVE",
+        "confidence": 0.5,
+        "top_score": 0.5,
+        "margin": 0.15,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "role": "decap",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "PASSIVE",
+      "comment": ""
+    },
+    "XM79": {
+      "id": "D12",
+      "predicted": {
+        "role": "current_mirror",
+        "match": null,
+        "group": "REF",
+        "confidence": 0.5,
+        "top_score": 0.5,
+        "margin": 0.1,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "REF",
+      "comment": ""
+    },
+    "XM82": {
+      "id": "D13",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "REF",
+        "confidence": 0.55,
+        "top_score": 0.55,
+        "margin": 0.2,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "REF",
+      "comment": ""
+    },
+    "XM46": {
+      "id": "D14",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "LOAD_AMP",
+        "group": "AMP",
+        "confidence": 0.85,
+        "top_score": 0.85,
+        "margin": 0.45,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "LOAD_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM48": {
+      "id": "D15",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_AMP_net2",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_AMP_net2",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM55": {
+      "id": "D16",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_AMP_net2",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_AMP_net2",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM56": {
+      "id": "D17",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "LOAD_AMP",
+        "group": "AMP",
+        "confidence": 0.85,
+        "top_score": 0.85,
+        "margin": 0.45,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "LOAD_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM57": {
+      "id": "D18",
+      "predicted": {
+        "role": "cascode",
+        "match": "CAS_AMP",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "CAS_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM58": {
+      "id": "D19",
+      "predicted": {
+        "role": "cascode",
+        "match": "CAS_AMP",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "CAS_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM62": {
+      "id": "D20",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_BIAS_VBIAS_P",
+        "group": "BIAS",
+        "confidence": 0.75,
+        "top_score": 0.75,
+        "margin": 0.35,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_BIAS_VBIAS_P",
+      "group": "BIAS",
+      "comment": ""
+    }
+  },
+  "nets": {
+    "net1": {
+      "id": "N01",
+      "predicted": {
+        "class": "signal",
+        "structural_role": "tail",
+        "block": "AMP",
+        "confidence": 0.85,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "signal",
+      "acceptable_classes": [],
+      "structural_role": "tail",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VM": {
+      "id": "N02",
+      "predicted": {
+        "class": "signal",
+        "structural_role": "feedback",
+        "block": "FB",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "signal",
+      "acceptable_classes": [],
+      "structural_role": "feedback",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VERR": {
+      "id": "N03",
+      "predicted": {
+        "class": "signal",
+        "structural_role": "gain_node",
+        "block": "AMP",
+        "confidence": 0.65,
+        "review": "confirm"
+      },
+      "decision": "unreviewed",
+      "class": "signal",
+      "acceptable_classes": [],
+      "structural_role": "gain_node",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VPASS": {
+      "id": "N04",
+      "predicted": {
+        "class": "control",
+        "structural_role": "pass_gate",
+        "block": "OUT",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "control",
+      "acceptable_classes": [],
+      "structural_role": "pass_gate",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VBIAS_P": {
+      "id": "N05",
+      "predicted": {
+        "class": "bias",
+        "structural_role": "mirror_gate",
+        "block": "BIAS",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "bias",
+      "acceptable_classes": [],
+      "structural_role": "mirror_gate",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "net2": {
+      "id": "N06",
+      "predicted": {
+        "class": "bias",
+        "structural_role": "mirror_gate",
+        "block": "AMP",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "bias",
+      "acceptable_classes": [],
+      "structural_role": "mirror_gate",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VREF": {
+      "id": "N07",
+      "predicted": {
+        "class": "reference",
+        "structural_role": "reference",
+        "block": "CTRL_SEL",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "reference",
+      "acceptable_classes": [],
+      "structural_role": "reference",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VBIAS_N": {
+      "id": "N08",
+      "predicted": {
+        "class": "bias",
+        "structural_role": "mirror_gate",
+        "block": "BIAS",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "bias",
+      "acceptable_classes": [],
+      "structural_role": "mirror_gate",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VBIAS_C": {
+      "id": "N09",
+      "predicted": {
+        "class": "bias",
+        "structural_role": "mirror_gate",
+        "block": "BIAS",
+        "confidence": 0.8,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "bias",
+      "acceptable_classes": [],
+      "structural_role": "mirror_gate",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VDD_START": {
+      "id": "N10",
+      "predicted": {
+        "class": "signal",
+        "structural_role": "startup",
+        "block": "START",
+        "confidence": 0.75,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "signal",
+      "acceptable_classes": [],
+      "structural_role": "startup",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "VSTART": {
+      "id": "N11",
+      "predicted": {
+        "class": "signal",
+        "structural_role": "startup",
+        "block": "START",
+        "confidence": 0.75,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "signal",
+      "acceptable_classes": [],
+      "structural_role": "startup",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    },
+    "net7": {
+      "id": "N12",
+      "predicted": {
+        "class": "signal",
+        "structural_role": "startup",
+        "block": "START",
+        "confidence": 0.75,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "class": "signal",
+      "acceptable_classes": [],
+      "structural_role": "startup",
+      "acceptable_structural_roles": [],
+      "comment": ""
+    }
+  },
+  "ports": {
+    "AVDD": {
+      "id": "P01",
+      "predicted": {
+        "direction": "power",
+        "class": "power",
+        "interface": "power",
+        "confidence": 0.95,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "power",
+      "class": "power",
+      "interface": "power",
+      "comment": ""
+    },
+    "VOUT": {
+      "id": "P02",
+      "predicted": {
+        "direction": "output",
+        "class": "signal",
+        "interface": "analog_output",
+        "confidence": 0.7,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "output",
+      "class": "signal",
+      "interface": "analog_output",
+      "comment": ""
+    },
+    "AVSS": {
+      "id": "P03",
+      "predicted": {
+        "direction": "ground",
+        "class": "ground",
+        "interface": "ground",
+        "confidence": 0.95,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "ground",
+      "class": "ground",
+      "interface": "ground",
+      "comment": ""
+    },
+    "ENA": {
+      "id": "P04",
+      "predicted": {
+        "direction": "input",
+        "class": "enable",
+        "interface": "digital_input",
+        "confidence": 0.9,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "input",
+      "class": "enable",
+      "interface": "digital_input",
+      "comment": ""
+    },
+    "VREF_EXT": {
+      "id": "P05",
+      "predicted": {
+        "direction": "input",
+        "class": "reference",
+        "interface": "analog_reference",
+        "confidence": 0.9,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "input",
+      "class": "reference",
+      "interface": "analog_reference",
+      "comment": ""
+    },
+    "SEL_EXT": {
+      "id": "P06",
+      "predicted": {
+        "direction": "input",
+        "class": "select",
+        "interface": "digital_input",
+        "confidence": 0.88,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "input",
+      "class": "select",
+      "interface": "digital_input",
+      "comment": ""
+    },
+    "DVDD": {
+      "id": "P07",
+      "predicted": {
+        "direction": "power",
+        "class": "power",
+        "interface": "power",
+        "confidence": 0.95,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "power",
+      "class": "power",
+      "interface": "power",
+      "comment": ""
+    },
+    "DVSS": {
+      "id": "P08",
+      "predicted": {
+        "direction": "ground",
+        "class": "ground",
+        "interface": "ground",
+        "confidence": 0.95,
+        "review": "auto"
+      },
+      "decision": "unreviewed",
+      "direction": "ground",
+      "class": "ground",
+      "interface": "ground",
+      "comment": ""
+    }
+  }
+}

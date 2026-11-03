@@ -1,0 +1,35 @@
+﻿id,kind,name,predicted,decision,role,class,structural_role,direction,interface,match,group,w_um,l_um,nf,m,drain,gate,source,bulk,acceptable_roles,acceptable_classes,acceptable_structural_roles,comment
+D01,device,XM46,current_mirror match=LOAD_AMP group=AMP,accept,current_mirror,,,,,LOAD_AMP,AMP,1.0,7.0,1,1,VX,VBIAS_P,AVDD,AVDD,,,,
+D02,device,XM48,current_mirror match=MIR_AMP_net2 group=AMP,accept,current_mirror,,,,,MIR_AMP_net2,AMP,1.0,7.0,1,1,net2,net2,AVSS,AVSS,,,,
+D03,device,XM55,current_mirror match=MIR_AMP_net2 group=AMP,accept,current_mirror,,,,,MIR_AMP_net2,AMP,1.0,7.0,1,1,VERR,net2,AVSS,AVSS,,,,
+D04,device,XM56,current_mirror match=LOAD_AMP group=AMP,accept,current_mirror,,,,,LOAD_AMP,AMP,1.0,7.0,1,1,VY,VBIAS_P,AVDD,AVDD,,,,
+D05,device,XM57,cascode match=CAS_AMP group=AMP,accept,cascode,,,,,CAS_AMP,AMP,1.0,0.5,1,1,VERR,VBIAS_C,VY,AVDD,,,,
+D06,device,XM58,cascode match=CAS_AMP group=AMP,accept,cascode,,,,,CAS_AMP,AMP,1.0,0.5,1,1,net2,VBIAS_C,VX,AVDD,,,,
+D07,device,XM62,current_mirror match=MIR_BIAS_VBIAS_P group=BIAS,accept,current_mirror,,,,,MIR_BIAS_VBIAS_P,BIAS,1.0,7.0,1,1,net3,VBIAS_P,AVDD,AVDD,,,,
+D08,device,XM63,cascode match=CAS_BIAS group=BIAS,accept,cascode,,,,,CAS_BIAS,BIAS,1.0,0.5,1,1,VBIAS_P,VBIAS_C,net3,AVDD,,,,
+D09,device,XM64,current_mirror match=MIR_BIAS_VBIAS_P group=BIAS,accept,current_mirror,,,,,MIR_BIAS_VBIAS_P,BIAS,1.0,7.0,1,1,net4,VBIAS_P,AVDD,AVDD,,,,
+D10,device,XM65,cascode match=CAS_BIAS group=BIAS,accept,cascode,,,,,CAS_BIAS,BIAS,1.0,0.5,1,1,VBIAS_N,VBIAS_C,net4,AVDD,,,,
+D11,device,XM66,current_mirror match=MIR_BIAS_DEG group=BIAS,accept,current_mirror,,,,,MIR_BIAS_DEG,BIAS,20.0,9.0,1,20,VBIAS_P,VBIAS_N,net5,AVSS,,,,
+D12,device,XM67,current_mirror match=MIR_BIAS_DEG group=BIAS,accept,current_mirror,,,,,MIR_BIAS_DEG,BIAS,5.0,9.0,1,5,VBIAS_N,VBIAS_N,AVSS,AVSS,,,,
+D13,device,XM68,bias group=BIAS,accept,bias,,,,,,BIAS,1.0,10.0,1,1,VBIAS_C,VBIAS_C,AVDD,AVDD,,,,
+D14,device,XM69,current_mirror group=BIAS,accept,current_mirror,,,,,,BIAS,5.0,9.0,1,5,VBIAS_C,VBIAS_N,AVSS,AVSS,,,,
+D15,device,XM83,logic group=CTRL_EN,accept,logic,,,,,,CTRL_EN,1.0,0.5,1,1,NENA,ena_3v3,AVSS,AVSS,,,,
+D16,device,XM84,logic group=CTRL_EN,accept,logic,,,,,,CTRL_EN,2.5,0.5,1,1,NENA,ena_3v3,AVDD,AVDD,,,,
+D17,device,XM85,enable_switch group=CTRL_EN,accept,enable_switch,,,,,,CTRL_EN,1.0,0.5,1,1,VBIAS_N,NENA,AVSS,AVSS,,,,
+D18,device,XM86,enable_switch group=CTRL_EN,accept,enable_switch,,,,,,CTRL_EN,1.0,0.5,1,1,VBIAS_C,ena_3v3,AVDD,AVDD,,,,
+D19,device,XM87,enable_switch group=CTRL_EN,accept,enable_switch,,,,,,CTRL_EN,1.0,0.5,1,1,VERR,NENA,AVSS,AVSS,,,,
+D20,device,XM88,enable_switch group=CTRL_EN,accept,enable_switch,,,,,,CTRL_EN,1.0,0.5,1,1,VBIAS_P,ena_3v3,AVDD,AVDD,,,,
+D21,device,XM89,enable_switch group=CTRL_EN,accept,enable_switch,,,,,,CTRL_EN,1.0,0.5,1,1,VPASS,NENA,AVSS,AVSS,,,,
+D22,device,XM90,enable_switch group=CTRL_EN,accept,enable_switch,,,,,,CTRL_EN,1.0,0.5,1,1,VDD_START,NENA,AVDD,AVDD,,,,
+D23,device,XM75,logic group=CTRL_SEL,accept,logic,,,,,,CTRL_SEL,1.0,0.5,1,1,NSEL_EXT,sel_ext_3v3,AVSS,AVSS,,,,
+D24,device,XM76,logic group=CTRL_SEL,accept,logic,,,,,,CTRL_SEL,2.5,0.5,1,1,NSEL_EXT,sel_ext_3v3,AVDD,AVDD,,,,
+D25,device,XM77,adj_switch group=CTRL_SEL,accept,adj_switch,,,,,,CTRL_SEL,1.0,0.5,1,1,VREF,NSEL_EXT,VREF_INT,AVSS,,,,
+D26,device,XM78,adj_switch group=CTRL_SEL,accept,adj_switch,,,,,,CTRL_SEL,1.0,0.5,1,1,VREF,sel_ext_3v3,VREF_EXT,AVSS,,,,
+D27,device,XM79,current_mirror group=REF,accept,current_mirror,,,,,,REF,1.0,7.0,1,1,VREF_INT,VBIAS_P,AVDD,AVDD,,,,reference 第一级 bias stack：多个 stacked device 等效于一个 L 很大的器件；功能上属于 BIAS，block REF/BIAS 边界是软的。
+D28,device,XM80,cascode group=REF,accept,cascode,,,,,,REF,1.0,10.0,1,1,net8,VREF_INT,net9,AVSS,,,,
+D29,device,XM81,bias group=REF,accept,bias,,,,,,REF,1.0,10.0,1,1,VREF_INT,VREF_INT,net8,AVSS,,,,
+D30,device,XM82,bias group=REF,accept,bias,,,,,,REF,1.0,10.0,1,1,net9,VREF_INT,AVSS,AVSS,,,,reference 第一级 bias stack 的下管；多个 stacked device 等效于一个 L 很大的器件，功能上属于 BIAS。
+D31,device,XM71,bias group=START,accept,bias,,,,,,START,1.0,2.0,1,1,net7,net7,AVDD,AVDD,,,,START PMOS diode stack 上管，等效于大 L 器件的一部分。
+D32,device,XM72,bias group=START,accept,bias,,,,,,START,1.0,2.0,1,1,net6,net6,net7,AVDD,,,,START PMOS diode stack 中管，等效于大 L 器件的一部分。
+D33,device,XM73,bias group=START,accept,bias,,,,,,START,1.0,2.0,1,1,VSTART,VSTART,net6,AVDD,,,,START PMOS diode stack 下管，建立 VSTART。
+D34,device,XM74,current_mirror group=START,accept,current_mirror,,,,,,START,5.0,9.0,1,5,VSTART,VBIAS_N,AVSS,AVSS,,,,START NMOS mirror，把 VSTART 往 AVSS 拉。

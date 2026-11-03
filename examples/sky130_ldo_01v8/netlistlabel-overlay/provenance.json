@@ -1,0 +1,59 @@
+{
+  "format": "a2l-netlistlabel-overlay/1.0",
+  "imported_at": "2026-11-03",
+  "source": {
+    "repository": "https://github.com/XIAHONGYUU/AnalogNetlistLabel",
+    "release": "v0.2.0",
+    "commit": "8cefac8",
+    "generated_at": "2026-11-01T12:06:40+08:00",
+    "license": "Apache-2.0"
+  },
+  "raw_netlist": {
+    "path": "examples/sky130_ldo_01v8/ldo.sp",
+    "sha256": "3f4d7cc21b6d6d7fa7acd051449576461c395e1e9ab42e53c3aa8c575a7949f0"
+  },
+  "normalization": {
+    "reason": "public-repository path hygiene",
+    "original": "<workspace>/examples/sky130_ldo_01v8/ldo.sp",
+    "replacement": "examples/sky130_ldo_01v8/ldo.sp",
+    "affected": [
+      "ldo.annotated.sp",
+      "annotation.json",
+      "annotation.md"
+    ],
+    "review_csv": "CRLF and trailing whitespace normalized to LF for git hygiene"
+  },
+  "original_hashes": {
+    "ldo.annotated.sp": "c21e5e0b434e3ca845cc56ccdbec08fc91d7857c1a6b58882daa31cbd0be20ec",
+    "annotation.json": "a633b42b71eb51b331bbcdba1ffa90d8243eb7d309f25b62ae8eed2a3ac5275b",
+    "annotation.md": "f21c6b82f249931516245ea48733b019685462d91ec2252a725d70f29b3dbad0"
+  },
+  "review": {
+    "status": "sampled human review; not global accuracy",
+    "eval_summary": {
+      "reviewed": "44 device + 6 net + 8 port",
+      "device_strict_accuracy": "100.0% on sampled packet",
+      "source": "eval/eval.md"
+    },
+    "annotation_devices": 48,
+    "annotation_mos": 41,
+    "annotation_nets": 33,
+    "annotation_blocks": 9,
+    "remaining_review": "net/passive review incomplete; see review packets and annotation.md"
+  },
+  "files": {
+    "NOTICE": "9055628b99af806f3374612d59f5f9d1db1d2d9140ed97d0ed70720aba87a91f",
+    "README.md": "83b6a8f3268b988dc62dd0f4b773340b3d139678f789eb48605c35d39ffc0d49",
+    "annotation.json": "ee4318eec46fed0ed75606e2083b66a41389e99f1f60fe646d0cf2d4a56773c3",
+    "annotation.md": "d4f0a27343e730d3c8c13098ebfb8025c158a2fd866ffc1aa9e74a3632c6811f",
+    "eval/eval.json": "9fd7ded1fd3b2de0d4428b2b500bf262b5e4974f0c34f6f60e810bf383d3d84b",
+    "eval/eval.md": "63987e89a7a7dc42255b5db778fc356243de2fe2fa38af145a0b3e69b316a658",
+    "ldo.annotated.sp": "7a20f5fd0d72616d5da3a2622ca385fd22c948e22bec6bb7770a6b72ca5a7a9a",
+    "review/ldo/gold.json": "6ac308fce3db379024f40138e8434fafd4a9b70477ab8f3512903b512480a97a",
+    "review/ldo/review.csv": "6d6eb01b640443c67703af4c033c670abcaba3cfcdc5adce1a8ab50c6d976be1",
+    "review/ldo/review.md": "1714581e591718a88642378a10edd5195e515aeb863678c03b451c9f0399a601",
+    "review/ldo_mos_rest/gold.json": "2ddd8a2dd7670a2b43e84649c503c7b49c2076a81e209d7ec6c85c37b941349c",
+    "review/ldo_mos_rest/review.csv": "f6530d374b173bdb073092578135cf77b5474b9e181f4fef5ea407050fdbf1e2",
+    "review/ldo_mos_rest/review.md": "8973000dca687f7faad7ad61f7a89ada924086010efcf3df0fdb6e1b8321d355"
+  }
+}

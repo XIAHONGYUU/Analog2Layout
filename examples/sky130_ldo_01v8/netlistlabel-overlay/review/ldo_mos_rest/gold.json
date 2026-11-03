@@ -1,0 +1,962 @@
+{
+  "schema_version": "0.1",
+  "design": "ldo",
+  "source": "ldo.sp",
+  "instructions": "先读 review.md 或 review.csv。只改 decision 和 label 字段。decision=accept 表示预测正确；decision=correct 表示改了标签；decision=ambiguous 表示确实有歧义，不计入 accuracy；unreviewed 表示尚未复核。predicted 是审计记录，不要改。",
+  "devices": {
+    "XM46": {
+      "id": "D01",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "LOAD_AMP",
+        "group": "AMP",
+        "confidence": 0.85,
+        "top_score": 0.85,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VX",
+          "g": "VBIAS_P",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "LOAD_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM48": {
+      "id": "D02",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_AMP_net2",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net2",
+          "g": "net2",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_AMP_net2",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM55": {
+      "id": "D03",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_AMP_net2",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VERR",
+          "g": "net2",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_AMP_net2",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM56": {
+      "id": "D04",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "LOAD_AMP",
+        "group": "AMP",
+        "confidence": 0.85,
+        "top_score": 0.85,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VY",
+          "g": "VBIAS_P",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "LOAD_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM57": {
+      "id": "D05",
+      "predicted": {
+        "role": "cascode",
+        "match": "CAS_AMP",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VERR",
+          "g": "VBIAS_C",
+          "s": "VY",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "CAS_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM58": {
+      "id": "D06",
+      "predicted": {
+        "role": "cascode",
+        "match": "CAS_AMP",
+        "group": "AMP",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net2",
+          "g": "VBIAS_C",
+          "s": "VX",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "CAS_AMP",
+      "group": "AMP",
+      "comment": ""
+    },
+    "XM62": {
+      "id": "D07",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_BIAS_VBIAS_P",
+        "group": "BIAS",
+        "confidence": 0.75,
+        "top_score": 0.75,
+        "margin": 0.35,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net3",
+          "g": "VBIAS_P",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_BIAS_VBIAS_P",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM63": {
+      "id": "D08",
+      "predicted": {
+        "role": "cascode",
+        "match": "CAS_BIAS",
+        "group": "BIAS",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VBIAS_P",
+          "g": "VBIAS_C",
+          "s": "net3",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "CAS_BIAS",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM64": {
+      "id": "D09",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_BIAS_VBIAS_P",
+        "group": "BIAS",
+        "confidence": 0.75,
+        "top_score": 0.75,
+        "margin": 0.35,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net4",
+          "g": "VBIAS_P",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_BIAS_VBIAS_P",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM65": {
+      "id": "D10",
+      "predicted": {
+        "role": "cascode",
+        "match": "CAS_BIAS",
+        "group": "BIAS",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VBIAS_N",
+          "g": "VBIAS_C",
+          "s": "net4",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "CAS_BIAS",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM66": {
+      "id": "D11",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_BIAS_DEG",
+        "group": "BIAS",
+        "confidence": 0.7,
+        "top_score": 0.7,
+        "margin": 0.35,
+        "w_um": 20.0,
+        "l_um": 9.0,
+        "nf": 1,
+        "m": 20,
+        "terminals": {
+          "d": "VBIAS_P",
+          "g": "VBIAS_N",
+          "s": "net5",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_BIAS_DEG",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM67": {
+      "id": "D12",
+      "predicted": {
+        "role": "current_mirror",
+        "match": "MIR_BIAS_DEG",
+        "group": "BIAS",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 5.0,
+        "l_um": 9.0,
+        "nf": 1,
+        "m": 5,
+        "terminals": {
+          "d": "VBIAS_N",
+          "g": "VBIAS_N",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "MIR_BIAS_DEG",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM68": {
+      "id": "D13",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "BIAS",
+        "confidence": 0.72,
+        "top_score": 0.72,
+        "margin": 0.27,
+        "w_um": 1.0,
+        "l_um": 10.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VBIAS_C",
+          "g": "VBIAS_C",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM69": {
+      "id": "D14",
+      "predicted": {
+        "role": "current_mirror",
+        "match": null,
+        "group": "BIAS",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 5.0,
+        "l_um": 9.0,
+        "nf": 1,
+        "m": 5,
+        "terminals": {
+          "d": "VBIAS_C",
+          "g": "VBIAS_N",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "BIAS",
+      "comment": ""
+    },
+    "XM83": {
+      "id": "D15",
+      "predicted": {
+        "role": "logic",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.88,
+        "top_score": 0.88,
+        "margin": 0.53,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "NENA",
+          "g": "ena_3v3",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "logic",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM84": {
+      "id": "D16",
+      "predicted": {
+        "role": "logic",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.88,
+        "top_score": 0.88,
+        "margin": 0.53,
+        "w_um": 2.5,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "NENA",
+          "g": "ena_3v3",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "logic",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM85": {
+      "id": "D17",
+      "predicted": {
+        "role": "enable_switch",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.8,
+        "top_score": 0.8,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VBIAS_N",
+          "g": "NENA",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "enable_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM86": {
+      "id": "D18",
+      "predicted": {
+        "role": "enable_switch",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.8,
+        "top_score": 0.8,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VBIAS_C",
+          "g": "ena_3v3",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "enable_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM87": {
+      "id": "D19",
+      "predicted": {
+        "role": "enable_switch",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.8,
+        "top_score": 0.8,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VERR",
+          "g": "NENA",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "enable_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM88": {
+      "id": "D20",
+      "predicted": {
+        "role": "enable_switch",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.8,
+        "top_score": 0.8,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VBIAS_P",
+          "g": "ena_3v3",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "enable_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM89": {
+      "id": "D21",
+      "predicted": {
+        "role": "enable_switch",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.8,
+        "top_score": 0.8,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VPASS",
+          "g": "NENA",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "enable_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM90": {
+      "id": "D22",
+      "predicted": {
+        "role": "enable_switch",
+        "match": null,
+        "group": "CTRL_EN",
+        "confidence": 0.8,
+        "top_score": 0.8,
+        "margin": 0.45,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VDD_START",
+          "g": "NENA",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "enable_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_EN",
+      "comment": ""
+    },
+    "XM75": {
+      "id": "D23",
+      "predicted": {
+        "role": "logic",
+        "match": null,
+        "group": "CTRL_SEL",
+        "confidence": 0.88,
+        "top_score": 0.88,
+        "margin": 0.53,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "NSEL_EXT",
+          "g": "sel_ext_3v3",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "logic",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_SEL",
+      "comment": ""
+    },
+    "XM76": {
+      "id": "D24",
+      "predicted": {
+        "role": "logic",
+        "match": null,
+        "group": "CTRL_SEL",
+        "confidence": 0.88,
+        "top_score": 0.88,
+        "margin": 0.53,
+        "w_um": 2.5,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "NSEL_EXT",
+          "g": "sel_ext_3v3",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "logic",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_SEL",
+      "comment": ""
+    },
+    "XM77": {
+      "id": "D25",
+      "predicted": {
+        "role": "adj_switch",
+        "match": null,
+        "group": "CTRL_SEL",
+        "confidence": 0.78,
+        "top_score": 0.78,
+        "margin": 0.43,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VREF",
+          "g": "NSEL_EXT",
+          "s": "VREF_INT",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "adj_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_SEL",
+      "comment": ""
+    },
+    "XM78": {
+      "id": "D26",
+      "predicted": {
+        "role": "adj_switch",
+        "match": null,
+        "group": "CTRL_SEL",
+        "confidence": 0.78,
+        "top_score": 0.78,
+        "margin": 0.43,
+        "w_um": 1.0,
+        "l_um": 0.5,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VREF",
+          "g": "sel_ext_3v3",
+          "s": "VREF_EXT",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "adj_switch",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "CTRL_SEL",
+      "comment": ""
+    },
+    "XM79": {
+      "id": "D27",
+      "predicted": {
+        "role": "current_mirror",
+        "match": null,
+        "group": "REF",
+        "confidence": 0.5,
+        "top_score": 0.5,
+        "margin": 0.1,
+        "w_um": 1.0,
+        "l_um": 7.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VREF_INT",
+          "g": "VBIAS_P",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "confirm"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "REF",
+      "comment": "reference 第一级 bias stack：多个 stacked device 等效于一个 L 很大的器件；功能上属于 BIAS，block REF/BIAS 边界是软的。"
+    },
+    "XM80": {
+      "id": "D28",
+      "predicted": {
+        "role": "cascode",
+        "match": null,
+        "group": "REF",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 1.0,
+        "l_um": 10.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net8",
+          "g": "VREF_INT",
+          "s": "net9",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "cascode",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "REF",
+      "comment": ""
+    },
+    "XM81": {
+      "id": "D29",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "REF",
+        "confidence": 0.72,
+        "top_score": 0.72,
+        "margin": 0.27,
+        "w_um": 1.0,
+        "l_um": 10.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VREF_INT",
+          "g": "VREF_INT",
+          "s": "net8",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "REF",
+      "comment": ""
+    },
+    "XM82": {
+      "id": "D30",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "REF",
+        "confidence": 0.55,
+        "top_score": 0.55,
+        "margin": 0.2,
+        "w_um": 1.0,
+        "l_um": 10.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net9",
+          "g": "VREF_INT",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "confirm"
+      },
+      "decision": "accept",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "REF",
+      "comment": "reference 第一级 bias stack 的下管；多个 stacked device 等效于一个 L 很大的器件，功能上属于 BIAS。"
+    },
+    "XM71": {
+      "id": "D31",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "START",
+        "confidence": 0.72,
+        "top_score": 0.72,
+        "margin": 0.27,
+        "w_um": 1.0,
+        "l_um": 2.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net7",
+          "g": "net7",
+          "s": "AVDD",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "START",
+      "comment": "START PMOS diode stack 上管，等效于大 L 器件的一部分。"
+    },
+    "XM72": {
+      "id": "D32",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "START",
+        "confidence": 0.72,
+        "top_score": 0.72,
+        "margin": 0.27,
+        "w_um": 1.0,
+        "l_um": 2.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "net6",
+          "g": "net6",
+          "s": "net7",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "START",
+      "comment": "START PMOS diode stack 中管，等效于大 L 器件的一部分。"
+    },
+    "XM73": {
+      "id": "D33",
+      "predicted": {
+        "role": "bias",
+        "match": null,
+        "group": "START",
+        "confidence": 0.72,
+        "top_score": 0.72,
+        "margin": 0.27,
+        "w_um": 1.0,
+        "l_um": 2.0,
+        "nf": 1,
+        "m": 1,
+        "terminals": {
+          "d": "VSTART",
+          "g": "VSTART",
+          "s": "net6",
+          "b": "AVDD"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "bias",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "START",
+      "comment": "START PMOS diode stack 下管，建立 VSTART。"
+    },
+    "XM74": {
+      "id": "D34",
+      "predicted": {
+        "role": "current_mirror",
+        "match": null,
+        "group": "START",
+        "confidence": 0.82,
+        "top_score": 0.82,
+        "margin": 0.47,
+        "w_um": 5.0,
+        "l_um": 9.0,
+        "nf": 1,
+        "m": 5,
+        "terminals": {
+          "d": "VSTART",
+          "g": "VBIAS_N",
+          "s": "AVSS",
+          "b": "AVSS"
+        },
+        "review": "auto"
+      },
+      "decision": "accept",
+      "role": "current_mirror",
+      "acceptable_roles": [],
+      "match": "",
+      "group": "START",
+      "comment": "START NMOS mirror，把 VSTART 往 AVSS 拉。"
+    }
+  },
+  "nets": {},
+  "ports": {}
+}

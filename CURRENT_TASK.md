@@ -7,7 +7,7 @@ between analog and layout engineers: role/area → floorplan/white-line intent �
 Layout Card → layout delta. This is not a production rule base, signoff tool,
 training assistant, review service, or audit service.
 
-## Current state (2026-10-30)
+## Current state (2026-11-03)
 
 - The deterministic a2l core still works: name/role → five-level area → floorplan
   sketch → layout delta; 55 unittest tests pass.
@@ -58,6 +58,16 @@ training assistant, review service, or audit service.
     rail-to-rail layout benchmark**, unless the user requires a real GPL example.
   - A first 5T annotated schematic now exists at
     `examples/ota5/schematic.svg/png`; it is for role review only.
+- LDO semantic overlay imported (2026-11-03):
+  - source: `AnalogNetlistLabel` v0.2.0, commit `8cefac8`;
+  - location: `examples/sky130_ldo_01v8/netlistlabel-overlay/`;
+  - 41 MOS + 2 C + 3 R + 2 X; groups AMP / OUT / BIAS / REF / START /
+    CTRL_EN / CTRL_SEL / FB / PASSIVE;
+  - raw netlist is read-only; overlay source paths normalized; hashes and
+    reproduction commands are in `provenance.json`;
+  - sampled review: 44 device + 6 net + 8 port accepted in the packet; not
+    global accuracy; full net/passive review remains incomplete;
+  - integrity tests: `tests/test_ldo_overlay.py`; 61 tests pass.
 - Still open: exact NW/PW boundaries, complete CT ring, top/bottom half-W dummy
   variant, exact R/C model footprint, input-center/local-route verification, and
   returning to the LDO white-line/card.
@@ -86,8 +96,9 @@ training assistant, review service, or audit service.
 
 ## Next atomic action
 
-1. Build the LDO `white-line-input.json` from `ldo.annotated.sp`; keep the
-   agent-proposed roles marked as `proposal`, not analog-approved.
+1. Build the LDO `white-line-input.json` from
+   `examples/sky130_ldo_01v8/netlistlabel-overlay/ldo.annotated.sp`; keep the
+   overlay roles marked as `proposal` and sampled-review status visible.
 2. Build a synthetic rail-to-rail OP benchmark (clearly marked `synthetic: true`)
    with enough MOS/multiplicity/ring/DNW/passive to exercise area tradeoffs.
 3. Run class-A + LDO + rail-to-rail as the area benchmark; 5T/two-stage remain

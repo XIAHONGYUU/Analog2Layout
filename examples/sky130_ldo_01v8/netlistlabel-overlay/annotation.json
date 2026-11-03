@@ -1,0 +1,5782 @@
+{
+  "schema_version": "0.2",
+  "design": {
+    "name": "ldo",
+    "source": "examples/sky130_ldo_01v8/ldo.sp",
+    "subckt": "sky130_am_ip__ldo_01v8",
+    "ports": [
+      "AVDD",
+      "VOUT",
+      "AVSS",
+      "ENA",
+      "VREF_EXT",
+      "SEL_EXT",
+      "DVDD",
+      "DVSS"
+    ],
+    "port_directions": {
+      "ENA": "I",
+      "AVDD": "I",
+      "AVSS": "I",
+      "VOUT": "O",
+      "SEL_EXT": "I",
+      "VREF_EXT": "I",
+      "DVDD": "I",
+      "DVSS": "I"
+    },
+    "rails": [
+      "AVDD",
+      "AVSS",
+      "DVDD",
+      "DVSS"
+    ],
+    "output_ports": [
+      "VOUT"
+    ],
+    "stats": {
+      "devices": 48,
+      "mos": 41,
+      "caps": 2,
+      "resistors": 3,
+      "subckts": 2,
+      "ports": 8,
+      "nets": 33,
+      "blocks": 9,
+      "median_width_um": 1.0
+    }
+  },
+  "ports": [
+    {
+      "original_name": "AVDD",
+      "direction": "power",
+      "class": "power",
+      "interface": "power",
+      "quantity": "voltage",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:AVDD",
+      "canonical_name": "AVDD",
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "net AVDD is a power rail"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "power",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "net AVDD is a power rail"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.05,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM46.s",
+        "XM46.b",
+        "XM56.s",
+        "XM56.b",
+        "XM57.b",
+        "XM58.b",
+        "XM59.b",
+        "XM60.s",
+        "XM60.b",
+        "XM61.d",
+        "XM62.s",
+        "XM62.b",
+        "XM63.b",
+        "XM64.s",
+        "XM64.b",
+        "XM65.b"
+      ]
+    },
+    {
+      "original_name": "VOUT",
+      "direction": "output",
+      "class": "signal",
+      "interface": "analog_output",
+      "quantity": "voltage",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:VOUT",
+      "canonical_name": "VOUT",
+      "confidence": 0.7,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction O",
+        "direction output and no control/power token"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.7,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction O",
+            "direction output and no control/power token"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.15,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XR4.n",
+        "XM61.s"
+      ]
+    },
+    {
+      "original_name": "AVSS",
+      "direction": "ground",
+      "class": "ground",
+      "interface": "ground",
+      "quantity": "voltage",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:AVSS",
+      "canonical_name": "AVSS",
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "net AVSS is a ground/body-tied rail"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "ground",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "net AVSS is a ground/body-tied rail"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.05,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM48.s",
+        "XM48.b",
+        "XM52.b",
+        "XM53.b",
+        "XM54.s",
+        "XM54.b",
+        "XM55.s",
+        "XM55.b",
+        "XM59.d",
+        "XR5.p",
+        "XM61.b",
+        "XC1.n",
+        "XM66.b",
+        "XM67.s",
+        "XM67.b",
+        "XM69.s"
+      ]
+    },
+    {
+      "original_name": "ENA",
+      "direction": "input",
+      "class": "enable",
+      "interface": "digital_input",
+      "quantity": "digital",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:ENA",
+      "canonical_name": "ENA",
+      "confidence": 0.9,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "enable token in port name ENA"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "enable",
+          "score": 0.9,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "enable token in port name ENA"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.05,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x1.p0"
+      ]
+    },
+    {
+      "original_name": "VREF_EXT",
+      "direction": "input",
+      "class": "reference",
+      "interface": "analog_reference",
+      "quantity": "voltage",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:VREF_EXT",
+      "canonical_name": "VREF_EXT",
+      "confidence": 0.9,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "reference token in port name VREF_EXT"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "reference",
+          "score": 0.9,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "reference token in port name VREF_EXT"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.05,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM78.s"
+      ]
+    },
+    {
+      "original_name": "SEL_EXT",
+      "direction": "input",
+      "class": "select",
+      "interface": "digital_input",
+      "quantity": "digital",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:SEL_EXT",
+      "canonical_name": "SEL_EXT",
+      "confidence": 0.88,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "select/trim token in port name SEL_EXT"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "select",
+          "score": 0.88,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "select/trim token in port name SEL_EXT"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.06,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x2.p0"
+      ]
+    },
+    {
+      "original_name": "DVDD",
+      "direction": "power",
+      "class": "power",
+      "interface": "power",
+      "quantity": "voltage",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:DVDD",
+      "canonical_name": "DVDD",
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "net DVDD is a power rail"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "power",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "net DVDD is a power rail"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.05,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x1.p1",
+        "x2.p1"
+      ]
+    },
+    {
+      "original_name": "DVSS",
+      "direction": "ground",
+      "class": "ground",
+      "interface": "ground",
+      "quantity": "voltage",
+      "polarity": "unknown",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "port:DVSS",
+      "canonical_name": "DVSS",
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "PININFO direction I",
+        "net DVSS is a ground/body-tied rail"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "ground",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "PININFO direction I",
+            "net DVSS is a ground/body-tied rail"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.05,
+          "kind": "class",
+          "evidence": [
+            "conservative fallback when port semantics are incomplete"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x1.p2",
+        "x1.p3",
+        "x2.p2",
+        "x2.p3"
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "name": "XM46",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VX",
+        "g": "VBIAS_P",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "AMP",
+      "match": "LOAD_AMP",
+      "confidence": 0.85,
+      "review": "auto",
+      "structures": [
+        "mirror_member"
+      ],
+      "evidence": [
+        "6 pmos devices share gate VBIAS_P and source AVDD",
+        "large fan-out cluster: likely bias distribution rather than one matched mirror",
+        "match group LOAD_AMP: same type/model/gate on the two pair drains"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.85,
+          "kind": "role",
+          "evidence": [
+            "6 pmos devices share gate VBIAS_P and source AVDD",
+            "large fan-out cluster: likely bias distribution rather than one matched mirror",
+            "match group LOAD_AMP: same type/model/gate on the two pair drains"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "bias",
+          "score": 0.4,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM46",
+      "canonical_name": null,
+      "top_score": 0.85,
+      "margin": 0.45,
+      "line_no": 4,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "confirm whether this device belongs to a matched mirror or only to the bias fan-out"
+    },
+    {
+      "name": "XM48",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "net2",
+        "g": "net2",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "AMP",
+      "match": "MIR_AMP_net2",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "mirror_reference",
+        "diode_connected"
+      ],
+      "evidence": [
+        "diode-connected reference of MIR_NMOS_net2_AVSS",
+        "2 nmos devices share gate net2 and source AVSS",
+        "XM48 is the diode-connected reference",
+        "match group MIR_AMP_net2: same mirror gate and source in one block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "diode-connected reference of MIR_NMOS_net2_AVSS",
+            "2 nmos devices share gate net2 and source AVSS",
+            "XM48 is the diode-connected reference",
+            "match group MIR_AMP_net2: same mirror gate and source in one block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM48",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 5,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM52",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VX",
+        "g": "VREF",
+        "s": "net1",
+        "b": "AVSS"
+      },
+      "role": "input_pair",
+      "a2l_role": "input_pair",
+      "group": "AMP",
+      "match": "DP_AMP",
+      "confidence": 0.85,
+      "review": "auto",
+      "structures": [
+        "diff_pair"
+      ],
+      "evidence": [
+        "XM52/XM53 share source net1",
+        "gates VREF/VM are distinct",
+        "similar total width",
+        "symmetric pmos loads XM46/XM56 on VX/VY",
+        "tail device XM54 feeds net1",
+        "tail XM54 source AVSS feeds net1",
+        "match group DP_AMP: differential pair with symmetric surroundings"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.2,
+          "reason": "a source-coupled pair can also be a bias/current branch"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "input_pair",
+          "score": 0.85,
+          "kind": "role",
+          "evidence": [
+            "XM52/XM53 share source net1",
+            "gates VREF/VM are distinct",
+            "similar total width",
+            "symmetric pmos loads XM46/XM56 on VX/VY",
+            "tail device XM54 feeds net1",
+            "tail XM54 source AVSS feeds net1",
+            "match group DP_AMP: differential pair with symmetric surroundings"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "bias",
+          "score": 0.2,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "a source-coupled pair can also be a bias/current branch"
+        }
+      ],
+      "semantic_id": "device:XM52",
+      "canonical_name": null,
+      "top_score": 0.85,
+      "margin": 0.5,
+      "line_no": 6,
+      "width_um": 2.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM53",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VY",
+        "g": "VM",
+        "s": "net1",
+        "b": "AVSS"
+      },
+      "role": "input_pair",
+      "a2l_role": "input_pair",
+      "group": "AMP",
+      "match": "DP_AMP",
+      "confidence": 0.85,
+      "review": "auto",
+      "structures": [
+        "diff_pair"
+      ],
+      "evidence": [
+        "XM52/XM53 share source net1",
+        "gates VREF/VM are distinct",
+        "similar total width",
+        "symmetric pmos loads XM46/XM56 on VX/VY",
+        "tail device XM54 feeds net1",
+        "tail XM54 source AVSS feeds net1",
+        "match group DP_AMP: differential pair with symmetric surroundings"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.2,
+          "reason": "a source-coupled pair can also be a bias/current branch"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "input_pair",
+          "score": 0.85,
+          "kind": "role",
+          "evidence": [
+            "XM52/XM53 share source net1",
+            "gates VREF/VM are distinct",
+            "similar total width",
+            "symmetric pmos loads XM46/XM56 on VX/VY",
+            "tail device XM54 feeds net1",
+            "tail XM54 source AVSS feeds net1",
+            "match group DP_AMP: differential pair with symmetric surroundings"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "bias",
+          "score": 0.2,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "a source-coupled pair can also be a bias/current branch"
+        }
+      ],
+      "semantic_id": "device:XM53",
+      "canonical_name": null,
+      "top_score": 0.85,
+      "margin": 0.5,
+      "line_no": 7,
+      "width_um": 2.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM54",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "net1",
+        "g": "VBIAS_N",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "tail_current",
+      "a2l_role": "tail_current",
+      "group": "AMP",
+      "match": null,
+      "confidence": 0.9,
+      "review": "auto",
+      "structures": [
+        "tail"
+      ],
+      "evidence": [
+        "drain net1 is the common source of a differential pair",
+        "source AVSS is a rail"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "tail_current",
+          "score": 0.9,
+          "kind": "role",
+          "evidence": [
+            "drain net1 is the common source of a differential pair",
+            "source AVSS is a rail"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM54",
+      "canonical_name": null,
+      "top_score": 0.9,
+      "margin": 0.55,
+      "line_no": 8,
+      "width_um": 3.0,
+      "l_um": 9.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM55",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VERR",
+        "g": "net2",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "AMP",
+      "match": "MIR_AMP_net2",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "mirror_member",
+        "common_source"
+      ],
+      "evidence": [
+        "2 nmos devices share gate net2 and source AVSS",
+        "XM48 is the diode-connected reference",
+        "source is at a rail; drain drives a load/current source (common-source stage)",
+        "match group MIR_AMP_net2: same mirror gate and source in one block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "2 nmos devices share gate net2 and source AVSS",
+            "XM48 is the diode-connected reference",
+            "source is at a rail; drain drives a load/current source (common-source stage)",
+            "match group MIR_AMP_net2: same mirror gate and source in one block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM55",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 9,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM56",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VY",
+        "g": "VBIAS_P",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "AMP",
+      "match": "LOAD_AMP",
+      "confidence": 0.85,
+      "review": "auto",
+      "structures": [
+        "mirror_member"
+      ],
+      "evidence": [
+        "6 pmos devices share gate VBIAS_P and source AVDD",
+        "large fan-out cluster: likely bias distribution rather than one matched mirror",
+        "match group LOAD_AMP: same type/model/gate on the two pair drains"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.85,
+          "kind": "role",
+          "evidence": [
+            "6 pmos devices share gate VBIAS_P and source AVDD",
+            "large fan-out cluster: likely bias distribution rather than one matched mirror",
+            "match group LOAD_AMP: same type/model/gate on the two pair drains"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "bias",
+          "score": 0.4,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM56",
+      "canonical_name": null,
+      "top_score": 0.85,
+      "margin": 0.45,
+      "line_no": 10,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "confirm whether this device belongs to a matched mirror or only to the bias fan-out"
+    },
+    {
+      "name": "XM57",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VERR",
+        "g": "VBIAS_C",
+        "s": "VY",
+        "b": "AVDD"
+      },
+      "role": "cascode",
+      "a2l_role": "cascode",
+      "group": "AMP",
+      "match": "CAS_AMP",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "cascode",
+        "stack_member"
+      ],
+      "evidence": [
+        "source VY is the drain of XM56",
+        "gate VBIAS_C is bias-like and not the source/drain of this stack",
+        "match group CAS_AMP: two cascodes share a bias gate in the same block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.25,
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "cascode",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "source VY is the drain of XM56",
+            "gate VBIAS_C is bias-like and not the source/drain of this stack",
+            "match group CAS_AMP: two cascodes share a bias gate in the same block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.25,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "semantic_id": "device:XM57",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 11,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM58",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "net2",
+        "g": "VBIAS_C",
+        "s": "VX",
+        "b": "AVDD"
+      },
+      "role": "cascode",
+      "a2l_role": "cascode",
+      "group": "AMP",
+      "match": "CAS_AMP",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "cascode",
+        "stack_member"
+      ],
+      "evidence": [
+        "source VX is the drain of XM46",
+        "gate VBIAS_C is bias-like and not the source/drain of this stack",
+        "match group CAS_AMP: two cascodes share a bias gate in the same block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.25,
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "cascode",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "source VX is the drain of XM46",
+            "gate VBIAS_C is bias-like and not the source/drain of this stack",
+            "match group CAS_AMP: two cascodes share a bias gate in the same block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.25,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "semantic_id": "device:XM58",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 12,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM59",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "AVSS",
+        "g": "VERR",
+        "s": "VPASS",
+        "b": "AVDD"
+      },
+      "role": "output_stage",
+      "a2l_role": "output_stage",
+      "group": "OUT",
+      "match": null,
+      "confidence": 0.72,
+      "review": "auto",
+      "structures": [
+        "pass_driver",
+        "source_follower"
+      ],
+      "evidence": [
+        "source VPASS is the gate net of a pass device",
+        "gate VERR is the high-impedance driver input",
+        "drain is at a rail/AC ground; source drives a load or the next gate (common-drain/source follower)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "output_stage",
+          "score": 0.72,
+          "kind": "role",
+          "evidence": [
+            "source VPASS is the gate net of a pass device",
+            "gate VERR is the high-impedance driver input",
+            "drain is at a rail/AC ground; source drives a load or the next gate (common-drain/source follower)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM59",
+      "canonical_name": null,
+      "top_score": 0.72,
+      "margin": 0.37,
+      "line_no": 13,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM60",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VPASS",
+        "g": "VBIAS_P",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "OUT",
+      "match": null,
+      "confidence": 0.5,
+      "review": "confirm",
+      "structures": [
+        "mirror_member",
+        "common_source"
+      ],
+      "evidence": [
+        "6 pmos devices share gate VBIAS_P and source AVDD",
+        "large fan-out cluster: likely bias distribution rather than one matched mirror",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.5,
+          "kind": "role",
+          "evidence": [
+            "6 pmos devices share gate VBIAS_P and source AVDD",
+            "large fan-out cluster: likely bias distribution rather than one matched mirror",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "bias",
+          "score": 0.4,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM60",
+      "canonical_name": null,
+      "top_score": 0.5,
+      "margin": 0.1,
+      "line_no": 14,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "confirm whether this device belongs to a matched mirror or only to the bias fan-out; ambiguous: margin 0.10 below 0.10"
+    },
+    {
+      "name": "XR4",
+      "kind": "res",
+      "type": "res",
+      "model": "sky130_fd_pr__res_xhigh_po_0p35",
+      "terminals": {
+        "p": "VM",
+        "n": "VOUT"
+      },
+      "role": "feedback",
+      "a2l_role": null,
+      "group": "FB",
+      "match": "FB_DIV",
+      "confidence": 0.86,
+      "review": "auto",
+      "structures": [
+        "series_divider"
+      ],
+      "evidence": [
+        "divider node VM drives gate of XM53",
+        "feedback resistors: XR4, XR5",
+        "match group FB_DIV: resistors share a feedback midpoint that drives a pair gate"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "feedback",
+          "score": 0.86,
+          "kind": "role",
+          "evidence": [
+            "divider node VM drives gate of XM53",
+            "feedback resistors: XR4, XR5",
+            "match group FB_DIV: resistors share a feedback midpoint that drives a pair gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XR4",
+      "canonical_name": null,
+      "top_score": 0.86,
+      "margin": 0.51,
+      "line_no": 15,
+      "res_ohm": 0.0,
+      "value_known": false,
+      "notes": "no resistance value stated; model/W/L only, not converted into a value"
+    },
+    {
+      "name": "XR5",
+      "kind": "res",
+      "type": "res",
+      "model": "sky130_fd_pr__res_xhigh_po_0p35",
+      "terminals": {
+        "p": "AVSS",
+        "n": "VM"
+      },
+      "role": "feedback",
+      "a2l_role": null,
+      "group": "FB",
+      "match": "FB_DIV",
+      "confidence": 0.86,
+      "review": "auto",
+      "structures": [
+        "series_divider"
+      ],
+      "evidence": [
+        "divider node VM drives gate of XM53",
+        "feedback resistors: XR4, XR5",
+        "match group FB_DIV: resistors share a feedback midpoint that drives a pair gate"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "feedback",
+          "score": 0.86,
+          "kind": "role",
+          "evidence": [
+            "divider node VM drives gate of XM53",
+            "feedback resistors: XR4, XR5",
+            "match group FB_DIV: resistors share a feedback midpoint that drives a pair gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XR5",
+      "canonical_name": null,
+      "top_score": 0.86,
+      "margin": 0.51,
+      "line_no": 16,
+      "res_ohm": 0.0,
+      "value_known": false,
+      "notes": "no resistance value stated; model/W/L only, not converted into a value"
+    },
+    {
+      "name": "XM61",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "AVDD",
+        "g": "VPASS",
+        "s": "VOUT",
+        "b": "AVSS"
+      },
+      "role": "pass_device",
+      "a2l_role": "output_stage",
+      "group": "OUT",
+      "match": null,
+      "confidence": 0.95,
+      "review": "auto",
+      "structures": [
+        "pass"
+      ],
+      "evidence": [
+        "total width 5000 um vs median 1 um",
+        "terminal on output port VOUT"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "pass_device",
+          "score": 0.95,
+          "kind": "role",
+          "evidence": [
+            "total width 5000 um vs median 1 um",
+            "terminal on output port VOUT"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM61",
+      "canonical_name": null,
+      "top_score": 0.95,
+      "margin": 0.6,
+      "line_no": 17,
+      "width_um": 5000.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1000,
+      "value_known": true,
+      "notes": "large pass device; confirm SOA/EM and finger count in layout"
+    },
+    {
+      "name": "XC1",
+      "kind": "cap",
+      "type": "cap",
+      "model": "sky130_fd_pr__cap_mim_m3_1",
+      "terminals": {
+        "p": "VERR",
+        "n": "AVSS"
+      },
+      "role": "decap",
+      "a2l_role": "decap",
+      "group": "PASSIVE",
+      "match": null,
+      "confidence": 0.5,
+      "review": "confirm",
+      "structures": [
+        "cap_to_rail"
+      ],
+      "evidence": [
+        "one terminal on rail AVSS",
+        "topology alone cannot distinguish decoupling from compensation/filtering"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "compensation",
+          "confidence": 0.35,
+          "reason": "a rail-referenced cap can be a compensation or filter cap"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "decap",
+          "score": 0.5,
+          "kind": "role",
+          "evidence": [
+            "one terminal on rail AVSS",
+            "topology alone cannot distinguish decoupling from compensation/filtering"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "compensation",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "a rail-referenced cap can be a compensation or filter cap"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XC1",
+      "canonical_name": null,
+      "top_score": 0.5,
+      "margin": 0.15,
+      "line_no": 18,
+      "cap_pf": 0.0,
+      "value_known": false,
+      "notes": "no capacitance value stated; model/W/L only, not converted into a value; soft confirmation: top score 0.50 below 0.70"
+    },
+    {
+      "name": "XM62",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "net3",
+        "g": "VBIAS_P",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "BIAS",
+      "match": "MIR_BIAS_VBIAS_P",
+      "confidence": 0.75,
+      "review": "auto",
+      "structures": [
+        "mirror_member"
+      ],
+      "evidence": [
+        "6 pmos devices share gate VBIAS_P and source AVDD",
+        "large fan-out cluster: likely bias distribution rather than one matched mirror",
+        "match group MIR_BIAS_VBIAS_P: same mirror gate and source in one block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.75,
+          "kind": "role",
+          "evidence": [
+            "6 pmos devices share gate VBIAS_P and source AVDD",
+            "large fan-out cluster: likely bias distribution rather than one matched mirror",
+            "match group MIR_BIAS_VBIAS_P: same mirror gate and source in one block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "bias",
+          "score": 0.4,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM62",
+      "canonical_name": null,
+      "top_score": 0.75,
+      "margin": 0.35,
+      "line_no": 19,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "confirm whether this device belongs to a matched mirror or only to the bias fan-out"
+    },
+    {
+      "name": "XM63",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_P",
+        "g": "VBIAS_C",
+        "s": "net3",
+        "b": "AVDD"
+      },
+      "role": "cascode",
+      "a2l_role": "cascode",
+      "group": "BIAS",
+      "match": "CAS_BIAS",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "cascode",
+        "stack_member"
+      ],
+      "evidence": [
+        "source net3 is the drain of XM62",
+        "gate VBIAS_C is bias-like and not the source/drain of this stack",
+        "match group CAS_BIAS: two cascodes share a bias gate in the same block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.25,
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "cascode",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "source net3 is the drain of XM62",
+            "gate VBIAS_C is bias-like and not the source/drain of this stack",
+            "match group CAS_BIAS: two cascodes share a bias gate in the same block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.25,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "semantic_id": "device:XM63",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 20,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM64",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "net4",
+        "g": "VBIAS_P",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "BIAS",
+      "match": "MIR_BIAS_VBIAS_P",
+      "confidence": 0.75,
+      "review": "auto",
+      "structures": [
+        "mirror_member"
+      ],
+      "evidence": [
+        "6 pmos devices share gate VBIAS_P and source AVDD",
+        "large fan-out cluster: likely bias distribution rather than one matched mirror",
+        "match group MIR_BIAS_VBIAS_P: same mirror gate and source in one block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.75,
+          "kind": "role",
+          "evidence": [
+            "6 pmos devices share gate VBIAS_P and source AVDD",
+            "large fan-out cluster: likely bias distribution rather than one matched mirror",
+            "match group MIR_BIAS_VBIAS_P: same mirror gate and source in one block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "bias",
+          "score": 0.4,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM64",
+      "canonical_name": null,
+      "top_score": 0.75,
+      "margin": 0.35,
+      "line_no": 21,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "confirm whether this device belongs to a matched mirror or only to the bias fan-out"
+    },
+    {
+      "name": "XM65",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_N",
+        "g": "VBIAS_C",
+        "s": "net4",
+        "b": "AVDD"
+      },
+      "role": "cascode",
+      "a2l_role": "cascode",
+      "group": "BIAS",
+      "match": "CAS_BIAS",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "cascode",
+        "stack_member"
+      ],
+      "evidence": [
+        "source net4 is the drain of XM64",
+        "gate VBIAS_C is bias-like and not the source/drain of this stack",
+        "match group CAS_BIAS: two cascodes share a bias gate in the same block"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.25,
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "cascode",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "source net4 is the drain of XM64",
+            "gate VBIAS_C is bias-like and not the source/drain of this stack",
+            "match group CAS_BIAS: two cascodes share a bias gate in the same block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.25,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "semantic_id": "device:XM65",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 22,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM66",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_P",
+        "g": "VBIAS_N",
+        "s": "net5",
+        "b": "AVSS"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "BIAS",
+      "match": "MIR_BIAS_DEG",
+      "confidence": 0.7,
+      "review": "auto",
+      "structures": [
+        "mirror_candidate"
+      ],
+      "evidence": [
+        "shares mirror gate VBIAS_N with XM54, XM67, XM69, XM74",
+        "source net5 differs from the rail-tied mirror source; possible degeneration",
+        "match group MIR_BIAS_DEG: same mirror gate, one source rail-tied and one degenerated"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.7,
+          "kind": "role",
+          "evidence": [
+            "shares mirror gate VBIAS_N with XM54, XM67, XM69, XM74",
+            "source net5 differs from the rail-tied mirror source; possible degeneration",
+            "match group MIR_BIAS_DEG: same mirror gate, one source rail-tied and one degenerated"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM66",
+      "canonical_name": null,
+      "top_score": 0.7,
+      "margin": 0.35,
+      "line_no": 23,
+      "width_um": 20.0,
+      "l_um": 9.0,
+      "nf": 1,
+      "m": 20,
+      "value_known": true,
+      "notes": "mirror with source degeneration or a separate branch; confirm ratio"
+    },
+    {
+      "name": "XM67",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_N",
+        "g": "VBIAS_N",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "BIAS",
+      "match": "MIR_BIAS_DEG",
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "mirror_reference",
+        "diode_connected"
+      ],
+      "evidence": [
+        "diode-connected reference of MIR_NMOS_VBIAS_N_AVSS",
+        "4 nmos devices share gate VBIAS_N and source AVSS",
+        "XM67 is the diode-connected reference",
+        "match group MIR_BIAS_DEG: same mirror gate, one source rail-tied and one degenerated"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "diode-connected reference of MIR_NMOS_VBIAS_N_AVSS",
+            "4 nmos devices share gate VBIAS_N and source AVSS",
+            "XM67 is the diode-connected reference",
+            "match group MIR_BIAS_DEG: same mirror gate, one source rail-tied and one degenerated"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM67",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 24,
+      "width_um": 5.0,
+      "l_um": 9.0,
+      "nf": 1,
+      "m": 5,
+      "value_known": true
+    },
+    {
+      "name": "XM68",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_C",
+        "g": "VBIAS_C",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "BIAS",
+      "match": null,
+      "confidence": 0.72,
+      "review": "auto",
+      "structures": [
+        "diode_connected"
+      ],
+      "evidence": [
+        "gate net VBIAS_C equals drain net VBIAS_C (diode-connected)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.45,
+          "reason": "diode-connected devices often set a mirror reference"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.72,
+          "kind": "role",
+          "evidence": [
+            "gate net VBIAS_C equals drain net VBIAS_C (diode-connected)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.45,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "diode-connected devices often set a mirror reference"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM68",
+      "canonical_name": null,
+      "top_score": 0.72,
+      "margin": 0.27,
+      "line_no": 25,
+      "width_um": 1.0,
+      "l_um": 10.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM69",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_C",
+        "g": "VBIAS_N",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "BIAS",
+      "match": null,
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "mirror_member",
+        "common_source"
+      ],
+      "evidence": [
+        "4 nmos devices share gate VBIAS_N and source AVSS",
+        "XM67 is the diode-connected reference",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "4 nmos devices share gate VBIAS_N and source AVSS",
+            "XM67 is the diode-connected reference",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM69",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 26,
+      "width_um": 5.0,
+      "l_um": 9.0,
+      "nf": 1,
+      "m": 5,
+      "value_known": true
+    },
+    {
+      "name": "XM70",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VDD_START",
+        "g": "VSTART",
+        "s": "VBIAS_N",
+        "b": "AVSS"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "START",
+      "match": null,
+      "confidence": 0.55,
+      "review": "confirm",
+      "structures": [],
+      "evidence": [
+        "gate VSTART is a bias-like net (multiple gates and/or a diode reference)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.35,
+          "reason": "may be a mirror branch whose source differs"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.55,
+          "kind": "role",
+          "evidence": [
+            "gate VSTART is a bias-like net (multiple gates and/or a diode reference)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "may be a mirror branch whose source differs"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM70",
+      "canonical_name": null,
+      "top_score": 0.55,
+      "margin": 0.2,
+      "line_no": 27,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "soft confirmation: top score 0.55 below 0.70"
+    },
+    {
+      "name": "XM71",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "net7",
+        "g": "net7",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "START",
+      "match": null,
+      "confidence": 0.72,
+      "review": "auto",
+      "structures": [
+        "diode_connected"
+      ],
+      "evidence": [
+        "gate net net7 equals drain net net7 (diode-connected)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.45,
+          "reason": "diode-connected devices often set a mirror reference"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.72,
+          "kind": "role",
+          "evidence": [
+            "gate net net7 equals drain net net7 (diode-connected)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.45,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "diode-connected devices often set a mirror reference"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM71",
+      "canonical_name": null,
+      "top_score": 0.72,
+      "margin": 0.27,
+      "line_no": 28,
+      "width_um": 1.0,
+      "l_um": 2.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM72",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "net6",
+        "g": "net6",
+        "s": "net7",
+        "b": "AVDD"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "START",
+      "match": null,
+      "confidence": 0.72,
+      "review": "auto",
+      "structures": [
+        "diode_connected"
+      ],
+      "evidence": [
+        "gate net net6 equals drain net net6 (diode-connected)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.45,
+          "reason": "diode-connected devices often set a mirror reference"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.72,
+          "kind": "role",
+          "evidence": [
+            "gate net net6 equals drain net net6 (diode-connected)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.45,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "diode-connected devices often set a mirror reference"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM72",
+      "canonical_name": null,
+      "top_score": 0.72,
+      "margin": 0.27,
+      "line_no": 29,
+      "width_um": 1.0,
+      "l_um": 2.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM73",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VSTART",
+        "g": "VSTART",
+        "s": "net6",
+        "b": "AVDD"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "START",
+      "match": null,
+      "confidence": 0.72,
+      "review": "auto",
+      "structures": [
+        "diode_connected"
+      ],
+      "evidence": [
+        "gate net VSTART equals drain net VSTART (diode-connected)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.45,
+          "reason": "diode-connected devices often set a mirror reference"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.72,
+          "kind": "role",
+          "evidence": [
+            "gate net VSTART equals drain net VSTART (diode-connected)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.45,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "diode-connected devices often set a mirror reference"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM73",
+      "canonical_name": null,
+      "top_score": 0.72,
+      "margin": 0.27,
+      "line_no": 30,
+      "width_um": 1.0,
+      "l_um": 2.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM74",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VSTART",
+        "g": "VBIAS_N",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "START",
+      "match": null,
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "mirror_member"
+      ],
+      "evidence": [
+        "4 nmos devices share gate VBIAS_N and source AVSS",
+        "XM67 is the diode-connected reference"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "4 nmos devices share gate VBIAS_N and source AVSS",
+            "XM67 is the diode-connected reference"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM74",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 31,
+      "width_um": 5.0,
+      "l_um": 9.0,
+      "nf": 1,
+      "m": 5,
+      "value_known": true
+    },
+    {
+      "name": "XM75",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "NSEL_EXT",
+        "g": "sel_ext_3v3",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "logic",
+      "a2l_role": "adj_switch",
+      "group": "CTRL_SEL",
+      "match": null,
+      "confidence": 0.88,
+      "review": "auto",
+      "structures": [
+        "inverter",
+        "common_source"
+      ],
+      "evidence": [
+        "XM75/XM76 share gate sel_ext_3v3 and drain NSEL_EXT",
+        "XM75 source AVSS and XM76 source AVDD are opposite rails",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "logic",
+          "score": 0.88,
+          "kind": "role",
+          "evidence": [
+            "XM75/XM76 share gate sel_ext_3v3 and drain NSEL_EXT",
+            "XM75 source AVSS and XM76 source AVDD are opposite rails",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM75",
+      "canonical_name": null,
+      "top_score": 0.88,
+      "margin": 0.53,
+      "line_no": 32,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "complementary pair used as an inverter/level driver"
+    },
+    {
+      "name": "XM76",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "NSEL_EXT",
+        "g": "sel_ext_3v3",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "logic",
+      "a2l_role": "adj_switch",
+      "group": "CTRL_SEL",
+      "match": null,
+      "confidence": 0.88,
+      "review": "auto",
+      "structures": [
+        "inverter",
+        "common_source"
+      ],
+      "evidence": [
+        "XM75/XM76 share gate sel_ext_3v3 and drain NSEL_EXT",
+        "XM75 source AVSS and XM76 source AVDD are opposite rails",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "logic",
+          "score": 0.88,
+          "kind": "role",
+          "evidence": [
+            "XM75/XM76 share gate sel_ext_3v3 and drain NSEL_EXT",
+            "XM75 source AVSS and XM76 source AVDD are opposite rails",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM76",
+      "canonical_name": null,
+      "top_score": 0.88,
+      "margin": 0.53,
+      "line_no": 33,
+      "width_um": 2.5,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "complementary pair used as an inverter/level driver"
+    },
+    {
+      "name": "XM77",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VREF",
+        "g": "NSEL_EXT",
+        "s": "VREF_INT",
+        "b": "AVSS"
+      },
+      "role": "adj_switch",
+      "a2l_role": "adj_switch",
+      "group": "CTRL_SEL",
+      "match": null,
+      "confidence": 0.78,
+      "review": "auto",
+      "structures": [
+        "mux",
+        "control_switch"
+      ],
+      "evidence": [
+        "XM77/XM78 share drain VREF but select different sources VREF_INT/VREF_EXT",
+        "gates NSEL_EXT/sel_ext_3v3 are control nets"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "adj_switch",
+          "score": 0.78,
+          "kind": "role",
+          "evidence": [
+            "XM77/XM78 share drain VREF but select different sources VREF_INT/VREF_EXT",
+            "gates NSEL_EXT/sel_ext_3v3 are control nets"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM77",
+      "canonical_name": null,
+      "top_score": 0.78,
+      "margin": 0.43,
+      "line_no": 34,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM78",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VREF",
+        "g": "sel_ext_3v3",
+        "s": "VREF_EXT",
+        "b": "AVSS"
+      },
+      "role": "adj_switch",
+      "a2l_role": "adj_switch",
+      "group": "CTRL_SEL",
+      "match": null,
+      "confidence": 0.78,
+      "review": "auto",
+      "structures": [
+        "mux",
+        "control_switch"
+      ],
+      "evidence": [
+        "XM77/XM78 share drain VREF but select different sources VREF_INT/VREF_EXT",
+        "gates NSEL_EXT/sel_ext_3v3 are control nets"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "adj_switch",
+          "score": 0.78,
+          "kind": "role",
+          "evidence": [
+            "XM77/XM78 share drain VREF but select different sources VREF_INT/VREF_EXT",
+            "gates NSEL_EXT/sel_ext_3v3 are control nets"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM78",
+      "canonical_name": null,
+      "top_score": 0.78,
+      "margin": 0.43,
+      "line_no": 35,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XC3",
+      "kind": "cap",
+      "type": "cap",
+      "model": "sky130_fd_pr__cap_mim_m3_1",
+      "terminals": {
+        "p": "VREF",
+        "n": "AVSS"
+      },
+      "role": "decap",
+      "a2l_role": "decap",
+      "group": "PASSIVE",
+      "match": null,
+      "confidence": 0.5,
+      "review": "confirm",
+      "structures": [
+        "cap_to_rail"
+      ],
+      "evidence": [
+        "one terminal on rail AVSS",
+        "topology alone cannot distinguish decoupling from compensation/filtering"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "compensation",
+          "confidence": 0.35,
+          "reason": "a rail-referenced cap can be a compensation or filter cap"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "decap",
+          "score": 0.5,
+          "kind": "role",
+          "evidence": [
+            "one terminal on rail AVSS",
+            "topology alone cannot distinguish decoupling from compensation/filtering"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "compensation",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "a rail-referenced cap can be a compensation or filter cap"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XC3",
+      "canonical_name": null,
+      "top_score": 0.5,
+      "margin": 0.15,
+      "line_no": 36,
+      "cap_pf": 0.0,
+      "value_known": false,
+      "notes": "no capacitance value stated; model/W/L only, not converted into a value; soft confirmation: top score 0.50 below 0.70"
+    },
+    {
+      "name": "XR6",
+      "kind": "res",
+      "type": "res",
+      "model": "sky130_fd_pr__res_xhigh_po_0p35",
+      "terminals": {
+        "p": "AVSS",
+        "n": "net5"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "BIAS",
+      "match": null,
+      "confidence": 0.7,
+      "review": "auto",
+      "structures": [
+        "degeneration"
+      ],
+      "evidence": [
+        "one terminal on rail AVSS",
+        "other terminal net5 is the source of XM66"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.7,
+          "kind": "role",
+          "evidence": [
+            "one terminal on rail AVSS",
+            "other terminal net5 is the source of XM66"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XR6",
+      "canonical_name": null,
+      "top_score": 0.7,
+      "margin": 0.35,
+      "line_no": 37,
+      "res_ohm": 0.0,
+      "value_known": false,
+      "notes": "no resistance value stated; model/W/L only, not converted into a value"
+    },
+    {
+      "name": "XM79",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VREF_INT",
+        "g": "VBIAS_P",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "current_mirror",
+      "a2l_role": "current_mirror",
+      "group": "REF",
+      "match": null,
+      "confidence": 0.5,
+      "review": "confirm",
+      "structures": [
+        "mirror_member"
+      ],
+      "evidence": [
+        "6 pmos devices share gate VBIAS_P and source AVDD",
+        "large fan-out cluster: likely bias distribution rather than one matched mirror"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "current_mirror",
+          "score": 0.5,
+          "kind": "role",
+          "evidence": [
+            "6 pmos devices share gate VBIAS_P and source AVDD",
+            "large fan-out cluster: likely bias distribution rather than one matched mirror"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "bias",
+          "score": 0.4,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM79",
+      "canonical_name": null,
+      "top_score": 0.5,
+      "margin": 0.1,
+      "line_no": 38,
+      "width_um": 1.0,
+      "l_um": 7.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "confirm whether this device belongs to a matched mirror or only to the bias fan-out; ambiguous: margin 0.10 below 0.10"
+    },
+    {
+      "name": "XM80",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "net8",
+        "g": "VREF_INT",
+        "s": "net9",
+        "b": "AVSS"
+      },
+      "role": "cascode",
+      "a2l_role": "cascode",
+      "group": "REF",
+      "match": null,
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "cascode",
+        "stack_member"
+      ],
+      "evidence": [
+        "source net9 is the drain of XM82",
+        "gate VREF_INT is bias-like and not the source/drain of this stack"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.25,
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "cascode",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "source net9 is the drain of XM82",
+            "gate VREF_INT is bias-like and not the source/drain of this stack"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.25,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "the stack may be a mirror branch rather than a cascode"
+        }
+      ],
+      "semantic_id": "device:XM80",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 39,
+      "width_um": 1.0,
+      "l_um": 10.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM81",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VREF_INT",
+        "g": "VREF_INT",
+        "s": "net8",
+        "b": "AVSS"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "REF",
+      "match": null,
+      "confidence": 0.72,
+      "review": "auto",
+      "structures": [
+        "diode_connected"
+      ],
+      "evidence": [
+        "gate net VREF_INT equals drain net VREF_INT (diode-connected)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.45,
+          "reason": "diode-connected devices often set a mirror reference"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.72,
+          "kind": "role",
+          "evidence": [
+            "gate net VREF_INT equals drain net VREF_INT (diode-connected)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.45,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "diode-connected devices often set a mirror reference"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM81",
+      "canonical_name": null,
+      "top_score": 0.72,
+      "margin": 0.27,
+      "line_no": 40,
+      "width_um": 1.0,
+      "l_um": 10.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM82",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "net9",
+        "g": "VREF_INT",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "bias",
+      "a2l_role": "bias",
+      "group": "REF",
+      "match": null,
+      "confidence": 0.55,
+      "review": "confirm",
+      "structures": [],
+      "evidence": [
+        "gate VREF_INT is a bias-like net (multiple gates and/or a diode reference)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.35,
+          "reason": "may be a mirror branch whose source differs"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.55,
+          "kind": "role",
+          "evidence": [
+            "gate VREF_INT is a bias-like net (multiple gates and/or a diode reference)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "current_mirror",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [],
+          "negative_evidence": [],
+          "reason": "may be a mirror branch whose source differs"
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM82",
+      "canonical_name": null,
+      "top_score": 0.55,
+      "margin": 0.2,
+      "line_no": 41,
+      "width_um": 1.0,
+      "l_um": 10.0,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "soft confirmation: top score 0.55 below 0.70"
+    },
+    {
+      "name": "XM83",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "NENA",
+        "g": "ena_3v3",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "logic",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.88,
+      "review": "auto",
+      "structures": [
+        "inverter",
+        "common_source"
+      ],
+      "evidence": [
+        "XM83/XM84 share gate ena_3v3 and drain NENA",
+        "XM83 source AVSS and XM84 source AVDD are opposite rails",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "logic",
+          "score": 0.88,
+          "kind": "role",
+          "evidence": [
+            "XM83/XM84 share gate ena_3v3 and drain NENA",
+            "XM83 source AVSS and XM84 source AVDD are opposite rails",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM83",
+      "canonical_name": null,
+      "top_score": 0.88,
+      "margin": 0.53,
+      "line_no": 42,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "complementary pair used as an inverter/level driver"
+    },
+    {
+      "name": "XM84",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "NENA",
+        "g": "ena_3v3",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "logic",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.88,
+      "review": "auto",
+      "structures": [
+        "inverter",
+        "common_source"
+      ],
+      "evidence": [
+        "XM83/XM84 share gate ena_3v3 and drain NENA",
+        "XM83 source AVSS and XM84 source AVDD are opposite rails",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "logic",
+          "score": 0.88,
+          "kind": "role",
+          "evidence": [
+            "XM83/XM84 share gate ena_3v3 and drain NENA",
+            "XM83 source AVSS and XM84 source AVDD are opposite rails",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM84",
+      "canonical_name": null,
+      "top_score": 0.88,
+      "margin": 0.53,
+      "line_no": 43,
+      "width_um": 2.5,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true,
+      "notes": "complementary pair used as an inverter/level driver"
+    },
+    {
+      "name": "XM85",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_N",
+        "g": "NENA",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "enable_switch",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.8,
+      "review": "auto",
+      "structures": [
+        "control_switch",
+        "common_source"
+      ],
+      "evidence": [
+        "gate NENA is a enable net",
+        "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+        "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+        "control-like port name ENA",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "enable_switch",
+          "score": 0.8,
+          "kind": "role",
+          "evidence": [
+            "gate NENA is a enable net",
+            "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+            "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+            "control-like port name ENA",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM85",
+      "canonical_name": null,
+      "top_score": 0.8,
+      "margin": 0.45,
+      "line_no": 44,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM86",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_C",
+        "g": "ena_3v3",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "enable_switch",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.8,
+      "review": "auto",
+      "structures": [
+        "control_switch",
+        "common_source"
+      ],
+      "evidence": [
+        "gate ena_3v3 is a enable net",
+        "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+        "control-like port name ENA",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "enable_switch",
+          "score": 0.8,
+          "kind": "role",
+          "evidence": [
+            "gate ena_3v3 is a enable net",
+            "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+            "control-like port name ENA",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM86",
+      "canonical_name": null,
+      "top_score": 0.8,
+      "margin": 0.45,
+      "line_no": 45,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM87",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VERR",
+        "g": "NENA",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "enable_switch",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.8,
+      "review": "auto",
+      "structures": [
+        "control_switch",
+        "common_source"
+      ],
+      "evidence": [
+        "gate NENA is a enable net",
+        "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+        "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+        "control-like port name ENA",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "enable_switch",
+          "score": 0.8,
+          "kind": "role",
+          "evidence": [
+            "gate NENA is a enable net",
+            "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+            "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+            "control-like port name ENA",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM87",
+      "canonical_name": null,
+      "top_score": 0.8,
+      "margin": 0.45,
+      "line_no": 46,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM88",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VBIAS_P",
+        "g": "ena_3v3",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "enable_switch",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.8,
+      "review": "auto",
+      "structures": [
+        "control_switch",
+        "common_source"
+      ],
+      "evidence": [
+        "gate ena_3v3 is a enable net",
+        "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+        "control-like port name ENA",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "enable_switch",
+          "score": 0.8,
+          "kind": "role",
+          "evidence": [
+            "gate ena_3v3 is a enable net",
+            "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+            "control-like port name ENA",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM88",
+      "canonical_name": null,
+      "top_score": 0.8,
+      "margin": 0.45,
+      "line_no": 47,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM89",
+      "kind": "mos",
+      "type": "nmos",
+      "model": "sky130_fd_pr__nfet_g5v0d10v5",
+      "terminals": {
+        "d": "VPASS",
+        "g": "NENA",
+        "s": "AVSS",
+        "b": "AVSS"
+      },
+      "role": "enable_switch",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.8,
+      "review": "auto",
+      "structures": [
+        "control_switch",
+        "common_source"
+      ],
+      "evidence": [
+        "gate NENA is a enable net",
+        "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+        "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+        "control-like port name ENA",
+        "source is at a rail; drain drives a load/current source (common-source stage)"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "enable_switch",
+          "score": 0.8,
+          "kind": "role",
+          "evidence": [
+            "gate NENA is a enable net",
+            "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+            "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+            "control-like port name ENA",
+            "source is at a rail; drain drives a load/current source (common-source stage)"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM89",
+      "canonical_name": null,
+      "top_score": 0.8,
+      "margin": 0.45,
+      "line_no": 48,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "XM90",
+      "kind": "mos",
+      "type": "pmos",
+      "model": "sky130_fd_pr__pfet_g5v0d10v5",
+      "terminals": {
+        "d": "VDD_START",
+        "g": "NENA",
+        "s": "AVDD",
+        "b": "AVDD"
+      },
+      "role": "enable_switch",
+      "a2l_role": "enable_switch",
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.8,
+      "review": "auto",
+      "structures": [
+        "control_switch"
+      ],
+      "evidence": [
+        "gate NENA is a enable net",
+        "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+        "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+        "control-like port name ENA"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "enable_switch",
+          "score": 0.8,
+          "kind": "role",
+          "evidence": [
+            "gate NENA is a enable net",
+            "NENA is the inverted output of ena_3v3 (XM83/XM84 pair)",
+            "x1 (sky130_fd_sc_hvl__lsbuflv2hv_1) drives ena_3v3 from ENA",
+            "control-like port name ENA"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:XM90",
+      "canonical_name": null,
+      "top_score": 0.8,
+      "margin": 0.45,
+      "line_no": 49,
+      "width_um": 1.0,
+      "l_um": 0.5,
+      "nf": 1,
+      "m": 1,
+      "value_known": true
+    },
+    {
+      "name": "x1",
+      "kind": "subckt",
+      "type": "subckt",
+      "model": "sky130_fd_sc_hvl__lsbuflv2hv_1",
+      "terminals": {
+        "p0": "ENA",
+        "p1": "DVDD",
+        "p2": "DVSS",
+        "p3": "DVSS",
+        "p4": "AVDD",
+        "p5": "AVDD",
+        "p6": "ena_3v3"
+      },
+      "role": "logic",
+      "a2l_role": null,
+      "group": "CTRL_EN",
+      "match": null,
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "level_shift"
+      ],
+      "evidence": [
+        "digital/level-shift subcircuit sky130_fd_sc_hvl__lsbuflv2hv_1",
+        "output ena_3v3 driven from ENA",
+        "output ena_3v3 is a propagated enable control net"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "logic",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "digital/level-shift subcircuit sky130_fd_sc_hvl__lsbuflv2hv_1",
+            "output ena_3v3 driven from ENA",
+            "output ena_3v3 is a propagated enable control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:X1",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 50
+    },
+    {
+      "name": "x2",
+      "kind": "subckt",
+      "type": "subckt",
+      "model": "sky130_fd_sc_hvl__lsbuflv2hv_1",
+      "terminals": {
+        "p0": "SEL_EXT",
+        "p1": "DVDD",
+        "p2": "DVSS",
+        "p3": "DVSS",
+        "p4": "AVDD",
+        "p5": "AVDD",
+        "p6": "sel_ext_3v3"
+      },
+      "role": "logic",
+      "a2l_role": null,
+      "group": "CTRL_SEL",
+      "match": null,
+      "confidence": 0.82,
+      "review": "auto",
+      "structures": [
+        "level_shift"
+      ],
+      "evidence": [
+        "digital/level-shift subcircuit sky130_fd_sc_hvl__lsbuflv2hv_1",
+        "output sel_ext_3v3 driven from SEL_EXT",
+        "output sel_ext_3v3 is a propagated select control net"
+      ],
+      "negative_evidence": [],
+      "alternatives": [],
+      "candidates": [
+        {
+          "label": "logic",
+          "score": 0.82,
+          "kind": "role",
+          "evidence": [
+            "digital/level-shift subcircuit sky130_fd_sc_hvl__lsbuflv2hv_1",
+            "output sel_ext_3v3 driven from SEL_EXT",
+            "output sel_ext_3v3 is a propagated select control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "unknown",
+          "score": 0.35,
+          "kind": "role",
+          "evidence": [
+            "conservative abstention baseline"
+          ],
+          "negative_evidence": [],
+          "reason": "use when the top structural role is not clearly supported"
+        }
+      ],
+      "semantic_id": "device:X2",
+      "canonical_name": null,
+      "top_score": 0.82,
+      "margin": 0.47,
+      "line_no": 51
+    }
+  ],
+  "nets": [
+    {
+      "original_name": "VX",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "cascode_mid",
+      "function": null,
+      "differential_group": "DP_AMP",
+      "bus": null,
+      "semantic_id": "net:VX",
+      "canonical_name": "CAS_MID_AMP",
+      "block": "AMP",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net VX is the source of a cascode device",
+        "differential group DP_AMP from pair XM52/XM53"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net VX is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "cascode_mid",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net VX is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM46.d",
+        "XM52.d",
+        "XM58.s"
+      ]
+    },
+    {
+      "original_name": "VBIAS_P",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "mirror_gate",
+      "function": "interstage_signal",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VBIAS_P",
+      "canonical_name": null,
+      "block": "BIAS",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VBIAS_P is a cascode output and drives a common-source gate"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VBIAS_P is a cascode output and drives a common-source gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "mirror_gate",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VBIAS_P is a cascode output and drives a common-source gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM46.g",
+        "XM56.g",
+        "XM60.g",
+        "XM62.g",
+        "XM63.d",
+        "XM64.g",
+        "XM66.d",
+        "XM79.g",
+        "XM88.d"
+      ]
+    },
+    {
+      "original_name": "AVDD",
+      "is_port": true,
+      "class": "power",
+      "structural_role": "supply",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:AVDD",
+      "canonical_name": "AVDD",
+      "block": null,
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "net AVDD is an inferred rail",
+        "port class power and interface power"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "power",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "net AVDD is an inferred rail",
+            "port class power and interface power"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "supply",
+          "score": 0.95,
+          "kind": "structural_role",
+          "evidence": [
+            "net AVDD is an inferred rail",
+            "port class power and interface power"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM46.s",
+        "XM46.b",
+        "XM56.s",
+        "XM56.b",
+        "XM57.b",
+        "XM58.b",
+        "XM59.b",
+        "XM60.s",
+        "XM60.b",
+        "XM61.d",
+        "XM62.s",
+        "XM62.b",
+        "XM63.b",
+        "XM64.s",
+        "XM64.b",
+        "XM65.b"
+      ]
+    },
+    {
+      "original_name": "net2",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "mirror_gate",
+      "function": "interstage_signal",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET2",
+      "canonical_name": null,
+      "block": "AMP",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net net2 is a cascode output and drives a common-source gate"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net net2 is a cascode output and drives a common-source gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "mirror_gate",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net net2 is a cascode output and drives a common-source gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM48.d",
+        "XM48.g",
+        "XM55.g",
+        "XM58.d"
+      ]
+    },
+    {
+      "original_name": "AVSS",
+      "is_port": true,
+      "class": "ground",
+      "structural_role": "ground",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:AVSS",
+      "canonical_name": "AVSS",
+      "block": null,
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "net AVSS is an inferred rail",
+        "port class ground and interface ground"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "ground",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "net AVSS is an inferred rail",
+            "port class ground and interface ground"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "ground",
+          "score": 0.95,
+          "kind": "structural_role",
+          "evidence": [
+            "net AVSS is an inferred rail",
+            "port class ground and interface ground"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM48.s",
+        "XM48.b",
+        "XM52.b",
+        "XM53.b",
+        "XM54.s",
+        "XM54.b",
+        "XM55.s",
+        "XM55.b",
+        "XM59.d",
+        "XR5.p",
+        "XM61.b",
+        "XC1.n",
+        "XM66.b",
+        "XM67.s",
+        "XM67.b",
+        "XM69.s"
+      ]
+    },
+    {
+      "original_name": "VREF",
+      "is_port": false,
+      "class": "reference",
+      "structural_role": "reference",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VREF",
+      "canonical_name": null,
+      "block": "CTRL_SEL",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VREF is a reference name or belongs to the REF block"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VREF is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VREF is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM52.g",
+        "XM77.d",
+        "XM78.d",
+        "XC3.p"
+      ]
+    },
+    {
+      "original_name": "net1",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "tail",
+      "function": null,
+      "differential_group": "DP_AMP",
+      "bus": null,
+      "semantic_id": "net:NET1",
+      "canonical_name": "TAIL_AMP",
+      "block": "AMP",
+      "confidence": 0.85,
+      "review": "auto",
+      "evidence": [
+        "net net1 is the common source of pair XM52/XM53"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.85,
+          "kind": "class",
+          "evidence": [
+            "net net1 is the common source of pair XM52/XM53"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "tail",
+          "score": 0.85,
+          "kind": "structural_role",
+          "evidence": [
+            "net net1 is the common source of pair XM52/XM53"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM52.s",
+        "XM53.s",
+        "XM54.d"
+      ]
+    },
+    {
+      "original_name": "VY",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "cascode_mid",
+      "function": null,
+      "differential_group": "DP_AMP",
+      "bus": null,
+      "semantic_id": "net:VY",
+      "canonical_name": "CAS_MID_AMP",
+      "block": "AMP",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net VY is the source of a cascode device",
+        "differential group DP_AMP from pair XM52/XM53"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net VY is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "cascode_mid",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net VY is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM53.d",
+        "XM56.d",
+        "XM57.s"
+      ]
+    },
+    {
+      "original_name": "VM",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "feedback",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VM",
+      "canonical_name": "FB_FB",
+      "block": "FB",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VM is a divider midpoint that drives a pair gate"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VM is a divider midpoint that drives a pair gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "feedback",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VM is a divider midpoint that drives a pair gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM53.g",
+        "XR4.p",
+        "XR5.n"
+      ]
+    },
+    {
+      "original_name": "VBIAS_N",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "mirror_gate",
+      "function": "interstage_signal",
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VBIAS_N",
+      "canonical_name": null,
+      "block": "BIAS",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VBIAS_N is a cascode output and drives a common-source gate"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VBIAS_N is a cascode output and drives a common-source gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "mirror_gate",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VBIAS_N is a cascode output and drives a common-source gate"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM54.g",
+        "XM65.d",
+        "XM66.g",
+        "XM67.d",
+        "XM67.g",
+        "XM69.g",
+        "XM70.s",
+        "XM74.g",
+        "XM85.d"
+      ]
+    },
+    {
+      "original_name": "VERR",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "gain_node",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VERR",
+      "canonical_name": null,
+      "block": "AMP",
+      "confidence": 0.65,
+      "review": "confirm",
+      "evidence": [
+        "net VERR is a multi-drain high-impedance gain node"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.65,
+          "kind": "class",
+          "evidence": [
+            "net VERR is a multi-drain high-impedance gain node"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "gain_node",
+          "score": 0.65,
+          "kind": "structural_role",
+          "evidence": [
+            "net VERR is a multi-drain high-impedance gain node"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM55.d",
+        "XM57.d",
+        "XM59.g",
+        "XC1.p",
+        "XM87.d"
+      ]
+    },
+    {
+      "original_name": "VBIAS_C",
+      "is_port": false,
+      "class": "bias",
+      "structural_role": "mirror_gate",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VBIAS_C",
+      "canonical_name": null,
+      "block": "BIAS",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VBIAS_C is shared by mirror/diode gates"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VBIAS_C is shared by mirror/diode gates"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "mirror_gate",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VBIAS_C is shared by mirror/diode gates"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM57.g",
+        "XM58.g",
+        "XM63.g",
+        "XM65.g",
+        "XM68.d",
+        "XM68.g",
+        "XM69.d",
+        "XM86.d"
+      ]
+    },
+    {
+      "original_name": "VPASS",
+      "is_port": false,
+      "class": "control",
+      "structural_role": "pass_gate",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VPASS",
+      "canonical_name": "PASS_GATE",
+      "block": "OUT",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VPASS is the gate of a pass device"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VPASS is the gate of a pass device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "pass_gate",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VPASS is the gate of a pass device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM59.s",
+        "XM60.d",
+        "XM61.g",
+        "XM89.d"
+      ]
+    },
+    {
+      "original_name": "VOUT",
+      "is_port": true,
+      "class": "signal",
+      "structural_role": "output",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VOUT",
+      "canonical_name": "VOUT",
+      "block": "OUT",
+      "confidence": 0.7,
+      "review": "auto",
+      "evidence": [
+        "port: PININFO direction O",
+        "port: direction output and no control/power token",
+        "port class signal and interface analog_output"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.7,
+          "kind": "class",
+          "evidence": [
+            "port: PININFO direction O",
+            "port: direction output and no control/power token",
+            "port class signal and interface analog_output"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "output",
+          "score": 0.7,
+          "kind": "structural_role",
+          "evidence": [
+            "port: PININFO direction O",
+            "port: direction output and no control/power token",
+            "port class signal and interface analog_output"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XR4.n",
+        "XM61.s"
+      ]
+    },
+    {
+      "original_name": "net3",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "cascode_mid",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET3",
+      "canonical_name": "CAS_MID_BIAS",
+      "block": "BIAS",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net net3 is the source of a cascode device"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net net3 is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "cascode_mid",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net net3 is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM62.d",
+        "XM63.s"
+      ]
+    },
+    {
+      "original_name": "net4",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "cascode_mid",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET4",
+      "canonical_name": "CAS_MID_BIAS",
+      "block": "BIAS",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net net4 is the source of a cascode device"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net net4 is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "cascode_mid",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net net4 is the source of a cascode device"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM64.d",
+        "XM65.s"
+      ]
+    },
+    {
+      "original_name": "net5",
+      "is_port": false,
+      "class": "bias",
+      "structural_role": "degeneration",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET5",
+      "canonical_name": null,
+      "block": "BIAS",
+      "confidence": 0.7,
+      "review": "auto",
+      "evidence": [
+        "net net5 is a source-degeneration node"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "bias",
+          "score": 0.7,
+          "kind": "class",
+          "evidence": [
+            "net net5 is a source-degeneration node"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "degeneration",
+          "score": 0.7,
+          "kind": "structural_role",
+          "evidence": [
+            "net net5 is a source-degeneration node"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM66.s",
+        "XR6.n"
+      ]
+    },
+    {
+      "original_name": "VDD_START",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "startup",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VDD_START",
+      "canonical_name": null,
+      "block": "START",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net VDD_START belongs to the startup network"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net VDD_START belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "startup",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net VDD_START belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM70.d",
+        "XM90.d"
+      ]
+    },
+    {
+      "original_name": "VSTART",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "startup",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VSTART",
+      "canonical_name": null,
+      "block": "START",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net VSTART belongs to the startup network"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net VSTART belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "startup",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net VSTART belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM70.g",
+        "XM73.d",
+        "XM73.g",
+        "XM74.d"
+      ]
+    },
+    {
+      "original_name": "net7",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "startup",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET7",
+      "canonical_name": null,
+      "block": "START",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net net7 belongs to the startup network"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net net7 belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "startup",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net net7 belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM71.d",
+        "XM71.g",
+        "XM72.s"
+      ]
+    },
+    {
+      "original_name": "net6",
+      "is_port": false,
+      "class": "signal",
+      "structural_role": "startup",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET6",
+      "canonical_name": null,
+      "block": "START",
+      "confidence": 0.75,
+      "review": "auto",
+      "evidence": [
+        "net net6 belongs to the startup network"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "signal",
+          "score": 0.75,
+          "kind": "class",
+          "evidence": [
+            "net net6 belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "startup",
+          "score": 0.75,
+          "kind": "structural_role",
+          "evidence": [
+            "net net6 belongs to the startup network"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM72.d",
+        "XM72.g",
+        "XM73.s"
+      ]
+    },
+    {
+      "original_name": "NSEL_EXT",
+      "is_port": false,
+      "class": "control",
+      "structural_role": "control",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NSEL_EXT",
+      "canonical_name": null,
+      "block": "CTRL_SEL",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net NSEL_EXT is a propagated select control net"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net NSEL_EXT is a propagated select control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net NSEL_EXT is a propagated select control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM75.d",
+        "XM76.d",
+        "XM77.g"
+      ]
+    },
+    {
+      "original_name": "sel_ext_3v3",
+      "is_port": false,
+      "class": "control",
+      "structural_role": "control",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:SEL_EXT_3V3",
+      "canonical_name": null,
+      "block": "CTRL_SEL",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net sel_ext_3v3 is a propagated select control net"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net sel_ext_3v3 is a propagated select control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net sel_ext_3v3 is a propagated select control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM75.g",
+        "XM76.g",
+        "XM78.g",
+        "x2.p6"
+      ]
+    },
+    {
+      "original_name": "VREF_INT",
+      "is_port": false,
+      "class": "reference",
+      "structural_role": "reference",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VREF_INT",
+      "canonical_name": null,
+      "block": "REF",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net VREF_INT is a reference name or belongs to the REF block"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net VREF_INT is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net VREF_INT is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM77.s",
+        "XM79.d",
+        "XM80.g",
+        "XM81.d",
+        "XM81.g",
+        "XM82.g"
+      ]
+    },
+    {
+      "original_name": "VREF_EXT",
+      "is_port": true,
+      "class": "reference",
+      "structural_role": "reference",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:VREF_EXT",
+      "canonical_name": "VREF_EXT",
+      "block": "CTRL_SEL",
+      "confidence": 0.9,
+      "review": "auto",
+      "evidence": [
+        "port: PININFO direction I",
+        "port: reference token in port name VREF_EXT",
+        "port class reference and interface analog_reference"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "reference",
+          "score": 0.9,
+          "kind": "class",
+          "evidence": [
+            "port: PININFO direction I",
+            "port: reference token in port name VREF_EXT",
+            "port class reference and interface analog_reference"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "reference",
+          "score": 0.9,
+          "kind": "structural_role",
+          "evidence": [
+            "port: PININFO direction I",
+            "port: reference token in port name VREF_EXT",
+            "port class reference and interface analog_reference"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM78.s"
+      ]
+    },
+    {
+      "original_name": "net8",
+      "is_port": false,
+      "class": "reference",
+      "structural_role": "reference",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET8",
+      "canonical_name": null,
+      "block": "REF",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net net8 is a reference name or belongs to the REF block"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net net8 is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net net8 is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM80.d",
+        "XM81.s"
+      ]
+    },
+    {
+      "original_name": "net9",
+      "is_port": false,
+      "class": "reference",
+      "structural_role": "reference",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NET9",
+      "canonical_name": null,
+      "block": "REF",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net net9 is a reference name or belongs to the REF block"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net net9 is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "reference",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net net9 is a reference name or belongs to the REF block"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM80.s",
+        "XM82.d"
+      ]
+    },
+    {
+      "original_name": "NENA",
+      "is_port": false,
+      "class": "control",
+      "structural_role": "control",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:NENA",
+      "canonical_name": null,
+      "block": "CTRL_EN",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net NENA is a propagated enable control net"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net NENA is a propagated enable control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net NENA is a propagated enable control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM83.d",
+        "XM84.d",
+        "XM85.g",
+        "XM87.g",
+        "XM89.g",
+        "XM90.g"
+      ]
+    },
+    {
+      "original_name": "ena_3v3",
+      "is_port": false,
+      "class": "control",
+      "structural_role": "control",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:ENA_3V3",
+      "canonical_name": null,
+      "block": "CTRL_EN",
+      "confidence": 0.8,
+      "review": "auto",
+      "evidence": [
+        "net ena_3v3 is a propagated enable control net"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "class",
+          "evidence": [
+            "net ena_3v3 is a propagated enable control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "control",
+          "score": 0.8,
+          "kind": "structural_role",
+          "evidence": [
+            "net ena_3v3 is a propagated enable control net"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "XM83.g",
+        "XM84.g",
+        "XM86.g",
+        "XM88.g",
+        "x1.p6"
+      ]
+    },
+    {
+      "original_name": "ENA",
+      "is_port": true,
+      "class": "enable",
+      "structural_role": "control",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:ENA",
+      "canonical_name": "ENA",
+      "block": "CTRL_EN",
+      "confidence": 0.9,
+      "review": "auto",
+      "evidence": [
+        "port: PININFO direction I",
+        "port: enable token in port name ENA",
+        "port class enable and interface digital_input"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "enable",
+          "score": 0.9,
+          "kind": "class",
+          "evidence": [
+            "port: PININFO direction I",
+            "port: enable token in port name ENA",
+            "port class enable and interface digital_input"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "control",
+          "score": 0.9,
+          "kind": "structural_role",
+          "evidence": [
+            "port: PININFO direction I",
+            "port: enable token in port name ENA",
+            "port class enable and interface digital_input"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x1.p0"
+      ]
+    },
+    {
+      "original_name": "DVDD",
+      "is_port": true,
+      "class": "power",
+      "structural_role": "supply",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:DVDD",
+      "canonical_name": "DVDD",
+      "block": null,
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "net DVDD is an inferred rail",
+        "port class power and interface power"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "power",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "net DVDD is an inferred rail",
+            "port class power and interface power"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "supply",
+          "score": 0.95,
+          "kind": "structural_role",
+          "evidence": [
+            "net DVDD is an inferred rail",
+            "port class power and interface power"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x1.p1",
+        "x2.p1"
+      ]
+    },
+    {
+      "original_name": "DVSS",
+      "is_port": true,
+      "class": "ground",
+      "structural_role": "ground",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:DVSS",
+      "canonical_name": "DVSS",
+      "block": null,
+      "confidence": 0.95,
+      "review": "auto",
+      "evidence": [
+        "net DVSS is an inferred rail",
+        "port class ground and interface ground"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "ground",
+          "score": 0.95,
+          "kind": "class",
+          "evidence": [
+            "net DVSS is an inferred rail",
+            "port class ground and interface ground"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "ground",
+          "score": 0.95,
+          "kind": "structural_role",
+          "evidence": [
+            "net DVSS is an inferred rail",
+            "port class ground and interface ground"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x1.p2",
+        "x1.p3",
+        "x2.p2",
+        "x2.p3"
+      ]
+    },
+    {
+      "original_name": "SEL_EXT",
+      "is_port": true,
+      "class": "select",
+      "structural_role": "control",
+      "function": null,
+      "differential_group": null,
+      "bus": null,
+      "semantic_id": "net:SEL_EXT",
+      "canonical_name": "SEL_EXT",
+      "block": "CTRL_SEL",
+      "confidence": 0.88,
+      "review": "auto",
+      "evidence": [
+        "port: PININFO direction I",
+        "port: select/trim token in port name SEL_EXT",
+        "port class select and interface digital_input"
+      ],
+      "negative_evidence": [],
+      "candidates": [
+        {
+          "label": "select",
+          "score": 0.88,
+          "kind": "class",
+          "evidence": [
+            "port: PININFO direction I",
+            "port: select/trim token in port name SEL_EXT",
+            "port class select and interface digital_input"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        },
+        {
+          "label": "control",
+          "score": 0.88,
+          "kind": "structural_role",
+          "evidence": [
+            "port: PININFO direction I",
+            "port: select/trim token in port name SEL_EXT",
+            "port class select and interface digital_input"
+          ],
+          "negative_evidence": [],
+          "reason": ""
+        }
+      ],
+      "conflicts": [],
+      "anchors": [
+        "x2.p0"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "AMP",
+      "label": "信号路径放大级",
+      "kind": "amplifier",
+      "devices": [
+        "XM46",
+        "XM48",
+        "XM52",
+        "XM53",
+        "XM54",
+        "XM55",
+        "XM56",
+        "XM57",
+        "XM58"
+      ],
+      "nets": [
+        "net1",
+        "net2",
+        "VBIAS_C",
+        "VBIAS_N",
+        "VBIAS_P",
+        "VERR",
+        "VM",
+        "VREF",
+        "VX",
+        "VY"
+      ],
+      "ports": [],
+      "confidence": 0.764,
+      "evidence": [
+        "reachable from non-rail, non-control input ports through gate/source/drain edges",
+        "excludes the pass device and its immediate gate-drive network",
+        "roles: cascode, current_mirror, input_pair, tail_current"
+      ]
+    },
+    {
+      "id": "OUT",
+      "label": "输出/功率级",
+      "kind": "output",
+      "devices": [
+        "XM59",
+        "XM60",
+        "XM61"
+      ],
+      "nets": [
+        "VBIAS_P",
+        "VERR",
+        "VOUT",
+        "VPASS"
+      ],
+      "ports": [
+        "VOUT"
+      ],
+      "confidence": 0.723,
+      "evidence": [
+        "contains the pass device or a device on its gate-drive net",
+        "roles: current_mirror, output_stage, pass_device"
+      ]
+    },
+    {
+      "id": "BIAS",
+      "label": "偏置网络",
+      "kind": "bias",
+      "devices": [
+        "XM62",
+        "XM63",
+        "XM64",
+        "XM65",
+        "XM66",
+        "XM67",
+        "XM68",
+        "XM69",
+        "XR6"
+      ],
+      "nets": [
+        "net3",
+        "net4",
+        "net5",
+        "VBIAS_C",
+        "VBIAS_N",
+        "VBIAS_P"
+      ],
+      "ports": [],
+      "confidence": 0.702,
+      "evidence": [
+        "mirror/cascode/bias devices outside the signal path",
+        "roles: bias, cascode, current_mirror"
+      ]
+    },
+    {
+      "id": "REF",
+      "label": "基准/参考网络",
+      "kind": "reference",
+      "devices": [
+        "XM79",
+        "XM80",
+        "XM81",
+        "XM82"
+      ],
+      "nets": [
+        "net8",
+        "net9",
+        "VBIAS_P",
+        "VREF_INT"
+      ],
+      "ports": [],
+      "confidence": 0.647,
+      "evidence": [
+        "devices touching a ref/vref-like net, grown through source/drain sharing",
+        "roles: bias, cascode, current_mirror"
+      ]
+    },
+    {
+      "id": "START",
+      "label": "启动/踢偏网络",
+      "kind": "startup",
+      "devices": [
+        "XM70",
+        "XM71",
+        "XM72",
+        "XM73",
+        "XM74"
+      ],
+      "nets": [
+        "net6",
+        "net7",
+        "VBIAS_N",
+        "VDD_START",
+        "VSTART"
+      ],
+      "ports": [],
+      "confidence": 0.706,
+      "evidence": [
+        "devices touching a start/kick/por-like net, grown through source/drain sharing",
+        "roles: bias, current_mirror"
+      ]
+    },
+    {
+      "id": "CTRL_EN",
+      "label": "使能/掉电控制",
+      "kind": "control",
+      "devices": [
+        "x1",
+        "XM83",
+        "XM84",
+        "XM85",
+        "XM86",
+        "XM87",
+        "XM88",
+        "XM89",
+        "XM90"
+      ],
+      "nets": [
+        "ENA",
+        "ena_3v3",
+        "NENA",
+        "VBIAS_C",
+        "VBIAS_N",
+        "VBIAS_P",
+        "VDD_START",
+        "VERR",
+        "VPASS"
+      ],
+      "ports": [
+        "ENA"
+      ],
+      "confidence": 0.82,
+      "evidence": [
+        "gate net propagates from an enable-like port or inverter",
+        "roles: enable_switch, logic"
+      ]
+    },
+    {
+      "id": "CTRL_SEL",
+      "label": "选择/Trim 控制",
+      "kind": "control",
+      "devices": [
+        "x2",
+        "XM75",
+        "XM76",
+        "XM77",
+        "XM78"
+      ],
+      "nets": [
+        "NSEL_EXT",
+        "SEL_EXT",
+        "sel_ext_3v3",
+        "VREF",
+        "VREF_EXT",
+        "VREF_INT"
+      ],
+      "ports": [
+        "SEL_EXT",
+        "VREF_EXT"
+      ],
+      "confidence": 0.828,
+      "evidence": [
+        "gate net propagates from a select/trim-like port or inverter",
+        "roles: adj_switch, logic"
+      ]
+    },
+    {
+      "id": "FB",
+      "label": "反馈分压/补偿网络",
+      "kind": "feedback",
+      "devices": [
+        "XR4",
+        "XR5"
+      ],
+      "nets": [
+        "VM",
+        "VOUT"
+      ],
+      "ports": [
+        "VOUT"
+      ],
+      "confidence": 0.86,
+      "evidence": [
+        "passive devices on a divider that drives an amplifier input",
+        "roles: feedback"
+      ]
+    },
+    {
+      "id": "PASSIVE",
+      "label": "未归类无源网络",
+      "kind": "passive",
+      "devices": [
+        "XC1",
+        "XC3"
+      ],
+      "nets": [
+        "VERR",
+        "VREF"
+      ],
+      "ports": [],
+      "confidence": 0.5,
+      "evidence": [
+        "passive devices not assigned to a functional block",
+        "roles: decap"
+      ]
+    }
+  ],
+  "review_queue": [
+    {
+      "kind": "device",
+      "name": "XM60",
+      "device": "XM60",
+      "role": "current_mirror",
+      "group": "OUT",
+      "review": "confirm",
+      "top_score": 0.5,
+      "margin": 0.1,
+      "reasons": [
+        "ambiguous: margin 0.10 below 0.10",
+        "confidence 0.50 below 0.70",
+        "mirror vs bias-fan-out ambiguity"
+      ],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ]
+    },
+    {
+      "kind": "device",
+      "name": "XC1",
+      "device": "XC1",
+      "role": "decap",
+      "group": "PASSIVE",
+      "review": "confirm",
+      "top_score": 0.5,
+      "margin": 0.15,
+      "reasons": [
+        "confidence 0.50 below 0.70",
+        "capacitance value not stated; model W/L was not converted"
+      ],
+      "alternatives": [
+        {
+          "role": "compensation",
+          "confidence": 0.35,
+          "reason": "a rail-referenced cap can be a compensation or filter cap"
+        }
+      ]
+    },
+    {
+      "kind": "device",
+      "name": "XM70",
+      "device": "XM70",
+      "role": "bias",
+      "group": "START",
+      "review": "confirm",
+      "top_score": 0.55,
+      "margin": 0.2,
+      "reasons": [
+        "confidence 0.55 below 0.70"
+      ],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.35,
+          "reason": "may be a mirror branch whose source differs"
+        }
+      ]
+    },
+    {
+      "kind": "device",
+      "name": "XC3",
+      "device": "XC3",
+      "role": "decap",
+      "group": "PASSIVE",
+      "review": "confirm",
+      "top_score": 0.5,
+      "margin": 0.15,
+      "reasons": [
+        "confidence 0.50 below 0.70",
+        "capacitance value not stated; model W/L was not converted"
+      ],
+      "alternatives": [
+        {
+          "role": "compensation",
+          "confidence": 0.35,
+          "reason": "a rail-referenced cap can be a compensation or filter cap"
+        }
+      ]
+    },
+    {
+      "kind": "device",
+      "name": "XM79",
+      "device": "XM79",
+      "role": "current_mirror",
+      "group": "REF",
+      "review": "confirm",
+      "top_score": 0.5,
+      "margin": 0.1,
+      "reasons": [
+        "ambiguous: margin 0.10 below 0.10",
+        "confidence 0.50 below 0.70",
+        "mirror vs bias-fan-out ambiguity"
+      ],
+      "alternatives": [
+        {
+          "role": "bias",
+          "confidence": 0.4,
+          "reason": "large gate/source fan-out may be bias distribution, not a matched mirror"
+        }
+      ]
+    },
+    {
+      "kind": "device",
+      "name": "XM82",
+      "device": "XM82",
+      "role": "bias",
+      "group": "REF",
+      "review": "confirm",
+      "top_score": 0.55,
+      "margin": 0.2,
+      "reasons": [
+        "confidence 0.55 below 0.70"
+      ],
+      "alternatives": [
+        {
+          "role": "current_mirror",
+          "confidence": 0.35,
+          "reason": "may be a mirror branch whose source differs"
+        }
+      ]
+    },
+    {
+      "kind": "net",
+      "name": "VERR",
+      "role": "signal",
+      "structural_role": "gain_node",
+      "group": "AMP",
+      "review": "confirm",
+      "reasons": [
+        "confidence 0.65 below 0.70"
+      ],
+      "alternatives": [
+        {
+          "role": "gain_node",
+          "confidence": 0.65,
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "devices_total": 48,
+    "roles_known": 48,
+    "role_coverage": 1.0,
+    "mos_total": 41,
+    "mos_roles_known": 41,
+    "mos_role_coverage": 1.0,
+    "matched_devices": 16,
+    "match_coverage": 0.333,
+    "device_auto": 42,
+    "device_confirm": 6,
+    "device_unknown": 0,
+    "mean_margin": 0.404,
+    "ports_total": 8,
+    "ports_classified": 8,
+    "port_class_coverage": 1.0,
+    "nets_total": 33,
+    "nets_class_known": 33,
+    "net_class_coverage": 1.0,
+    "nets_role_known": 33,
+    "net_role_coverage": 1.0,
+    "port_review_items": 0,
+    "net_review_items": 1,
+    "review_items": 7,
+    "mean_confidence": 0.771,
+    "mean_port_confidence": 0.897,
+    "mean_net_confidence": 0.805,
+    "structure_counts": {
+      "cap_to_rail": 2,
+      "cascode": 5,
+      "common_source": 12,
+      "control_switch": 8,
+      "degeneration": 1,
+      "diff_pair": 2,
+      "diode_connected": 7,
+      "inverter": 4,
+      "level_shift": 2,
+      "mirror_candidate": 1,
+      "mirror_member": 9,
+      "mirror_reference": 2,
+      "mux": 2,
+      "pass": 1,
+      "pass_driver": 1,
+      "series_divider": 2,
+      "source_follower": 1,
+      "stack_member": 5,
+      "tail": 1
+    },
+    "block_count": 9
+  },
+  "warnings": []
+}

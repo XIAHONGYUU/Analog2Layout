@@ -1,0 +1,94 @@
+{
+  "design": "ldo",
+  "schema_version": "0.1",
+  "source": "ldo.sp",
+  "decisions": {
+    "accept": 58
+  },
+  "devices": {
+    "total": 44,
+    "reviewed": 44,
+    "evaluated": 44,
+    "decisions": {
+      "accept": 44
+    },
+    "strict_correct": 44,
+    "strict_accuracy": 1.0,
+    "lenient_correct": 44,
+    "lenient_accuracy": 1.0,
+    "auto_reviewed": 39,
+    "auto_precision": 1.0,
+    "match_total": 16,
+    "match_accuracy": 1.0,
+    "group_total": 44,
+    "group_accuracy": 1.0,
+    "confusion": {
+      "input_pair -> input_pair": 2,
+      "tail_current -> tail_current": 1,
+      "output_stage -> output_stage": 1,
+      "feedback -> feedback": 2,
+      "pass_device -> pass_device": 1,
+      "current_mirror -> current_mirror": 12,
+      "decap -> decap": 1,
+      "bias -> bias": 7,
+      "cascode -> cascode": 5,
+      "logic -> logic": 4,
+      "enable_switch -> enable_switch": 6,
+      "adj_switch -> adj_switch": 2
+    },
+    "missing_predictions": []
+  },
+  "nets": {
+    "total": 6,
+    "reviewed": 6,
+    "evaluated": 6,
+    "decisions": {
+      "accept": 6
+    },
+    "class_correct": 6,
+    "class_accuracy": 1.0,
+    "role_correct": 6,
+    "role_accuracy": 1.0,
+    "class_confusion": {
+      "signal -> signal": 5,
+      "control -> control": 1
+    },
+    "role_confusion": {
+      "tail -> tail": 1,
+      "feedback -> feedback": 1,
+      "gain_node -> gain_node": 1,
+      "pass_gate -> pass_gate": 1,
+      "mirror_gate -> mirror_gate": 2
+    },
+    "missing_predictions": []
+  },
+  "ports": {
+    "total": 8,
+    "reviewed": 8,
+    "evaluated": 8,
+    "decisions": {
+      "accept": 8
+    },
+    "direction_correct": 8,
+    "direction_accuracy": 1.0,
+    "class_correct": 8,
+    "class_accuracy": 1.0,
+    "interface_correct": 8,
+    "interface_accuracy": 1.0,
+    "missing_predictions": []
+  },
+  "notes": [
+    "This is a sampled human-review result, not a claim of global accuracy.",
+    "Accepted items use the prediction as the expected label.",
+    "Ambiguous items are counted but excluded from accuracy."
+  ],
+  "reviewed_total": 58,
+  "review_rate": 1.0,
+  "device_strict_accuracy": 1.0,
+  "device_lenient_accuracy": 1.0,
+  "net_class_accuracy": 1.0,
+  "net_role_accuracy": 1.0,
+  "port_direction_accuracy": 1.0,
+  "port_class_accuracy": 1.0,
+  "port_interface_accuracy": 1.0
+}
