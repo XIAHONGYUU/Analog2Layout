@@ -76,8 +76,8 @@ training assistant, review service, or audit service.
   - tests: `tests/test_ldo_white_line_input.py`; full suite 67 tests pass.
   - deterministic device-level compiler baseline built:
     `examples/sky130_ldo_01v8/make_white_line.py`;
-    bbox 84.98×142.60, area 12,118.1 µm², effective 8,775.1 µm²,
-    utilization 72.4%, aspect 0.60; actual matched-device clusters + shared
+    bbox 84.98×142.60, area 12,118.1 µm², effective 8,805.2 µm²,
+    utilization 72.7%, aspect 0.60; actual matched-device clusters + shared
     boundary dummies (matched clusters only) + per-well rings + passive rings
     + DNW1/DNW2;
     `white-line-manifest.json`; 72 tests pass. Area optimization is still open.

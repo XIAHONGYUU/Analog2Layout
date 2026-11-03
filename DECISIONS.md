@@ -402,10 +402,12 @@ should survive individual tasks.
   - the A/B/C multi-agent block estimates are exploratory only; they are not the
     LDO acceptance artifact.
   - current baseline: bbox 84.98×142.60, area 12,118.1 µm², effective
-    8,775.1 µm², utilization 72.4%, aspect 0.60; same-W/L/matched devices
+    8,805.2 µm², utilization 72.7%, aspect 0.60; same-W/L/matched devices
     are clustered into interdigitated arrays; only matched clusters get shared
     end dummies, unmatched devices get none.
   - area optimization and stricter local-gap checks remain open.
+  - matching is proposal-only until the owner confirms `matching-review.md`;
+    unmatched devices are not silently clustered.
   - no DRC/LVS/PEX claim.
 - **Related:** `examples/sky130_ldo_01v8/make_white_line.py`,
   `examples/sky130_ldo_01v8/white-line-manifest.json`, `CURRENT_TASK.md`.

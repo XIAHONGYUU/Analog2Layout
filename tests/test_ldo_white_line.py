@@ -20,7 +20,7 @@ class LdoWhiteLineTest(unittest.TestCase):
 
     def test_device_and_hierarchy_counts(self):
         self.assertEqual(len(self.m["devices"]), 41)
-        self.assertEqual(len(self.m["device_clusters"]), 23)
+        self.assertEqual(len(self.m["device_clusters"]), 34)
         self.assertEqual(len(self.m["passive_blocks"]), 5)
         self.assertEqual(len(self.m["blackboxes"]), 2)
         self.assertEqual(len(self.m["blocks"]), 20)
@@ -32,6 +32,13 @@ class LdoWhiteLineTest(unittest.TestCase):
         self.assertAlmostEqual(self.m["utilization"], self.m["effective_um2"] / self.m["area_um2"], places=6)
         self.assertGreater(self.m["effective_um2"], 0)
         self.assertLess(self.m["utilization"], 1)
+
+    def test_ring_audit_is_explicit(self):
+        r = self.m["ring_audit"]
+        self.assertEqual(r["mos_width_um"], 1.0)
+        self.assertEqual(r["gap_um"], 0.8)
+        self.assertEqual(r["dnw_margin_um"], 3.0)
+        self.assertIn("not a ring", r["note"])
 
     def test_dnw_geometry(self):
         self.assertEqual(self.m["checks"]["dnw_gap_outer"], 8.0)

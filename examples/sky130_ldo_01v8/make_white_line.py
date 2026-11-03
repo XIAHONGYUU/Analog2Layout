@@ -104,10 +104,14 @@ def make_well_blocks():
     for d in D["devices"]:
         if d["name"] == "XM61":
             continue
-        key = (d["group"], d["well"], float(d["W_um"]), float(d["L_um"]), d.get("match") or "")
+        # Only declared/match groups share a cluster. An unmatched device
+        # must not silently share an array with a same-W/L neighbour.
+        match = d.get("match") or ""
+        key = (d["group"], d["well"], float(d["W_um"]), float(d["L_um"]), match,
+               "" if d.get("matched") else d["name"])
         buckets.setdefault(key, []).append(d)
     blocks = []
-    for (group, well, w, l, match), members in buckets.items():
+    for (group, well, w, l, match, _single), members in buckets.items():
         fw, fh = l + PITCH, w + 0.60
         # boundary dummies only for a matched cluster; unmatched same-W/L
         # devices may share an array but are not padded with full dummy fingers.
@@ -206,6 +210,7 @@ def main():
         "model":{"device_cell":"L+0.36 x W+0.60","boundary_dummy_cols":2,
                  "ring_gap":RING_GAP,"ring_width":RING_W,"group_gap":GROUP_GAP,
                  "dnw_margin":DNW_MARGIN,"dnw_gap":DNW_GAP,
+                 "ring_model":"1.0 um AA ring + 0.8 um gap; 1.0 is an inherited heuristic, not a PDK value",
                  "passive_ring":"outside core","x1_x2":"5x5 cell+ring, no extra ring"},
         "bbox_um":[bbox_w,bbox_h],"area_um2":area,"effective_um2":effective,
         "utilization":util,"aspect_w_over_h":bbox_w/bbox_h,
@@ -262,7 +267,11 @@ def main():
         "checks":{"all_devices_placed":True,"dnw2_only_xm61":True,
                   "dnw_gap_outer":DNW_GAP,"passives_inside_dnw1":True,
                   "x1_x2_inside_dnw1":True,"fake_fill":False,"drc_lvs":False},
+        "ring_audit":{"mos_width_um":RING_W,"passive_width_um":RING_W,
+                      "gap_um":RING_GAP,"dnw_margin_um":DNW_MARGIN,
+                      "note":"the green AA band is 1.0 um; the 3.0 um DNW margin is a separate dashed enclosure, not a ring"},
         "assumptions":["DNW margin 3.0 um is an explicit heuristic, not a PDK rule.",
+                       "AA ring width 1.0 um is inherited from class-A; it is not a confirmed PDK rule.",
                        "per-well subarray rings; no second AA ring around passives.",
                        "segment/ring/dummy geometry is white-line intent."],
     }
@@ -292,6 +301,7 @@ def main():
     rect(-1000,-1000,6000,6000,fill="#f8fafc",stroke="none")
     txt(34,36,"SKY130 1.8 V LDO — device-level white-line",26,"#0f172a",700)
     txt(34,58,"41 MOS + 5 passives + x1/x2 · per-well rings · boundary dummies · DNW1/DNW2 8 µm · not DRC/LVS",9,"#475569",mono=True)
+    txt(34,74,"AA ring: 1.0 µm wide, gap 0.8 µm (inherited heuristic) · DNW margin 3.0 µm is the dashed enclosure, NOT a ring",9,"#0f766e",mono=True)
     # DNWs
     rect(0,0,dnw1_w,dnw1_h,fill="none",stroke="#0f766e",sw=1.2,rx=1,dash="6 3")
     rect(dnw2_x,dnw2_y,dnw2_w,dnw2_h,fill="none",stroke="#0f766e",sw=1.2,rx=1,dash="6 3")

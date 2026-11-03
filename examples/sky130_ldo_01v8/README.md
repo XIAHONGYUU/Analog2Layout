@@ -14,7 +14,8 @@ unit test.
 | [`white-line-input.json`](white-line-input.json) | white-line geometry contract generated from the overlay | built; unknowns visible |
 | [`make_white_line_input.py`](make_white_line_input.py) | deterministic overlay → JSON importer | reproducible |
 | [`white-line.svg`](white-line.svg) / [`white-line.png`](white-line.png) | device-level LDO white-line baseline | built; **not DRC/LVS** |
-| [`white-line-manifest.json`](white-line-manifest.json) | actual device arrays, blocks, DNW, bbox/area | machine-readable |
+| [`white-line-manifest.json`](white-line-manifest.json) | actual device clusters, blocks, DNW, bbox/area | machine-readable |
+| [`matching-review.md`](matching-review.md) | owner-confirmation packet for match groups | **needs review** |
 | [`make_white_line.py`](make_white_line.py) | deterministic LDO white-line compiler | reproducible |
 
 The imported overlay is the preferred semantic input for the next LDO
@@ -65,8 +66,8 @@ The first **device-level** compiler output is:
 ```text
 bbox        = 84.98 × 142.60 µm
 area        = 12,118.1 µm²
-effective   = 8,775.1 µm²
-utilization = 72.4%
+effective   = 8,805.2 µm²
+utilization = 72.7%
 aspect      = 0.60
 ```
 

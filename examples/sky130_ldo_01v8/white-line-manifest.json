@@ -10,6 +10,7 @@
     "group_gap": 2.0,
     "dnw_margin": 3.0,
     "dnw_gap": 8.0,
+    "ring_model": "1.0 um AA ring + 0.8 um gap; 1.0 is an inherited heuristic, not a PDK value",
     "passive_ring": "outside core",
     "x1_x2": "5x5 cell+ring, no extra ring"
   },
@@ -18,8 +19,8 @@
     142.6
   ],
   "area_um2": 12118.147999999997,
-  "effective_um2": 8775.143999999998,
-  "utilization": 0.7241324334378488,
+  "effective_um2": 8805.187999999998,
+  "utilization": 0.7266116901691578,
   "aspect_w_over_h": 0.5959326788218793,
   "dnw1": {
     "x": 0,
@@ -86,7 +87,7 @@
       "kind": "well",
       "group": "OUT",
       "well": "NW",
-      "x": 54.04,
+      "x": 59.4,
       "y": 42.800000000000004,
       "w": 12.32,
       "h": 5.2
@@ -126,19 +127,19 @@
       "kind": "well",
       "group": "START",
       "well": "NW",
-      "x": 75.12,
-      "y": 3.0,
-      "w": 5.96,
-      "h": 8.4
+      "x": 38.04,
+      "y": 42.800000000000004,
+      "w": 8.82,
+      "h": 6.800000000000001
     },
     {
       "name": "CTRL_SEL_PW",
       "kind": "well",
       "group": "CTRL_SEL",
       "well": "PW",
-      "x": 41.980000000000004,
-      "y": 49.60000000000001,
-      "w": 6.18,
+      "x": 73.72,
+      "y": 42.800000000000004,
+      "w": 7.18,
       "h": 5.2
     },
     {
@@ -146,8 +147,8 @@
       "kind": "well",
       "group": "CTRL_SEL",
       "well": "NW",
-      "x": 47.58,
-      "y": 42.800000000000004,
+      "x": 75.12,
+      "y": 3.0,
       "w": 4.46,
       "h": 6.7
     },
@@ -156,8 +157,8 @@
       "kind": "well",
       "group": "REF",
       "well": "NW",
-      "x": 68.36,
-      "y": 42.800000000000004,
+      "x": 41.980000000000004,
+      "y": 49.60000000000001,
       "w": 10.96,
       "h": 5.2
     },
@@ -176,19 +177,19 @@
       "kind": "well",
       "group": "CTRL_EN",
       "well": "PW",
-      "x": 76.2,
-      "y": 33.2,
-      "w": 5.32,
-      "h": 6.800000000000001
+      "x": 54.940000000000005,
+      "y": 49.60000000000001,
+      "w": 8.54,
+      "h": 5.2
     },
     {
       "name": "CTRL_EN_NW",
       "kind": "well",
       "group": "CTRL_EN",
       "well": "NW",
-      "x": 38.04,
+      "x": 48.86,
       "y": 42.800000000000004,
-      "w": 7.54,
+      "w": 8.54,
       "h": 6.7
     },
     {
@@ -246,7 +247,7 @@
       "kind": "blackbox",
       "group": "CTRL_EN",
       "well": null,
-      "x": 50.160000000000004,
+      "x": 65.48,
       "y": 49.60000000000001,
       "w": 5.0,
       "h": 5.0
@@ -256,7 +257,7 @@
       "kind": "blackbox",
       "group": "CTRL_SEL",
       "well": null,
-      "x": 57.160000000000004,
+      "x": 72.48,
       "y": 49.60000000000001,
       "w": 5.0,
       "h": 5.0
@@ -403,7 +404,7 @@
       "fh": 1.6,
       "w": 0.86,
       "h": 1.6,
-      "x": 63.699999999999996,
+      "x": 69.06,
       "y": 44.6,
       "sequence": [
         "XM59"
@@ -426,7 +427,7 @@
       "fh": 1.6,
       "w": 7.36,
       "h": 1.6,
-      "x": 55.839999999999996,
+      "x": 61.199999999999996,
       "y": 44.6,
       "sequence": [
         "XM60"
@@ -631,56 +632,140 @@
       ]
     },
     {
-      "name": "XM71/XM72/XM73",
+      "name": "XM71",
       "group": "START",
       "well": "NW",
       "block": "START_NW",
       "members": [
-        "XM71",
-        "XM72",
-        "XM73"
+        "XM71"
       ],
-      "rows": 3,
+      "rows": 1,
       "cols": 1,
-      "fingers": 3,
+      "fingers": 1,
       "dummy_cols": 0,
       "empty_cells": 0,
       "fw": 2.36,
       "fh": 1.6,
       "w": 2.36,
-      "h": 4.800000000000001,
-      "x": 76.92,
-      "y": 4.8,
+      "h": 1.6,
+      "x": 39.839999999999996,
+      "y": 44.6,
       "sequence": [
-        "XM71",
-        "XM72",
+        "XM71"
+      ]
+    },
+    {
+      "name": "XM72",
+      "group": "START",
+      "well": "NW",
+      "block": "START_NW",
+      "members": [
+        "XM72"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 2.36,
+      "fh": 1.6,
+      "w": 2.36,
+      "h": 1.6,
+      "x": 42.699999999999996,
+      "y": 44.6,
+      "sequence": [
+        "XM72"
+      ]
+    },
+    {
+      "name": "XM73",
+      "group": "START",
+      "well": "NW",
+      "block": "START_NW",
+      "members": [
+        "XM73"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 2.36,
+      "fh": 1.6,
+      "w": 2.36,
+      "h": 1.6,
+      "x": 39.839999999999996,
+      "y": 46.2,
+      "sequence": [
         "XM73"
       ]
     },
     {
-      "name": "XM75/XM77/XM78",
+      "name": "XM75",
       "group": "CTRL_SEL",
       "well": "PW",
       "block": "CTRL_SEL_PW",
       "members": [
-        "XM75",
-        "XM77",
-        "XM78"
+        "XM75"
       ],
       "rows": 1,
-      "cols": 3,
-      "fingers": 3,
+      "cols": 1,
+      "fingers": 1,
       "dummy_cols": 0,
       "empty_cells": 0,
       "fw": 0.86,
       "fh": 1.6,
-      "w": 2.58,
+      "w": 0.86,
       "h": 1.6,
-      "x": 43.78,
-      "y": 51.400000000000006,
+      "x": 75.52,
+      "y": 44.6,
       "sequence": [
-        "XM75",
-        "XM77",
+        "XM75"
+      ]
+    },
+    {
+      "name": "XM77",
+      "group": "CTRL_SEL",
+      "well": "PW",
+      "block": "CTRL_SEL_PW",
+      "members": [
+        "XM77"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 76.88,
+      "y": 44.6,
+      "sequence": [
+        "XM77"
+      ]
+    },
+    {
+      "name": "XM78",
+      "group": "CTRL_SEL",
+      "well": "PW",
+      "block": "CTRL_SEL_PW",
+      "members": [
+        "XM78"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 78.24,
+      "y": 44.6,
+      "sequence": [
         "XM78"
       ]
     },
@@ -701,8 +786,8 @@
       "fh": 3.1,
       "w": 0.86,
       "h": 3.1,
-      "x": 49.379999999999995,
-      "y": 44.6,
+      "x": 76.92,
+      "y": 4.8,
       "sequence": [
         "XM76"
       ]
@@ -724,65 +809,170 @@
       "fh": 1.6,
       "w": 7.36,
       "h": 1.6,
-      "x": 70.16,
-      "y": 44.6,
+      "x": 43.78,
+      "y": 51.400000000000006,
       "sequence": [
         "XM79"
       ]
     },
     {
-      "name": "XM80/XM81/XM82",
+      "name": "XM80",
       "group": "REF",
       "well": "PW",
       "block": "REF_PW",
       "members": [
-        "XM80",
-        "XM81",
-        "XM82"
+        "XM80"
       ],
-      "rows": 3,
+      "rows": 1,
       "cols": 1,
-      "fingers": 3,
+      "fingers": 1,
       "dummy_cols": 0,
       "empty_cells": 0,
       "fw": 10.36,
       "fh": 1.6,
       "w": 10.36,
-      "h": 4.800000000000001,
+      "h": 1.6,
       "x": 62.04,
       "y": 35.0,
       "sequence": [
-        "XM80",
-        "XM81",
+        "XM80"
+      ]
+    },
+    {
+      "name": "XM81",
+      "group": "REF",
+      "well": "PW",
+      "block": "REF_PW",
+      "members": [
+        "XM81"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 10.36,
+      "fh": 1.6,
+      "w": 10.36,
+      "h": 1.6,
+      "x": 62.04,
+      "y": 36.6,
+      "sequence": [
+        "XM81"
+      ]
+    },
+    {
+      "name": "XM82",
+      "group": "REF",
+      "well": "PW",
+      "block": "REF_PW",
+      "members": [
+        "XM82"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 10.36,
+      "fh": 1.6,
+      "w": 10.36,
+      "h": 1.6,
+      "x": 62.04,
+      "y": 38.2,
+      "sequence": [
         "XM82"
       ]
     },
     {
-      "name": "XM83/XM85/XM87/XM89",
+      "name": "XM83",
       "group": "CTRL_EN",
       "well": "PW",
       "block": "CTRL_EN_PW",
       "members": [
-        "XM83",
-        "XM85",
-        "XM87",
-        "XM89"
+        "XM83"
       ],
-      "rows": 2,
-      "cols": 2,
-      "fingers": 4,
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
       "dummy_cols": 0,
       "empty_cells": 0,
       "fw": 0.86,
       "fh": 1.6,
-      "w": 1.72,
-      "h": 3.2,
-      "x": 78.0,
-      "y": 35.0,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 56.74,
+      "y": 51.400000000000006,
       "sequence": [
-        "XM83",
-        "XM85",
-        "XM87",
+        "XM83"
+      ]
+    },
+    {
+      "name": "XM85",
+      "group": "CTRL_EN",
+      "well": "PW",
+      "block": "CTRL_EN_PW",
+      "members": [
+        "XM85"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 58.1,
+      "y": 51.400000000000006,
+      "sequence": [
+        "XM85"
+      ]
+    },
+    {
+      "name": "XM87",
+      "group": "CTRL_EN",
+      "well": "PW",
+      "block": "CTRL_EN_PW",
+      "members": [
+        "XM87"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 59.46,
+      "y": 51.400000000000006,
+      "sequence": [
+        "XM87"
+      ]
+    },
+    {
+      "name": "XM89",
+      "group": "CTRL_EN",
+      "well": "PW",
+      "block": "CTRL_EN_PW",
+      "members": [
+        "XM89"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 60.82,
+      "y": 51.400000000000006,
+      "sequence": [
         "XM89"
       ]
     },
@@ -803,36 +993,78 @@
       "fh": 3.1,
       "w": 0.86,
       "h": 3.1,
-      "x": 39.839999999999996,
+      "x": 50.66,
       "y": 44.6,
       "sequence": [
         "XM84"
       ]
     },
     {
-      "name": "XM86/XM88/XM90",
+      "name": "XM86",
       "group": "CTRL_EN",
       "well": "NW",
       "block": "CTRL_EN_NW",
       "members": [
-        "XM86",
-        "XM88",
-        "XM90"
+        "XM86"
       ],
       "rows": 1,
-      "cols": 3,
-      "fingers": 3,
+      "cols": 1,
+      "fingers": 1,
       "dummy_cols": 0,
       "empty_cells": 0,
       "fw": 0.86,
       "fh": 1.6,
-      "w": 2.58,
+      "w": 0.86,
       "h": 1.6,
-      "x": 41.199999999999996,
+      "x": 52.019999999999996,
       "y": 44.6,
       "sequence": [
-        "XM86",
-        "XM88",
+        "XM86"
+      ]
+    },
+    {
+      "name": "XM88",
+      "group": "CTRL_EN",
+      "well": "NW",
+      "block": "CTRL_EN_NW",
+      "members": [
+        "XM88"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 53.379999999999995,
+      "y": 44.6,
+      "sequence": [
+        "XM88"
+      ]
+    },
+    {
+      "name": "XM90",
+      "group": "CTRL_EN",
+      "well": "NW",
+      "block": "CTRL_EN_NW",
+      "members": [
+        "XM90"
+      ],
+      "rows": 1,
+      "cols": 1,
+      "fingers": 1,
+      "dummy_cols": 0,
+      "empty_cells": 0,
+      "fw": 0.86,
+      "fh": 1.6,
+      "w": 0.86,
+      "h": 1.6,
+      "x": 54.739999999999995,
+      "y": 44.6,
+      "sequence": [
         "XM90"
       ]
     },
@@ -2009,42 +2241,42 @@
     },
     {
       "name": "XM71",
-      "cluster": "XM71/XM72/XM73",
+      "cluster": "XM71",
       "group": "START",
       "well": "NW",
       "fingers": 1
     },
     {
       "name": "XM72",
-      "cluster": "XM71/XM72/XM73",
+      "cluster": "XM72",
       "group": "START",
       "well": "NW",
       "fingers": 1
     },
     {
       "name": "XM73",
-      "cluster": "XM71/XM72/XM73",
+      "cluster": "XM73",
       "group": "START",
       "well": "NW",
       "fingers": 1
     },
     {
       "name": "XM75",
-      "cluster": "XM75/XM77/XM78",
+      "cluster": "XM75",
       "group": "CTRL_SEL",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM77",
-      "cluster": "XM75/XM77/XM78",
+      "cluster": "XM77",
       "group": "CTRL_SEL",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM78",
-      "cluster": "XM75/XM77/XM78",
+      "cluster": "XM78",
       "group": "CTRL_SEL",
       "well": "PW",
       "fingers": 1
@@ -2065,49 +2297,49 @@
     },
     {
       "name": "XM80",
-      "cluster": "XM80/XM81/XM82",
+      "cluster": "XM80",
       "group": "REF",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM81",
-      "cluster": "XM80/XM81/XM82",
+      "cluster": "XM81",
       "group": "REF",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM82",
-      "cluster": "XM80/XM81/XM82",
+      "cluster": "XM82",
       "group": "REF",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM83",
-      "cluster": "XM83/XM85/XM87/XM89",
+      "cluster": "XM83",
       "group": "CTRL_EN",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM85",
-      "cluster": "XM83/XM85/XM87/XM89",
+      "cluster": "XM85",
       "group": "CTRL_EN",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM87",
-      "cluster": "XM83/XM85/XM87/XM89",
+      "cluster": "XM87",
       "group": "CTRL_EN",
       "well": "PW",
       "fingers": 1
     },
     {
       "name": "XM89",
-      "cluster": "XM83/XM85/XM87/XM89",
+      "cluster": "XM89",
       "group": "CTRL_EN",
       "well": "PW",
       "fingers": 1
@@ -2121,21 +2353,21 @@
     },
     {
       "name": "XM86",
-      "cluster": "XM86/XM88/XM90",
+      "cluster": "XM86",
       "group": "CTRL_EN",
       "well": "NW",
       "fingers": 1
     },
     {
       "name": "XM88",
-      "cluster": "XM86/XM88/XM90",
+      "cluster": "XM88",
       "group": "CTRL_EN",
       "well": "NW",
       "fingers": 1
     },
     {
       "name": "XM90",
-      "cluster": "XM86/XM88/XM90",
+      "cluster": "XM90",
       "group": "CTRL_EN",
       "well": "NW",
       "fingers": 1
@@ -2219,7 +2451,7 @@
     {
       "name": "x1",
       "group": "CTRL_EN",
-      "x": 50.160000000000004,
+      "x": 65.48,
       "y": 49.60000000000001,
       "w": 5.0,
       "h": 5.0,
@@ -2228,7 +2460,7 @@
     {
       "name": "x2",
       "group": "CTRL_SEL",
-      "x": 57.160000000000004,
+      "x": 72.48,
       "y": 49.60000000000001,
       "w": 5.0,
       "h": 5.0,
@@ -2265,8 +2497,16 @@
     "fake_fill": false,
     "drc_lvs": false
   },
+  "ring_audit": {
+    "mos_width_um": 1.0,
+    "passive_width_um": 1.0,
+    "gap_um": 0.8,
+    "dnw_margin_um": 3.0,
+    "note": "the green AA band is 1.0 um; the 3.0 um DNW margin is a separate dashed enclosure, not a ring"
+  },
   "assumptions": [
     "DNW margin 3.0 um is an explicit heuristic, not a PDK rule.",
+    "AA ring width 1.0 um is inherited from class-A; it is not a confirmed PDK rule.",
     "per-well subarray rings; no second AA ring around passives.",
     "segment/ring/dummy geometry is white-line intent."
   ]
