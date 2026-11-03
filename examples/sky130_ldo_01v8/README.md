@@ -11,11 +11,27 @@ unit test.
 | [`ldo.sp`](ldo.sp) | raw SKY130 LDO netlist | read-only source |
 | [`ldo.annotated.sp`](ldo.annotated.sp) | earlier A2L role proposal | retained for comparison |
 | [`netlistlabel-overlay/`](netlistlabel-overlay/README.md) | NetlistLabel v0.2 semantic overlay | imported proposal; sampled human review |
-| `white-line-input.json` | future geometry contract | not built |
+| [`white-line-input.json`](white-line-input.json) | white-line geometry contract generated from the overlay | built; unknowns visible |
+| [`make_white_line_input.py`](make_white_line_input.py) | deterministic overlay → JSON importer | reproducible |
 
 The imported overlay is the preferred semantic input for the next LDO
 white-line/area case. It preserves the raw netlist, records source commit and
 hashes, and keeps the review status visible.
+
+The generated [`white-line-input.json`](white-line-input.json) contains:
+
+- 41 MOS, 5 passives, 2 level-shifter black boxes, 9 groups;
+- `sd_mode=unknown` for every MOS (not silently assumed);
+- `XC3`/`XR6` marked `proposed_not_reviewed`;
+- `x1/x2` marked `footprint_um2=null`, `status=unknown`;
+- the overlay's `PROPOSAL, NOT APPROVED` and sampled-review status.
+
+Regenerate it with:
+
+```bash
+python3 examples/sky130_ldo_01v8/make_white_line_input.py
+python3 -m unittest tests.test_ldo_white_line_input -q
+```
 
 ## Source
 

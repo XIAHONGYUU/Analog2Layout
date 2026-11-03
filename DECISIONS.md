@@ -356,3 +356,27 @@ should survive individual tasks.
   - `tests/test_ldo_overlay.py` checks integrity and status.
 - **Related:** `examples/sky130_ldo_01v8/netlistlabel-overlay/README.md`,
   `CURRENT_TASK.md`.
+
+---
+
+## D-019 — LDO white-line input is generated from the overlay with unknowns preserved
+
+- **Status:** active
+- **Date:** 2026-11-03
+- **Owner:** analog design + layout
+- **Source:** user request to build the LDO white-line input
+- **Decision:** `examples/sky130_ldo_01v8/white-line-input.json` is generated
+  deterministically from the imported NetlistLabel overlay by
+  `make_white_line_input.py`.
+- **Consequences:**
+  - all 41 MOS have `sd_mode=unknown` until confirmed; no silent shared/separated
+    assumption;
+  - `XC3`/`XR6` remain `proposed_not_reviewed`; `x1/x2` have null footprint and
+    `status=unknown`;
+  - the JSON keeps the overlay's `PROPOSAL, NOT APPROVED` and sampled-review
+    status;
+  - the compiler must fail or report incomplete area if unknown blackbox area is
+    used;
+  - LDO is the large-area case; it is not a signoff layout.
+- **Related:** `examples/sky130_ldo_01v8/white-line-input.json`,
+  `examples/sky130_ldo_01v8/make_white_line_input.py`, `CURRENT_TASK.md`.

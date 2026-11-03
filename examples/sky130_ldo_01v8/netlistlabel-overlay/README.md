@@ -15,7 +15,7 @@ and white-line input preparation.
 upstream SKY130 LDO
   → examples/sky130_ldo_01v8/ldo.sp          (raw, read-only)
   → NetlistLabel v0.2.0 overlay              (this directory)
-  → future white-line-input.json             (not yet built)
+  → white-line-input.json                    (built from this overlay)
 ```
 
 | Item | Value |

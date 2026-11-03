@@ -43,6 +43,7 @@
 - [x] SKY130 two-stage OP 的 v0.3 strict-scale white-line（dummy / MOSCAP / 独立 ring；ring 间距仍为 educational placeholder）
 - [x] white-line skill：JSON input schema + class-A golden case
 - [x] LDO NetlistLabel semantic overlay imported with provenance/review fixtures
+- [x] LDO white-line input JSON generated from overlay, with unknown/SD/blackbox fields explicit
 - [ ] white-line skill：deterministic checker + 3–5 structure benchmark
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`
