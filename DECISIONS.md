@@ -369,10 +369,10 @@ should survive individual tasks.
   deterministically from the imported NetlistLabel overlay by
   `make_white_line_input.py`.
 - **Consequences:**
-  - all 41 MOS have `sd_mode=unknown` until confirmed; no silent shared/separated
-    assumption;
-  - `XC3`/`XR6` remain `proposed_not_reviewed`; `x1/x2` have null footprint and
-    `status=unknown`;
+  - all 41 MOS are user-confirmed `sd_mode=shared`;
+  - `XC3` (VREF filter, role decap) and `XR6` (XM66 source degeneration) are
+    user-confirmed; `x1/x2` use a 5×5 cell+ring placeholder inside DNW1;
+  - XR4/XR5/XR6 use square folded blocks with boundary dummies;
   - the JSON keeps the overlay's `PROPOSAL, NOT APPROVED` and sampled-review
     status;
   - the compiler must fail or report incomplete area if unknown blackbox area is

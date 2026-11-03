@@ -35,12 +35,25 @@ class LdoWhiteLineInputTest(unittest.TestCase):
         self.assertIn("PROPOSAL", self.data["semantic_source"]["status"])
         self.assertIn("sampled human review", self.data["semantic_source"]["review"])
 
-    def test_unknowns_are_visible(self):
-        self.assertTrue(all(d["sd_mode"] == "unknown" for d in self.data["devices"]))
-        self.assertTrue(all(b["status"] == "unknown" for b in self.data["blackboxes"]))
-        unreviewed = {p["name"] for p in self.data["passives"] if p["review_status"] != "sampled_reviewed"}
-        self.assertEqual(unreviewed, {"XC3", "XR6"})
-        self.assertTrue(any("sd_mode" in u for u in self.data["unknowns"]))
+    def test_user_confirmations_are_explicit(self):
+        self.assertTrue(all(d["sd_mode"] == "shared" for d in self.data["devices"]))
+        self.assertTrue(all(b["status"] == "estimated" for b in self.data["blackboxes"]))
+        self.assertTrue(all(b["footprint_um2"] == 25.0 for b in self.data["blackboxes"]))
+        status = {p["name"]: p["review_status"] for p in self.data["passives"]}
+        self.assertEqual(status["XC3"], "user_confirmed")
+        self.assertEqual(status["XR6"], "user_confirmed")
+        self.assertEqual(status["XR4"], "sampled_reviewed")
+        self.assertTrue(any("DNW" in u for u in self.data["unknowns"]))
+
+    def test_resistors_are_square_folded_with_dummy(self):
+        by_name = {p["name"]: p for p in self.data["passives"]}
+        for name, active in (("XR4", 18), ("XR5", 36), ("XR6", 4)):
+            arr = by_name[name]["array"]
+            self.assertEqual(arr["style"], "square_folded_dummy")
+            self.assertEqual(arr["rows"], arr["cols"])
+            self.assertEqual(arr["active_cells"], active)
+            self.assertGreater(arr["dummy_cells"], 0)
+            self.assertEqual(arr["segment_length_um"], 10.0)
 
     def test_schema_validation_if_available(self):
         try:

@@ -16,6 +16,14 @@ ROOT = Path(__file__).resolve().parent
 OVERLAY = ROOT / "netlistlabel-overlay" / "ldo.annotated.sp"
 OUT = ROOT / "white-line-input.json"
 
+# Layout-only folding/dummy choices for the long xhigh resistors.
+# The electrical m stays 1; these are physical segment counts.
+RES_LAYOUT = {
+    "XR4": {"rows": 5, "cols": 5, "cell_um": [2.0, 2.0], "active": 18, "dummy": 7,  "block_um": [10.0, 10.0]},
+    "XR5": {"rows": 7, "cols": 7, "cell_um": [2.0, 2.0], "active": 36, "dummy": 13, "block_um": [14.0, 14.0]},
+    "XR6": {"rows": 3, "cols": 3, "cell_um": [2.0, 2.0], "active": 4,  "dummy": 5,  "block_um": [6.0, 6.0]},
+}
+
 PARAM_RE = re.compile(r"(?:^|\s)([A-Za-z_][A-Za-z0-9_]*)=([^\s]+)")
 
 
@@ -59,12 +67,13 @@ def main() -> None:
                 "m": m,
                 "fingers": nf * m,
                 "nf": nf,
-                "sd_mode": "unknown",
+                "sd_mode": "shared",
                 "ring": True,
                 "well": "NW" if "pfet" in model else "PW",
                 "matched": bool(match),
                 "match": match,
                 "review_status": "sampled_reviewed",
+                "dnw": "DNW2" if name == "XM61" else "DNW1",
                 "source": "netlistlabel-overlay/ldo.annotated.sp",
                 "source_line": lineno,
             }
@@ -78,24 +87,39 @@ def main() -> None:
             length = float(params.get("L", "0"))
             m = int(float(params.get("m", "1")))
             reviewed = name in {"XR4", "XR5"}
+            review_status = "user_confirmed" if name == "XR6" else ("sampled_reviewed" if reviewed else "proposed_not_reviewed")
+            rl = RES_LAYOUT[name]
+            nll = "degeneration" if name == "XR6" else nll_role
             passive = {
                 "name": name,
                 "type": "resistor",
                 "value": None,
                 "unit": "unknown",
-                "footprint_um": [0.35, length],
+                # square folded block, not a long strip; active area is 0.35 * length
+                "footprint_um": rl["block_um"],
                 "m": m,
                 "ring": True,
                 "ring_gap_um": 0.8,
                 "ring_width_um": 1.0,
                 "dnw": "DNW1",
                 "group": group,
-                "nll_role": nll_role,
+                "nll_role": nll,
                 "match": match,
-                "review_status": "sampled_reviewed" if reviewed else "proposed_not_reviewed",
+                "review_status": review_status,
                 "source": "netlistlabel-overlay/ldo.annotated.sp",
                 "source_line": lineno,
-                "notes": f"approx. width=0.35 um; model={model}; value not in netlist",
+                "array": {
+                    "style": "square_folded_dummy",
+                    "rows": rl["rows"],
+                    "cols": rl["cols"],
+                    "cell_um": rl["cell_um"],
+                    "active_cells": rl["active"],
+                    "dummy_cells": rl["dummy"],
+                    "segment_length_um": 10.0,
+                    "segment_width_um": 0.35,
+                    "segment_gap_um": 0.5,
+                },
+                "notes": f"folded resistor block; core area 0.35x{length:g} um; model={model}; value not in netlist",
             }
             passives.append(passive)
             groups.setdefault(group, {"members": [], "matched": False})
@@ -107,7 +131,7 @@ def main() -> None:
             w = float(params.get("W", "0"))
             l = float(params.get("L", "0"))
             m = int(float(params.get("m", "1")))
-            reviewed = name == "XC1"
+            reviewed = name in {"XC1", "XC3"}
             passive = {
                 "name": name,
                 "type": "MIM",
@@ -122,9 +146,11 @@ def main() -> None:
                 "group": group,
                 "nll_role": nll_role,
                 "match": match,
-                "review_status": "sampled_reviewed" if reviewed else "proposed_not_reviewed",
+                "review_status": "user_confirmed" if name == "XC3" else ("sampled_reviewed" if reviewed else "proposed_not_reviewed"),
+                "function": "vref_input_filter" if name == "XC3" else "decap",
                 "source": "netlistlabel-overlay/ldo.annotated.sp",
                 "source_line": lineno,
+                "array": {"style": "plain", "rows": m, "cols": 1, "dummy_cells": 0} if m > 1 else {"style": "plain", "rows": 1, "cols": 1, "dummy_cells": 0},
                 "notes": f"model={model}; value not in netlist",
             }
             passives.append(passive)
@@ -140,10 +166,12 @@ def main() -> None:
                 "type": "level_shifter",
                 "group": "CTRL_EN" if name == "x1" else "CTRL_SEL",
                 "ports": ports,
-                "footprint_um2": None,
-                "status": "unknown",
-                "review_status": "proposed_not_reviewed",
-                "notes": f"model={model}; footprint must be supplied before area signoff",
+                "footprint_um2": 25.0,
+                "ring_included": True,
+                "dnw": "DNW1",
+                "status": "estimated",
+                "review_status": "user_confirmed_placeholder",
+                "notes": f"model={model}; 5x5 cell+ring placeholder from user, not LEF/GDS",
             }
             blackboxes.append(bb)
             groups.setdefault(bb["group"], {"members": [], "matched": False})
@@ -222,17 +250,19 @@ def main() -> None:
             "calibration": "pending_multi_structure",
         },
         "unknowns": [
-            "sd_mode for all MOS",
-            "DNW/well boundaries and which groups share a DNW",
-            "passive values and exact footprints",
-            "x1/x2 level-shifter footprints",
+            "exact DNW/well boundary polygons inside DNW1/DNW2",
+            "passive values and exact physical footprints beyond the specified placeholder blocks",
+            "x1/x2 actual LEF/GDS; 5x5 is a user-confirmed placeholder",
             "VOUT/pass-device physical output placement",
             "whether output_outer is a hard constraint for this LDO",
         ],
         "assumptions": [
             "W/L/nf/m come from the NetlistLabel overlay; R/C values are not in the netlist.",
-            "Passive ring gap/width use 0.8/1.0 um; all passives are tentatively in DNW1.",
-            "Group membership is proposal-grade; XC3/XR6 remain unreviewed.",
+            "All S/D are user-confirmed shared, including XM61.",
+            "Passive ring gap/width use 0.8/1.0 um; all passives are in DNW1.",
+            "XC3 is a VREF input filter (role decap); XR6 is source degeneration of XM66 (role bias).",
+            "x1/x2 are level shifters inside DNW1; 5x5 is a cell+ring placeholder.",
+            "DNW2 contains only XM61 and its guard ring; DNW1/DNW2 gap is 8 um outer-to-outer.",
             "White-line is layout intent, not DRC/LVS/PEX signoff.",
         ],
     }

@@ -21,10 +21,14 @@ hashes, and keeps the review status visible.
 The generated [`white-line-input.json`](white-line-input.json) contains:
 
 - 41 MOS, 5 passives, 2 level-shifter black boxes, 9 groups;
-- `sd_mode=unknown` for every MOS (not silently assumed);
-- `XC3`/`XR6` marked `proposed_not_reviewed`;
-- `x1/x2` marked `footprint_um2=null`, `status=unknown`;
-- the overlay's `PROPOSAL, NOT APPROVED` and sampled-review status.
+- `sd_mode=shared` for every MOS (user-confirmed, including `XM61`);
+- `XC3`/`XR6` marked `user_confirmed`; `XC3` is VREF input filter (role decap),
+  `XR6` is source degeneration for XM66;
+- `x1/x2` are 5×5 cell+ring placeholders (`footprint_um2=25`,
+  `status=estimated`), inside DNW1;
+- `XR4/XR5/XR6` are square folded resistor blocks with boundary dummy cells;
+- DNW1 contains everything except XM61; DNW2 contains XM61 + guard ring;
+- the overlay's `PROPOSAL, NOT APPROVED` and sampled-review status are preserved.
 
 Regenerate it with:
 
