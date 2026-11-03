@@ -401,8 +401,10 @@ should survive individual tasks.
     passive rings, x1/x2 placeholders, DNW1/DNW2 are rendered.
   - the A/B/C multi-agent block estimates are exploratory only; they are not the
     LDO acceptance artifact.
-  - current baseline: bbox 83.56×177.40, area 14,823.5 µm², effective
-    10,236.1 µm², utilization 69.1%, aspect 0.47.
+  - current baseline: bbox 84.98×142.60, area 12,118.1 µm², effective
+    8,775.1 µm², utilization 72.4%, aspect 0.60; same-W/L/matched devices
+    are clustered into interdigitated arrays; only matched clusters get shared
+    end dummies, unmatched devices get none.
   - area optimization and stricter local-gap checks remain open.
   - no DRC/LVS/PEX claim.
 - **Related:** `examples/sky130_ldo_01v8/make_white_line.py`,

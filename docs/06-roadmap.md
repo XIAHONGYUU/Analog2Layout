@@ -44,7 +44,7 @@
 - [x] white-line skill：JSON input schema + class-A golden case
 - [x] LDO NetlistLabel semantic overlay imported with provenance/review fixtures
 - [x] LDO white-line input JSON generated from overlay, with unknown/SD/blackbox fields explicit
-- [x] LDO device-level white-line compiler baseline (14,823 µm², 69.1%, actual arrays/dummies/DNW)
+- [x] LDO device-level white-line compiler baseline (12,118 µm², 72.4%, matched clusters/shared dummies/DNW)
 - [ ] white-line skill：deterministic checker + 3–5 structure benchmark
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`

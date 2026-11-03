@@ -19,7 +19,8 @@ class LdoWhiteLineTest(unittest.TestCase):
         self.assertTrue(PNG.exists())
 
     def test_device_and_hierarchy_counts(self):
-        self.assertEqual(len(self.m["device_arrays"]), 41)
+        self.assertEqual(len(self.m["devices"]), 41)
+        self.assertEqual(len(self.m["device_clusters"]), 23)
         self.assertEqual(len(self.m["passive_blocks"]), 5)
         self.assertEqual(len(self.m["blackboxes"]), 2)
         self.assertEqual(len(self.m["blocks"]), 20)
@@ -39,13 +40,16 @@ class LdoWhiteLineTest(unittest.TestCase):
         self.assertTrue(self.m["checks"]["passives_inside_dnw1"])
         self.assertTrue(self.m["checks"]["x1_x2_inside_dnw1"])
 
-    def test_device_arrays_have_rows_cols(self):
-        for d in self.m["device_arrays"]:
+    def test_device_clusters_have_rows_cols_and_sequences(self):
+        for d in self.m["device_clusters"]:
             self.assertGreaterEqual(d["rows"], 1)
             self.assertGreaterEqual(d["cols"], 1)
             self.assertGreaterEqual(d["fingers"], 1)
             self.assertGreater(d["w"], 0)
             self.assertGreater(d["h"], 0)
+            self.assertEqual(len(d["sequence"]), d["fingers"])
+            if d["dummy_cols"]:
+                self.assertTrue(any(n in d["members"] for n in d["sequence"]))
 
 
 if __name__ == "__main__":

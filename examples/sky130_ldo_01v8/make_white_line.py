@@ -33,17 +33,44 @@ WELL_COLORS = {"NW": "#1d4ed8", "PW": "#64748b", "-": "#64748b"}
 def cell(d):
     return d["L_um"] + PITCH, d["W_um"] + 0.60
 
-def device_geom(d):
+def device_geom(d, dummy_cols=2):
     fw, fh = cell(d)
     n = int(d["fingers"])
     rows = max(1, round(sqrt(n * fw / fh))) if n > 1 else 1
     rows = min(rows, n)
     cols = ceil(n / rows)
-    # two boundary dummy columns, same geometry as active
-    w = (cols + 2) * fw
+    w = (cols + dummy_cols) * fw
     h = rows * fh
     return {"fw": fw, "fh": fh, "rows": rows, "cols": cols, "n": n,
-            "w": w, "h": h, "dummy_cols": 2}
+            "w": w, "h": h, "dummy_cols": dummy_cols}
+
+def interleave_names(names, counts):
+    rem = list(counts); seq=[]; last=None
+    while sum(rem):
+        cands = [i for i in range(len(names)) if rem[i] > 0 and i != last] or [i for i in range(len(names)) if rem[i] > 0]
+        i = max(cands, key=lambda k: (rem[k], -k))
+        seq.append(names[i]); rem[i]-=1; last=i
+    return seq
+
+def cluster_geom(members, fw, fh, dummy_cols):
+    total = sum(int(d["fingers"]) for d in members)
+    best = None
+    for rows in range(1, total + 1):
+        cols = ceil(total / rows)
+        empty = rows * cols - total
+        w = (cols + dummy_cols) * fw
+        h = rows * fh
+        aspect = w / max(h, 1e-6)
+        # minimize the actual block area (dummy columns included), with a mild
+        # aspect preference; do not use a full-dummy strip for unmatched devices.
+        area = w * h
+        score = area / max(fw * fh * total, 1e-6) + 0.35 * abs(__import__("math").log(aspect)) + empty * 0.25
+        if best is None or score < best[0]:
+            best = (score, rows, cols, empty, w, h)
+    _, rows, cols, empty, w, h = best
+    seq = interleave_names([d["name"] for d in members], [int(d["fingers"]) for d in members])
+    return {"fw": fw, "fh": fh, "rows": rows, "cols": cols, "n": total,
+            "w": w, "h": h, "dummy_cols": dummy_cols, "empty_cells": empty, "seq": seq}
 
 def shelf_pack(items, target_w, gap=DEV_GAP):
     """items: name,w,h; return placements, W,H."""
@@ -68,29 +95,50 @@ def ring_outer(inner_w, inner_h):
     return (inner_w + 2*(RING_GAP+RING_W), inner_h + 2*(RING_GAP+RING_W))
 
 def make_well_blocks():
-    # group/well -> list of device blocks
-    devs = {d["name"]: d for d in D["devices"] if d["name"] != "XM61"}
+    """Cluster same-W/L devices in a group/well; interleave their fingers.
+
+    This is the key fix for huge per-device dummy columns and for matching:
+    one array + shared end dummies per cluster, not one 3-column array per device.
+    """
     buckets = {}
-    for name, d in devs.items():
-        key = (d["group"], d["well"])
-        g = device_geom(d)
-        buckets.setdefault(key, []).append((name, g["w"], g["h"], g))
+    for d in D["devices"]:
+        if d["name"] == "XM61":
+            continue
+        key = (d["group"], d["well"], float(d["W_um"]), float(d["L_um"]), d.get("match") or "")
+        buckets.setdefault(key, []).append(d)
     blocks = []
-    for (group, well), items in buckets.items():
+    for (group, well, w, l, match), members in buckets.items():
+        fw, fh = l + PITCH, w + 0.60
+        # boundary dummies only for a matched cluster; unmatched same-W/L
+        # devices may share an array but are not padded with full dummy fingers.
+        dummy_cols = 2 if any(m.get("matched") for m in members) else 0
+        g = cluster_geom(members, fw, fh, dummy_cols)
+        name = "/".join(d["name"] for d in members)
+        blocks.append({
+            "kind": "cluster", "name": name, "group": group, "well": well,
+            "w": g["w"], "h": g["h"], "geom": g, "members": members,
+            "seq": g["seq"], "dummy_cols": dummy_cols,
+        })
+    # pack clusters inside each group/well with a ring
+    grouped = {}
+    for b in blocks:
+        grouped.setdefault((b["group"], b["well"]), []).append(b)
+    out = []
+    for (group, well), items in grouped.items():
         best = None
-        for target in range(8, 90, 2):
-            place, W, H = shelf_pack(items, target)
+        for target in range(6, 120, 2):
+            place, W, H = shelf_pack([(b["name"], b["w"], b["h"]) for b in items], target, gap=DEV_GAP)
             ow, oh = ring_outer(W, H)
-            score = ow*oh
+            score = ow * oh
             if best is None or score < best[0]:
                 best = (score, target, place, W, H, ow, oh)
         _, target, place, W, H, ow, oh = best
-        blocks.append({
-            "kind":"well", "name":f"{group}_{well}", "group":group, "well":well,
-            "inner_w":W, "inner_h":H, "w":ow, "h":oh, "target_w":target,
-            "items":[(n,w,h,g) for (n,w,h,g) in items], "place":place,
-        })
-    return blocks
+        for b in items:
+            b["x"], b["y"] = place[b["name"]]
+        out.append({"kind": "well", "name": f"{group}_{well}", "group": group, "well": well,
+                    "inner_w": W, "inner_h": H, "w": ow, "h": oh, "target_w": target,
+                    "items": items, "place": place})
+    return out
 
 def make_passive_blocks():
     out=[]
@@ -168,21 +216,31 @@ def main():
         "blocks":[{"name":b["name"],"kind":b["kind"],"group":b.get("group"),
                    "well":b.get("well"),"x":b["x"],"y":b["y"],"w":b["w"],"h":b["h"]}
                   for b in blocks],
-        "device_arrays":[
-            {"name":name,"group":b["group"],"well":b["well"],
-             "block":b["name"],"rows":g["rows"],"cols":g["cols"],
-             "fingers":g["n"],"fw":g["fw"],"fh":g["fh"],
-             "w":g["w"],"h":g["h"],
-             "x":b["x"]+RING_W+RING_GAP+b["place"][name][0],
-             "y":b["y"]+RING_W+RING_GAP+b["place"][name][1]}
-            for b in well_blocks for (name,_,_,g) in b["items"]
-        ] + [{"name":"XM61","group":"PASS","well":pass_block["well"],
-              "block":"PASS_XM61","rows":pass_block["geom"]["rows"],
+        "device_clusters":[
+            {"name":cl["name"],"group":b["group"],"well":b["well"],"block":b["name"],
+             "members":[m["name"] for m in cl["members"]],
+             "rows":cl["geom"]["rows"],"cols":cl["geom"]["cols"],
+             "fingers":cl["geom"]["n"],"dummy_cols":cl["geom"]["dummy_cols"],
+             "empty_cells":cl["geom"].get("empty_cells",0),
+             "fw":cl["geom"]["fw"],"fh":cl["geom"]["fh"],"w":cl["geom"]["w"],"h":cl["geom"]["h"],
+             "x":b["x"]+RING_W+RING_GAP+b["place"][cl["name"]][0],
+             "y":b["y"]+RING_W+RING_GAP+b["place"][cl["name"]][1],
+             "sequence":cl["geom"]["seq"]}
+            for b in well_blocks for cl in b["items"]
+        ] + [{"name":"XM61","group":"PASS","well":pass_block["well"],"block":"PASS_XM61",
+              "members":["XM61"],"rows":pass_block["geom"]["rows"],
               "cols":pass_block["geom"]["cols"],"fingers":pass_block["geom"]["n"],
+              "dummy_cols":pass_block["geom"]["dummy_cols"],
+              "empty_cells":pass_block["geom"].get("empty_cells",0),
               "fw":pass_block["geom"]["fw"],"fh":pass_block["geom"]["fh"],
               "w":pass_block["geom"]["w"],"h":pass_block["geom"]["h"],
               "x":dnw2_x+DNW_MARGIN+RING_W+RING_GAP,
-              "y":dnw2_y+DNW_MARGIN+RING_W+RING_GAP}],
+              "y":dnw2_y+DNW_MARGIN+RING_W+RING_GAP,
+              "sequence":pass_block["geom"].get("seq",["XM61"]*1000)}],
+        "devices":[{"name":m["name"],"cluster":cl["name"],"group":m["group"],
+                    "well":m["well"],"fingers":m["fingers"]}
+                   for b in well_blocks for cl in b["items"] for m in cl["members"]]
+                  + [{"name":"XM61","cluster":"XM61","group":"PASS","well":"PW","fingers":1000}],
         "passive_blocks":[
             {"name":b["name"],"group":b["group"],"x":b["x"],"y":b["y"],
              "w":b["w"],"h":b["h"],"core":b["core"],"ring":True}
@@ -245,22 +303,27 @@ def main():
         rect(x,y,fw,fh,fill="#ffffff",stroke="#64748b",sw=.25,opacity=.5)
         rect(x+.15,y+.15,max(.1,fw-.3),max(.1,fh-.3),fill="#cbd5e1",stroke="none",opacity=.5)
 
-    def draw_device_array(x,y,g,d,color):
+    def draw_device_array(x,y,g,members,color):
         rect(x,y,g["w"],g["h"],fill="#ffffff",stroke=color,sw=.5)
-        # active and boundary dummies
+        palette=["#0284c7","#38bdf8","#7c3aed","#a78bfa","#059669","#34d399","#d97706","#fbbf24","#be185d","#f472b6"]
+        cmap={m["name"]:palette[i%len(palette)] for i,m in enumerate(members)}
+        seq=g.get("seq",[members[0]["name"]]*g["n"])
+        dummy=g["dummy_cols"]
         for r in range(g["rows"]):
             yy=y+r*g["fh"]
-            for c in range(g["cols"]+2):
+            for c in range(g["cols"]+dummy):
                 xx=x+c*g["fw"]
-                if c==0 or c==g["cols"]+1:
+                if c<dummy or c>=g["cols"]+dummy:
                     draw_dummy_cell(xx,yy,g["fw"],g["fh"])
                 else:
-                    idx=r*g["cols"]+(c-1)
+                    idx=r*g["cols"]+(c-dummy)
                     if idx < g["n"]:
-                        rect(xx,yy,g["fw"],g["fh"],fill=color,stroke=color,sw=.15,opacity=.35)
+                        n=seq[idx]
+                        rect(xx,yy,g["fw"],g["fh"],fill=cmap[n],stroke=cmap[n],sw=.15,opacity=.35)
                     else:
                         draw_dummy_cell(xx,yy,g["fw"],g["fh"])
-        tu(x+1,y-0.5,d["name"],5,color,700)
+        label="/".join(m["name"] for m in members[:3]) + ("/…" if len(members)>3 else "")
+        tu(x+1,y-0.5,label,5,color,700)
 
     # well blocks
     for b in well_blocks:
@@ -269,9 +332,9 @@ def main():
         rect(x,y,w,h,fill="#d1fae5",stroke=col,sw=.8)
         rect(x+RING_W,y+RING_W,w-2*RING_W,h-2*RING_W,fill="#f8fafc",stroke=col,sw=.5)
         ix=x+RING_W+RING_GAP; iy=y+RING_W+RING_GAP
-        for (name,iw,ih,g) in b["items"]:
-            dx,dy=b["place"][name]
-            draw_device_array(ix+dx,iy+dy,g,next(d for d in D["devices"] if d["name"]==name),col)
+        for cl in b["items"]:
+            dx,dy=b["place"][cl["name"]]
+            draw_device_array(ix+dx,iy+dy,cl["geom"],cl["members"],col)
         tu(x,y-1,f"{b['group']} · {b['well']}",6,col,700)
     # passives
     for b in passive_blocks:
@@ -301,7 +364,7 @@ def main():
     p=pass_block; x=dnw2_x+DNW_MARGIN; y=dnw2_y+DNW_MARGIN
     rect(x,y,p["w"],p["h"],fill="#d1fae5",stroke="#be185d",sw=.9)
     rect(x+RING_W,y+RING_W,p["w"]-2*RING_W,p["h"]-2*RING_W,fill="#f8fafc",stroke="#be185d",sw=.5)
-    draw_device_array(x+RING_W+RING_GAP,y+RING_W+RING_GAP,p["geom"],p["data"],"#be185d")
+    draw_device_array(x+RING_W+RING_GAP,y+RING_W+RING_GAP,p["geom"],[p["data"]],"#be185d")
     tu(x,y-1,"PASS · XM61 m=1000",6,"#9d174d",700)
     # legend/metrics
     lx=OX+bbox_w*S+30; ly=OY

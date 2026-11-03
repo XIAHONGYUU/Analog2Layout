@@ -63,15 +63,18 @@ transistor-level screenshot.
 The first **device-level** compiler output is:
 
 ```text
-bbox        = 83.56 × 177.40 µm
-area        = 14,823.5 µm²
-effective   = 10,236.1 µm²
-utilization = 69.1%
-aspect      = 0.47
+bbox        = 84.98 × 142.60 µm
+area        = 12,118.1 µm²
+effective   = 8,775.1 µm²
+utilization = 72.4%
+aspect      = 0.60
 ```
 
-It renders actual device arrays, boundary dummies, per-well rings, passives with
-rings, x1/x2 placeholders, and DNW1/DNW2. The earlier A/B/C multi-agent outputs
+It renders actual device clusters, shared boundary dummies, per-well rings,
+passives with rings, x1/x2 placeholders, and DNW1/DNW2. Devices with the same
+W/L and match class in a group/well share one interdigitated array; only a
+matched cluster gets two shared end dummies. Unmatched same-W/L devices share
+an array but get no full dummy fingers, which removed the huge dummy columns. The earlier A/B/C multi-agent outputs
 were block-level estimates and are not the acceptance artifact. This baseline
 still has unused area; optimization is the next step.
 
