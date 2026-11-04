@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1300" viewBox="0 0 2200 1300">
+<rect x="0" y="0" width="2200" height="1300" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="30" y="38" font-family="'DejaVu Sans',sans-serif" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start">XM61 output-FET DNW shape / area study</text>
+<text x="30" y="62" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#b91c1c" text-anchor="start">Step 1 · total W=5000 µm · five 1000 µm body-ringed sub-banks · shared ring walls · DNW margin 2 µm · outer guard 2/2</text>
+<text x="30" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">opt</text>
+<text x="120" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">W/finger</text>
+<text x="260" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">fingers/sub</text>
+<text x="390" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">array</text>
+<text x="510" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">sub-banks</text>
+<text x="640" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">DNW µm</text>
+<text x="830" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">DNW area</text>
+<text x="960" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">AR</text>
+<text x="1080" y="100" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#475569" text-anchor="start">guard envelope</text>
+<text x="30" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">A</text>
+<text x="120" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">5.000</text>
+<text x="260" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">200</text>
+<text x="390" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">4×50</text>
+<text x="510" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">5×1</text>
+<text x="640" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">55.0×148.0</text>
+<text x="830" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">8140</text>
+<text x="960" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">0.37</text>
+<text x="1080" y="125" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">63.0×156.0</text>
+<text x="30" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">B</text>
+<text x="120" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">10.000</text>
+<text x="260" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">100</text>
+<text x="390" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">4×25</text>
+<text x="510" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">1×5</text>
+<text x="640" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">143.5×54.4</text>
+<text x="830" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">7806</text>
+<text x="960" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">2.64</text>
+<text x="1080" y="149" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">151.5×62.4</text>
+<text x="30" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">C</text>
+<text x="120" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">14.925</text>
+<text x="260" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">67</text>
+<text x="390" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">2×34</text>
+<text x="510" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">1×5</text>
+<text x="640" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">182.2×43.1</text>
+<text x="830" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">7844</text>
+<text x="960" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">4.23</text>
+<text x="1080" y="173" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">190.2×51.1</text>
+<text x="30" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">D</text>
+<text x="120" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">20.000</text>
+<text x="260" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">50</text>
+<text x="390" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">2×25</text>
+<text x="510" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">1×5</text>
+<text x="640" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">143.5×53.2</text>
+<text x="830" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">7634</text>
+<text x="960" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">2.70</text>
+<text x="1080" y="197" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">151.5×61.2</text>
+<text x="30" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">E</text>
+<text x="120" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">25.000</text>
+<text x="260" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">40</text>
+<text x="390" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">1×40</text>
+<text x="510" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">5×1</text>
+<text x="640" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">46.4×164.0</text>
+<text x="830" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">7610</text>
+<text x="960" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">0.28</text>
+<text x="1080" y="221" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">54.4×172.0</text>
+<rect x="30" y="250" width="400" height="760" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="274" font-family="'DejaVu Sans Mono',monospace" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">A — W=5.00 µm</text>
+<text x="44" y="292" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">200/sub · 4×50 · 5×1 sub-banks</text>
+<rect x="153.3783783783784" y="305.27027027027026" width="153.24324324324323" height="379.4594594594595" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1.2" stroke-dasharray="4 2"/>
+<rect x="163.10810810810813" y="315" width="133.78378378378378" height="360.0" rx="0" fill="none" stroke="#0f766e" stroke-width="1.4"/>
+<text x="166.10810810810813" y="309" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#9d174d" text-anchor="start">DNW2 + guard</text>
+<rect x="177.7027027027027" y="329.5945945945946" width="104.5945945945946" height="54.486486486486484" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="230.0" y="356.8378378378378" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="177.7027027027027" y="398.6756756756757" width="104.5945945945946" height="54.486486486486484" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="230.0" y="425.9189189189189" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="177.7027027027027" y="467.7567567567568" width="104.5945945945946" height="54.486486486486484" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="230.0" y="495.0" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="177.7027027027027" y="536.8378378378378" width="104.5945945945946" height="54.486486486486484" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="230.0" y="564.081081081081" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="177.7027027027027" y="605.918918918919" width="104.5945945945946" height="54.486486486486484" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="230.0" y="633.1621621621622" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<text x="44" y="968" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f172a" text-anchor="start">DNW 55.0×148.0 µm · area 8140 µm²</text>
+<text x="44" y="986" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">aspect 0.37 · guard 63.0×156.0</text>
+<rect x="448" y="250" width="400" height="760" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="462" y="274" font-family="'DejaVu Sans Mono',monospace" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">B — W=10.00 µm</text>
+<text x="462" y="292" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">100/sub · 4×25 · 1×5 sub-banks</text>
+<rect x="457.96515679442507" y="304.96515679442507" width="380.0696864111498" height="156.54355400696863" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1.2" stroke-dasharray="4 2"/>
+<rect x="468.0" y="315" width="360.0" height="136.4738675958188" rx="0" fill="none" stroke="#0f766e" stroke-width="1.4"/>
+<text x="471.0" y="309" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#9d174d" text-anchor="start">DNW2 + guard</text>
+<rect x="483.0522648083624" y="330.0522648083624" width="53.937282229965156" height="106.36933797909407" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="510.02090592334497" y="383.23693379790944" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="552.0418118466899" y="330.0522648083624" width="53.937282229965156" height="106.36933797909407" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="579.0104529616725" y="383.23693379790944" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="621.0313588850174" y="330.0522648083624" width="53.937282229965156" height="106.36933797909407" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="648.0" y="383.23693379790944" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="690.0209059233449" y="330.0522648083624" width="53.937282229965156" height="106.36933797909407" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="716.9895470383275" y="383.23693379790944" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="759.0104529616724" y="330.0522648083624" width="53.937282229965156" height="106.36933797909407" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="785.979094076655" y="383.23693379790944" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<text x="462" y="968" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f172a" text-anchor="start">DNW 143.5×54.4 µm · area 7806 µm²</text>
+<text x="462" y="986" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">aspect 2.64 · guard 151.5×62.4</text>
+<rect x="866" y="250" width="400" height="760" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="880" y="274" font-family="'DejaVu Sans Mono',monospace" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">C — W=14.93 µm</text>
+<text x="880" y="292" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">67/sub · 2×34 · 1×5 sub-banks</text>
+<rect x="878.0965971459934" y="307.0965971459934" width="375.8068057080132" height="100.86865343971691" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1.2" stroke-dasharray="4 2"/>
+<rect x="886.0" y="315" width="360.0" height="85.06184773170374" rx="0" fill="none" stroke="#0f766e" stroke-width="1.4"/>
+<text x="889.0" y="309" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#9d174d" text-anchor="start">DNW2 + guard</text>
+<rect x="897.8551042810099" y="326.85510428100986" width="57.77387486278815" height="61.35163916968397" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="926.742041712404" y="357.53092386585183" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="967.4840834248079" y="326.85510428100986" width="57.77387486278815" height="61.35163916968397" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="996.371020856202" y="357.53092386585183" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1037.113062568606" y="326.85510428100986" width="57.77387486278815" height="61.35163916968397" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1066.0" y="357.53092386585183" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1106.742041712404" y="326.85510428100986" width="57.77387486278815" height="61.35163916968397" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1135.628979143798" y="357.53092386585183" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1176.371020856202" y="326.85510428100986" width="57.77387486278815" height="61.35163916968397" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1205.257958287596" y="357.53092386585183" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<text x="880" y="968" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f172a" text-anchor="start">DNW 182.2×43.1 µm · area 7844 µm²</text>
+<text x="880" y="986" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">aspect 4.23 · guard 190.2×51.1</text>
+<rect x="1284" y="250" width="400" height="760" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="1298" y="274" font-family="'DejaVu Sans Mono',monospace" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">D — W=20.00 µm</text>
+<text x="1298" y="292" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">50/sub · 2×25 · 1×5 sub-banks</text>
+<rect x="1293.9651567944252" y="304.96515679442507" width="380.0696864111498" height="153.53310104529618" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1.2" stroke-dasharray="4 2"/>
+<rect x="1304.0" y="315" width="360.0" height="133.46341463414635" rx="0" fill="none" stroke="#0f766e" stroke-width="1.4"/>
+<text x="1307.0" y="309" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#9d174d" text-anchor="start">DNW2 + guard</text>
+<rect x="1319.0522648083625" y="330.0522648083624" width="53.937282229965156" height="103.3588850174216" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1346.020905923345" y="381.7317073170732" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1388.0418118466898" y="330.0522648083624" width="53.937282229965156" height="103.3588850174216" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1415.0104529616724" y="381.7317073170732" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1457.0313588850174" y="330.0522648083624" width="53.937282229965156" height="103.3588850174216" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1484.0" y="381.7317073170732" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1526.020905923345" y="330.0522648083624" width="53.937282229965156" height="103.3588850174216" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1552.9895470383276" y="381.7317073170732" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1595.0104529616724" y="330.0522648083624" width="53.937282229965156" height="103.3588850174216" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1621.979094076655" y="381.7317073170732" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<text x="1298" y="968" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f172a" text-anchor="start">DNW 143.5×53.2 µm · area 7634 µm²</text>
+<text x="1298" y="986" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">aspect 2.70 · guard 151.5×61.2</text>
+<rect x="1702" y="250" width="400" height="760" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="1716" y="274" font-family="'DejaVu Sans Mono',monospace" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">E — W=25.00 µm</text>
+<text x="1716" y="292" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">40/sub · 1×40 · 5×1 sub-banks</text>
+<rect x="1842.2926829268292" y="306.219512195122" width="119.41463414634147" height="377.5609756097561" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1.2" stroke-dasharray="4 2"/>
+<rect x="1851.0731707317073" y="315" width="101.85365853658537" height="360.0" rx="0" fill="none" stroke="#0f766e" stroke-width="1.4"/>
+<text x="1854.0731707317073" y="309" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#9d174d" text-anchor="start">DNW2 + guard</text>
+<rect x="1864.2439024390244" y="328.1707317073171" width="75.51219512195122" height="56.19512195121952" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1902.0" y="356.26829268292687" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1864.2439024390244" y="397.5365853658537" width="75.51219512195122" height="56.19512195121952" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1902.0" y="425.63414634146346" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1864.2439024390244" y="466.9024390243903" width="75.51219512195122" height="56.19512195121952" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1902.0" y="495.00000000000006" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1864.2439024390244" y="536.2682926829268" width="75.51219512195122" height="56.19512195121952" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1902.0" y="564.3658536585366" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<rect x="1864.2439024390244" y="605.6341463414635" width="75.51219512195122" height="56.19512195121952" rx="0" fill="#d1fae5" stroke="#be185d" stroke-width="0.6"/>
+<text x="1902.0" y="633.7317073170733" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="middle">RING</text>
+<text x="1716" y="968" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f172a" text-anchor="start">DNW 46.4×164.0 µm · area 7610 µm²</text>
+<text x="1716" y="986" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#475569" text-anchor="start">aspect 0.28 · guard 54.4×172.0</text>
+<text x="30" y="1268" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#b91c1c" text-anchor="start">DNW-area differences are &lt;7%; shape (wide/tall) is the main choice. Not GDS/DRC/LVS.</text>
+</svg>

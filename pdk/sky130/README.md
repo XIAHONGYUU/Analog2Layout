@@ -63,3 +63,20 @@ deck revision 2020-10-04 v1.0
 3. 1.0 µm ring、3.0 µm DNW margin、0.8 µm gap 目前都属于 heuristic，不是
    PDK fact。
 4. 任何 DRC/LVS 结论必须由实际 deck 跑出，不由本目录推断。
+
+## Resistor segment spacing
+
+`0.5 µm` segment-to-segment gap is **not** a PDK rule.
+
+Relevant Sky130 checks from the local deck:
+
+| rule | value | meaning |
+| --- | ---: | --- |
+| `poly.2` | 0.21 µm | minimum poly spacing |
+| `poly.3` | 0.33 µm | minimum poly resistor width |
+| `poly.9` | 0.48 µm | minimum poly resistor space to poly or diff/tap |
+
+`0.5 µm` is a layout choice with 0.02 µm margin above the `poly.9` bound.
+If the folded resistor is one continuous poly shape, the actual notch/self-spacing
+must be checked by the DRC deck; if dummy/segments are separate shapes, `poly.9`
+is the relevant bound.

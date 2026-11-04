@@ -18,6 +18,11 @@ unit test.
 | [`matching-review.md`](matching-review.md) | owner-confirmation packet for match groups | **needs review** |
 | [`../../pdk/sky130/facts.json`](../../pdk/sky130/facts.json) | SKY130 minimum rules + provenance; no 1.0 µm ring fact | reference |
 | [`make_white_line.py`](make_white_line.py) | deterministic LDO white-line compiler | reproducible |
+| [`render_white_line_png.py`](render_white_line_png.py) | optional SVG → PNG render step (cairosvg) | reproducible |
+| [`resistor-review.md`](resistor-review.md) | resistor terminal map + V1/V2/V3 placement study | **needs review** |
+| [`resistor-variants.png`](resistor-variants.png) | current vs functional vs rotated FB placement | study |
+| [`resistor-scale.png`](resistor-scale.png) | true-scale R body vs folded footprint | reference |
+| [`output-dnw-study.md`](output-dnw-study.md) | Step-1 XM61 DNW shape/area options A–E | **needs review** |
 
 The imported overlay is the preferred semantic input for the next LDO
 white-line/area case. It preserves the raw netlist, records source commit and
@@ -35,8 +40,9 @@ The generated [`white-line-input.json`](white-line-input.json) contains:
   each 10×0.35 µm segment is folded into a 2×2 µm cell, not placed as a thin strip;
 - DNW1 contains everything except XM61; DNW2 contains XM61 + guard ring;
 - `output_outer` is a **soft preference** tied to LDO current/pass-device floorplan;
-- the 1.0 µm ring / 0.8 µm gap / 3.0 µm DNW margin are **heuristics**, not PDK facts;
-  see `pdk/sky130/facts.json` (`ring.pdk_defined=false`);
+- MOS bank ring 0.5/0.8, XM61 body ring 2.0/2.0, passive 1.0/0.8 and
+  DNW margin 2.0 are **layout heuristics**, not PDK facts; see
+  `pdk/sky130/facts.json` (`ring.pdk_defined=false`);
 - the overlay's `PROPOSAL, NOT APPROVED` and sampled-review status are preserved.
 
 Regenerate it with:
@@ -67,15 +73,17 @@ transistor-level screenshot.
 The first **device-level** compiler output is:
 
 ```text
-bbox        = 84.98 × 142.60 µm
-area        = 12,118.1 µm²
-effective   = 8,805.2 µm²
-utilization = 72.7%
-aspect      = 0.60
+bbox        = 129.20 × 110.70 µm
+area        = 14,302.4 µm²
+effective   = 11,961.0 µm²
+utilization = 83.6%
+aspect      = 1.17
 ```
 
-It renders actual device clusters, shared boundary dummies, per-well rings,
-passives with rings, x1/x2 placeholders, and DNW1/DNW2. Devices with the same
+It renders actual bank clusters, requested boundary dummies (L=0.5), bank rings,
+passives with rings, x1/x2 placeholders, and DNW1/DNW2. XM61 is split into five
+body-ringed sub-banks (W≈24.51/34 fingers, total W=5000, 3×2), with shared
+ring walls, plus an outer DNW guard ring. Devices with the same
 W/L and match class in a group/well share one interdigitated array; only a
 matched cluster gets two shared end dummies. Unmatched same-W/L devices share
 an array but get no full dummy fingers, which removed the huge dummy columns. The earlier A/B/C multi-agent outputs

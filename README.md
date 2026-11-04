@@ -47,7 +47,7 @@
 | PEX 后改动怎么提前？ | [layout delta](examples/two_stage/out/layout_delta.json) | owner、status、面积影响、reserve shortfall |
 | 真实 MOS 怎么排成白线？ | [class-A area-first white-line](examples/classa_opamp/area-min.png) | merged array、DM、ring、DNW、NW/PW、有效面积 |
 
-> **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [old role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [NetlistLabel overlay](examples/sky130_ldo_01v8/netlistlabel-overlay/README.md) · [white-line input](examples/sky130_ldo_01v8/white-line-input.json) · [LDO white-line](examples/sky130_ldo_01v8/white-line.png) · [snapshot](docs/targets/sky130-ldo/)。
+> **主目标**：[SKY130 1.8V LDO](docs/12-target-ldo.md)。41 MOS + `m=1000` pass FET + feedback/enable/startup/level shift；[raw netlist](examples/sky130_ldo_01v8/ldo.sp) · [old role proposal](examples/sky130_ldo_01v8/ldo.annotated.sp) · [NetlistLabel overlay](examples/sky130_ldo_01v8/netlistlabel-overlay/README.md) · [white-line input](examples/sky130_ldo_01v8/white-line-input.json) · [LDO white-line](examples/sky130_ldo_01v8/white-line.png) · [matching review](examples/sky130_ldo_01v8/matching-review.md) · [PDK facts](pdk/sky130/facts.json) · [snapshot](docs/targets/sky130-ldo/)。
 >
 > **Unit test**：[SKY130 两级 Miller OP](docs/11-target-sky130-opamp.md)。10 MOS + 1 cap；[Layout Card](layout-guideline/02-modules/sky130-two-stage-opamp/layout-card.md) · [White-line](docs/targets/sky130-opamp/white-line.png)。
 >
@@ -73,7 +73,8 @@ flowchart LR
 | 能跑（CLI） | 名字/角色解析 → 五层面积 → 布局草图 → layout delta |
 | 已有示例/脚手架（非 CLI 生成） | BGR / VCOM / two-stage OTA 的 Layout Card；Principle → Module → Pattern → Case 的文件夹与模板 |
 | 正在补全 | 完整 PDK / 公司规则 / 完整私有 overlay；更多模块（LDO / SADC / AFE_CH）与 case；敏感区/复用模型、目标 bbox 变体、card 完整性检查、工具链适配 |
-| PDK facts | SKY130 最小规则事实源已建立：[pdk/sky130/facts.json](pdk/sky130/facts.json)；1.0 µm ring 不是 PDK 值，只是 educational heuristic |
+| PDK facts | SKY130 最小规则事实源已建立：[pdk/sky130/facts.json](pdk/sky130/facts.json)；ring/dummy 值不是 PDK fact，当前采用 MOS 0.5/0.8、XM61 2.0/2.0、passive 1.0/0.8、DNW margin 2.0 |
+| 2026-11-04 LDO | 12 个 bank 全部确认；XM61 为 6 个共享 ring-wall 的 body-ringed sub-bank（W≈24.51/34 fingers，3×2，总 W=5000）+ 外圈 DNW guard ring；compiler baseline **14,302.4 µm² / 83.6% / 129.20×110.70 µm**；DNW1 主区密度 64.2% |
 | 正在设计 | white-line skill：hybrid prompt + deterministic JSON/scripts；schema + class-A golden case 已有，验收优先级待多结构校准 |
 | 2026-10-30 新增 | area-first class-A 白线：225.9×69.8 µm、15,766 µm²、74.6%；R/C 在主 DNW1 内、ring AA 计入；JSON schema + golden case + 5T annotated schematic |
 

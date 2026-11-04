@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620" viewBox="0 0 1600 620">
+<rect x="0" y="0" width="1600" height="620" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="30" y="38" font-family="'DejaVu Sans',sans-serif" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start">LDO xhigh resistor dimensions — true scale reference</text>
+<text x="30" y="62" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#b91c1c" text-anchor="start">dimension drawing only · active width 0.35 µm · width exaggerated in the bar for visibility · not GDS/DRC</text>
+<text x="30" y="142" font-family="'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#b45309" text-anchor="start">XR4</text>
+<text x="30" y="162" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#334155" text-anchor="start">18 × 10 µm</text>
+<rect x="200" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="225.2" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="250.39999999999998" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="275.59999999999997" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="300.79999999999995" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="325.99999999999994" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="351.19999999999993" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="376.3999999999999" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="401.5999999999999" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="426.7999999999999" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="451.9999999999999" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="477.1999999999999" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="502.39999999999986" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="527.5999999999999" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="552.8" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="578.0" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="603.2" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="628.4000000000001" y="135" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<text x="200" y="120" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#92400e" text-anchor="start">active L = 180 µm · W = 0.35 µm</text>
+<text x="200" y="160" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">folded 13×2 · block 20×10.55 µm · 7 dummy</text>
+<rect x="1250" y="90" width="110.0" height="58.025000000000006" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<text x="1305.0" y="161.025" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="700" fill="#92400e" text-anchor="middle">13 rows × 2 cols</text>
+<text x="1305.0" y="175.025" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#92400e" text-anchor="middle">20×10.55 µm footprint</text>
+<line x1="200" y1="175" x2="632.0" y2="175" stroke="#0f766e" stroke-width="1"/>
+<text x="416.0" y="192" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f766e" text-anchor="middle">180 µm</text>
+<text x="30" y="287" font-family="'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#b45309" text-anchor="start">XR5</text>
+<text x="30" y="307" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#334155" text-anchor="start">36 × 10 µm</text>
+<rect x="200" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="225.2" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="250.39999999999998" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="275.59999999999997" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="300.79999999999995" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="325.99999999999994" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="351.19999999999993" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="376.3999999999999" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="401.5999999999999" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="426.7999999999999" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="451.9999999999999" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="477.1999999999999" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="502.39999999999986" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="527.5999999999999" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="552.8" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="578.0" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="603.2" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="628.4000000000001" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="653.6000000000001" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="678.8000000000002" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="704.0000000000002" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="729.2000000000003" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="754.4000000000003" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="779.6000000000004" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="804.8000000000004" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="830.0000000000005" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="855.2000000000005" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="880.4000000000005" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="905.6000000000006" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="930.8000000000006" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="956.0000000000007" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="981.2000000000007" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="1006.4000000000008" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="1031.6000000000008" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="1056.8000000000009" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="1082.000000000001" y="280" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<text x="200" y="265" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#92400e" text-anchor="start">active L = 360 µm · W = 0.35 µm</text>
+<text x="200" y="305" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">folded 25×2 · block 20×20.75 µm · 13 dummy</text>
+<rect x="1250" y="235" width="110.0" height="114.125" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<text x="1305.0" y="362.125" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="700" fill="#92400e" text-anchor="middle">25 rows × 2 cols</text>
+<text x="1305.0" y="376.125" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#92400e" text-anchor="middle">20×20.75 µm footprint</text>
+<line x1="200" y1="320" x2="1064.0" y2="320" stroke="#0f766e" stroke-width="1"/>
+<text x="632.0" y="337" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f766e" text-anchor="middle">360 µm</text>
+<text x="30" y="432" font-family="'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#b45309" text-anchor="start">XR6</text>
+<text x="30" y="452" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#334155" text-anchor="start">4 × 10 µm</text>
+<rect x="200" y="425" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="225.2" y="425" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="250.39999999999998" y="425" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<rect x="275.59999999999997" y="425" width="24.0" height="3.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.5"/>
+<text x="200" y="410" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="700" fill="#92400e" text-anchor="start">active L = 40 µm · W = 0.35 µm</text>
+<text x="200" y="450" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#334155" text-anchor="start">folded 9×1 · block 10×7.15 µm · 5 dummy</text>
+<rect x="1250" y="380" width="55.0" height="39.325" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<text x="1277.5" y="432.325" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="700" fill="#92400e" text-anchor="middle">9 rows × 1 cols</text>
+<text x="1277.5" y="446.325" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#92400e" text-anchor="middle">10×7.15 µm footprint</text>
+<line x1="200" y1="465" x2="296.0" y2="465" stroke="#0f766e" stroke-width="1"/>
+<text x="248.0" y="482" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="700" fill="#0f766e" text-anchor="middle">40 µm</text>
+</svg>

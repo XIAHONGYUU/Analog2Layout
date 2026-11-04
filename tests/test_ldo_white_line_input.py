@@ -46,18 +46,21 @@ class LdoWhiteLineInputTest(unittest.TestCase):
         self.assertTrue(any("DNW" in u for u in self.data["unknowns"]))
         self.assertEqual(self.data["constraints"]["output_outer_priority"], "soft")
 
-    def test_resistors_are_square_folded_with_dummy(self):
+    def test_resistors_are_true_segment_folded_with_dummy(self):
         by_name = {p["name"]: p for p in self.data["passives"]}
         for name, active in (("XR4", 18), ("XR5", 36), ("XR6", 4)):
             arr = by_name[name]["array"]
             self.assertEqual(arr["style"], "square_folded_dummy")
             self.assertTrue(arr["folded"])
             self.assertEqual(arr["dummy_layout"], "boundary")
-            self.assertEqual(arr["cell_um"], [2.0, 2.0])
-            self.assertEqual(arr["rows"], arr["cols"])
+            self.assertEqual(arr["cell_um"], [10.0, 0.85])
+            self.assertEqual(arr["columns"], 2 if name != "XR6" else 1)
+            self.assertGreaterEqual(arr["rows"] * arr["cols"], arr["active_cells"] + arr["dummy_cells"])
             self.assertEqual(arr["active_cells"], active)
             self.assertGreater(arr["dummy_cells"], 0)
             self.assertEqual(arr["segment_length_um"], 10.0)
+            self.assertEqual(arr["segment_width_um"], 0.35)
+            self.assertEqual(arr["segment_gap_um"], 0.5)
 
     def test_schema_validation_if_available(self):
         try:

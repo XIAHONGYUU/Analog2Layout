@@ -20,11 +20,11 @@ class LdoWhiteLineTest(unittest.TestCase):
 
     def test_device_and_hierarchy_counts(self):
         self.assertEqual(len(self.m["devices"]), 41)
-        self.assertEqual(len(self.m["device_clusters"]), 34)
+        self.assertEqual(len(self.m["device_clusters"]), 11)
         self.assertEqual(len(self.m["passive_blocks"]), 5)
         self.assertEqual(len(self.m["blackboxes"]), 2)
-        self.assertEqual(len(self.m["blocks"]), 20)
-        self.assertEqual(self.m["dnw2"]["contains"], ["XM61", "guard_ring"])
+        self.assertEqual(len(self.m["blocks"]), 18)
+        self.assertEqual(self.m["dnw2"]["contains"], ["XM61", "body_rings"])
 
     def test_metrics_self_consistent(self):
         w, h = self.m["bbox_um"]
@@ -33,14 +33,39 @@ class LdoWhiteLineTest(unittest.TestCase):
         self.assertGreater(self.m["effective_um2"], 0)
         self.assertLess(self.m["utilization"], 1)
 
+    def test_pmos_bank_is_one_edge_dummy_array(self):
+        bank = [c for c in self.m["device_clusters"] if c["group"] == "PMOS_1X0.5_BANK"]
+        self.assertEqual(len(bank), 1)
+        c = bank[0]
+        self.assertEqual(len(c["members"]), 8)
+        self.assertEqual(c["rows"], 1)
+        self.assertEqual(c["cols"], 8)
+        self.assertEqual(c["dummy_cols"], 0)
+        self.assertEqual(c["boundary_devices"], ["XM86", "XM88"])
+        self.assertEqual(c["sequence"][0], "XM86")
+        self.assertEqual(c["sequence"][-1], "XM88")
+
     def test_ring_audit_is_explicit(self):
         r = self.m["ring_audit"]
-        self.assertEqual(r["mos_width_um"], 1.0)
-        self.assertEqual(r["gap_um"], 0.8)
-        self.assertEqual(r["dnw_margin_um"], 3.0)
+        self.assertEqual(r["mos_width_um"], 0.5)
+        self.assertEqual(r["mos_gap_um"], 0.8)
+        self.assertEqual(r["passive_width_um"], 1.0)
+        self.assertEqual(r["pass_width_um"], 2.0)
+        self.assertEqual(r["dnw_margin_um"], 2.0)
         self.assertFalse(r["pdk_defined"])
         self.assertEqual(r["pdk_facts"], "pdk/sky130/facts.json")
-        self.assertIn("not a ring", r["note"])
+
+    def test_xm61_has_six_body_rings_and_no_dummy(self):
+        p = self.m["pass"]
+        self.assertEqual(len(p["subs"]), 6)
+        self.assertEqual(p["arrangement"], [3, 2])
+        fingers = {s["fingers"] for s in p["subs"]}
+        self.assertEqual(len(fingers), 1)
+        self.assertAlmostEqual(p["finger_w_um"] * sum(fingers) * len(p["subs"]), 5000.0, places=6)
+        self.assertGreaterEqual(p["array"]["fw"] - 0.36, 0.0)
+        self.assertGreaterEqual(p["finger_w_um"], 5.0)
+        self.assertLessEqual(p["finger_w_um"], 25.0)
+        self.assertEqual(p["array"]["dummy_sides"], 0)
 
     def test_dnw_geometry(self):
         self.assertEqual(self.m["checks"]["dnw_gap_outer"], 8.0)

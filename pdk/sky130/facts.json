@@ -108,6 +108,34 @@
       "drc_rule": "licon.7",
       "source_line": 373,
       "description": "minimum tap enclosure of licon by one of two opposite edges"
+    },
+    "poly_min_width_um": {
+      "value": 0.15,
+      "unit": "um",
+      "drc_rule": "poly.1a",
+      "source_line": 289,
+      "description": "minimum poly width"
+    },
+    "poly_min_space_um": {
+      "value": 0.21,
+      "unit": "um",
+      "drc_rule": "poly.2",
+      "source_line": 291,
+      "description": "minimum poly spacing"
+    },
+    "poly_resistor_min_width_um": {
+      "value": 0.33,
+      "unit": "um",
+      "drc_rule": "poly.3",
+      "source_line": 292,
+      "description": "minimum poly resistor width"
+    },
+    "poly_resistor_space_to_poly_or_difftap_um": {
+      "value": 0.48,
+      "unit": "um",
+      "drc_rule": "poly.9",
+      "source_line": 298,
+      "description": "minimum poly resistor space to poly or diff/tap"
     }
   },
   "ring": {
@@ -123,5 +151,12 @@
       "tap_enclosing_licon_one_edge_um"
     ],
     "action": "Do not record 1.0 as a PDK fact. Choose a ring width from a layout decision, then verify it with the actual DRC deck; it must be at least the applicable min width and enclose the chosen taps/contacts."
+  },
+  "resistor_spacing": {
+    "question": "Is 0.5 um segment-to-segment spacing a PDK rule?",
+    "answer": "No. 0.5 um is a layout choice. The relevant Sky130 checks are poly.2 (min poly spacing 0.21 um) and poly.9 (min poly-resistor space to other poly or diff/tap 0.48 um). If the folded resistor is one continuous poly shape, its notch/self-spacing must be checked by the actual DRC deck; if the dummy or segments are separate poly shapes, poly.9 is the relevant 0.48 um bound. 0.5 um is 0.02 um above that bound, not a PDK value.",
+    "current_choice_um": 0.5,
+    "current_choice_source": "layout heuristic; accepted by owner earlier",
+    "not_a_pdk_value": true
   }
 }

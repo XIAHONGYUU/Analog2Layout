@@ -401,10 +401,9 @@ should survive individual tasks.
     passive rings, x1/x2 placeholders, DNW1/DNW2 are rendered.
   - the A/B/C multi-agent block estimates are exploratory only; they are not the
     LDO acceptance artifact.
-  - current baseline: bbox 84.98×142.60, area 12,118.1 µm², effective
-    8,805.2 µm², utilization 72.7%, aspect 0.60; same-W/L/matched devices
-    are clustered into interdigitated arrays; only matched clusters get shared
-    end dummies, unmatched devices get none.
+  - current baseline after bank-level and XM61 finger-W optimization:
+    bbox 129.20×110.70, area 14,302.4 µm², effective 11,961.0 µm²,
+    utilization 83.6%, aspect 1.17.
   - area optimization and stricter local-gap checks remain open.
   - matching is proposal-only until the owner confirms `matching-review.md`;
     unmatched devices are not silently clustered.
@@ -429,3 +428,70 @@ should survive individual tasks.
   only as an explicit heuristic until the owner chooses a target. Matching still
   requires owner confirmation in `matching-review.md`.
 - **Validation:** `python3 pdk/sky130/check.py`; `tests/test_pdk_facts.py`.
+
+---
+
+## D-022 — Matching review is grouped by W/L and device type; owner confirms
+
+- **Status:** active
+- **Date:** 2026-11-03
+- **Owner:** analog design
+- **Source:** owner direction: “相同宽长比的做一组匹配”
+- **Decision:** `examples/sky130_ldo_01v8/matching-review.md` lists matching
+  candidates grouped by **same W/L + same device type**. Device type is read from
+  the SPICE model (`pfet` → PMOS, `nfet` → NMOS), not guessed from names.
+- **Consequences:**
+  - 12 W/L banks; PMOS 20 devices, NMOS 21 devices.
+  - Same W/L is necessary but not sufficient; devices from different logical
+    groups may remain separate.
+  - The compiler still clusters only devices with an explicit `match` token; it
+    does not auto-merge a whole W/L bank.
+  - Owner marks each bank `keep / split / add`; only then is
+    `white-line-input.json` updated.
+- **Related:** `examples/sky130_ldo_01v8/matching-review.md`,
+  `examples/sky130_ldo_01v8/make_white_line.py`, `CURRENT_TASK.md`.
+
+
+---
+
+## D-023 — PMOS_1x0.5 is one large matching bank with edge switches
+
+- **Status:** active
+- **Date:** 2026-11-04
+- **Owner:** analog design
+- **Decision:** the eight PMOS W/L=1/0.5 devices are one large matching item.
+  XM86/XM88 sit at the two outer edges as real enable switches with separate S/D;
+  they are not unconnected dummy fingers. Interior order:
+  `XM86 | XM57 | XM58 | XM59 | XM63 | XM65 | XM90 | XM88`.
+- **Implementation:** `white-line-input.json` uses
+  `match=PMOS_1X0.5_BANK`, `array_role=edge_switch` for XM86/XM88, and
+  `sd_isolation=separate_sd`. The compiler emits one 1-row array, 8 active
+  columns, 0 extra dummy columns.
+- **Related:** `examples/sky130_ldo_01v8/matching-review.md`,
+  `examples/sky130_ldo_01v8/white-line-manifest.json`, `CURRENT_TASK.md`.
+
+
+---
+
+## D-024 — LDO bank-level matching, dummy and ring policy
+
+- **Status:** active
+- **Date:** 2026-11-04
+- **Owner:** analog design + layout
+- **Decision:** all 12 W/L banks are owner-confirmed. Relevant rules:
+  - matched devices are interleaved by m ratio (weighted round-robin), not
+    placed sequentially;
+  - dummy L = 0.5 µm, active L unchanged; one dummy per side where requested;
+  - no dummy for PMOS_2.5x0.5, NMOS_1x0.5, and XM61;
+  - PMOS_1x0.5 is one large bank; XM86/XM88 are real edge switches with
+    separate S/D;
+  - MOS bank ring 0.5 / gap 0.8; XM61 has six sub-banks (W≈24.51/34 fingers,
+    total W=5000, 3×2) with 2/2 body rings sharing a wall, plus an outer DNW guard ring;
+  - passive ring 1.0 / 0.8; DNW margin 2.0;
+  - separate drains; share a source rail only when the source net is identical;
+  - dummy connection metals are not drawn in this step.
+- **Consequences:** current white-line: bbox 129.20×110.70 µm, area 14,302.4 µm²,
+  effective 11,961.0 µm², utilization 83.6%, aspect 1.17. Area is the primary
+  objective; the very wide aspect and local gaps remain open.
+- **Related:** `examples/sky130_ldo_01v8/matching-review.md`,
+  `examples/sky130_ldo_01v8/make_white_line.py`, `CURRENT_TASK.md`.

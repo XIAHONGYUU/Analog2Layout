@@ -30,11 +30,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "LOAD_AMP",
+      "match": "PMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 9
+      "source_line": 9,
+      "bank": "PMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM48",
@@ -50,11 +55,16 @@
       "ring": true,
       "well": "PW",
       "matched": true,
-      "match": "MIR_AMP_net2",
+      "match": "NMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 10
+      "source_line": 10,
+      "bank": "NMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM52",
@@ -70,11 +80,16 @@
       "ring": true,
       "well": "PW",
       "matched": true,
-      "match": "DP_AMP",
+      "match": "NMOS_2X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 11
+      "source_line": 11,
+      "bank": "NMOS_2X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM53",
@@ -90,11 +105,16 @@
       "ring": true,
       "well": "PW",
       "matched": true,
-      "match": "DP_AMP",
+      "match": "NMOS_2X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 12
+      "source_line": 12,
+      "bank": "NMOS_2X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM54",
@@ -109,12 +129,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_3X9_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 13
+      "source_line": 13,
+      "bank": "NMOS_3X9_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM55",
@@ -130,11 +155,16 @@
       "ring": true,
       "well": "PW",
       "matched": true,
-      "match": "MIR_AMP_net2",
+      "match": "NMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 14
+      "source_line": 14,
+      "bank": "NMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM56",
@@ -150,11 +180,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "LOAD_AMP",
+      "match": "PMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 15
+      "source_line": 15,
+      "bank": "PMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM57",
@@ -170,11 +205,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "CAS_AMP",
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 16
+      "source_line": 16,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM58",
@@ -190,11 +230,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "CAS_AMP",
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 17
+      "source_line": 17,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM59",
@@ -209,12 +254,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 18
+      "source_line": 18,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM60",
@@ -229,12 +279,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 19
+      "source_line": 19,
+      "bank": "PMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM61",
@@ -249,12 +304,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_5X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW2",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 22
+      "source_line": 22,
+      "bank": "NMOS_5X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM62",
@@ -270,11 +330,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "MIR_BIAS_VBIAS_P",
+      "match": "PMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 24
+      "source_line": 24,
+      "bank": "PMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM63",
@@ -290,11 +355,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "CAS_BIAS",
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 25
+      "source_line": 25,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM64",
@@ -310,11 +380,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "MIR_BIAS_VBIAS_P",
+      "match": "PMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 26
+      "source_line": 26,
+      "bank": "PMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM65",
@@ -330,11 +405,16 @@
       "ring": true,
       "well": "NW",
       "matched": true,
-      "match": "CAS_BIAS",
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 27
+      "source_line": 27,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM66",
@@ -350,11 +430,16 @@
       "ring": true,
       "well": "PW",
       "matched": true,
-      "match": "MIR_BIAS_DEG",
+      "match": "NMOS_1X9_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 28
+      "source_line": 28,
+      "bank": "NMOS_1X9_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM67",
@@ -370,11 +455,16 @@
       "ring": true,
       "well": "PW",
       "matched": true,
-      "match": "MIR_BIAS_DEG",
+      "match": "NMOS_1X9_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 29
+      "source_line": 29,
+      "bank": "NMOS_1X9_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM68",
@@ -389,12 +479,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X10_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 30
+      "source_line": 30,
+      "bank": "PMOS_1X10_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM69",
@@ -409,12 +504,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X9_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 31
+      "source_line": 31,
+      "bank": "NMOS_1X9_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM70",
@@ -429,12 +529,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 32
+      "source_line": 32,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM71",
@@ -449,12 +554,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X2_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 33
+      "source_line": 33,
+      "bank": "PMOS_1X2_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM72",
@@ -469,12 +579,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X2_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 34
+      "source_line": 34,
+      "bank": "PMOS_1X2_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM73",
@@ -489,12 +604,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X2_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 35
+      "source_line": 35,
+      "bank": "PMOS_1X2_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM74",
@@ -509,12 +629,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X9_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 36
+      "source_line": 36,
+      "bank": "NMOS_1X9_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM75",
@@ -529,12 +654,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 37
+      "source_line": 37,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM76",
@@ -549,12 +679,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_2.5X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 38
+      "source_line": 38,
+      "bank": "PMOS_2.5X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM77",
@@ -569,12 +704,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 39
+      "source_line": 39,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM78",
@@ -589,12 +729,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 40
+      "source_line": 40,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM79",
@@ -609,12 +754,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X7_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 43
+      "source_line": 43,
+      "bank": "PMOS_1X7_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM80",
@@ -629,12 +779,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X10_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 44
+      "source_line": 44,
+      "bank": "NMOS_1X10_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM81",
@@ -649,12 +804,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X10_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 45
+      "source_line": 45,
+      "bank": "NMOS_1X10_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM82",
@@ -669,12 +829,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X10_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 46
+      "source_line": 46,
+      "bank": "NMOS_1X10_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 2,
+      "dummy_l_um": 0.5,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM83",
@@ -689,12 +854,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 47
+      "source_line": 47,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM84",
@@ -709,12 +879,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_2.5X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 48
+      "source_line": 48,
+      "bank": "PMOS_2.5X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM85",
@@ -729,12 +904,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 49
+      "source_line": 49,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM86",
@@ -749,12 +929,18 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 50
+      "source_line": 50,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "edge_switch",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same",
+      "sd_isolation": "separate_sd"
     },
     {
       "name": "XM87",
@@ -769,12 +955,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 51
+      "source_line": 51,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM88",
@@ -789,12 +980,18 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 52
+      "source_line": 52,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "edge_switch",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same",
+      "sd_isolation": "separate_sd"
     },
     {
       "name": "XM89",
@@ -809,12 +1006,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "PW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "NMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 53
+      "source_line": 53,
+      "bank": "NMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     },
     {
       "name": "XM90",
@@ -829,12 +1031,17 @@
       "sd_mode": "shared",
       "ring": true,
       "well": "NW",
-      "matched": false,
-      "match": null,
+      "matched": true,
+      "match": "PMOS_1X0.5_BANK",
       "review_status": "sampled_reviewed",
       "dnw": "DNW1",
       "source": "netlistlabel-overlay/ldo.annotated.sp",
-      "source_line": 54
+      "source_line": 54,
+      "bank": "PMOS_1X0.5_BANK",
+      "array_role": "bank_active",
+      "dummy_sides": 0,
+      "dummy_l_um": null,
+      "sd_connectivity": "separate_drains_shared_source_if_same"
     }
   ],
   "groups": [
@@ -1020,8 +1227,8 @@
       "value": null,
       "unit": "unknown",
       "footprint_um": [
-        10.0,
-        10.0
+        20.0,
+        10.55
       ],
       "m": 1,
       "ring": true,
@@ -1038,17 +1245,19 @@
         "style": "square_folded_dummy",
         "folded": true,
         "dummy_layout": "boundary",
-        "rows": 5,
-        "cols": 5,
+        "rows": 13,
+        "cols": 2,
         "cell_um": [
-          2.0,
-          2.0
+          10.0,
+          0.85
         ],
         "active_cells": 18,
         "dummy_cells": 7,
         "segment_length_um": 10.0,
         "segment_width_um": 0.35,
-        "segment_gap_um": 0.5
+        "segment_gap_um": 0.5,
+        "columns": 2,
+        "rows_per_column": 13
       },
       "notes": "folded resistor block; core area 0.35x180 um; model=sky130_fd_pr__res_xhigh_po_0p35; value not in netlist"
     },
@@ -1058,8 +1267,8 @@
       "value": null,
       "unit": "unknown",
       "footprint_um": [
-        14.0,
-        14.0
+        20.0,
+        20.75
       ],
       "m": 1,
       "ring": true,
@@ -1076,17 +1285,19 @@
         "style": "square_folded_dummy",
         "folded": true,
         "dummy_layout": "boundary",
-        "rows": 7,
-        "cols": 7,
+        "rows": 25,
+        "cols": 2,
         "cell_um": [
-          2.0,
-          2.0
+          10.0,
+          0.85
         ],
         "active_cells": 36,
         "dummy_cells": 13,
         "segment_length_um": 10.0,
         "segment_width_um": 0.35,
-        "segment_gap_um": 0.5
+        "segment_gap_um": 0.5,
+        "columns": 2,
+        "rows_per_column": 25
       },
       "notes": "folded resistor block; core area 0.35x360 um; model=sky130_fd_pr__res_xhigh_po_0p35; value not in netlist"
     },
@@ -1154,8 +1365,8 @@
       "value": null,
       "unit": "unknown",
       "footprint_um": [
-        6.0,
-        6.0
+        10.0,
+        7.15
       ],
       "m": 1,
       "ring": true,
@@ -1172,17 +1383,19 @@
         "style": "square_folded_dummy",
         "folded": true,
         "dummy_layout": "boundary",
-        "rows": 3,
-        "cols": 3,
+        "rows": 9,
+        "cols": 1,
         "cell_um": [
-          2.0,
-          2.0
+          10.0,
+          0.85
         ],
         "active_cells": 4,
         "dummy_cells": 5,
         "segment_length_um": 10.0,
         "segment_width_um": 0.35,
-        "segment_gap_um": 0.5
+        "segment_gap_um": 0.5,
+        "columns": 1,
+        "rows_per_column": 9
       },
       "notes": "folded resistor block; core area 0.35x40 um; model=sky130_fd_pr__res_xhigh_po_0p35; value not in netlist"
     }
@@ -1234,9 +1447,14 @@
     "source_version": "downloaded 2026-10-26",
     "gate_pitch_extra_um": 0.36,
     "ring_gap_um": 0.8,
-    "ring_width_um": 1.0,
+    "ring_width_um": 0.5,
+    "passive_ring_width_um": 1.0,
+    "passive_ring_gap_um": 0.8,
+    "pass_ring_width_um": 2.0,
+    "pass_ring_gap_um": 2.0,
     "group_gap_um": 2.0,
     "dnw_gap_um": 8.0,
+    "dnw_margin_um": 2.0,
     "nwell_spacing_um": 1.27,
     "nwell_pdiff_enclosure_um": 0.18,
     "ndiff_nwell_spacing_um": 0.34,
@@ -1290,8 +1508,8 @@
   ],
   "assumptions": [
     "W/L/nf/m come from the NetlistLabel overlay; R/C values are not in the netlist.",
-    "All S/D are user-confirmed shared, including XM61.",
-    "Passive ring gap/width use 0.8/1.0 um; all passives are in DNW1.",
+    "S/D: separate drains; only identical source nets may share a source rail. All bank membership is owner-confirmed; PMOS 1/0.5 edge switches XM86/XM88 keep separate S/D.",
+    "Passive ring gap/width use 0.8/1.0 um; all passives are in DNW1. MOS bank rings use 0.5/0.8; XM61 body rings use 2.0/2.0.",
     "XC3 is a VREF input filter (role decap); XR6 is source degeneration of XM66 (role bias).",
     "Resistor segments are folded into 2x2 um square cells; the block is square, not a 0.35 um-wide strip.",
     "output_outer is a soft preference tied to LDO current/pass-device floorplan, not a hard constraint.",

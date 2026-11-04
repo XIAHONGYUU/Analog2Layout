@@ -18,10 +18,12 @@ OUT = ROOT / "white-line-input.json"
 
 # Layout-only folding/dummy choices for the long xhigh resistors.
 # The electrical m stays 1; these are physical segment counts.
+# True folded xhigh geometry: 10 um x 0.35 um segments, 0.5 um pitch gap.
+# 2 columns for the long resistors; one column for the short degeneration R.
 RES_LAYOUT = {
-    "XR4": {"rows": 5, "cols": 5, "cell_um": [2.0, 2.0], "active": 18, "dummy": 7,  "block_um": [10.0, 10.0]},
-    "XR5": {"rows": 7, "cols": 7, "cell_um": [2.0, 2.0], "active": 36, "dummy": 13, "block_um": [14.0, 14.0]},
-    "XR6": {"rows": 3, "cols": 3, "cell_um": [2.0, 2.0], "active": 4,  "dummy": 5,  "block_um": [6.0, 6.0]},
+    "XR4": {"rows": 13, "cols": 2, "cell_um": [10.0, 0.85], "active": 18, "dummy": 7,  "block_um": [20.0, 10.55]},
+    "XR5": {"rows": 25, "cols": 2, "cell_um": [10.0, 0.85], "active": 36, "dummy": 13, "block_um": [20.0, 20.75]},
+    "XR6": {"rows": 9,  "cols": 1, "cell_um": [10.0, 0.85], "active": 4,  "dummy": 5,  "block_um": [10.0, 7.15]},
 }
 
 PARAM_RE = re.compile(r"(?:^|\s)([A-Za-z_][A-Za-z0-9_]*)=([^\s]+)")
@@ -120,6 +122,8 @@ def main() -> None:
                     "segment_length_um": 10.0,
                     "segment_width_um": 0.35,
                     "segment_gap_um": 0.5,
+                    "columns": rl["cols"],
+                    "rows_per_column": rl["rows"],
                 },
                 "notes": f"folded resistor block; core area 0.35x{length:g} um; model={model}; value not in netlist",
             }
@@ -191,6 +195,39 @@ def main() -> None:
             "notes": "membership from NetlistLabel overlay; mixed NW/PW group marked NONE",
         })
 
+    # Owner-confirmed bank map (2026-11-04).
+    # active L is unchanged; dummy L=0.5 for all dummy-bearing banks.
+    banks = {
+        "PMOS_1X0.5_BANK": ["XM57", "XM58", "XM59", "XM63", "XM65", "XM86", "XM88", "XM90"],
+        "PMOS_2.5X0.5_BANK": ["XM76", "XM84"],
+        "PMOS_1X2_BANK": ["XM71", "XM72", "XM73"],
+        "PMOS_1X7_BANK": ["XM46", "XM56", "XM62", "XM64", "XM60", "XM79"],
+        "PMOS_1X10_BANK": ["XM68"],
+        "NMOS_1X0.5_BANK": ["XM70", "XM75", "XM77", "XM78", "XM83", "XM85", "XM87", "XM89"],
+        "NMOS_2X0.5_BANK": ["XM52", "XM53"],
+        "NMOS_5X0.5_BANK": ["XM61"],
+        "NMOS_1X7_BANK": ["XM48", "XM55"],
+        "NMOS_1X9_BANK": ["XM66", "XM67", "XM69", "XM74"],
+        "NMOS_3X9_BANK": ["XM54"],
+        "NMOS_1X10_BANK": ["XM80", "XM81", "XM82"],
+    }
+    no_dummy = {"PMOS_1X0.5_BANK", "PMOS_2.5X0.5_BANK", "NMOS_1X0.5_BANK", "NMOS_5X0.5_BANK"}
+    edge_switches = {"XM86", "XM88"}
+    bank_of = {name: b for b, names in banks.items() for name in names}
+    for d in devices:
+        bank = bank_of.get(d["name"])
+        if not bank:
+            continue
+        d["match"] = bank
+        d["matched"] = True
+        d["bank"] = bank
+        d["array_role"] = "edge_switch" if d["name"] in edge_switches else "bank_active"
+        d["dummy_sides"] = 0 if bank in no_dummy else 2
+        d["dummy_l_um"] = None if bank in no_dummy else 0.5
+        d["sd_connectivity"] = "separate_drains_shared_source_if_same"
+        if d["name"] in edge_switches:
+            d["sd_isolation"] = "separate_sd"
+
     data = {
         "schema_version": "1.0",
         "module": "sky130_ldo_01v8",
@@ -217,9 +254,15 @@ def main() -> None:
             "source_version": "downloaded 2026-10-26",
             "gate_pitch_extra_um": 0.36,
             "ring_gap_um": 0.8,
-            "ring_width_um": 1.0,
+            "ring_width_um": 0.5,
+            "ring_gap_um": 0.8,
+            "passive_ring_width_um": 1.0,
+            "passive_ring_gap_um": 0.8,
+            "pass_ring_width_um": 2.0,
+            "pass_ring_gap_um": 2.0,
             "group_gap_um": 2.0,
             "dnw_gap_um": 8.0,
+            "dnw_margin_um": 2.0,
             "nwell_spacing_um": 1.27,
             "nwell_pdiff_enclosure_um": 0.18,
             "ndiff_nwell_spacing_um": 0.34,
@@ -261,8 +304,8 @@ def main() -> None:
         ],
         "assumptions": [
             "W/L/nf/m come from the NetlistLabel overlay; R/C values are not in the netlist.",
-            "All S/D are user-confirmed shared, including XM61.",
-            "Passive ring gap/width use 0.8/1.0 um; all passives are in DNW1.",
+            "S/D: separate drains; only identical source nets may share a source rail. All bank membership is owner-confirmed; PMOS 1/0.5 edge switches XM86/XM88 keep separate S/D.",
+            "Passive ring gap/width use 0.8/1.0 um; all passives are in DNW1. MOS bank rings use 0.5/0.8; XM61 body rings use 2.0/2.0.",
             "XC3 is a VREF input filter (role decap); XR6 is source degeneration of XM66 (role bias).",
             "Resistor segments are folded into 2x2 um square cells; the block is square, not a 0.35 um-wide strip.",
             "output_outer is a soft preference tied to LDO current/pass-device floorplan, not a hard constraint.",
