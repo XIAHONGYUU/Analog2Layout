@@ -20,11 +20,22 @@ examples live in `examples/`.
 ## Read first
 
 1. `CURRENT_TASK.md` — the live task and next action.
-2. `WORKFLOW.md` — leaf-first gates, artifact states and freeze rules.
-3. `AGENTS.md` — hard boundaries and validation commands.
-4. `docs/02-annotation.md` — role taxonomy and annotation fields.
-5. `docs/03-area-model.md` — area formulas, if the task touches area.
-6. `examples/sky130_ldo_01v8/ARTIFACTS.md` — current LDO baseline/status index.
+2. `ARCHITECTURE.md` — layers, one-writer rule, stage direction.
+3. `WORKFLOW.md` — leaf-first gates, artifact states and freeze rules.
+4. `AGENTS.md` — hard boundaries and validation commands.
+5. `docs/02-annotation.md` — role taxonomy and annotation fields.
+6. `docs/03-area-model.md` — area formulas, if the task touches area.
+7. `examples/sky130_ldo_01v8/ARTIFACTS.md` — current LDO baseline/status index.
+
+## Route by task
+
+- **Area / floorplan / delta / Layout Card** → use the a2l build/compare workflow
+  below.
+- **Bank, primitive, R/C, assembly** → use `ARCHITECTURE.md` + `WORKFLOW.md`; do
+  not run `a2l build` as a substitute for bank generation.
+- **Review/freeze** → use the freeze template and artifact registry; no batch
+  approval before the golden primitive gate.
+- **LDO current stage** → `examples/sky130_ldo_01v8/ARTIFACTS.md`.
 
 ## Standard workflow
 

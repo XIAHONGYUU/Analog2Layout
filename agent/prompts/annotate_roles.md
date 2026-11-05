@@ -32,8 +32,10 @@ Return JSON only, conforming to `schemas/annotation.schema.json`.
 1. **Names are the primary semantic source** in real simulation/verification
    netlists. Parse the role token first (`M1_DP`, `M3_CM`, `M5_TAIL`, `M8_EN`).
 2. Explicit `role=` is an optional confirmed override. If present, keep it.
-3. Use topology/comments only as secondary evidence, not as a replacement for a
-   missing name token.
+3. Use topology/comments as secondary evidence when the name has no role token.
+   A topology-derived role is a proposal, not an approval; the human owner must
+   confirm it before it is written back to the schematic. Do not infer a role
+   from W/L alone.
 4. Do not infer a role from W/L alone.
 5. `match` means electrical matching. If the name token suggests a group
    (`DP`, `CM`, `TAIL`), propose it; a human can override.

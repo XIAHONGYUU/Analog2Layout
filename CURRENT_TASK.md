@@ -99,12 +99,23 @@ training assistant, review service, or audit service.
   `XR_GROUP_COMPACT2.png`.
 - Freeze is structural only; no DRC/LVS signoff.
 
+## Architecture hardening (current)
+
+- Target architecture: `ARCHITECTURE.md`; executable guardrails:
+  `a2l/layout/contracts.py` + `tests/test_layout_contracts.py`.
+- Enforced now: one writer per path, freeze requires a hash, downstream cannot
+  consume draft, frozen cannot be downgraded.
+- The existing LDO scripts are **not yet migrated** to the contract API. Do not
+  claim they already obey one-writer/freeze rules.
+- Generic task prompt: `agent/prompts/layout_intent_task.md`.
+
 ## Next atomic action
 
-1. Freeze `XC1` and `XC3` capacitor structures next.
-2. Then continue the remaining MOS bank reviews; do not resume DNW1 assembly
-   until all 12 banks and R/C macros are frozen.
-3. After bank/R-C freeze, resume fixed-macro DNW1 assembly and routing.
+1. Review `ARCHITECTURE.md` and the new guardrail tests.
+2. Migrate LDO inputs in this order: source facts → owner decisions → derived
+   geometry; no rendering changes in the first migration.
+3. Then remove duplicate writers and extract shared MOS/R/C primitives.
+4. Keep LDO-specific detail changes paused unless required by migration.
 
 ## Constraints
 

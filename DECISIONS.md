@@ -537,3 +537,21 @@ should survive individual tasks.
   `frozen_structural` is not DRC/LVS/PEX signoff.
 - **Related:** `WORKFLOW.md`, `examples/sky130_ldo_01v8/ARTIFACTS.md`,
   `layout-guideline/05-templates/freeze-record.md`, `CURRENT_TASK.md`.
+
+---
+
+## D-027 — Architecture guardrails before further LDO detail
+
+- **Status:** active
+- **Date:** 2026-11-05
+- **Owner:** architecture + layout
+- **Decision:** stop LDO-specific detail work until the layout-intent architecture
+  guardrails are in place. The architecture is `ARCHITECTURE.md`; the first
+  executable contract is `a2l/layout/contracts.py`.
+  Enforced: one output/one writer, one canonical input, freeze requires hash,
+  downstream consumes frozen only, frozen is immutable, stages are forward-only.
+- **Consequences:** the existing LDO scripts remain legacy until explicitly
+  migrated. Do not claim the LDO generator already follows the contracts.
+  LDO detail work resumes after the migration steps and their regression tests.
+- **Related:** `ARCHITECTURE.md`, `WORKFLOW.md`, `a2l/layout/contracts.py`,
+  `agent/prompts/layout_intent_task.md`, `CURRENT_TASK.md`.
