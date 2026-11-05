@@ -1,0 +1,29 @@
+{
+  "name": "XR_GROUP_LONG",
+  "group_um": [
+    52.0,
+    17.3
+  ],
+  "blocks": {
+    "XR5": {
+      "x": 0,
+      "y": 2.0,
+      "w": 20,
+      "h": 15.3
+    },
+    "XR4": {
+      "x": 21,
+      "y": 2.0,
+      "w": 20,
+      "h": 7.65
+    },
+    "XR6": {
+      "x": 42,
+      "y": 2.0,
+      "w": 10,
+      "h": 3.4
+    }
+  },
+  "dummy": "one long-edge strip above and below each resistor",
+  "aa": "perimeter ring only; no AA under resistor"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "XR_GROUP_COLUMNS",
+  "group_um": [
+    40,
+    26.35
+  ],
+  "dummy_count": "full columns: XR5 2, XR4 2, XR6 1",
+  "dummy_scope": "one full dummy column per active column",
+  "blocks": {
+    "XR5": {
+      "x": 10,
+      "y": 0,
+      "w": 20,
+      "h": 15.3,
+      "dummy_cols": [
+        [
+          "L",
+          0,
+          10
+        ],
+        [
+          "R",
+          30,
+          10
+        ]
+      ]
+    },
+    "XR4": {
+      "x": 10,
+      "y": 15.3,
+      "w": 20,
+      "h": 7.65,
+      "dummy_cols": [
+        [
+          "L",
+          0,
+          10
+        ],
+        [
+          "R",
+          30,
+          10
+        ]
+      ]
+    },
+    "XR6": {
+      "x": 10,
+      "y": 22.95,
+      "w": 10,
+      "h": 3.4,
+      "dummy_cols": [
+        [
+          "L",
+          0,
+          10
+        ]
+      ]
+    }
+  }
+}

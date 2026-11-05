@@ -1,0 +1,30 @@
+{
+  "name": "XR_GROUP_FIXED",
+  "group_um": [
+    52.0,
+    17.35
+  ],
+  "blocks": {
+    "XR5": {
+      "x": 0,
+      "y": 1.7,
+      "w": 20,
+      "h": 15.3
+    },
+    "XR4": {
+      "x": 21,
+      "y": 1.7,
+      "w": 20,
+      "h": 7.65
+    },
+    "XR6": {
+      "x": 42,
+      "y": 1.7,
+      "w": 10,
+      "h": 3.4
+    }
+  },
+  "dummy": "one 10x0.35 long-edge strip above and below each active column",
+  "dummy_segments": 10,
+  "aa": "perimeter band only"
+}

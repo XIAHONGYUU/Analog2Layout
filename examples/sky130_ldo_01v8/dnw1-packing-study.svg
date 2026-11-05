@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="900" viewBox="0 0 2000 900">
+<rect x="0" y="0" width="2000" height="900" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="30" y="40" font-family="'DejaVu Sans',sans-serif" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start">DNW1 packing study — P0 / P1 / P2 / P3</text>
+<text x="30" y="65" font-family="'DejaVu Sans Mono',monospace" font-size="10" font-weight="400" fill="#b91c1c" text-anchor="start">Block-level visual only · pass envelope shown · no GDS/DRC/LVS</text>
+<rect x="30" y="100" width="450" height="720" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="125" font-family="'DejaVu Sans',sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="start">P0 current</text>
+<text x="44" y="145" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">DNW1 40.7×110.7 · density 64.2%</text>
+<text x="44" y="160" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">bbox 129.2×110.7 · area 14302</text>
+<rect x="50" y="200" width="129.21981424148606" height="351.29256965944273" rx="0" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="52" y="195" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#0f766e" text-anchor="start">DNW1</text>
+<rect x="129.46130030959753" y="200.0" width="37.065015479876166" height="38.71517027863778" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="147.99380804953563" y="222.3575851393189" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X7</text>
+<rect x="50.0" y="504.32662538699697" width="37.065015479876166" height="18.40557275541796" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="68.53250773993808" y="516.529411764706" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X7</text>
+<rect x="118.92569659442725" y="504.32662538699697" width="19.1671826625387" height="16.5015479876161" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="102.93188854489165" y="480.843653250774" width="43.411764705882355" height="19.674922600619198" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="124.63777089783282" y="493.6811145510836" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_3X9</text>
+<rect x="125.14551083591331" y="522.732198142415" width="30.083591331269353" height="13.328173374613005" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="140.187306501548" y="532.3962848297215" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X0.5</text>
+<rect x="50.0" y="200.0" width="73.11455108359134" height="99.64396284829722" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="86.55727554179566" y="252.82198142414862" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X9</text>
+<rect x="72.21362229102166" y="522.732198142415" width="46.58513931888545" height="13.328173374613005" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="95.5061919504644" y="532.3962848297215" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X10</text>
+<rect x="93.41176470588235" y="504.32662538699697" width="19.1671826625387" height="18.40557275541796" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="131.23839009287929" y="435.94040247678015" width="21.198142414860683" height="23.482972136222912" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="152.6904024767802" y="480.843653250774" width="13.708978328173377" height="18.08823529411765" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="50.0" y="480.843653250774" width="46.58513931888545" height="23.482972136222912" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="73.29256965944273" y="495.58513931888547" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X10</text>
+<rect x="50.0" y="435.94040247678015" width="74.89164086687308" height="44.90325077399381" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="87.44582043343654" y="461.39202786377706" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR4</text>
+<rect x="50.0" y="299.64396284829724" width="74.89164086687308" height="77.2716718266254" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="87.44582043343654" y="341.2797987616099" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR5</text>
+<rect x="50.0" y="376.9156346749226" width="59.02476780185759" height="59.02476780185759" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="79.5123839009288" y="409.4280185758514" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC1</text>
+<rect x="131.23839009287929" y="299.64396284829724" width="27.291021671826627" height="27.291021671826627" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="144.8839009287926" y="316.2894736842105" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC3</text>
+<rect x="115.37151702786379" y="376.9156346749226" width="43.15789473684211" height="34.113777089783284" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="136.95046439628484" y="396.97252321981426" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR6</text>
+<rect x="144.43962848297213" y="504.32662538699697" width="15.866873065015481" height="15.866873065015481" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="50.0" y="522.732198142415" width="15.866873065015481" height="15.866873065015481" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="185.56656346749227" y="199.00132034237842" width="268.0866873065015" height="340.59643052267353" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="188.56656346749227" y="211.00132034237842" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="start">XM61 pass envelope</text>
+<rect x="50" y="200" width="410.0" height="351.29256965944273" rx="0" fill="none" stroke="#0f172a" stroke-width="1"/>
+<text x="44" y="792" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="400" fill="#64748b" text-anchor="start">mode right · rotated blocks 0</text>
+<rect x="515" y="100" width="450" height="720" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="529" y="125" font-family="'DejaVu Sans',sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="start">P1 target 44</text>
+<text x="529" y="145" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">DNW1 47.6×93.7 · density 64.8%</text>
+<text x="529" y="160" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">bbox 140.1×107.3 · area 15039</text>
+<rect x="535" y="200" width="139.39765914930058" height="274.1721381672852" rx="0" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="537" y="195" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#0f766e" text-anchor="start">DNW1</text>
+<rect x="609.9072223808164" y="291.8783899514702" width="34.176420211247496" height="35.69797316585784" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="626.9954324864401" y="312.7273765343991" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X7</text>
+<rect x="580.88067370825" y="429.69597487867543" width="34.176420211247496" height="16.971167570653726" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="597.9688838138737" y="441.1815586640023" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X7</text>
+<rect x="620.9092206679989" y="429.69597487867543" width="17.673422780473878" height="15.215529546103339" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="535.0" y="429.69597487867543" width="40.02854695974878" height="18.141592920353983" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="555.0142734798744" y="441.76677133885244" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_3X9</text>
+<rect x="604.2891807022552" y="447.8375677990294" width="27.73908078789609" height="12.289466171852697" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="618.1587210962032" y="456.98230088495575" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X0.5</text>
+<rect x="535.0" y="200.0" width="67.41650014273479" height="91.87838995147017" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="568.7082500713674" y="248.9391949757351" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X9</text>
+<rect x="555.4824436197545" y="447.8375677990294" width="42.954610333999426" height="12.289466171852697" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="576.9597487867542" y="456.98230088495575" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X10</text>
+<rect x="640.2212389380531" y="404.5318298601199" width="17.673422780473878" height="16.971167570653726" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="614.8230088495575" y="404.5318298601199" width="19.54610333999429" height="21.65286896945475" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="649.9357693405652" y="291.8783899514702" width="12.640593776762774" height="16.67856123322866" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="566.0162717670568" y="404.5318298601199" width="42.954610333999426" height="21.65286896945475" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="587.4935769340565" y="418.35826434484727" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X10</text>
+<rect x="535.0" y="363.1280331144733" width="69.05509563231516" height="41.40379674564659" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="569.5275478161576" y="386.82993148729656" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR4</text>
+<rect x="535.0" y="291.8783899514702" width="69.05509563231516" height="71.24964316300314" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="569.5275478161576" y="330.50321153297176" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR5</text>
+<rect x="608.2686268912361" y="200.0" width="54.424778761061944" height="54.424778761061944" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="635.4810162717671" y="230.21238938053096" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC1</text>
+<rect x="535.0" y="404.5318298601199" width="25.164145018555523" height="25.164145018555523" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="609.9072223808164" y="363.1280331144733" width="39.79446188980873" height="31.455181273194402" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="629.8044533257207" y="381.8556237510705" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR6</text>
+<rect x="644.434770196974" y="429.69597487867543" width="14.63031687125321" height="14.63031687125321" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="535.0" y="447.8375677990294" width="14.63031687125321" height="14.63031687125321" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="697.8061661433057" y="200.0" width="247.19383385669423" height="314.0526607445719" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="700.8061661433057" y="212.0" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="start">XM61 pass envelope</text>
+<rect x="535" y="200" width="410.0" height="314.0526607445719" rx="0" fill="none" stroke="#0f172a" stroke-width="1"/>
+<text x="529" y="792" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="400" fill="#64748b" text-anchor="start">mode right · rotated blocks 0</text>
+<rect x="1000" y="100" width="450" height="720" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="1014" y="125" font-family="'DejaVu Sans',sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="start">P2 target 24</text>
+<text x="1014" y="145" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">DNW1 27.6×144.1 · density 72.8%</text>
+<text x="1014" y="160" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">bbox 120.1×144.1 · area 17298</text>
+<rect x="1020" y="200" width="94.23717521652233" height="491.8429380413059" rx="0" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="1022" y="195" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#0f766e" text-anchor="start">DNW1</text>
+<rect x="1020.0" y="502.1735509660227" width="39.8800799467022" height="41.65556295802799" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1039.940039973351" y="526.0013324450367" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X7</text>
+<rect x="1020.0" y="626.9695203197869" width="39.8800799467022" height="19.803464357095276" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1039.940039973351" y="639.8712524983345" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X7</text>
+<rect x="1066.7088607594937" y="626.9695203197869" width="20.62291805463025" height="17.75483011325783" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1020.0" y="605.8002998001333" width="46.708860759493675" height="21.169220519653567" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1043.3544303797469" y="619.3849100599601" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_3X9</text>
+<rect x="1067.8014656895402" y="646.7729846768823" width="32.36842105263158" height="14.340439706862094" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1083.985676215856" y="656.9432045303133" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X0.5</text>
+<rect x="1020.0" y="200.0" width="78.66755496335777" height="107.21185876082613" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1059.333777481679" y="256.60592938041304" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X9</text>
+<rect x="1020.0" y="663.8449367088609" width="50.123251165889414" height="14.340439706862094" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1045.0616255829448" y="674.015156562292" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X10</text>
+<rect x="1076.952031978681" y="580.5338107928048" width="20.62291805463025" height="19.803464357095276" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1073.2644903397736" y="543.8291139240507" width="22.80812791472352" height="25.266489007328452" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1073.537641572285" y="605.8002998001333" width="14.750166555629583" height="19.462025316455698" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1020.0" y="580.5338107928048" width="50.123251165889414" height="25.266489007328452" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1045.0616255829448" y="596.167055296469" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X10</text>
+<rect x="1020.0" y="453.859926715523" width="80.57961359093939" height="48.31362425049967" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1060.2898067954698" y="481.0167388407728" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR4</text>
+<rect x="1020.0" y="307.21185876082615" width="80.57961359093939" height="83.14040639573619" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1060.2898067954698" y="351.78206195869427" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR5</text>
+<rect x="1020.0" y="390.35226515656234" width="63.507661558960706" height="63.507661558960706" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1051.7538307794803" y="425.1060959360427" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC1</text>
+<rect x="1066.7088607594937" y="502.1735509660227" width="29.363757495003334" height="29.363757495003334" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1081.3907395069955" y="519.8554297135244" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC3</text>
+<rect x="1020.0" y="543.8291139240507" width="46.435709526982016" height="36.70469686875417" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1043.217854763491" y="565.1814623584278" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR6</text>
+<rect x="1020.0" y="646.7729846768823" width="17.071952031978682" height="17.071952031978682" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1043.9007328447701" y="646.7729846768823" width="17.071952031978682" height="17.071952031978682" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1141.5522984676882" y="262.68921209389816" width="288.4477015323118" height="366.4645138535095" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="1144.5522984676882" y="274.68921209389816" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="start">XM61 pass envelope</text>
+<rect x="1020" y="200" width="410.0" height="491.8429380413059" rx="0" fill="none" stroke="#0f172a" stroke-width="1"/>
+<text x="1014" y="792" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="400" fill="#64748b" text-anchor="start">mode right · rotated blocks 0</text>
+<rect x="1485" y="100" width="450" height="720" rx="0" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="1499" y="125" font-family="'DejaVu Sans',sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="start">P3 rotation-aware</text>
+<text x="1499" y="145" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">DNW1 38.2×107.1 · density 70.7%</text>
+<text x="1499" y="160" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#334155" text-anchor="start">bbox 130.7×107.3 · area 14026</text>
+<rect x="1505" y="200" width="119.85001530456076" height="336.0506580961126" rx="0" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="1507" y="195" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#0f766e" text-anchor="start">DNW1</text>
+<rect x="1545.002295684114" y="449.0809611264157" width="36.64524028160391" height="38.27670645852464" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1563.324915824916" y="471.21931435567797" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X7</text>
+<rect x="1505.0" y="491.7500765228038" width="36.64524028160391" height="18.19712274257729" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1523.322620140802" y="503.84863789409246" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X7</text>
+<rect x="1595.358126721763" y="346.3299663299663" width="16.314661769207223" height="18.95010713192531" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1597.358126721763" y="353.3299663299663" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1569.6311600857055" y="346.3299663299663" width="19.452096724823996" height="42.92011019283746" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1571.6311600857055" y="353.3299663299663" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1581.490664217937" y="509.9471992653811" width="29.742883379247015" height="13.17722681359045" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1596.3621059075604" y="519.5358126721763" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X0.5</text>
+<rect x="1505.0" y="274.04346495255584" width="98.5154576063667" height="72.28650137741046" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1554.2577288031835" y="313.18671564126106" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">NMOS_1X9</text>
+<text x="1507.0" y="281.04346495255584" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1529.1582491582492" y="509.9471992653811" width="46.05754514845423" height="13.17722681359045" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1552.1870217324763" y="519.5358126721763" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">PMOS_1X10</text>
+<rect x="1547.9201101928375" y="491.7500765228038" width="18.95010713192531" height="18.19712274257729" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1587.9224058769514" y="449.0809611264157" width="23.217018671564126" height="20.958065503520046" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1589.9224058769514" y="456.0809611264157" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1505.0" y="509.9471992653811" width="17.88337924701561" height="13.553719008264462" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1507.0" y="516.9471992653811" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1587.671411080502" y="200.0" width="23.217018671564126" height="46.05754514845423" rx="0" fill="#d1fae5" stroke="#64748b" stroke-width="0.6"/>
+<text x="1589.671411080502" y="207.0" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1505.0" y="404.68625650443835" width="74.04346495255587" height="44.39470462197735" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1542.021732476278" y="429.883608815427" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR4</text>
+<rect x="1505.0" y="200.0" width="76.39654116926845" height="74.04346495255587" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1543.1982705846342" y="240.02173247627792" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR5</text>
+<text x="1507.0" y="207.0" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1505.0" y="346.3299663299663" width="58.356290174471994" height="58.356290174471994" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1534.178145087236" y="378.50811141720226" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC1</text>
+<rect x="1585.3183348637895" y="404.68625650443835" width="26.98194061830425" height="26.98194061830425" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1598.8093051729415" y="421.1772268135905" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XC3</text>
+<rect x="1505.0" y="449.0809611264157" width="33.727425772880316" height="42.66911539638812" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<text x="1521.8637128864402" y="473.41551882460976" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#334155" text-anchor="middle">XR6</text>
+<text x="1507.0" y="456.0809611264157" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#b91c1c" text-anchor="start">R90</text>
+<rect x="1573.1450872359962" y="491.7500765228038" width="15.687174778083868" height="15.687174778083868" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1595.1071319253138" y="491.7500765228038" width="15.687174778083868" height="15.687174778083868" rx="0" fill="#fef3c7" stroke="#64748b" stroke-width="0.6"/>
+<rect x="1649.949494949495" y="200.0" width="265.050505050505" height="336.73904823637446" rx="0" fill="#fce7f3" stroke="#be185d" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="1652.949494949495" y="212.0" font-family="'DejaVu Sans Mono',monospace" font-size="6" font-weight="700" fill="#9d174d" text-anchor="start">XM61 pass envelope</text>
+<rect x="1505" y="200" width="410.0" height="336.73904823637446" rx="0" fill="none" stroke="#0f172a" stroke-width="1"/>
+<text x="1499" y="792" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="400" fill="#64748b" text-anchor="start">mode right · rotated blocks 8</text>
+</svg>

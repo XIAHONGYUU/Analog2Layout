@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="760" viewBox="0 0 1300 760">
+<rect x="0.0" y="0.0" width="1300.0" height="760.0" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="28.0" y="36.0" font-family="'DejaVu Sans',sans-serif" font-size="22" font-weight="700" fill="#0f172a" text-anchor="start">XR4/XR5/XR6 — tight stepped common well</text>
+<text x="28.0" y="58.0" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">blocks touch; stepped well outline removes rectangular padding; dummy only at two outer ends</text>
+<text x="28.0" y="76.0" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#b91c1c" text-anchor="start">structure only · no DRC/LVS · no resistor end metal</text>
+<polygon points="150.0,150.0 1150.0,150.0 1150.0,341.2 900.0,341.2 900.0,426.2 650.0,426.2 650.0,532.5 150.0,532.5" fill="#fff7ed" stroke="#b45309" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="150.0,150.0 1150.0,150.0 1150.0,341.2 900.0,341.2 900.0,426.2 650.0,426.2 650.0,532.5 150.0,532.5" fill="none" stroke="#b45309" stroke-width="1.0" stroke-linejoin="round"/>
+<rect x="150.0" y="150.0" width="500.0" height="382.5" rx="0" fill="none" stroke="#d97706" stroke-width="0.35" stroke-dasharray="3 2"/>
+<text x="175.0" y="250.0" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#92400e" text-anchor="start">XR5</text>
+<rect x="160.0" y="156.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="156.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="177.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="177.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="198.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="198.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="220.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="220.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="241.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="241.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="262.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="262.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="283.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="283.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="305.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="305.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="326.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="326.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="347.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="347.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="368.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="368.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="390.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="390.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="411.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="411.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="432.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="432.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="453.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="453.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="475.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="475.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="496.3" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="496.3" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="160.0" y="517.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="410.0" y="517.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="650.0" y="150.0" width="500.0" height="191.2" rx="0" fill="none" stroke="#d97706" stroke-width="0.35" stroke-dasharray="3 2"/>
+<text x="675.0" y="250.0" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#92400e" text-anchor="start">XR4</text>
+<rect x="660.0" y="156.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="156.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="177.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="177.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="198.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="198.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="220.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="220.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="241.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="241.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="262.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="262.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="283.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="283.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="305.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="305.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="326.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="910.0" y="326.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="650.0" y="341.2" width="250.0" height="85.0" rx="0" fill="none" stroke="#d97706" stroke-width="0.35" stroke-dasharray="3 2"/>
+<text x="675.0" y="441.2" font-family="'DejaVu Sans Mono',monospace" font-size="7" font-weight="700" fill="#92400e" text-anchor="start">XR6</text>
+<rect x="660.0" y="347.5" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="368.8" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="390.0" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="660.0" y="411.2" width="230.0" height="8.8" rx="1" fill="#fef08a" stroke="#b45309" stroke-width="0.4"/>
+<rect x="110.0" y="332.5" width="8.8" height="17.5" rx="1" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.6"/>
+<text x="114.2" y="327.5" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#64748b" text-anchor="middle">DM</text>
+<rect x="1165.0" y="332.5" width="8.8" height="17.5" rx="1" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.6"/>
+<text x="1169.2" y="327.5" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#64748b" text-anchor="middle">DM</text>
+<text x="28.0" y="720.0" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#64748b" text-anchor="start">No internal rectangular padding; no individual XR rings; no metal.</text>
+</svg>
