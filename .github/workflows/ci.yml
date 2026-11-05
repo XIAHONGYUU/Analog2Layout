@@ -18,6 +18,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Unit tests
         run: python -m unittest discover -s tests -v
+      - name: Rebuild and verify LDO layout-intent baseline
+        run: python3 tools/verify_ldo.py --rebuild
+      - name: Validate SKY130 fact registry
+        run: python3 pdk/sky130/check.py
       - name: Enforce known roles
         run: |
           python -m a2l validate examples/two_stage/two_stage.sp --require-known-roles

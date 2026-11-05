@@ -495,3 +495,45 @@ should survive individual tasks.
   objective; the very wide aspect and local gaps remain open.
 - **Related:** `examples/sky130_ldo_01v8/matching-review.md`,
   `examples/sky130_ldo_01v8/make_white_line.py`, `CURRENT_TASK.md`.
+
+---
+
+## D-025 — Freeze XR_GROUP (XR4/XR5/XR6)
+
+- **Status:** active (frozen_for_now)
+- **Date:** 2026-11-05
+- **Owner:** analog design + layout
+- **Decision:** freeze the common resistor group `XR_GROUP` as the current
+  structural baseline:
+  - XR4/XR5/XR6 share one common well and one common ring;
+  - XR5 left full-height, XR4 right-top, XR6 right-bottom, stepped outline;
+  - bbox 40 × 17 µm;
+  - 10 long-edge dummy strips: one above and below each active column
+    (XR5 4, XR4 4, XR6 2);
+  - dummy and active use the same horizontal 10 × 0.35 orientation;
+  - AA/tap is a perimeter band only; no AA under the resistor body;
+  - resistor heads/contacts are shown as intent only.
+- **Consequences:** R structure may be used as a fixed macro for later work.
+  This is not a DRC/LVS/PEX signoff; stepped outline, dummy-to-ring spacing,
+  head/contact and AA enclosure checks remain open.
+- **Related:** `examples/sky130_ldo_01v8/passive-banks/XR_GROUP_FROZEN.md`,
+  `XR_GROUP_FROZEN.json`, `CURRENT_TASK.md`.
+
+---
+
+## D-026 — Leaf-first workflow and prototype gate
+
+- **Status:** active
+- **Date:** 2026-11-05
+- **Owner:** analog design + layout
+- **Decision:** adopt `WORKFLOW.md` as the stage/gate contract:
+  requirement card → one golden MOS/R/C primitive → one approved bank → batch
+  of banks → frozen artifact registry → assembly → routing.
+  A batch of banks may not start until the corresponding primitive and one real
+  bank have passed owner review. Artifact states are
+  `exploratory/draft/frozen_structural/verified_selected_rules/superseded`.
+- **Consequences:** no more global DNW packing before leaves are frozen; no
+  silent same-path previews; each freeze needs a hash and a small commit.
+  `frozen_structural` is not DRC/LVS/PEX signoff.
+- **Related:** `WORKFLOW.md`, `examples/sky130_ldo_01v8/ARTIFACTS.md`,
+  `layout-guideline/05-templates/freeze-record.md`, `CURRENT_TASK.md`.

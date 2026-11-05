@@ -66,19 +66,45 @@ training assistant, review service, or audit service.
 - The earlier A/B/C multi-agent LDO outputs were block-level estimates. They are
   exploratory only and are not the acceptance artifact.
 
+## Bank-first workflow (2026-11-05)
+
+- Stage/gate contract: `WORKFLOW.md`; human artifact index:
+  `examples/sky130_ldo_01v8/ARTIFACTS.md`; freeze template:
+  `layout-guideline/05-templates/freeze-record.md`.
+- Golden-primitive gate before batching: one approved MOS/R/C primitive, then one
+  bank, then the batch. Batch generation is not a template review.
+- Stop global DNW1 packing until every bank macro is frozen.
+- `examples/sky130_ldo_01v8/bank-specs.json` is the machine-readable bank contract;
+  `bank-plan.md` is the human review table.
+- DNW1 poly orientation is **vertical**; individual bank rotation is not allowed.
+- Current bank status is `draft_frozen_geometry`; ports, S/D topology and global
+  placement are still pending.
+- Next: owner reviews the 12 bank macros, then freeze them before DNW1 assembly.
+
+## Pause DNW1, bank/R-C detail first (2026-11-05)
+
+- DNW1 area study and assembly are **paused/exploratory**, not a baseline.
+- Current focus: resolve each bank's internal white-line content and the
+  resistor/capacitor macros before any further DNW1 packing.
+- The first-pass `banks/` library is useful for structure review, but only
+  `NMOS_2X0.5_BANK` has a selected-rule report. Do not call the other banks
+  DRC-clean.
+- Bank-level drawings do not include S/D metal routes or global DNW polygons.
+
+## Frozen R group (2026-11-05)
+
+- `XR_GROUP` (XR4/XR5/XR6) is **frozen_for_now**: one common well, bbox 40×17 µm,
+  stepped outline, 10 per-column long-edge dummies, AA only on the perimeter.
+- Source: `examples/sky130_ldo_01v8/passive-banks/XR_GROUP_FROZEN.md` and
+  `XR_GROUP_COMPACT2.png`.
+- Freeze is structural only; no DRC/LVS signoff.
+
 ## Next atomic action
 
-1. Owner review of `examples/sky130_ldo_01v8/matching-review.md`:
-   mark each W/L bank `keep / split / add`, especially
-   `PMOS_1x0.5`, `PMOS_1x7`, `NMOS_1x9`, and the un-tokened
-   `PMOS_1x2` / `NMOS_1x10` banks.
-2. Owner decision on ring width/gap and DNW margin. Current 1.0/0.8 and 3.0 are
-   heuristics; 1.0 is not PDK.
-3. Review the new bank-level rendering and the five-ring XM61 geometry.
-4. Optimize the LDO white-line on the corrected device-level geometry: DNW1
-   area, local gaps, and ring/keepout choices; the current 340×48 aspect is
-   very wide.
-5. After LDO is stable, resume the synthetic rail-to-rail second area case.
+1. Freeze `XC1` and `XC3` capacitor structures next.
+2. Then continue the remaining MOS bank reviews; do not resume DNW1 assembly
+   until all 12 banks and R/C macros are frozen.
+3. After bank/R-C freeze, resume fixed-macro DNW1 assembly and routing.
 
 ## Constraints
 

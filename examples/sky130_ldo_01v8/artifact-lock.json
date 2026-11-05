@@ -1,0 +1,13 @@
+{
+  "version": "2026-11-05",
+  "artifacts": {
+    "examples/sky130_ldo_01v8/white-line.svg": "710aac2fcc40c06dfc5d518eef398a398b3ccdf65bb532230f503491507da43b",
+    "examples/sky130_ldo_01v8/white-line-manifest.json": "99a06e004df76fabc9193b20af573ec364c9cbbafde597aaecb59b337c403ee1",
+    "examples/sky130_ldo_01v8/white-line-input.json": "9f38b770c0c7fa035613bd6970ee258a5e1a2c39d2c15b1a0de61cb73afb414c",
+    "examples/sky130_ldo_01v8/white-line.png": "432453318e0ced0057f691f369e7ff904b9e71eede75b769e94ecb0c20a08202",
+    "examples/sky130_ldo_01v8/passive-banks/XR_GROUP_COMPACT2.png": "931bd7b0b09f1ec304a0aced8dcc46adff2b5dbf17d44a7dadac11b431ed6664",
+    "examples/sky130_ldo_01v8/banks/NMOS_2X0.5_BANK-drc.json": "36099974dba06d0cd9fd7102ca798036c20b950d33a51db2e3fd26aa2d78b890",
+    "examples/sky130_ldo_01v8/banks/bank-library.png": "8ce91364542e9d8f9765d2881b7736e5b0a0c318041080d8c902565e87174d2d"
+  },
+  "note": "deterministic hash lock; regenerate with tools/verify_ldo.py --rebuild and review diff"
+}

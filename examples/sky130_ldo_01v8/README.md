@@ -23,6 +23,8 @@ unit test.
 | [`resistor-variants.png`](resistor-variants.png) | current vs functional vs rotated FB placement | study |
 | [`resistor-scale.png`](resistor-scale.png) | true-scale R body vs folded footprint | reference |
 | [`output-dnw-study.md`](output-dnw-study.md) | Step-1 XM61 DNW shape/area options A–E | **needs review** |
+| [`bank-plan.md`](bank-plan.md) | bank-first frozen geometry plan (12 banks + macros) | **needs review** |
+| [`bank-specs.json`](bank-specs.json) | machine-readable bank geometry contract | draft frozen |
 
 The imported overlay is the preferred semantic input for the next LDO
 white-line/area case. It preserves the raw netlist, records source commit and

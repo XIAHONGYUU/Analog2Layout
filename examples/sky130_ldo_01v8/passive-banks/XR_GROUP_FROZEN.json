@@ -1,0 +1,32 @@
+{
+  "name": "XR_GROUP",
+  "members": ["XR4", "XR5", "XR6"],
+  "status": "frozen_for_now",
+  "date": "2026-11-05",
+  "geometry": {
+    "bbox_um": [40.0, 17.0],
+    "arrangement": "XR5 left full-height; XR4 right-top; XR6 right-bottom; stepped outline",
+    "one_common_well": true,
+    "one_common_ring": true,
+    "individual_xr_rings": false
+  },
+  "dummy": {
+    "policy": "one 10x0.35 long-edge strip above and below each active column",
+    "count": 10,
+    "orientation": "horizontal, same as active segment"
+  },
+  "aa": "perimeter band only; no AA under resistor body",
+  "head_contact": "shown as intent only",
+  "source": {
+    "png": "XR_GROUP_COMPACT2.png",
+    "png_sha256": "931bd7b0b09f1ec304a0aced8dcc46adff2b5dbf17d44a7dadac11b431ed6664",
+    "svg": "XR_GROUP_COMPACT2.svg",
+    "svg_sha256": "5c2d3b964bb93f89c676423169ddc13298babb688a6b3775505ea96093f0a4b5"
+  },
+  "limitations": [
+    "structure-level only; not GDS/DRC/LVS",
+    "stepped perimeter is not a DRC-clean polygon",
+    "dummy-to-ring and head/contact DRC not checked",
+    "no resistor terminal metal"
+  ]
+}

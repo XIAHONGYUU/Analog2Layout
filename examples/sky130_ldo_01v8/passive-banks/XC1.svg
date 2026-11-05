@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760">
+<rect x="0.0" y="0.0" width="900.0" height="760.0" rx="0" fill="#f8fafc" stroke="none" stroke-width="0"/>
+<text x="28.0" y="36.0" font-family="'DejaVu Sans',sans-serif" font-size="22" font-weight="700" fill="#0f172a" text-anchor="start">XC1 — MIM capacitor structure</text>
+<text x="28.0" y="58.0" font-family="'DejaVu Sans Mono',monospace" font-size="9" font-weight="400" fill="#475569" text-anchor="start">plain · m=3 · footprint 15×15 · ring 1.0/0.8</text>
+<text x="28.0" y="76.0" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#b91c1c" text-anchor="start">assumed unit stack shown; plate/contact DRC not yet checked · not GDS/DRC</text>
+<rect x="200.0" y="150.0" width="500.0" height="500.0" rx="2" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="226.9" y="176.9" width="446.2" height="446.2" rx="1" fill="#faf5ff" stroke="#6d28d9" stroke-width="0.6"/>
+<rect x="248.4" y="198.4" width="403.2" height="403.2" rx="0" fill="#faf5ff" stroke="#7c3aed" stroke-width="0.7"/>
+<rect x="255.1" y="203.2" width="389.8" height="124.7" rx="1" fill="#ddd6fe" stroke="#6d28d9" stroke-width="0.8"/>
+<rect x="267.2" y="209.1" width="365.6" height="112.9" rx="1" fill="#c4b5fd" stroke="#4c1d95" stroke-width="0.6"/>
+<rect x="255.4" y="263.2" width="4.8" height="4.8" rx="1" fill="#111827" stroke="none" stroke-width="0"/>
+<rect x="639.8" y="263.2" width="4.8" height="4.8" rx="1" fill="#111827" stroke="none" stroke-width="0"/>
+<text x="450.0" y="268.6" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#4c1d95" text-anchor="middle">unit 1</text>
+<rect x="255.1" y="337.6" width="389.8" height="124.7" rx="1" fill="#ddd6fe" stroke="#6d28d9" stroke-width="0.8"/>
+<rect x="267.2" y="343.5" width="365.6" height="112.9" rx="1" fill="#c4b5fd" stroke="#4c1d95" stroke-width="0.6"/>
+<rect x="255.4" y="397.6" width="4.8" height="4.8" rx="1" fill="#111827" stroke="none" stroke-width="0"/>
+<rect x="639.8" y="397.6" width="4.8" height="4.8" rx="1" fill="#111827" stroke="none" stroke-width="0"/>
+<text x="450.0" y="403.0" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#4c1d95" text-anchor="middle">unit 2</text>
+<rect x="255.1" y="472.0" width="389.8" height="124.7" rx="1" fill="#ddd6fe" stroke="#6d28d9" stroke-width="0.8"/>
+<rect x="267.2" y="478.0" width="365.6" height="112.9" rx="1" fill="#c4b5fd" stroke="#4c1d95" stroke-width="0.6"/>
+<rect x="255.4" y="532.0" width="4.8" height="4.8" rx="1" fill="#111827" stroke="none" stroke-width="0"/>
+<rect x="639.8" y="532.0" width="4.8" height="4.8" rx="1" fill="#111827" stroke="none" stroke-width="0"/>
+<text x="450.0" y="537.4" font-family="'DejaVu Sans Mono',monospace" font-size="5" font-weight="700" fill="#4c1d95" text-anchor="middle">unit 3</text>
+<text x="28.0" y="706.0" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#64748b" text-anchor="start">violet = MIM plates · black = plate contact/via intent · ring = passive ring</text>
+<text x="28.0" y="726.0" font-family="'DejaVu Sans Mono',monospace" font-size="8" font-weight="400" fill="#b91c1c" text-anchor="start">No top-level terminal metal or connection is drawn.</text>
+</svg>

@@ -1,0 +1,789 @@
+{
+  "schema_version": "0.1",
+  "module": "sky130_ldo_01v8",
+  "status": "draft bank geometry; no global placement/routing",
+  "constraints": {
+    "dnw1_poly_orientation": "vertical",
+    "no_bank_rotation_inside_dnw1": true,
+    "no_connection_geometry": true
+  },
+  "banks": {
+    "PMOS_1X7_BANK": {
+      "kind": "mos_bank",
+      "type": "PMOS",
+      "members": [
+        "XM46",
+        "XM56",
+        "XM60",
+        "XM62",
+        "XM64",
+        "XM79"
+      ],
+      "active_l_um": 7.0,
+      "m_values": [
+        1
+      ],
+      "nf_total": 6,
+      "array": {
+        "rows": 6,
+        "cols": 1,
+        "fingers": 6
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        9.08,
+        9.600000000000001
+      ],
+      "outer_um": [
+        11.68,
+        12.200000000000001
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "NMOS_1X7_BANK": {
+      "kind": "mos_bank",
+      "type": "NMOS",
+      "members": [
+        "XM48",
+        "XM55"
+      ],
+      "active_l_um": 7.0,
+      "m_values": [
+        1
+      ],
+      "nf_total": 2,
+      "array": {
+        "rows": 2,
+        "cols": 1,
+        "fingers": 2
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        9.08,
+        3.2
+      ],
+      "outer_um": [
+        11.68,
+        5.800000000000001
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "NMOS_2X0.5_BANK": {
+      "kind": "mos_bank",
+      "type": "NMOS",
+      "members": [
+        "XM52",
+        "XM53"
+      ],
+      "active_l_um": 0.5,
+      "m_values": [
+        1
+      ],
+      "nf_total": 2,
+      "array": {
+        "rows": 1,
+        "cols": 2,
+        "fingers": 2
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        3.44,
+        2.6
+      ],
+      "outer_um": [
+        6.04,
+        5.2
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "NMOS_3X9_BANK": {
+      "kind": "mos_bank",
+      "type": "NMOS",
+      "members": [
+        "XM54"
+      ],
+      "active_l_um": 9.0,
+      "m_values": [
+        1
+      ],
+      "nf_total": 1,
+      "array": {
+        "rows": 1,
+        "cols": 1,
+        "fingers": 1
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        11.08,
+        3.6
+      ],
+      "outer_um": [
+        13.68,
+        6.2
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "PMOS_1X0.5_BANK": {
+      "kind": "mos_bank",
+      "type": "PMOS",
+      "members": [
+        "XM57",
+        "XM58",
+        "XM59",
+        "XM63",
+        "XM65",
+        "XM86",
+        "XM88",
+        "XM90"
+      ],
+      "active_l_um": 0.5,
+      "m_values": [
+        1
+      ],
+      "nf_total": 8,
+      "array": {
+        "rows": 1,
+        "cols": 8,
+        "fingers": 8
+      },
+      "dummy": {
+        "sides": 0,
+        "L_um": null,
+        "W_um": 0.0,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        6.88,
+        1.6
+      ],
+      "outer_um": [
+        9.48,
+        4.2
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "NMOS_1X9_BANK": {
+      "kind": "mos_bank",
+      "type": "NMOS",
+      "members": [
+        "XM66",
+        "XM67",
+        "XM69",
+        "XM74"
+      ],
+      "active_l_um": 9.0,
+      "m_values": [
+        5,
+        20
+      ],
+      "nf_total": 4,
+      "array": {
+        "rows": 18,
+        "cols": 2,
+        "fingers": 35
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 1
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        20.439999999999998,
+        28.8
+      ],
+      "outer_um": [
+        23.04,
+        31.400000000000002
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "PMOS_1X10_BANK": {
+      "kind": "mos_bank",
+      "type": "PMOS",
+      "members": [
+        "XM68"
+      ],
+      "active_l_um": 10.0,
+      "m_values": [
+        1
+      ],
+      "nf_total": 1,
+      "array": {
+        "rows": 1,
+        "cols": 1,
+        "fingers": 1
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        12.08,
+        1.6
+      ],
+      "outer_um": [
+        14.68,
+        4.2
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "NMOS_1X0.5_BANK": {
+      "kind": "mos_bank",
+      "type": "NMOS",
+      "members": [
+        "XM70",
+        "XM75",
+        "XM77",
+        "XM78",
+        "XM83",
+        "XM85",
+        "XM87",
+        "XM89"
+      ],
+      "active_l_um": 0.5,
+      "m_values": [
+        1
+      ],
+      "nf_total": 8,
+      "array": {
+        "rows": 2,
+        "cols": 4,
+        "fingers": 8
+      },
+      "dummy": {
+        "sides": 0,
+        "L_um": null,
+        "W_um": 0.0,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        3.44,
+        3.2
+      ],
+      "outer_um": [
+        6.04,
+        5.800000000000001
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "PMOS_1X2_BANK": {
+      "kind": "mos_bank",
+      "type": "PMOS",
+      "members": [
+        "XM71",
+        "XM72",
+        "XM73"
+      ],
+      "active_l_um": 2.0,
+      "m_values": [
+        1
+      ],
+      "nf_total": 3,
+      "array": {
+        "rows": 3,
+        "cols": 1,
+        "fingers": 3
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        4.08,
+        4.800000000000001
+      ],
+      "outer_um": [
+        6.68,
+        7.4
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "PMOS_2.5X0.5_BANK": {
+      "kind": "mos_bank",
+      "type": "PMOS",
+      "members": [
+        "XM76",
+        "XM84"
+      ],
+      "active_l_um": 0.5,
+      "m_values": [
+        1
+      ],
+      "nf_total": 2,
+      "array": {
+        "rows": 1,
+        "cols": 2,
+        "fingers": 2
+      },
+      "dummy": {
+        "sides": 0,
+        "L_um": null,
+        "W_um": 0.0,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        1.72,
+        3.1
+      ],
+      "outer_um": [
+        4.32,
+        5.7
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "NMOS_1X10_BANK": {
+      "kind": "mos_bank",
+      "type": "NMOS",
+      "members": [
+        "XM80",
+        "XM81",
+        "XM82"
+      ],
+      "active_l_um": 10.0,
+      "m_values": [
+        1
+      ],
+      "nf_total": 3,
+      "array": {
+        "rows": 3,
+        "cols": 1,
+        "fingers": 3
+      },
+      "dummy": {
+        "sides": 2,
+        "L_um": 0.5,
+        "W_um": 0.86,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 0.5,
+        "gap_um": 0.8
+      },
+      "core_um": [
+        12.08,
+        4.800000000000001
+      ],
+      "outer_um": [
+        14.68,
+        7.4
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    "PASS_XM61": {
+      "kind": "output_bank",
+      "type": "NMOS",
+      "members": [
+        "XM61"
+      ],
+      "active_l_um": 0.5,
+      "m_values": [
+        1000
+      ],
+      "nf_total": 1,
+      "array": {
+        "rows": 1,
+        "cols": 34,
+        "fingers": 34
+      },
+      "sub_banks": {
+        "count": 6,
+        "fingers_each": 34,
+        "arrangement": [
+          3,
+          2
+        ],
+        "finger_w_um": 24.50980392156863
+      },
+      "dummy": {
+        "sides": 0,
+        "L_um": null,
+        "W_um": 0.0,
+        "extra_cells": 0
+      },
+      "poly_orientation": "vertical",
+      "ring": {
+        "type": "body_tap_intent",
+        "width_um": 2.0,
+        "gap_um": 2.0,
+        "shared_walls": true,
+        "outer_dnw_guard": true
+      },
+      "dnw": {
+        "width_um": 76.47999999999999,
+        "height_um": 99.3294117647059
+      },
+      "outer_um": [
+        84.47999999999999,
+        107.3294117647059
+      ],
+      "ports": {
+        "status": "pending",
+        "sides": null,
+        "nets": null
+      },
+      "status": "draft_frozen_geometry"
+    }
+  },
+  "passives": [
+    {
+      "kind": "passive",
+      "name": "XR4",
+      "group": "FB",
+      "array": {
+        "style": "square_folded_dummy",
+        "folded": true,
+        "dummy_layout": "boundary",
+        "rows": 13,
+        "cols": 2,
+        "cell_um": [
+          10.0,
+          0.85
+        ],
+        "active_cells": 18,
+        "dummy_cells": 7,
+        "segment_length_um": 10.0,
+        "segment_width_um": 0.35,
+        "segment_gap_um": 0.5,
+        "columns": 2,
+        "rows_per_column": 13
+      },
+      "core_um": [
+        20.0,
+        10.55
+      ],
+      "outer_um": [
+        23.6,
+        14.15
+      ],
+      "ring": {
+        "type": "passive_ring_intent",
+        "width_um": 1.0,
+        "gap_um": 0.8
+      },
+      "terminals": {},
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    {
+      "kind": "passive",
+      "name": "XR5",
+      "group": "FB",
+      "array": {
+        "style": "square_folded_dummy",
+        "folded": true,
+        "dummy_layout": "boundary",
+        "rows": 25,
+        "cols": 2,
+        "cell_um": [
+          10.0,
+          0.85
+        ],
+        "active_cells": 36,
+        "dummy_cells": 13,
+        "segment_length_um": 10.0,
+        "segment_width_um": 0.35,
+        "segment_gap_um": 0.5,
+        "columns": 2,
+        "rows_per_column": 25
+      },
+      "core_um": [
+        20.0,
+        20.75
+      ],
+      "outer_um": [
+        23.6,
+        24.35
+      ],
+      "ring": {
+        "type": "passive_ring_intent",
+        "width_um": 1.0,
+        "gap_um": 0.8
+      },
+      "terminals": {},
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    {
+      "kind": "passive",
+      "name": "XC1",
+      "group": "PASSIVE",
+      "array": {
+        "style": "plain",
+        "rows": 3,
+        "cols": 1,
+        "dummy_cells": 0
+      },
+      "core_um": [
+        15.0,
+        15.0
+      ],
+      "outer_um": [
+        18.6,
+        18.6
+      ],
+      "ring": {
+        "type": "passive_ring_intent",
+        "width_um": 1.0,
+        "gap_um": 0.8
+      },
+      "terminals": {},
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    {
+      "kind": "passive",
+      "name": "XC3",
+      "group": "PASSIVE",
+      "array": {
+        "style": "plain",
+        "rows": 1,
+        "cols": 1,
+        "dummy_cells": 0
+      },
+      "core_um": [
+        5.0,
+        5.0
+      ],
+      "outer_um": [
+        8.6,
+        8.6
+      ],
+      "ring": {
+        "type": "passive_ring_intent",
+        "width_um": 1.0,
+        "gap_um": 0.8
+      },
+      "terminals": {},
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "draft_frozen_geometry"
+    },
+    {
+      "kind": "passive",
+      "name": "XR6",
+      "group": "BIAS",
+      "array": {
+        "style": "square_folded_dummy",
+        "folded": true,
+        "dummy_layout": "boundary",
+        "rows": 9,
+        "cols": 1,
+        "cell_um": [
+          10.0,
+          0.85
+        ],
+        "active_cells": 4,
+        "dummy_cells": 5,
+        "segment_length_um": 10.0,
+        "segment_width_um": 0.35,
+        "segment_gap_um": 0.5,
+        "columns": 1,
+        "rows_per_column": 9
+      },
+      "core_um": [
+        10.0,
+        7.15
+      ],
+      "outer_um": [
+        13.6,
+        10.75
+      ],
+      "ring": {
+        "type": "passive_ring_intent",
+        "width_um": 1.0,
+        "gap_um": 0.8
+      },
+      "terminals": {},
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "draft_frozen_geometry"
+    }
+  ],
+  "blackboxes": [
+    {
+      "kind": "blackbox",
+      "name": "x1",
+      "group": "CTRL_EN",
+      "outer_um": [
+        5.0,
+        5.0
+      ],
+      "ring_included": true,
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "placeholder"
+    },
+    {
+      "kind": "blackbox",
+      "name": "x2",
+      "group": "CTRL_SEL",
+      "outer_um": [
+        5.0,
+        5.0
+      ],
+      "ring_included": true,
+      "ports": {
+        "status": "pending",
+        "sides": null
+      },
+      "status": "placeholder"
+    }
+  ]
+}

@@ -20,9 +20,11 @@ examples live in `examples/`.
 ## Read first
 
 1. `CURRENT_TASK.md` — the live task and next action.
-2. `AGENTS.md` — hard boundaries and validation commands.
-3. `docs/02-annotation.md` — role taxonomy and annotation fields.
-4. `docs/03-area-model.md` — area formulas, if the task touches area.
+2. `WORKFLOW.md` — leaf-first gates, artifact states and freeze rules.
+3. `AGENTS.md` — hard boundaries and validation commands.
+4. `docs/02-annotation.md` — role taxonomy and annotation fields.
+5. `docs/03-area-model.md` — area formulas, if the task touches area.
+6. `examples/sky130_ldo_01v8/ARTIFACTS.md` — current LDO baseline/status index.
 
 ## Standard workflow
 
@@ -71,6 +73,17 @@ M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
 - Never commit proprietary PDK/company data.
 - Keep the core dependency-free unless justified.
 - If a role is uncertain, use `unknown` and say why.
+
+## Layout-intent workflow
+
+- Do not start module assembly before the leaf primitive is approved.
+- Build one golden MOS/R/C primitive first; only then batch the remaining banks.
+- Dummies must match the owner's rule: same orientation, adjacent to the matched
+  device, with the requested size/count. Never invent a dummy location.
+- Bank-level drawings must distinguish field, poly, AA/tap, contacts and dummy.
+- A frozen artifact is immutable: new version, new hash, new freeze record.
+- Present versioned PNG names, not the same path; a stale preview is a defect.
+- `frozen_structural` is not DRC/LVS/PEX signoff.
 
 ## Technical checklist
 

@@ -136,6 +136,34 @@
       "drc_rule": "poly.9",
       "source_line": 298,
       "description": "minimum poly resistor space to poly or diff/tap"
+    },
+    "licon_min_size_um": {
+      "value": 0.17,
+      "unit": "um",
+      "drc_rule": "licon.1",
+      "source_line": 361,
+      "description": "minimum/maximum licon width"
+    },
+    "licon_gate_space_um": {
+      "value": 0.055,
+      "unit": "um",
+      "drc_rule": "licon.11",
+      "source_line": 383,
+      "description": "minimum licon-to-gate spacing"
+    },
+    "poly_source_drain_length_um": {
+      "value": 0.25,
+      "unit": "um",
+      "drc_rule": "poly.7",
+      "source_line": 296,
+      "description": "minimum source/drain length"
+    },
+    "poly_gate_extension_um": {
+      "value": 0.13,
+      "unit": "um",
+      "drc_rule": "poly.8",
+      "source_line": 297,
+      "description": "minimum poly extension beyond gate"
     }
   },
   "ring": {

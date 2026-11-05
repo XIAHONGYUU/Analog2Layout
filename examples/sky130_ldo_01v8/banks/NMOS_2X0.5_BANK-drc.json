@@ -1,0 +1,68 @@
+{
+  "bank": "NMOS_2X0.5_BANK",
+  "geometry": {
+    "core_um": [
+      5.210000000000001,
+      2.26
+    ],
+    "outer_um": [
+      7.8100000000000005,
+      4.859999999999999
+    ],
+    "L_um": 0.5,
+    "W_um": 2.0,
+    "diff_len_um": 1.1,
+    "contact_um": 0.17,
+    "dummy_cells": 2,
+    "active_cells": 2
+  },
+  "checks": {
+    "poly_width_um": {
+      "value": 0.5,
+      "rule": "poly.3 min 0.33",
+      "pass": true
+    },
+    "sd_length_um": {
+      "value": 0.3,
+      "rule": "poly.7 min 0.25",
+      "pass": true
+    },
+    "poly_extension_um": {
+      "value": 0.13,
+      "rule": "poly.8 min 0.13",
+      "pass": true
+    },
+    "licon_size_um": {
+      "value": 0.17,
+      "rule": "licon.1 min 0.17",
+      "pass": true
+    },
+    "licon_gate_gap_um": {
+      "value": 0.075,
+      "rule": "licon.11 min 0.055",
+      "pass": true
+    },
+    "diff_enclosure_licon_um": {
+      "value": 0.055,
+      "rule": "licon.5 min 0.04",
+      "pass": true
+    },
+    "diff_space_um": {
+      "value": 0.27,
+      "rule": "difftap.3 min 0.27",
+      "pass": true
+    },
+    "tap_contact_in_ring": {
+      "value": true,
+      "rule": "licon on tap/AA ring",
+      "pass": true
+    },
+    "tap_contact_enclosure_um": {
+      "value": 0.16499999999999998,
+      "rule": "licon.7 min 0.12",
+      "pass": true
+    }
+  },
+  "all_pass": true,
+  "note": "selected rule checks only; no DRC/LVS/PEX run"
+}
