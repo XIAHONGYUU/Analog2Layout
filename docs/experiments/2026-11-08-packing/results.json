@@ -1,0 +1,559 @@
+{
+  "ortools": "9.15.6755",
+  "grid": "synthetic integer units",
+  "seed": 0,
+  "workers": 1,
+  "results": [
+    {
+      "case": {
+        "name": "rectangles",
+        "shapes": {
+          "A": [
+            [
+              0,
+              0,
+              8,
+              6
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              8,
+              6
+            ]
+          ],
+          "C": [
+            [
+              0,
+              0,
+              6,
+              9
+            ]
+          ],
+          "D": [
+            [
+              0,
+              0,
+              5,
+              7
+            ]
+          ],
+          "E": [
+            [
+              0,
+              0,
+              7,
+              4
+            ]
+          ],
+          "F": [
+            [
+              0,
+              0,
+              4,
+              5
+            ]
+          ],
+          "G": [
+            [
+              0,
+              0,
+              3,
+              8
+            ]
+          ],
+          "H": [
+            [
+              0,
+              0,
+              6,
+              3
+            ]
+          ]
+        },
+        "gap": 1,
+        "special": false
+      },
+      "baseline": {
+        "positions": {
+          "C": [
+            0,
+            0
+          ],
+          "G": [
+            0,
+            10
+          ],
+          "F": [
+            4,
+            10
+          ],
+          "D": [
+            0,
+            19
+          ],
+          "A": [
+            0,
+            27
+          ],
+          "B": [
+            0,
+            34
+          ],
+          "E": [
+            0,
+            41
+          ],
+          "H": [
+            0,
+            46
+          ]
+        },
+        "bbox": [
+          8,
+          49
+        ],
+        "area": 392,
+        "status": "HEURISTIC",
+        "seconds": 0.0020208619999948496,
+        "candidates": 128,
+        "validated": true
+      },
+      "runs": [
+        {
+          "status": "FEASIBLE",
+          "seconds": 1.0010098479999954,
+          "budget_seconds": 1,
+          "best_bound": 275.0,
+          "positions": {
+            "A": [
+              9,
+              9
+            ],
+            "B": [
+              0,
+              9
+            ],
+            "C": [
+              18,
+              6
+            ],
+            "D": [
+              5,
+              0
+            ],
+            "E": [
+              12,
+              0
+            ],
+            "F": [
+              20,
+              0
+            ],
+            "G": [
+              0,
+              0
+            ],
+            "H": [
+              11,
+              5
+            ]
+          },
+          "bbox": [
+            24,
+            15
+          ],
+          "area": 360,
+          "validated": true
+        },
+        {
+          "status": "OPTIMAL",
+          "seconds": 2.9671100900000056,
+          "budget_seconds": 5,
+          "best_bound": 360.0,
+          "positions": {
+            "A": [
+              9,
+              9
+            ],
+            "B": [
+              0,
+              9
+            ],
+            "C": [
+              18,
+              6
+            ],
+            "D": [
+              5,
+              0
+            ],
+            "E": [
+              12,
+              0
+            ],
+            "F": [
+              20,
+              0
+            ],
+            "G": [
+              0,
+              0
+            ],
+            "H": [
+              11,
+              5
+            ]
+          },
+          "bbox": [
+            24,
+            15
+          ],
+          "area": 360,
+          "validated": true
+        }
+      ],
+      "tamper_detected": [
+        "separation:A:B"
+      ],
+      "infeasible": {
+        "status": "INFEASIBLE",
+        "seconds": 0.0004111849999901551,
+        "budget_seconds": 1,
+        "best_bound": 0.0
+      }
+    },
+    {
+      "case": {
+        "name": "relations",
+        "shapes": {
+          "A": [
+            [
+              0,
+              0,
+              8,
+              6
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              8,
+              6
+            ]
+          ],
+          "C": [
+            [
+              0,
+              0,
+              6,
+              9
+            ]
+          ],
+          "D": [
+            [
+              0,
+              0,
+              5,
+              7
+            ]
+          ],
+          "E": [
+            [
+              0,
+              0,
+              7,
+              4
+            ]
+          ],
+          "F": [
+            [
+              0,
+              0,
+              4,
+              5
+            ]
+          ],
+          "G": [
+            [
+              0,
+              0,
+              3,
+              8
+            ]
+          ],
+          "H": [
+            [
+              0,
+              0,
+              6,
+              3
+            ]
+          ]
+        },
+        "gap": 1,
+        "special": true
+      },
+      "baseline": {
+        "positions": {
+          "C": [
+            0,
+            0
+          ],
+          "G": [
+            7,
+            0
+          ],
+          "D": [
+            11,
+            0
+          ],
+          "A": [
+            0,
+            10
+          ],
+          "B": [
+            9,
+            10
+          ],
+          "F": [
+            0,
+            17
+          ],
+          "E": [
+            5,
+            17
+          ],
+          "H": [
+            13,
+            17
+          ]
+        },
+        "bbox": [
+          19,
+          22
+        ],
+        "area": 418,
+        "status": "HEURISTIC",
+        "seconds": 0.021562703000000738,
+        "candidates": 128,
+        "validated": true
+      },
+      "runs": [
+        {
+          "status": "OPTIMAL",
+          "seconds": 0.050189671999987695,
+          "budget_seconds": 1,
+          "best_bound": 360.0,
+          "positions": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              9,
+              0
+            ],
+            "C": [
+              18,
+              0
+            ],
+            "D": [
+              0,
+              7
+            ],
+            "E": [
+              6,
+              11
+            ],
+            "F": [
+              18,
+              10
+            ],
+            "G": [
+              14,
+              7
+            ],
+            "H": [
+              6,
+              7
+            ]
+          },
+          "bbox": [
+            24,
+            15
+          ],
+          "area": 360,
+          "validated": true
+        },
+        {
+          "status": "OPTIMAL",
+          "seconds": 0.054122620999976334,
+          "budget_seconds": 5,
+          "best_bound": 360.0,
+          "positions": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              9,
+              0
+            ],
+            "C": [
+              18,
+              0
+            ],
+            "D": [
+              0,
+              7
+            ],
+            "E": [
+              6,
+              11
+            ],
+            "F": [
+              18,
+              10
+            ],
+            "G": [
+              14,
+              7
+            ],
+            "H": [
+              6,
+              7
+            ]
+          },
+          "bbox": [
+            24,
+            15
+          ],
+          "area": 360,
+          "validated": true
+        }
+      ],
+      "tamper_detected": [
+        "separation:A:B",
+        "left:A:B"
+      ],
+      "infeasible": {
+        "status": "INFEASIBLE",
+        "seconds": 0.00029685900000231413,
+        "budget_seconds": 1,
+        "best_bound": 0.0
+      }
+    },
+    {
+      "case": {
+        "name": "stepped",
+        "shapes": {
+          "L": [
+            [
+              0,
+              0,
+              4,
+              10
+            ],
+            [
+              4,
+              0,
+              6,
+              4
+            ]
+          ],
+          "Q": [
+            [
+              0,
+              0,
+              6,
+              6
+            ]
+          ]
+        },
+        "gap": 0,
+        "special": false
+      },
+      "baseline": {
+        "positions": {
+          "L": [
+            0,
+            0
+          ],
+          "Q": [
+            0,
+            10
+          ]
+        },
+        "bbox": [
+          10,
+          16
+        ],
+        "area": 160,
+        "status": "HEURISTIC",
+        "seconds": 0.00013670199999182842,
+        "candidates": 26,
+        "validated": true
+      },
+      "runs": [
+        {
+          "status": "OPTIMAL",
+          "seconds": 0.003601507999974274,
+          "budget_seconds": 1,
+          "best_bound": 100.0,
+          "positions": {
+            "L": [
+              0,
+              0
+            ],
+            "Q": [
+              4,
+              4
+            ]
+          },
+          "bbox": [
+            10,
+            10
+          ],
+          "area": 100,
+          "validated": true
+        },
+        {
+          "status": "OPTIMAL",
+          "seconds": 0.0028620169999840073,
+          "budget_seconds": 5,
+          "best_bound": 100.0,
+          "positions": {
+            "L": [
+              0,
+              0
+            ],
+            "Q": [
+              4,
+              4
+            ]
+          },
+          "bbox": [
+            10,
+            10
+          ],
+          "area": 100,
+          "validated": true
+        }
+      ],
+      "tamper_detected": [
+        "separation:L:Q",
+        "separation:L:Q"
+      ],
+      "infeasible": {
+        "status": "INFEASIBLE",
+        "seconds": 8.883400002446251e-05,
+        "budget_seconds": 1,
+        "best_bound": 0.0
+      }
+    }
+  ]
+}

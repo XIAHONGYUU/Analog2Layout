@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060">
+<rect width="1200" height="1060" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="30" y="35" font-size="24">Constraint packing experiment | synthetic units | no rotation</text>
+<text x="30" y="77" font-size="18">rectangles | Shelf width sweep | HEURISTIC</text>
+<text x="30" y="100" font-size="15">8 x 49 = 392 | 0.002s | checked</text>
+<rect x="30" y="115" width="36.734693877551024" height="225.00000000000003" fill="white" stroke="#0f172a" stroke-width="2"/>
+<rect x="30.0" y="238.9795918367347" width="36.734693877551024" height="27.551020408163268" fill="#60a5fa" stroke="white"/>
+<text x="48.36734693877551" y="257.7551020408163" text-anchor="middle" font-size="16">A</text>
+<rect x="30.0" y="271.12244897959187" width="36.734693877551024" height="27.551020408163268" fill="#34d399" stroke="white"/>
+<text x="48.36734693877551" y="289.8979591836735" text-anchor="middle" font-size="16">B</text>
+<rect x="30.0" y="115.0" width="27.551020408163268" height="41.3265306122449" fill="#fbbf24" stroke="white"/>
+<text x="43.775510204081634" y="140.66326530612244" text-anchor="middle" font-size="16">C</text>
+<rect x="30.0" y="202.24489795918367" width="22.95918367346939" height="32.142857142857146" fill="#fb7185" stroke="white"/>
+<text x="41.4795918367347" y="223.31632653061226" text-anchor="middle" font-size="16">D</text>
+<rect x="30.0" y="303.26530612244903" width="32.142857142857146" height="18.367346938775512" fill="#a78bfa" stroke="white"/>
+<text x="46.07142857142857" y="317.44897959183675" text-anchor="middle" font-size="16">E</text>
+<rect x="48.36734693877551" y="160.9183673469388" width="18.367346938775512" height="22.95918367346939" fill="#22d3ee" stroke="white"/>
+<text x="57.55102040816327" y="177.3979591836735" text-anchor="middle" font-size="16">F</text>
+<rect x="30.0" y="160.9183673469388" width="13.775510204081634" height="36.734693877551024" fill="#f97316" stroke="white"/>
+<text x="36.88775510204081" y="184.28571428571428" text-anchor="middle" font-size="16">G</text>
+<rect x="30.0" y="326.2244897959184" width="27.551020408163268" height="13.775510204081634" fill="#94a3b8" stroke="white"/>
+<text x="43.775510204081634" y="338.1122448979592" text-anchor="middle" font-size="16">H</text>
+<text x="620" y="77" font-size="18">rectangles | CP-SAT | OPTIMAL</text>
+<text x="620" y="100" font-size="15">24 x 15 = 360 | 2.967s | checked</text>
+<rect x="620" y="115" width="110.20408163265307" height="68.87755102040816" fill="white" stroke="#0f172a" stroke-width="2"/>
+<rect x="661.3265306122449" y="156.3265306122449" width="36.734693877551024" height="27.551020408163268" fill="#60a5fa" stroke="white"/>
+<text x="679.6938775510204" y="175.10204081632654" text-anchor="middle" font-size="16">A</text>
+<rect x="620.0" y="156.3265306122449" width="36.734693877551024" height="27.551020408163268" fill="#34d399" stroke="white"/>
+<text x="638.3673469387755" y="175.10204081632654" text-anchor="middle" font-size="16">B</text>
+<rect x="702.6530612244898" y="142.55102040816325" width="27.551020408163268" height="41.3265306122449" fill="#fbbf24" stroke="white"/>
+<text x="716.4285714285714" y="168.21428571428572" text-anchor="middle" font-size="16">C</text>
+<rect x="642.9591836734694" y="115.0" width="22.95918367346939" height="32.142857142857146" fill="#fb7185" stroke="white"/>
+<text x="654.4387755102041" y="136.07142857142858" text-anchor="middle" font-size="16">D</text>
+<rect x="675.1020408163265" y="115.0" width="32.142857142857146" height="18.367346938775512" fill="#a78bfa" stroke="white"/>
+<text x="691.1734693877551" y="129.18367346938777" text-anchor="middle" font-size="16">E</text>
+<rect x="711.8367346938776" y="115.0" width="18.367346938775512" height="22.95918367346939" fill="#22d3ee" stroke="white"/>
+<text x="721.0204081632653" y="131.4795918367347" text-anchor="middle" font-size="16">F</text>
+<rect x="620.0" y="115.0" width="13.775510204081634" height="36.734693877551024" fill="#f97316" stroke="white"/>
+<text x="626.8877551020408" y="138.3673469387755" text-anchor="middle" font-size="16">G</text>
+<rect x="670.5102040816327" y="137.9591836734694" width="27.551020408163268" height="13.775510204081634" fill="#94a3b8" stroke="white"/>
+<text x="684.2857142857143" y="149.8469387755102" text-anchor="middle" font-size="16">H</text>
+<text x="30" y="397" font-size="18">relations | Shelf width sweep | HEURISTIC</text>
+<text x="30" y="420" font-size="15">19 x 22 = 418 | 0.022s | checked</text>
+<rect x="30" y="435" width="194.3181818181818" height="225.0" fill="white" stroke="#0f172a" stroke-width="2"/>
+<rect x="30.0" y="537.2727272727273" width="81.81818181818181" height="61.36363636363636" fill="#60a5fa" stroke="white"/>
+<text x="70.9090909090909" y="572.9545454545455" text-anchor="middle" font-size="16">A</text>
+<rect x="122.04545454545453" y="537.2727272727273" width="81.81818181818181" height="61.36363636363636" fill="#34d399" stroke="white"/>
+<text x="162.95454545454544" y="572.9545454545455" text-anchor="middle" font-size="16">B</text>
+<rect x="30.0" y="435.0" width="61.36363636363636" height="92.04545454545453" fill="#fbbf24" stroke="white"/>
+<text x="60.68181818181818" y="486.02272727272725" text-anchor="middle" font-size="16">C</text>
+<rect x="142.5" y="435.0" width="51.13636363636363" height="71.5909090909091" fill="#fb7185" stroke="white"/>
+<text x="168.0681818181818" y="475.79545454545456" text-anchor="middle" font-size="16">D</text>
+<rect x="81.13636363636363" y="608.8636363636364" width="71.5909090909091" height="40.90909090909091" fill="#a78bfa" stroke="white"/>
+<text x="116.93181818181817" y="634.3181818181818" text-anchor="middle" font-size="16">E</text>
+<rect x="30.0" y="608.8636363636364" width="40.90909090909091" height="51.13636363636363" fill="#22d3ee" stroke="white"/>
+<text x="50.45454545454545" y="639.4318181818181" text-anchor="middle" font-size="16">F</text>
+<rect x="101.5909090909091" y="435.0" width="30.68181818181818" height="81.81818181818181" fill="#f97316" stroke="white"/>
+<text x="116.93181818181817" y="480.9090909090909" text-anchor="middle" font-size="16">G</text>
+<rect x="162.95454545454544" y="608.8636363636364" width="61.36363636363636" height="30.68181818181818" fill="#94a3b8" stroke="white"/>
+<text x="193.63636363636363" y="629.2045454545455" text-anchor="middle" font-size="16">H</text>
+<text x="620" y="397" font-size="18">relations | CP-SAT | OPTIMAL</text>
+<text x="620" y="420" font-size="15">24 x 15 = 360 | 0.050s | checked</text>
+<rect x="620" y="435" width="245.45454545454544" height="153.4090909090909" fill="white" stroke="#0f172a" stroke-width="2"/>
+<rect x="620.0" y="435.0" width="81.81818181818181" height="61.36363636363636" fill="#60a5fa" stroke="white"/>
+<text x="660.9090909090909" y="470.6818181818182" text-anchor="middle" font-size="16">A</text>
+<rect x="712.0454545454545" y="435.0" width="81.81818181818181" height="61.36363636363636" fill="#34d399" stroke="white"/>
+<text x="752.9545454545455" y="470.6818181818182" text-anchor="middle" font-size="16">B</text>
+<rect x="804.090909090909" y="435.0" width="61.36363636363636" height="92.04545454545453" fill="#fbbf24" stroke="white"/>
+<text x="834.7727272727273" y="486.02272727272725" text-anchor="middle" font-size="16">C</text>
+<rect x="620.0" y="506.5909090909091" width="51.13636363636363" height="71.5909090909091" fill="#fb7185" stroke="white"/>
+<text x="645.5681818181819" y="547.3863636363636" text-anchor="middle" font-size="16">D</text>
+<rect x="681.3636363636364" y="547.5" width="71.5909090909091" height="40.90909090909091" fill="#a78bfa" stroke="white"/>
+<text x="717.1590909090909" y="572.9545454545455" text-anchor="middle" font-size="16">E</text>
+<rect x="804.090909090909" y="537.2727272727273" width="40.90909090909091" height="51.13636363636363" fill="#22d3ee" stroke="white"/>
+<text x="824.5454545454545" y="567.8409090909091" text-anchor="middle" font-size="16">F</text>
+<rect x="763.1818181818182" y="506.5909090909091" width="30.68181818181818" height="81.81818181818181" fill="#f97316" stroke="white"/>
+<text x="778.5227272727273" y="552.5" text-anchor="middle" font-size="16">G</text>
+<rect x="681.3636363636364" y="506.5909090909091" width="61.36363636363636" height="30.68181818181818" fill="#94a3b8" stroke="white"/>
+<text x="712.0454545454545" y="526.9318181818181" text-anchor="middle" font-size="16">H</text>
+<text x="30" y="717" font-size="18">stepped | Shelf width sweep | HEURISTIC</text>
+<text x="30" y="740" font-size="15">10 x 16 = 160 | 0.000s | checked</text>
+<rect x="30" y="755" width="140.625" height="225.0" fill="white" stroke="#0f172a" stroke-width="2"/>
+<rect x="30.0" y="755.0" width="56.25" height="140.625" fill="#60a5fa" stroke="white"/>
+<rect x="86.25" y="755.0" width="84.375" height="56.25" fill="#60a5fa" stroke="white"/>
+<text x="58.125" y="830.3125" text-anchor="middle" font-size="16">L</text>
+<rect x="30.0" y="895.625" width="84.375" height="84.375" fill="#34d399" stroke="white"/>
+<text x="72.1875" y="942.8125" text-anchor="middle" font-size="16">Q</text>
+<text x="620" y="717" font-size="18">stepped | CP-SAT | OPTIMAL</text>
+<text x="620" y="740" font-size="15">10 x 10 = 100 | 0.004s | checked</text>
+<rect x="620" y="755" width="140.625" height="140.625" fill="white" stroke="#0f172a" stroke-width="2"/>
+<rect x="620.0" y="755.0" width="56.25" height="140.625" fill="#60a5fa" stroke="white"/>
+<rect x="676.25" y="755.0" width="84.375" height="56.25" fill="#60a5fa" stroke="white"/>
+<text x="648.125" y="830.3125" text-anchor="middle" font-size="16">L</text>
+<rect x="676.25" y="811.25" width="84.375" height="84.375" fill="#34d399" stroke="white"/>
+<text x="718.4375" y="858.4375" text-anchor="middle" font-size="16">Q</text>
+<text x="30" y="1040" font-size="14">Relations: A left of B, same Y; C-D gap 3; other gaps 1. Stepped: gap 0, cavity use allowed.</text></g></svg>

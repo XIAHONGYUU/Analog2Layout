@@ -25,6 +25,14 @@
 
 > **面积优先白线（16-MOS class-A）**：bbox **225.9 × 69.8 µm**，总面积 **15,766 µm²**，有效面积 **11,754 µm²**，利用率 **74.6%**。R/C 在主 DNW1 内并带 AA ring；M14 在外侧独立 DNW；是 full render，不是 DRC/LVS signoff。
 
+### 约束排布实验与 AI 协作
+
+[讨论、实验结果与接入建议](docs/13-constraint-packing.md)：AI 整理 bank 与约束，算法求排布，
+独立程序检查，再经设计者验收。三个合成案例面积减少 **8.16% / 13.88% / 37.50%**；
+阶梯形案例主要展示凹口利用的价值，不代表真实 LDO 收益。
+**状态：独立实验完成，尚未接入 CLI；正式 DNW1 装配仍暂停。**
+[实测证据与复现](docs/experiments/2026-11-08-packing/RESULTS.md) · [当前任务](CURRENT_TASK.md)
+
 ### 白线图库
 
 | Area-first（当前选定） | Balanced baseline |
