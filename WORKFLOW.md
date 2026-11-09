@@ -180,5 +180,7 @@ Rules:
   `layout-guideline/05-templates/review-packet.md`.
 - Mapping to G0–G6: A0 precedes G0; A1 ≈ G0; A2 = G0/G1; A3 = G1/G2;
   A4 = G2/G3; A5 = G4. G5/G6 remain downstream of acceptance.
+- A0 detail: `docs/14-sky130-rule-check.md`.
+- A1 detail: `docs/15-a1-input-acceptance.md`.
 - This flow is provisional; refine it per module when the module structure is
   better understood.

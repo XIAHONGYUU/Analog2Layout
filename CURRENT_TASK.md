@@ -16,6 +16,7 @@ A0–A5 暂定；review packet 用 HTML；检查文档可进入公开仓库。
 
 - [AI + 约束求解讨论与实验总结](docs/13-constraint-packing.md)
 - [SKY130 白线检查规则（draft v0.1）](docs/14-sky130-rule-check.md)
+- [A1 输入验收固定流程](docs/15-a1-input-acceptance.md)
 - [F-001 AA/poly 非预期重叠](layout-guideline/07-problems/F-001-aa-poly-overlap.md)
 - [A0–A5 验收流程](WORKFLOW.md)
 - [Decision card](layout-guideline/05-templates/decision-card.md) ·
@@ -31,6 +32,7 @@ A0–A5 暂定；review packet 用 HTML；检查文档可进入公开仓库。
 - 2026-11-08 文档/实验批次已提交为 30ca477；2026-11-09 收尾提交补齐打包、决策与文档状态。
 - 2026-11-09 建立 A0 准备包：SKY130 检查文档 v0.1、F-001、decision/kernel/review 模板；
   owner 接受规则分级/waiver，A0–A5 暂定；不替代 DRC。
+- 2026-11-09 A0 视为通过；A1 输入验收固定流程归档到 `docs/15-a1-input-acceptance.md`。
 - 仅完成独立合成实验：8 矩形、关系约束、阶梯形三个案例。
 - OR-Tools 9.15.6755 单线程；每个案例分别运行 1 秒和 5 秒预算。
 - 面积从 392/418/160 改善为 360/360/100；模型范围内最优。
@@ -60,18 +62,16 @@ A0–A5 暂定；review packet 用 HTML；检查文档可进入公开仓库。
 
 ## 下一步
 
-1. Owner review A0 包：`docs/14-sky130-rule-check.md`、F-001、decision/kernel/review 模板、
-   `WORKFLOW.md` §6。
-2. A1 输入验收：`examples/sky130_ldo_01v8` 的 annotation 覆盖、role/match/group、
-   unknowns/assumptions。
-3. 做 A1 的一页 HTML review packet；阶段内可由 subagent 准备，阶段门由 owner 推进。
+1. 实现 A1 固定件：`tools/check_a1_input.py`、`input-lock` schema、A1 HTML packet generator。
+2. 在 `examples/sky130_ldo_01v8` 上跑第一轮 A1：source lock、解析、覆盖、unknowns。
+3. 产出 `input-lock.json`、`annotation-acceptance.json` 和 `a1-review-packet.html`。
 4. OR-Tools/placement 仍后置；先完成 A1/A2 与 canonical geometry。
 
 ## 待解决
 
 - `docs/14` §9 的剩余规则问题：difftap.2、MIM cap、metal/density、NE、owner/reviewer。
 - F-001 的具体现象/根因/验证证据，由项目运行中补充。
-- A0 包待 owner 最终 review；A1 输入验收尚未开始。
+- A1 checker / input-lock / HTML packet 尚未实现；A1 输入验收尚未开始。
 - OR-Tools 接入的 canonical geometry、gap 表、目标函数与 optional 依赖策略待评估。
 - 当前排布输入采用哪一份 canonical geometry？XR_GROUP 应作为整体消费。
 - 阶梯凹口可否容纳其他对象、各类间距及可接触边界，需要明确规则。

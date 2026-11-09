@@ -204,7 +204,8 @@ check_placement_invariants(...)    # overlap/containment/count/DNW gap
 | A5 freeze | hash、manifest、registry、open items、waiver |
 
 `HARD` 失败不能进入下一阶段；`RECOMMENDED` 失败可 waiver；`NOT_CHECKED`
-必须显式保留。验收流程见 `WORKFLOW.md` §6；阶段门由 owner 推进。
+必须显式保留。验收流程见 `WORKFLOW.md` §6；A1 输入验收细节见
+`docs/15-a1-input-acceptance.md`；阶段门由 owner 推进。
 
 ## 9. 已确认与未决
 
