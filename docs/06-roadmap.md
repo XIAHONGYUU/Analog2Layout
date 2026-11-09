@@ -44,7 +44,10 @@
 - [x] white-line skill：JSON input schema + class-A golden case
 - [x] LDO NetlistLabel semantic overlay imported with provenance/review fixtures
 - [x] LDO white-line input JSON generated from overlay, with unknown/SD/blackbox fields explicit
-- [x] LDO device-level white-line compiler baseline (12,118 µm², 72.7%, matched clusters/shared dummies/DNW)
+- [x] LDO device-level white-line compiler baseline (current 14,302.4 µm², 83.6%, matched clusters/shared dummies/DNW)
+- [x] bank-first freeze workflow, artifact registry and verify gate (`WORKFLOW.md`, `ARTIFACTS.md`, `tools/verify_ldo.py`)
+- [x] layout-intent architecture guardrails (`ARCHITECTURE.md`, `a2l/layout/contracts.py`)
+- [x] independent CP-SAT packing experiment on synthetic cases (not in CLI/dependencies)
 - [ ] white-line skill：deterministic checker + 3–5 structure benchmark
 - [ ] 2–3 个模块 card（LDO / SADC / AFE_CH，均为合成/脱敏）
 - [ ] 面积模型：`device_core` / `sensitive_core` / `flexible_area` / `reuse_candidate`

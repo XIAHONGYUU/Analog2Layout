@@ -555,3 +555,28 @@ should survive individual tasks.
   LDO detail work resumes after the migration steps and their regression tests.
 - **Related:** `ARCHITECTURE.md`, `WORKFLOW.md`, `a2l/layout/contracts.py`,
   `agent/prompts/layout_intent_task.md`, `CURRENT_TASK.md`.
+
+---
+
+## D-028 — OR-Tools/CP-SAT is an isolated experiment until integration is approved
+
+- **Status:** proposed
+- **Date:** 2026-11-09
+- **Owner:** analog design + layout
+- **Source:** 2026-11-08 synthetic packing experiment; 2026-11-09 user direction to evaluate integration
+- **Decision:** OR-Tools/CP-SAT remains an isolated placement experiment. It is
+  not a project dependency, not part of the `a2l` CLI, and not a replacement for
+  the existing shelf baseline. A future integration must:
+  - consume one canonical, frozen macro geometry source;
+  - keep the core dependency-free and expose the solver as an optional backend;
+  - keep an independent geometry checker and retain the shelf baseline as a
+    comparison/fallback;
+  - record solver version, input hash, rule/algorithm version, status, objective,
+    best bound, time limit and checker result;
+  - not change bank/rule values, freeze states, or resume DNW1 assembly without
+    owner approval.
+- **Consequences:** any pilot is exploratory and must be labeled as such. The
+  2026-11-08 synthetic numbers are not evidence of real LDO improvement.
+- **Related:** `docs/13-constraint-packing.md`,
+  `docs/experiments/2026-11-08-packing/`, `ARCHITECTURE.md`, `WORKFLOW.md`,
+  `pyproject.toml`, `CURRENT_TASK.md`.

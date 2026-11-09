@@ -36,6 +36,9 @@ examples live in `examples/`.
 - **Review/freeze** → use the freeze template and artifact registry; no batch
   approval before the golden primitive gate.
 - **LDO current stage** → `examples/sky130_ldo_01v8/ARTIFACTS.md`.
+- **Constraint packing / OR-Tools** → read `docs/13-constraint-packing.md`; the
+  solver is an isolated experiment (not a CLI command or dependency) and its
+  output is a candidate, not geometry truth.
 
 ## Standard workflow
 
@@ -95,6 +98,15 @@ M1 n1 vinp ntail vss nmos w=5u l=0.5u nf=4 m=1 \
 - A frozen artifact is immutable: new version, new hash, new freeze record.
 - Present versioned PNG names, not the same path; a stale preview is a defect.
 - `frozen_structural` is not DRC/LVS/PEX signoff.
+
+## Constraint packing
+
+- Current evidence: `docs/13-constraint-packing.md` and
+  `docs/experiments/2026-11-08-packing/` (synthetic only).
+- OR-Tools is optional/experimental; the core remains dependency-free.
+- Integration must consume frozen macros, use one canonical geometry source, and
+  keep a pure-Python checker plus the shelf baseline.
+- Do not compare synthetic packing gains with LDO area results.
 
 ## Technical checklist
 

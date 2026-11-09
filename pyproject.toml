@@ -28,5 +28,5 @@ Issues = "https://github.com/XIAHONGYUU/Analog2Layout/issues"
 [project.scripts]
 a2l = "a2l.cli:main"
 
-[tool.setuptools]
-packages = ["a2l"]
+[tool.setuptools.packages.find]
+include = ["a2l*"]
