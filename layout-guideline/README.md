@@ -16,6 +16,8 @@
 3. 问题回流见 [07-problems](07-problems/README.md)。
 4. 需要下钻时，按 `Principle → Module → Pattern → Case` 找内容。
 5. 新增模块时，从 [`05-templates/`](05-templates/) 复制模板。
+6. 阶段验收使用一页 [`review-packet.md`](05-templates/review-packet.md)；决策和可复用内核分别用
+   [`decision-card.md`](05-templates/decision-card.md)、[`kernel-card.md`](05-templates/kernel-card.md)。
 
 ## 四层结构
 
@@ -54,7 +56,8 @@ layout-guideline/
   02-modules/                 模块 card（含一个合成示例）
   03-patterns/                diff pair、current mirror 等画法
   04-cases/                   脱敏案例与反例
-  05-templates/               card / intent / area-target / layout-constraints / change-log
+  05-templates/               card / intent / area-target / layout-constraints / change-log /
+                              decision-card / kernel-card / review-packet
   06-sources/                 来源、证据等级、公开/私有边界
   07-problems/                问题记录与 guideline patch
 ```

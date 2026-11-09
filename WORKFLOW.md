@@ -152,3 +152,33 @@ DNW1/DNW2 studies: exploratory, not assembly baselines
 ```
 
 Next gate: G1/G2 for XC1/XC3, then remaining MOS banks.
+
+## 6. Human acceptance flow (A0–A5, provisional)
+
+Current target: `examples/sky130_ldo_01v8`.
+
+This is the human review view. G0–G6 remain the artifact gates; A0–A5 describe
+when the owner must review and advance the work.
+
+| stage | purpose | required artifacts | exit |
+| --- | --- | --- | --- |
+| **A0 Preparation** | rules, heuristics, failure library, templates | `docs/14-sky130-rule-check.md`, F-001, decision/kernel/review templates | owner accepts A0 package |
+| **A1 Input** | annotated netlist is complete and reviewable | annotation/coverage report, roles/match/group, unknowns/assumptions | owner accepts input |
+| **A2 Structure** | banks/blocks and hierarchy are explicit | bank plan, entity IDs, decisions | owner accepts structure (or delegates sampling) |
+| **A3 Primitive / bank** | one primitive and one real bank are checked | geometry JSON, SVG/PNG, selected-rule report, hash | owner accepts primitive/bank |
+| **A4 Full white-line** | all devices, DNW, placement and metrics | white-line SVG/PNG, manifest, checker report, review packet | owner accepts full white-line |
+| **A5 Freeze** | artifact is immutable and registered | freeze record, sha256, registry entry, open items, waivers | owner signs off |
+
+Rules:
+
+- Stage exits are advanced by the owner; work **inside** a stage may be delegated
+  to subagents.
+- Waivers are collected and reviewed together at stage acceptance; no separate
+  waiver round-trip.
+- Each stage is reviewed through one HTML packet: latest diagram, metrics,
+  decision cards, checks, open questions, approval. See
+  `layout-guideline/05-templates/review-packet.md`.
+- Mapping to G0–G6: A0 precedes G0; A1 ≈ G0; A2 = G0/G1; A3 = G1/G2;
+  A4 = G2/G3; A5 = G4. G5/G6 remain downstream of acceptance.
+- This flow is provisional; refine it per module when the module structure is
+  better understood.

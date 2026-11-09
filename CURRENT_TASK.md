@@ -8,11 +8,19 @@
 
 2026-11-08 授权：整理讨论和实验、更新顶层文档、提交并推送 GitHub。
 2026-11-09 授权：完成 11-08 批次收尾并提交；评估 OR-Tools 与项目的结合方式。
-推送仍待单独确认；未授权接入 CLI/运行依赖、恢复正式 DNW1 装配或修改 bank/rule 数值。
+2026-11-09 方向确认：目标 LDO 为 `examples/sky130_ldo_01v8`；接受 SKY130 规则分级/waiver；
+A0–A5 暂定；review packet 用 HTML；检查文档可进入公开仓库。
+未授权接入 CLI/运行依赖、恢复正式 DNW1 装配或修改 bank/rule 数值。
 
 ## 当前入口
 
 - [AI + 约束求解讨论与实验总结](docs/13-constraint-packing.md)
+- [SKY130 白线检查规则（draft v0.1）](docs/14-sky130-rule-check.md)
+- [F-001 AA/poly 非预期重叠](layout-guideline/07-problems/F-001-aa-poly-overlap.md)
+- [A0–A5 验收流程](WORKFLOW.md)
+- [Decision card](layout-guideline/05-templates/decision-card.md) ·
+  [Kernel card](layout-guideline/05-templates/kernel-card.md) ·
+  [Review packet](layout-guideline/05-templates/review-packet.md)
 - [实测结果与证据](docs/experiments/2026-11-08-packing/RESULTS.md)
 - [架构](ARCHITECTURE.md)、[阶段门](WORKFLOW.md)
 - [LDO 产物状态](examples/sky130_ldo_01v8/ARTIFACTS.md)
@@ -21,6 +29,8 @@
 ## 最新验收状态
 
 - 2026-11-08 文档/实验批次已提交为 30ca477；2026-11-09 收尾提交补齐打包、决策与文档状态。
+- 2026-11-09 建立 A0 准备包：SKY130 检查文档 v0.1、F-001、decision/kernel/review 模板；
+  owner 接受规则分级/waiver，A0–A5 暂定；不替代 DRC。
 - 仅完成独立合成实验：8 矩形、关系约束、阶梯形三个案例。
 - OR-Tools 9.15.6755 单线程；每个案例分别运行 1 秒和 5 秒预算。
 - 面积从 392/418/160 改善为 360/360/100；模型范围内最优。
@@ -50,14 +60,18 @@
 
 ## 下一步
 
-1. 评估 OR-Tools/CP-SAT 的接入方式：canonical geometry、输入/输出契约、独立 checker、
-   optional backend、阶段门；先出方案，不直接接入 CLI 或运行依赖。
-2. 评估结论由 owner 确认后，再决定是否进入 pilot；pilot 只能消费 frozen 宏块。
-3. 继续既定输入迁移与 bank 几何统一；解决 bank-specs 与 bank-library 尺寸差异、重复 writer。
-4. 真实装配仍只消费冻结宏块；不因实验跳过阶段门。
+1. Owner review A0 包：`docs/14-sky130-rule-check.md`、F-001、decision/kernel/review 模板、
+   `WORKFLOW.md` §6。
+2. A1 输入验收：`examples/sky130_ldo_01v8` 的 annotation 覆盖、role/match/group、
+   unknowns/assumptions。
+3. 做 A1 的一页 HTML review packet；阶段内可由 subagent 准备，阶段门由 owner 推进。
+4. OR-Tools/placement 仍后置；先完成 A1/A2 与 canonical geometry。
 
 ## 待解决
 
+- `docs/14` §9 的剩余规则问题：difftap.2、MIM cap、metal/density、NE、owner/reviewer。
+- F-001 的具体现象/根因/验证证据，由项目运行中补充。
+- A0 包待 owner 最终 review；A1 输入验收尚未开始。
 - OR-Tools 接入的 canonical geometry、gap 表、目标函数与 optional 依赖策略待评估。
 - 当前排布输入采用哪一份 canonical geometry？XR_GROUP 应作为整体消费。
 - 阶梯凹口可否容纳其他对象、各类间距及可接触边界，需要明确规则。

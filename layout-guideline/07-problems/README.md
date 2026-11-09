@@ -19,6 +19,8 @@
 
 示例：[`example-bgr-reference-return.md`](example-bgr-reference-return.md)
 
+当前记录：[`F-001-aa-poly-overlap.md`](F-001-aa-poly-overlap.md)（AA/poly 在非预期 MOS 区域重叠；intent check，不是 DRC）
+
 ## 闭环
 
 ```text

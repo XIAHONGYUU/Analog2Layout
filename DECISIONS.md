@@ -580,3 +580,47 @@ should survive individual tasks.
 - **Related:** `docs/13-constraint-packing.md`,
   `docs/experiments/2026-11-08-packing/`, `ARCHITECTURE.md`, `WORKFLOW.md`,
   `pyproject.toml`, `CURRENT_TASK.md`.
+
+---
+
+## D-029 — SKY130 DRC is converted to project checks; no DRC signoff
+
+- **Status:** active
+- **Date:** 2026-11-09
+- **Owner:** analog design + layout
+- **Source:** owner direction
+- **Decision:** The white-line skill uses SKY130 as the reference process. It
+  does not run a real DRC deck and does not claim DRC/LVS/PEX signoff. PDK rules
+  are converted into project checks in `docs/14-sky130-rule-check.md` with the
+  levels `HARD`, `REQUIRED_AT_IP`, `RECOMMENDED`, `HEURISTIC`, `NOT_CHECKED`
+  and `N/A`. PDK flags `RR`/`RC`/`NC` map to recommended / IP-required /
+  guideline; `RC` is required at IP level. Waivers are recorded and reviewed
+  together at stage acceptance.
+- **Consequences:** `HARD` failures block the stage; `RECOMMENDED` may be waived
+  with a reason; `NOT_CHECKED` must stay visible; heuristics never become PDK
+  facts.
+- **Related:** `docs/14-sky130-rule-check.md`, `pdk/sky130/facts.json`,
+  `rules/generic_180.json`, `WORKFLOW.md`.
+
+---
+
+## D-030 — Staged acceptance A0–A5 with owner-gated exits and one-page review
+
+- **Status:** active (provisional; refine per module)
+- **Date:** 2026-11-09
+- **Owner:** analog design + layout
+- **Source:** owner direction
+- **Decision:** Adopt the provisional A0–A5 acceptance flow: A0 preparation,
+  A1 input, A2 structure, A3 primitive/bank, A4 full white-line, A5 freeze.
+  Stage exits are advanced by the owner; work inside a stage may be delegated to
+  subagents. Each stage is reviewed through one HTML packet containing the
+  latest diagram, metrics, decision cards, check status, open questions and the
+  approval record. Waivers are reviewed together at stage acceptance. Current
+  target: `examples/sky130_ldo_01v8`.
+- **Consequences:** no stage advances without owner sign-off; subagents can
+  prepare within a stage; the flow is refined per module rather than frozen
+  globally.
+- **Related:** `WORKFLOW.md` §6,
+  `layout-guideline/05-templates/review-packet.md`,
+  `layout-guideline/05-templates/decision-card.md`,
+  `layout-guideline/05-templates/kernel-card.md`, `CURRENT_TASK.md`.
